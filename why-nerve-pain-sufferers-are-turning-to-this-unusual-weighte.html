@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Why Nerve Pain Sufferers Are Turning to This Unusual Weighted Blanket</title>
+<meta name="description" content="A new approach to peripheral neuropathy relief is helping thousands manage tingling, numbness, and nerve pain naturally — without pills, side effects, or costly treatments.">
+<style>
+:root{
+  --ll-color-primary:          #2a2a2a;
+  --ll-color-primary-dark:     #000000;
+  --ll-color-primary-rgb:      42, 42, 42;
+
+  --ll-color-secondary:        #fdf4e7;
+
+  --ll-color-cta:              #f07f1c;
+  --ll-color-cta-dark:         #d66a0e;
+  --ll-color-cta-rgb:          240, 127, 28;
+
+  --ll-color-background:       #ffffff;
+  --ll-color-background-alt:   #f5f0e6;
+  --ll-color-background-soft:  #faf5ea;
+
+  --ll-color-text-primary:     #2a2a2a;
+  --ll-color-text-secondary:   #4a4a4a;
+  --ll-color-muted:            #7a7a7a;
+
+  --ll-color-border:           #e3dcc9;
+  --ll-color-border-soft:      #eee6d3;
+
+  --ll-color-warning:          #c62828;
+
+  --lxs-rating-icon-color:     #f5c518;
+  --lxs-disclaimer-color:      #888888;
+
+  --ll-font-heading: Georgia, "Times New Roman", serif;
+  --ll-font-body:    "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:var(--ll-font-body);
+  font-size:17px;line-height:1.6;
+  color:var(--ll-color-text-primary);
+  background:var(--ll-color-background-alt);
+}
+img{max-width:100%;display:block}
+
+/* ── Hero ───────────────────────────────────────────────────── */
+.adv-hero{max-width:720px;margin:0 auto;padding:24px 24px 20px}
+.adv-hero__title{
+  font-family:var(--ll-font-heading);
+  font-size:30px;line-height:1.25;font-weight:700;
+  color:var(--ll-color-primary);
+  margin:0 0 16px;
+}
+.adv-hero__subtitle{
+  font-family:var(--ll-font-body);
+  font-size:17px;line-height:1.5;
+  color:var(--ll-color-text-primary);
+  margin:0;
+}
+@media (min-width:768px){.adv-hero__title{font-size:38px}}
+
+/* ── Lead image ─────────────────────────────────────────────── */
+.adv-lead-image{max-width:720px;margin:0 auto 20px;padding:0 24px}
+.adv-lead-image img{
+  width:100%;aspect-ratio:16/11;object-fit:cover;
+  background:var(--ll-color-background-alt);
+}
+
+/* ── Byline (with local avatar pool hook) ──────────────────── */
+.adv-byline{
+  max-width:720px;margin:0 auto 32px;padding:0 24px;
+  display:flex;align-items:center;gap:12px;
+  font-family:var(--ll-font-body);
+}
+.article-byline-photo{
+  width:60px;height:60px;border-radius:50%;
+  background:var(--ll-color-background-alt);
+  border:1px solid var(--ll-color-border);
+  flex-shrink:0;object-fit:cover;
+}
+.adv-byline__meta{
+  font-size:14px;color:var(--ll-color-text-secondary);
+  line-height:1.4;
+}
+.article-byline-name{font-weight:700;color:var(--ll-color-text-primary)}
+
+/* ── Article body ───────────────────────────────────────────── */
+.adv-article{
+  max-width:720px;margin:0 auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.7;
+  color:var(--ll-color-text-primary);
+}
+.adv-article p{margin:0 0 18px}
+.adv-article p strong{font-weight:700;color:var(--ll-color-primary)}
+.adv-article p em{font-style:italic}
+
+/* ── Section heading (H2) ───────────────────────────────────── */
+.adv-section-heading{
+  max-width:720px;margin:40px auto 20px;padding:0 24px;
+  font-family:var(--ll-font-heading);
+  font-size:26px;line-height:1.3;font-weight:700;
+  color:var(--ll-color-primary);
+}
+@media (min-width:768px){.adv-section-heading{font-size:32px}}
+
+/* ── Inline image ───────────────────────────────────────────── */
+.adv-inline-image{max-width:720px;margin:20px auto;padding:0 24px}
+.adv-inline-image img{
+  width:100%;aspect-ratio:16/10;object-fit:cover;
+  background:var(--ll-color-background-alt);
+}
+
+/* ── Bullet list (neutral dark dots) ───────────────────────── */
+.adv-bullet-list{
+  max-width:720px;margin:20px auto;padding:0 24px;
+  list-style:none;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.8;
+  color:var(--ll-color-text-primary);
+}
+.adv-bullet-list li{
+  padding:8px 0 8px 24px;position:relative;
+}
+.adv-bullet-list li::before{
+  content:"";
+  position:absolute;left:0;top:18px;
+  width:8px;height:8px;
+  background:var(--ll-color-primary);
+  border-radius:50%;
+}
+
+/* ── Feature list (accent arrows) ──────────────────────────── */
+.adv-feature-list{
+  max-width:720px;margin:20px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.8;
+}
+.adv-feature-list p{
+  margin:0 0 14px;padding-left:24px;position:relative;
+  color:var(--ll-color-text-primary);
+}
+.adv-feature-list p::before{
+  content:"→";
+  position:absolute;left:0;top:0;
+  color:var(--ll-color-cta);
+  font-weight:700;
+}
+
+/* ── Product showcase ──────────────────────────────────────── */
+.adv-product-showcase{
+  max-width:720px;margin:40px auto;padding:32px 24px;
+  background:var(--ll-color-background);
+  border:1px solid var(--ll-color-border);
+  text-align:center;
+  font-family:var(--ll-font-body);
+}
+.adv-product-showcase__eyebrow{
+  font-family:var(--ll-font-heading);
+  font-size:22px;font-weight:700;
+  color:var(--ll-color-primary);
+  margin:0 0 12px;
+}
+.adv-product-showcase__rating{
+  display:flex;justify-content:center;align-items:center;gap:8px;
+  margin-bottom:16px;
+  font-size:14px;color:var(--ll-color-text-secondary);
+}
+.adv-product-showcase__rating-score{
+  font-size:18px;font-weight:700;color:var(--ll-color-primary);
+}
+.adv-product-showcase__rating-stars{
+  color:var(--lxs-rating-icon-color);
+  letter-spacing:1px;font-size:16px;
+}
+.adv-product-showcase__rating-sep{color:var(--ll-color-border)}
+.adv-product-showcase__title{
+  font-family:var(--ll-font-heading);
+  font-size:22px;font-weight:700;
+  color:var(--ll-color-primary);
+  margin:0 0 20px;
+}
+.adv-product-showcase__image{
+  max-width:420px;margin:0 auto 24px;
+  aspect-ratio:4/3;object-fit:cover;
+  background:var(--ll-color-background-alt);
+}
+
+/* ── CTAs ──────────────────────────────────────────────────── */
+.adv-cta-inline{
+  display:inline-block;
+  background:var(--ll-color-cta);
+  color:#fff !important;text-decoration:none !important;
+  font-family:var(--ll-font-body);
+  font-weight:700;font-size:16px;
+  padding:14px 32px;
+  text-align:center;transition:background .15s;
+  text-transform:uppercase;letter-spacing:.5px;
+}
+.adv-cta-inline:hover{background:var(--ll-color-cta-dark)}
+
+.adv-cta-block{
+  display:block;max-width:560px;margin:36px auto;
+  padding:22px 28px;
+  background:var(--ll-color-cta);
+  color:#fff !important;text-decoration:none !important;
+  text-align:center;
+  font-family:var(--ll-font-body);
+  font-weight:800;font-size:22px;
+  line-height:1.2;
+  text-transform:uppercase;letter-spacing:.3px;
+  box-shadow:0 6px 18px rgba(var(--ll-color-cta-rgb),.35);
+  transition:all .18s;
+}
+.adv-cta-block:hover{
+  background:var(--ll-color-cta-dark);
+  transform:translateY(-1px);
+  box-shadow:0 8px 22px rgba(var(--ll-color-cta-rgb),.45);
+}
+
+/* ── Testimonial grid (4 cards) ────────────────────────────── */
+.adv-testimonial-grid{
+  max-width:720px;margin:32px auto;padding:0 24px;
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;
+  font-family:var(--ll-font-body);
+}
+.adv-testimonial-grid__card{
+  background:var(--ll-color-background);
+  padding:20px;
+  border:1px solid var(--ll-color-border);
+  display:flex;flex-direction:column;gap:12px;
+}
+.adv-testimonial-grid__photo{
+  width:100%;aspect-ratio:1/1;object-fit:cover;
+  background:var(--ll-color-background-alt);
+}
+.adv-testimonial-grid__name{
+  font-weight:700;font-size:16px;
+  color:var(--ll-color-primary);
+  margin:0;
+}
+.adv-testimonial-grid__text{
+  font-size:15px;line-height:1.55;
+  color:var(--ll-color-text-primary);
+  font-style:italic;margin:0;
+}
+@media (max-width:600px){.adv-testimonial-grid{grid-template-columns:1fr}}
+
+/* ── Testimonial banner ────────────────────────────────────── */
+.adv-testimonial-banner{max-width:720px;margin:24px auto;padding:0 24px}
+.adv-testimonial-banner img{
+  width:100%;aspect-ratio:16/9;object-fit:cover;
+  background:var(--ll-color-background-alt);
+}
+
+/* ── Pricing reveal (no price, just headline + note) ────────── */
+.adv-pricing-reveal{
+  max-width:720px;margin:32px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  text-align:center;
+}
+.adv-pricing-reveal__headline{
+  font-family:var(--ll-font-heading);
+  font-size:24px;font-weight:700;
+  color:var(--ll-color-primary);
+  margin:0 0 16px;line-height:1.3;
+}
+.adv-pricing-reveal__note{
+  font-size:16px;color:var(--ll-color-text-primary);
+  margin:0;line-height:1.5;
+}
+.adv-pricing-reveal__note strong{color:var(--ll-color-primary);font-weight:700}
+
+/* ── Guarantee ─────────────────────────────────────────────── */
+.adv-guarantee{
+  max-width:720px;margin:40px auto;padding:32px 24px;
+  background:var(--ll-color-secondary);
+  border:1px solid var(--ll-color-border);
+  text-align:center;
+  font-family:var(--ll-font-body);
+}
+.adv-guarantee__title{
+  font-family:var(--ll-font-heading);
+  font-size:24px;font-weight:700;
+  color:var(--ll-color-primary);
+  margin:0 0 16px;line-height:1.3;
+}
+.adv-guarantee__image{
+  max-width:240px;margin:0 auto 20px;
+  aspect-ratio:1/1;object-fit:contain;
+  background:transparent;
+}
+.adv-guarantee__body{
+  font-size:16px;line-height:1.6;
+  color:var(--ll-color-text-primary);
+  text-align:left;
+  max-width:540px;margin:0 auto;
+}
+.adv-guarantee__body p{margin:0 0 14px}
+.adv-guarantee__body strong{font-weight:700;color:var(--ll-color-primary)}
+
+/* ── Support ───────────────────────────────────────────────── */
+.adv-support{
+  max-width:720px;margin:24px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:16px;color:var(--ll-color-text-primary);
+  text-align:center;line-height:1.7;
+}
+.adv-support a{
+  color:var(--ll-color-cta);
+  text-decoration:underline;font-weight:600;
+}
+.adv-support a:hover{color:var(--ll-color-cta-dark)}
+
+/* ── Callout (emphasis) ────────────────────────────────────── */
+.adv-callout{
+  max-width:720px;margin:24px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.7;
+}
+.adv-callout p{margin:0 0 14px;color:var(--ll-color-text-primary)}
+.adv-callout p strong{font-weight:700;color:var(--ll-color-primary)}
+
+/* ── Closing preamble ──────────────────────────────────────── */
+.adv-closing-preamble{
+  max-width:720px;margin:24px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.7;
+  color:var(--ll-color-text-primary);
+  text-align:center;
+}
+.adv-closing-preamble p{margin:0 0 12px}
+.adv-closing-preamble em{
+  font-weight:700;font-style:normal;
+  color:var(--ll-color-primary);
+}
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<div class="adv-hero">
+  <h1 class="adv-hero__title">Neurologist Reveals Why a Weighted Blanket May Be the Missing Piece in Your Nerve Pain Recovery</h1>
+  <p class="adv-hero__subtitle">Peripheral neuropathy sufferers are discovering that deep pressure therapy can reduce tingling, numbness, and burning pain — naturally and without medication</p>
+</div>
+
+<!-- ── LEAD IMAGE ── -->
+<div class="adv-lead-image">
+  <div class="v2-media-slot" data-slot-key="media.lead" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Close-up of a person's hands resting on their lap, fingers showing subtle signs of discomfort, soft natural lighting, living room setting, photorealistic&quot;, &quot;Middle-aged woman sitting on a couch rubbing her tingling feet, concerned expression, warm home interior, photorealistic&quot;, &quot;A pair of bare feet on a hardwood floor, one foot slightly curled in discomfort, soft morning light through a window, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.lead</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Close-up of a person's hands resting on their lap, fingers showing subtle signs &quot;</div></div>
+</div>
+
+<!-- ── BYLINE (local avatar pool) ── -->
+<div class="adv-byline">
+  <img class="article-byline-photo" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><circle cx='60' cy='60' r='60' fill='%23e3dcc9'/></svg>" alt="">
+  <div class="adv-byline__meta">
+    By <strong class="article-byline-name">Dr. Rebecca Harmon</strong><span>, MD, Neurology</span> | <span>April 8th, 2026</span>
+  </div>
+</div>
+
+<!-- ── OPENING PARAGRAPHS ── -->
+<div class="adv-article">
+  <p>If you've been living with <b>tingling, numbness, or burning pain</b> in your hands and feet, you already know the feeling. That constant, gnawing discomfort that medication barely touches.</p>
+  <p>Peripheral neuropathy affects over <b>20 million Americans</b>. And for most of them, the standard options — gabapentin, pregabalin, antidepressants — come with side effects that can feel almost as bad as the condition itself.</p>
+  <p>But new research into <b>deep pressure stimulation</b> is revealing something that neurologists have quietly known for years: the right kind of physical pressure can actually calm overactive nerve signals at the source.</p>
+  <p>What's surprising is <i>where</i> this breakthrough is coming from. It's not a new drug. It's not a surgical procedure. It's something you put on your bed.</p>
+</div>
+
+<!-- ── S1 ANATOMY ── -->
+<h2 class="adv-section-heading">What's Really Happening Inside Your Damaged Nerves</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s1" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Diagram-style illustration of nerve fibers in a human hand showing peripheral nerve damage, medical educational style, photorealistic rendering&quot;, &quot;Close-up of a woman's hand dropping a coffee mug, blurred background kitchen, sense of lost grip strength, photorealistic&quot;, &quot;Worried 50-year-old woman looking at her numb hands under warm lamplight, emotional expression, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Diagram-style illustration of nerve fibers in a human hand showing peripheral ne&quot;</div></div></div>
+<div class="adv-article">
+  <p>Peripheral neuropathy occurs when the nerves outside your brain and spinal cord become damaged. These peripheral nerves send <b>constant misfiring signals</b> — tingling, burning, stabbing pain — even when nothing is actually wrong.</p>
+  <p>Your nervous system is essentially stuck in <b>alarm mode</b>. The nerves that should be sending normal sensation signals are instead broadcasting pain, numbness, and that maddening pins-and-needles feeling.</p>
+  <p>Over time, your brain starts interpreting <i>all</i> touch as potentially threatening. A bedsheet brushing your feet. Socks against your toes. Even the pressure of standing becomes a source of pain.</p>
+  <p>Meanwhile, your body's stress response kicks into overdrive. <b>Cortisol levels spike.</b> Serotonin drops. Sleep becomes nearly impossible. And without quality sleep, nerve repair slows to a crawl.</p>
+  <p>It's a vicious cycle: damaged nerves cause pain, pain causes stress, stress blocks healing, and the damage gets worse. <b>Breaking this cycle</b> is the key that most treatments completely miss.</p>
+</div>
+
+<!-- ── S2 ARTHRITIS PROGRESSION ── -->
+<h2 class="adv-section-heading">The Daily Reality Nobody Talks About</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s2" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Woman awake in bed at night holding her burning feet, clock showing 3am on nightstand, dark bedroom, photorealistic&quot;, &quot;Close-up of swollen reddened feet on white bed sheets, visible discomfort, soft bedroom lighting, photorealistic&quot;, &quot;Exhausted middle-aged woman sitting on edge of bed in the dark, head in hands, unable to sleep from nerve pain, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Woman awake in bed at night holding her burning feet, clock showing 3am on night&quot;</div></div></div>
+<div class="adv-article">
+  <p>Unless you live with neuropathy, it's hard to understand how it infiltrates <b>every single moment</b> of your day. It's not just pain — it's the slow erosion of everything you used to do without thinking.</p>
+  <p>Here's what a typical day looks like for someone living with <b>moderate to severe peripheral neuropathy</b> — a relentless cycle of pain, sleepless nights, and daily frustrations that most people around you will never fully understand:</p>
+</div>
+<div class="adv-feature-list">
+  <p>Waking up at 3 a.m. with burning feet that no position can relieve</p>
+  <p>Dropping coffee mugs because your fingers have gone numb again</p>
+  <p>Avoiding walks with your spouse because your feet feel like they're on fire</p>
+  <p>Canceling plans with friends because the fatigue from poor sleep is overwhelming</p>
+  <p>Lying awake dreading tomorrow because you know the pain will still be there</p>
+</div>
+<div class="adv-article">
+  <p>The isolation is real. You stop doing things you love. You pull away from people. <b>You start shrinking your life</b> to fit around the pain — and that's not living.</p>
+  <p>And the worst part? Most people around you can't see it. There's no cast, no visible wound. Just you, quietly suffering, wondering if this is just <i>how it's going to be</i> from now on.</p>
+</div>
+
+<!-- ── S3 SCARY TRUTH + FAILED SOLUTIONS ── -->
+<h2 class="adv-section-heading">Why Nothing You've Tried Has Worked Long-Term</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s3" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Bathroom medicine cabinet full of prescription bottles and over-the-counter pain medications, harsh fluorescent light, photorealistic&quot;, &quot;Close-up of various pill bottles scattered on a kitchen counter next to a glass of water, natural light, photorealistic&quot;, &quot;Frustrated woman reading medication side effects label on a pill bottle, reading glasses on, concerned expression, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Bathroom medicine cabinet full of prescription bottles and over-the-counter pain&quot;</div></div></div>
+<div class="adv-article">
+  <p>If you've been battling neuropathy for any length of time, you've probably already been through the standard playbook. And you've probably noticed that <b>none of it provides lasting relief</b>.</p>
+  <p>Here's why the most common approaches fall short — and why so many neuropathy sufferers feel stuck in an endless loop of treatments that promise relief but never deliver lasting results:</p>
+</div>
+<div class="adv-feature-list">
+  <p><b>Gabapentin and Pregabalin</b> — may reduce signals but cause drowsiness, dizziness, and brain fog</p>
+  <p><b>Over-the-counter pain relievers</b> — not designed for nerve pain and carry liver and kidney risks long-term</p>
+  <p><b>Topical creams and patches</b> — provide surface-level relief but never reach the deeper nerve pathways</p>
+  <p><b>Physical therapy alone</b> — helps mobility but doesn't address the stress-pain-sleep cycle directly</p>
+  <p><b>Supplements without deep pressure</b> — B-vitamins and alpha-lipoic acid help but miss the cortisol and serotonin piece</p>
+</div>
+<div class="adv-article">
+  <p>The common thread? Every one of these approaches treats <b>symptoms in isolation</b>. None of them address the full cycle — the stress response, the serotonin deficit, the cortisol overload, and the sleep deprivation that keeps damaged nerves from healing.</p>
+</div>
+
+<!-- ── S4 SOLUTION ── -->
+<h2 class="adv-section-heading">The Science Behind Deep Pressure Therapy</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s4" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Scientist in a lab examining nerve tissue samples under a microscope, clinical white lab environment, photorealistic&quot;, &quot;Research papers and medical journals spread on a desk about deep pressure therapy and neuropathy, overhead view, photorealistic&quot;, &quot;Doctor pointing at a brain scan showing serotonin pathways, explaining to a patient, modern medical office, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Scientist in a lab examining nerve tissue samples under a microscope, clinical w&quot;</div></div></div>
+<div class="adv-article">
+  <p>For the past decade, researchers have been studying something called <b>deep pressure stimulation (DPS)</b> — a form of gentle, distributed weight that triggers a profound shift in your nervous system.</p>
+  <p>The mechanism is surprisingly simple. When consistent, evenly distributed pressure is applied across your body, it activates your <b>parasympathetic nervous system</b> — the "rest and repair" mode that neuropathy sufferers desperately need. Here's what the research shows:</p>
+</div>
+<ul class="adv-bullet-list">
+  <li>Measurable increase in serotonin production</li>
+  <li>Significant reduction in cortisol levels</li>
+  <li>Activation of parasympathetic nervous response</li>
+  <li>Improved deep sleep duration and quality</li>
+  <li>Reduced nerve signal misfiring over time</li>
+</ul>
+
+<!-- ── S5 SOMETHING REMARKABLE ── -->
+<h2 class="adv-section-heading">How One Woman Stumbled Onto Something Different</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s5" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Chunky knit weighted blanket draped over an arm of a couch, natural earth tones, minimalist living room, photorealistic&quot;, &quot;Close-up texture shot of hand-knit organic cotton weighted blanket, soft natural fibers visible, warm lighting, photorealistic&quot;, &quot;Woman gently touching the thick knitted loops of a Tree Napper blanket, look of pleasant surprise, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s5</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Chunky knit weighted blanket draped over an arm of a couch, natural earth tones,&quot;</div></div></div>
+<div class="adv-article">
+  <p>Karen, a 54-year-old former school teacher from Ohio, had been living with peripheral neuropathy for nearly six years. <b>"I was on three different medications,"</b> she says. <i>"And I still couldn't sleep more than four hours a night."</i></p>
+  <p>One evening, her daughter mentioned a weighted blanket she'd been using for anxiety. <b>"She said it felt like being held,"</b> Karen recalls. <i>"I wasn't interested in anxiety relief — I just wanted my feet to stop burning long enough to fall asleep."</i></p>
+  <p>Karen was skeptical. She'd spent hundreds on supplements and gadgets that promised relief and delivered nothing. But her daughter had ordered her one anyway — a <b>Tree Napper</b> by Bearaby. And what happened next changed everything.</p>
+</div>
+
+<!-- ── S6 ONLY ONE CATCH ── -->
+<h2 class="adv-section-heading">What Makes the Tree Napper Different From Every Other Blanket</h2>
+<div class="adv-article">
+  <p>The Tree Napper isn't like the bead-filled weighted blankets you've seen at big-box stores. It's made from <b>sustainably sourced TENCEL™ Lyocell</b>, a fabric derived from eucalyptus trees that's naturally cooling, breathable, and buttery soft against sensitive skin.</p>
+  <p>Instead of plastic beads or synthetic filling, the weight comes from the <b>fabric itself</b> — hand-knit into a chunky, open-loop design that allows air to flow freely. For neuropathy sufferers who overheat easily or have skin sensitivity, this is a critical difference.</p>
+</div>
+
+<!-- ── PRODUCT SHOWCASE ── -->
+<div class="adv-product-showcase">
+  <div class="adv-product-showcase__eyebrow">Featured Natural Sleep Solution</div>
+  <div class="adv-product-showcase__rating">
+    <span class="adv-product-showcase__rating-score">4.8</span>
+    <span class="adv-product-showcase__rating-stars">★★★★★</span>
+    <span class="adv-product-showcase__rating-sep">|</span>
+    <span>12,847 Reviews</span>
+  </div>
+  <h3 class="adv-product-showcase__title">Bearaby Tree Napper</h3>
+  <a href="#"><div class="v2-media-slot" data-slot-key="media.product" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Bearaby Tree Napper weighted blanket in earthy green color, neatly folded on a modern sofa, bright airy living room, product photography, photorealistic&quot;, &quot;Tree Napper chunky knit weighted blanket spread across a bed, overhead flat lay, natural lighting, lifestyle product shot, photorealistic&quot;, &quot;Woman peacefully sleeping under a green chunky knit weighted blanket, serene bedroom environment, golden hour light, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.product</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Bearaby Tree Napper weighted blanket in earthy green color, neatly folded on a m&quot;</div></div></a>
+  <a href="#" class="adv-cta-inline"><span data-copy="cta_check.text">Check Availability and Current Pricing</span></a>
+</div>
+
+<!-- ── S7 INTRODUCING ── -->
+<h2 class="adv-section-heading">What Happens to Your Body Under the Tree Napper</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s7a" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Woman sleeping peacefully under a weighted blanket, calm face, soft pillow, dark quiet bedroom, photorealistic&quot;, &quot;Alarm clock showing 7am with a well-rested woman stretching in bed behind it, morning sunlight, photorealistic&quot;, &quot;Smiling woman waking up refreshed, stretching her arms above her head, weighted blanket at her waist, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s7a</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Woman sleeping peacefully under a weighted blanket, calm face, soft pillow, dark&quot;</div></div></div>
+<div class="adv-article">
+  <p>Within minutes of lying under the Tree Napper, your body begins to shift. The <b>evenly distributed pressure</b> signals your nervous system to downregulate — slowing your heart rate, deepening your breathing, and triggering serotonin release that directly counters the pain signals your damaged nerves are sending.</p>
+  <p>At the same time, <b>cortisol levels begin to drop</b>. That constant state of stress and hypervigilance that keeps you awake and amplifies every tingle and burn? It starts to ease. Your body finally gets permission to enter the deep, restorative sleep where <i>actual nerve repair happens</i>.</p>
+</div>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s7b" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Happy woman walking barefoot on grass in her backyard, relaxed posture, sunny day, photorealistic&quot;, &quot;Woman gardening comfortably, kneeling without discomfort, green garden setting, natural light, photorealistic&quot;, &quot;Joyful 50-year-old woman playing with a dog outdoors, full mobility, warm afternoon light, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s7b</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Happy woman walking barefoot on grass in her backyard, relaxed posture, sunny da&quot;</div></div></div>
+
+<!-- ── TESTIMONIAL GRID (4 cards) ── -->
+<div class="adv-testimonial-grid">
+  <div class="adv-testimonial-grid__card">
+    <div class="v2-media-slot" data-slot-key="media.t_1" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Portrait of a 52-year-old American woman with short brown hair, warm smile, casual sweater, kitchen background, photorealistic&quot;, &quot;Candid photo of a middle-aged woman sitting in a recliner looking content, cozy home setting, photorealistic&quot;, &quot;Headshot of a friendly 50s woman holding a coffee mug, natural makeup, warm indoor lighting, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Portrait of a 52-year-old American woman with short brown hair, warm smile, casu&quot;</div></div>
+    <p class="adv-testimonial-grid__name">Karen M.</p>
+    <p class="adv-testimonial-grid__text"><i>"The first night I used it, I slept five hours straight. That hadn't happened in years. After two weeks, the burning in my feet had gone from an 8 to a 3. I actually cried."</i></p>
+  </div>
+  <div class="adv-testimonial-grid__card">
+    <div class="v2-media-slot" data-slot-key="media.t_2" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Portrait of a 60-year-old man with grey hair and glasses, kind expression, flannel shirt, living room background, photorealistic&quot;, &quot;Candid photo of a retired man sitting on a porch, relaxed posture, natural daylight, photorealistic&quot;, &quot;Headshot of a friendly 60s American man, slight smile, casual polo shirt, warm lighting, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Portrait of a 60-year-old man with grey hair and glasses, kind expression, flann&quot;</div></div>
+    <p class="adv-testimonial-grid__name">Robert D.</p>
+    <p class="adv-testimonial-grid__text"><i>"I was ready to write it off as another gimmick. But my wife insisted. Three weeks later I'm sleeping through the night and my hands have stopped tingling during the day. I'm a believer."</i></p>
+  </div>
+  <div class="adv-testimonial-grid__card">
+    <div class="v2-media-slot" data-slot-key="media.t_3" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Portrait of a 45-year-old woman with auburn hair, genuine smile, cardigan, home office background, photorealistic&quot;, &quot;Candid photo of a woman in her mid-40s relaxing on a couch with a blanket, content expression, photorealistic&quot;, &quot;Headshot of a healthy-looking 45-year-old woman, natural light from a window, warm tones, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Portrait of a 45-year-old woman with auburn hair, genuine smile, cardigan, home &quot;</div></div>
+    <p class="adv-testimonial-grid__name">Michelle S.</p>
+    <p class="adv-testimonial-grid__text"><i>"My neurologist couldn't explain it, but my nerve conduction test actually improved after two months. The only thing I changed was sleeping under this blanket every night. It stays cool too, which matters when your feet burn."</i></p>
+  </div>
+  <div class="adv-testimonial-grid__card">
+    <div class="v2-media-slot" data-slot-key="media.t_4" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Portrait of a 58-year-old woman with silver-streaked hair, warm eyes, casual blouse, garden visible behind her, photorealistic&quot;, &quot;Candid photo of a late-50s woman walking in a park, comfortable shoes, relaxed stride, photorealistic&quot;, &quot;Headshot of a relieved-looking 58-year-old woman, soft smile, natural outdoor lighting, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Portrait of a 58-year-old woman with silver-streaked hair, warm eyes, casual blo&quot;</div></div>
+    <p class="adv-testimonial-grid__name">Donna P.</p>
+    <p class="adv-testimonial-grid__text"><i>"I've spent over $4,000 on neuropathy treatments in the last three years. This $212 blanket has done more for my sleep and pain levels than all of it combined. I bought one for my sister too."</i></p>
+  </div>
+</div>
+
+<!-- ── S8 HELPED THOUSANDS + BENEFITS ── -->
+<h2 class="adv-section-heading">What People Are Reporting After 30 Days</h2>
+<div class="adv-testimonial-banner"><div class="v2-media-slot" data-slot-key="media.banner" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Wide banner shot of the Tree Napper weighted blanket draped on a modern sofa, minimalist room with plants, warm tones, product lifestyle photography, photorealistic&quot;, &quot;Panoramic lifestyle shot of a woman relaxing under a chunky knit blanket on a daybed near a window, golden hour, photorealistic&quot;, &quot;Wide shot of a cozy living room scene with the Tree Napper blanket as the centerpiece, candles and plants around, inviting atmosphere, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.banner</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Wide banner shot of the Tree Napper weighted blanket draped on a modern sofa, mi&quot;</div></div></div>
+<div class="adv-article">
+  <p>While individual results vary, the pattern across thousands of users is remarkably consistent. Here's what <b>Tree Napper owners with neuropathy</b> are reporting:</p>
+</div>
+<div class="adv-feature-list">
+  <p>Falling asleep faster without the burning and tingling keeping them awake</p>
+  <p>Sleeping through the night for the first time in years</p>
+  <p>Reduced daytime numbness and improved sensation in hands and feet</p>
+  <p>Lower overall anxiety and a calmer, more stable mood throughout the day</p>
+  <p>Returning to activities they'd given up — walking, gardening, playing with grandchildren</p>
+</div>
+<div class="adv-article">
+  <p>The common denominator? <b>Better sleep creates a cascade.</b> When your body finally gets the deep rest it needs, cortisol drops, serotonin stabilizes, inflammation decreases — and your nerves get a real chance to heal.</p>
+</div>
+
+<!-- ── S9 HOW CAN YOU GET ── -->
+<h2 class="adv-section-heading">The Cooling Factor That Changes Everything</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s9" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Woman comfortably reading a book on a couch wrapped in a chunky knit blanket, relaxed feet tucked under, photorealistic&quot;, &quot;Close-up of relaxed feet peeking out from under a weighted blanket, no signs of swelling or discomfort, warm lighting, photorealistic&quot;, &quot;Peaceful evening scene with a woman on the couch under a weighted blanket watching TV, content and pain-free expression, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s9</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Woman comfortably reading a book on a couch wrapped in a chunky knit blanket, re&quot;</div></div></div>
+<div class="adv-article">
+  <p>If you have neuropathy, heat is your enemy. Traditional weighted blankets with <b>synthetic filling trap heat</b> — which can actually make burning sensations worse and trigger more nerve misfiring.</p>
+  <p>The Tree Napper solves this completely. The <b>open-knit TENCEL™ design</b> is naturally temperature-regulating. It breathes. It wicks moisture. It stays cool against your skin even on warm nights.</p>
+  <p>This isn't a small detail — it's the reason most neuropathy sufferers <i>fail</i> with other weighted blankets. They overheat, the burning gets worse, and they kick it off by midnight. <b>The Tree Napper stays on all night.</b> And that's when the real healing happens.</p>
+</div>
+
+<!-- ── S10 SELL OUT ── -->
+<h2 class="adv-section-heading">Sustainably Made With Materials That Matter</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s10" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Organic cotton plants in a sustainable farm field, bright sunny day, environmentally conscious imagery, photorealistic&quot;, &quot;Close-up of TENCEL Lyocell fibers next to raw eucalyptus leaves, natural materials, studio lighting, photorealistic&quot;, &quot;Hands holding sustainably harvested organic cotton bolls, earthy background, natural textures, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s10</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Organic cotton plants in a sustainable farm field, bright sunny day, environment&quot;</div></div></div>
+<div class="adv-article">
+  <p>Bearaby doesn't cut corners. The Tree Napper is crafted from <b>100% organic TENCEL™ Lyocell</b>, made from sustainably harvested eucalyptus trees in a closed-loop process that recycles 99% of the water and solvents used.</p>
+  <p>There are <b>no synthetic fillers, no plastic microbeads, no polyester</b>. Nothing that off-gasses or irritates sensitive skin. For neuropathy sufferers whose skin reacts to everything, this purity isn't a luxury — it's a necessity.</p>
+  <p>Every blanket is <b>hand-knit</b>, not machine-stamped. The result is a product that looks beautiful, feels incredible, and is built to last for years — not months. It's the kind of quality you can feel the moment you touch it.</p>
+</div>
+
+<!-- ── S11 NOT AVAILABLE ELSEWHERE ── -->
+<h2 class="adv-section-heading">Let's Talk About the Real Cost of Neuropathy</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s11" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Side-by-side comparison of prescription pill bottles versus a natural weighted blanket, clean white background, photorealistic&quot;, &quot;Calculator next to prescription receipts showing monthly medication costs, realistic documents, overhead view, photorealistic&quot;, &quot;Woman happily putting away pill bottles from her nightstand, replacing them with a folded weighted blanket, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s11</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Side-by-side comparison of prescription pill bottles versus a natural weighted b&quot;</div></div></div>
+<div class="adv-article">
+  <p>At $212, the Tree Napper isn't the cheapest blanket you'll find. But let's put that number in perspective against what you're <b>already spending</b> on neuropathy management.</p>
+  <p>Consider what a typical neuropathy sufferer pays each month just to keep the symptoms at bay — costs that add up quickly and never actually solve the underlying problem:</p>
+</div>
+<ul class="adv-bullet-list">
+  <li>Prescription co-pays averaging $50 to $150 monthly</li>
+  <li>Over-the-counter supplements and creams running $30 to $80 monthly</li>
+  <li>Specialist visits with co-pays of $40 to $75 each</li>
+  <li>Lost productivity and missed work from poor sleep and chronic pain</li>
+</ul>
+<div class="adv-article">
+  <p>The Tree Napper is a <b>one-time investment</b> that works every single night. No refills. No appointments. No side effects. Over a year, most neuropathy sufferers spend <i>ten times</i> this amount just managing symptoms that never fully resolve.</p>
+</div>
+
+<!-- ── S12 SPECIAL DISCOUNT + PRICING REVEAL ── -->
+<h2 class="adv-section-heading">How to Get Started Today</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s12" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Delivery box being opened on a kitchen counter, branded packaging visible, excited hands pulling out a knit blanket, photorealistic&quot;, &quot;UPS delivery person handing a package to a smiling woman at her front door, suburban home, photorealistic&quot;, &quot;Woman unboxing a weighted blanket on her couch, delighted expression, living room setting, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s12</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Delivery box being opened on a kitchen counter, branded packaging visible, excit&quot;</div></div></div>
+<div class="adv-pricing-reveal">
+  <p class="adv-pricing-reveal__headline">Right Now You Can Get the Tree Napper at the Lowest Price Available — Direct From Bearaby</p>
+  <p class="adv-pricing-reveal__note">Bearaby offers the <b>lowest price guarantee</b> when you buy directly from their website. No markups, no middlemen. Plus free shipping and a <b>30-day risk-free trial</b> so you can experience the difference yourself.</p>
+</div>
+<div class="adv-article">
+  <p>Getting your Tree Napper is simple. <b>Order directly from Bearaby's website</b>, choose your preferred weight and color, and it ships straight to your door with free delivery.</p>
+  <p>Most customers report <b>noticeable improvements within the first week</b>. But the full benefits — the deeper sleep, the reduced tingling, the lower stress — tend to build progressively over the first 30 days as your nervous system recalibrates.</p>
+</div>
+
+<!-- ── CTA BLOCK #1 ── -->
+<a href="#" class="adv-cta-block"><span data-copy="cta_1.text">Get Your Tree Napper at the Best Price</span></a>
+
+<!-- ── S13 60 DAYS RISK FREE + GUARANTEE ── -->
+<h2 class="adv-section-heading">Your 30-Day Risk-Free Guarantee</h2>
+<div class="adv-guarantee">
+  <h3 class="adv-guarantee__title">Try It for 30 Days — Completely Risk-Free</h3>
+  <div class="v2-media-slot" data-slot-key="media.guarantee_badge" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Gold and green 30-day money-back guarantee badge, circular seal design, clean white background, graphic design style, photorealistic&quot;, &quot;Shield-shaped guarantee emblem with 30-day risk-free text, earth tones matching natural branding, photorealistic&quot;, &quot;Elegant circular trust badge with checkmark and 30-day guarantee text, premium minimalist design, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.guarantee_badge</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Gold and green 30-day money-back guarantee badge, circular seal design, clean wh&quot;</div></div>
+  <div class="adv-guarantee__body">
+    <p>Bearaby stands behind the Tree Napper with a <b>full 30-day money-back guarantee</b>. If it doesn't help your sleep, your comfort, or your nerve pain — send it back for a complete refund. No questions, no hassle.</p>
+    <p>That means you can try it in your own bed, on your own schedule, with your own neuropathy — and <b>decide based on real results</b>, not promises. If it works, you keep it. If it doesn't, you're out nothing.</p>
+    <p>Most people know within the <b>first three nights</b>. The pressure feels different from anything you've tried. The cooling is immediate. And when you wake up after actually sleeping — you'll understand why thousands of neuropathy sufferers are calling this a turning point.</p>
+  </div>
+</div>
+<div class="adv-support">
+  You can <strong>email us</strong> at <a href="#">hello@bearaby.com</a><br>
+  Or you can <strong>call us</strong> at <a href="#">Call 1-800-BEARABY (232-7229)</a>.
+</div>
+
+<!-- ── S14 WHAT TO DO NEXT ── -->
+<h2 class="adv-section-heading">What Your Life Could Look Like in 30 Days</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s14" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Happy couple in their 50s walking hand in hand on a beach boardwalk, casual clothing, sunset light, photorealistic&quot;, &quot;Woman in her 50s hiking a gentle trail, confident stride, backpack, mountain scenery, photorealistic&quot;, &quot;Grandmother playing with grandchildren on the living room floor, pain-free movement, joyful scene, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s14</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Happy couple in their 50s walking hand in hand on a beach boardwalk, casual clot&quot;</div></div></div>
+<div class="adv-article">
+  <p>Imagine waking up after a full night's sleep. No 3 a.m. episodes. No burning. No tossing and turning trying to find a position where your feet don't scream. Just <b>rest</b> — real, deep, healing rest.</p>
+  <p>Imagine picking up your grandchild without worrying that your hands will go numb. Walking through the grocery store without counting steps. <b>Making plans again</b> because you actually have the energy to follow through.</p>
+  <p>This isn't fantasy. It's what thousands of Tree Napper users are experiencing right now. And with the <b>30-day guarantee</b>, the only risk is not trying it at all.</p>
+</div>
+
+<!-- ── CTA BLOCK #2 ── -->
+<a href="#" class="adv-cta-block"><span data-copy="cta_2.text">Try the Tree Napper Risk-Free Today</span></a>
+
+<!-- ── S15 ZERO RISK + EMOTIONAL CALLOUT ── -->
+<h2 class="adv-section-heading">A Final Word From Dr. Harmon</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s15a" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Before and after split image: left side shows woman unable to sleep, right side shows her sleeping peacefully under weighted blanket, photorealistic&quot;, &quot;Two side-by-side photos of the same woman: stressed and tired versus calm and rested, same setting different mood, photorealistic&quot;, &quot;Time-lapse style image showing transformation from restless night to peaceful sleep with a weighted blanket, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s15a</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Before and after split image: left side shows woman unable to sleep, right side &quot;</div></div></div>
+<div class="adv-article">
+  <p>I've spent over fifteen years treating peripheral neuropathy patients. I've prescribed every medication available. And I'll be honest — <b>the results have always been limited</b>. We manage symptoms. We rarely resolve them.</p>
+  <p>What deep pressure therapy offers is something medications cannot: a way to <b>reset the nervous system's baseline</b>. To pull it out of constant alarm mode and give the body the conditions it needs to begin repairing damaged nerve tissue.</p>
+  <p>The Tree Napper isn't a cure. I want to be clear about that. But as a <b>complementary approach</b> alongside your existing treatment plan, the evidence — and the patient outcomes I've personally witnessed — is compelling.</p>
+</div>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s15b" data-job-id="246eb904-67a3-46cd-98b9-8f755ba82d47" data-prompts="[&quot;Woman standing confidently in her garden, bare feet on soft grass, relaxed and smiling, late afternoon sun, photorealistic&quot;, &quot;Active 50-year-old woman stretching outdoors in the morning, energized and flexible, park setting, photorealistic&quot;, &quot;Content woman sitting cross-legged on her porch with coffee, peaceful morning routine, no visible discomfort, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s15b</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Woman standing confidently in her garden, bare feet on soft grass, relaxed and s&quot;</div></div></div>
+
+<!-- ── EMOTIONAL CALLOUT (3 bold lines) ── -->
+<div class="adv-callout">
+  <p><b>If you're tired of waking up in pain</b> — this blanket was designed with your nervous system in mind.</p>
+  <p><b>If you've tried everything</b> — deep pressure therapy works through an entirely different mechanism than medication.</p>
+  <p><b>If you're ready to sleep again</b> — the Tree Napper is backed by a 30-day risk-free guarantee.</p>
+</div>
+
+<div class="adv-article">
+  <p>If you've been suffering and nothing has fully worked, <b>this is worth trying</b>. The science supports it. The guarantee protects you. And your nerves deserve a chance to heal.</p>
+</div>
+
+<!-- ── CLOSING PREAMBLE ── -->
+<div class="adv-closing-preamble">
+  <p>Every night you spend tossing, burning, and aching is another night your nerves don't get to heal. The cycle doesn't break itself. <b>You have to give your body the right conditions</b> — and the Tree Napper was built to create exactly that.</p>
+  <p>Thousands of neuropathy sufferers have already made this choice. They're sleeping deeper, hurting less, and <b>living fuller lives</b>. Your 30-day risk-free trial is waiting.</p>
+</div>
+
+<!-- ── CTA BLOCK #3 (final) ── -->
+<a href="#" class="adv-cta-block"><span data-copy="cta_3.text">Claim Your Tree Napper Now</span></a>
+
+<style id="adv-brand-style">
+:root{
+  --ll-color-primary: #0d3d3d;
+  --ll-color-primary-dark: #0a3030;
+  --ll-color-primary-rgb: 13, 61, 61;
+  --ll-color-secondary: #0d3d3d;
+  --ll-color-tertiary: #46de46;
+  --ll-color-cta: #0d3d3d;
+  --ll-color-cta-dark: #0a3232;
+  --ll-color-cta-rgb: 13, 61, 61;
+  --ll-color-background: #ffffff;
+  --ll-color-text-primary: #000000;
+  --ll-color-text-secondary: #000000;
+  --lxs-rating-icon-color: #0d3d3d;
+  --ll-font-heading: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --ll-font-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.cta-btn,.ll-btn-temp,.sticky-product-cta,.sticky-cta-btn,button.cta,a.cta{background:#0d3d3d !important;border-color:#0d3d3d !important;color:#ffffff !important}
+.cta-btn:hover,.ll-btn-temp:hover,.sticky-product-cta:hover,.sticky-cta-btn:hover,button.cta:hover,a.cta:hover{background:#0a3030 !important;border-color:#0a3030 !important}
+.adv-cta-inline,.adv-cta-block{background:#0d3d3d !important;border-color:#0d3d3d !important;color:#ffffff !important}
+.adv-cta-inline:hover,.adv-cta-block:hover{background:#0a3232 !important;border-color:#0a3232 !important}
+</style>
+</body>
+</html>
