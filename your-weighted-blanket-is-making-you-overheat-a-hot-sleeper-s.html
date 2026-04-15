@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #FFFFFF; color: #1a1a1a; line-height: 1.6; }
+  img { max-width: 100%; height: auto; display: block; }
+  a { text-decoration: none; color: inherit; }
+
+  /* ---- SVG icon defs ---- */
+  .mtb-svg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+  /* ---- Layout ---- */
+  .mtb-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .mtb-layout { display: flex; gap: 40px; align-items: flex-start; }
+  .mtb-main { flex: 1; min-width: 0; max-width: 750px; }
+  .mtb-sidebar { width: 340px; flex-shrink: 0; position: sticky; top: 20px; }
+
+  /* ---- Alert box ---- */
+  .mtb-alert-box {
+    background: #FEFBD8;
+    border: 1px solid #EBE8BC;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .mtb-alert-icon { flex-shrink: 0; font-size: 20px; line-height: 1; }
+  .mtb-alert-text { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: #c0392b; line-height: 1.5; }
+
+  /* ---- Headline ---- */
+  .mtb-headline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #1a1a1a;
+    margin-bottom: 14px;
+  }
+  .mtb-subheadline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #444444;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  /* ---- Star rating row ---- */
+  .mtb-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .mtb-stars { display: flex; gap: 2px; }
+  .mtb-stars svg { width: 20px; height: 20px; fill: #FAB43F; }
+  .mtb-rating-label { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; color: #1a1a1a; }
+  .mtb-rating-divider { width: 1px; height: 18px; background: #cccccc; margin: 0 4px; }
+  .mtb-rating-count { font-family: 'Montserrat', sans-serif; font-size: 14px; color: #666666; }
+
+  /* ---- Byline ---- */
+  .mtb-byline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .mtb-byline-photo {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .mtb-byline-info { font-family: 'Montserrat', sans-serif; font-size: 14px; color: #555555; line-height: 1.5; }
+  .mtb-author-name { font-weight: 700; color: #1a1a1a; }
+  .mtb-date { font-weight: 400; color: #777777; }
+
+  /* ---- Hero media ---- */
+  .mtb-hero-media { margin-bottom: 28px; border-radius: 6px; overflow: hidden; }
+  .mtb-hero-media img { width: 100%; }
+
+  /* ---- Article body ---- */
+  .mtb-article { margin-bottom: 30px; }
+  .mtb-body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  .mtb-h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-top: 36px;
+    margin-bottom: 16px;
+    line-height: 1.25;
+  }
+
+  /* ---- Quote / Testimonial block ---- */
+  .mtb-quote-block {
+    background: #EEEBFC;
+    border-left: 10px solid #CCCCCC;
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin: 28px 0;
+  }
+  .mtb-quote-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.6;
+    color: #333333;
+    margin-bottom: 12px;
+  }
+  .mtb-quote-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #555555;
+    text-align: right;
+  }
+
+  /* ---- CTA button ---- */
+  .mtb-cta-btn {
+    display: block;
+    width: 100%;
+    background: #200340;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    padding: 15px 24px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    margin: 28px 0;
+    transition: opacity 0.2s;
+  }
+  .mtb-cta-btn:hover { opacity: 0.9; }
+
+  /* ---- Before / After images ---- */
+  .mtb-before-after {
+    display: flex;
+    gap: 12px;
+    margin: 28px 0;
+  }
+  .mtb-before-after img {
+    flex: 1;
+    border-radius: 6px;
+    min-width: 0;
+  }
+
+  /* ---- Purple promo banner ---- */
+  .mtb-promo-banner {
+    background: #450A91;
+    border-radius: 8px;
+    padding: 32px 28px;
+    margin: 36px 0;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    color: #FFFFFF;
+  }
+  .mtb-promo-banner-img { width: 160px; flex-shrink: 0; }
+  .mtb-promo-banner-img img { border-radius: 8px; }
+  .mtb-promo-banner-body { flex: 1; }
+  .mtb-promo-banner-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .mtb-promo-banner-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    opacity: 0.9;
+  }
+  .mtb-promo-banner .mtb-cta-btn {
+    background: #FFFFFF;
+    color: #450A91;
+    font-weight: 700;
+    margin: 0;
+    width: auto;
+    display: inline-block;
+  }
+
+  /* ---- Fake Facebook comments ---- */
+  .mtb-comments-section { margin: 40px 0; }
+  .mtb-comments-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .mtb-comment {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .mtb-comment:last-child { border-bottom: none; }
+  .mtb-comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #d9d9d9;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .mtb-comment-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .mtb-comment-body { flex: 1; }
+  .mtb-comment-author {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #385898;
+    margin-bottom: 4px;
+  }
+  .mtb-comment-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #1c1e21;
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+  .mtb-comment-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    color: #8e8e8e;
+  }
+  .mtb-comment-action { cursor: pointer; font-weight: 600; color: #8e8e8e; }
+  .mtb-comment-action:hover { text-decoration: underline; }
+  .mtb-comment-likes {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: #8e8e8e;
+    margin-left: auto;
+  }
+  .mtb-comment-likes svg { width: 16px; height: 16px; }
+  .mtb-comment-reply {
+    margin-left: 52px;
+    margin-top: 14px;
+  }
+
+  /* ---- Sidebar ---- */
+  .mtb-sidebar-card {
+    background: #FFFFFF;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .mtb-sidebar-product-img { text-align: center; margin-bottom: 16px; }
+  .mtb-sidebar-product-img img { max-width: 220px; margin: 0 auto; }
+  .mtb-sidebar-product-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+  }
+  .mtb-sidebar-price {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #555555;
+    margin-bottom: 16px;
+  }
+  .mtb-sidebar-price strong { color: #c0392b; font-size: 22px; }
+  .mtb-sidebar-cta {
+    display: block;
+    width: 100%;
+    background: #200340;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    padding: 14px 20px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: opacity 0.2s;
+  }
+  .mtb-sidebar-cta:hover { opacity: 0.9; }
+
+  /* Sidebar reviews breakdown */
+  .mtb-sidebar-reviews-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+  }
+  .mtb-sidebar-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: #555555;
+  }
+  .mtb-sidebar-rating-label { width: 44px; text-align: right; flex-shrink: 0; }
+  .mtb-sidebar-rating-bar { flex: 1; height: 10px; background: #e8e8e8; border-radius: 5px; overflow: hidden; }
+  .mtb-sidebar-rating-fill { height: 100%; background: #FAB43F; border-radius: 5px; }
+  .mtb-sidebar-rating-pct { width: 36px; text-align: right; flex-shrink: 0; font-size: 12px; }
+
+  /* Trust badges */
+  .mtb-trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px 0;
+    margin-top: 12px;
+    border-top: 1px solid #e8e8e8;
+  }
+  .mtb-trust-badge {
+    width: 48px;
+    height: 32px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: #888888;
+  }
+
+  /* ---- Sticky bottom CTA bar ---- */
+  .mtb-sticky-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.12);
+    padding: 12px 20px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mtb-sticky-bottom .mtb-cta-btn {
+    margin: 0;
+    max-width: 560px;
+    width: 100%;
+  }
+
+  /* ---- Payment icons row ---- */
+  .mtb-payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .mtb-payment-icon {
+    width: 52px;
+    height: 34px;
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: #666666;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 768px) {
+    .mtb-layout { flex-direction: column; gap: 0; }
+    .mtb-sidebar { width: 100%; position: static; order: 2; margin-top: 30px; }
+    .mtb-main { max-width: 100%; }
+    .mtb-headline { font-size: 28px; }
+    .mtb-subheadline { font-size: 17px; }
+    .mtb-h2 { font-size: 22px; }
+    .mtb-body { font-size: 16px; line-height: 25px; }
+    .mtb-promo-banner { flex-direction: column; text-align: center; padding: 24px 20px; }
+    .mtb-promo-banner-img { width: 120px; }
+    .mtb-before-after { flex-direction: column; }
+    .mtb-comment-reply { margin-left: 36px; }
+  }
+
+  /* bottom padding so content isn't hidden behind sticky bar */
+  .mtb-page-bottom { padding-bottom: 80px; }
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+</style>
+</head>
+<body>
+<div id="adv-disclosure" style="text-align:center;padding:6px 20px;background:#fff;color:#bbb;font-size:10px;font-family:system-ui,sans-serif;letter-spacing:0.05em;font-weight:400;border-bottom:1px solid #f0f0f0;">THIS IS AN ADVERTORIAL</div>
+
+<div id="adv-header-logo" style="text-align:center;padding:10px 0;background:#fff;border-bottom:1px solid #eee;position:relative;z-index:100;overflow:visible;">
+  <img src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" alt="Product" style="height:52px;max-width:260px;object-fit:contain;display:inline-block;">
+</div>
+
+
+<!-- SVG symbol definitions -->
+<svg class="mtb-svg-defs" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="icon-star" viewBox="0 0 24 24">
+    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/>
+  </symbol>
+  <symbol id="icon-thumbsup" viewBox="0 0 24 24">
+    <path fill="#1877F2" d="M2 20h2V9H2v11zm20-10a2 2 0 00-2-2h-6.32l.95-4.57.03-.32a1.49 1.49 0 00-.44-1.06L13.17 1 7.59 6.59A1.98 1.98 0 007 8v10a2 2 0 002 2h9a2 2 0 001.84-1.22l3.02-7.05A2 2 0 0022 10z"/>
+  </symbol>
+</svg>
+
+<div class="mtb-wrapper mtb-page-bottom">
+
+  <!-- Top urgency alert -->
+  <div class="mtb-alert-box" style="margin-top: 24px;">
+    <span class="mtb-alert-icon">&#9888;&#65039;</span>
+    <span class="mtb-alert-text">SLEEP SCIENCE GUIDE</span>
+  </div>
+
+  <div class="mtb-layout">
+
+    <!-- ==================== MAIN ARTICLE COLUMN ==================== -->
+    <div class="mtb-main">
+
+      <!-- Headline -->
+      <h1 class="mtb-headline">Your Weighted Blanket Is Making You Overheat — A Hot Sleeper's Guide to Finally Getting It Right</h1>
+
+      <!-- Subheadline -->
+      <p class="mtb-subheadline">Why most weighted blankets trap heat, what material science actually fixes it, and the checklist every hot sleeper needs before buying</p>
+
+      <!-- Star rating row -->
+      <div class="mtb-rating-row">
+        <div class="mtb-stars">
+          <svg><use href="#icon-star"/></svg>
+          <svg><use href="#icon-star"/></svg>
+          <svg><use href="#icon-star"/></svg>
+          <svg><use href="#icon-star"/></svg>
+          <svg><use href="#icon-star"/></svg>
+        </div>
+        <span class="mtb-rating-label">Excellent</span>
+        <span class="mtb-rating-divider"></span>
+        <span class="mtb-rating-count">6,153 reviews</span>
+      </div>
+
+      <!-- Author byline -->
+      <div class="mtb-byline">
+        <div class="placeholder" style="background:#f0f0f0;border:2px dashed #ccc;border-radius:8px;padding:40px 20px;text-align:center;color:#999;font-size:13px;font-style:italic;margin:8px 0 16px;">📷 Média</div>
+        <div class="mtb-byline-info">
+          Written By <span class="mtb-author-name">Rachel Simmons</span><br>
+          Last Updated <span class="mtb-date">April 15, 2026</span>
+        </div>
+      </div>
+
+      <!-- Hero image -->
+      <div class="mtb-hero-media">
+        <div class="placeholder" style="background:#f0f0f0;border:2px dashed #ccc;border-radius:8px;padding:40px 20px;text-align:center;color:#999;font-size:13px;font-style:italic;margin:8px 0 16px;">📷 Média</div>
+      </div>
+
+      <!-- Article body -->
+      <div class="mtb-article">
+
+        <p class="mtb-body">Jamie is a 38-year-old graphic designer in Denver, Colorado, and she has always run hot at night. Her thermostat is set to 66 degrees. She sleeps with a fan pointed directly at her face. And she still kicks off the covers by 2 AM almost every single night. She has watched every TikTok about weighted blankets helping with racing thoughts at bedtime. She wants one badly because the anxiety-calming benefits sound like exactly what she needs. But the comments under every video tell the same story: weighted blankets are like sleeping under a furnace. So she keeps scrolling, keeps losing sleep, and keeps wondering if there is a version of this product that was actually designed for people like her. If that sounds familiar, this guide is for you.</p>
+        <p class="mtb-body">Here is the uncomfortable truth about traditional weighted blankets. Most of them are filled with glass beads or plastic poly pellets sewn into a polyester shell. Polyester is cheap to manufacture, which is why it dominates the market. But polyester has almost zero breathability. It traps your body heat against your skin like plastic wrap. Add ten to twenty-five pounds of dense filler on top of that and you have created a sealed pocket of hot, stagnant air between your body and the blanket. Your skin temperature rises. Your sweat has nowhere to go. And within thirty to ninety minutes, you are awake, throwing the blanket off, and right back to square one. The weight was doing its job calming your nervous system. But the material was undoing it by overheating you.</p>
+
+        <!-- CTA button -->
+        <a href="https://mrudza-2j.myshopify.com/products/tree-napper" class="mtb-cta-btn">Check Availability</a>
+
+        <p class="mtb-body">Your body needs to drop its core temperature by roughly two to three degrees Fahrenheit to initiate deep sleep. This is not opinion. It is one of the most well-documented mechanisms in sleep science. When your core temperature drops, your brain increases melatonin production and signals your body to transition into slow-wave sleep, the restorative phase where tissue repair, memory consolidation, and immune function happen. When something prevents that temperature drop, like a blanket that traps heat, your body gets stuck in lighter sleep stages. You cycle in and out of wakefulness. You toss and turn. You wake up at 2 AM or 3 AM drenched in sweat. It is not insomnia. It is not hormones. It is thermoregulation failure, and the thing lying on top of you is causing it.</p>
+
+        <h2 class="mtb-h2">When 66°F and a Fan Still Aren't Enough</h2>
+        <p class="mtb-body">So Jamie started doing what any research-oriented person would do. She searched for weighted blankets for hot sleepers and found hundreds of options all claiming to be cooling. The problem is that cooling is an unregulated marketing term. Any brand can slap it on the label. So here is the checklist she built after hours of reading studies and product specs. First, check the shell fabric. You want plant-based fibers like eucalyptus Tencel or bamboo lyocell because they wick moisture three to four times more effectively than cotton and up to ten times more than polyester. Second, check the construction. An open-knit or chunky-knit weave allows airflow through the blanket rather than trapping it. Third, check the filler. Some blankets skip traditional bead fillers entirely, using the weight of the yarn itself, which eliminates the dense heat-trapping pockets that cause overheating.</p>
+
+        <!-- Before/After images -->
+        <div class="mtb-before-after">
+          <div class="placeholder" style="background:#f0f0f0;border:2px dashed #ccc;border-radius:8px;padding:40px 20px;text-align:center;color:#999;font-size:13px;font-style:italic;margin:8px 0 16px;">📷 Média</div>
+          <div class="placeholder" style="background:#f0f0f0;border:2px dashed #ccc;border-radius:8px;padding:40px 20px;text-align:center;color:#999;font-size:13px;font-style:italic;margin:8px 0 16px;">📷 Média</div>
+        </div>
+
+        <p class="mtb-body">When Jamie applied her checklist, most so-called cooling weighted blankets failed immediately. The ones with polyester shells were out. The ones with glass bead filler sewn into tight pockets were out. The ones that just added a cool-touch cover over a standard hot blanket were out, because a cool-touch surface only lasts about ninety seconds before your body heat overwhelms it. She needed something fundamentally different in construction, not a band-aid sewn onto the same overheating design. She needed a blanket where the weight came from the material itself, where the weave allowed continuous airflow, and where the fiber actively pulled moisture away from her skin all night long. That is a very short list. But one blanket kept appearing in every forum and every recommendation thread she found.</p>
+
+        <!-- Testimonial 1 -->
+        <div class="mtb-quote-block">
+          <p class="mtb-quote-text">I set my thermostat to 64 degrees and still used to wake up with my shirt soaked through by 3 AM. The first week with the Tree Napper I slept through the night five out of seven days. My husband asked me if I had started taking something new. Nope. Just switched the blanket.</p>
+          <p class="mtb-quote-name">— Danielle R.</p>
+        </div>
+
+        <h2 class="mtb-h2">Why Most Weighted Blankets Are a Furnace in Disguise</h2>
+        <p class="mtb-body">The Tree Napper by Bearaby is a weighted blanket built from eucalyptus-based Tencel fiber, hand-knit in a chunky open-weave pattern. There is no polyester shell. There are no glass beads. There are no plastic pellets. The weight comes entirely from the thick, naturally heavy eucalyptus yarn itself. Eucalyptus fiber is not just a marketing buzzword here. It is measurably cooler to the touch than cotton. It wicks moisture away from the skin rather than absorbing it and sitting wet against you. And because the blanket is knit in an open, breathable pattern rather than sewn into sealed fabric pockets, air flows freely through the entire blanket all night. The result is evenly distributed weight that calms your nervous system without trapping a single degree of excess heat.</p>
+
+        <div class="placeholder" style="background:#f0f0f0;border:2px dashed #ccc;border-radius:8px;padding:40px 20px;text-align:center;color:#999;font-size:13px;font-style:italic;margin:8px 0 16px;">📷 Média</div>
+
+        <p class="mtb-body">What makes eucalyptus Tencel particularly effective for hot sleepers is its fiber structure at the microscopic level. The fibers have a smooth surface that reduces friction against skin, which means less irritation and less heat generated from contact. They also have natural moisture management built into the cellulose structure, pulling sweat vapor away from your body and releasing it into the air rather than holding it in the fabric. Cotton absorbs moisture and holds it. Polyester repels moisture and traps heat. Eucalyptus fibers actively transport moisture. That is a critical difference when you are someone who wakes up with damp sheets and a racing heart at 3 AM. The Tree Napper also uses sustainably sourced eucalyptus from responsibly managed forests, which matters if your values include knowing where your products come from.</p>
+
+        <!-- CTA button -->
+        <a href="https://mrudza-2j.myshopify.com/products/tree-napper" class="mtb-cta-btn">Check Availability</a>
+
+        <h2 class="mtb-h2">The Thermoregulation Problem Nobody Talks About</h2>
+        <p class="mtb-body">Jamie ordered the Tree Napper on a Wednesday night after one more restless attempt with her regular comforter. She was skeptical. She had been burned by cooling claims before. But the first night she used it, she noticed something she had not experienced in years. She did not kick it off. She woke up at 6:15 AM still under the blanket with the fan still running and her body at a comfortable temperature. No sweat. No 2 AM wake-up. No blanket bunched at the foot of the bed. She told me it felt like someone had finally solved the equation she had been trying to crack for a decade: weight plus calm minus heat. It was not magic. It was material science applied correctly. And it was the first weighted blanket that did not punish her for being a hot sleeper.</p>
+
+        <!-- Testimonial 2 -->
+        <div class="mtb-quote-block">
+          <p class="mtb-quote-text">I have tried four different weighted blankets and returned every single one because of the heat. The Tree Napper is the only one I have kept past the first week. I am on month three now and I fall asleep in under twenty minutes instead of the hour-plus it used to take me.</p>
+          <p class="mtb-quote-name">— Priya K.</p>
+        </div>
+
+        <h2 class="mtb-h2">The Three Things Every Hot Sleeper Should Check Before Buying a Weighted Blanket</h2>
+        <p class="mtb-body">If you are in the same position Jamie was, here is how to make the switch without wasting another hundred dollars on a blanket that ends up in your closet. Start by checking the fabric content label, not the marketing copy. Look for Tencel, lyocell, or eucalyptus fiber as the primary material. Avoid anything that lists polyester first. Next, look at photos of the actual weave. If you can see through the knit pattern, air can move through it. If it looks like a solid fabric shell, it will trap heat regardless of what fiber it is made from. Finally, choose a weight that is roughly ten percent of your body weight. The Tree Napper comes in fifteen-pound and twenty-pound options, and Bearaby offers a satisfaction guarantee so you are not locked into a purchase that does not work for you.</p>
+
+        <!-- Before/After images set 2 -->
+        <div class="mtb-before-after">
+          <div class="placeholder" style="background:#f0f0f0;border:2px dashed #ccc;border-radius:8px;padding:40px 20px;text-align:center;color:#999;font-size:13px;font-style:italic;margin:8px 0 16px;">📷 Média</div>
+          <div class="placeholder" style="background:#f0f0f0;border:2px dashed #ccc;border-radius:8px;padding:40px 20px;text-align:center;color:#999;font-size:13px;font-style:italic;margin:8px 0 16px;">📷 Média</div>
+        </div>
+
+        <h2 class="mtb-h2">The Blanket That Actually Passes the Hot Sleeper Test</h2>
+        <p class="mtb-body">Every night you spend overheating under the wrong blanket is another night your body misses out on the deep, restorative sleep it needs to function. The racing thoughts do not quiet down when your skin is on fire. The anxiety does not ease when you are bracing for another 2 AM wake-up. Jamie spent years thinking she was just a bad sleeper. It turned out she was using the wrong materials. The Tree Napper did not cure her sleep problems overnight. But it removed the single biggest obstacle between her and a full night of rest. If you have been avoiding weighted blankets because every one you have tried turns into a sauna, this is the one designed specifically for you. Your coolest, calmest sleep is one decision away.</p>
+
+        <!-- Purple promo banner -->
+        <div class="mtb-promo-banner">
+          <div class="mtb-promo-banner-img">
+            <div class="placeholder" style="background:#f0f0f0;border:2px dashed #ccc;border-radius:8px;padding:40px 20px;text-align:center;color:#999;font-size:13px;font-style:italic;margin:8px 0 16px;">📷 Média</div>
+          </div>
+          <div class="mtb-promo-banner-body">
+            <div class="mtb-promo-banner-title">Product</div>
+            <div class="mtb-promo-banner-text">Get 55% off today. Limited-time offer while supplies last.</div>
+            <a href="https://mrudza-2j.myshopify.com/products/tree-napper" class="mtb-cta-btn">Check Availability</a>
+          </div>
+        </div>
+
+        <h2 class="mtb-h2">How to Make the Switch Without Another Wasted Purchase</h2>
+
+        <!-- CTA button -->
+        <a href="https://mrudza-2j.myshopify.com/products/tree-napper" class="mtb-cta-btn">Check Availability</a>
+
+        <!-- Payment icons -->
+        <div class="mtb-payment-icons">
+          <div class="mtb-payment-icon">VISA</div>
+          <div class="mtb-payment-icon">MC</div>
+          <div class="mtb-payment-icon">AMEX</div>
+          <div class="mtb-payment-icon">PayPal</div>
+        </div>
+
+      </div><!-- .mtb-article -->
+
+      <!-- ==================== FAKE FACEBOOK COMMENTS ==================== -->
+      <div class="mtb-comments-section">
+        <div class="mtb-comments-title">Comments</div>
+
+        <!-- Comment 1 -->
+        <div class="mtb-comment">
+          <div class="mtb-comment-avatar">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect fill='%23ccc' width='40' height='40'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dy='.3em' fill='%23fff' font-size='16' font-family='sans-serif'%3ESL%3C/text%3E%3C/svg%3E" alt="SL">
+          </div>
+          <div class="mtb-comment-body">
+            <div class="mtb-comment-author">Sarah L.</div>
+            <div class="mtb-comment-text">I was so skeptical at first but WOW. After just 2 weeks of using this, the peach fuzz on my upper lip is completely gone. My makeup goes on so much smoother now. Best purchase I've made all year!</div>
+            <div class="mtb-comment-meta">
+              <span class="mtb-comment-action">Like</span>
+              <span class="mtb-comment-action">Reply</span>
+              <span>2d</span>
+              <span class="mtb-comment-likes">
+                <svg><use href="#icon-thumbsup"/></svg> 47
+              </span>
+            </div>
+
+            <!-- Reply -->
+            <div class="mtb-comment mtb-comment-reply">
+              <div class="mtb-comment-avatar">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect fill='%23b8a9c9' width='40' height='40'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dy='.3em' fill='%23fff' font-size='16' font-family='sans-serif'%3EMT%3C/text%3E%3C/svg%3E" alt="MT">
+              </div>
+              <div class="mtb-comment-body">
+                <div class="mtb-comment-author">The Sleep Standard</div>
+                <div class="mtb-comment-text">So glad you're loving it, Sarah! Thanks for sharing your experience. Your skin deserves the best!</div>
+                <div class="mtb-comment-meta">
+                  <span class="mtb-comment-action">Like</span>
+                  <span class="mtb-comment-action">Reply</span>
+                  <span>1d</span>
+                  <span class="mtb-comment-likes">
+                    <svg><use href="#icon-thumbsup"/></svg> 12
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Comment 2 -->
+        <div class="mtb-comment">
+          <div class="mtb-comment-avatar">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect fill='%23a3c4bc' width='40' height='40'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dy='.3em' fill='%23fff' font-size='16' font-family='sans-serif'%3EJM%3C/text%3E%3C/svg%3E" alt="JM">
+          </div>
+          <div class="mtb-comment-body">
+            <div class="mtb-comment-author">Jennifer M.</div>
+            <div class="mtb-comment-text">Just ordered mine! Can't wait to try it. My sister has been raving about it for months and her skin looks amazing.</div>
+            <div class="mtb-comment-meta">
+              <span class="mtb-comment-action">Like</span>
+              <span class="mtb-comment-action">Reply</span>
+              <span>3d</span>
+              <span class="mtb-comment-likes">
+                <svg><use href="#icon-thumbsup"/></svg> 23
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comment 3 -->
+        <div class="mtb-comment">
+          <div class="mtb-comment-avatar">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect fill='%23d4a5a5' width='40' height='40'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dy='.3em' fill='%23fff' font-size='16' font-family='sans-serif'%3EKW%3C/text%3E%3C/svg%3E" alt="KW">
+          </div>
+          <div class="mtb-comment-body">
+            <div class="mtb-comment-author">Karen W.</div>
+            <div class="mtb-comment-text">Menopause has been rough on my skin and confidence. This little device gave me back some of that. The facial hair is gone and my serums actually absorb now. Highly recommend to anyone going through the same thing.</div>
+            <div class="mtb-comment-meta">
+              <span class="mtb-comment-action">Like</span>
+              <span class="mtb-comment-action">Reply</span>
+              <span>5d</span>
+              <span class="mtb-comment-likes">
+                <svg><use href="#icon-thumbsup"/></svg> 61
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comment 4 -->
+        <div class="mtb-comment">
+          <div class="mtb-comment-avatar">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect fill='%23a0b4d4' width='40' height='40'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dy='.3em' fill='%23fff' font-size='16' font-family='sans-serif'%3EDB%3C/text%3E%3C/svg%3E" alt="DB">
+          </div>
+          <div class="mtb-comment-body">
+            <div class="mtb-comment-author">Diane B.</div>
+            <div class="mtb-comment-text">Does this work on chin hair too? Asking for myself lol</div>
+            <div class="mtb-comment-meta">
+              <span class="mtb-comment-action">Like</span>
+              <span class="mtb-comment-action">Reply</span>
+              <span>4d</span>
+              <span class="mtb-comment-likes">
+                <svg><use href="#icon-thumbsup"/></svg> 8
+              </span>
+            </div>
+
+            <!-- Reply -->
+            <div class="mtb-comment mtb-comment-reply">
+              <div class="mtb-comment-avatar">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect fill='%23ccc' width='40' height='40'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dy='.3em' fill='%23fff' font-size='16' font-family='sans-serif'%3ESL%3C/text%3E%3C/svg%3E" alt="SL">
+              </div>
+              <div class="mtb-comment-body">
+                <div class="mtb-comment-author">Sarah L.</div>
+                <div class="mtb-comment-text">Yes!! I use it on my chin and upper lip. Works great on both areas.</div>
+                <div class="mtb-comment-meta">
+                  <span class="mtb-comment-action">Like</span>
+                  <span class="mtb-comment-action">Reply</span>
+                  <span>3d</span>
+                  <span class="mtb-comment-likes">
+                    <svg><use href="#icon-thumbsup"/></svg> 15
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Comment 5 -->
+        <div class="mtb-comment">
+          <div class="mtb-comment-avatar">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect fill='%23c4b896' width='40' height='40'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dy='.3em' fill='%23fff' font-size='16' font-family='sans-serif'%3EMP%3C/text%3E%3C/svg%3E" alt="MP">
+          </div>
+          <div class="mtb-comment-body">
+            <div class="mtb-comment-author">Maria P.</div>
+            <div class="mtb-comment-text">Bought one for myself and one for my mom as a gift. We both love it! The exfoliation alone is worth it, but the hair removal is the real game changer.</div>
+            <div class="mtb-comment-meta">
+              <span class="mtb-comment-action">Like</span>
+              <span class="mtb-comment-action">Reply</span>
+              <span>6d</span>
+              <span class="mtb-comment-likes">
+                <svg><use href="#icon-thumbsup"/></svg> 34
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- .mtb-comments-section -->
+
+      <!-- Bottom urgency alert -->
+      <div class="mtb-alert-box">
+        <span class="mtb-alert-icon">&#9888;&#65039;</span>
+        <span class="mtb-alert-text">SLEEP SCIENCE GUIDE</span>
+      </div>
+
+    </div><!-- .mtb-main -->
+
+    <!-- ==================== STICKY SIDEBAR ==================== -->
+    <div class="mtb-sidebar">
+      <div class="mtb-sidebar-card">
+
+        <!-- Product image -->
+        <div class="mtb-sidebar-product-img">
+          <div class="placeholder" style="background:#f0f0f0;border:2px dashed #ccc;border-radius:8px;padding:40px 20px;text-align:center;color:#999;font-size:13px;font-style:italic;margin:8px 0 16px;">📷 Média</div>
+        </div>
+
+        <!-- Product name -->
+        <div class="mtb-sidebar-product-name">Product</div>
+
+        <!-- Price -->
+        <div class="mtb-sidebar-price">
+          <strong>$119.99</strong>
+        </div>
+
+        <!-- Sidebar CTA -->
+        <a href="https://mrudza-2j.myshopify.com/products/tree-napper" class="mtb-sidebar-cta">GET 55% Off Today</a>
+
+        <!-- Star rating summary -->
+        <div class="mtb-sidebar-reviews-title">Customer Reviews</div>
+
+        <div class="mtb-sidebar-rating-row">
+          <span class="mtb-sidebar-rating-label">5 star</span>
+          <div class="mtb-sidebar-rating-bar"><div class="mtb-sidebar-rating-fill" style="width:78%;"></div></div>
+          <span class="mtb-sidebar-rating-pct">78%</span>
+        </div>
+        <div class="mtb-sidebar-rating-row">
+          <span class="mtb-sidebar-rating-label">4 star</span>
+          <div class="mtb-sidebar-rating-bar"><div class="mtb-sidebar-rating-fill" style="width:14%;"></div></div>
+          <span class="mtb-sidebar-rating-pct">14%</span>
+        </div>
+        <div class="mtb-sidebar-rating-row">
+          <span class="mtb-sidebar-rating-label">3 star</span>
+          <div class="mtb-sidebar-rating-bar"><div class="mtb-sidebar-rating-fill" style="width:5%;"></div></div>
+          <span class="mtb-sidebar-rating-pct">5%</span>
+        </div>
+        <div class="mtb-sidebar-rating-row">
+          <span class="mtb-sidebar-rating-label">2 star</span>
+          <div class="mtb-sidebar-rating-bar"><div class="mtb-sidebar-rating-fill" style="width:2%;"></div></div>
+          <span class="mtb-sidebar-rating-pct">2%</span>
+        </div>
+        <div class="mtb-sidebar-rating-row">
+          <span class="mtb-sidebar-rating-label">1 star</span>
+          <div class="mtb-sidebar-rating-bar"><div class="mtb-sidebar-rating-fill" style="width:1%;"></div></div>
+          <span class="mtb-sidebar-rating-pct">1%</span>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="mtb-trust-badges">
+          <div class="mtb-trust-badge">SSL</div>
+          <div class="mtb-trust-badge">VISA</div>
+          <div class="mtb-trust-badge">MC</div>
+          <div class="mtb-trust-badge">PayPal</div>
+        </div>
+
+      </div><!-- .mtb-sidebar-card -->
+    </div><!-- .mtb-sidebar -->
+
+  </div><!-- .mtb-layout -->
+
+</div><!-- .mtb-wrapper -->
+
+<!-- ==================== STICKY BOTTOM CTA BAR ==================== -->
+<div class="mtb-sticky-bottom">
+  <a href="https://mrudza-2j.myshopify.com/products/tree-napper" class="mtb-cta-btn">Check Availability</a>
+</div>
+
+<style>#adv-footer{display:block!important;visibility:visible!important;}</style>
+<footer id="adv-footer" style="display:block!important;background:#f5f5f5;border-top:1px solid #e8e8e8;padding:40px 20px 36px;text-align:center;margin-top:40px;">
+  <img src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" alt="Product" style="height:40px;max-width:200px;object-fit:contain;margin-bottom:16px;opacity:0.65;display:block;margin-left:auto;margin-right:auto;">
+  <p style="font-size:11px;color:#999;line-height:1.7;max-width:680px;margin:0 auto;">&copy; 2026 All rights reserved. All content, images, and materials on this website are protected by international copyright and intellectual property laws. Unauthorized reproduction, distribution, or modification of any materials is strictly prohibited.</p>
+  <p style="font-size:9px;color:#ccc;line-height:1.5;max-width:680px;margin:12px auto 0;letter-spacing:0.02em;">ADVERTISING DISCLOSURE: The story, persons, and results depicted on this site are illustrative. Individual results may vary. This content is sponsored advertising and not intended as news or editorial content.</p>
+</footer>
+</body>
+</html>
