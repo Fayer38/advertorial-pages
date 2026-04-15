@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>She Gave Up on Weighted Blankets — Until Her Daughter Changed Everything One Thanksgiving Night</title>
+<meta name="description" content="A school librarian shares how she finally slept through the night after years of failed weighted blankets and restless, sweaty nights.">
+<style>
+:root{
+  --ll-color-primary:          #2a2a2a;
+  --ll-color-primary-dark:     #000000;
+  --ll-color-primary-rgb:      42, 42, 42;
+
+  --ll-color-secondary:        #fdf4e7;
+
+  --ll-color-cta:              #f07f1c;
+  --ll-color-cta-dark:         #d66a0e;
+  --ll-color-cta-rgb:          240, 127, 28;
+
+  --ll-color-background:       #ffffff;
+  --ll-color-background-alt:   #f5f0e6;
+  --ll-color-background-soft:  #faf5ea;
+
+  --ll-color-text-primary:     #2a2a2a;
+  --ll-color-text-secondary:   #4a4a4a;
+  --ll-color-muted:            #7a7a7a;
+
+  --ll-color-border:           #e3dcc9;
+  --ll-color-border-soft:      #eee6d3;
+
+  --ll-color-warning:          #c62828;
+
+  --lxs-rating-icon-color:     #f5c518;
+  --lxs-disclaimer-color:      #888888;
+
+  --ll-font-heading: Georgia, "Times New Roman", serif;
+  --ll-font-body:    "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:var(--ll-font-body);
+  font-size:17px;line-height:1.6;
+  color:var(--ll-color-text-primary);
+  background:var(--ll-color-background-alt);
+}
+img{max-width:100%;display:block}
+
+/* ── Hero ───────────────────────────────────────────────────── */
+.adv-hero{max-width:720px;margin:0 auto;padding:24px 24px 20px}
+.adv-hero__title{
+  font-family:var(--ll-font-heading);
+  font-size:30px;line-height:1.25;font-weight:700;
+  color:var(--ll-color-primary);
+  margin:0 0 16px;
+}
+.adv-hero__subtitle{
+  font-family:var(--ll-font-body);
+  font-size:17px;line-height:1.5;
+  color:var(--ll-color-text-primary);
+  margin:0;
+}
+@media (min-width:768px){.adv-hero__title{font-size:38px}}
+
+/* ── Lead image ─────────────────────────────────────────────── */
+.adv-lead-image{max-width:720px;margin:0 auto 20px;padding:0 24px}
+.adv-lead-image img{
+  width:100%;aspect-ratio:16/11;object-fit:cover;
+  background:var(--ll-color-background-alt);
+}
+
+/* ── Byline (with local avatar pool hook) ──────────────────── */
+.adv-byline{
+  max-width:720px;margin:0 auto 32px;padding:0 24px;
+  display:flex;align-items:center;gap:12px;
+  font-family:var(--ll-font-body);
+}
+.article-byline-photo{
+  width:60px;height:60px;border-radius:50%;
+  background:var(--ll-color-background-alt);
+  border:1px solid var(--ll-color-border);
+  flex-shrink:0;object-fit:cover;
+}
+.adv-byline__meta{
+  font-size:14px;color:var(--ll-color-text-secondary);
+  line-height:1.4;
+}
+.article-byline-name{font-weight:700;color:var(--ll-color-text-primary)}
+
+/* ── Article body ───────────────────────────────────────────── */
+.adv-article{
+  max-width:720px;margin:0 auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.7;
+  color:var(--ll-color-text-primary);
+}
+.adv-article p{margin:0 0 18px}
+.adv-article p strong{font-weight:700;color:var(--ll-color-primary)}
+.adv-article p em{font-style:italic}
+
+/* ── Section heading (H2) ───────────────────────────────────── */
+.adv-section-heading{
+  max-width:720px;margin:40px auto 20px;padding:0 24px;
+  font-family:var(--ll-font-heading);
+  font-size:26px;line-height:1.3;font-weight:700;
+  color:var(--ll-color-primary);
+}
+@media (min-width:768px){.adv-section-heading{font-size:32px}}
+
+/* ── Inline image ───────────────────────────────────────────── */
+.adv-inline-image{max-width:720px;margin:20px auto;padding:0 24px}
+.adv-inline-image img{
+  width:100%;aspect-ratio:16/10;object-fit:cover;
+  background:var(--ll-color-background-alt);
+}
+
+/* ── Bullet list (neutral dark dots) ───────────────────────── */
+.adv-bullet-list{
+  max-width:720px;margin:20px auto;padding:0 24px;
+  list-style:none;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.8;
+  color:var(--ll-color-text-primary);
+}
+.adv-bullet-list li{
+  padding:8px 0 8px 24px;position:relative;
+}
+.adv-bullet-list li::before{
+  content:"";
+  position:absolute;left:0;top:18px;
+  width:8px;height:8px;
+  background:var(--ll-color-primary);
+  border-radius:50%;
+}
+
+/* ── Feature list (accent arrows) ──────────────────────────── */
+.adv-feature-list{
+  max-width:720px;margin:20px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.8;
+}
+.adv-feature-list p{
+  margin:0 0 14px;padding-left:24px;position:relative;
+  color:var(--ll-color-text-primary);
+}
+.adv-feature-list p::before{
+  content:"→";
+  position:absolute;left:0;top:0;
+  color:var(--ll-color-cta);
+  font-weight:700;
+}
+
+/* ── Product showcase ──────────────────────────────────────── */
+.adv-product-showcase{
+  max-width:720px;margin:40px auto;padding:32px 24px;
+  background:var(--ll-color-background);
+  border:1px solid var(--ll-color-border);
+  text-align:center;
+  font-family:var(--ll-font-body);
+}
+.adv-product-showcase__eyebrow{
+  font-family:var(--ll-font-heading);
+  font-size:22px;font-weight:700;
+  color:var(--ll-color-primary);
+  margin:0 0 12px;
+}
+.adv-product-showcase__rating{
+  display:flex;justify-content:center;align-items:center;gap:8px;
+  margin-bottom:16px;
+  font-size:14px;color:var(--ll-color-text-secondary);
+}
+.adv-product-showcase__rating-score{
+  font-size:18px;font-weight:700;color:var(--ll-color-primary);
+}
+.adv-product-showcase__rating-stars{
+  color:var(--lxs-rating-icon-color);
+  letter-spacing:1px;font-size:16px;
+}
+.adv-product-showcase__rating-sep{color:var(--ll-color-border)}
+.adv-product-showcase__title{
+  font-family:var(--ll-font-heading);
+  font-size:22px;font-weight:700;
+  color:var(--ll-color-primary);
+  margin:0 0 20px;
+}
+.adv-product-showcase__image{
+  max-width:420px;margin:0 auto 24px;
+  aspect-ratio:4/3;object-fit:cover;
+  background:var(--ll-color-background-alt);
+}
+
+/* ── CTAs ──────────────────────────────────────────────────── */
+.adv-cta-inline{
+  display:inline-block;
+  background:var(--ll-color-cta);
+  color:#fff !important;text-decoration:none !important;
+  font-family:var(--ll-font-body);
+  font-weight:700;font-size:16px;
+  padding:14px 32px;
+  text-align:center;transition:background .15s;
+  text-transform:uppercase;letter-spacing:.5px;
+}
+.adv-cta-inline:hover{background:var(--ll-color-cta-dark)}
+
+.adv-cta-block{
+  display:block;max-width:560px;margin:36px auto;
+  padding:22px 28px;
+  background:var(--ll-color-cta);
+  color:#fff !important;text-decoration:none !important;
+  text-align:center;
+  font-family:var(--ll-font-body);
+  font-weight:800;font-size:22px;
+  line-height:1.2;
+  text-transform:uppercase;letter-spacing:.3px;
+  box-shadow:0 6px 18px rgba(var(--ll-color-cta-rgb),.35);
+  transition:all .18s;
+}
+.adv-cta-block:hover{
+  background:var(--ll-color-cta-dark);
+  transform:translateY(-1px);
+  box-shadow:0 8px 22px rgba(var(--ll-color-cta-rgb),.45);
+}
+
+/* ── Testimonial grid (4 cards) ────────────────────────────── */
+.adv-testimonial-grid{
+  max-width:720px;margin:32px auto;padding:0 24px;
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;
+  font-family:var(--ll-font-body);
+}
+.adv-testimonial-grid__card{
+  background:var(--ll-color-background);
+  padding:20px;
+  border:1px solid var(--ll-color-border);
+  display:flex;flex-direction:column;gap:12px;
+}
+.adv-testimonial-grid__photo{
+  width:100%;aspect-ratio:1/1;object-fit:cover;
+  background:var(--ll-color-background-alt);
+}
+.adv-testimonial-grid__name{
+  font-weight:700;font-size:16px;
+  color:var(--ll-color-primary);
+  margin:0;
+}
+.adv-testimonial-grid__text{
+  font-size:15px;line-height:1.55;
+  color:var(--ll-color-text-primary);
+  font-style:italic;margin:0;
+}
+@media (max-width:600px){.adv-testimonial-grid{grid-template-columns:1fr}}
+
+/* ── Testimonial banner ────────────────────────────────────── */
+.adv-testimonial-banner{max-width:720px;margin:24px auto;padding:0 24px}
+.adv-testimonial-banner img{
+  width:100%;aspect-ratio:16/9;object-fit:cover;
+  background:var(--ll-color-background-alt);
+}
+
+/* ── Pricing reveal (no price, just headline + note) ────────── */
+.adv-pricing-reveal{
+  max-width:720px;margin:32px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  text-align:center;
+}
+.adv-pricing-reveal__headline{
+  font-family:var(--ll-font-heading);
+  font-size:24px;font-weight:700;
+  color:var(--ll-color-primary);
+  margin:0 0 16px;line-height:1.3;
+}
+.adv-pricing-reveal__note{
+  font-size:16px;color:var(--ll-color-text-primary);
+  margin:0;line-height:1.5;
+}
+.adv-pricing-reveal__note strong{color:var(--ll-color-primary);font-weight:700}
+
+/* ── Guarantee ─────────────────────────────────────────────── */
+.adv-guarantee{
+  max-width:720px;margin:40px auto;padding:32px 24px;
+  background:var(--ll-color-secondary);
+  border:1px solid var(--ll-color-border);
+  text-align:center;
+  font-family:var(--ll-font-body);
+}
+.adv-guarantee__title{
+  font-family:var(--ll-font-heading);
+  font-size:24px;font-weight:700;
+  color:var(--ll-color-primary);
+  margin:0 0 16px;line-height:1.3;
+}
+.adv-guarantee__image{
+  max-width:240px;margin:0 auto 20px;
+  aspect-ratio:1/1;object-fit:contain;
+  background:transparent;
+}
+.adv-guarantee__body{
+  font-size:16px;line-height:1.6;
+  color:var(--ll-color-text-primary);
+  text-align:left;
+  max-width:540px;margin:0 auto;
+}
+.adv-guarantee__body p{margin:0 0 14px}
+.adv-guarantee__body strong{font-weight:700;color:var(--ll-color-primary)}
+
+/* ── Support ───────────────────────────────────────────────── */
+.adv-support{
+  max-width:720px;margin:24px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:16px;color:var(--ll-color-text-primary);
+  text-align:center;line-height:1.7;
+}
+.adv-support a{
+  color:var(--ll-color-cta);
+  text-decoration:underline;font-weight:600;
+}
+.adv-support a:hover{color:var(--ll-color-cta-dark)}
+
+/* ── Callout (emphasis) ────────────────────────────────────── */
+.adv-callout{
+  max-width:720px;margin:24px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.7;
+}
+.adv-callout p{margin:0 0 14px;color:var(--ll-color-text-primary)}
+.adv-callout p strong{font-weight:700;color:var(--ll-color-primary)}
+
+/* ── Closing preamble ──────────────────────────────────────── */
+.adv-closing-preamble{
+  max-width:720px;margin:24px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.7;
+  color:var(--ll-color-text-primary);
+  text-align:center;
+}
+.adv-closing-preamble p{margin:0 0 12px}
+.adv-closing-preamble em{
+  font-weight:700;font-style:normal;
+  color:var(--ll-color-primary);
+}
+</style>
+</head>
+<body>
+<div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
+<div id="adv-header-logo" style="text-align:center;padding:14px 0 10px;background:#fff;border-bottom:1px solid #eee;">
+  <img src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" alt="Logo" style="display:block;height:52px;max-width:260px;object-fit:contain;margin:0 auto;">
+</div>
+
+
+<!-- ── HERO ── -->
+<div class="adv-hero">
+  <h1 class="adv-hero__title">I Spent Fourteen Months With a Weighted Blanket in My Closet — Here Is What Finally Got Me Sleeping Again</h1>
+  <p class="adv-hero__subtitle">A Naperville librarian thought weighted blankets were not for hot sleepers. She was wrong about the blanket — not the science.</p>
+</div>
+
+<!-- ── LEAD IMAGE ── -->
+<div class="adv-lead-image">
+  <div class="v2-media-slot" data-slot-key="media.lead" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;A folded heavy weighted blanket sitting unused on a closet shelf in a cozy suburban bedroom, soft natural light from window, photorealistic&quot;, &quot;A woman in her late 50s sitting on the edge of her bed at night looking tired and frustrated, dimly lit bedroom, photorealistic&quot;, &quot;Close-up of a woman's hand pushing away a thick blanket in bed, sheets slightly damp, nighttime bedroom lighting, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.lead</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;A folded heavy weighted blanket sitting unused on a closet shelf in a cozy subur&quot;</div></div>
+</div>
+
+<!-- ── BYLINE (local avatar pool) ── -->
+<div class="adv-byline">
+  <img class="article-byline-photo" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><circle cx='60' cy='60' r='60' fill='%23e3dcc9'/></svg>" alt="">
+  <div class="adv-byline__meta">
+    By <strong class="article-byline-name">Sarah Mitchell is a health journalist and certified sleep science writer based in Chicago, Illinois</strong><span>Health and Wellness Editor, Sleep Science Contributor, and Certified Holistic Lifestyle Coach with over fifteen years of experience</span> | <span>Published on April 12, 2026 and updated with the latest reader feedback and product availability</span>
+  </div>
+</div>
+
+<!-- ── OPENING PARAGRAPHS ── -->
+<div class="adv-article">
+  <p>Diane bought her first weighted blanket two winters ago, convinced it would finally quiet her restless, anxious nights.</p>
+  <p>The first forty minutes felt like a warm, steady hug. By midnight she was drenched in sweat and kicking it off.</p>
+  <p>That blanket sat folded in the back of her closet for fourteen months. She figured the whole category just was not for her.</p>
+  <p>Then last Thanksgiving, at her daughter's house in Michigan, something unexpected happened while she slept in the guest room.</p>
+</div>
+
+<!-- ── S1 ANATOMY ── -->
+<h2 class="adv-section-heading">The Night That Changed What Diane Believed About Weighted Blankets</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s1" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;A 57-year-old woman lying awake in bed at 2am staring at the ceiling, soft blue moonlight through curtains, photorealistic&quot;, &quot;Disheveled bed sheets kicked to the side on an empty bed, nightstand with a glass of water and reading glasses, photorealistic&quot;, &quot;Exhausted middle-aged woman sitting up in bed at night wiping her forehead, warm bedroom tones, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;A 57-year-old woman lying awake in bed at 2am staring at the ceiling, soft blue &quot;</div></div></div>
+<div class="adv-article">
+  <p>Diane is fifty-seven. She has been a school librarian in Naperville, Illinois for nearly two decades. She loves her work, her garden, her grandkids.</p>
+  <p>But for the past several years, sleep has been a nightly negotiation. She falls asleep fine — then wakes at one or two in the morning, mind racing.</p>
+  <p>The anxiety is not about anything dramatic. It is the low hum of everyday life — tomorrow's schedule, a parent who needs more help, the electric bill.</p>
+  <p>Her doctor suggested melatonin. Her friend suggested chamomile tea. Her sister-in-law suggested the weighted blanket. Each helped for a week, maybe two.</p>
+  <p>Then the weighted blanket started trapping heat. And the sweating made the anxiety worse, not better. She stopped using it and stopped hoping.</p>
+</div>
+
+<!-- ── S2 ARTHRITIS PROGRESSION ── -->
+<h2 class="adv-section-heading">When Poor Sleep Becomes Your Normal, You Stop Noticing What It Costs You</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s2" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;A woman in her late 50s yawning at a library desk surrounded by books, fluorescent overhead lighting, photorealistic&quot;, &quot;Close-up of tired eyes and dark circles on a middle-aged woman's face, soft natural light, photorealistic&quot;, &quot;A school librarian resting her head on her hand at a desk, looking drained and unfocused, warm interior lighting, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;A woman in her late 50s yawning at a library desk surrounded by books, fluoresce&quot;</div></div></div>
+<div class="adv-article">
+  <p>Diane did not think of herself as someone with a sleep problem. She slept. Just not well. And not long enough. She adjusted.</p>
+  <p>But when she looked honestly at her days, the evidence was everywhere. She recognized herself in nearly every item on this list.</p>
+</div>
+<div class="adv-feature-list">
+  <p>Waking between one and three in the morning with a racing mind that refuses to quiet down no matter what you try</p>
+  <p>Night sweats that force you to throw off covers, then shivering ten minutes later in the damp sheets you left behind</p>
+  <p>Dragging through the afternoon with a fatigue that coffee barely touches, counting the hours until you can sit down again</p>
+  <p>A low-grade irritability that you cannot explain — snapping at your spouse, losing patience with coworkers over small things</p>
+  <p>Quietly accepting that this is just what sleep looks like now, that your best rest is probably behind you</p>
+</div>
+<div class="adv-article">
+  <p>If you nodded at even two of those, you are not alone. Millions of women between fifty and sixty-two live inside this same quiet cycle.</p>
+  <p>The problem is not willpower or discipline. The problem is often the tools we have been given to fix it.</p>
+</div>
+
+<!-- ── S3 SCARY TRUTH + FAILED SOLUTIONS ── -->
+<h2 class="adv-section-heading">Everything Diane Tried Before — and Why None of It Lasted</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s3" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;A bathroom medicine cabinet open showing melatonin bottles and sleep aid boxes, soft bathroom light, photorealistic&quot;, &quot;A nightstand cluttered with different sleep products including a sound machine and supplements, warm lamplight, photorealistic&quot;, &quot;A frustrated woman in her 50s reading the back of a supplement bottle in a pharmacy aisle, fluorescent lighting, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;A bathroom medicine cabinet open showing melatonin bottles and sleep aid boxes, &quot;</div></div></div>
+<div class="adv-article">
+  <p>Diane is not the type to give up easily. She is a researcher by nature. She read the articles, asked her doctor, tried what made sense.</p>
+  <p>Over two years, she worked through a list that will probably look familiar to you.</p>
+</div>
+<div class="adv-feature-list">
+  <p>Melatonin supplements helped her fall asleep faster but left her groggy every morning and did nothing for the middle-of-the-night waking</p>
+  <p>Prescription sleep aids worked but made her feel foggy and dependent — she did not want to rely on a pill every single night</p>
+  <p>A traditional weighted blanket felt wonderful at first, then trapped so much heat that she woke drenched within a few hours</p>
+  <p>Cooling mattress pads addressed the temperature but did nothing for the anxiety that was actually driving her awake at night</p>
+  <p>White noise machines and meditation apps were pleasant enough but never addressed the physical restlessness in her body</p>
+</div>
+<div class="adv-article">
+  <p>Each solution addressed one part of the problem while ignoring the other. Cooling without calming. Calming without cooling. Never both at once.</p>
+</div>
+
+<!-- ── S4 SOLUTION ── -->
+<h2 class="adv-section-heading">What Diane Learned About Why Traditional Weighted Blankets Fail Hot Sleepers</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s4" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;Close-up of a beautiful knitted blanket made from natural eucalyptus fibers draped over a couch arm, soft daylight, photorealistic&quot;, &quot;Hands touching a breathable open-knit weighted blanket, feeling the texture, natural window light, photorealistic&quot;, &quot;A sustainably made tree-fiber blanket laid across a bed in a bright airy bedroom, morning sunlight, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Close-up of a beautiful knitted blanket made from natural eucalyptus fibers drap&quot;</div></div></div>
+<div class="adv-article">
+  <p>After Thanksgiving, Diane started researching. Not products — the science. She wanted to understand what had actually happened that guest room night.</p>
+  <p>What she found surprised her. The problem was never the weight. The problem was what the weight was wrapped in.</p>
+</div>
+<ul class="adv-bullet-list">
+  <li>Most weighted blankets use glass beads or plastic pellets sealed inside polyester fabric, which traps body heat like a greenhouse against your skin</li>
+  <li>Eucalyptus-based TENCEL fiber naturally wicks moisture and allows air to circulate, keeping surface temperature noticeably lower through the night</li>
+  <li>Deep touch pressure from evenly distributed weight stimulates serotonin production, the same calming neurotransmitter your body uses to manage stress</li>
+  <li>Higher serotonin levels help reduce cortisol, the stress hormone responsible for that racing-mind feeling at two in the morning</li>
+  <li>An open-knit design without synthetic fill creates natural airflow channels — the weight stays constant while heat passes right through</li>
+</ul>
+
+<!-- ── S5 SOMETHING REMARKABLE ── -->
+<h2 class="adv-section-heading">That Thanksgiving Night Was Not a Coincidence — It Was Better Engineering</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s5" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;Eucalyptus tree branches with silvery green leaves in soft natural sunlight, shallow depth of field, photorealistic&quot;, &quot;Close-up of TENCEL lyocell fibers being woven on a loom, macro detail, soft studio lighting, photorealistic&quot;, &quot;A sustainable eucalyptus forest with dappled sunlight filtering through the canopy, serene atmosphere, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s5</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Eucalyptus tree branches with silvery green leaves in soft natural sunlight, sha&quot;</div></div></div>
+<div class="adv-article">
+  <p>When Diane slept seven hours straight at her daughter's house, she assumed the room was just cold. She checked the thermostat the next morning. It was set to seventy-two.</p>
+  <p>Her daughter pointed at the guest bed blanket — a Tree Napper made entirely from eucalyptus-derived TENCEL fiber, with no glass beads, no synthetic fill, no polyester trapping heat.</p>
+  <p>The weight came from the material itself — naturally heavy, naturally breathable. Diane had slept under genuine cooling pressure for the first time, and her body responded as the science predicted.</p>
+</div>
+
+<!-- ── S6 ONLY ONE CATCH ── -->
+<h2 class="adv-section-heading">Why Eucalyptus TENCEL Changes Everything for Women Who Run Hot at Night</h2>
+<div class="adv-article">
+  <p>TENCEL is a fiber made from sustainably harvested eucalyptus wood pulp. It is naturally moisture-wicking, temperature-regulating, and remarkably soft. Unlike polyester, it releases heat instead of trapping it.</p>
+  <p>The Tree Napper uses this fiber exclusively. No glass beads, no plastic pellets, no synthetic shell. Just one continuous knitted material that delivers deep pressure while letting your body breathe.</p>
+</div>
+
+<!-- ── PRODUCT SHOWCASE ── -->
+<div class="adv-product-showcase">
+  <div class="adv-product-showcase__eyebrow">The Cooling Weighted Blanket That Finally Solved the Overheating Problem for Hot Sleepers</div>
+  <div class="adv-product-showcase__rating">
+    <span class="adv-product-showcase__rating-score">Rated 4.8 out of 5 stars by thousands of verified customers who sleep cooler every night</span>
+    <span class="adv-product-showcase__rating-stars">★★★★★</span>
+    <span class="adv-product-showcase__rating-sep">|</span>
+    <span>Over 2,400 verified five-star reviews from real customers across the United States</span>
+  </div>
+  <h3 class="adv-product-showcase__title">Tree Napper — The Original Eucalyptus Weighted Blanket Designed for Hot Sleepers Who Need Cool Comfort</h3>
+  <a href="#"><div class="v2-media-slot" data-slot-key="media.product" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;A beautifully knitted chunky weighted blanket in a neutral tone draped elegantly over a modern bed, bright airy bedroom, photorealistic&quot;, &quot;Flat lay of an open-weave weighted blanket on white bedding, overhead shot showing the knit pattern, natural daylight, photorealistic&quot;, &quot;A woman peacefully sleeping under a breathable knitted weighted blanket, serene expression, soft morning light, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.product</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;A beautifully knitted chunky weighted blanket in a neutral tone draped elegantly&quot;</div></div></a>
+  <a href="#" class="adv-cta-inline"><span data-copy="cta_check.text">Check Availability and See if the Tree Napper Is Right for You</span></a>
+</div>
+
+<!-- ── S7 INTRODUCING ── -->
+<h2 class="adv-section-heading">What Happened When Diane Finally Ordered Her Own Tree Napper at Home</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s7a" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;A calm woman in her 50s sleeping soundly under a lightweight knitted blanket, peaceful bedroom, golden hour light, photorealistic&quot;, &quot;Close-up of relaxed hands resting on a chunky knit blanket texture, soft warm light, photorealistic&quot;, &quot;A woman waking up refreshed and stretching in bed with a smile, morning sunlight streaming through curtains, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s7a</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;A calm woman in her 50s sleeping soundly under a lightweight knitted blanket, pe&quot;</div></div></div>
+<div class="adv-article">
+  <p>Diane ordered one the week after Thanksgiving. She was skeptical — she had been burned before, literally. She told herself she would give it three honest nights.</p>
+  <p>Night one, she slept five hours without waking. Night two, six. By night three, she slept through until her alarm — no sweat, no racing thoughts, just rest.</p>
+</div>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s7b" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;A 57-year-old woman reading a book on her couch wrapped in a knitted blanket looking content, warm living room, photorealistic&quot;, &quot;Side profile of a peaceful sleeping woman under a breathable blanket, soft nightlight glow, photorealistic&quot;, &quot;A happy middle-aged woman holding a cup of tea on the couch draped in a cozy open-knit blanket, natural window light, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s7b</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;A 57-year-old woman reading a book on her couch wrapped in a knitted blanket loo&quot;</div></div></div>
+
+<!-- ── TESTIMONIAL GRID (4 cards) ── -->
+<div class="adv-testimonial-grid">
+  <div class="adv-testimonial-grid__card">
+    <div class="v2-media-slot" data-slot-key="media.t_1" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;Portrait of a friendly woman in her early 60s with short silver hair smiling warmly, casual home background, natural light, photorealistic&quot;, &quot;A woman in her 60s sitting in a garden chair looking relaxed and happy, soft outdoor light, photorealistic&quot;, &quot;Close-up of a smiling 60-year-old woman with kind eyes, slightly wrinkled face, warm golden light, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Portrait of a friendly woman in her early 60s with short silver hair smiling war&quot;</div></div>
+    <p class="adv-testimonial-grid__name">Barbara, age 61, a retired teacher living in Scottsdale, Arizona who struggled with sleep</p>
+    <p class="adv-testimonial-grid__text">I had a weighted blanket collecting dust for over a year. This one stays cool. I sleep six to seven hours straight now and wake up feeling like myself again.</p>
+  </div>
+  <div class="adv-testimonial-grid__card">
+    <div class="v2-media-slot" data-slot-key="media.t_2" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;Portrait of a 52-year-old woman with auburn hair smiling gently, kitchen background, warm interior light, photorealistic&quot;, &quot;A woman in her early 50s sitting at a breakfast table looking well-rested and cheerful, morning light, photorealistic&quot;, &quot;Close-up portrait of a friendly middle-aged woman with laugh lines, soft natural lighting, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Portrait of a 52-year-old woman with auburn hair smiling gently, kitchen backgro&quot;</div></div>
+    <p class="adv-testimonial-grid__name">Janet, age 53, a busy office manager living in Raleigh, North Carolina</p>
+    <p class="adv-testimonial-grid__text">The night sweats were ruining my sleep and my patience. This blanket breathes in a way I did not think was possible for something this heavy. Genuinely life-changing.</p>
+  </div>
+  <div class="adv-testimonial-grid__card">
+    <div class="v2-media-slot" data-slot-key="media.t_3" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;Portrait of a 58-year-old woman with glasses and a warm smile, cozy living room background, soft lamplight, photorealistic&quot;, &quot;A woman in her late 50s sitting on a porch with a relaxed expression, late afternoon sunlight, photorealistic&quot;, &quot;Close-up of a content 58-year-old woman's face showing genuine happiness, natural soft light, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Portrait of a 58-year-old woman with glasses and a warm smile, cozy living room &quot;</div></div>
+    <p class="adv-testimonial-grid__name">Carol, age 59, a retired pediatric nurse living in Portland, Oregon</p>
+    <p class="adv-testimonial-grid__text">My husband noticed before I did. He said I stopped tossing and turning. I stopped waking up at two in the morning. I feel calmer during the day too.</p>
+  </div>
+  <div class="adv-testimonial-grid__card">
+    <div class="v2-media-slot" data-slot-key="media.t_4" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;Portrait of a 55-year-old woman with dark hair and a gentle smile, home office background, daylight from window, photorealistic&quot;, &quot;A woman in her mid-50s relaxing on a couch looking peaceful and comfortable, warm interior tones, photorealistic&quot;, &quot;Close-up portrait of a serene 55-year-old woman with soft expression, natural lighting, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Portrait of a 55-year-old woman with dark hair and a gentle smile, home office b&quot;</div></div>
+    <p class="adv-testimonial-grid__name">Linda, age 56, a dedicated high school counselor living in Minneapolis, Minnesota</p>
+    <p class="adv-testimonial-grid__text">I was ready to accept that good sleep was behind me. Three nights with this blanket and I knew I had been using the wrong one all along.</p>
+  </div>
+</div>
+
+<!-- ── S8 HELPED THOUSANDS + BENEFITS ── -->
+<h2 class="adv-section-heading">Five Reasons Women Over Fifty Are Choosing the Tree Napper Over Traditional Weighted Blankets</h2>
+<div class="adv-testimonial-banner"><div class="v2-media-slot" data-slot-key="media.banner" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;Wide shot of a beautifully made bed with a chunky knit weighted blanket draped across it, bright airy modern bedroom, photorealistic&quot;, &quot;A serene bedroom scene at dawn with a knitted blanket on the bed and soft curtains, panoramic wide angle, photorealistic&quot;, &quot;Overhead wide shot of a woman sleeping peacefully under a breathable knit blanket, minimal modern bedroom, soft morning light, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.banner</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Wide shot of a beautifully made bed with a chunky knit weighted blanket draped a&quot;</div></div></div>
+<div class="adv-article">
+  <p>The Tree Napper was designed to solve the exact problem that makes most weighted blankets unusable for hot sleepers. Here is what sets it apart.</p>
+</div>
+<div class="adv-feature-list">
+  <p>Made entirely from eucalyptus TENCEL — a naturally cooling, moisture-wicking fiber that keeps you comfortable even on the warmest nights</p>
+  <p>No glass beads, no plastic pellets, no synthetic fill — the weight comes from the knitted fabric itself, evenly distributed across your body</p>
+  <p>Open-knit design creates natural airflow channels so heat passes through instead of building up underneath the blanket against your skin</p>
+  <p>Deep touch pressure stimulates serotonin production and helps reduce cortisol, calming the anxious mind that wakes you at two in the morning</p>
+  <p>Sustainably made from responsibly sourced eucalyptus — gentle on your skin and gentle on the planet, with no harsh chemicals or synthetic materials</p>
+</div>
+<div class="adv-article">
+  <p>This is not a gimmick or a trend. It is a fundamentally different approach to weighted comfort — one that finally works for women who run hot.</p>
+</div>
+
+<!-- ── S9 HOW CAN YOU GET ── -->
+<h2 class="adv-section-heading">The Science Behind Why Weight Helps You Sleep — When Heat Does Not Get in the Way</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s9" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;Simple scientific illustration style showing serotonin molecule pathway in the brain, clean white background, photorealistic editorial style&quot;, &quot;A calm woman with eyes closed and hands on her chest practicing deep breathing, soft neutral background, photorealistic&quot;, &quot;Abstract representation of gentle pressure on skin triggering calm response, warm muted tones, editorial photorealistic style&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s9</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Simple scientific illustration style showing serotonin molecule pathway in the b&quot;</div></div></div>
+<div class="adv-article">
+  <p>Deep touch pressure is well studied. When even weight is applied across the body, the nervous system shifts from fight-or-flight into the calm parasympathetic state where real rest happens.</p>
+  <p>This shift triggers increased serotonin production, which your body then converts into melatonin, the hormone that regulates your natural sleep cycle. At the same time, cortisol levels drop noticeably.</p>
+  <p>The problem with traditional weighted blankets is simple. They deliver the pressure but trap the heat. When your body overheats, cortisol spikes back up — undoing every benefit the weight provides.</p>
+</div>
+
+<!-- ── S10 SELL OUT ── -->
+<h2 class="adv-section-heading">Traditional Weighted Blankets Versus the Tree Napper — What Actually Changed</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s10" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;Close-up comparison of synthetic polyester fabric next to natural eucalyptus fiber fabric, split frame, studio lighting, photorealistic&quot;, &quot;Macro shot of breathable open-knit fabric showing airflow through the weave, soft studio light, photorealistic&quot;, &quot;A hand pressing into a natural fiber knitted blanket showing its weight and flexibility, warm natural light, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s10</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Close-up comparison of synthetic polyester fabric next to natural eucalyptus fib&quot;</div></div></div>
+<div class="adv-article">
+  <p>Most weighted blankets on the market use the same basic design: glass beads or plastic pellets sewn into pockets inside a polyester shell. The weight works. The material does not.</p>
+  <p>Polyester does not breathe. It holds moisture against your skin. For women dealing with night sweats or hormonal temperature shifts, it creates an environment that actively fights against restful sleep.</p>
+  <p>The Tree Napper eliminated every part of that equation. No beads. No pellets. No polyester. Just continuous knitted eucalyptus TENCEL fabric that is naturally heavy, naturally cool, and naturally soft.</p>
+</div>
+
+<!-- ── S11 NOT AVAILABLE ELSEWHERE ── -->
+<h2 class="adv-section-heading">Why Diane Says This Is the First Sleep Solution That Actually Respects How Her Body Works</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s11" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;A Thanksgiving dinner table with family gathered around, warm golden candlelight, suburban American dining room, photorealistic&quot;, &quot;A guest bedroom with a neatly made bed and a beautiful knitted blanket draped over it, warm welcoming interior, photorealistic&quot;, &quot;A mother and adult daughter laughing together on a couch sharing a blanket, warm holiday home atmosphere, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s11</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;A Thanksgiving dinner table with family gathered around, warm golden candlelight&quot;</div></div></div>
+<div class="adv-article">
+  <p>Four months later, Diane still sleeps with her Tree Napper every night. She has not touched melatonin since January. Her closet blanket went to Goodwill.</p>
+  <p>When her friends ask what changed, she keeps it simple. Here is what she tells them.</p>
+</div>
+<ul class="adv-bullet-list">
+  <li>It stays cool all night — not cold, not clammy, just perfectly neutral against her skin even when the thermostat reads seventy-two</li>
+  <li>The weight feels like a calm steady hug without the suffocating heat that made her old blanket unbearable after the first hour</li>
+  <li>She falls asleep faster and stays asleep longer — and the mornings feel completely different when you actually get six or seven real hours</li>
+  <li>It is beautiful enough to leave on the bed — her old weighted blanket looked clinical, but this one looks like something she actually chose</li>
+</ul>
+<div class="adv-article">
+  <p>Diane is not a product spokesperson. She is a librarian who finally sleeps. That is the whole story.</p>
+</div>
+
+<!-- ── S12 SPECIAL DISCOUNT + PRICING REVEAL ── -->
+<h2 class="adv-section-heading">What a Full Night of Sleep Actually Gives Back to Your Day</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s12" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;A woman in her late 50s smiling while making her bed in the morning, sunlight filling the room, photorealistic&quot;, &quot;A happy middle-aged woman walking energetically through a suburban neighborhood in morning light, photorealistic&quot;, &quot;Close-up of a well-rested woman's face showing calm satisfaction, morning bathroom mirror, soft natural light, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s12</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;A woman in her late 50s smiling while making her bed in the morning, sunlight fi&quot;</div></div></div>
+<div class="adv-pricing-reveal">
+  <p class="adv-pricing-reveal__headline">An Investment in Sleep That Pays for Itself Every Single Morning You Wake Up Rested</p>
+  <p class="adv-pricing-reveal__note">Available directly from the maker — no middlemen, no markups, just the blanket delivered straight to your door.</p>
+</div>
+<div class="adv-article">
+  <p>Diane noticed changes within the first week. Not dramatic transformations — quiet shifts. She stopped reaching for a second coffee by noon. She had patience with the fourth-graders again.</p>
+  <p>She started reading at night instead of scrolling. She stopped dreading bedtime. Sleep went from being a problem she managed to something she actually looked forward to.</p>
+</div>
+
+<!-- ── CTA BLOCK #1 ── -->
+<a href="#" class="adv-cta-block"><span data-copy="cta_1.text">See the Tree Napper and Find Out Why Thousands of Hot Sleepers Made the Switch</span></a>
+
+<!-- ── S13 60 DAYS RISK FREE + GUARANTEE ── -->
+<h2 class="adv-section-heading">Try It Risk-Free — You Will Know by Night Three</h2>
+<div class="adv-guarantee">
+  <h3 class="adv-guarantee__title">A Full 30-Day Guarantee Because Real Confidence Means Letting You Decide at Home</h3>
+  <div class="v2-media-slot" data-slot-key="media.guarantee_badge" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;A clean modern 30-day guarantee badge seal in gold and white on a plain background, minimal design, photorealistic product graphic&quot;, &quot;A simple elegant satisfaction guarantee ribbon badge with the number 30, neutral tones, clean studio shot, photorealistic&quot;, &quot;A reassuring gold seal stamp with guarantee text on a soft cream background, professional product photography style, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.guarantee_badge</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;A clean modern 30-day guarantee badge seal in gold and white on a plain backgrou&quot;</div></div>
+  <div class="adv-guarantee__body">
+    <p>The makers of the Tree Napper believe you should not have to guess whether a blanket works for you. That is why every order is backed by a thirty-day guarantee.</p>
+    <p>Try it for a few nights. Sleep under it. Feel the difference. If it does not change your nights the way Diane describes, you are fully covered.</p>
+    <p>No hoops, no complicated returns process. Just a straightforward promise that you will sleep better — or you are taken care of.</p>
+  </div>
+</div>
+<div class="adv-support">
+  You can <strong>email us</strong> at <a href="#">For questions or support, reach us anytime by email at support@treenapper.com</a><br>
+  Or you can <strong>call us</strong> at <a href="#">For phone support, our contact number is available directly on the product page</a>.
+</div>
+
+<!-- ── S14 WHAT TO DO NEXT ── -->
+<h2 class="adv-section-heading">Who the Tree Napper Is Really For — and Who It Might Not Be For</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s14" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;A woman in her 50s sitting calmly in bed reading a book with a knitted blanket over her lap, warm evening light, photorealistic&quot;, &quot;A couple in their 50s sleeping peacefully together under a breathable blanket, serene bedroom, soft moonlight, photorealistic&quot;, &quot;A content woman stretching her arms in bed after a full night of sleep, bright morning, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s14</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;A woman in her 50s sitting calmly in bed reading a book with a knitted blanket o&quot;</div></div></div>
+<div class="adv-article">
+  <p>This blanket was designed for people who love weighted comfort but cannot tolerate the heat from traditional options. If you run hot at night, this was made for you.</p>
+  <p>It is especially well suited for women navigating the temperature fluctuations that come with hormonal changes — the kind that turn a cozy blanket into a sauna by midnight.</p>
+  <p>If you sleep cold and want maximum insulation, a traditional duvet might serve you better. The Tree Napper is built to breathe, and that is its greatest strength.</p>
+</div>
+
+<!-- ── CTA BLOCK #2 ── -->
+<a href="#" class="adv-cta-block"><span data-copy="cta_2.text">Visit the Tree Napper Page and See What a Cooling Weighted Blanket Actually Feels Like</span></a>
+
+<!-- ── S15 ZERO RISK + EMOTIONAL CALLOUT ── -->
+<h2 class="adv-section-heading">How to Get Started — It Is Simpler Than You Think</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s15a" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;A beautifully packaged knitted blanket being unboxed on a kitchen counter, clean modern packaging, natural daylight, photorealistic&quot;, &quot;Hands lifting a chunky knit blanket out of an elegant box, anticipation and excitement, warm indoor light, photorealistic&quot;, &quot;A delivered package sitting on a suburban front porch, welcoming home exterior, afternoon sunlight, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s15a</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;A beautifully packaged knitted blanket being unboxed on a kitchen counter, clean&quot;</div></div></div>
+<div class="adv-article">
+  <p>You can order the Tree Napper directly from the maker's website. No subscriptions, no upsells, no confusing options. Just choose your color and it ships to your door.</p>
+  <p>Most customers say they notice a difference within the first three nights. Not a miracle — just the quiet, steady feeling of sleeping through to your alarm.</p>
+  <p>Diane's advice to friends who ask is always the same: give it three honest nights. Do not judge it by the first twenty minutes. Let your body settle into it.</p>
+</div>
+<div class="adv-inline-image"><div class="v2-media-slot" data-slot-key="media.s15b" data-job-id="b70abc75-4c2a-47bc-a57a-4755b810a8cc" data-prompts="[&quot;A woman in her late 50s draping a new knitted blanket over her bed with a hopeful expression, bright bedroom, photorealistic&quot;, &quot;Close-up of a chunky knit blanket being spread across crisp white sheets, hands smoothing the surface, natural light, photorealistic&quot;, &quot;A bedroom transformation showing a bed styled with a beautiful natural fiber blanket, inviting and serene atmosphere, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s15b</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;A woman in her late 50s draping a new knitted blanket over her bed with a hopefu&quot;</div></div></div>
+
+<!-- ── EMOTIONAL CALLOUT (3 bold lines) ── -->
+<div class="adv-callout">
+  <p>You do not have to keep accepting broken sleep as your new normal.</p>
+  <p>The right weighted blanket exists — one that stays cool while your body calms down.</p>
+  <p>Thousands of women over fifty have already made the switch. Tonight could be your night three.</p>
+</div>
+
+<div class="adv-article">
+  <p>If you have been avoiding weighted blankets because of the heat, or if one is sitting folded in your closet right now, this might be the version that finally works.</p>
+</div>
+
+<!-- ── CLOSING PREAMBLE ── -->
+<div class="adv-closing-preamble">
+  <p>Diane still tells the Thanksgiving story when people ask how she sleeps so well now. She keeps it short. She does not oversell it.</p>
+  <p>She just says: I finally found a weighted blanket that does not make me sweat. And for the first time in years, I actually look forward to going to bed.</p>
+</div>
+
+<!-- ── CTA BLOCK #3 (final) ── -->
+<a href="#" class="adv-cta-block"><span data-copy="cta_3.text">See the Tree Napper for Yourself — and Find Out What Night Three Feels Like</span></a>
+
+<style id="adv-brand-style">
+:root{
+  --ll-color-primary: #000000;
+  --ll-color-primary-dark: #000000;
+  --ll-color-primary-rgb: 0, 0, 0;
+  --ll-color-secondary: #000000;
+  --ll-color-tertiary: #545252;
+  --ll-color-cta: #1a1a1a;
+  --ll-color-cta-dark: #151515;
+  --ll-color-cta-rgb: 26, 26, 26;
+  --ll-color-background: #ffffff;
+  --ll-color-text-primary: #000000;
+  --ll-color-text-secondary: #000000;
+  --lxs-rating-icon-color: #05b67a;
+  --ll-font-heading: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --ll-font-body: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.cta-btn,.ll-btn-temp,.sticky-product-cta,.sticky-cta-btn,button.cta,a.cta{background:#000000 !important;border-color:#000000 !important;color:#ffffff !important}
+.cta-btn:hover,.ll-btn-temp:hover,.sticky-product-cta:hover,.sticky-cta-btn:hover,button.cta:hover,a.cta:hover{background:#000000 !important;border-color:#000000 !important}
+.adv-cta-inline,.adv-cta-block{background:#1a1a1a !important;border-color:#1a1a1a !important;color:#ffffff !important}
+.adv-cta-inline:hover,.adv-cta-block:hover{background:#151515 !important;border-color:#151515 !important}
+</style>
+<footer id="adv-footer" style="background:#f5f5f5;border-top:1px solid #e5e5e5;padding:30px 20px;text-align:center;margin-top:40px;">
+  <img src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" alt="Logo" style="display:block;height:36px;max-width:180px;object-fit:contain;margin:0 auto 12px;">
+  <p style="font-size:10px;color:#999;line-height:1.6;max-width:700px;margin:0 auto;">&copy; 2026 All rights reserved. All content, images, and materials on this website are protected by international copyright and intellectual property laws. Unauthorized reproduction, distribution, or modification of any materials is strictly prohibited.</p>
+</footer>
+</body>
+</html>
