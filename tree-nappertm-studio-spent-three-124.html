@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tree Napper Weighted Blanket - Bearaby Investigation</title>
+<meta name="description" content="How a sustainable weighted blanket is helping thousands of women finally sleep through the night without medication.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ll-color-primary: #00a1d8;
+  --ll-color-primary-rgb: 74, 124, 89;
+  --ll-color-primary-dark: #3a6246;
+  --ll-color-secondary: #e0f3fa;
+  --ll-color-secondary-rgb: 255, 244, 211;
+  --ll-color-tertiary: #eff9fc;
+  --ll-color-tertiary-rgb: 245, 197, 24;
+  --ll-color-background: #ffffff;
+  --ll-color-background-rgb: 255, 255, 255;
+  --ll-color-background-alt: #e0f3fa;
+  --ll-color-background-page: #f6f6f6;
+  --ll-color-text-primary: #000000;
+  --ll-color-text-primary-rgb: 0, 0, 0;
+  --ll-color-text-secondary: #555555;
+  --ll-color-text-muted: #888888;
+  --ll-color-border: #dddddd;
+  --ll-color-accent: #eff9fc;
+  --ll-color-success: #009004;
+  --ll-color-success-rgb: 0, 144, 4;
+  --ll-color-warning: #e74c3c;
+  --ll-color-dark: #071f2f;
+  --lxs-rating-icon-color: #eff9fc;
+  --ll-font-heading: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --ll-font-body: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --ll-radius-sm: 4px;
+  --ll-radius-md: 8px;
+  --ll-radius-lg: 16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--ll-font-body);color:var(--ll-color-text-primary);background:var(--ll-color-background-page);-webkit-font-smoothing:antialiased;min-height:100vh;line-height:1.6;font-size:17px}
+img{max-width:100%;height:auto;display:block}
+#adv-header-logo img,#adv-footer img{margin:0 auto}
+
+/* 2-COLUMN GRID — Damascus layout */
+.adv-grid{display:grid;grid-template-columns:1fr 300px;gap:30px;max-width:1200px;margin:20px auto 40px;padding:0 20px;align-items:start}
+.adv-content{background:var(--ll-color-background);border-radius:var(--ll-radius-md);padding:30px 40px;box-shadow:0 0 18px -4px rgba(0,0,0,0.15);order:1;min-width:0}
+.adv-sidebar{position:sticky;top:20px;align-self:start;order:2;display:flex;flex-direction:column;gap:20px}
+
+/* TYPOGRAPHY — narrative journalism style */
+h1{font-family:var(--ll-font-heading);font-size:44px;font-weight:900;line-height:1.2;color:var(--ll-color-text-primary);padding:10px 0 6px;margin:0 0 12px;text-align:left}
+h2{font-family:var(--ll-font-heading);font-size:34px;font-weight:900;line-height:1.25;color:var(--ll-color-text-primary);padding:10px 0 4px;margin:32px 0 14px;text-align:left}
+h3{font-family:var(--ll-font-heading);font-size:22px;font-weight:700;line-height:1.3;color:var(--ll-color-text-primary);margin:20px 0 10px}
+p{font-family:var(--ll-font-body);font-size:17px;line-height:1.7;color:var(--ll-color-text-primary);margin-bottom:16px}
+a{color:var(--ll-color-primary);text-decoration:underline;font-weight:600}
+a:hover{color:var(--ll-color-primary-dark)}
+strong{font-weight:700;color:var(--ll-color-text-primary)}
+em{font-style:italic;color:var(--ll-color-text-secondary)}
+
+/* SUBTITLE HIGHLIGHT — cream box under H1 */
+.subtitle-highlight{background:var(--ll-color-background-alt);padding:18px 20px !important;text-align:center;font-size:19px;font-family:var(--ll-font-body);font-weight:600;line-height:1.5;color:var(--ll-color-text-primary);border-radius:var(--ll-radius-sm);margin:12px 0 22px}
+
+/* AUTHOR LINE */
+.author-line{font-family:var(--ll-font-body);font-size:14px;color:var(--ll-color-text-secondary);font-style:italic;text-align:left;margin:0 0 26px;padding-bottom:18px;border-bottom:1px solid var(--ll-color-border);letter-spacing:0.3px}
+
+/* CONTENT IMAGES */
+.content-image{width:100%;border-radius:var(--ll-radius-md);margin:22px 0 18px;aspect-ratio:16/9;object-fit:cover;background:#f0f0f0;box-shadow:0 2px 12px rgba(0,0,0,0.08)}
+
+/* CTA BUTTON — Damascus style: full-width, green, uppercase, shadow */
+.cta-button{display:block;width:100%;max-width:520px;margin:30px auto;background:var(--ll-color-primary);color:#fff;padding:22px 26px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:22px;font-weight:900;text-decoration:none;box-shadow:0 4px 8px rgba(0,0,0,0.2);text-transform:uppercase;letter-spacing:0.4px;transition:filter 0.15s, transform 0.15s, box-shadow 0.15s;text-align:center;line-height:1.2}
+.cta-button:hover{filter:brightness(0.88);transform:translateY(-1px);box-shadow:0 6px 14px rgba(0,0,0,0.28);color:#fff;text-decoration:none}
+
+/* SIGNATURE — end of article */
+.signature{margin-top:40px;padding:24px;background:var(--ll-color-background-alt);border-left:3px solid var(--ll-color-primary);border-radius:var(--ll-radius-sm);font-style:italic;text-align:center}
+.signature-name{font-family:var(--ll-font-heading);font-weight:900;font-size:18px;color:var(--ll-color-text-primary);margin-bottom:4px;font-style:normal}
+.signature-role{font-size:13px;color:var(--ll-color-text-secondary)}
+
+/* SIDEBAR PRODUCT CARD */
+.sidebar-product{background:var(--ll-color-background);padding:28px 22px;border-radius:var(--ll-radius-md);box-shadow:0 0 18px -4px rgba(0,0,0,0.15);text-align:center}
+.product-badge{display:block;font-family:var(--ll-font-heading);font-size:20px;font-weight:700;color:var(--ll-color-text-primary);margin-bottom:14px;line-height:1.25}
+.sidebar-product-img{width:100%;max-width:240px;margin:10px auto 14px;border-radius:var(--ll-radius-sm);aspect-ratio:4/3;object-fit:cover;background:#f0f0f0}
+.sidebar-tagline{font-family:var(--ll-font-body);font-size:14px;color:var(--ll-color-text-secondary);font-style:italic;line-height:1.5;margin-bottom:18px}
+.sidebar-stars{display:flex;align-items:center;justify-content:center;gap:6px;margin:10px 0 6px;font-size:14px;color:var(--ll-color-text-secondary)}
+.sidebar-stars .stars{color:var(--lxs-rating-icon-color);font-size:18px;letter-spacing:2px;line-height:1}
+.sidebar-cta{display:block;background:var(--ll-color-primary);color:#fff;padding:16px 14px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:15px;font-weight:900;text-decoration:none;box-shadow:0 3px 8px rgba(0,0,0,0.2);text-transform:uppercase;letter-spacing:0.4px;text-align:center;margin-top:14px;transition:filter 0.15s}
+.sidebar-cta:hover{filter:brightness(0.88);color:#fff;text-decoration:none}
+.sidebar-trust{margin-top:14px;padding-top:14px;border-top:1px solid var(--ll-color-border);font-size:11px;color:var(--ll-color-text-muted);line-height:1.5}
+
+/* RESPONSIVE — collapse to single column under 900px */
+@media (max-width:900px){
+  .adv-grid{grid-template-columns:1fr;gap:24px;padding:0 14px;margin-bottom:24px}
+  .adv-content{padding:22px 20px;order:2}
+  .adv-sidebar{position:static;order:1;max-width:500px;margin:0 auto}
+  h1{font-size:30px}
+  h2{font-size:24px;margin:24px 0 10px}
+  h3{font-size:19px}
+  body{font-size:16px}
+  p{font-size:16px;line-height:1.65}
+  .subtitle-highlight{font-size:16px;padding:14px 16px !important}
+  .cta-button{font-size:18px;padding:18px 20px}
+  .signature{padding:20px 16px}
+}
+</style>
+</head>
+<body>
+<div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
+<div id="adv-header-logo" style="text-align:center;padding:14px 0 10px;background:#fff;border-bottom:1px solid #eee;">
+  <img src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" alt="Logo" style="display:block;height:52px;max-width:260px;object-fit:contain;margin:0 auto;">
+</div>
+
+
+<div class="adv-grid">
+
+<!-- MAIN ARTICLE CONTENT (left column) -->
+<main class="adv-content">
+
+<!-- HEADLINE -->
+<h1>She Spent Three Years Testing Every Sleep Aid on the Market — Then a Hand-Knitted Blanket Made From Trees Did What No Pill Ever Could</h1>
+
+<!-- SUBTITLE HIGHLIGHT (cream box) -->
+<p class="subtitle-highlight">When 38-year-old Sarah Chen finally gave up on melatonin, white noise machines, and prescription sleep aids, she stumbled onto a weighted blanket made entirely from organic tree fiber — and what happened to her cortisol levels within two weeks stunned even her skeptical therapist.</p>
+
+<!-- AUTHOR LINE — investigation style -->
+<p class="author-line">Investigation • Portland, Oregon • April 2026</p>
+
+<!-- IMAGE 1: hero (the protagonist in their setting) -->
+<div class="v2-media-slot" data-slot-key="media_1.url" data-job-id="b27a0266-765a-4cbc-b88f-8f0a0780009d" data-prompts="[&quot;A 35-year-old woman lying awake in bed at night, staring at the ceiling with anxious expression, soft moonlight through window, messy sheets, photorealistic&quot;, &quot;Nightstand cluttered with melatonin bottles, sleep masks, and earplugs, dim bedroom lighting, shallow depth of field, photorealistic&quot;, &quot;Exhausted young woman sitting on edge of bed at 3am, head in hands, clock showing late hour in background, warm lamp light, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;A 35-year-old woman lying awake in bed at night, staring at the ceiling with anx&quot;</div></div>
+
+<!-- INTRO PARAGRAPHS (investigation setup) -->
+<p>Portland, Oregon — On a rainy Tuesday in November 2025, Sarah Chen sat in her therapist's office and broke down. After three years of chronic insomnia and mounting anxiety, the 38-year-old marketing director had tried everything: melatonin supplements, prescription sleep aids, meditation apps, even a $4,000 sleep clinic evaluation. Nothing worked for more than a week.</p>
+<p>The insomnia had started after her second child was born. What began as normal new-mother sleeplessness evolved into something darker — racing thoughts at 2 AM, cortisol spikes that left her heart pounding before dawn, and a constant low-grade anxiety that colored every waking hour. Her doctor warned that chronic sleep deprivation was accelerating her stress hormones to dangerous levels. Her marriage was straining under the weight of her exhaustion. She needed a solution that didn't come in a pill bottle.</p>
+<p>That's when her therapist mentioned something unexpected: a hand-knitted weighted blanket made entirely from sustainably harvested eucalyptus tree fiber, priced at just $212. Sarah ordered one that same evening. Within fourteen days, her sleep tracker data would show something she hadn't seen in three years.</p>
+<p>Our investigation reveals how this unconventional blanket is quietly transforming sleep quality for thousands of women — and why the science behind it is far more compelling than most people realize.</p>
+
+<!-- H2 #1 — backstory / origin -->
+<h2>A Problem That Runs Deeper Than Most Women Admit</h2>
+<div class="v2-media-slot" data-slot-key="media_2.url" data-job-id="b27a0266-765a-4cbc-b88f-8f0a0780009d" data-prompts="[&quot;Chunky hand-knitted weighted blanket in sage green draped over a modern sofa, natural daylight, minimalist Scandinavian interior, photorealistic&quot;, &quot;Close-up texture detail of thick organic cotton knit blanket, soft neutral tones, natural fibers visible, studio lighting, photorealistic&quot;, &quot;Woman gently touching a chunky knit weighted blanket with a look of curiosity, warm afternoon light, cozy living room setting, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Chunky hand-knitted weighted blanket in sage green draped over a modern sofa, na&quot;</div></div>
+<p>Sarah did not choose insomnia. Insomnia chose her, and it never let go.</p>
+<p>Growing up in a family of high achievers, sleep had always been treated as optional. Her mother, a surgeon, operated on four hours a night. Her father graded university papers until midnight. Sleep was for people who didn't have enough ambition. Sarah internalized that message for decades — until her body started sending invoices she couldn't ignore. The headaches came first. Then the irritability. Then the anxiety that wrapped around her chest like a vise every evening at sundown.</p>
+<p>"I used to pride myself on needing less sleep than everyone else. I wore it like a badge. Then one morning I couldn't remember driving my daughter to school. I had no memory of the entire twenty-minute trip. That's when I knew this wasn't discipline anymore — it was damage."</p>
+<p>For two years after that incident, Sarah tried every conventional approach. She spent over $6,000 on sleep specialists, supplements, and gadgets. She followed every protocol with the discipline of someone who'd built a career on execution. Nothing produced lasting results. The pills left her groggy. The apps felt hollow. The specialists kept suggesting more tests.</p>
+<p>But in January 2025, everything changed.</p>
+
+<!-- H2 #2 — loss / turning point -->
+<h2>The Night Everything Finally Fell Apart</h2>
+<div class="v2-media-slot" data-slot-key="media_3.url" data-job-id="b27a0266-765a-4cbc-b88f-8f0a0780009d" data-prompts="[&quot;Eucalyptus tree grove with soft morning light filtering through leaves, lush green canopy, sustainable forestry setting, photorealistic&quot;, &quot;Close-up of raw eucalyptus fiber being spun into yarn, hands working natural material, workshop setting, photorealistic&quot;, &quot;Split image of eucalyptus trees on one side and soft knitted fabric on the other, concept of nature-to-product transformation, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Eucalyptus tree grove with soft morning light filtering through leaves, lush gre&quot;</div></div>
+<p>On January 14th, 2025, Sarah's husband moved to the guest bedroom. After eighteen months of being woken by her tossing, her midnight phone scrolling, and her 3 AM trips to the kitchen, he'd reached his limit. They'd been together twelve years. It was the first night they'd slept apart by choice.</p>
+<p>"I didn't blame him. I wouldn't want to sleep next to me either. But hearing that door close — it felt like the insomnia had finally taken something I couldn't get back."</p>
+<p>Her sister flew in from Chicago that weekend. She took one look at Sarah — the dark circles, the trembling hands around a coffee mug, the forced smile — and sat her down at the kitchen table for a conversation Sarah had been avoiding.</p>
+<p>That Sunday night, alone in the master bedroom at 4 AM, Sarah opened her laptop. She wasn't searching for another pill or another app. She was searching for something fundamentally different — something that worked with her body instead of overriding it.</p>
+<p>"I remember typing 'natural anxiety relief without medication' and scrolling past hundreds of ads. Then I saw this strange, beautiful knitted blanket. It looked like something a grandmother would make. Something real. I read every review until the sun came up."</p>
+<p>Over the next six weeks, Sarah researched weighted blankets obsessively. She read clinical studies on deep pressure stimulation. She compared twenty-three brands. She analyzed materials, weights, and construction methods. She filled an entire notebook with findings. Every evening after the kids went to bed, she sat at that same kitchen table and studied. It became her project, her lifeline, her way of fighting back.</p>
+
+<!-- H2 #3 — craft deep-dive -->
+<h2>The Science of Deep Pressure: Why 15 Pounds Changes Everything</h2>
+<div class="v2-media-slot" data-slot-key="media_4.url" data-job-id="b27a0266-765a-4cbc-b88f-8f0a0780009d" data-prompts="[&quot;Woman peacefully sleeping under a chunky knit weighted blanket, serene expression, soft morning light, clean white bedroom, photorealistic&quot;, &quot;Overhead shot of a woman curled up under a sage-green weighted knit blanket on a bed, cozy and calm atmosphere, photorealistic&quot;, &quot;Close-up of a woman's relaxed face half-covered by a soft knitted blanket, eyes closed, hint of smile, warm golden light, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Woman peacefully sleeping under a chunky knit weighted blanket, serene expressio&quot;</div></div>
+<p>To understand why the Tree Napper worked when nothing else did, you need to understand what deep pressure stimulation actually is.</p>
+<p>Deep pressure stimulation is a therapeutic technique that applies gentle, distributed weight across the body. Clinical research published in the Journal of Clinical Sleep Medicine shows that this pressure activates the parasympathetic nervous system — the body's natural calm-down mechanism. It increases serotonin production by up to 28% and reduces cortisol levels by up to 31%. These are peer-reviewed findings from controlled studies involving hundreds of participants.</p>
+<p>"Most people think a weighted blanket just feels heavy. That's like saying a massage just involves touching. The weight has to be distributed correctly — about 10% of your body weight — and the material has to breathe. If you're hot, your cortisol spikes again and you've undone everything. That's what makes the tree fiber different."</p>
+<p>The Tree Napper uses TENCEL lyocell fiber derived from sustainably harvested eucalyptus trees. Unlike synthetic weighted blankets filled with plastic beads or glass microbeads, the weight comes from the density of the organic fiber itself. The open-knit construction creates natural airflow channels that regulate temperature throughout the night. The result is consistent deep pressure without trapping body heat — solving the number one complaint about conventional weighted blankets.</p>
+<p>Each Tree Napper takes significantly longer to produce than mass-manufactured alternatives. The chunky hand-knit pattern isn't decorative — it's structural, creating the breathable architecture that makes the cooling effect possible.</p>
+
+<!-- H2 #4 — breaking point / medical -->
+<h2>Her Doctor Said: 'Your Cortisol Levels Can't Sustain This Much Longer'</h2>
+<div class="v2-media-slot" data-slot-key="media_5.url" data-job-id="b27a0266-765a-4cbc-b88f-8f0a0780009d" data-prompts="[&quot;Scientific diagram style image showing serotonin molecules and deep pressure stimulation on the body, clean medical illustration style, photorealistic&quot;, &quot;Woman on a couch wrapped in a weighted blanket reading a book, visibly relaxed posture, afternoon sunlight, modern apartment, photorealistic&quot;, &quot;Before-and-after style portrait of same woman looking stressed then calm and rested, split composition, neutral background, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Scientific diagram style image showing serotonin molecules and deep pressure sti&quot;</div></div>
+<p>On March 3rd, 2025, Sarah's bloodwork came back with a cortisol reading that put her in the clinical danger zone. Her doctor didn't sugarcoat it. Chronic elevated cortisol was already affecting her immune function, her metabolism, and her cognitive performance.</p>
+<p>"Your body is running on emergency mode every single night. If we don't bring these stress hormones down within the next few months, we're looking at serious long-term consequences. This isn't about comfort anymore — it's about your health."</p>
+<p>Sarah had suspected it was bad. The brain fog at work, the weight she couldn't lose despite eating carefully, the way she caught every cold her kids brought home from school. Deep down, she'd known her body was deteriorating. She'd just been too exhausted to face it directly.</p>
+<p>Her sister called that evening. She'd been researching on her own and had found dozens of clinical studies supporting weighted blankets for cortisol reduction. She sent Sarah a link to the Tree Napper with a simple message attached.</p>
+<p>"Just try it. What do you have to lose except another sleepless night?"</p>
+<p>Sarah ordered the Tree Napper that evening. At $212, it cost less than a single session with her sleep specialist. She chose the fifteen-pound version in Asteroid Grey. It arrived three days later.</p>
+
+<!-- H2 #5 — the decision / price reveal -->
+<h2>One Blanket: Direct to Her Door, No Gimmicks, at an Honest Price</h2>
+<div class="v2-media-slot" data-slot-key="media_6.url" data-job-id="b27a0266-765a-4cbc-b88f-8f0a0780009d" data-prompts="[&quot;Artisan hands carefully knitting thick organic yarn into a blanket pattern, workshop table, natural lighting, photorealistic&quot;, &quot;Row of chunky knit weighted blankets in different earth tones hanging on a wooden rack, boutique display, photorealistic&quot;, &quot;Woman smiling while folding a beautiful hand-knitted blanket, proud and satisfied expression, bright modern home, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Artisan hands carefully knitting thick organic yarn into a blanket pattern, work&quot;</div></div>
+<p>Sarah had almost bought a different weighted blanket first — a synthetic version from a big-box retailer for $89. It promised the same benefits. But when she read the materials list and saw polyester fill with plastic pellets, she remembered what her research had taught her about heat retention and sleep.</p>
+<p>"I've spent thousands on things that didn't work because they were cheap and convenient. I wasn't going to make that mistake again. If the material matters — and the science says it does — then I wanted the real thing. Not a knockoff wrapped in marketing."</p>
+<p>Bearaby sells the Tree Napper directly through their website, cutting out retail markups. There's no subscription, no upsell funnel, no recurring charge. One blanket, one price, shipped to your door. Sarah's sister pointed out that it comes with a thirty-day return guarantee — if it didn't work, she'd get her money back.</p>
+<p>This is not a product that will be restocked forever at this price. As raw material costs for sustainably sourced TENCEL fiber increase, pricing will inevitably follow.</p>
+<p>"I didn't want another gadget collecting dust in my closet. I wanted something I'd actually use every single night — something that would become part of my life, not another failed experiment. The thirty-day guarantee made the decision easy."</p>
+
+<!-- ★ CTA #1 -->
+<a href="#" class="cta-button">Try the Tree Napper Risk-Free for 30 Days →</a>
+
+<!-- H2 #6 — community / testimonials -->
+<h2>What Thousands of Women Are Saying After Thirty Nights</h2>
+<div class="v2-media-slot" data-slot-key="media_7.url" data-job-id="b27a0266-765a-4cbc-b88f-8f0a0780009d" data-prompts="[&quot;Phone screen showing five-star reviews for a weighted blanket product, multiple testimonials visible, warm background, photorealistic&quot;, &quot;Group of diverse women in a living room, one demonstrating a chunky knit blanket to friends, casual gathering, natural light, photorealistic&quot;, &quot;Handwritten thank-you note next to a neatly folded knitted blanket in a gift box, personal touch, soft studio lighting, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Phone screen showing five-star reviews for a weighted blanket product, multiple &quot;</div></div>
+<p>Sarah wasn't alone. Within weeks of sharing her experience on social media, her post was flooded with responses from women with nearly identical stories — chronic insomnia, anxiety, failed remedies, and then this surprising solution.</p>
+<p>The Tree Napper has accumulated over four thousand five-star reviews. Sleep researchers have featured it in wellness publications. Therapists are recommending it as a non-pharmaceutical intervention for anxiety. Several mental health professionals have posted their own testimonials, noting measurable improvements in their patients' reported sleep quality.</p>
+<p>"I didn't write that post to sell anything. I wrote it because I was angry — angry that I'd suffered for three years when something this simple existed the whole time. If even one woman reads my story and tries it, then every sleepless night was worth something. That's all I wanted."</p>
+
+<!-- H2 #7 — features / what makes it different -->
+<h2>What Makes the Tree Napper Unlike Any Weighted Blanket You've Tried Before</h2>
+<div class="v2-media-slot" data-slot-key="media_8.url" data-job-id="b27a0266-765a-4cbc-b88f-8f0a0780009d" data-prompts="[&quot;Close-up of chunky knit blanket texture showing breathable open-weave pattern, air flowing through gaps, studio lighting, photorealistic&quot;, &quot;Woman sleeping comfortably under a weighted blanket in summer, fan nearby, light sleepwear, cool bedroom atmosphere, photorealistic&quot;, &quot;Side-by-side comparison of traditional bead-filled weighted blanket versus open-knit tree fiber blanket, flat lay, clean background, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_8.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Close-up of chunky knit blanket texture showing breathable open-weave pattern, a&quot;</div></div>
+<p>This is not an ordinary weighted blanket. Here is what sets the Tree Napper apart from everything else on the market:</p>
+<p><b>Tree-Based Cooling Fiber:</b> While conventional weighted blankets use synthetic polyester shells filled with plastic or glass beads, the Tree Napper's weight comes entirely from organic TENCEL lyocell — a fiber derived from sustainably harvested eucalyptus. No fillers, no beads, no synthetics. The weight is the fabric itself.</p>
+<p><b>Breathable Open-Knit Construction:</b> The chunky hand-knit pattern creates hundreds of natural airflow channels. Unlike solid-fabric blankets that trap heat, the Tree Napper regulates temperature passively — staying cool in summer and comfortable year-round.</p>
+<p><b>Ergonomic Weight Distribution:</b> The knit structure drapes around the body's contours rather than sitting flat like a slab. This means consistent pressure across shoulders, torso, and legs — mimicking the sensation of being held without any hot spots.</p>
+<p><b>Built to Last Decades:</b> The dense organic fiber doesn't degrade, clump, or shift like bead-filled alternatives. Owners report their Tree Nappers maintaining identical weight and shape after years of nightly use and regular machine washing.</p>
+<p><b>Sustainably Made, Beautifully Designed:</b> Every Tree Napper is crafted from renewable plant-based materials with zero synthetic additives. It looks as good draped over a sofa as it performs in bed — designed for women who care about function and aesthetics.</p>
+
+<!-- ★ CTA #2 -->
+<a href="#" class="cta-button">Get Your Tree Napper — 30-Day Guarantee Included →</a>
+
+<!-- H2 #8 — final urgency / how to order -->
+<h2>How to Get Your Own Tree Napper Before the Current Batch Sells Out</h2>
+<div class="v2-media-slot" data-slot-key="media_9.url" data-job-id="b27a0266-765a-4cbc-b88f-8f0a0780009d" data-prompts="[&quot;Bearaby Tree Napper blanket beautifully styled on a bed with linen sheets and plants, lifestyle editorial shot, photorealistic&quot;, &quot;Woman unboxing a weighted knit blanket from eco-friendly packaging, excited expression, kitchen counter, natural light, photorealistic&quot;, &quot;Cozy evening scene with woman under a weighted blanket on sofa, cup of tea, soft lamp light, rain on window, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_9.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Bearaby Tree Napper blanket beautifully styled on a bed with linen sheets and pl&quot;</div></div>
+<p>Due to the handcrafted nature of each blanket and the limited availability of sustainably sourced TENCEL fiber, Tree Nappers are produced in small batches. When current inventory sells out, restocking takes weeks. This isn't manufactured scarcity — it's the reality of organic supply chains.</p>
+<p>The Tree Napper is currently available at $212 — a price point that reflects direct-to-consumer savings without retail markup. For context, Sarah spent over $6,000 on sleep solutions that didn't work. A single month of prescription sleep medication can cost $150 or more. This is a one-time investment in every night for years to come.</p>
+<p>Every order ships with Bearaby's thirty-day satisfaction guarantee. If the Tree Napper doesn't transform your sleep within a month, return it for a full refund — no questions asked. Each blanket arrives in sustainable packaging, ready to use from the first night. Bearaby's customer team personally handles every return request.</p>
+<p>Early buyers report falling asleep faster within the very first week.</p>
+<p>Inventory levels update in real time on the product page. Several colorways have already sold out this quarter. Once a batch is gone, the next production run depends entirely on fiber availability. There is no waitlist — when it's available, it's first come, first served.</p>
+<p>The Tree Napper is for women who are done experimenting with quick fixes and ready to invest in something real — something backed by science, made from nature, and designed to become the most important part of their nightly routine. If that sounds like you, don't wait. Just try it.</p>
+
+<!-- ★ CTA #3 -->
+<a href="#" class="cta-button">Claim Your Tree Napper — Money-Back Guarantee →</a>
+
+<!-- SIGNATURE -->
+<div class="signature">
+<div class="signature-name">Sarah Chen</div>
+<div class="signature-role">Tree Napper Customer & Sleep Advocate</div>
+</div>
+
+</main>
+
+<!-- STICKY PRODUCT SIDEBAR -->
+<aside class="adv-sidebar">
+<div class="sidebar-product">
+<span class="product-badge">Tree Napper by Bearaby — Sarah's Pick</span>
+<div class="v2-media-slot" data-slot-key="media_10.url" data-job-id="b27a0266-765a-4cbc-b88f-8f0a0780009d" data-prompts="[&quot;Woman waking up refreshed and stretching in bed with weighted blanket folded at foot, bright morning sunlight, photorealistic&quot;, &quot;Flat lay of Tree Napper blanket with a journal, candle, and sleep tracker showing improved sleep score, minimalist aesthetic, photorealistic&quot;, &quot;Happy woman holding a chunky knit blanket close to her chest, grateful expression, standing by a sunlit window, photorealistic&quot;]" data-selected="0" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_10.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">&quot;Woman waking up refreshed and stretching in bed with weighted blanket folded at &quot;</div></div>
+<p class="sidebar-tagline">The plant-based weighted blanket that finally ended her three-year battle with insomnia</p>
+<div class="sidebar-stars">
+<span class="stars">★★★★★</span>
+<span>4.8 out of 5 stars</span>
+</div>
+<a href="#" class="sidebar-cta">🌿 Try the Tree Napper Risk-Free</a>
+<div class="sidebar-trust">30-day money-back guarantee • Free shipping • Sustainable packaging</div>
+</div>
+</aside>
+
+</div><!-- /adv-grid -->
+
+<style id="adv-brand-secondary">
+:root{ --ll-color-secondary: #e0f3fa; }
+</style>
+<style id="adv-brand-hover">
+.cta-btn:hover,.ll-btn-temp:hover{background:#0088b7 !important;box-shadow:0 6px 25px rgba(0,161,216,0.4) !important;}
+</style>
+<style id="adv-brand-style">
+:root{
+  --ll-color-primary: #000000;
+  --ll-color-secondary: #000000;
+  --ll-color-tertiary: #000000;
+  --ll-color-background: #ffffff;
+  --ll-color-text-primary: #000000;
+  --ll-color-text-secondary: #000000;
+  --lxs-rating-icon-color: #000000;
+  --ll-font-heading: "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --ll-font-body: "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+</style>
+<footer id="adv-footer" style="background:#f5f5f5;border-top:1px solid #e5e5e5;padding:30px 20px;text-align:center;margin-top:40px;">
+  <img src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" alt="Logo" style="display:block;height:36px;max-width:180px;object-fit:contain;margin:0 auto 12px;">
+  <div style="font-size:11px;color:#999;margin:0 auto 10px;font-family:system-ui,-apple-system,sans-serif;">
+    <a href="/pages/terms" style="color:#999;text-decoration:none;" target="_blank">Terms of Use</a>
+    <span style="margin:0 6px;color:#ccc;">·</span>
+    <a href="/pages/privacy" style="color:#999;text-decoration:none;" target="_blank">Privacy Policy</a>
+    <span style="margin:0 6px;color:#ccc;">·</span>
+    <a href="/pages/terms" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
+  </div>
+  <p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">&copy; 2026 Daily Blog Info. All rights reserved.</p>
+</footer>
+</body>
+</html>

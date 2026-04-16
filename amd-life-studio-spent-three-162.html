@@ -1,0 +1,594 @@
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>How I Got My Back and My Life Back After 63</title>
+<meta content="A retired teacher from Columbus shares how chronic lower back pain stole her independence and family moments, and the unexpected device that helped her reclaim both." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ll-color-primary: #1a6cb8;
+  --ll-color-primary-rgb: 26, 108, 184;
+  --ll-color-primary-dark: #135390;
+  --ll-color-secondary: #eaf3fb;
+  --ll-color-secondary-rgb: 234, 243, 251;
+  --ll-color-tertiary: #f4b400;
+  --ll-color-background: #ffffff;
+  --ll-color-background-rgb: 255, 255, 255;
+  --ll-color-background-alt: #f8f9fa;
+  --ll-color-text-primary: #1a1a1a;
+  --ll-color-text-primary-rgb: 26, 26, 26;
+  --ll-color-text-secondary: #444444;
+  --ll-color-muted: #777777;
+  --ll-color-border: #e6e6e6;
+  --lxs-rating-icon-color: #f5c518;
+  --ll-font-heading: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --ll-font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--ll-font-body);color:var(--ll-color-text-primary);background:var(--ll-color-background);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto}
+a{color:var(--ll-color-primary);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── Article layout: 2 columns on desktop, stacked on mobile ───── */
+.article-wrap{max-width:1160px;margin:0 auto;padding:26px 24px 60px;display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:46px;align-items:flex-start}
+.article-col{min-width:0}
+.sidebar-col{min-width:0}
+.sticky-product{position:sticky;top:24px}
+@media (max-width:900px){
+  .article-wrap{grid-template-columns:1fr;padding:18px 16px 40px;gap:28px}
+  .sticky-product{position:static}
+}
+
+.breadcrumb{font-size:13px;color:var(--ll-color-muted);margin:6px 0 8px}
+.breadcrumb a{color:var(--ll-color-muted)}
+.breadcrumb-sep{margin:0 6px;color:var(--ll-color-border)}
+h1.article-headline{font-family:var(--ll-font-heading);font-weight:900;font-size:42px;line-height:1.15;margin:6px 0 14px;letter-spacing:-0.8px;color:var(--ll-color-text-primary)}
+@media (max-width:640px){h1.article-headline{font-size:30px;line-height:1.2}}
+.article-dek{font-family:var(--ll-font-heading);font-weight:700;font-size:22px;line-height:1.35;color:var(--ll-color-text-secondary);margin:0 0 22px}
+@media (max-width:640px){.article-dek{font-size:18px}}
+
+.hero-media{margin:18px 0 14px;border-radius:8px;overflow:hidden;background:var(--ll-color-background-alt)}
+.hero-media img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+
+.article-byline{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:14px 0;border-top:1px solid var(--ll-color-border);border-bottom:1px solid var(--ll-color-border);margin:12px 0 24px;font-size:13px;color:var(--ll-color-muted)}
+.article-byline .byline-date{font-weight:500}
+.article-byline .byline-author{font-weight:700;color:var(--ll-color-text-primary)}
+.article-byline .byline-sponsor{margin-left:auto;padding:4px 10px;border:1px solid var(--ll-color-border);border-radius:4px;font-size:11px;letter-spacing:0.8px;text-transform:uppercase;color:var(--ll-color-muted);font-weight:700}
+
+/* ── Article body prose ────────────────────────────────────────── */
+.article-body p{margin:0 0 18px;font-size:17px;line-height:1.7;color:var(--ll-color-text-primary)}
+.article-body p strong{font-weight:700;color:var(--ll-color-text-primary)}
+.article-body h2{font-family:var(--ll-font-heading);font-weight:900;font-size:28px;line-height:1.25;margin:38px 0 16px;color:var(--ll-color-text-primary);letter-spacing:-0.3px}
+.article-body h3{font-family:var(--ll-font-heading);font-weight:800;font-size:22px;line-height:1.3;margin:26px 0 12px;color:var(--ll-color-text-primary)}
+@media (max-width:640px){.article-body h2{font-size:24px}.article-body h3{font-size:19px}}
+
+.article-media{margin:22px 0;border-radius:8px;overflow:hidden;background:var(--ll-color-background-alt)}
+.article-media img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.article-media.narrow img{aspect-ratio:4/3}
+.article-media figcaption{padding:8px 12px;font-size:13px;color:var(--ll-color-muted);font-style:italic;text-align:center}
+
+/* Problem bullet list */
+.problem-list{list-style:none;padding:18px 22px;margin:18px 0 22px;border-left:3px solid var(--ll-color-primary);background:#f7f7f8;border:1px solid #e5e5e5;border-left:4px solid var(--ll-color-primary);border-radius:0 8px 8px 0}
+.problem-list li{padding:6px 0;font-size:17px;font-weight:600;color:#111}
+.problem-list li::before{content:"→ ";color:var(--ll-color-primary);font-weight:900;margin-right:6px}
+
+/* 4 types educational block */
+.types-block{background:var(--ll-color-background-alt);border-radius:10px;padding:24px 24px 8px;margin:22px 0}
+.types-block h2{margin-top:0}
+.types-list{list-style:none;padding:0;margin:14px 0 0}
+.types-list li{padding:14px 0;border-top:1px solid var(--ll-color-border)}
+.types-list li:first-child{border-top:none}
+.types-list .type-title{display:block;font-weight:800;font-size:16px;color:var(--ll-color-primary);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.8px}
+.types-list .type-text{font-size:16px;color:var(--ll-color-text-secondary);line-height:1.6}
+
+/* 6 Reasons */
+.reason{margin:32px 0;padding-top:28px;border-top:1px solid var(--ll-color-border)}
+.reason:first-of-type{border-top:none;padding-top:0}
+.reason-num{display:inline-block;font-family:var(--ll-font-heading);font-weight:900;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ll-color-primary);margin-bottom:6px}
+.reason h3{margin-top:4px}
+.reason .reason-img{margin:14px 0 18px;border-radius:8px;overflow:hidden;background:var(--ll-color-background-alt)}
+.reason .reason-img img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.reason p{margin:0 0 14px}
+
+/* In-article CTA */
+.cta-block{text-align:center;margin:36px 0}
+.cta-btn{display:inline-block;background:var(--ll-color-primary);color:#ffffff;font-family:var(--ll-font-heading);font-weight:800;font-size:18px;letter-spacing:0.3px;padding:18px 36px;border-radius:8px;box-shadow:0 6px 18px rgba(var(--ll-color-primary-rgb),0.28);transition:transform 0.15s ease,filter 0.15s ease;border:none;cursor:pointer;text-decoration:none}
+.cta-btn:hover{filter:brightness(0.9);text-decoration:none;color:#fff;transform:translateY(-1px)}
+.cta-btn .arrow{display:inline-block;margin-left:8px;transform:translateY(-1px)}
+.cta-sub{display:block;margin-top:10px;font-size:13px;color:var(--ll-color-muted);letter-spacing:0.3px}
+
+/* Signature after article */
+.article-signature{margin:26px 0 10px;padding:18px 0;border-top:1px solid var(--ll-color-border);font-size:14px;color:var(--ll-color-muted);font-style:italic}
+.article-signature strong{font-style:normal;color:var(--ll-color-text-primary);font-weight:700}
+
+/* ── Sticky sidebar product card ──────────────────────────────── */
+.sticky-product{background:#fff;border:2px solid var(--ll-color-primary);border-radius:14px;padding:22px 20px;box-shadow:0 6px 24px rgba(0,0,0,0.08);text-align:center}
+.sticky-product-media{margin:4px 0 14px;border-radius:10px;overflow:hidden;background:var(--ll-color-background-alt);aspect-ratio:1/1}
+.sticky-product-media img{display:block;width:100%;height:100%;object-fit:cover}
+.sticky-product-name{font-family:var(--ll-font-heading);font-weight:900;font-size:22px;line-height:1.2;margin:4px 0 6px;color:var(--ll-color-text-primary)}
+.sticky-product-tagline{font-size:13px;color:var(--ll-color-text-secondary);margin:0 0 12px;line-height:1.45}
+.sticky-product-rating{display:flex;align-items:center;justify-content:center;gap:8px;margin:8px 0 16px;font-size:13px;color:var(--ll-color-muted)}
+.sticky-product-rating .stars{font-size:16px;color:var(--lxs-rating-icon-color);letter-spacing:1px}
+.sticky-product-rating .rating-score{font-weight:800;color:var(--ll-color-text-primary)}
+.sticky-product .cta-btn{display:block;width:100%;font-size:16px;padding:15px 14px;text-align:center;margin:2px 0 12px}
+.sticky-product-badges{display:flex;flex-direction:column;gap:8px;margin:10px 0 0;padding-top:12px;border-top:1px dashed rgba(var(--ll-color-primary-rgb),0.28);text-align:left}
+.sticky-product-badge-item{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--ll-color-text-secondary)}
+.sticky-product-badge-item::before{content:"✓";color:var(--ll-color-primary);font-weight:900;font-size:13px;flex-shrink:0}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+</style>
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 1; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "wb35vpdfk1");
+</script>
+<meta content="sec-ch-ua https://methickpalued.com; sec-ch-ua-mobile https://methickpalued.com; sec-ch-ua-arch https://methickpalued.com; sec-ch-ua-model https://methickpalued.com; sec-ch-ua-platform https://methickpalued.com; sec-ch-ua-platform-version https://methickpalued.com; sec-ch-ua-bitness https://methickpalued.com; sec-ch-ua-full-version-list https://methickpalued.com; sec-ch-ua-full-version https://methickpalued.com" http-equiv="delegate-ch"/><style>.dtpcnt{opacity: 0;}</style>
+<script>
+ (function(e,d,k,n,u,v,g,w,C,f,p,x,D,c,q,r,h,t,y,G,z){function A(){for(var a=d.querySelectorAll(".dtpcnt"),b=0,l=a.length;b<l;b++)a[b][w]=a[b][w].replace(/(^|\s+)dtpcnt($|\s+)/g,"")}function E(a,b,l,F){var m=new Date;m.setTime(m.getTime()+(F||864E5));d.cookie=a+"="+b+"; "+l+"samesite=Strict; expires="+m.toGMTString()+"; path=/";k.setItem(a,b);k.setItem(a+"-expires",m.getTime())}function B(a){var b=d.cookie.match(new RegExp("(^| )"+a+"=([^;]+)"));return b?b.pop():k.getItem(a+"-expires")&&+k.getItem(a+
+"-expires")>(new Date).getTime()?k.getItem(a):null}z="https:"===e.location.protocol?"secure; ":"";e[f]||(e[f]=function(){(e[f].q=e[f].q||[]).push(arguments)},r=d[u],d[u]=function(){r&&r.apply(this,arguments);if(e[f]&&!e[f].hasOwnProperty("params")&&/loaded|interactive|complete/.test(d.readyState))for(;c=d[v][p++];)/\/?click\/?($|(\/[0-9]+)?$)/.test(c.pathname)&&(c[g]="javascrip"+e.postMessage.toString().slice(4,5)+":"+f+'.'+'l="'+c[g]+'",void 0')},setTimeout(function(){(t=RegExp("[?&]cpid(=([^&#]*)|&|#|$)").exec(e.location.href))&&
+t[2]&&(h=t[2],y=B("vl-"+h));var a=B("vl-cep"),b=location[g];if("savedCep"===D&&a&&(!h||"undefined"===typeof h)&&0>b.indexOf("cep=")){var l=-1<b.indexOf("?")?"&":"?";b+=l+a}c=d.createElement("script");q=d.scripts[0];c.defer=1;c.src=x+(-1===x.indexOf("?")?"?":"&")+"lpref="+n(d.referrer)+"&lpurl="+n(b)+"&lpt="+n(d.title)+"&vtm="+(new Date).getTime()+(y?"&uw=no":"");c[C]=function(){for(p=0;c=d[v][p++];)/dtpCallback\.l/.test(c[g])&&(c[g]=decodeURIComponent(c[g]).match(/dtpCallback\.l="([^"]+)/)[1]);A()};
+q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(window,document,localStorage,encodeURIComponent,"onreadystatechange","links","href","className","onerror","dtpCallback",0,"https://methickpalued.com/d/.js","savedCep");
+</script>
+<noscript><link href="https://methickpalued.com/d/.js?noscript=true&amp;lpurl=" rel="stylesheet"/></noscript>
+</head>
+<body>
+<div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
+<div id="adv-header-logo" style="text-align:center;padding:14px 0 10px;background:#fff;border-bottom:1px solid #eee;">
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="display:block;height:52px;max-width:260px;object-fit:contain;margin:0 auto;"/>
+</div>
+<div class="article-wrap">
+<main class="article-col">
+<!-- BREADCRUMB -->
+<nav class="breadcrumb">
+<a href="#"><span>Home</span></a><span class="breadcrumb-sep">›</span>
+<a href="#"><span>Trending</span></a><span class="breadcrumb-sep">›</span>
+<a href="#"><span>Back Pain Relief</span></a>
+</nav>
+<!-- HEADLINE AREA -->
+<h1 class="article-headline" style="position: relative;">I Spent Three Years Unable to Pick Up My Grandson Before Finding What Actually Worked</h1>
+<p class="article-dek" style="position: relative;">A retired teacher's back pain took away her garden, her Sunday dinners, and nearly her independence — until one conversation changed everything.</p>
+<!-- HERO IMAGE -->
+<figure class="hero-media">
+<div class="v2-media-slot" data-job-id="048be497-cda4-43be-9489-a5520872f05f" data-prompts="[&quot;A 63-year-old woman standing at the edge of a backyard garden in Columbus Ohio, hand on her lower back, looking at overgrown raised beds with weeds, soft afternoon light, photorealistic&quot;, &quot;A grandmother sitting on a kitchen chair watching a birthday party through a window, expression of longing and sadness, warm indoor lighting, photorealistic&quot;, &quot;Close-up of a retired woman's face showing a mix of pain and determination, silver hair, natural wrinkles, soft natural light, photorealistic&quot;]" data-selected="0" data-slot-key="media.hero" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.hero</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A 63-year-old woman standing at the edge of a backyard garden in Columbus Ohio, "</div></div>
+</figure>
+<!-- BYLINE -->
+<div class="article-byline">
+<span class="byline-date">April 12, 2026</span>
+<span>by <span class="byline-author">Linda Moretti</span></span>
+<span class="byline-sponsor">Sponsored</span>
+</div>
+<!-- ARTICLE BODY -->
+<section class="article-body">
+<p style="position: relative;">The moment I knew something had to change wasn't in a doctor's office. It was at my grandson Nicky's fourth birthday party. He came running toward me, arms wide open, and I had to ask my daughter to pick him up instead. I couldn't bend. I couldn't lift him. I just stood there, smiling through it, pretending everything was fine.</p>
+<p style="position: relative;">That wasn't the first thing back pain took from me. My raised-bed garden had gone completely to weeds. I stopped hosting Sunday dinners because standing at the stove left me in tears. I'd quit volunteering at the school where I'd taught for thirty years. Every week, my world got a little smaller. And every week, I told myself it was just part of getting older.</p>
+<ul class="problem-list">
+<li style="position: relative;">Can't bend down without bracing yourself</li>
+<li style="position: relative;">Avoiding activities you used to love</li>
+<li style="position: relative;">Dreading the words 'surgical option'</li>
+</ul>
+<p style="position: relative;">If you've ever had to rearrange your entire life around a back that won't cooperate, you know exactly what I mean. Millions of us are quietly giving up the things we love, one activity at a time.</p>
+<h2 style="position: relative;">How Three Years of Pain Changed Everything</h2>
+<p style="position: relative;">It started when I was sixty. I'd been retired for two years, finally free to spend mornings in the garden and afternoons with Nicky. Then one morning I bent to pull a weed and felt something seize in my lower back. The doctor said it was degenerative disc disease. He said it would likely get worse. He was right.</p>
+<p style="position: relative;">Within a year, I couldn't stand long enough to cook a full meal. Sunday dinners became something my daughter hosted instead. I stopped driving to the park with Nicky because getting in and out of the car made me wince. My husband started doing the grocery shopping alone. I hated needing help with things I'd done my whole life. The worst part wasn't the pain itself — it was watching myself become someone who sat on the sidelines of her own family.</p>
+<p style="position: relative;">I tried everything. Two years of chiropractors and physical therapy gave me a day or two of relief at best. I bought two different TENS units that did nothing lasting. When my orthopedist started talking about surgical options, I felt the ground shift. I wasn't ready for that. So I started looking for something — anything — I might have missed.</p>
+<div class="types-block">
+<h2 style="position: relative;">Four Common Causes of Chronic Lower Back Pain</h2>
+<p style="position: relative;">Before I found what worked, I had to understand what was actually happening in my back. My physical therapist explained that chronic lower back pain usually falls into one of four categories — and most treatments only address the symptoms, not the root cause.</p>
+<figure class="article-media narrow">
+<div class="v2-media-slot" data-job-id="048be497-cda4-43be-9489-a5520872f05f" data-prompts="[&quot;Medical illustration style diagram showing four areas of the lower spine affected by different back pain conditions, clean white background, educational infographic style, photorealistic&quot;, &quot;Side view of a woman's lower back with highlighted pain zones along the lumbar spine, anatomical overlay on real photograph, photorealistic&quot;, &quot;A 60-year-old woman consulting with a doctor who points to a spine model, warm office lighting, photorealistic&quot;]" data-selected="0" data-slot-key="media.types" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.types</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Medical illustration style diagram showing four areas of the lower spine affecte"</div></div>
+</figure>
+<ul class="types-list">
+<li style="position: relative;">
+<span class="type-title">DEGENERATIVE DISC DISEASE</span>
+<span class="type-text">The cushioning discs between your vertebrae gradually wear down with age, reducing shock absorption and causing persistent stiffness and aching that worsens with movement throughout the day.</span>
+</li>
+<li style="position: relative;">
+<span class="type-title">SCIATICA NERVE COMPRESSION</span>
+<span class="type-text">A herniated disc or bone spur presses against the sciatic nerve, sending shooting pain down one leg that can make even sitting in a chair unbearable.</span>
+</li>
+<li style="position: relative;">
+<span class="type-title">SPINAL STENOSIS NARROWING</span>
+<span class="type-text">The spinal canal narrows over time, squeezing the nerves inside and creating a heavy, tired feeling in your legs that makes walking even short distances exhausting.</span>
+</li>
+<li style="position: relative;">
+<span class="type-title">MUSCLE WEAKNESS INSTABILITY</span>
+<span class="type-text">When deep core and back muscles weaken from disuse or pain avoidance, the spine loses its natural support system, leaving you vulnerable to recurring flare-ups and stiffness.</span>
+</li>
+</ul>
+</div>
+<h2 style="position: relative;">What Most People Try First and Why It Falls Short</h2>
+<p style="position: relative;">The standard path is familiar to anyone who has lived with back pain. You start with over-the-counter painkillers. When those stop working, you move to a chiropractor — adjustments that feel wonderful for a day, maybe two, then the pain settles right back in. Physical therapy helps while you're doing it, but the relief fades the moment you stop going. TENS units send electrical pulses that mask the pain temporarily, like turning up the radio so you can't hear the engine knocking.</p>
+<figure class="article-media">
+<div class="v2-media-slot" data-job-id="048be497-cda4-43be-9489-a5520872f05f" data-prompts="[&quot;A chiropractor's treatment table, heating pad, pill bottles, and a TENS unit arranged on a kitchen counter, overhead flat lay, natural lighting, photorealistic&quot;, &quot;A woman in her 60s lying on a physical therapy table while a therapist works on her lower back, clinical setting, photorealistic&quot;, &quot;Close-up of a woman's hands holding multiple pill bottles with a frustrated expression blurred in background, photorealistic&quot;]" data-selected="0" data-slot-key="media.solutions" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.solutions</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A chiropractor's treatment table, heating pad, pill bottles, and a TENS unit arr"</div></div>
+</figure>
+<p style="position: relative;">I spent over two years cycling through these options. Every appointment brought a flicker of hope, then disappointment a few days later when the pain returned exactly as before. The chiropractor visits alone were adding up fast, and I was driving across town twice a week for sessions that gave me forty-eight hours of relief at best. Meanwhile, the underlying problem — my weakened back muscles — wasn't being addressed at all. Nothing was actually making me stronger. Everything was just buying time.</p>
+<p style="position: relative;">Sitting in my physical therapist's office after yet another session that would wear off by Thursday, I said it out loud: there has to be something that actually fixes the problem instead of covering it up. She paused, then told me about something I'd never heard of.</p>
+<h2 style="position: relative;">Six Reasons This Device Changed My Daily Life</h2>
+<p style="position: relative;">When my physical therapist described how this worked, I understood for the first time why everything else had failed. Here's what convinced me.</p>
+<div class="reason">
+<span class="reason-num">Reason 01</span>
+<h3 style="position: relative;">It Strengthens Instead of Masking</h3>
+<figure class="reason-img">
+<div class="v2-media-slot" data-job-id="048be497-cda4-43be-9489-a5520872f05f" data-prompts='["Close-up of lower back muscles with subtle electrical stimulation visualization, clean medical device on skin, photorealistic", "Before and after comparison of back muscle tone illustration, anatomical style, clean background, photorealistic", "A woman in her 60s standing upright with good posture, confident smile, bright living room, photorealistic"]' data-selected="0" data-slot-key="media.reason_1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.reason_1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Close-up of lower back muscles with subtle electrical stimulation visualization,"</div></div>
+</figure>
+<p style="position: relative;">This is the difference that matters. TENS units and painkillers block pain signals — they're a volume knob. The AMD Life Corrective Therapy Device uses neuromuscular electrical stimulation to actually contract and strengthen the deep muscles supporting your spine. It's the difference between turning off the fire alarm and putting out the fire. After three weeks, I could feel muscles engaging that hadn't worked in years.</p>
+</div>
+<div class="reason">
+<span class="reason-num">Reason 02</span>
+<h3 style="position: relative;">FDA-Cleared Medical Device</h3>
+<figure class="reason-img">
+<div class="v2-media-slot" data-job-id="048be497-cda4-43be-9489-a5520872f05f" data-prompts='["An FDA clearance document seal next to a sleek medical device, clean white background, product photography style, photorealistic", "A medical device with official certification badge visible on packaging, studio lighting, photorealistic", "A woman reading the instruction manual of a medical device with a reassured expression, kitchen table setting, photorealistic"]' data-selected="0" data-slot-key="media.reason_2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.reason_2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"An FDA clearance document seal next to a sleek medical device, clean white backg"</div></div>
+</figure>
+<p style="position: relative;">After wasting money on gadgets that promised everything, I needed to know this was real. The AMD Life device is FDA-cleared specifically for lower back pain. That mattered to me. It meant clinical testing, safety standards, and actual accountability — not just marketing claims on a box. My physical therapist confirmed it was legitimate before I even ordered.</p>
+</div>
+<div class="reason">
+<span class="reason-num">Reason 03</span>
+<h3 style="position: relative;">Twenty-Five Minutes at Home</h3>
+<figure class="reason-img">
+<div class="v2-media-slot" data-job-id="048be497-cda4-43be-9489-a5520872f05f" data-prompts="[&quot;A 63-year-old woman sitting in a comfortable armchair at home with a small device on her lower back, reading a book, relaxed, photorealistic&quot;, &quot;A cozy living room scene with a woman using a back therapy device while watching television, evening light, photorealistic&quot;, &quot;Close-up of a woman's relaxed face while using a therapy device at home, warm ambient lighting, photorealistic&quot;]" data-selected="0" data-slot-key="media.reason_3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.reason_3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A 63-year-old woman sitting in a comfortable armchair at home with a small devic"</div></div>
+</figure>
+<p style="position: relative;">No appointments. No driving across town. No waiting rooms. I use it for twenty-five minutes while I read or watch the evening news. After two years of rearranging my entire week around therapy schedules, the simplicity of this felt almost too good. I put it on, press start, and my back muscles do the work while I sit comfortably in my own chair.</p>
+</div>
+<div class="reason">
+<span class="reason-num">Reason 04</span>
+<h3 style="position: relative;">Simple Enough for Anyone</h3>
+<figure class="reason-img">
+<div class="v2-media-slot" data-job-id="048be497-cda4-43be-9489-a5520872f05f" data-prompts='["A compact medical device next to a TV remote for size comparison on a side table, clean product photography, photorealistic", "A woman slipping a small back device into her bag before leaving the house, bright entryway, photorealistic", "Hands of a 60-year-old woman easily operating a simple device with clearly labeled buttons, close-up, photorealistic"]' data-selected="0" data-slot-key="media.reason_4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.reason_4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A compact medical device next to a TV remote for size comparison on a side table"</div></div>
+</figure>
+<p style="position: relative;">I am not a technology person. I still print out recipes. But this device has one button and clear instructions. My husband set it up in about five minutes, and I've used it independently every single day since. There are no apps to download, no complicated settings. It just works, and that simplicity is exactly what I needed.</p>
+</div>
+<div class="reason">
+<span class="reason-num">Reason 05</span>
+<h3 style="position: relative;">Gradual Results That Last</h3>
+<figure class="reason-img">
+<div class="v2-media-slot" data-job-id="048be497-cda4-43be-9489-a5520872f05f" data-prompts='["A calendar on a kitchen wall with weeks marked off showing a progression timeline, warm home setting, photorealistic", "A woman journaling her daily progress in a notebook with a cup of coffee beside her, morning light, photorealistic", "A grandmother bending down slightly to tend to garden plants, early signs of recovered mobility, golden hour light, photorealistic"]' data-selected="0" data-slot-key="media.reason_5" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.reason_5</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A calendar on a kitchen wall with weeks marked off showing a progression timelin"</div></div>
+</figure>
+<p style="position: relative;">This wasn't an overnight transformation. The first week, I noticed less stiffness in the mornings. By week three, I was standing at the kitchen counter without gripping the edge. By week six, I cooked a full Sunday dinner for the first time in over a year. The improvement was steady and cumulative — each week slightly better than the last. That's how I knew it was real.</p>
+</div>
+<div class="reason">
+<span class="reason-num">Reason 06</span>
+<h3 style="position: relative;">FSA and HSA Eligible</h3>
+<figure class="reason-img">
+<div class="v2-media-slot" data-job-id="048be497-cda4-43be-9489-a5520872f05f" data-prompts='["An HSA debit card and an FSA receipt next to a medical device box on a kitchen counter, photorealistic", "A woman reviewing her health savings account statement on a laptop with a satisfied expression, home office, photorealistic", "A piggy bank next to a medical device box symbolizing healthcare savings, clean bright setting, photorealistic"]' data-selected="0" data-slot-key="media.reason_6" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.reason_6</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"An HSA debit card and an FSA receipt next to a medical device box on a kitchen c"</div></div>
+</figure>
+<p style="position: relative;">Because it's a cleared medical device, you can use your FSA or HSA funds to cover it. That was a relief. After years of copays, therapy bills, and out-of-pocket costs that insurance barely touched, being able to use pre-tax health dollars made this feel like a sensible investment rather than another gamble on something that might not work.</p>
+</div>
+<!-- IN-ARTICLE CTA -->
+<div class="cta-block">
+<a class="cta-btn" href="#" style="position: relative;">Try It Risk-Free</a>
+<span class="cta-sub">Backed by a 30-day money-back guarantee. Free shipping included.</span>
+</div>
+<!-- PRODUCT RECOMMENDATION BODY -->
+<h2 style="position: relative;">Where I Finally Found Real Relief</h2>
+<p style="position: relative;">My physical therapist was the one who mentioned it. She said a few of her patients with degenerative disc disease had seen real improvement using the AMD Life Corrective Therapy Device at home between sessions. She explained that unlike TENS units — which I'd already tried twice — this device targets the deep stabilizing muscles that actually support the spine. I went home and looked it up that night.</p>
+<figure class="article-media">
+<div class="v2-media-slot" data-job-id="048be497-cda4-43be-9489-a5520872f05f" data-prompts="[&quot;A sleek corrective therapy back device displayed on a clean white surface, product photography with soft shadows, photorealistic&quot;, &quot;A woman in her 60s unboxing a back pain relief device at her kitchen table, excited expression, natural light, photorealistic&quot;, &quot;The AMD Life back device placed on a woman's lower back, comfortable seated position, warm home environment, photorealistic&quot;]" data-selected="0" data-slot-key="media.product_rec" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.product_rec</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A sleek corrective therapy back device displayed on a clean white surface, produ"</div></div>
+</figure>
+<p style="position: relative;">What made it different from everything else was simple: it doesn't mask pain. It uses neuromuscular electrical stimulation to strengthen the muscles around your lower back, addressing the mechanical weakness underneath the pain. It's FDA-cleared, designed specifically for chronic lower back conditions, and the reviews were full of people who sounded exactly like me — tired of temporary fixes, skeptical but desperate enough to try one more thing.</p>
+<p style="position: relative;">The AMD Life Corrective Therapy Device is available directly from the manufacturer with a thirty-day guarantee. Supplies have been limited recently due to demand, so I'd recommend checking availability soon if this sounds like your situation.</p>
+<!-- FINAL IN-ARTICLE CTA — above the signature -->
+<div class="cta-block">
+<a class="cta-btn" href="#" style="position: relative;">See Current Availability</a>
+<span class="cta-sub">30-day guarantee. Free shipping.</span>
+</div>
+<!-- SIGNATURE -->
+<div class="article-signature">
+<strong>Linda Moretti</strong>
+<span>— Retired educator and grandmother, Columbus, Ohio</span>
+</div>
+</section>
+</main>
+<!-- ── STICKY SIDEBAR (product card) ── -->
+<aside class="sidebar-col">
+<div class="sticky-product">
+<figure class="sticky-product-media">
+<img alt="" data-copy="media.product_card:attr:src" data-prompts='["Product hero shot of a back pain relief medical device on white background, e-commerce style, clean studio lighting, photorealistic", "A back therapy device photographed at a slight angle showing its contoured design, white background, product photography, photorealistic", "The AMD Life back device in its packaging, premium unboxing experience, overhead shot, photorealistic"]' data-slot-key="media.product_card" data-v2-replaced="1" src="/pages/media/60482721/manual_upload-manual-26cf109e.jpg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+</figure>
+<div class="sticky-product-name">AMD Life Corrective Therapy Device® for Back Pain</div>
+<div class="sticky-product-tagline">Strengthens the muscles behind chronic lower back pain.</div>
+<div class="sticky-product-rating">
+<span class="stars">★★★★★</span>
+<span class="rating-score">4.85</span>
+<span>12,000+ reviews</span>
+</div>
+<a class="cta-btn" href="#" style="position: relative;">Check Availability Now</a>
+<div class="sticky-product-badges">
+<div class="sticky-product-badge-item">FDA-Cleared Medical Device</div>
+<div class="sticky-product-badge-item">30-Day Money-Back Guarantee</div>
+<div class="sticky-product-badge-item">FSA and HSA Eligible</div>
+</div>
+</div>
+</aside>
+</div><!-- /article-wrap -->
+<footer id="adv-footer" style="background:#f5f5f5;border-top:1px solid #e5e5e5;padding:30px 20px;text-align:center;margin-top:40px;">
+  <img src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" alt="Logo" style="display:block;height:36px;max-width:180px;object-fit:contain;margin:0 auto 12px;">
+  <div style="font-size:11px;color:#999;margin:0 auto 10px;font-family:system-ui,-apple-system,sans-serif;">
+    <a href="/pages/terms" style="color:#999;text-decoration:none;" target="_blank">Terms of Use</a>
+    <span style="margin:0 6px;color:#ccc;">·</span>
+    <a href="/pages/privacy" style="color:#999;text-decoration:none;" target="_blank">Privacy Policy</a>
+    <span style="margin:0 6px;color:#ccc;">·</span>
+    <a href="/pages/terms" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
+  </div>
+  <p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">&copy; 2026 Daily Blog Info. All rights reserved.</p>
+</footer>
+<style id="adv-brand-style">
+:root{
+  --ll-color-primary: #0F98D4;
+  --ll-color-primary-dark: #0c79a9;
+  --ll-color-primary-rgb: 15, 152, 212;
+  --ll-color-secondary: #a2d6eb;
+  --ll-color-tertiary: #e0f2fb;
+  --ll-color-cta: #ff7c34;
+  --ll-color-cta-dark: #d1652a;
+  --ll-color-cta-rgb: 255, 124, 52;
+  --ll-color-background: #ffffff;
+  --ll-color-text-primary: #062344;
+  --ll-color-text-secondary: #062344;
+  --lxs-rating-icon-color: #05b67a;
+  --ll-font-heading: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --ll-font-body: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.cta-btn,.ll-btn-temp,.sticky-product-cta,.sticky-cta-btn,button.cta,a.cta{background:#0F98D4 !important;border-color:#0F98D4 !important;color:#ffffff !important}
+.cta-btn:hover,.ll-btn-temp:hover,.sticky-product-cta:hover,.sticky-cta-btn:hover,button.cta:hover,a.cta:hover{background:#0c79a9 !important;border-color:#0c79a9 !important}
+.adv-cta-inline,.adv-cta-block{background:#ff7c34 !important;border-color:#ff7c34 !important;color:#ffffff !important}
+.adv-cta-inline:hover,.adv-cta-block:hover{background:#d1652a !important;border-color:#d1652a !important}
+</style>
+</body></html>
