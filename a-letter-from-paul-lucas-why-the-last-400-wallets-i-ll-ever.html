@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><div data-channel-name="in_page_channel_K-e_XC" id="in-page-channel-node-id"></div><head>
 <title>A Letter From Paul Lucas: The Last 400 Wallets</title>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -135,6 +132,11 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <style>
 :root {
@@ -177,7 +179,254 @@ blockquote { border-left-color: #f26722 !important; }
   border-color: rgba(242, 103, 34, 0.25) !important;
 }
 </style>
-<script type="text/javascript">
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script type="text/javascript">
 (function(c,l,a,r,i,t,y){
 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
@@ -193,39 +442,39 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </script>
 <noscript><link href="https://methickpalued.com/d/.js?noscript=true&amp;lpurl=" rel="stylesheet"/></noscript>
 </head>
-<body>
+<body data-debug-mode="1" style="cursor: crosshair;">
 <div id="adv-disclosure" style="text-align:center;padding:6px 20px;background:#fff;color:#bbb;font-size:10px;font-family:system-ui,sans-serif;letter-spacing:0.05em;font-weight:400;border-bottom:1px solid #f0f0f0;">THIS IS AN ADVERTORIAL</div>
 <div id="adv-header-logo" style="text-align:center;padding:10px 0;background:#fff;border-bottom:1px solid #eee;position:relative;z-index:100;overflow:visible;">
 <img alt="Paul Lucas" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="height:52px;max-width:260px;object-fit:contain;display:inline-block;"/>
 </div>
-<div class="page-bg">
+<div class="page-bg" style="outline: rgb(249, 115, 22) solid 2px; outline-offset: 3px;">
 <div class="letter-wrap">
-<div class="letter-card">
+<div class="letter-card" style="outline-offset: 3px;">
 <!-- HEADLINE -->
-<h1>A Letter From Paul Lucas: Why the Last 400 Wallets I'll Ever Make Are Going Direct</h1>
-<p class="letter-deck">I'm 67. My hands are giving out. I turned down a department store deal worth more than my workshop is worth. Here's why — and why I'd rather sell these to you.</p>
+<h1 style="position: relative;">A Letter From Paul Lucas: Why the Last 400 Wallets I'll Ever Make Are Going Direct</h1>
+<p class="letter-deck" style="position: relative; outline-offset: 3px; margin-top: 0px !important; margin-bottom: 0px !important;">I'm 67. My hands are giving out. I turned down a department store deal worth more than my workshop is worth. Here's why — and why I'd rather sell these to you.</p>
 <!-- DATE & FROM (under subtitle) -->
-<div class="letter-meta">
+<div class="letter-meta" style="outline-offset: 3px;">
 <span class="letter-date">April 17, 2026</span>
 <span style="color:#d0c0a8">·</span>
-<span class="letter-from">From the desk of Editorial Team</span>
+<span class="letter-from" style="outline-offset: 3px;">From the desk of Editorial Team</span>
 </div>
 <!-- HERO IMAGE (right after title) -->
-<div class="placeholder hero-placeholder"><div class="tbadge">HERO PHOTO</div><div class="ph-desc">Black and white photo of Paul Lucas, 67, weathered hands holding a half-finished leather wallet at his workbench, natural window light, Texas workshop, tools and leather scraps visible</div></div>
+<div class="placeholder hero-placeholder" style="position: relative;"><div class="tbadge">HERO PHOTO</div><div class="ph-desc">Black and white photo of Paul Lucas, 67, weathered hands holding a half-finished leather wallet at his workbench, natural window light, Texas workshop, tools and leather scraps visible</div></div>
 <!-- DEAR FRIEND OPENING -->
-<p class="dear-friend">Dear Friend,</p>
+<p class="dear-friend" style="position: relative;">Dear Friend,</p>
 <!-- LETTER BODY -->
-<p>Dear friend,</p><p>I've never written one of these before, so bear with me. My name is <strong>Paul Lucas</strong>. I'm 67 years old, and I've been cutting and stitching leather in the same 900-square-foot workshop in Weatherford, Texas, for most of my adult life. My grandfather bought the building in 1948. My father worked the bench until he was 70. I figured I'd do the same.</p><p>Three years ago, my hands started telling me a different story.</p>
-<p>It started in the mornings. I'd wake up and my fingers wouldn't close around the awl the way they used to. By 6 a.m. I'd be running hot water over my knuckles in the kitchen sink, trying to get them limber enough to thread a needle. Linda — that's my wife of 41 years — she noticed before I did. She'd watch me from the doorway, sipping her coffee, not saying a word. She knew.</p><p>The doctor in Fort Worth gave it a name. <mark style="background:#fef08a;padding:2px 4px;border-radius:3px">Rheumatoid arthritis</mark>. Same thing that took my father off the bench at 70. He told me I had a few good years left if I was careful, fewer if I wasn't. I thanked him, paid the bill, and drove home the long way.</p><p>I won't pretend I took it well. There's a particular kind of quiet that fills a workshop when you realize you're working on a clock now. Every wallet I cut, every saddle stitch I pull, I'm aware it's one of a finite number left. <u>Finite</u>. That's a word I never used to think about. Now I think about it every morning.</p><p>I'm not telling you this to make you feel sorry for me. I'm telling you because what happened next is the reason I'm writing this letter, and I want you to understand it the way I do.</p>
-<div class="placeholder"><div class="tbadge">LIFESTYLE</div><div class="ph-desc">Close-up of weathered, calloused hands holding a leather awl mid-stitch, soft morning light through workshop window, deep brown leather visible</div></div>
-<p>Last spring a man from <strong>Nordstrom</strong> drove out from Dallas in a rental SUV. He wore a nice jacket and asked good questions. He sat at my bench for about an hour, picked up three or four wallets, turned them over in his hands, and ran his thumb along the stitching the way someone does when they actually know what they're looking at. I appreciated that.</p><p>Then he made me an offer. <strong><span style="color:#e05a00;font-weight:700">$65 a wallet</span></strong>, two thousand units, paid up front. He told me they'd retail them at <strong><span style="color:#e05a00;font-weight:700">$229</span></strong> with a hangtag that said "Handcrafted in Texas." He said it like it was good news. For a man my age, with a diagnosis like mine, it probably should have been.</p><p>I sat there for a minute. I thought about Linda, about the property tax, about the fact that two thousand wallets at $65 a piece is more money than I've made in three good years on the bench. And then I thought about the hangtag.</p><p>"Handcrafted in Texas." Marked up to <span style="color:#e05a00;font-weight:700">$229</span>. My name, or near enough to it, sitting on a shelf next to a $400 belt made in Vietnam. A man would walk in, pay the markup, and never know that the fellow who actually cut the leather got <span style="color:#e05a00;font-weight:700">$65</span> and a handshake.</p><p>I told him no. Walked him out to his SUV, shook his hand, watched him pull out of the gravel drive. Then I came back inside and told Linda I'd rather sell the last 400 direct than see my name turned into somebody else's <mark style="background:#fef08a;padding:2px 4px;border-radius:3px">markup</mark>. She poured me a second cup of coffee and said, "Well, alright then." That's how she is.</p>
-<div class="placeholder"><div class="tbadge">PRODUCT</div><div class="ph-desc">Two leather wallets side by side on a wooden workbench — one with a Nordstrom-style retail hangtag, one plain — soft natural light, documentary feel</div></div>
-<p>So that's what this is. A letter from me to you, telling you about a wallet.</p><p>It's a bifold. <strong>Full-grain leather</strong> — which is the part of the hide closest to the hair, the strongest and the only grade that develops a real patina instead of cracking and flaking after a year or two. The kind they use for English saddles and the holsters my grandfather made before me. Every wallet is hand-stitched with waxed thread, the same saddle stitch I learned from my father when I was eleven years old. No machines. Two needles, one stitch at a time. About 90 minutes of bench work per wallet.</p><p>It's slim — sits flat in your back pocket, holds six cards and folded bills, and the leather is thick enough that it'll feel <u>stiff</u> for the first two weeks. That's normal. By month three it'll start molding to the shape of your hand and your pocket. By year five it'll be soft as a work glove and dark in the spots you touch most. By year thirty, if I've done my job right, it'll look like it belongs to nobody but you.</p><p>I don't put a logo on the front. I never have. There's a small <strong>P.L.</strong> debossed on the inside, the same mark my grandfather used. That's all.</p><p>Backed by a <strong>lifetime guarantee</strong>. Mine — the one I sign personally on a card that ships in the box. If a stitch ever pulls, you mail it back, I fix it. If I'm gone, Linda has instructions, and there's a young man in the workshop named Caleb who I've been training for two years. He'll honor it. That's in writing too.</p>
-<div class="placeholder"><div class="tbadge">PRODUCT</div><div class="ph-desc">Close-up of a full-grain leather bifold wallet on raw wood, hand-stitched edges visible, natural patina developing, warm window light</div></div>
-<p>Here's why I'm writing today, and I'll be straight with you about it.</p><p>I have <strong><span style="color:#e05a00;font-weight:700">400 wallets</span></strong> left in me. Maybe a few more if my hands cooperate, maybe fewer if they don't. I've already cut the leather for most of them — it's stacked on the shelf above my bench in three neat piles. When those 400 are gone, the bench goes quiet. Caleb will keep small repairs going for the lifetime guarantees, but the new wallets stop. There's no reorder coming. There's no "next batch." This is it.</p><p>I'm pricing them at what I'd have to charge a friend who walked in off the road and asked. Not the <span style="color:#e05a00;font-weight:700">$229</span> Nordstrom wanted. Not even close. <strong>I want each one to go to a man who'll actually carry it</strong> — not collect it, not flip it, not stick it in a drawer. A man who'll pull it out at a bar in Austin in 2034 and have the bartender say, "Now <u>that's</u> a wallet."</p><p>That's the deal I can look myself in the mirror over. And at 67, with hands like mine, the mirror is the only customer I've got left to please.</p><div class="testimonial"><div class="quote">"I've carried Paul's wallet for 11 years. It's been to four countries and through one divorce and it looks better now than the day it arrived. My son asked if he can have it when I'm gone. I told him to buy his own. Then I called Paul."</div><div class="attribution" style="display:flex;align-items:center"><img src="/pages/avatars/fb/09.jpg" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;margin-right:10px"/><span>— Email from Tom R., 58, Bozeman MT</span></div></div>
-<div class="placeholder"><div class="tbadge">LIFESTYLE</div><div class="ph-desc">Stack of cut leather pieces on workshop shelf, three neat piles, soft warehouse lighting, sense of finite quantity</div></div>
+<p style="position: relative;">Dear friend,</p><p style="position: relative;">I've never written one of these before, so bear with me. My name is <strong>Paul Lucas</strong>. I'm 67 years old, and I've been cutting and stitching leather in the same 900-square-foot workshop in Weatherford, Texas, for most of my adult life. My grandfather bought the building in 1948. My father worked the bench until he was 70. I figured I'd do the same.</p><p style="position: relative;">Three years ago, my hands started telling me a different story.</p>
+<p style="position: relative;">It started in the mornings. I'd wake up and my fingers wouldn't close around the awl the way they used to. By 6 a.m. I'd be running hot water over my knuckles in the kitchen sink, trying to get them limber enough to thread a needle. Linda — that's my wife of 41 years — she noticed before I did. She'd watch me from the doorway, sipping her coffee, not saying a word. She knew.</p><p style="position: relative;">The doctor in Fort Worth gave it a name. <mark style="background:#fef08a;padding:2px 4px;border-radius:3px">Rheumatoid arthritis</mark>. Same thing that took my father off the bench at 70. He told me I had a few good years left if I was careful, fewer if I wasn't. I thanked him, paid the bill, and drove home the long way.</p><p style="position: relative;">I won't pretend I took it well. There's a particular kind of quiet that fills a workshop when you realize you're working on a clock now. Every wallet I cut, every saddle stitch I pull, I'm aware it's one of a finite number left. <u>Finite</u>. That's a word I never used to think about. Now I think about it every morning.</p><p style="position: relative;">I'm not telling you this to make you feel sorry for me. I'm telling you because what happened next is the reason I'm writing this letter, and I want you to understand it the way I do.</p>
+<div class="placeholder" style="position: relative;"><div class="tbadge">LIFESTYLE</div><div class="ph-desc">Close-up of weathered, calloused hands holding a leather awl mid-stitch, soft morning light through workshop window, deep brown leather visible</div></div>
+<p style="position: relative;">Last spring a man from <strong>Nordstrom</strong> drove out from Dallas in a rental SUV. He wore a nice jacket and asked good questions. He sat at my bench for about an hour, picked up three or four wallets, turned them over in his hands, and ran his thumb along the stitching the way someone does when they actually know what they're looking at. I appreciated that.</p><p style="position: relative;">Then he made me an offer. <strong><span style="color:#e05a00;font-weight:700">$65 a wallet</span></strong>, two thousand units, paid up front. He told me they'd retail them at <strong><span style="color:#e05a00;font-weight:700">$229</span></strong> with a hangtag that said "Handcrafted in Texas." He said it like it was good news. For a man my age, with a diagnosis like mine, it probably should have been.</p><p style="position: relative;">I sat there for a minute. I thought about Linda, about the property tax, about the fact that two thousand wallets at $65 a piece is more money than I've made in three good years on the bench. And then I thought about the hangtag.</p><p style="position: relative;">"Handcrafted in Texas." Marked up to <span style="color:#e05a00;font-weight:700">$229</span>. My name, or near enough to it, sitting on a shelf next to a $400 belt made in Vietnam. A man would walk in, pay the markup, and never know that the fellow who actually cut the leather got <span style="color:#e05a00;font-weight:700">$65</span> and a handshake.</p><p style="position: relative;">I told him no. Walked him out to his SUV, shook his hand, watched him pull out of the gravel drive. Then I came back inside and told Linda I'd rather sell the last 400 direct than see my name turned into somebody else's <mark style="background:#fef08a;padding:2px 4px;border-radius:3px">markup</mark>. She poured me a second cup of coffee and said, "Well, alright then." That's how she is.</p>
+<div class="placeholder" style="position: relative;"><div class="tbadge">PRODUCT</div><div class="ph-desc">Two leather wallets side by side on a wooden workbench — one with a Nordstrom-style retail hangtag, one plain — soft natural light, documentary feel</div></div>
+<p style="position: relative;">So that's what this is. A letter from me to you, telling you about a wallet.</p><p style="position: relative;">It's a bifold. <strong>Full-grain leather</strong> — which is the part of the hide closest to the hair, the strongest and the only grade that develops a real patina instead of cracking and flaking after a year or two. The kind they use for English saddles and the holsters my grandfather made before me. Every wallet is hand-stitched with waxed thread, the same saddle stitch I learned from my father when I was eleven years old. No machines. Two needles, one stitch at a time. About 90 minutes of bench work per wallet.</p><p style="position: relative;">It's slim — sits flat in your back pocket, holds six cards and folded bills, and the leather is thick enough that it'll feel <u>stiff</u> for the first two weeks. That's normal. By month three it'll start molding to the shape of your hand and your pocket. By year five it'll be soft as a work glove and dark in the spots you touch most. By year thirty, if I've done my job right, it'll look like it belongs to nobody but you.</p><p style="position: relative;">I don't put a logo on the front. I never have. There's a small <strong>P.L.</strong> debossed on the inside, the same mark my grandfather used. That's all.</p><p style="position: relative;">Backed by a <strong>lifetime guarantee</strong>. Mine — the one I sign personally on a card that ships in the box. If a stitch ever pulls, you mail it back, I fix it. If I'm gone, Linda has instructions, and there's a young man in the workshop named Caleb who I've been training for two years. He'll honor it. That's in writing too.</p>
+<div class="placeholder" style="position: relative;"><div class="tbadge">PRODUCT</div><div class="ph-desc">Close-up of a full-grain leather bifold wallet on raw wood, hand-stitched edges visible, natural patina developing, warm window light</div></div>
+<p style="position: relative;">Here's why I'm writing today, and I'll be straight with you about it.</p><p style="position: relative;">I have <strong><span style="color:#e05a00;font-weight:700">400 wallets</span></strong> left in me. Maybe a few more if my hands cooperate, maybe fewer if they don't. I've already cut the leather for most of them — it's stacked on the shelf above my bench in three neat piles. When those 400 are gone, the bench goes quiet. Caleb will keep small repairs going for the lifetime guarantees, but the new wallets stop. There's no reorder coming. There's no "next batch." This is it.</p><p style="position: relative;">I'm pricing them at what I'd have to charge a friend who walked in off the road and asked. Not the <span style="color:#e05a00;font-weight:700">$229</span> Nordstrom wanted. Not even close. <strong>I want each one to go to a man who'll actually carry it</strong> — not collect it, not flip it, not stick it in a drawer. A man who'll pull it out at a bar in Austin in 2034 and have the bartender say, "Now <u>that's</u> a wallet."</p><p style="position: relative;">That's the deal I can look myself in the mirror over. And at 67, with hands like mine, the mirror is the only customer I've got left to please.</p><div class="testimonial"><div class="quote" style="position: relative;">"I've carried Paul's wallet for 11 years. It's been to four countries and through one divorce and it looks better now than the day it arrived. My son asked if he can have it when I'm gone. I told him to buy his own. Then I called Paul."</div><div class="attribution" style="display: flex; align-items: center; position: relative;"><img src="/pages/avatars/fb/09.jpg" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;margin-right:10px"/><span>— Email from Tom R., 58, Bozeman MT</span></div></div>
+<div class="placeholder" style="position: relative;"><div class="tbadge">LIFESTYLE</div><div class="ph-desc">Stack of cut leather pieces on workshop shelf, three neat piles, soft warehouse lighting, sense of finite quantity</div></div>
 <!-- GALLERY SECTION BEFORE OFFER -->
-<div class="gallery-section"><p class="gallery-heading">See it for yourself →</p><div class="gallery-grid"><div class="placeholder gallery-ph"><div class="tbadge">PHOTO</div><div class="ph-desc">Product photo</div></div><div class="placeholder gallery-ph"><div class="tbadge">LIFESTYLE</div><div class="ph-desc">In-use photo</div></div><div class="placeholder gallery-ph"><div class="tbadge">PHOTO</div><div class="ph-desc">Results photo</div></div></div></div>
+<div class="gallery-section"><p class="gallery-heading" style="position: relative;">See it for yourself →</p><div class="gallery-grid"><div class="placeholder gallery-ph" style="position: relative;"><div class="tbadge">PHOTO</div><div class="ph-desc">Product photo</div></div><div class="placeholder gallery-ph" style="position: relative;"><div class="tbadge">LIFESTYLE</div><div class="ph-desc">In-use photo</div></div><div class="placeholder gallery-ph" style="position: relative;"><div class="tbadge">PHOTO</div><div class="ph-desc">Results photo</div></div></div></div>
 <!-- SIGNATURE -->
 <div class="signature-block">
 <div class="sig-avatar">E</div>
@@ -235,18 +484,18 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </div>
 </div>
 <!-- OFFER BOX -->
-<div class="offer-box">
-<div class="offer-box-head">
+<div class="offer-box" style="position: relative;">
+<div class="offer-box-head" style="position: relative;">
 <span class="offer-box-badge">✉ Special Offer</span>
 </div>
-<h2>⚠️ Special Offer: <span class="accent">50% Off</span> — Limited Stock</h2>
-<div class="placeholder" style="margin:12px 0 20px;"><div class="tbadge">PRODUCT BUNDLE</div><div class="ph-desc">Product hero image with all accessories and price badge</div></div>
-<div class="offer-desc-text">
+<h2 style="position: relative;">⚠️ Special Offer: <span class="accent">50% Off</span> — Limited Stock</h2>
+<div class="placeholder" style="margin: 12px 0px 20px; position: relative;"><div class="tbadge">PRODUCT BUNDLE</div><div class="ph-desc">Product hero image with all accessories and price badge</div></div>
+<div class="offer-desc-text" style="position: relative;">
 <strong>Paul Lucas</strong> — Available <strong>ONLY</strong> on the official store — at the lowest price of the year.
         </div>
-<div class="offer-desc-text"><p>If you've read this far, thank you. I know it's long. I'm not built for short.</p><p>If one of these last 400 wallets sounds like something you'd carry — and carry for the rest of your life — I'd be honored to make one for you. Click below to claim yours. Caleb will pull it from the shelf, I'll do the final stitch myself, and it'll be in the mail by the end of the week.</p><p><strong>Claim Your Paul Lucas Wallet — One of the Last 400, Guaranteed for Life</strong></p><p>Thank you for letting me write to you.</p></div>
-<a class="offer-cta" href="https://methickpalued.com/click">Check Availability</a>
-<div class="offer-badges">
+<div class="offer-desc-text" style="position: relative;"><p style="position: relative;">If you've read this far, thank you. I know it's long. I'm not built for short.</p><p style="position: relative;">If one of these last 400 wallets sounds like something you'd carry — and carry for the rest of your life — I'd be honored to make one for you. Click below to claim yours. Caleb will pull it from the shelf, I'll do the final stitch myself, and it'll be in the mail by the end of the week.</p><p style="position: relative;"><strong>Claim Your Paul Lucas Wallet — One of the Last 400, Guaranteed for Life</strong></p><p style="position: relative;">Thank you for letting me write to you.</p></div>
+<a class="offer-cta" href="https://methickpalued.com/click" style="position: relative;">Check Availability</a>
+<div class="offer-badges" style="position: relative;">
 <div>✓ 30-day money-back guarantee</div>
 <div>✓ Free shipping (2–5 days)</div>
 <div>✓ 10-year lifetime warranty</div>
@@ -260,12 +509,12 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </div><!-- /letter-wrap -->
 </div><!-- /page-bg -->
 <div class="sticky-footer">
-<a href="https://methickpalued.com/click">👉 Skip to offer — Check availability</a>
+<a href="https://methickpalued.com/click" style="position: relative;">👉 Skip to offer — Check availability</a>
 </div>
 <style>#adv-footer{display:block!important;visibility:visible!important;}</style>
 <footer id="adv-footer" style="display:block!important;background:#f5f5f5;border-top:1px solid #e8e8e8;padding:40px 20px 36px;text-align:center;margin-top:40px;">
 <img alt="Paul Lucas" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="height:40px;max-width:200px;object-fit:contain;margin-bottom:16px;opacity:0.65;display:block;margin-left:auto;margin-right:auto;"/>
-<p style="font-size:9px;color:#ccc;line-height:1.5;max-width:680px;margin:8px auto 0;letter-spacing:0.02em;">ADVERTISING DISCLOSURE: The story, persons, and results depicted on this site are illustrative. Individual results may vary. This content is sponsored advertising and not intended as news or editorial content.</p>
+<p style="font-size: 9px; color: rgb(204, 204, 204); line-height: 1.5; max-width: 680px; margin: 8px auto 0px; letter-spacing: 0.02em; position: relative;">ADVERTISING DISCLOSURE: The story, persons, and results depicted on this site are illustrative. Individual results may vary. This content is sponsored advertising and not intended as news or editorial content.</p>
 <div style="font-size:11px;color:#999;margin:14px auto 8px;font-family:system-ui,-apple-system,sans-serif;">
 <a href="https://methickpalued.com/click" style="color:#999;text-decoration:none;" target="_blank">Terms of Use</a>
 <span style="margin:0 6px;color:#ccc;">·</span>
@@ -273,7 +522,6 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://methickpalued.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>
