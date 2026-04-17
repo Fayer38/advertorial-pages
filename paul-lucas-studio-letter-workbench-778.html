@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>A Letter From My Workbench: On Making a Wallet You'll Pass Down to Your Son</title>
+<meta content="Paul Lucas writes from his small leather shop about the hides, the stitching, and why every Finnigan wallet starts with a conversation." name="description"/>
+<style>
+:root{
+  --ll-color-primary:          #2a2a2a;
+  --ll-color-primary-dark:     #000000;
+  --ll-color-primary-rgb:      42, 42, 42;
+
+  --ll-color-secondary:        #fdf4e7;
+
+  --ll-color-cta:              #f07f1c;
+  --ll-color-cta-dark:         #d66a0e;
+  --ll-color-cta-rgb:          240, 127, 28;
+
+  --ll-color-background:       #ffffff;
+  --ll-color-background-alt:   #f5f0e6;
+  --ll-color-background-soft:  #faf5ea;
+
+  --ll-color-text-primary:     #2a2a2a;
+  --ll-color-text-secondary:   #4a4a4a;
+  --ll-color-muted:            #7a7a7a;
+
+  --ll-color-border:           #e3dcc9;
+  --ll-color-border-soft:      #eee6d3;
+
+  --ll-color-warning:          #c62828;
+
+  --lxs-rating-icon-color:     #f5c518;
+  --lxs-disclaimer-color:      #888888;
+
+  --ll-font-heading: Georgia, "Times New Roman", serif;
+  --ll-font-body:    "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:var(--ll-font-body);
+  font-size:17px;line-height:1.6;
+  color:var(--ll-color-text-primary);
+  background:#ffffff;
+}
+img{max-width:100%;display:block}
+
+/* ── Hero ───────────────────────────────────────────────────── */
+.adv-hero{max-width:720px;margin:0 auto;padding:12px 24px 16px}
+.adv-hero__title{
+  font-family:var(--ll-font-heading);
+  font-size:30px;line-height:1.25;font-weight:700;
+  color:#111;
+  margin:0 0 16px;
+}
+.adv-hero__subtitle{
+  font-family:var(--ll-font-body);
+  font-size:17px;line-height:1.5;
+  color:var(--ll-color-text-primary);
+  margin:0;
+}
+@media (min-width:768px){.adv-hero__title{font-size:38px}}
+
+/* ── Lead image ─────────────────────────────────────────────── */
+.adv-lead-image{max-width:720px;margin:0 auto 14px;padding:0 24px}
+.adv-lead-image img{
+  width:100%;aspect-ratio:16/11;object-fit:cover;
+  background:var(--ll-color-background-alt);
+}
+
+/* ── Byline (with local avatar pool hook) ──────────────────── */
+.adv-byline{
+  max-width:720px;margin:0 auto 32px;padding:0 24px;
+  display:flex;align-items:center;gap:12px;
+  font-family:var(--ll-font-body);
+}
+.article-byline-photo{
+  width:60px;height:60px;border-radius:50%;
+  background:var(--ll-color-background-alt);
+  border:1px solid var(--ll-color-border);
+  flex-shrink:0;object-fit:cover;
+}
+.adv-byline__meta{
+  font-size:14px;color:var(--ll-color-text-secondary);
+  line-height:1.45;display:flex;flex-direction:column;gap:2px;
+}
+.adv-byline__name-line{font-size:15px;color:var(--ll-color-text-primary)}
+.article-byline-name{font-weight:700;color:var(--ll-color-text-primary)}
+.adv-byline__cred{font-style:italic;font-size:13px;color:var(--ll-color-text-secondary)}
+.adv-byline__date{font-size:12px;color:var(--ll-color-text-muted);text-transform:uppercase;letter-spacing:0.4px}
+
+/* ── Article body ───────────────────────────────────────────── */
+.adv-article{
+  max-width:720px;margin:0 auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.7;
+  color:var(--ll-color-text-primary);
+}
+.adv-article p{margin:0 0 18px}
+.adv-article p strong{font-weight:700;color:#111}
+.adv-article p em{font-style:italic;color:#111}
+.adv-article p .accent, .adv-article p strong.accent{color:#dc2626}
+.adv-article p u{text-decoration:underline;text-decoration-color:#dc2626;text-decoration-thickness:2px;text-underline-offset:3px}
+.adv-article mark, .adv-article .highlight{background:#fff3bf;padding:0 2px;color:#111;border-radius:2px}
+
+/* ── Section heading (H2) ───────────────────────────────────── */
+.adv-section-heading{
+  max-width:720px;margin:22px auto 14px;padding:0 24px;
+  font-family:var(--ll-font-heading);
+  font-size:26px;line-height:1.3;font-weight:700;
+  color:#111;
+}
+@media (min-width:768px){.adv-section-heading{font-size:32px}}
+
+/* ── Inline image ───────────────────────────────────────────── */
+.adv-inline-image{max-width:720px;margin:20px auto;padding:0 24px}
+.adv-inline-image img{
+  width:100%;aspect-ratio:16/10;object-fit:cover;
+  background:var(--ll-color-background-alt);
+}
+
+/* ── Bullet list (neutral dark dots) ───────────────────────── */
+.adv-bullet-list{
+  max-width:720px;margin:20px auto;padding:0 24px;
+  list-style:none;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.8;
+  color:var(--ll-color-text-primary);
+}
+.adv-bullet-list li{
+  padding:8px 0 8px 24px;position:relative;
+}
+.adv-bullet-list li::before{
+  content:"";
+  position:absolute;left:0;top:18px;
+  width:8px;height:8px;
+  background:#111;
+  border-radius:50%;
+}
+
+/* ── Feature list (accent arrows) ──────────────────────────── */
+.adv-feature-list{
+  max-width:720px;margin:20px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.8;
+}
+.adv-feature-list p{
+  margin:0 0 14px;padding-left:24px;position:relative;
+  color:var(--ll-color-text-primary);
+}
+.adv-feature-list p::before{
+  content:"→";
+  position:absolute;left:0;top:0;
+  color:var(--ll-color-cta);
+  font-weight:700;
+}
+
+/* ── Product showcase ──────────────────────────────────────── */
+.adv-product-showcase{
+  max-width:720px;margin:24px auto;padding:24px 24px;
+  background:var(--ll-color-background);
+  border:1px solid var(--ll-color-border);
+  text-align:center;
+  font-family:var(--ll-font-body);
+}
+.adv-product-showcase__eyebrow{
+  font-family:var(--ll-font-heading);
+  font-size:22px;font-weight:700;
+  color:#111;
+  margin:0 0 12px;
+}
+.adv-product-showcase__rating{
+  display:flex;justify-content:center;align-items:center;gap:8px;
+  margin-bottom:14px;
+  font-size:14px;color:#444;font-weight:600;
+}
+.adv-product-showcase__rating-stars{
+  color:#f5b40a;
+  letter-spacing:1px;font-size:18px;
+}
+.adv-product-showcase__rating-score{
+  font-size:15px;font-weight:700;color:#111;
+}
+.adv-product-showcase__rating-sep{color:#bbb}
+.adv-product-showcase__title{
+  font-family:var(--ll-font-heading);
+  font-size:18px;font-weight:700;
+  color:var(--ll-color-text-primary);
+  margin:0 0 6px;
+}
+.adv-product-showcase__tagline{
+  font-size:14px;color:var(--ll-color-text-secondary);
+  font-style:italic;margin:0 0 18px;line-height:1.4;
+}
+.adv-product-showcase__image{
+  width:100%;max-width:220px;margin:0 auto 14px;
+  aspect-ratio:1/1;object-fit:cover;
+  background:var(--ll-color-background-alt);
+  border-radius:8px;
+}
+
+/* ── CTAs ──────────────────────────────────────────────────── */
+.adv-cta-inline{
+  display:inline-block;
+  background:var(--ll-color-cta);
+  color:#fff !important;text-decoration:none !important;
+  font-family:var(--ll-font-body);
+  font-weight:700;font-size:15px;
+  padding:12px 26px;border-radius:6px;
+  text-align:center;transition:background .15s;
+  letter-spacing:.2px;
+}
+.adv-cta-inline:hover{background:var(--ll-color-cta-dark)}
+
+.adv-cta-block{
+  display:block;max-width:520px;margin:32px auto;
+  padding:18px 24px;border-radius:8px;
+  background:var(--ll-color-cta);
+  color:#fff !important;text-decoration:none !important;
+  text-align:center;
+  font-family:var(--ll-font-body);
+  font-weight:700;font-size:17px;
+  line-height:1.25;letter-spacing:.2px;
+  box-shadow:0 4px 14px rgba(var(--ll-color-cta-rgb),.3);
+  transition:all .18s;
+}
+.adv-cta-block:hover{
+  background:var(--ll-color-cta-dark);
+  transform:translateY(-1px);
+  box-shadow:0 8px 22px rgba(var(--ll-color-cta-rgb),.45);
+}
+
+/* ── Testimonial grid (4 cards) ────────────────────────────── */
+.adv-testimonial-grid{
+  max-width:720px;margin:32px auto;padding:0 24px;
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;
+  font-family:var(--ll-font-body);
+}
+.adv-testimonial-grid__card{
+  background:var(--ll-color-background);
+  padding:20px;
+  border:1px solid var(--ll-color-border);
+  display:flex;flex-direction:column;gap:12px;
+}
+.adv-testimonial-grid__photo{
+  width:100%;aspect-ratio:1/1;object-fit:cover;
+  background:var(--ll-color-background-alt);
+}
+.adv-testimonial-grid__name{
+  font-weight:700;font-size:16px;
+  color:#111;
+  margin:0;
+}
+.adv-testimonial-grid__text{
+  font-size:15px;line-height:1.55;
+  color:var(--ll-color-text-primary);
+  font-style:italic;margin:0;
+}
+@media (max-width:600px){.adv-testimonial-grid{grid-template-columns:1fr}}
+
+/* ── Testimonial banner ────────────────────────────────────── */
+.adv-testimonial-banner{max-width:720px;margin:24px auto;padding:0 24px}
+.adv-testimonial-banner img{
+  width:100%;aspect-ratio:16/9;object-fit:cover;
+  background:var(--ll-color-background-alt);
+}
+
+/* ── Pricing reveal (no price, just headline + note) ────────── */
+.adv-pricing-reveal{
+  max-width:720px;margin:32px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  text-align:center;
+}
+.adv-pricing-reveal__headline{
+  font-family:var(--ll-font-heading);
+  font-size:24px;font-weight:700;
+  color:#111;
+  margin:0 0 16px;line-height:1.3;
+}
+.adv-pricing-reveal__note{
+  font-size:16px;color:var(--ll-color-text-primary);
+  margin:0;line-height:1.5;
+}
+.adv-pricing-reveal__note strong{color:#111;font-weight:700}
+
+/* ── Guarantee ─────────────────────────────────────────────── */
+.adv-guarantee{
+  max-width:720px;margin:24px auto;padding:22px 24px;
+  background:#f7f7f8;
+  border:1px solid #e5e5e5;
+  border-radius:8px;
+  text-align:center;
+  font-family:var(--ll-font-body);
+  color:#111;
+}
+.adv-guarantee__title{
+  font-family:var(--ll-font-heading);
+  font-size:22px;font-weight:700;
+  color:#111;
+  margin:0 0 16px;line-height:1.3;
+}
+.adv-guarantee__image{
+  max-width:100px;margin:0 auto 12px;
+  aspect-ratio:1/1;object-fit:contain;
+  background:transparent;
+}
+.adv-guarantee__body{
+  font-size:16px;line-height:1.6;
+  color:#222;
+  text-align:left;
+  max-width:540px;margin:0 auto;
+}
+.adv-guarantee__body p{margin:0 0 14px}
+.adv-guarantee__body strong{font-weight:700;color:#111}
+.adv-guarantee__contact{
+  margin-top:18px;padding-top:18px;border-top:1px solid #e5e5e5;
+  font-size:14px;text-align:center;color:#444;
+}
+.adv-guarantee__contact a{color:#111;font-weight:700;text-decoration:underline}
+.adv-guarantee__contact a:hover{text-decoration:underline}
+
+/* ── Support ───────────────────────────────────────────────── */
+.adv-support{
+  max-width:720px;margin:24px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:16px;color:var(--ll-color-text-primary);
+  text-align:center;line-height:1.7;
+}
+.adv-support a{
+  color:var(--ll-color-cta);
+  text-decoration:underline;font-weight:600;
+}
+.adv-support a:hover{color:var(--ll-color-cta-dark)}
+
+/* ── Callout (emphasis) ────────────────────────────────────── */
+.adv-callout{
+  max-width:720px;margin:24px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.7;
+}
+.adv-callout p{margin:0 0 14px;color:var(--ll-color-text-primary)}
+.adv-callout p strong{font-weight:700;color:#dc2626}
+
+/* ── Closing preamble ──────────────────────────────────────── */
+.adv-closing-preamble{
+  max-width:720px;margin:24px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.7;
+  color:var(--ll-color-text-primary);
+  text-align:left;
+}
+.adv-closing-preamble p{margin:0 0 12px}
+.adv-closing-preamble em{
+  font-weight:700;font-style:normal;
+  color:#dc2626;
+}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+</style>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "wb35vpdfk1");
+</script>
+<meta content="sec-ch-ua https://methickpalued.com; sec-ch-ua-mobile https://methickpalued.com; sec-ch-ua-arch https://methickpalued.com; sec-ch-ua-model https://methickpalued.com; sec-ch-ua-platform https://methickpalued.com; sec-ch-ua-platform-version https://methickpalued.com; sec-ch-ua-bitness https://methickpalued.com; sec-ch-ua-full-version-list https://methickpalued.com; sec-ch-ua-full-version https://methickpalued.com" http-equiv="delegate-ch"/><style>.dtpcnt{opacity: 0;}</style>
+<script>
+ (function(e,d,k,n,u,v,g,w,C,f,p,x,D,c,q,r,h,t,y,G,z){function A(){for(var a=d.querySelectorAll(".dtpcnt"),b=0,l=a.length;b<l;b++)a[b][w]=a[b][w].replace(/(^|\s+)dtpcnt($|\s+)/g,"")}function E(a,b,l,F){var m=new Date;m.setTime(m.getTime()+(F||864E5));d.cookie=a+"="+b+"; "+l+"samesite=Strict; expires="+m.toGMTString()+"; path=/";k.setItem(a,b);k.setItem(a+"-expires",m.getTime())}function B(a){var b=d.cookie.match(new RegExp("(^| )"+a+"=([^;]+)"));return b?b.pop():k.getItem(a+"-expires")&&+k.getItem(a+
+"-expires")>(new Date).getTime()?k.getItem(a):null}z="https:"===e.location.protocol?"secure; ":"";e[f]||(e[f]=function(){(e[f].q=e[f].q||[]).push(arguments)},r=d[u],d[u]=function(){r&&r.apply(this,arguments);if(e[f]&&!e[f].hasOwnProperty("params")&&/loaded|interactive|complete/.test(d.readyState))for(;c=d[v][p++];)/\/?click\/?($|(\/[0-9]+)?$)/.test(c.pathname)&&(c[g]="javascrip"+e.postMessage.toString().slice(4,5)+":"+f+'.'+'l="'+c[g]+'",void 0')},setTimeout(function(){(t=RegExp("[?&]cpid(=([^&#]*)|&|#|$)").exec(e.location.href))&&
+t[2]&&(h=t[2],y=B("vl-"+h));var a=B("vl-cep"),b=location[g];if("savedCep"===D&&a&&(!h||"undefined"===typeof h)&&0>b.indexOf("cep=")){var l=-1<b.indexOf("?")?"&":"?";b+=l+a}c=d.createElement("script");q=d.scripts[0];c.defer=1;c.src=x+(-1===x.indexOf("?")?"?":"&")+"lpref="+n(d.referrer)+"&lpurl="+n(b)+"&lpt="+n(d.title)+"&vtm="+(new Date).getTime()+(y?"&uw=no":"");c[C]=function(){for(p=0;c=d[v][p++];)/dtpCallback\.l/.test(c[g])&&(c[g]=decodeURIComponent(c[g]).match(/dtpCallback\.l="([^"]+)/)[1]);A()};
+q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(window,document,localStorage,encodeURIComponent,"onreadystatechange","links","href","className","onerror","dtpCallback",0,"https://methickpalued.com/d/.js","savedCep");
+</script>
+<noscript><link href="https://methickpalued.com/d/.js?noscript=true&amp;lpurl=" rel="stylesheet"/></noscript>
+</head>
+<body>
+<div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
+<div id="adv-header-logo" style="text-align:center;padding:14px 0 10px;background:#fff;border-bottom:1px solid #eee;">
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="display:block;height:52px;max-width:260px;object-fit:contain;margin:0 auto;"/>
+</div>
+<!-- ── HERO ── -->
+<div class="adv-hero">
+<h1 class="adv-hero__title">A Letter From My Workbench on a Tuesday Morning in April</h1>
+<p class="adv-hero__subtitle">On hides, thread colors, and the wallets folks keep sending photos</p>
+</div>
+<!-- ── LEAD IMAGE ── -->
+<div class="adv-lead-image">
+<div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts="[&quot;Older craftsman's hands stitching a brown leather wallet at a worn wooden workbench, soft morning light through window, photorealistic&quot;, &quot;Overhead view of a leather workbench with half-finished bifold wallet, awl, waxed thread spools, coffee mug, photorealistic&quot;, &quot;Quiet small leather shop interior at dawn, sunlight on hanging hides and tools, warm nostalgic atmosphere, photorealistic&quot;]" data-selected="0" data-slot-key="media.lead" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.lead</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older craftsman's hands stitching a brown leather wallet at a worn wooden workbe"</div></div>
+</div>
+<!-- ── BYLINE (local avatar pool) ── -->
+<div class="adv-byline">
+<img alt="" class="article-byline-photo" src="/pages/avatars/author/neutral_male.jpg"/>
+<div class="adv-byline__meta">
+<div class="adv-byline__name-line">By <span class="article-byline-name">Paul Lucas</span></div>
+<div class="adv-byline__cred">Leatherworker · Owner, Paul Lucas Leather</div>
+<div class="adv-byline__date">Published April 15, 2026</div>
+</div>
+</div>
+<!-- ── OPENING PARAGRAPHS ── -->
+<div class="adv-article">
+<p>It's Tuesday, a little past seven. I'm at my bench, coffee going cold, writing to you instead of drinking it.</p>
+<p>The shop smells like the hide I opened at six — vegetable-tanned cowhide, warm and grassy, the way a saddle smells.</p>
+<p>In front of me is a half-finished billfold in English Bridle, chestnut, with a spool of forest-green thread waiting beside it.</p>
+<p>That wallet belongs to a man in Montana named Jack. He ordered it for his father's seventieth birthday.</p>
+</div>
+<!-- ── S1 ANATOMY ── -->
+<h2 class="adv-section-heading">I Want to Tell You About Jack's Order From Montana First</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts='["Rolled full-grain English Bridle leather hide resting on wooden shelf in small workshop, rich brown tones, photorealistic", "Hands unrolling a vegetable-tanned cowhide on a cutting table, natural light, photorealistic", "Close-up of leather surface showing grain, pores, and slight imperfections of real full-grain hide, photorealistic"]' data-selected="0" data-slot-key="media.s1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Rolled full-grain English Bridle leather hide resting on wooden shelf in small w"</div></div></div>
+<div class="adv-article">
+<p>Jack wrote three sentences. Chestnut leather. Forest-green thread. His father taught him to fish on the Gallatin.</p>
+<p>That's all I had to work with, and honestly, that's all I needed. The rest was already <strong>in the choices</strong>.</p>
+<p>Chestnut is a warm, honest brown — the color of river rocks in low sun. It ages into something deeper every year.</p>
+<p>Forest green is quieter than you'd think. Against chestnut it almost disappears, then catches the light and reminds you it's there.</p>
+<p>Jack didn't pick a feature from a list. He picked a <strong>memory</strong>, and asked me to put it in his father's pocket.</p>
+</div>
+<!-- ── S2 ARTHRITIS PROGRESSION ── -->
+<h2 class="adv-section-heading">Most Men Tell Me The Same Thing About Their Old Wallet</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts="[&quot;Worn nylon wallet next to cracked cheap leather wallet on wooden surface, end-of-life condition, photorealistic&quot;, &quot;Overstuffed bifold wallet sitting lopsided on a desk next to keys and phone, photorealistic&quot;, &quot;Man's back pocket showing bulging worn wallet causing shirt to hang unevenly, photorealistic&quot;]" data-selected="0" data-slot-key="media.s2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Worn nylon wallet next to cracked cheap leather wallet on wooden surface, end-of"</div></div></div>
+<div class="adv-article">
+<p>Before they write to me, they've usually been carrying the same tired billfold for a decade, maybe longer than that.</p>
+<p>When I ask what's wrong with it, the answers are almost always a version of one of these five things.</p>
+</div>
+<div class="adv-feature-list">
+<p>The stitching blew out somewhere around year three and they've been living with a loose card pocket ever since.</p>
+<p>The leather cracked along the fold, dried out from a hundred back-pockets worth of sitting, and nothing can bring it back.</p>
+<p>It's bonded leather — which is really just ground-up scraps glued to fabric — and the surface has started peeling off.</p>
+<p>It was a gift from somebody they've lost, and they've been patching it with tape because they can't let it go.</p>
+<p>It works fine, technically. But they look at it every morning and feel a little embarrassed pulling it out.</p>
+</div>
+<div class="adv-article">
+<p>I understand all five. I've carried wallets I was embarrassed by. I've taped a wallet rather than replace it.</p>
+<p>This letter is really for the man who's ready to stop patching, and wants the <strong>next one to be the last one</strong>.</p>
+</div>
+<!-- ── S3 SCARY TRUTH + FAILED SOLUTIONS ── -->
+<h2 class="adv-section-heading">I Spent Years Making Wallets I Wasn't Really Proud Of</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts='["Pile of discarded wallets in different materials and brands on a wooden table, photorealistic", "Cheap wallet with frayed stitching and peeling edges photographed on white background, photorealistic", "Frustrated middle-aged man examining a broken wallet at a kitchen counter, photorealistic"]' data-selected="0" data-slot-key="media.s3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Pile of discarded wallets in different materials and brands on a wooden table, p"</div></div></div>
+<div class="adv-article">
+<p>When I started out, I thought I had to compete on the things everyone else competes on, and I lost every one.</p>
+<p>Here's what I tried, and why none of it held up to my own standards after a few years in the trade.</p>
+</div>
+<div class="adv-feature-list">
+<p>I tried cheaper leather from overseas — chrome-tanned splits that looked fine new and turned to cardboard inside a year.</p>
+<p>I tried machine stitching to keep up with orders, and watched threads unravel the second a customer snagged one on a button.</p>
+<p>I tried simplifying the lineup to one color, one thread, one size, thinking <strong>choice overwhelmed people</strong>. It just bored them.</p>
+<p>I tried lifetime guarantees on work I wasn't sure of, and spent more time on repairs than I did on new pieces.</p>
+<p>I tried matching prices with factory brands, cutting corners I could see, and I couldn't look at the finished wallet afterward.</p>
+</div>
+<div class="adv-article">
+<p>So I stopped competing on their terms. I went back to American hides, hand stitching, and letting people choose their own wallet.</p>
+</div>
+<!-- ── S4 SOLUTION ── -->
+<h2 class="adv-section-heading">What It Actually Takes To Make One Of These Wallets</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts='["Craftsman saddle-stitching leather by hand with two needles and waxed thread, close-up, photorealistic", "Hands skiving leather edges with sharp blade at a workbench, photorealistic", "Side-by-side of machine-stitched wallet versus hand-stitched wallet showing difference in stitch quality, photorealistic"]' data-selected="0" data-slot-key="media.s4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Craftsman saddle-stitching leather by hand with two needles and waxed thread, cl"</div></div></div>
+<div class="adv-article">
+<p>A Finnigan wallet takes about three hours of my time, not counting the hide selection and the cutting that morning.</p>
+<p>I'll walk you through it the way I'd show a friend who wandered into the shop and asked what I was up to.</p>
+</div>
+<ul class="adv-bullet-list">
+<li>I pick the hide by hand, from a shelf of full-grain American cowhide, looking for a section with even grain and character.</li>
+<li>I cut the panels with a straight edge and a fresh blade — no clicker dies, so every piece gets my eyes on it.</li>
+<li>I skive the edges down so the fold sits flat in your pocket, not like a hinge fighting to stay closed.</li>
+<li>I saddle-stitch the seams by hand with two needles and waxed thread — <u>the one stitch that won't unravel if it breaks</u>.</li>
+<li>I burnish the edges with beeswax and a wooden slicker until they're smooth enough that a thumb runs over them without catching.</li>
+</ul>
+<!-- ── S5 SOMETHING REMARKABLE ── -->
+<h2 class="adv-section-heading">The Six Leathers And Nine Threads Are A Real Conversation</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts='["Six leather color swatches arranged on workbench: chestnut, black, cognac, burgundy, natural, dark brown, photorealistic", "Nine spools of waxed thread in various colors lined up next to leather samples, photorealistic", "Customer handwritten note pinned above workbench specifying leather color and thread color choice, photorealistic"]' data-selected="0" data-slot-key="media.s5" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s5</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Six leather color swatches arranged on workbench: chestnut, black, cognac, burgu"</div></div></div>
+<div class="adv-article">
+<p>I offer six leather colors and nine thread colors. That's fifty-four combinations, which sounds like a lot until you see the board.</p>
+<p>I don't think of those fifty-four as <strong>features</strong>. I think of them as fifty-four different answers to a specific question.</p>
+<p>What color was your first truck? What did your grandfather's belt look like? What's the thread your wife wants on her initials?</p>
+</div>
+<!-- ── S6 ONLY ONE CATCH ── -->
+<h2 class="adv-section-heading">How I Ended Up Cutting Leather For A Quiet Living</h2>
+<div class="adv-article">
+<p>I didn't grow up planning this. I grew up watching my uncle fix saddles in a barn that smelled like today's shop smells.</p>
+<p>Fifteen years ago I made my wife a wallet for Christmas. She showed a friend. The friend ordered one. I never went back.</p>
+</div>
+<!-- ── PRODUCT SHOWCASE ── -->
+<div class="adv-product-showcase">
+<h3 class="adv-product-showcase__title">Paul Lucas Wallet</h3>
+<p class="adv-product-showcase__tagline">Full-grain American leather, hand-stitched, built to your spec</p>
+<a href="#"><div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts="[&quot;Finnigan bifold wallet in chestnut full-grain leather with forest green stitching on wooden table, photorealistic&quot;, &quot;Open Finnigan wallet showing card slots and billfold, English Bridle leather, photorealistic&quot;, &quot;Finnigan wallet held in older man's hand, warm patina visible, photorealistic&quot;]" data-selected="0" data-slot-key="media.product" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.product</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Finnigan bifold wallet in chestnut full-grain leather with forest green stitchin"</div></div></a>
+<div class="adv-product-showcase__rating">
+<span class="adv-product-showcase__rating-stars">★★★★★</span>
+<span class="adv-product-showcase__rating-score">4.9</span>
+<span class="adv-product-showcase__rating-sep">·</span>
+<span>1,800+ reviews</span>
+</div>
+<a class="adv-cta-inline" href="#"><span data-copy="cta_check.text">See the leathers</span></a>
+</div>
+<!-- ── S7 INTRODUCING ── -->
+<h2 class="adv-section-heading">What Sits On My Bench Right Now — The Finnigan</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts='["New Finnigan wallet next to four-year-old well-patinated Finnigan wallet showing color deepening, photorealistic", "Close-up of aged full-grain leather wallet with rich patina and soft sheen, photorealistic", "Hands of older man holding worn leather wallet with visible character marks, photorealistic"]' data-selected="0" data-slot-key="media.s7a" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s7a</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"New Finnigan wallet next to four-year-old well-patinated Finnigan wallet showing"</div></div></div>
+<div class="adv-article">
+<p>The <strong>Finnigan</strong> is the pattern I keep coming back to. Bifold, six card slots, a billfold section, and a center pocket for bills.</p>
+<p>It's the one I make for myself, for my brother, for the customers who've come back four and five years later.</p>
+</div>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts='["Craftsman carefully cutting leather pattern pieces on workbench with straight edge, photorealistic", "Paul Lucas at workbench measuring leather with brass ruler, focused expression, photorealistic", "Finished wallet being placed in small paper-wrapped parcel ready for shipping, photorealistic"]' data-selected="0" data-slot-key="media.s7b" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s7b</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Craftsman carefully cutting leather pattern pieces on workbench with straight ed"</div></div></div>
+<!-- ── TESTIMONIAL GRID (4 cards) ── -->
+<div class="adv-testimonial-grid">
+<div class="adv-testimonial-grid__card">
+<div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts='["Middle-aged American man smiling holding chestnut leather wallet at kitchen table, photorealistic", "Portrait of 52-year-old man in flannel shirt holding bifold wallet, warm natural light, photorealistic", "Happy customer showing off customized leather wallet to camera, casual home setting, photorealistic"]' data-selected="0" data-slot-key="media.t_1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Middle-aged American man smiling holding chestnut leather wallet at kitchen tabl"</div></div>
+<p class="adv-testimonial-grid__name">Tom, 58, Retired fireman</p>
+<p class="adv-testimonial-grid__text">Four years in and the chestnut has turned the color of an old baseball glove. Nothing's come loose. Nothing's cracked. It just keeps getting better.</p>
+</div>
+<div class="adv-testimonial-grid__card">
+<div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts='["American man in his 40s in workshop holding dark brown leather wallet, photorealistic", "Portrait of construction worker holding well-used leather wallet, pride in expression, photorealistic", "Man showing patinated leather wallet outside his truck, natural daylight, photorealistic"]' data-selected="0" data-slot-key="media.t_2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"American man in his 40s in workshop holding dark brown leather wallet, photoreal"</div></div>
+<p class="adv-testimonial-grid__name">Derek, 44, General contractor</p>
+<p class="adv-testimonial-grid__text">I'm hard on gear. I've replaced my wallet every two years my whole adult life. This one's going on three and shows no signs of quitting.</p>
+</div>
+<div class="adv-testimonial-grid__card">
+<div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts='["Older American gentleman in his 60s holding burgundy leather wallet, photorealistic", "Retired man at home office holding customized bifold wallet with burgundy thread, photorealistic", "Grandfather handing wallet to son as gift, emotional family moment, photorealistic"]' data-selected="0" data-slot-key="media.t_3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older American gentleman in his 60s holding burgundy leather wallet, photorealis"</div></div>
+<p class="adv-testimonial-grid__name">Bill, 66, Retired pilot</p>
+<p class="adv-testimonial-grid__text">Ordered one for my son's thirtieth. Black leather, burgundy thread — his late mother's favorite color. He texted me a picture the next morning.</p>
+</div>
+<div class="adv-testimonial-grid__card">
+<div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts='["American man in his 30s in café holding black leather bifold wallet, photorealistic", "Young professional at coffee shop placing leather wallet on wooden table, photorealistic", "Portrait of man in casual suit holding minimalist leather wallet, photorealistic"]' data-selected="0" data-slot-key="media.t_4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"American man in his 30s in café holding black leather bifold wallet, photorealis"</div></div>
+<p class="adv-testimonial-grid__name">Marcus, 37, Architect</p>
+<p class="adv-testimonial-grid__text">I wrote Paul a weird, specific request about the thread color. He wrote back the same day. The wallet showed up exactly the way I described.</p>
+</div>
+</div>
+<!-- ── S8 HELPED THOUSANDS + BENEFITS ── -->
+<h2 class="adv-section-heading">What Actually Goes Into A Finnigan Wallet, Laid Out Plainly</h2>
+<div class="adv-testimonial-banner"><div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts="[&quot;Wide shot of small American leather workshop interior with workbench, hides, and tools, photorealistic&quot;, &quot;American flag patch on leather apron hanging in workshop, photorealistic&quot;, &quot;Craftsman's hands and finished wallets laid out on weathered wooden bench, photorealistic&quot;]" data-selected="0" data-slot-key="media.banner" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.banner</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Wide shot of small American leather workshop interior with workbench, hides, and"</div></div></div>
+<div class="adv-article">
+<p>I try to be honest about what a wallet is and isn't. Here's what makes it onto the bench and what doesn't.</p>
+</div>
+<div class="adv-feature-list">
+<p>Full-grain American cowhide, the top layer, never sanded or corrected.</p>
+<p>Hand saddle-stitching with waxed polyester thread that outlasts the leather.</p>
+<p>Six leather colors and nine thread colors, chosen by you.</p>
+<p>Edges skived, beveled, and burnished by hand for flat folding.</p>
+<p>Lifetime guarantee on stitching and craftsmanship, repaired at my bench.</p>
+</div>
+<div class="adv-article">
+<p>No fabric lining, no plastic window, no contrast logo stamped on the outside. Just the leather and the thread you picked.</p>
+</div>
+<!-- ── S9 HOW CAN YOU GET ── -->
+<h2 class="adv-section-heading">About The Hides I Use — Glazed Harness And English Bridle</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts='["Roll of Glazed Harness leather next to roll of English Bridle leather on wooden shelf, photorealistic", "Close-up of English Bridle leather surface showing waxy finish and grain, photorealistic", "Leather tannery worker inspecting American cowhide, photorealistic"]' data-selected="0" data-slot-key="media.s9" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s9</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Roll of Glazed Harness leather next to roll of English Bridle leather on wooden "</div></div></div>
+<div class="adv-article">
+<p>Two hides go into most Finnigans. <strong>Glazed Harness</strong> is soft out of the gate — the one that feels broken in on day one.</p>
+<p><strong>English Bridle</strong> is the serious one. Vegetable-tanned, wax-stuffed, stiffer at first, and it rewards the man who carries it daily.</p>
+<p>Both come from American tanneries I've been buying from for years. I've walked their floors. I know the names of their foremen.</p>
+</div>
+<!-- ── S10 SELL OUT ── -->
+<h2 class="adv-section-heading">Why The Stitching Is The Part I'll Stand Behind Forever</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts='["Craftsman burnishing wallet edges with wooden slicker at workbench, photorealistic", "Close-up of finished wallet edges showing smooth polished finish, photorealistic", "Hands applying beeswax to leather edges, photorealistic"]' data-selected="0" data-slot-key="media.s10" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s10</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Craftsman burnishing wallet edges with wooden slicker at workbench, photorealist"</div></div></div>
+<div class="adv-article">
+<p>Most wallets fail at the stitching first, not the leather. A machine stitch is one continuous thread looped through itself.</p>
+<p>If it breaks anywhere, the whole seam can unravel like a pulled sweater. That's why cheap wallets fall apart all at once.</p>
+<p>A saddle stitch is <strong>two threads locking against each other</strong> at every hole. Cut one and the rest still hold.</p>
+</div>
+<!-- ── S11 NOT AVAILABLE ELSEWHERE ── -->
+<h2 class="adv-section-heading">Why I Can Offer A Real Lifetime Guarantee Without Hedging</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts='["Finished wallet resting on wooden bench with order card specifying customer name and colors, photorealistic", "Craftsman writing thank-you note to include with shipped wallet, photorealistic", "Hands wrapping wallet in tissue paper and tucking handwritten card inside, photorealistic"]' data-selected="0" data-slot-key="media.s11" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s11</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Finished wallet resting on wooden bench with order card specifying customer name"</div></div></div>
+<div class="adv-article">
+<p>When I say lifetime, I mean mine — for as long as I'm at this bench, I'll repair a Finnigan that comes back.</p>
+<p>That's not a marketing line. It's a statement about the math, and here's how the math actually works out in practice.</p>
+</div>
+<ul class="adv-bullet-list">
+<li>The stitching is hand-done with a thread that's rated to outlast the leather. I'd have to be <strong>badly wrong</strong> about the thread.</li>
+<li>The leather is full-grain, not coated or corrected, so it ages instead of flaking. There's no plastic layer to peel.</li>
+<li>The edges are burnished, not painted. Paint chips off. A burnished edge just gets smoother with years of handling.</li>
+<li>I make about ten of these a week. A handful of repairs a year fits inside a life I can actually live.</li>
+</ul>
+<div class="adv-article">
+<p>So yes — if the stitching ever lets go, send it back. I'll fix it at my bench and mail it home.</p>
+</div>
+<!-- ── S12 SPECIAL DISCOUNT + PRICING REVEAL ── -->
+<h2 class="adv-section-heading">The Photos I Keep In A Folder On My Desk</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts="[&quot;Father and son sitting together as father hands over leather wallet, emotional moment, photorealistic&quot;, &quot;Vintage leather wallet that has been passed down, showing deep patina, photorealistic&quot;, &quot;Grandfather's hand placing wallet into grandson's hand as heirloom gift, photorealistic&quot;]" data-selected="0" data-slot-key="media.s12" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s12</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Father and son sitting together as father hands over leather wallet, emotional m"</div></div></div>
+<div class="adv-pricing-reveal">
+<p class="adv-pricing-reveal__headline">Build Your Finnigan — Six Leathers, Nine Threads, One Wallet</p>
+<p class="adv-pricing-reveal__note">Orders come straight to my bench. I cut your leather the morning I get to it, and ship when it's ready.</p>
+</div>
+<div class="adv-article">
+<p>Customers send me pictures of their wallets a few years on. I keep every one of them in a folder by the bench.</p>
+<p>Chestnut turned to mahogany. Natural turned to honey. Black that's stayed black but picked up a soft patina at the fold.</p>
+</div>
+<!-- ── CTA BLOCK #1 ── -->
+<a class="adv-cta-block" href="#"><span data-copy="cta_1.text">Build your Finnigan</span></a>
+<!-- ── S13 60 DAYS RISK FREE + GUARANTEE ── -->
+<h2 class="adv-section-heading">A Few Things I'd Want You To Know Before Ordering</h2>
+<div class="adv-guarantee">
+<h3 class="adv-guarantee__title">Lifetime Stitching Guarantee</h3>
+<div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts='["Minimalist lifetime guarantee badge stamped into leather, photorealistic", "Leather tag embossed with lifetime guarantee wording on workbench, photorealistic", "Paul Lucas handwritten guarantee card next to finished wallet, photorealistic"]' data-selected="0" data-slot-key="media.guarantee_badge" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.guarantee_badge</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Minimalist lifetime guarantee badge stamped into leather, photorealistic"</div></div>
+<div class="adv-guarantee__body">
+<p>If the saddle stitching on your Finnigan ever fails, write to me. I'll repair it at my bench, on my time.</p>
+<p>There's no card to register, no portal to log into, no form asking you to prove you didn't abuse it.</p>
+<p>You also have thirty days after it arrives to send it back for any reason at all. No questions from me.</p>
+</div>
+</div>
+<!-- ── S14 WHAT TO DO NEXT ── -->
+<h2 class="adv-section-heading">What Four Years Of Daily Carry Actually Does To It</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts="[&quot;Customer's four-year-old Finnigan wallet photographed alongside original new condition photo, photorealistic&quot;, &quot;Aged chestnut leather wallet on wooden table with soft light showing deep patina, photorealistic&quot;, &quot;Man's hand opening well-worn full-grain leather wallet, character marks visible, photorealistic&quot;]" data-selected="0" data-slot-key="media.s14" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s14</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Customer's four-year-old Finnigan wallet photographed alongside original new con"</div></div></div>
+<div class="adv-article">
+<p>The photos customers send me follow a pattern. Year one, the leather stays close to how it left the shop.</p>
+<p>Year two, the color starts to deepen where your thumb rides. Year three, the whole wallet takes on a <strong>softer sheen</strong>.</p>
+<p>By year four, it looks like something you inherited — which, one day, is exactly what it's going to be.</p>
+</div>
+<!-- ── CTA BLOCK #2 ── -->
+<a class="adv-cta-block" href="#"><span data-copy="cta_2.text">Start your build</span></a>
+<!-- ── S15 ZERO RISK + EMOTIONAL CALLOUT ── -->
+<h2 class="adv-section-heading">I'll Be At The Bench When Your Order Comes In</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts="[&quot;Paul Lucas at workbench writing letter, untouched coffee mug beside him, photorealistic&quot;, &quot;Craftsman looking up from bench smiling, half-finished wallet in front, photorealistic&quot;, &quot;Close-up of leatherworker's weathered hands resting on completed wallet, photorealistic&quot;]" data-selected="0" data-slot-key="media.s15a" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s15a</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Paul Lucas at workbench writing letter, untouched coffee mug beside him, photore"</div></div></div>
+<div class="adv-article">
+<p>When you place a Finnigan order, it prints on a small slip of paper I keep in a wooden tray next to me.</p>
+<p>I work through that tray in order. Nothing skips the line, nothing gets rushed, nothing leaves the shop until I'd carry it.</p>
+<p>If something about your choices makes me pause — a combination I haven't seen before — I'll email you before I cut.</p>
+</div>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="9518558e-e100-465b-ba70-cdf44960323d" data-prompts="[&quot;Finnigan wallet being placed into a customer's hand, everyday carry composition with keys and watch, photorealistic&quot;, &quot;Stack of finished wallets ready to ship on workbench, photorealistic&quot;, &quot;Man tucking customized leather wallet into back pocket of jeans, photorealistic&quot;]" data-selected="0" data-slot-key="media.s15b" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s15b</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Finnigan wallet being placed into a customer's hand, everyday carry composition "</div></div></div>
+<!-- ── EMOTIONAL CALLOUT (3 bold lines) ── -->
+<div class="adv-callout">
+<p>Six leather colors. Nine thread colors. Fifty-four combinations, each one an answer to somebody's specific question.</p>
+<p>Full-grain American cowhide, hand saddle-stitched, edges burnished with beeswax — made one at a time at my bench.</p>
+<p>Lifetime guarantee on the stitching. Thirty days to send it back if it isn't what you hoped for.</p>
+</div>
+<div class="adv-article">
+<p>And when I ship it, I tuck a handwritten card inside, with the date I made it and the initials of whoever's pocket it's for.</p>
+</div>
+<!-- ── CLOSING PREAMBLE ── -->
+<div class="adv-closing-preamble">
+<p>Jack's wallet is going in the mail this afternoon. Chestnut leather, forest-green thread, and a card with his father's initials inside.</p>
+<p>If you've got a wallet like that in your head — a specific one, for you or someone else — I'd like to make it.</p>
+</div>
+<!-- ── CTA BLOCK #3 (final) ── -->
+<a class="adv-cta-block" href="#"><span data-copy="cta_3.text">Start your Finnigan</span></a>
+<footer id="adv-footer" style="background:#f5f5f5;border-top:1px solid #e5e5e5;padding:30px 20px;text-align:center;margin-top:40px;">
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="display:block;height:36px;max-width:180px;object-fit:contain;margin:0 auto 12px;"/>
+<div style="font-size:11px;color:#999;margin:0 auto 10px;font-family:system-ui,-apple-system,sans-serif;">
+<a href="https://methickpalued.com/click" style="color:#999;text-decoration:none;" target="_blank">Terms of Use</a>
+<span style="margin:0 6px;color:#ccc;">·</span>
+<a href="https://methickpalued.com/click" style="color:#999;text-decoration:none;" target="_blank">Privacy Policy</a>
+<span style="margin:0 6px;color:#ccc;">·</span>
+<a href="https://methickpalued.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
+</div>
+<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+</footer>
+<style id="adv-brand-style">
+:root{
+  --ll-color-primary: #000000;
+  --ll-color-primary-dark: #000000;
+  --ll-color-primary-rgb: 0, 0, 0;
+  --ll-color-secondary: #000000;
+  --ll-color-tertiary: #545252;
+  --ll-color-cta: #1a1a1a;
+  --ll-color-cta-dark: #151515;
+  --ll-color-cta-rgb: 26, 26, 26;
+  --ll-color-background: #ffffff;
+  --ll-color-text-primary: #000000;
+  --ll-color-text-secondary: #000000;
+  --lxs-rating-icon-color: #05b67a;
+  --ll-font-heading: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --ll-font-body: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.cta-btn,.ll-btn-temp,.sticky-product-cta,.sticky-cta-btn,button.cta,a.cta{background:#000000 !important;border-color:#000000 !important;color:#ffffff !important}
+.cta-btn:hover,.ll-btn-temp:hover,.sticky-product-cta:hover,.sticky-cta-btn:hover,button.cta:hover,a.cta:hover{background:#000000 !important;border-color:#000000 !important}
+.adv-cta-inline,.adv-cta-block{background:#1a1a1a !important;border-color:#1a1a1a !important;color:#ffffff !important}
+.adv-cta-inline:hover,.adv-cta-block:hover{background:#151515 !important;border-color:#151515 !important}
+</style>
+</body>
+</html>
