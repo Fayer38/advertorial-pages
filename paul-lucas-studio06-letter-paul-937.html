@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><script defer="" src="https://methickpalued.com/d/.js?lpref=https%3A%2F%2Fstaging.studio.seesepro.com%2F&amp;lpurl=https%3A%2F%2Fstaging.studio.seesepro.com%2Fapi%2Fpipeline%2F39955962-e0cc-485e-b1ec-8633925a009a%2Feditable&amp;lpt=A%20Letter%20From%20Paul%20Lucas%3A%20The%20Last%20Four%20Hundred%20Wallets%20From%20a%20Texas%20Workshop&amp;vtm=1776695777650"></script><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>A Letter From Paul Lucas: The Last Four Hundred Wallets From a Texas Workshop</title>
@@ -362,6 +359,16 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -378,7 +385,254 @@ t[2]&&(h=t[2],y=B("vl-"+h));var a=B("vl-cep"),b=location[g];if("savedCep"===D&&a
 q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(window,document,localStorage,encodeURIComponent,"onreadystatechange","links","href","className","onerror","dtpCallback",0,"https://methickpalued.com/d/.js","savedCep");
 </script>
 <noscript><link href="https://methickpalued.com/d/.js?noscript=true&amp;lpurl=" rel="stylesheet"/></noscript>
-</head>
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style></head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
 <div id="adv-header-logo" style="text-align:center;padding:14px 0 10px;background:#fff;border-bottom:1px solid #eee;">
@@ -386,12 +640,12 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </div>
 <!-- ── HERO ── -->
 <div class="adv-hero">
-<h1 class="adv-hero__title">A Nordstrom Buyer Offered Me Sixty-Five Dollars Each. I Said No.</h1>
-<p class="adv-hero__subtitle">The last four hundred wallets from a Weatherford, Texas workshop</p>
+<h1 class="adv-hero__title" style="position: relative;">A Nordstrom Buyer Offered Me Sixty-Five Dollars Each. I Said No.</h1>
+<p class="adv-hero__subtitle" style="position: relative;">The last four hundred wallets from a Weatherford, Texas workshop</p>
 </div>
 <!-- ── LEAD IMAGE ── -->
 <div class="adv-lead-image">
-<div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts="[&quot;Portrait of a 67-year-old American craftsman with weathered hands holding a finished leather wallet inside a small Texas workshop, warm window light, photorealistic&quot;, &quot;Wide shot of an elderly leather artisan at his workbench surrounded by hand tools and full-grain hides, late afternoon golden light, photorealistic&quot;, &quot;Close detail of a craftsman's arthritic hands resting on a stitched leather wallet, soft morning light, photorealistic&quot;]" data-selected="0" data-slot-key="media.lead" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.lead</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Portrait of a 67-year-old American craftsman with weathered hands holding a fini"</div></div>
+<img alt="" data-copy="media.lead:attr:src" data-prompts="[&quot;Portrait of a 67-year-old American craftsman with weathered hands holding a finished leather wallet inside a small Texas workshop, warm window light, photorealistic&quot;, &quot;Wide shot of an elderly leather artisan at his workbench surrounded by hand tools and full-grain hides, late afternoon golden light, photorealistic&quot;, &quot;Close detail of a craftsman's arthritic hands resting on a stitched leather wallet, soft morning light, photorealistic&quot;]" data-slot-key="media.lead" data-v2-replaced="1" src="/pages/media/b85f7938/manual_upload-manual-e99d6d42.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
 </div>
 <!-- ── BYLINE (local avatar pool) ── -->
 <div class="adv-byline">
@@ -404,88 +658,88 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </div>
 <!-- ── OPENING PARAGRAPHS ── -->
 <div class="adv-article">
-<p>My name is Paul Lucas. I am sixty-seven, and I make wallets in a small workshop in Weatherford, Texas.</p>
-<p>The building was bought by my grandfather in 1948. I have worked inside it, in one form or another, since I was fourteen years old.</p>
-<p>I am writing this letter myself because I want you to hear it from me, and not from someone hired to sell on my behalf.</p>
-<p>There are four hundred wallets left. When they are gone, I will close the door on the workshop, and that will be the end of it.</p>
+<p style="position: relative;">My name is Paul Lucas. I am sixty-seven, and I make wallets in a small workshop in Weatherford, Texas.</p>
+<p style="position: relative;">The building was bought by my grandfather in 1948. I have worked inside it, in one form or another, since I was fourteen years old.</p>
+<p style="position: relative;">I am writing this letter myself because I want you to hear it from me, and not from someone hired to sell on my behalf.</p>
+<p style="position: relative;">There are four hundred wallets left. When they are gone, I will close the door on the workshop, and that will be the end of it.</p>
 </div>
 <!-- ── S1 ANATOMY ── -->
-<h2 class="adv-section-heading">The workshop, the building, and the man who taught me</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts='["Exterior of a small brick workshop in Weatherford Texas with a faded hand-painted sign, mid-century building, photorealistic", "Interior corner of a 900-square-foot leather workshop with hides hanging on the wall, warm tungsten light, photorealistic", "Old black-and-white framed photograph of a father and son leatherworkers on a workshop wall, dust motes in light, photorealistic"]' data-selected="0" data-slot-key="media.s1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Exterior of a small brick workshop in Weatherford Texas with a faded hand-painte"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">The workshop, the building, and the man who taught me</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s1:attr:src" data-prompts='["Exterior of a small brick workshop in Weatherford Texas with a faded hand-painted sign, mid-century building, photorealistic", "Interior corner of a 900-square-foot leather workshop with hides hanging on the wall, warm tungsten light, photorealistic", "Old black-and-white framed photograph of a father and son leatherworkers on a workshop wall, dust motes in light, photorealistic"]' data-slot-key="media.s1" data-v2-replaced="1" src="/pages/media/b85f7938/manual_upload-manual-d72ec1e5.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/></div>
 <div class="adv-article">
-<p>The shop is nine hundred square feet. There is one window facing east, a workbench my father built, and a coffee pot that runs all day.</p>
-<p>My grandfather paid cash for this building in 1948. He sold harness and tack to ranchers driving cattle through Parker County after the war.</p>
-<p>My father took it over in 1962 and turned it toward smaller goods — belts, billfolds, knife sheaths. He worked here until he was seventy.</p>
-<p>I came in beside him at fourteen, sweeping floors, then cutting scrap, then stitching. By twenty I was making wallets on my own bench.</p>
-<p>Fifty-three years later, I still come in at six in the morning. The light is good, and the building still smells the way it did then.</p>
+<p style="position: relative;">The shop is nine hundred square feet. There is one window facing east, a workbench my father built, and a coffee pot that runs all day.</p>
+<p style="position: relative;">My grandfather paid cash for this building in 1948. He sold harness and tack to ranchers driving cattle through Parker County after the war.</p>
+<p style="position: relative;">My father took it over in 1962 and turned it toward smaller goods — belts, billfolds, knife sheaths. He worked here until he was seventy.</p>
+<p style="position: relative;">I came in beside him at fourteen, sweeping floors, then cutting scrap, then stitching. By twenty I was making wallets on my own bench.</p>
+<p style="position: relative;">Fifty-three years later, I still come in at six in the morning. The light is good, and the building still smells the way it did then.</p>
 </div>
 <!-- ── S2 ARTHRITIS PROGRESSION ── -->
-<h2 class="adv-section-heading">Why I am finally closing the workshop after fifty-three long years</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts='["Close-up of stiff arthritic hands gripping leather working tools in early morning light, photorealistic", "Older man flexing swollen knuckles at a workbench in a Texas leather shop, photorealistic", "Hands of a 67-year-old craftsman warming under hot tap water before a workday, photorealistic"]' data-selected="0" data-slot-key="media.s2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Close-up of stiff arthritic hands gripping leather working tools in early mornin"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">Why I am finally closing the workshop after fifty-three long years</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s2:attr:src" data-prompts='["Close-up of stiff arthritic hands gripping leather working tools in early morning light, photorealistic", "Older man flexing swollen knuckles at a workbench in a Texas leather shop, photorealistic", "Hands of a 67-year-old craftsman warming under hot tap water before a workday, photorealistic"]' data-slot-key="media.s2" data-v2-replaced="1" src="/pages/media/b85f7938/editor-upload-manual-3ba5af17.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/></div>
 <div class="adv-article">
-<p>Three years ago, my hands started locking up in the mornings. The doctor in Fort Worth used a word I had been waiting on.</p>
-<p><strong>Rheumatoid arthritis.</strong> The same thing that took my father off the bench at seventy. I have watched this story before, from the other side of the room.</p>
+<p style="position: relative;">Three years ago, my hands started locking up in the mornings. The doctor in Fort Worth used a word I had been waiting on.</p>
+<p style="position: relative;"><strong>Rheumatoid arthritis.</strong> The same thing that took my father off the bench at seventy. I have watched this story before, from the other side of the room.</p>
 </div>
 <div class="adv-feature-list">
-<p>The mornings are the hardest. I run hot water over my knuckles for ten minutes before I can hold a needle.</p>
-<p>Saddle stitching, which is two needles working against each other, takes a steady grip. My grip is no longer steady all day.</p>
-<p>Some afternoons I can finish four wallets. Some afternoons I can finish one and then I sit down.</p>
-<p>Cold weather makes it worse. Texas does not get much cold, but when it comes, the bench goes quiet.</p>
-<p>My doctor has been honest with me. He said I have perhaps another year of fine work left, maybe a little more if I am careful.</p>
+<p style="position: relative;">The mornings are the hardest. I run hot water over my knuckles for ten minutes before I can hold a needle.</p>
+<p style="position: relative;">Saddle stitching, which is two needles working against each other, takes a steady grip. My grip is no longer steady all day.</p>
+<p style="position: relative;">Some afternoons I can finish four wallets. Some afternoons I can finish one and then I sit down.</p>
+<p style="position: relative;">Cold weather makes it worse. Texas does not get much cold, but when it comes, the bench goes quiet.</p>
+<p style="position: relative;">My doctor has been honest with me. He said I have perhaps another year of fine work left, maybe a little more if I am careful.</p>
 </div>
 <div class="adv-article">
-<p>I have no apprentice, and I did not train one. That was a decision I made twenty years ago, and I do not regret it, but it ends the line.</p>
-<p>When the last wallet ships, the bench goes quiet, and the building becomes a building again. That is the truth of it.</p>
+<p style="position: relative;">I have no apprentice, and I did not train one. That was a decision I made twenty years ago, and I do not regret it, but it ends the line.</p>
+<p style="position: relative;">When the last wallet ships, the bench goes quiet, and the building becomes a building again. That is the truth of it.</p>
 </div>
 <!-- ── S3 SCARY TRUTH + FAILED SOLUTIONS ── -->
-<h2 class="adv-section-heading">Last spring, a buyer drove out from Nordstrom in a rental SUV</h2>
+<h2 class="adv-section-heading" style="position: relative;">Last spring, a buyer drove out from Nordstrom in a rental SUV</h2>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts='["Stack of mass-produced wallets in cellophane on a department store shelf with hangtags, photorealistic", "Glass display case in an upscale department store showing branded leather goods, photorealistic", "Close-up of a generic leather wallet with a glossy hangtag reading handcrafted, photorealistic"]' data-selected="0" data-slot-key="media.s3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Stack of mass-produced wallets in cellophane on a department store shelf with ha"</div></div></div>
 <div class="adv-article">
-<p>He was polite. He had done his homework. He knew my father's name, and he knew the year I had taken over the bench from him.</p>
-<p>He sat across from me at this same workbench and made an offer that, on paper, was generous for a man in my position.</p>
+<p style="position: relative;">He was polite. He had done his homework. He knew my father's name, and he knew the year I had taken over the bench from him.</p>
+<p style="position: relative;">He sat across from me at this same workbench and made an offer that, on paper, was generous for a man in my position.</p>
 </div>
 <div class="adv-feature-list">
-<p><strong>Sixty-five dollars per wallet.</strong> A run of two thousand units, paid up front, delivered over eighteen months.</p>
-<p>He showed me the hangtag they had already designed. It said handcrafted in Texas, in a serif font, in brown ink on cream cardstock.</p>
-<p>He told me, plainly, that they would retail each wallet at two hundred and twenty-nine dollars on the floor in their flagship stores.</p>
-<p>The math is not complicated. He would more than triple the money on each wallet, and my name would be the reason.</p>
-<p>I asked him a few questions. Where the displays would sit. Who would write the copy. Whether I would ever meet a single buyer.</p>
+<p style="position: relative;"><strong>Sixty-five dollars per wallet.</strong> A run of two thousand units, paid up front, delivered over eighteen months.</p>
+<p style="position: relative;">He showed me the hangtag they had already designed. It said handcrafted in Texas, in a serif font, in brown ink on cream cardstock.</p>
+<p style="position: relative;">He told me, plainly, that they would retail each wallet at two hundred and twenty-nine dollars on the floor in their flagship stores.</p>
+<p style="position: relative;">The math is not complicated. He would more than triple the money on each wallet, and my name would be the reason.</p>
+<p style="position: relative;">I asked him a few questions. Where the displays would sit. Who would write the copy. Whether I would ever meet a single buyer.</p>
 </div>
 <div class="adv-article">
-<p>Then I told him no, walked him out to his rental, shook his hand, and came back inside and sat down with my wife Linda.</p>
+<p style="position: relative;">Then I told him no, walked him out to his rental, shook his hand, and came back inside and sat down with my wife Linda.</p>
 </div>
 <!-- ── S4 SOLUTION ── -->
-<h2 class="adv-section-heading">What I told Linda that afternoon at the kitchen table</h2>
+<h2 class="adv-section-heading" style="position: relative;">What I told Linda that afternoon at the kitchen table</h2>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts='["Craftsman hand-stitching a leather wallet with waxed thread and two needles at a wooden bench, photorealistic", "Side view of saddle-stitching technique on full-grain American cowhide, magnified detail, photorealistic", "Tools of leather craft laid out neatly: awl, mallet, pricking iron, beeswax thread, photorealistic"]' data-selected="0" data-slot-key="media.s4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Craftsman hand-stitching a leather wallet with waxed thread and two needles at a"</div></div></div>
 <div class="adv-article">
-<p>I said I would rather sell the last four hundred wallets directly, to four hundred men who would actually carry them, than ship two thousand into a department store.</p>
-<p>I am not against department stores. I am against my name on a hangtag selling for triple, when the man writing the check has never met me.</p>
+<p style="position: relative;">I said I would rather sell the last four hundred wallets directly, to four hundred men who would actually carry them, than ship two thousand into a department store.</p>
+<p style="position: relative;">I am not against department stores. I am against my name on a hangtag selling for triple, when the man writing the check has never met me.</p>
 </div>
 <ul class="adv-bullet-list">
-<li>I want each wallet to go to a person who chose it on purpose. Not someone who picked it off a shelf because it was the closest one.</li>
-<li>I want a man to carry it for ten years, twenty years, until the leather is as soft as a work glove and shaped to his back pocket.</li>
-<li>I want the price to be a fair one. Not a markup paying for retail rent in a city I have never visited.</li>
-<li>I want to write the description myself. I want to answer the email if something is wrong. I want it to be my hand, end to end.</li>
-<li>Linda listened, drank her coffee, and said, <i>well, Paul, that sounds about right.</i> She has heard worse ideas from me over the years.</li>
+<li style="position: relative;">I want each wallet to go to a person who chose it on purpose. Not someone who picked it off a shelf because it was the closest one.</li>
+<li style="position: relative;">I want a man to carry it for ten years, twenty years, until the leather is as soft as a work glove and shaped to his back pocket.</li>
+<li style="position: relative;">I want the price to be a fair one. Not a markup paying for retail rent in a city I have never visited.</li>
+<li style="position: relative;">I want to write the description myself. I want to answer the email if something is wrong. I want it to be my hand, end to end.</li>
+<li style="position: relative;">Linda listened, drank her coffee, and said, <i>well, Paul, that sounds about right.</i> She has heard worse ideas from me over the years.</li>
 </ul>
 <!-- ── S5 SOMETHING REMARKABLE ── -->
-<h2 class="adv-section-heading">About the wallet itself, since that is what you came for</h2>
+<h2 class="adv-section-heading" style="position: relative;">About the wallet itself, since that is what you came for</h2>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts='["Six leather color swatches and nine spools of thread arranged on a workbench, photorealistic", "Color combination chart of leather hides and waxed threads in natural daylight, photorealistic", "Customer hand selecting a thread spool next to a leather sample, warm lighting, photorealistic"]' data-selected="0" data-slot-key="media.s5" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s5</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Six leather color swatches and nine spools of thread arranged on a workbench, ph"</div></div></div>
 <div class="adv-article">
-<p>It is called the Finnigan. Bifold. Six card slots, a center divider, and a long bill pocket that holds American currency without folding it twice.</p>
-<p><strong>Full-grain American cowhide</strong>, vegetable-tanned in Pennsylvania, by a tannery that has been doing it the slow way since the 1930s.</p>
-<p>Saddle stitched by hand with waxed polyester thread, the same way my father stitched, the same way his father stitched harness for working horses.</p>
+<p style="position: relative;">It is called the Finnigan. Bifold. Six card slots, a center divider, and a long bill pocket that holds American currency without folding it twice.</p>
+<p style="position: relative;"><strong>Full-grain American cowhide</strong>, vegetable-tanned in Pennsylvania, by a tannery that has been doing it the slow way since the 1930s.</p>
+<p style="position: relative;">Saddle stitched by hand with waxed polyester thread, the same way my father stitched, the same way his father stitched harness for working horses.</p>
 </div>
 <!-- ── S6 ONLY ONE CATCH ── -->
-<h2 class="adv-section-heading">Six leather colors and nine thread colors, fifty-four unique combinations total</h2>
+<h2 class="adv-section-heading" style="position: relative;">Six leather colors and nine thread colors, fifty-four unique combinations total</h2>
 <div class="adv-article">
-<p>You choose the leather and you choose the thread. <u>Fifty-four combinations</u> in total, and no two finished wallets in this batch will look the same.</p>
-<p>If you would like your initials embossed on the inside flap, I will do that at the bench, by hand, with brass letter stamps my father bought in 1971.</p>
+<p style="position: relative;">You choose the leather and you choose the thread. <u>Fifty-four combinations</u> in total, and no two finished wallets in this batch will look the same.</p>
+<p style="position: relative;">If you would like your initials embossed on the inside flap, I will do that at the bench, by hand, with brass letter stamps my father bought in 1971.</p>
 </div>
 <!-- ── PRODUCT SHOWCASE ── -->
 <div class="adv-product-showcase">
-<h3 class="adv-product-showcase__title">Paul Lucas Wallet</h3>
-<p class="adv-product-showcase__tagline">Handcrafted in Texas. Built to outlast the man who carries it.</p>
+<h3 class="adv-product-showcase__title" style="position: relative;">Paul Lucas Wallet</h3>
+<p class="adv-product-showcase__tagline" style="position: relative;">Handcrafted in Texas. Built to outlast the man who carries it.</p>
 <a href="#"><div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts='["Finished bifold leather wallet from Paul Lucas in rich tan with contrast stitching, studio product shot on linen, photorealistic", "Top-down view of an open handcrafted leather wallet showing card slots and bill pocket, photorealistic", "Hand holding a softly worn leather wallet under warm window light, photorealistic"]' data-selected="0" data-slot-key="media.product" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.product</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Finished bifold leather wallet from Paul Lucas in rich tan with contrast stitchi"</div></div></a>
 <div class="adv-product-showcase__rating">
 <span class="adv-product-showcase__rating-stars">★★★★★</span>
@@ -496,153 +750,152 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <a class="adv-cta-inline" href="#"><span data-copy="cta_check.text">See remaining wallets</span></a>
 </div>
 <!-- ── S7 INTRODUCING ── -->
-<h2 class="adv-section-heading">Why the price is what it is, not what stores charge</h2>
+<h2 class="adv-section-heading" style="position: relative;">Why the price is what it is, not what stores charge</h2>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts="[&quot;Brand-new full-grain leather wallet next to a heavily patinated decade-old wallet, side by side, photorealistic&quot;, &quot;Close-up of leather patina formed over twenty years of daily carry, soft natural light, photorealistic&quot;, &quot;Worn leather wallet curving to the shape of its owner's back pocket, photorealistic&quot;]" data-selected="0" data-slot-key="media.s7a" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s7a</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Brand-new full-grain leather wallet next to a heavily patinated decade-old walle"</div></div></div>
 <div class="adv-article">
-<p>The price you will see on this page is what I would charge a friend who walked into the workshop. <strong>No retail markup.</strong> No middleman.</p>
-<p>It is not a sale. It is not a discount. It is the price of a wallet, sold by the man who made it, with no one standing in between.</p>
+<p style="position: relative;">The price you will see on this page is what I would charge a friend who walked into the workshop. <strong>No retail markup.</strong> No middleman.</p>
+<p style="position: relative;">It is not a sale. It is not a discount. It is the price of a wallet, sold by the man who made it, with no one standing in between.</p>
 </div>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts='["Craftsman pressing initials into the inside flap of a leather wallet with brass letter stamps, photorealistic", "Close-up of embossed initials on the interior of a handmade wallet, photorealistic", "Custom monogram detail on full-grain leather under warm tungsten light, photorealistic"]' data-selected="0" data-slot-key="media.s7b" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s7b</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Craftsman pressing initials into the inside flap of a leather wallet with brass "</div></div></div>
 <!-- ── TESTIMONIAL GRID (4 cards) ── -->
 <div class="adv-testimonial-grid">
 <div class="adv-testimonial-grid__card">
 <div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts='["Portrait of a 58-year-old American man in a denim jacket holding a worn leather wallet, photorealistic", "Architect at his drafting desk with a softly aged wallet on the corner, photorealistic", "Smiling middle-aged man outdoors holding a long-carried leather wallet, photorealistic"]' data-selected="0" data-slot-key="media.t_1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Portrait of a 58-year-old American man in a denim jacket holding a worn leather "</div></div>
-<p class="adv-testimonial-grid__name">Daniel, 58, Architect</p>
-<p class="adv-testimonial-grid__text">Bought one from Paul in 2003. It is on my desk right now. Darker, softer, but the stitching has not given up a single thread.</p>
+<p class="adv-testimonial-grid__name" style="position: relative;">Daniel, 58, Architect</p>
+<p class="adv-testimonial-grid__text" style="position: relative;">Bought one from Paul in 2003. It is on my desk right now. Darker, softer, but the stitching has not given up a single thread.</p>
 </div>
 <div class="adv-testimonial-grid__card">
 <div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts='["Portrait of a 62-year-old American rancher in a felt hat with a leather wallet in hand, photorealistic", "Older gentleman sitting on a porch reviewing a worn handmade wallet, photorealistic", "Close-up of a calloused hand holding a deeply patinated bifold wallet, photorealistic"]' data-selected="0" data-slot-key="media.t_2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Portrait of a 62-year-old American rancher in a felt hat with a leather wallet i"</div></div>
-<p class="adv-testimonial-grid__name">Wade, 62, Cattle rancher</p>
-<p class="adv-testimonial-grid__text">Paul made mine the year my first grandson was born. Twenty-one years in my back pocket, through every season. Still the only wallet I own.</p>
+<p class="adv-testimonial-grid__name" style="position: relative;">Wade, 62, Cattle rancher</p>
+<p class="adv-testimonial-grid__text" style="position: relative;">Paul made mine the year my first grandson was born. Twenty-one years in my back pocket, through every season. Still the only wallet I own.</p>
 </div>
 <div class="adv-testimonial-grid__card">
 <div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts='["Portrait of a 47-year-old American attorney in a navy blazer holding a leather wallet, photorealistic", "Professional man at his desk with a softly worn handmade wallet, photorealistic", "Lawyer outside a courthouse holding his everyday leather wallet, photorealistic"]' data-selected="0" data-slot-key="media.t_3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Portrait of a 47-year-old American attorney in a navy blazer holding a leather w"</div></div>
-<p class="adv-testimonial-grid__name">Andrew, 47, Attorney</p>
-<p class="adv-testimonial-grid__text">My father bought one from Paul's father in 1979. I bought one from Paul in 2011. That is the kind of shop this is.</p>
+<p class="adv-testimonial-grid__name" style="position: relative;">Andrew, 47, Attorney</p>
+<p class="adv-testimonial-grid__text" style="position: relative;">My father bought one from Paul's father in 1979. I bought one from Paul in 2011. That is the kind of shop this is.</p>
 </div>
 <div class="adv-testimonial-grid__card">
 <div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts="[&quot;Portrait of a 54-year-old American carpenter in a flannel shirt with a worn leather wallet, photorealistic&quot;, &quot;Tradesman in his workshop holding his daily-carry handmade wallet, photorealistic&quot;, &quot;Close-up of a craftsman's hand showing his decades-old leather wallet, photorealistic&quot;]" data-selected="0" data-slot-key="media.t_4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Portrait of a 54-year-old American carpenter in a flannel shirt with a worn leat"</div></div>
-<p class="adv-testimonial-grid__name">Stephen, 54, Carpenter</p>
-<p class="adv-testimonial-grid__text">I work with my hands. I respect a man who works with his. The wallet has held up better than most of my tools.</p>
+<p class="adv-testimonial-grid__name" style="position: relative;">Stephen, 54, Carpenter</p>
+<p class="adv-testimonial-grid__text" style="position: relative;">I work with my hands. I respect a man who works with his. The wallet has held up better than most of my tools.</p>
 </div>
 </div>
 <!-- ── S8 HELPED THOUSANDS + BENEFITS ── -->
-<h2 class="adv-section-heading">What is included with every wallet from the final batch</h2>
+<h2 class="adv-section-heading" style="position: relative;">What is included with every wallet from the final batch</h2>
 <div class="adv-testimonial-banner"><div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts='["Wide horizontal banner of a Texas workshop interior with hides, tools, and finished wallets on a workbench, photorealistic", "Panoramic view of full-grain leather rolls stacked beside hand tools, warm light, photorealistic", "Workbench close-up with finished wallets lined up before final inspection, photorealistic"]' data-selected="0" data-slot-key="media.banner" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.banner</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Wide horizontal banner of a Texas workshop interior with hides, tools, and finis"</div></div></div>
 <div class="adv-article">
-<p>Each wallet leaves the workshop wrapped in brown paper, tied with twine, with a short note from me inside the box.</p>
+<p style="position: relative;">Each wallet leaves the workshop wrapped in brown paper, tied with twine, with a short note from me inside the box.</p>
 </div>
 <div class="adv-feature-list">
-<p>Choice of six leather colors and nine waxed thread colors</p>
-<p>Optional initials hand-embossed on the inside flap, at no charge.</p>
-<p>Lifetime guarantee on every single stitch, signed by me personally.</p>
-<p>Shipped from Weatherford, Texas inside a plain unmarked kraft mailer.</p>
-<p>A short handwritten note from my workbench in the box.</p>
+<p style="position: relative;">Choice of six leather colors and nine waxed thread colors</p>
+<p style="position: relative;">Optional initials hand-embossed on the inside flap, at no charge.</p>
+<p style="position: relative;">Lifetime guarantee on every single stitch, signed by me personally.</p>
+<p style="position: relative;">Shipped from Weatherford, Texas inside a plain unmarked kraft mailer.</p>
+<p style="position: relative;">A short handwritten note from my workbench in the box.</p>
 </div>
 <div class="adv-article">
-<p>If anything ever fails on a stitch, you send it back, and I fix it at the bench. As long as I am still at the bench.</p>
+<p style="position: relative;">If anything ever fails on a stitch, you send it back, and I fix it at the bench. As long as I am still at the bench.</p>
 </div>
 <!-- ── S9 HOW CAN YOU GET ── -->
-<h2 class="adv-section-heading">What separates a hand-stitched wallet from an ordinary factory wallet today</h2>
+<h2 class="adv-section-heading" style="position: relative;">What separates a hand-stitched wallet from an ordinary factory wallet today</h2>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts='["Two wallets side by side: one factory-stamped and one hand-stitched, top-down view, photorealistic", "Comparison detail of machine stitching versus saddle stitching on leather, photorealistic", "Cross-section of a wallet edge showing burnished hand-finished leather, photorealistic"]' data-selected="0" data-slot-key="media.s9" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s9</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Two wallets side by side: one factory-stamped and one hand-stitched, top-down vi"</div></div></div>
 <div class="adv-article">
-<p>A factory wallet is sewn by a single thread on a sewing machine. When one stitch breaks, the whole row begins to unravel within weeks.</p>
-<p><strong>Saddle stitching uses two needles</strong> working in opposite directions through the same hole. If one thread fails, the other holds the seam closed.</p>
-<p>It takes me about five times longer to stitch a wallet by hand. That is the entire difference, and it is not a small one.</p>
+<p style="position: relative;">A factory wallet is sewn by a single thread on a sewing machine. When one stitch breaks, the whole row begins to unravel within weeks.</p>
+<p style="position: relative;"><strong>Saddle stitching uses two needles</strong> working in opposite directions through the same hole. If one thread fails, the other holds the seam closed.</p>
+<p style="position: relative;">It takes me about five times longer to stitch a wallet by hand. That is the entire difference, and it is not a small one.</p>
 </div>
 <!-- ── S10 SELL OUT ── -->
-<h2 class="adv-section-heading">About the leather itself, and where it really comes from today</h2>
+<h2 class="adv-section-heading" style="position: relative;">About the leather itself, and where it really comes from today</h2>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts='["Hand cutting a pattern from a full-grain American cowhide with a round knife, photorealistic", "Workbench detail of vegetable-tanned leather hide under daylight, photorealistic", "Craftsman skiving the edge of a leather panel with focused precision, photorealistic"]' data-selected="0" data-slot-key="media.s10" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s10</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Hand cutting a pattern from a full-grain American cowhide with a round knife, ph"</div></div></div>
 <div class="adv-article">
-<p>I use <strong>full-grain cowhide</strong> from a tannery in Pennsylvania. It is the top layer of the hide, with the natural grain still showing through.</p>
-<p>Cheaper wallets use what is called genuine leather, which is the bottom split, sanded smooth and coated in plastic to look like the real thing.</p>
-<p>Full-grain leather darkens, softens, and takes on the shape of the hand and the pocket that carries it. That is the patina people talk about.</p>
+<p style="position: relative;">I use <strong>full-grain cowhide</strong> from a tannery in Pennsylvania. It is the top layer of the hide, with the natural grain still showing through.</p>
+<p style="position: relative;">Cheaper wallets use what is called genuine leather, which is the bottom split, sanded smooth and coated in plastic to look like the real thing.</p>
+<p style="position: relative;">Full-grain leather darkens, softens, and takes on the shape of the hand and the pocket that carries it. That is the patina people talk about.</p>
 </div>
 <!-- ── S11 NOT AVAILABLE ELSEWHERE ── -->
-<h2 class="adv-section-heading">Why I am selling the last four hundred direct to you</h2>
+<h2 class="adv-section-heading" style="position: relative;">Why I am selling the last four hundred direct to you</h2>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts='["Handwritten ledger page tracking the remaining wallet count in a Texas workshop, photorealistic", "Numbered tags hanging on finished wallets ready for shipment, photorealistic", "Craftsman crossing out a number on a workshop chalkboard counting down stock, photorealistic"]' data-selected="0" data-slot-key="media.s11" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s11</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Handwritten ledger page tracking the remaining wallet count in a Texas workshop,"</div></div></div>
 <div class="adv-article">
-<p>There were six hundred wallets in this final batch when I started. As of this morning, the number on my workbench ledger reads four hundred and seven.</p>
-<p>When that number reaches zero, the workshop closes. There will not be a second batch, a relaunch, or a successor running the bench.</p>
+<p style="position: relative;">There were six hundred wallets in this final batch when I started. As of this morning, the number on my workbench ledger reads four hundred and seven.</p>
+<p style="position: relative;">When that number reaches zero, the workshop closes. There will not be a second batch, a relaunch, or a successor running the bench.</p>
 </div>
 <ul class="adv-bullet-list">
-<li><strong>Direct from my bench to your hand.</strong> No store, no buyer, no warehouse, no markup paying for someone else's lease.</li>
-<li>The price reflects the cost of the leather, the thread, the time at the bench, and a fair wage for the work. Nothing else.</li>
-<li>If a department store had taken these, you would be paying more than triple, and I would never know your name.</li>
-<li>I would rather know who is carrying my work. That is worth more to me than the larger check the buyer offered.</li>
+<li style="position: relative;"><strong>Direct from my bench to your hand.</strong> No store, no buyer, no warehouse, no markup paying for someone else's lease.</li>
+<li style="position: relative;">The price reflects the cost of the leather, the thread, the time at the bench, and a fair wage for the work. Nothing else.</li>
+<li style="position: relative;">If a department store had taken these, you would be paying more than triple, and I would never know your name.</li>
+<li style="position: relative;">I would rather know who is carrying my work. That is worth more to me than the larger check the buyer offered.</li>
 </ul>
 <div class="adv-article">
-<p>Linda updates the count on the ledger every Friday afternoon. When it hits zero, the page on this site comes down, and that is that.</p>
+<p style="position: relative;">Linda updates the count on the ledger every Friday afternoon. When it hits zero, the page on this site comes down, and that is that.</p>
 </div>
 <!-- ── S12 SPECIAL DISCOUNT + PRICING REVEAL ── -->
-<h2 class="adv-section-heading">A few honest words about who this wallet is not for</h2>
+<h2 class="adv-section-heading" style="position: relative;">A few honest words about who this wallet is not for</h2>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts='["Husband and wife sitting at a kitchen table in rural Texas reviewing wallet orders, photorealistic", "Older couple in a workshop sealing wallet packages by hand, photorealistic", "Linda and Paul standing together in front of the workshop building, photorealistic"]' data-selected="0" data-slot-key="media.s12" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s12</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Husband and wife sitting at a kitchen table in rural Texas reviewing wallet orde"</div></div></div>
 <div class="adv-pricing-reveal">
-<p class="adv-pricing-reveal__headline">The direct price, set by me, with no one standing in between</p>
-<p class="adv-pricing-reveal__note">This is the price I would quote a friend at the workshop door. No discount code, no flash sale, no clever pricing. Just the number.</p>
+<p class="adv-pricing-reveal__headline" style="position: relative;">The direct price, set by me, with no one standing in between</p>
+<p class="adv-pricing-reveal__note" style="position: relative;">This is the price I would quote a friend at the workshop door. No discount code, no flash sale, no clever pricing. Just the number.</p>
 </div>
 <div class="adv-article">
-<p>If you change wallets every couple of years, this is not the right wallet for you. It is built to be carried for decades.</p>
-<p>If the price feels steep, I understand. Buy something else and carry it well. There is no shame in that, and no hard feelings from my end.</p>
+<p style="position: relative;">If you change wallets every couple of years, this is not the right wallet for you. It is built to be carried for decades.</p>
+<p style="position: relative;">If the price feels steep, I understand. Buy something else and carry it well. There is no shame in that, and no hard feelings from my end.</p>
 </div>
 <!-- ── CTA BLOCK #1 ── -->
 <a class="adv-cta-block" href="#"><span data-copy="cta_1.text">Choose your combination</span></a>
 <!-- ── S13 60 DAYS RISK FREE + GUARANTEE ── -->
-<h2 class="adv-section-heading">The lifetime guarantee, in plain language and no fine print</h2>
+<h2 class="adv-section-heading" style="position: relative;">The lifetime guarantee, in plain language and no fine print</h2>
 <div class="adv-guarantee">
-<h3 class="adv-guarantee__title">Lifetime stitching guarantee</h3>
+<h3 class="adv-guarantee__title" style="position: relative;">Lifetime stitching guarantee</h3>
 <div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts="[&quot;Embossed leather circle stamp reading lifetime guarantee on stitching, studio shot, photorealistic&quot;, &quot;Close-up of a hand-pressed maker's mark on the inside of a wallet, photorealistic&quot;, &quot;Brass guarantee tag attached to a finished leather wallet, photorealistic&quot;]" data-selected="0" data-slot-key="media.guarantee_badge" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.guarantee_badge</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Embossed leather circle stamp reading lifetime guarantee on stitching, studio sh"</div></div>
 <div class="adv-guarantee__body">
-<p>If a single stitch on your wallet ever fails, send it back to the workshop in Weatherford, and I will repair it at the bench, free.</p>
-<p>There is no time limit on the stitching guarantee. As long as I am still at the bench, the offer stands without question or fine print.</p>
-<p>On top of that, you have thirty days from delivery to return the wallet for any reason at all. No questions, no restocking, no friction.</p>
+<p style="position: relative;">If a single stitch on your wallet ever fails, send it back to the workshop in Weatherford, and I will repair it at the bench, free.</p>
+<p style="position: relative;">There is no time limit on the stitching guarantee. As long as I am still at the bench, the offer stands without question or fine print.</p>
+<p style="position: relative;">On top of that, you have thirty days from delivery to return the wallet for any reason at all. No questions, no restocking, no friction.</p>
 </div>
 </div>
 <!-- ── S14 WHAT TO DO NEXT ── -->
-<h2 class="adv-section-heading">How the wallet is shipped, and what arrives at your door</h2>
+<h2 class="adv-section-heading" style="position: relative;">How the wallet is shipped, and what arrives at your door</h2>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts='["Brown paper-wrapped wallet tied with twine ready for shipping from a small workshop, photorealistic", "Handwritten thank-you note tucked inside a leather wallet box, photorealistic", "Craftsman placing a finished wallet into a kraft mailer at his bench, photorealistic"]' data-selected="0" data-slot-key="media.s14" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s14</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Brown paper-wrapped wallet tied with twine ready for shipping from a small works"</div></div></div>
 <div class="adv-article">
-<p>Each wallet is wrapped in brown paper, tied with twine, and placed inside a plain kraft mailer. Nothing on the outside gives away what is inside.</p>
-<p>Linda handles shipping from the workshop on Tuesdays and Fridays. Most orders reach the lower forty-eight states within five to seven business days.</p>
-<p>Inside the box, you will find a short handwritten note from me, the wallet, and a small card listing the leather and thread you chose.</p>
+<p style="position: relative;">Each wallet is wrapped in brown paper, tied with twine, and placed inside a plain kraft mailer. Nothing on the outside gives away what is inside.</p>
+<p style="position: relative;">Linda handles shipping from the workshop on Tuesdays and Fridays. Most orders reach the lower forty-eight states within five to seven business days.</p>
+<p style="position: relative;">Inside the box, you will find a short handwritten note from me, the wallet, and a small card listing the leather and thread you chose.</p>
 </div>
 <!-- ── CTA BLOCK #2 ── -->
 <a class="adv-cta-block" href="#"><span data-copy="cta_2.text">Reserve a wallet</span></a>
 <!-- ── S15 ZERO RISK + EMOTIONAL CALLOUT ── -->
-<h2 class="adv-section-heading">A final note from the workbench, before I close this letter</h2>
+<h2 class="adv-section-heading" style="position: relative;">A final note from the workbench, before I close this letter</h2>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts='["Father passing a leather wallet to his adult son at a kitchen table, photorealistic", "Two generations of hands holding the same patinated wallet, photorealistic", "Worn handmade wallet resting beside a framed family photograph, photorealistic"]' data-selected="0" data-slot-key="media.s15a" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s15a</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Father passing a leather wallet to his adult son at a kitchen table, photorealis"</div></div></div>
 <div class="adv-article">
-<p>I have written longer letters in my life, but few that mattered more. This is the last batch, and I wanted you to hear the reason from me.</p>
-<p>If you carry this wallet for twenty years, I will have done my work. If you pass it to your son, I will have done it well.</p>
-<p>I am not trying to convince anyone. I am explaining what the wallet is, what it costs, and why the workshop will be quiet soon.</p>
+<p style="position: relative;">I have written longer letters in my life, but few that mattered more. This is the last batch, and I wanted you to hear the reason from me.</p>
+<p style="position: relative;">If you carry this wallet for twenty years, I will have done my work. If you pass it to your son, I will have done it well.</p>
+<p style="position: relative;">I am not trying to convince anyone. I am explaining what the wallet is, what it costs, and why the workshop will be quiet soon.</p>
 </div>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="39955962-e0cc-485e-b1ec-8633925a009a" data-prompts='["Empty workbench in a Texas workshop with the last finished wallet at its center, photorealistic", "Closing-day view of a leather workshop with tools wrapped and shelves nearly bare, photorealistic", "Craftsman locking the workshop door at sunset with the last package in hand, photorealistic"]' data-selected="0" data-slot-key="media.s15b" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s15b</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Empty workbench in a Texas workshop with the last finished wallet at its center,"</div></div></div>
 <!-- ── EMOTIONAL CALLOUT (3 bold lines) ── -->
 <div class="adv-callout">
-<p>Four hundred wallets remain on the bench in Weatherford, Texas, as of this Friday morning.</p>
-<p>When the ledger reads zero, the page comes down and the workshop door closes for good.</p>
-<p>No second batch, no successor, no relaunch under a new name. That is a promise from me.</p>
+<p style="position: relative;">Four hundred wallets remain on the bench in Weatherford, Texas, as of this Friday morning.</p>
+<p style="position: relative;">When the ledger reads zero, the page comes down and the workshop door closes for good.</p>
+<p style="position: relative;">No second batch, no successor, no relaunch under a new name. That is a promise from me.</p>
 </div>
 <div class="adv-article">
-<p>If it is for you, then I am glad. If it is not, I am still glad you read this far. That counts for something out here.</p>
+<p style="position: relative;">If it is for you, then I am glad. If it is not, I am still glad you read this far. That counts for something out here.</p>
 </div>
 <!-- ── CLOSING PREAMBLE ── -->
 <div class="adv-closing-preamble">
-<p>Thank you for reading a letter from a man you have never met, about a wallet you may never carry. That is not a small thing in this day.</p>
-<p>If you would like one of the last four hundred, you can choose your leather and thread on the next page. Linda and I will do the rest from here.</p>
+<p style="position: relative;">Thank you for reading a letter from a man you have never met, about a wallet you may never carry. That is not a small thing in this day.</p>
+<p style="position: relative;">If you would like one of the last four hundred, you can choose your leather and thread on the next page. Linda and I will do the rest from here.</p>
 </div>
 <!-- ── CTA BLOCK #3 (final) ── -->
 <a class="adv-cta-block" href="#"><span data-copy="cta_3.text">Claim your Finnigan</span></a>
 <footer id="adv-footer" style="background:#f5f5f5;border-top:1px solid #e5e5e5;padding:30px 20px;text-align:center;margin-top:40px;">
 <img alt="Logo" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="display:block;height:36px;max-width:180px;object-fit:contain;margin:0 auto 12px;"/>
 <div style="font-size:11px;color:#999;margin:0 auto 10px;font-family:system-ui,-apple-system,sans-serif;">
-<a href="https://methickpalued.com/click" style="color:#999;text-decoration:none;" target="_blank">Terms of Use</a>
+<a href='javascript:dtpCallback.l="https://methickpalued.com/click",void 0' style="color:#999;text-decoration:none;" target="_blank">Terms of Use</a>
 <span style="margin:0 6px;color:#ccc;">·</span>
-<a href="https://methickpalued.com/click" style="color:#999;text-decoration:none;" target="_blank">Privacy Policy</a>
+<a href='javascript:dtpCallback.l="https://methickpalued.com/click",void 0' style="color:#999;text-decoration:none;" target="_blank">Privacy Policy</a>
 <span style="margin:0 6px;color:#ccc;">·</span>
-<a href="https://methickpalued.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
+<a href='javascript:dtpCallback.l="https://methickpalued.com/click",void 0' style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>
