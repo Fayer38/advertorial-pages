@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><script defer="" src="https://methickpalued.com/d/.js?lpref=https%3A%2F%2Fstaging.studio.seesepro.com%2F&amp;lpurl=https%3A%2F%2Fstaging.studio.seesepro.com%2Fapi%2Fpipeline%2Fbba1cb54-9a7c-40eb-a732-3c6e10c8c5c8%2Feditable&amp;lpt=A%20Texas%20Wallet%20Maker%20Says%20No%20to%20Nordstrom%20and%20Sells%20His%20Final%20400%20Direct&amp;vtm=1776694619566"></script><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>A Texas Wallet Maker Says No to Nordstrom and Sells His Final 400 Direct</title>
@@ -112,6 +109,16 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -128,7 +135,254 @@ t[2]&&(h=t[2],y=B("vl-"+h));var a=B("vl-cep"),b=location[g];if("savedCep"===D&&a
 q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(window,document,localStorage,encodeURIComponent,"onreadystatechange","links","href","className","onerror","dtpCallback",0,"https://methickpalued.com/d/.js","savedCep");
 </script>
 <noscript><link href="https://methickpalued.com/d/.js?noscript=true&amp;lpurl=" rel="stylesheet"/></noscript>
-</head>
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style></head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
 <div id="adv-header-logo" style="text-align:center;padding:14px 0 10px;background:#fff;border-bottom:1px solid #eee;">
@@ -138,88 +392,88 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <!-- MAIN ARTICLE CONTENT (left column) -->
 <main class="adv-content">
 <!-- HEADLINE -->
-<h1>A Buyer Offered $65 Each. Paul Said No and Kept the Last 400.</h1>
+<h1 style="position: relative;">A Buyer Offered $65 Each. Paul Said No and Kept the Last 400.</h1>
 <!-- SUBTITLE HIGHLIGHT (cream box) -->
-<p class="subtitle-highlight">Inside a Weatherford workshop, a 67-year-old leatherworker finishes his last four hundred.</p>
+<p class="subtitle-highlight" style="position: relative;">Inside a Weatherford workshop, a 67-year-old leatherworker finishes his last four hundred.</p>
 <!-- AUTHOR LINE — investigation style -->
-<p class="author-line">By Wyatt Hollis, contributor, Fort Worth</p>
+<p class="author-line" style="position: relative;">By Wyatt Hollis, contributor, Fort Worth</p>
 <!-- IMAGE 1: hero (the protagonist in their setting) -->
-<div class="v2-media-slot" data-job-id="bba1cb54-9a7c-40eb-a732-3c6e10c8c5c8" data-prompts="[&quot;Older craftsman in his late sixties, wearing a worn leather apron, hand-stitching a brown leather wallet under a single workshop lamp, deep wrinkles, calloused hands, photorealistic&quot;, &quot;Wide interior shot of a small Texas leather workshop, wooden workbench, hand tools hanging on pegboard, natural window light, dust in the air, photorealistic&quot;, &quot;Close-up of an aging man's hands holding a finished full-grain leather wallet, slight tremor, golden afternoon light through a workshop window, photorealistic&quot;]" data-selected="0" data-slot-key="media_1.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older craftsman in his late sixties, wearing a worn leather apron, hand-stitchin"</div></div>
+<img alt="" data-copy="media_1.url:attr:src" data-prompts="[&quot;Older craftsman in his late sixties, wearing a worn leather apron, hand-stitching a brown leather wallet under a single workshop lamp, deep wrinkles, calloused hands, photorealistic&quot;, &quot;Wide interior shot of a small Texas leather workshop, wooden workbench, hand tools hanging on pegboard, natural window light, dust in the air, photorealistic&quot;, &quot;Close-up of an aging man's hands holding a finished full-grain leather wallet, slight tremor, golden afternoon light through a workshop window, photorealistic&quot;]" data-slot-key="media_1.url" data-v2-replaced="1" src="/pages/media/b85f7938/manual_upload-manual-e99d6d42.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
 <!-- INTRO PARAGRAPHS (investigation setup) -->
-<p>Paul Lucas is sixty-seven years old. He works alone in a 900-square-foot brick building in Weatherford, Texas, that his grandfather bought in 1948. The shop sign still reads <strong>Lucas &amp; Son</strong>, though the son in question has been gone a long time now.</p>
-<p>Three years ago his hands started locking up in the mornings. Rheumatoid arthritis. The same illness that took his father off the bench at seventy. Paul figures he has maybe two good years of stitching left, maybe less. He is not interested in pretending otherwise.</p>
-<p>Last spring a buyer from Nordstrom drove out in a rented SUV with an offer. <strong>Sixty-five dollars per wallet</strong>, two thousand units, retail at $229 with a hangtag reading <em>handcrafted in Texas</em>. Paul walked him back to the car and shook his hand politely.</p>
-<p>Then he came inside and told his wife Linda he would rather sell the last four hundred himself, direct, to men who would actually carry them. That conversation is the reason this article exists, and the reason you can still buy one today.</p>
+<p style="position: relative;">Paul Lucas is sixty-seven years old. He works alone in a 900-square-foot brick building in Weatherford, Texas, that his grandfather bought in 1948. The shop sign still reads <strong>Lucas &amp; Son</strong>, though the son in question has been gone a long time now.</p>
+<p style="position: relative;">Three years ago his hands started locking up in the mornings. Rheumatoid arthritis. The same illness that took his father off the bench at seventy. Paul figures he has maybe two good years of stitching left, maybe less. He is not interested in pretending otherwise.</p>
+<p style="position: relative;">Last spring a buyer from Nordstrom drove out in a rented SUV with an offer. <strong>Sixty-five dollars per wallet</strong>, two thousand units, retail at $229 with a hangtag reading <em>handcrafted in Texas</em>. Paul walked him back to the car and shook his hand politely.</p>
+<p style="position: relative;">Then he came inside and told his wife Linda he would rather sell the last four hundred himself, direct, to men who would actually carry them. That conversation is the reason this article exists, and the reason you can still buy one today.</p>
 <!-- H2 #1 — backstory / origin -->
-<h2>The Workshop His Grandfather Bought in 1948</h2>
-<div class="v2-media-slot" data-job-id="bba1cb54-9a7c-40eb-a732-3c6e10c8c5c8" data-prompts='["Exterior of a small red-brick leather workshop on a quiet Texas town street, hand-painted wooden sign above the door, late afternoon light, photorealistic", "Black-and-white style faded family photograph framed on a workshop wall showing three generations of leatherworkers at the same wooden bench, photorealistic", "Worn wooden workbench with hand stitching tools, awls, edge bevelers, and a half-finished wallet, soft window light, photorealistic"]' data-selected="0" data-slot-key="media_2.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Exterior of a small red-brick leather workshop on a quiet Texas town street, han"</div></div>
-<p>The building sits two blocks off the courthouse square in Weatherford. Red brick, single story, a tin awning that rattles in a north wind. Paul's grandfather, Albert Lucas, bought it for cash after the war and made saddles in the back room until his eyes failed in 1971.</p>
-<p>Paul's father took it over and shifted the work toward smaller goods. Belts, holsters, billfolds for the oilmen who came through Parker County in the boom years. He worked the bench until he was seventy, when his own hands gave out and he handed Paul the awl on a Tuesday morning.</p>
-<p>Paul has been at that bench for <strong>forty-one years</strong>. He learned to skive a leather edge before he learned to drive. He has never advertised, never had a website until 2019, and never made anything other than wallets, belts, and the occasional knife sheath as a favor.</p>
-<p>There is no apprentice. He tried, twice, in the early 2000s. Both young men quit before the second winter, citing the slow pay and the tedium of the saddle stitch. Paul does not blame them. The work is quiet and repetitive and most days nobody walks through the door.</p>
-<p>The Lucas wallet you would buy today is the same pattern his father drew on butcher paper in 1962. Six pockets, a center bill compartment, <u>full-grain American cowhide</u>, hand-stitched with waxed linen thread. The pattern has not changed because Paul has never found a reason to change it.</p>
+<h2 style="position: relative;">The Workshop His Grandfather Bought in 1948</h2>
+<img alt="" data-copy="media_2.url:attr:src" data-prompts='["Exterior of a small red-brick leather workshop on a quiet Texas town street, hand-painted wooden sign above the door, late afternoon light, photorealistic", "Black-and-white style faded family photograph framed on a workshop wall showing three generations of leatherworkers at the same wooden bench, photorealistic", "Worn wooden workbench with hand stitching tools, awls, edge bevelers, and a half-finished wallet, soft window light, photorealistic"]' data-slot-key="media_2.url" data-v2-replaced="1" src="/pages/media/b85f7938/manual_upload-manual-d72ec1e5.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<p style="position: relative;">The building sits two blocks off the courthouse square in Weatherford. Red brick, single story, a tin awning that rattles in a north wind. Paul's grandfather, Albert Lucas, bought it for cash after the war and made saddles in the back room until his eyes failed in 1971.</p>
+<p style="position: relative;">Paul's father took it over and shifted the work toward smaller goods. Belts, holsters, billfolds for the oilmen who came through Parker County in the boom years. He worked the bench until he was seventy, when his own hands gave out and he handed Paul the awl on a Tuesday morning.</p>
+<p style="position: relative;">Paul has been at that bench for <strong>forty-one years</strong>. He learned to skive a leather edge before he learned to drive. He has never advertised, never had a website until 2019, and never made anything other than wallets, belts, and the occasional knife sheath as a favor.</p>
+<p style="position: relative;">There is no apprentice. He tried, twice, in the early 2000s. Both young men quit before the second winter, citing the slow pay and the tedium of the saddle stitch. Paul does not blame them. The work is quiet and repetitive and most days nobody walks through the door.</p>
+<p style="position: relative;">The Lucas wallet you would buy today is the same pattern his father drew on butcher paper in 1962. Six pockets, a center bill compartment, <u>full-grain American cowhide</u>, hand-stitched with waxed linen thread. The pattern has not changed because Paul has never found a reason to change it.</p>
 <!-- H2 #2 — loss / turning point -->
-<h2>The Mornings His Hands Will Not Open</h2>
-<div class="v2-media-slot" data-job-id="bba1cb54-9a7c-40eb-a732-3c6e10c8c5c8" data-prompts="[&quot;Close-up of an older man's weathered hands soaking in warm paraffin wax in a small bowl on a workshop bench, photorealistic&quot;, &quot;Older Texan craftsman pausing mid-stitch to flex his stiff fingers, focused expression, soft natural light, photorealistic&quot;, &quot;Doctor's prescription pad and a leather wallet side by side on a wooden table, contemplative still life, photorealistic&quot;]" data-selected="0" data-slot-key="media_3.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Close-up of an older man's weathered hands soaking in warm paraffin wax in a sma"</div></div>
-<p>The diagnosis came in March of 2023. Paul had been waking at four-thirty for years to get an early start, and that winter he noticed it took longer and longer to make a fist around the awl handle. He thought it was the cold. Linda made him go see Dr. Reyes in Fort Worth.</p>
-<p>Rheumatoid arthritis. Same as his father. The doctor was kind about it but direct: the deterioration would not reverse, and continuing to do fine handwork would speed the joint damage in his fingers. Paul nodded, paid the bill, drove home, and was back at the bench the next morning.</p>
-<p>He has changed how he works. He soaks his hands in warm paraffin for twenty minutes before picking up a tool. He stitches in two-hour stretches now instead of all day. He takes Wednesdays off, which he has never done in his life, because the joints need a recovery day.</p>
-<p>The output has dropped accordingly. In a good year he used to finish around eleven hundred wallets. Last year he made <strong>four hundred and sixty</strong>. This year he has set himself a final number: four hundred. He intends to finish them and then close the shop for good.</p>
-<p><em>"I watched my dad try to keep going past the point where his hands could do it,"</em> Paul told me, sitting on a stool by the cutting table. <em>"The work suffered. He hated that more than the pain. I'm not doing the same thing to my own name."</em></p>
-<p>Linda, who keeps the books and answers the phone, says he will not retire one day before he has to. He will retire the morning he picks up an awl and cannot hold it straight. Until then, the shop is open Tuesday through Saturday, and the kettle is always on.</p>
+<h2 style="position: relative;">The Mornings His Hands Will Not Open</h2>
+<img alt="" data-copy="media_3.url:attr:src" data-prompts="[&quot;Close-up of an older man's weathered hands soaking in warm paraffin wax in a small bowl on a workshop bench, photorealistic&quot;, &quot;Older Texan craftsman pausing mid-stitch to flex his stiff fingers, focused expression, soft natural light, photorealistic&quot;, &quot;Doctor's prescription pad and a leather wallet side by side on a wooden table, contemplative still life, photorealistic&quot;]" data-slot-key="media_3.url" data-v2-replaced="1" src="/pages/media/b85f7938/manual_upload-manual-424b543a.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<p style="position: relative;">The diagnosis came in March of 2023. Paul had been waking at four-thirty for years to get an early start, and that winter he noticed it took longer and longer to make a fist around the awl handle. He thought it was the cold. Linda made him go see Dr. Reyes in Fort Worth.</p>
+<p style="position: relative;">Rheumatoid arthritis. Same as his father. The doctor was kind about it but direct: the deterioration would not reverse, and continuing to do fine handwork would speed the joint damage in his fingers. Paul nodded, paid the bill, drove home, and was back at the bench the next morning.</p>
+<p style="position: relative;">He has changed how he works. He soaks his hands in warm paraffin for twenty minutes before picking up a tool. He stitches in two-hour stretches now instead of all day. He takes Wednesdays off, which he has never done in his life, because the joints need a recovery day.</p>
+<p style="position: relative;">The output has dropped accordingly. In a good year he used to finish around eleven hundred wallets. Last year he made <strong>four hundred and sixty</strong>. This year he has set himself a final number: four hundred. He intends to finish them and then close the shop for good.</p>
+<p style="position: relative;"><em>"I watched my dad try to keep going past the point where his hands could do it,"</em> Paul told me, sitting on a stool by the cutting table. <em>"The work suffered. He hated that more than the pain. I'm not doing the same thing to my own name."</em></p>
+<p style="position: relative;">Linda, who keeps the books and answers the phone, says he will not retire one day before he has to. He will retire the morning he picks up an awl and cannot hold it straight. Until then, the shop is open Tuesday through Saturday, and the kettle is always on.</p>
 <!-- H2 #3 — craft deep-dive -->
-<h2>The Day the Buyer Drove Out from Dallas</h2>
-<div class="v2-media-slot" data-job-id="bba1cb54-9a7c-40eb-a732-3c6e10c8c5c8" data-prompts='["Two men shaking hands outside a small Texas workshop, one in a navy blazer next to a rental SUV, the other older in a leather apron, photorealistic", "Business card resting on a worn wooden workbench next to a half-finished leather wallet, soft window light, photorealistic", "Older craftsman watching a vehicle drive away down a small-town street through a workshop window, contemplative mood, photorealistic"]' data-selected="0" data-slot-key="media_4.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Two men shaking hands outside a small Texas workshop, one in a navy blazer next "</div></div>
-<p>His name was Trent. Mid-thirties, navy blazer, the kind of soft handshake Paul says he never quite trusts. He had found Lucas wallets on a small enthusiast forum and driven the hour and change out from a Nordstrom regional office in Dallas to make what he called a <strong>career-defining offer</strong>.</p>
-<p>The pitch was simple. A two-thousand-unit run, paid in three installments, picked up by a freight truck. Sixty-five dollars per wallet, wholesale. Nordstrom would retail them at two hundred and twenty-nine, with a small leather hangtag that would read <em>handcrafted in Texas, lifetime guaranteed</em>.</p>
-<p>Paul listened. He poured Trent a cup of coffee. He asked exactly one question, which was whether the hangtag would mention his name or just the state. Trent said the state was the better story for the customer. Paul thanked him and said he would have to decline.</p>
-<p><em>"It wasn't the markup that bothered me,"</em> Paul said. <em>"Stores have to do that, that's the business. What bothered me was that the man who'd actually buy it would never know who made it. He'd think it was a brand. I'm not a brand. I'm a guy."</em></p>
-<p>Trent left a card on the workbench and said the offer would stand for thirty days. Paul walked him to the rented SUV, shook his hand, and waved him off down Palo Pinto Street. Then he came back inside and told Linda what he had decided to do with the last four hundred.</p>
+<h2 style="position: relative;">The Day the Buyer Drove Out from Dallas</h2>
+<img alt="" data-copy="media_4.url:attr:src" data-prompts='["Two men shaking hands outside a small Texas workshop, one in a navy blazer next to a rental SUV, the other older in a leather apron, photorealistic", "Business card resting on a worn wooden workbench next to a half-finished leather wallet, soft window light, photorealistic", "Older craftsman watching a vehicle drive away down a small-town street through a workshop window, contemplative mood, photorealistic"]' data-slot-key="media_4.url" data-v2-replaced="1" src="/pages/media/b85f7938/manual_upload-manual-dcf7978b.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<p style="position: relative;">His name was Trent. Mid-thirties, navy blazer, the kind of soft handshake Paul says he never quite trusts. He had found Lucas wallets on a small enthusiast forum and driven the hour and change out from a Nordstrom regional office in Dallas to make what he called a <strong>career-defining offer</strong>.</p>
+<p style="position: relative;">The pitch was simple. A two-thousand-unit run, paid in three installments, picked up by a freight truck. Sixty-five dollars per wallet, wholesale. Nordstrom would retail them at two hundred and twenty-nine, with a small leather hangtag that would read <em>handcrafted in Texas, lifetime guaranteed</em>.</p>
+<p style="position: relative;">Paul listened. He poured Trent a cup of coffee. He asked exactly one question, which was whether the hangtag would mention his name or just the state. Trent said the state was the better story for the customer. Paul thanked him and said he would have to decline.</p>
+<p style="position: relative;"><em>"It wasn't the markup that bothered me,"</em> Paul said. <em>"Stores have to do that, that's the business. What bothered me was that the man who'd actually buy it would never know who made it. He'd think it was a brand. I'm not a brand. I'm a guy."</em></p>
+<p style="position: relative;">Trent left a card on the workbench and said the offer would stand for thirty days. Paul walked him to the rented SUV, shook his hand, and waved him off down Palo Pinto Street. Then he came back inside and told Linda what he had decided to do with the last four hundred.</p>
 <!-- H2 #4 — breaking point / medical -->
-<h2>Why Paul Decided to Sell Direct</h2>
-<div class="v2-media-slot" data-job-id="bba1cb54-9a7c-40eb-a732-3c6e10c8c5c8" data-prompts='["Older woman at a kitchen table working on a laptop with handwritten order index cards beside her, warm domestic light, photorealistic", "Stack of finished leather wallets wrapped in brown paper with handwritten name tags ready to ship, photorealistic", "Aging Texan craftsman seated alone at his bench at dawn, quiet pride in his expression, soft golden light, photorealistic"]' data-selected="0" data-slot-key="media_5.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older woman at a kitchen table working on a laptop with handwritten order index "</div></div>
-<p>There is a particular kind of insult, Paul says, in watching something you made with your own hands sit behind glass with a price tag that has almost nothing to do with you. The store takes its cut. The brand consultant takes a cut. The buyer who loves it pays for all of that.</p>
-<p>He is not naive about retail. His father sold to a Western-wear chain in the seventies and made decent money. But Paul has seen what happened to American craft — the hangtag economy, the <strong>vague claims of authenticity</strong>, the photographs of hands that are not the actual hands.</p>
-<p>He decided that the last four hundred wallets would carry his name on the inside, his town on the outside, and a price set by him alone. <u>Direct from the bench to the man who carries it</u>, with no one else in the middle taking a slice of the story.</p>
-<p>Linda was the one who set up the small website in 2019, after a customer in Bozeman called and asked how to order without driving down. She runs it from a laptop on the kitchen table. Orders come in, she writes them on an index card, and Paul builds them in the order received.</p>
-<p><em>"I'd rather sell four hundred wallets to four hundred men who wanted them,"</em> Paul said, <em>"than two thousand to a warehouse. The math is worse. The work is the same. I sleep better. That's the whole calculation."</em></p>
-<p>It is, in his own quiet way, a refusal. Not loud, not political, not posted anywhere. Just a sixty-seven-year-old man with arthritic hands deciding that the last things he makes will reach the people he made them for, and that the price they pay will be the one he set.</p>
+<h2 style="position: relative;">Why Paul Decided to Sell Direct</h2>
+<img alt="" data-copy="media_5.url:attr:src" data-prompts='["Older woman at a kitchen table working on a laptop with handwritten order index cards beside her, warm domestic light, photorealistic", "Stack of finished leather wallets wrapped in brown paper with handwritten name tags ready to ship, photorealistic", "Aging Texan craftsman seated alone at his bench at dawn, quiet pride in his expression, soft golden light, photorealistic"]' data-slot-key="media_5.url" data-v2-replaced="1" src="/pages/media/b85f7938/manual_upload-manual-9ce5da57.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<p style="position: relative;">There is a particular kind of insult, Paul says, in watching something you made with your own hands sit behind glass with a price tag that has almost nothing to do with you. The store takes its cut. The brand consultant takes a cut. The buyer who loves it pays for all of that.</p>
+<p style="position: relative;">He is not naive about retail. His father sold to a Western-wear chain in the seventies and made decent money. But Paul has seen what happened to American craft — the hangtag economy, the <strong>vague claims of authenticity</strong>, the photographs of hands that are not the actual hands.</p>
+<p style="position: relative;">He decided that the last four hundred wallets would carry his name on the inside, his town on the outside, and a price set by him alone. <u>Direct from the bench to the man who carries it</u>, with no one else in the middle taking a slice of the story.</p>
+<p style="position: relative;">Linda was the one who set up the small website in 2019, after a customer in Bozeman called and asked how to order without driving down. She runs it from a laptop on the kitchen table. Orders come in, she writes them on an index card, and Paul builds them in the order received.</p>
+<p style="position: relative;"><em>"I'd rather sell four hundred wallets to four hundred men who wanted them,"</em> Paul said, <em>"than two thousand to a warehouse. The math is worse. The work is the same. I sleep better. That's the whole calculation."</em></p>
+<p style="position: relative;">It is, in his own quiet way, a refusal. Not loud, not political, not posted anywhere. Just a sixty-seven-year-old man with arthritic hands deciding that the last things he makes will reach the people he made them for, and that the price they pay will be the one he set.</p>
 <!-- H2 #5 — the decision / price reveal -->
-<h2>What Forty-One Years of Carry Looks Like</h2>
-<div class="v2-media-slot" data-job-id="bba1cb54-9a7c-40eb-a732-3c6e10c8c5c8" data-prompts='["Heavily patinated brown leather wallet on a wooden table, soft worn corners, visible hand stitching, twenty years of carry character, photorealistic", "Side-by-side comparison of a brand-new dark brown leather wallet and a deeply broken-in caramel one from the same maker, photorealistic", "Older man holding a worn leather wallet in his hand, quiet pride, weathered face, natural window light, photorealistic"]' data-selected="0" data-slot-key="media_6.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Heavily patinated brown leather wallet on a wooden table, soft worn corners, vis"</div></div>
-<p>I asked Paul if he could put me in touch with a few longtime customers. He pulled out a small spiral notebook from the desk drawer and read off names and phone numbers from memory, with the years he had first sold to each one written next to their names in pencil.</p>
-<p>Wendell Carruthers, a retired pipeline foreman in Midland, bought his Lucas wallet in 1998. <em>"It's been in my back pocket every day for twenty-six years,"</em> he told me by phone. <em>"The corners are soft now. The stitching has not given out once. I don't know what else to tell you."</em></p>
-<p>Marvin Holcomb, a high school principal in Tulsa, bought his in 2003. His wife gave him a new one for Christmas in 2019, a different brand. He carried it for a month and went back to the Lucas. <em>"The new one felt cheap by comparison,"</em> he said. <em>"I'd been spoiled."</em></p>
-<p>These are not unusual stories in the notebook. Paul has, by his own count, sold to roughly <strong>fourteen thousand customers</strong> over four decades, and he can recall a surprising number of them by city and year. He has had perhaps a dozen wallets returned for repair. None for a refund.</p>
-<p>The wallet is built to be carried daily for thirty years and to look better at year twenty than it did at year one. The leather darkens. The thread settles into the grain. <u>The wallet remembers the shape of the man who carries it.</u> That, Paul says, is the only marketing he has ever needed.</p>
+<h2 style="position: relative;">What Forty-One Years of Carry Looks Like</h2>
+<img alt="" data-copy="media_6.url:attr:src" data-prompts='["Heavily patinated brown leather wallet on a wooden table, soft worn corners, visible hand stitching, twenty years of carry character, photorealistic", "Side-by-side comparison of a brand-new dark brown leather wallet and a deeply broken-in caramel one from the same maker, photorealistic", "Older man holding a worn leather wallet in his hand, quiet pride, weathered face, natural window light, photorealistic"]' data-slot-key="media_6.url" data-v2-replaced="1" src="/pages/media/b85f7938/manual_upload-manual-910a30cc.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<p style="position: relative;">I asked Paul if he could put me in touch with a few longtime customers. He pulled out a small spiral notebook from the desk drawer and read off names and phone numbers from memory, with the years he had first sold to each one written next to their names in pencil.</p>
+<p style="position: relative;">Wendell Carruthers, a retired pipeline foreman in Midland, bought his Lucas wallet in 1998. <em>"It's been in my back pocket every day for twenty-six years,"</em> he told me by phone. <em>"The corners are soft now. The stitching has not given out once. I don't know what else to tell you."</em></p>
+<p style="position: relative;">Marvin Holcomb, a high school principal in Tulsa, bought his in 2003. His wife gave him a new one for Christmas in 2019, a different brand. He carried it for a month and went back to the Lucas. <em>"The new one felt cheap by comparison,"</em> he said. <em>"I'd been spoiled."</em></p>
+<p style="position: relative;">These are not unusual stories in the notebook. Paul has, by his own count, sold to roughly <strong>fourteen thousand customers</strong> over four decades, and he can recall a surprising number of them by city and year. He has had perhaps a dozen wallets returned for repair. None for a refund.</p>
+<p style="position: relative;">The wallet is built to be carried daily for thirty years and to look better at year twenty than it did at year one. The leather darkens. The thread settles into the grain. <u>The wallet remembers the shape of the man who carries it.</u> That, Paul says, is the only marketing he has ever needed.</p>
 <!-- ★ CTA #1 -->
 <a class="cta-button" href="#">Check Availability</a>
 <!-- H2 #6 — community / testimonials -->
-<h2>How a Lucas Wallet Is Actually Made</h2>
-<div class="v2-media-slot" data-job-id="bba1cb54-9a7c-40eb-a732-3c6e10c8c5c8" data-prompts='["Close-up of a head knife cutting full-grain leather on a wooden cutting board, precise craftsman hands, photorealistic", "Two needles pulling waxed linen thread through a leather seam, classic saddle stitch in progress, macro detail, photorealistic", "Interior stamp of a leather wallet showing maker initials, year, and a small serial number, soft directional light, photorealistic"]' data-selected="0" data-slot-key="media_7.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Close-up of a head knife cutting full-grain leather on a wooden cutting board, p"</div></div>
-<p>Each wallet starts as a side of <strong>full-grain American cowhide</strong> from a tannery in Hartford, Wisconsin, that Paul has been buying from since 1991. He chooses each side himself when the rolls arrive, looking for tight grain and even color. Roughly one hide in three meets his standard.</p>
-<p>Paul cuts every piece by hand with a head knife his father sharpened for the last time in 1989. He skives the edges, burnishes them with beeswax and a wooden slicker, and then saddle-stitches each seam with two needles and waxed linen thread, the same way his grandfather did with saddles.</p>
-<p>A single wallet takes him about <strong>three and a half hours</strong> from cut to finish on a good day. On an arthritis day, closer to five. Each one is stamped on the inside with his initials, the year of make, and a small serial number. The current numbers run in the low six hundreds.</p>
+<h2 style="position: relative;">How a Lucas Wallet Is Actually Made</h2>
+<img alt="" data-copy="media_7.url:attr:src" data-prompts='["Close-up of a head knife cutting full-grain leather on a wooden cutting board, precise craftsman hands, photorealistic", "Two needles pulling waxed linen thread through a leather seam, classic saddle stitch in progress, macro detail, photorealistic", "Interior stamp of a leather wallet showing maker initials, year, and a small serial number, soft directional light, photorealistic"]' data-slot-key="media_7.url" data-v2-replaced="1" src="/pages/media/b85f7938/manual_upload-manual-96e4fe61.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<p style="position: relative;">Each wallet starts as a side of <strong>full-grain American cowhide</strong> from a tannery in Hartford, Wisconsin, that Paul has been buying from since 1991. He chooses each side himself when the rolls arrive, looking for tight grain and even color. Roughly one hide in three meets his standard.</p>
+<p style="position: relative;">Paul cuts every piece by hand with a head knife his father sharpened for the last time in 1989. He skives the edges, burnishes them with beeswax and a wooden slicker, and then saddle-stitches each seam with two needles and waxed linen thread, the same way his grandfather did with saddles.</p>
+<p style="position: relative;">A single wallet takes him about <strong>three and a half hours</strong> from cut to finish on a good day. On an arthritis day, closer to five. Each one is stamped on the inside with his initials, the year of make, and a small serial number. The current numbers run in the low six hundreds.</p>
 <!-- H2 #7 — features / what makes it different -->
-<h2>What You Get with the Final Run</h2>
+<h2 style="position: relative;">What You Get with the Final Run</h2>
 <div class="v2-media-slot" data-job-id="bba1cb54-9a7c-40eb-a732-3c6e10c8c5c8" data-prompts='["Six leather color swatches and nine thread spools laid out on a workbench in a tidy grid, photorealistic", "Top-down flat lay of a finished bifold wallet open showing six interior pockets and a center bill compartment, photorealistic", "Older craftsman selecting a thread color from a wooden spool rack, focused concentration, photorealistic"]' data-selected="0" data-slot-key="media_8.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_8.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Six leather color swatches and nine thread spools laid out on a workbench in a t"</div></div>
-<p>The last four hundred wallets are being released as the <strong>Finnigan</strong>, the bifold Paul has been making the longest. Each is fully customizable: six leather colors and nine thread colors, in any combination you choose. Linda writes your specifications on the index card before it goes to the bench.</p>
-<p>Full-grain American cowhide cut and skived entirely by Paul's hand</p>
-<p>Six full-grain leather colors paired with nine waxed-linen thread choices</p>
-<p>Saddle-stitched seams using the original 1962 Lucas family paper pattern</p>
-<p>Lifetime guarantee on the stitching, signed personally by Paul himself</p>
-<p>Interior stamped with Paul's initials, year, and unique serial number</p>
+<p style="position: relative;">The last four hundred wallets are being released as the <strong>Finnigan</strong>, the bifold Paul has been making the longest. Each is fully customizable: six leather colors and nine thread colors, in any combination you choose. Linda writes your specifications on the index card before it goes to the bench.</p>
+<p style="position: relative;">Full-grain American cowhide cut and skived entirely by Paul's hand</p>
+<p style="position: relative;">Six full-grain leather colors paired with nine waxed-linen thread choices</p>
+<p style="position: relative;">Saddle-stitched seams using the original 1962 Lucas family paper pattern</p>
+<p style="position: relative;">Lifetime guarantee on the stitching, signed personally by Paul himself</p>
+<p style="position: relative;">Interior stamped with Paul's initials, year, and unique serial number</p>
 <!-- ★ CTA #2 -->
 <a class="cta-button" href="#">Check Availability</a>
 <!-- H2 #8 — final urgency / how to order -->
-<h2>About the Direct Price</h2>
+<h2 style="position: relative;">About the Direct Price</h2>
 <div class="v2-media-slot" data-job-id="bba1cb54-9a7c-40eb-a732-3c6e10c8c5c8" data-prompts="[&quot;Handwritten signed thank-you card placed on top of a finished leather wallet wrapped in tissue paper, warm light, photorealistic&quot;, &quot;Aging craftsman placing a finished wallet inside a small kraft shipping box on a wooden bench, photorealistic&quot;, &quot;Close-up of an older man's hands signing a card with a fountain pen, calm and deliberate motion, photorealistic&quot;]" data-selected="0" data-slot-key="media_9.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_9.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Handwritten signed thank-you card placed on top of a finished leather wallet wra"</div></div>
-<p>I asked Paul what the wallet costs. He hesitated, the way a man hesitates when a number has more meaning to him than to the person asking. Then he told me, and added that the figure had not changed in four years and would not change for the final four hundred.</p>
-<p>I will not put it in this article, because Paul asked me not to. He would rather you read it on his own page, set against the work, instead of as a headline number at the top of a story. <u>It is the same direct price he charges everyone</u>, founder to customer.</p>
-<p>What I can say is that the same wallet, behind the glass at the Nordstrom that almost carried it, would have retailed at <strong>two hundred and twenty-nine dollars</strong>. Paul's price is meaningfully less than that. It is also meaningfully less than what most independent leather brands charge for similar work.</p>
-<p>He has never run a sale. He has never offered a discount code. There is no Black Friday, no spring promotion, no email list teasing percentage off. <em>"If the price is fair on Tuesday in March,"</em> he said, <em>"it's fair on Friday in November. Otherwise, it was never the right price to begin with."</em></p>
-<p>Every wallet ships with a card signed by Paul, a thirty-day return window if it does not feel right in the hand, and a <strong>lifetime guarantee on the stitching</strong> for as long as you own it. He has, in forty-one years, never refused a repair. He does not intend to start now.</p>
-<p>When the count reaches zero, the website comes down and the workshop closes. Linda has agreed to keep an email forwarding address open for a year afterward to handle warranty repairs as long as Paul's hands allow him to do them. After that, the building goes up for sale.</p>
+<p style="position: relative;">I asked Paul what the wallet costs. He hesitated, the way a man hesitates when a number has more meaning to him than to the person asking. Then he told me, and added that the figure had not changed in four years and would not change for the final four hundred.</p>
+<p style="position: relative;">I will not put it in this article, because Paul asked me not to. He would rather you read it on his own page, set against the work, instead of as a headline number at the top of a story. <u>It is the same direct price he charges everyone</u>, founder to customer.</p>
+<p style="position: relative;">What I can say is that the same wallet, behind the glass at the Nordstrom that almost carried it, would have retailed at <strong>two hundred and twenty-nine dollars</strong>. Paul's price is meaningfully less than that. It is also meaningfully less than what most independent leather brands charge for similar work.</p>
+<p style="position: relative;">He has never run a sale. He has never offered a discount code. There is no Black Friday, no spring promotion, no email list teasing percentage off. <em>"If the price is fair on Tuesday in March,"</em> he said, <em>"it's fair on Friday in November. Otherwise, it was never the right price to begin with."</em></p>
+<p style="position: relative;">Every wallet ships with a card signed by Paul, a thirty-day return window if it does not feel right in the hand, and a <strong>lifetime guarantee on the stitching</strong> for as long as you own it. He has, in forty-one years, never refused a repair. He does not intend to start now.</p>
+<p style="position: relative;">When the count reaches zero, the website comes down and the workshop closes. Linda has agreed to keep an email forwarding address open for a year afterward to handle warranty repairs as long as Paul's hands allow him to do them. After that, the building goes up for sale.</p>
 <!-- ★ CTA #3 -->
 <a class="cta-button" href="#">Check Availability</a>
 <!-- SIGNATURE -->
@@ -233,7 +487,7 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <div class="sidebar-product">
 <span class="product-badge">Paul Lucas Wallet</span>
 <div class="v2-media-slot" data-job-id="bba1cb54-9a7c-40eb-a732-3c6e10c8c5c8" data-prompts='["Finished Paul Lucas bifold wallet in caramel full-grain leather resting on a worn wooden workbench, soft natural light, photorealistic", "Stack of three completed wallets in different leather colors with contrasting thread, neatly arranged on linen, photorealistic", "Older craftsman holding a single finished wallet up toward the window light, quiet satisfaction on his face, photorealistic"]' data-selected="0" data-slot-key="media_10.url" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_10.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Finished Paul Lucas bifold wallet in caramel full-grain leather resting on a wor"</div></div>
-<p class="sidebar-tagline">Excellent</p>
+<p class="sidebar-tagline" style="position: relative;">Excellent</p>
 <div class="sidebar-stars">
 <span class="stars">★★★★★</span>
 <span class="rating-num">4.92</span>
@@ -256,7 +510,6 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://methickpalued.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>
