@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><head>
 <title>The $90 Wallet Scam: Why Mall Wallets Are Glued, Not Sewn</title>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -137,6 +134,11 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <style>
 :root {
@@ -179,7 +181,254 @@ blockquote { border-left-color: #f26722 !important; }
   border-color: rgba(242, 103, 34, 0.25) !important;
 }
 </style>
-<script type="text/javascript">
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script type="text/javascript">
 (function(c,l,a,r,i,t,y){
 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
@@ -204,9 +453,9 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <article class="article-card">
 <div class="art-header">
 <div class="cat-badge">Consumer Investigation</div>
-<h1>The $90 Wallet Scam: Why Your Coach, Fossil, and Tumi Billfold Is Held Together By Glue</h1>
-<p class="art-subtitle">An investigation into America's department-store leather racket — and the one Texas workshop still doing it the old way</p>
-<div class="byline">
+<h1 style="position: relative;">The $90 Wallet Scam: Why Your Coach, Fossil, and Tumi Billfold Is Held Together By Glue</h1>
+<p class="art-subtitle" style="position: relative;">An investigation into America's department-store leather racket — and the one Texas workshop still doing it the old way</p>
+<div class="byline" style="position: relative;">
 <div class="auth-avatar">ET</div>
 <div class="byline-info">
 <div class="auth-name">Editorial Team</div>
@@ -215,32 +464,32 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </div>
 </div>
 <div class="art-content">
-<div class="placeholder"><div class="tbadge">LIFESTYLE</div><span style="display:block;margin-top:6px;color:#999;font-size:13px;font-style:italic">Close-up of a vintage leather vise clamping a bifold wallet under warm workshop light, a cobbler's pick visible in-frame</span></div>
-<div class="art-body"><p><strong>BROOKLYN, NY</strong> — A third-generation cobbler opened his vise around eight brand-name wallets this month. Six of them fell apart before he finished inspecting them. The brands on the tags read like the mall directory at any American shopping center: <strong>Coach. Fossil. Tumi. Cole Haan. Michael Kors. Shinola. Brooks Brothers. Johnston &amp; Murphy.</strong></p><p>Only <mark style="background:#fef08a;padding:2px 4px;border-radius:3px">two of the eight</mark> were actually sewn together. The rest were <u>glued</u>.</p></div>
-<h2 class="sec-head">What Our Investigation Found Inside Eight Department-Store Wallets</h2>
-<div class="art-body"><p>The shop sits on a side street in Carroll Gardens, wedged between a bakery and a dry cleaner. <strong>Anthony Russo</strong>, 58, has been repairing leather goods for thirty-four years. His grandfather opened the store in 1951. His father ran it after that. Anthony agreed to examine eight wallets we purchased at full retail from department stores in Manhattan earlier this week.</p><p>He didn't need ten minutes with any of them.</p><ul><li><strong>Finding #1:</strong> Six of the eight wallets were <mark style="background:#fef08a;padding:2px 4px;border-radius:3px">bonded with industrial adhesive</mark>, then topped with a decorative chain stitch that carries no structural load.</li><li><strong>Finding #2:</strong> The average retail price of the eight wallets was <span style="color:#e05a00;font-weight:700">$148</span>. The estimated factory cost, per Russo and two importers we spoke with, was <span style="color:#e05a00;font-weight:700">$9 to $14</span>.</li><li><strong>Finding #3:</strong> Five of the wallets were labeled "genuine leather" or "full-grain Italian leather." Only one was actually <strong>full-grain</strong>. The others were <u>corrected-grain</u> or <u>split leather</u> — the lower layer of the hide, sanded smooth and sprayed with a polymer finish to mimic the real thing.</li><li><strong>Finding #4:</strong> The "Italian leather" tag on a $190 bifold traced, through customs filings, to a tannery in Chennai, India. It was finished in Italy for four days before shipment.</li></ul><p>"This one," Russo said, pulling lightly at the edge of a $175 bifold with his pick, "won't see two winters." The top-stitch lifted away from the leather like a loose thread on a sweater. Underneath, a thin yellow line of glue held the panels together.</p></div>
-<div class="placeholder"><div class="tbadge">LIFESTYLE</div><span style="display:block;margin-top:6px;color:#999;font-size:13px;font-style:italic">Overhead flat-lay of eight department-store wallets arranged in a grid on a workbench, each with a small paper tag showing brand and price</span></div>
-<h2 class="sec-head">The Cobbler's Verdict: "The Whole Category Is a Markup Fiction"</h2>
-<div class="art-body"><p>Russo spoke to us for nearly two hours. What follows is edited for length only.</p><p><em>"People bring me these wallets and they're embarrassed. They paid $120, $180, $250 at a department store. They think they bought quality. They didn't. They bought a brand.</em></p><p><em>The construction you want is called a <strong>saddle stitch</strong>. Two needles, one thread, pulled by hand through every hole. If one stitch breaks, the next twenty hold. It's how saddles are made — because a saddle has to last thirty years under a thousand pounds of working horse.</em></p><p><em>What these brands do is <mark style="background:#fef08a;padding:2px 4px;border-radius:3px">a chain stitch laid on top of a glue line</mark>. One stitch breaks, the whole seam unzips. And the glue? Glue dries. Three years, maybe four, and it turns to powder. That's why your wallet blows out at the corner at exactly eighteen months. It's not bad luck. It's the design."</em></p><p>Russo paused, then added: <em>"The whole category is a markup fiction. You're paying $200 for a $12 wallet with a famous name stamped on it."</em></p></div>
-<div class="placeholder"><div class="tbadge">TESTIMONIAL</div><span style="display:block;margin-top:6px;color:#999;font-size:13px;font-style:italic">Portrait of a grey-haired cobbler in an apron, sleeves rolled up, holding a leather pick and examining a wallet under a bench lamp</span></div>
-<h2 class="sec-head">The Numbers Behind The Racket</h2>
-<div class="art-body"><div class="stat-row"><div><span style="color:#e05a00;font-weight:700;font-size:2em">12:1</span><br/><strong>Average retail-to-cost markup</strong> on department-store leather wallets, per import filings we reviewed.</div><div><span style="color:#e05a00;font-weight:700;font-size:2em">75%</span><br/><strong>Of "premium" mall wallets</strong> in our sample were glue-bonded, not stitched.</div><div><span style="color:#e05a00;font-weight:700;font-size:2em">12–18 mo</span><br/><strong>Average time until seam failure</strong>, per repair logs from three independent cobblers in NYC, Chicago, and Austin.</div></div><p>The math is uncomfortable. An American man spending <strong>$150 every eighteen months</strong> on replacement wallets will spend <span style="color:#e05a00;font-weight:700">more than $3,000</span> over a working lifetime — and throw away dozens of pieces of fake leather in the process. Most of it never biodegrades. Polymer-finished split hide behaves, in a landfill, roughly like vinyl upholstery.</p></div>
-<div class="placeholder"><div class="tbadge">LIFESTYLE</div><span style="display:block;margin-top:6px;color:#999;font-size:13px;font-style:italic">A worn department-store bifold split open at the corner seam, dried glue visible, photographed on a stark white surface</span></div>
-<h2 class="sec-head">What The Industry Doesn't Want You To Know</h2>
-<div class="art-body"><p>We reached out to each of the eight brands in our sample. Three did not respond. Four declined to comment. One — we agreed not to name them — responded off the record to confirm, reluctantly, that <strong>"adhesive construction with decorative stitching is standard in the category above $80 and below $400."</strong></p><p>Translation: <u>almost everything</u> on the mall floor.</p><p>The supply chain looks like this:</p><ul><li>Hides are tanned in <strong>India, Pakistan, or Bangladesh</strong>, where environmental and labor costs are a fraction of European rates.</li><li>They're shipped, sometimes through a brief stop in Italy for paperwork, to <strong>factories in Dongguan, Guangdong Province</strong>, where a single line can produce 4,000 wallets a day.</li><li>Construction is <mark style="background:#fef08a;padding:2px 4px;border-radius:3px">glue-bonding</mark> because it's fast: a full wallet assembled in under a minute versus roughly forty-five minutes for a hand-pulled saddle stitch build.</li><li>The finished wallet lands at a U.S. distributor for <span style="color:#e05a00;font-weight:700">$11</span>, ships to a department store, and sells for <span style="color:#e05a00;font-weight:700">$90 to $220</span>.</li></ul><p>The markup isn't paying for craftsmanship. It's paying for a logo, a display case, and a mall lease.</p></div>
-<div class="placeholder"><div class="tbadge">LIFESTYLE</div><span style="display:block;margin-top:6px;color:#999;font-size:13px;font-style:italic">Industrial factory floor with rows of identical wallets on a conveyor belt, harsh fluorescent lighting</span></div>
-<h2 class="sec-head">The One Workshop Still Doing It The Old Way</h2>
-<div class="art-body"><p>Two thousand miles from Russo's shop, in a converted feed store outside Austin, Texas, there is a workshop that still pulls a saddle stitch by hand through every hole.</p><p>The operation is small. Six leatherworkers. A clicker press older than any of them. Racks of <strong>full-grain American cowhide</strong> from a Chicago tannery that has been in business since 1905 — the same tannery that supplies working saddlemakers and the U.S. military's parade belts.</p><p>The wallets take roughly <strong>forty-five minutes each</strong> to construct. Every hole is punched with an iron, then stitched with waxed polyester thread, two needles crossing through each stitch. If you cut a thread, the seam holds. If you cut ten, it still holds.</p><p>The workshop operates under the founder's own name: <strong>Paul Lucas</strong>, a former aerospace contractor who quit his job in 2016 after his father's hand-stitched billfold outlasted four of his own store-bought replacements. He built the operation on one premise: <em>"If it ever fails, we fix it or replace it. For as long as you're alive."</em></p><p>The wallets carry a <mark style="background:#fef08a;padding:2px 4px;border-radius:3px">lifetime guarantee</mark>. Not a year. Not five years. <u>Lifetime</u>. And because they're made correctly, the guarantee is almost never claimed.</p></div>
-<div class="placeholder"><div class="tbadge">PRODUCT</div><span style="display:block;margin-top:6px;color:#999;font-size:13px;font-style:italic">Weathered hands pulling a saddle stitch through full-grain leather with two needles, soft daylight through a workshop window</span></div>
-<h2 class="sec-head">Men Who Made The Switch Speak Out</h2>
-<div class="art-body"><p>We spoke to customers who had carried a Paul Lucas wallet for more than two years. Three responses, edited only for length:</p><p><em>"I bought a Coach bifold in 2019 for $175. It split at the corner in fourteen months. Bought a second one. Same thing. My Paul Lucas has been in my front pocket for <strong>three years and two months</strong> — the leather is darker, softer, and the stitching hasn't moved a millimeter."</em><br/>— <strong>Marcus T., 42, Charlotte, NC</strong></p><p><em>"I showed it to the cobbler on my block — he repairs luggage for a living — and he flipped it inside out, stared at the stitching, and said, <strong>'I couldn't do this one better myself.'</strong> That was the moment I stopped buying mall wallets."</em><br/>— <strong>David R., 51, Minneapolis, MN</strong></p><p><em>"I'm not a gear guy. My wife bought it for me for our anniversary. Two years later my business partner asked where I got it — <u>his</u> Tumi had just fallen apart in his pocket at a client dinner. I wrote down the name on a napkin."</em><br/>— <strong>James K., 38, Austin, TX</strong></p></div>
-<div class="placeholder"><div class="tbadge">TESTIMONIAL</div><span style="display:block;margin-top:6px;color:#999;font-size:13px;font-style:italic">A dark tan leather wallet with visible hand-stitching resting on a worn wood desk beside a set of keys and a mechanical watch</span></div>
+<img alt="" src="/pages/media/b85f7938/manual_upload-manual-2591934c.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<div class="art-body"><p style="position: relative;"><strong>BROOKLYN, NY</strong> — A third-generation cobbler opened his vise around eight brand-name wallets this month. Six of them fell apart before he finished inspecting them. The brands on the tags read like the mall directory at any American shopping center: <strong>Coach. Fossil. Tumi. Cole Haan. Michael Kors. Shinola. Brooks Brothers. Johnston &amp; Murphy.</strong></p><p style="position: relative;">Only <mark style="background:#fef08a;padding:2px 4px;border-radius:3px">two of the eight</mark> were actually sewn together. The rest were <u>glued</u>.</p></div>
+<h2 class="sec-head" style="position: relative;">What Our Investigation Found Inside Eight Department-Store Wallets</h2>
+<div class="art-body"><p style="position: relative;">The shop sits on a side street in Carroll Gardens, wedged between a bakery and a dry cleaner. <strong>Anthony Russo</strong>, 58, has been repairing leather goods for thirty-four years. His grandfather opened the store in 1951. His father ran it after that. Anthony agreed to examine eight wallets we purchased at full retail from department stores in Manhattan earlier this week.</p><p style="position: relative;">He didn't need ten minutes with any of them.</p><ul><li style="position: relative;"><strong>Finding #1:</strong> Six of the eight wallets were <mark style="background:#fef08a;padding:2px 4px;border-radius:3px">bonded with industrial adhesive</mark>, then topped with a decorative chain stitch that carries no structural load.</li><li style="position: relative;"><strong>Finding #2:</strong> The average retail price of the eight wallets was <span style="color:#e05a00;font-weight:700">$148</span>. The estimated factory cost, per Russo and two importers we spoke with, was <span style="color:#e05a00;font-weight:700">$9 to $14</span>.</li><li style="position: relative;"><strong>Finding #3:</strong> Five of the wallets were labeled "genuine leather" or "full-grain Italian leather." Only one was actually <strong>full-grain</strong>. The others were <u>corrected-grain</u> or <u>split leather</u> — the lower layer of the hide, sanded smooth and sprayed with a polymer finish to mimic the real thing.</li><li style="position: relative;"><strong>Finding #4:</strong> The "Italian leather" tag on a $190 bifold traced, through customs filings, to a tannery in Chennai, India. It was finished in Italy for four days before shipment.</li></ul><p style="position: relative;">"This one," Russo said, pulling lightly at the edge of a $175 bifold with his pick, "won't see two winters." The top-stitch lifted away from the leather like a loose thread on a sweater. Underneath, a thin yellow line of glue held the panels together.</p></div>
+<img alt="" src="/pages/media/b85f7938/manual_upload-manual-2e2648ee.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<h2 class="sec-head" style="position: relative;">The Cobbler's Verdict: "The Whole Category Is a Markup Fiction"</h2>
+<div class="art-body"><p style="position: relative;">Russo spoke to us for nearly two hours. What follows is edited for length only.</p><p style="position: relative;"><em>"People bring me these wallets and they're embarrassed. They paid $120, $180, $250 at a department store. They think they bought quality. They didn't. They bought a brand.</em></p><p style="position: relative;"><em>The construction you want is called a <strong>saddle stitch</strong>. Two needles, one thread, pulled by hand through every hole. If one stitch breaks, the next twenty hold. It's how saddles are made — because a saddle has to last thirty years under a thousand pounds of working horse.</em></p><p style="position: relative;"><em>What these brands do is <mark style="background:#fef08a;padding:2px 4px;border-radius:3px">a chain stitch laid on top of a glue line</mark>. One stitch breaks, the whole seam unzips. And the glue? Glue dries. Three years, maybe four, and it turns to powder. That's why your wallet blows out at the corner at exactly eighteen months. It's not bad luck. It's the design."</em></p><p style="position: relative;">Russo paused, then added: <em>"The whole category is a markup fiction. You're paying $200 for a $12 wallet with a famous name stamped on it."</em></p></div>
+<img alt="" src="/pages/media/b85f7938/manual_upload-manual-f11f734e.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<h2 class="sec-head" style="position: relative;">The Numbers Behind The Racket</h2>
+<div class="art-body"><div class="stat-row"><div><span style="color:#e05a00;font-weight:700;font-size:2em">12:1</span><br/><strong>Average retail-to-cost markup</strong> on department-store leather wallets, per import filings we reviewed.</div><div><span style="color:#e05a00;font-weight:700;font-size:2em">75%</span><br/><strong>Of "premium" mall wallets</strong> in our sample were glue-bonded, not stitched.</div><div><span style="color:#e05a00;font-weight:700;font-size:2em">12–18 mo</span><br/><strong>Average time until seam failure</strong>, per repair logs from three independent cobblers in NYC, Chicago, and Austin.</div></div><p style="position: relative;">The math is uncomfortable. An American man spending <strong>$150 every eighteen months</strong> on replacement wallets will spend <span style="color:#e05a00;font-weight:700">more than $3,000</span> over a working lifetime — and throw away dozens of pieces of fake leather in the process. Most of it never biodegrades. Polymer-finished split hide behaves, in a landfill, roughly like vinyl upholstery.</p></div>
+<img alt="" src="/pages/media/b85f7938/manual_upload-manual-646f8e89.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<h2 class="sec-head" style="position: relative;">What The Industry Doesn't Want You To Know</h2>
+<div class="art-body"><p style="position: relative;">We reached out to each of the eight brands in our sample. Three did not respond. Four declined to comment. One — we agreed not to name them — responded off the record to confirm, reluctantly, that <strong>"adhesive construction with decorative stitching is standard in the category above $80 and below $400."</strong></p><p style="position: relative;">Translation: <u>almost everything</u> on the mall floor.</p><p style="position: relative;">The supply chain looks like this:</p><ul><li style="position: relative;">Hides are tanned in <strong>India, Pakistan, or Bangladesh</strong>, where environmental and labor costs are a fraction of European rates.</li><li style="position: relative;">They're shipped, sometimes through a brief stop in Italy for paperwork, to <strong>factories in Dongguan, Guangdong Province</strong>, where a single line can produce 4,000 wallets a day.</li><li style="position: relative;">Construction is <mark style="background:#fef08a;padding:2px 4px;border-radius:3px">glue-bonding</mark> because it's fast: a full wallet assembled in under a minute versus roughly forty-five minutes for a hand-pulled saddle stitch build.</li><li style="position: relative;">The finished wallet lands at a U.S. distributor for <span style="color:#e05a00;font-weight:700">$11</span>, ships to a department store, and sells for <span style="color:#e05a00;font-weight:700">$90 to $220</span>.</li></ul><p style="position: relative;">The markup isn't paying for craftsmanship. It's paying for a logo, a display case, and a mall lease.</p></div>
+<img alt="" src="/pages/media/b85f7938/manual_upload-manual-020e4d18.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<h2 class="sec-head" style="position: relative;">The One Workshop Still Doing It The Old Way</h2>
+<div class="art-body"><p style="position: relative;">Two thousand miles from Russo's shop, in a converted feed store outside Austin, Texas, there is a workshop that still pulls a saddle stitch by hand through every hole.</p><p style="position: relative;">The operation is small. Six leatherworkers. A clicker press older than any of them. Racks of <strong>full-grain American cowhide</strong> from a Chicago tannery that has been in business since 1905 — the same tannery that supplies working saddlemakers and the U.S. military's parade belts.</p><p style="position: relative;">The wallets take roughly <strong>forty-five minutes each</strong> to construct. Every hole is punched with an iron, then stitched with waxed polyester thread, two needles crossing through each stitch. If you cut a thread, the seam holds. If you cut ten, it still holds.</p><p style="position: relative;">The workshop operates under the founder's own name: <strong>Paul Lucas</strong>, a former aerospace contractor who quit his job in 2016 after his father's hand-stitched billfold outlasted four of his own store-bought replacements. He built the operation on one premise: <em>"If it ever fails, we fix it or replace it. For as long as you're alive."</em></p><p style="position: relative;">The wallets carry a <mark style="background:#fef08a;padding:2px 4px;border-radius:3px">lifetime guarantee</mark>. Not a year. Not five years. <u>Lifetime</u>. And because they're made correctly, the guarantee is almost never claimed.</p></div>
+<img alt="" src="/pages/media/b85f7938/editor-upload-manual-3e7c3334.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<h2 class="sec-head" style="position: relative;">Men Who Made The Switch Speak Out</h2>
+<div class="art-body"><p style="position: relative;">We spoke to customers who had carried a Paul Lucas wallet for more than two years. Three responses, edited only for length:</p><p style="position: relative;"><em>"I bought a Coach bifold in 2019 for $175. It split at the corner in fourteen months. Bought a second one. Same thing. My Paul Lucas has been in my front pocket for <strong>three years and two months</strong> — the leather is darker, softer, and the stitching hasn't moved a millimeter."</em><br/>— <strong>Marcus T., 42, Charlotte, NC</strong></p><p style="position: relative;"><em>"I showed it to the cobbler on my block — he repairs luggage for a living — and he flipped it inside out, stared at the stitching, and said, <strong>'I couldn't do this one better myself.'</strong> That was the moment I stopped buying mall wallets."</em><br/>— <strong>David R., 51, Minneapolis, MN</strong></p><p style="position: relative;"><em>"I'm not a gear guy. My wife bought it for me for our anniversary. Two years later my business partner asked where I got it — <u>his</u> Tumi had just fallen apart in his pocket at a client dinner. I wrote down the name on a napkin."</em><br/>— <strong>James K., 38, Austin, TX</strong></p></div>
+<img alt="" class="" src="/pages/media/b85f7938/manual_upload-manual-f7cec193.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
 <div class="offer-verdict">
 <div class="verdict-label">Investigation Verdict</div>
-<h2>⚠️ Special Offer: <span class="accent">50% Off</span> — Limited Stock</h2>
-<p><strong>Paul Lucas</strong><br/>Available <strong>ONLY</strong> on the official store — at the lowest price of the year.</p>
-<div class="placeholder"><div class="tbadge">PRODUCT BUNDLE</div><br/>Product hero image with all accessories and price badge</div>
-<p><strong>Verified by our editorial team.</strong> If you've ever watched a $150 wallet fall apart in your back pocket, you already know why this matters. Claim yours while the current batch is still in stock — the workshop ships orders in the order they are received, and small-batch production means wait times grow quickly.</p><p><strong>→ Claim Your Paul Lucas Wallet — Backed For Life</strong></p><p><em>Every order is protected by the lifetime guarantee. If it ever fails, they repair or replace it. No questions. No receipts. For as long as you carry it.</em></p>
+<h2 style="position: relative;">⚠️ Special Offer: <span class="accent">50% Off</span> — Limited Stock</h2>
+<p style="position: relative;"><strong>Paul Lucas</strong><br/>Available <strong>ONLY</strong> on the official store — at the lowest price of the year.</p>
+<img alt="" src="/pages/media/b85f7938/manual_upload-manual-a0c6eddb.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<p style="position: relative;"><strong>Verified by our editorial team.</strong> If you've ever watched a $150 wallet fall apart in your back pocket, you already know why this matters. Claim yours while the current batch is still in stock — the workshop ships orders in the order they are received, and small-batch production means wait times grow quickly.</p><p style="position: relative;"><strong>→ Claim Your Paul Lucas Wallet — Backed For Life</strong></p><p style="position: relative;"><em>Every order is protected by the lifetime guarantee. If it ever fails, they repair or replace it. No questions. No receipts. For as long as you carry it.</em></p>
 <a class="cta-main" href="https://methickpalued.com/click">Check Availability</a>
 <div class="offer-badges">
 <div>✓ 30-day money-back guarantee</div>
@@ -250,7 +499,7 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </div>
 </div>
 <div class="related-sec">
-<h3>Related Investigations</h3>
+<h3 style="position: relative;">Related Investigations</h3>
 <div class="related-grid">
 <div class="rel-item">
 <div class="rel-cat">Consumer</div>
@@ -273,12 +522,12 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </article>
 </div>
 <div class="sticky-footer">
-<a href="https://methickpalued.com/click">👉 Skip to offer — Check availability <span class="arr">→</span></a>
+<a href="https://methickpalued.com/click" style="position: relative;">👉 Skip to offer — Check availability <span class="arr">→</span></a>
 </div>
 <style>#adv-footer{display:block!important;visibility:visible!important;}</style>
 <footer id="adv-footer" style="display:block!important;background:#f5f5f5;border-top:1px solid #e8e8e8;padding:40px 20px 36px;text-align:center;margin-top:40px;">
 <img alt="Paul Lucas workshop logo" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="height:40px;max-width:200px;object-fit:contain;margin-bottom:16px;opacity:0.65;display:block;margin-left:auto;margin-right:auto;"/>
-<p style="font-size:9px;color:#ccc;line-height:1.5;max-width:680px;margin:8px auto 0;letter-spacing:0.02em;">ADVERTISING DISCLOSURE: The story, persons, and results depicted on this site are illustrative. Individual results may vary. This content is sponsored advertising and not intended as news or editorial content.</p>
+<p style="font-size: 9px; color: rgb(204, 204, 204); line-height: 1.5; max-width: 680px; margin: 8px auto 0px; letter-spacing: 0.02em; position: relative;">ADVERTISING DISCLOSURE: The story, persons, and results depicted on this site are illustrative. Individual results may vary. This content is sponsored advertising and not intended as news or editorial content.</p>
 <div style="font-size:11px;color:#999;margin:14px auto 8px;font-family:system-ui,-apple-system,sans-serif;">
 <a href="https://methickpalued.com/click" style="color:#999;text-decoration:none;" target="_blank">Terms of Use</a>
 <span style="margin:0 6px;color:#ccc;">·</span>
@@ -286,7 +535,6 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://methickpalued.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>
