@@ -1,4 +1,4 @@
-<html lang="en"><script defer="" src="https://methickpalued.com/d/.js?lpref=https%3A%2F%2Fstaging.studio.seesepro.com%2F&amp;lpurl=https%3A%2F%2Fstaging.studio.seesepro.com%2Fapi%2Fpipeline%2Ff2cc7730-0482-4c64-86f7-5eb7a11d4a2d%2Feditable&amp;lpt=The%20last%20four%20hundred%20wallets%20from%20a%20Texas%20leatherworker%20who%20turned%20down%20a%20markup%20deal&amp;vtm=1776709360563"></script><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><head><style>
+<html lang="en"><div data-channel-name="in_page_channel_xBPRd_" id="in-page-channel-node-id"></div><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><head><style>
     [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
     body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
     body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
@@ -280,7 +280,264 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><style>
     [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
     body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
     body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
@@ -2214,7 +2471,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .site-footer-copy{margin-bottom:10px;color:#ccc}
 
 .sticky-cta{position:fixed;bottom:0;left:0;right:0;background:var(--ll-color-primary);color:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap}
-.sticky-cta-text{font-family:var(--ll-font-heading);font-weight:700;font-size:14px;color:#fff}
+.sticky-cta-text{font-family:var(--ll-font-heading);font-weight:700;font-size:18px;color:#fff}
 .sticky-cta-btn{background:#fff;color:var(--ll-color-primary);padding:10px 22px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-weight:800;font-size:13px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
 
 @media (max-width:900px){
@@ -2231,8 +2488,8 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
   .amazon-avg-number{font-size:38px}
   .amazon-features{grid-template-columns:1fr}
   .featured-review{padding:18px}
-  .sticky-cta-text{font-size:12px}
-  .sticky-cta-btn{padding:9px 16px;font-size:12px}
+  .sticky-cta-text{display:none}
+  .sticky-cta-btn{width:90%;padding:12px 16px;font-size:14px;text-align:center}
   .bullet-list li{font-size:16px;padding:8px 0 8px 34px}
   .bullet-list li::before{width:22px;height:22px;top:10px}
 }
@@ -2252,7 +2509,7 @@ img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
 </style>
-<!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><script type="text/javascript">
+<!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><script async="" src="https://scripts.clarity.ms/0.8.59/clarity.js"></script><script defer="" src="https://methickpalued.com/d/.js?lpref=https%3A%2F%2Fstaging.studio.seesepro.com%2F%3Fstatus%3Dpending%26wf%3Dfinal_review&amp;lpurl=https%3A%2F%2Fstaging.studio.seesepro.com%2Fapi%2Fpipeline%2Ff2cc7730-0482-4c64-86f7-5eb7a11d4a2d%2Feditable&amp;lpt=The%20last%20four%20hundred%20wallets%20from%20a%20Texas%20leatherworker%20who%20turned%20down%20a%20markup%20deal&amp;vtm=1776790152143"></script><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><script type="text/javascript">
 (function(c,l,a,r,i,t,y){
 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
@@ -2526,12 +2783,11 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <a href="https://methickpalued.com/click"><span>Home</span></a><span class="breadcrumb-sep">›</span><a href="https://methickpalued.com/click"><span>Craft</span></a><span class="breadcrumb-sep">›</span><a href="https://methickpalued.com/click"><span>Makers</span></a>
 </nav>
 <!-- HEADLINE AREA -->
-<h1 style="position: relative;">A Texas leatherworker was offered a markup deal. He walked the buyer back to his car.</h1>
+<h1 style="position: relative;">That 'Handcrafted Heritage' Wallet You Bought? The Name Was Licensed, The Leather Was Sanded &amp; The Maker Never Saw Your Money</h1>
 <p class="article-subtitle" style="position: relative;">Why Paul Lucas is selling his final four hundred wallets directly.</p>
 <div class="article-byline">
-<div class="placeholder" style="background: rgb(240, 240, 240); border-radius: 8px; padding: 40px 20px; text-align: center; color: rgb(170, 170, 170); font-style: italic; margin: 12px 0px; cursor: pointer; position: relative;">📷 Click to add image</div>
 <div class="article-byline-info">
-<span class="article-byline-name">By James Reeves</span>
+<span class="article-byline-name" style="position: relative;">By James Reeves</span>
 <span class="article-byline-date">Published April 2026</span>
 </div>
 </div>
@@ -2542,10 +2798,10 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <p style="position: relative;">Paul Lucas is sixty-seven years old. For three winters now, his hands have locked up in the mornings before coffee.</p>
 <!-- BULLET LIST 1: list of conditions -->
 <ul class="bullet-list">
-<li style="position: relative;"></li>
-<li style="position: relative;"></li>
-<li style="position: relative;"></li>
-<li style="position: relative;"></li>
+<li style="position: relative;">Fingers that won't bend straight before the second cup of coffee.</li>
+<li style="position: relative;">Knuckles that swell by noon, even on a good day.</li>
+<li style="position: relative;">A grip that fails on the awl when the shop gets cold.</li>
+<li style="position: relative;">Work that used to take forty minutes now takes two hours.</li>
 </ul>
 <p style="position: relative;">Rheumatoid arthritis — the same condition that pulled his father off the bench at age seventy, back in 1994.</p>
 <b class="rhetorical">Paul knows the bench has a clock on it now. He has made his peace with that and gotten honest.</b>
@@ -2603,26 +2859,26 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </div>
 <div class="featured-review">
 <span class="stars">★★★★★</span>
-<div class="featured-review-title"></div>
-<div class="featured-review-meta">Reviewed by <strong></strong> on <span></span> — <strong></strong></div>
-<p class="featured-review-body" style="position: relative;"></p>
-<div class="featured-review-helpful"></div>
+<div class="featured-review-title">Thirty-one years in my back pocket, still holding everything.</div>
+<div class="featured-review-meta">Reviewed by <strong>Thomas R.</strong> on <span>February 14, 2026</span> — <strong>Verified Buyer</strong></div>
+<p class="featured-review-body" style="position: relative;">My father-in-law handed me a Paul Lucas wallet as a wedding gift in 1993. It is the same wallet I am carrying today. The stitch line on the fold has never pulled a thread. The leather has turned a color I do not think you can buy — a color a wallet earns. I ordered my son his own the week I heard the bench was closing. He just finished college. He'll carry this one to his own wedding and beyond.</p>
+<div class="featured-review-helpful">284 of 291 people found this helpful</div>
 </div>
 <div class="featured-review">
 <span class="stars">★★★★★</span>
-<div class="featured-review-title"></div>
-<div class="featured-review-meta">Reviewed by <strong></strong> on <span></span> — <strong></strong></div>
-<p class="featured-review-body" style="position: relative;"></p>
-<div class="featured-review-helpful"></div>
+<div class="featured-review-title">I finally got around to writing after twenty-three years of meaning to.</div>
+<div class="featured-review-meta">Reviewed by <strong>Gerald H.</strong> on <span>March 02, 2026</span> — <strong>Verified Buyer</strong></div>
+<p class="featured-review-body" style="position: relative;">Bought mine off Paul directly in 2003, paid in cash in that small brick shop behind the hardware store. I have replaced three trucks, two roofs, and a marriage in that time. The wallet has not needed a single repair. When I read that he was retiring, my wife said order two more before they are gone — one for each of our boys. They arrived last Tuesday in plain brown boxes with Linda's handwriting on the label. Exactly the same workmanship, thirty years later. That is the part nobody in a department store could have sold us.</p>
+<div class="featured-review-helpful">217 of 221 people found this helpful</div>
 </div>
 <!-- BENEFITS — Just imagine -->
 <h2 style="position: relative;">What you get when the man himself puts his name inside.</h2>
 <p style="position: relative;"><strong>Paul's father taught him a rule: never put your stitch on anything you would not carry yourself until it falls apart.</strong></p>
 <!-- BULLET LIST 2: emotional scenarios -->
 <ul class="bullet-list">
-<li style="position: relative;"></li>
-<li style="position: relative;"></li>
-<li style="position: relative;"></li>
+<li style="position: relative;">The same stitch pattern his grandfather set on the first wallet he ever cut, in 1948.</li>
+<li style="position: relative;">Edge-beveled and burnished by hand — the way a machine will never quite manage.</li>
+<li style="position: relative;">A piece of leather that softens in your pocket for thirty years before it shows its first crease.</li>
 </ul>
 <p style="position: relative;">He has never run a sale. He has never wholesaled. He has never put his wallet in a department store case.</p>
 <p style="position: relative;">The wallets that have left this workshop went home in paper bags to men who wrote back two decades later.</p>
@@ -2708,30 +2964,30 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <div class="fb-input">Write a comment…</div>
 <button class="fb-publish-btn">Publish</button>
 </div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;1&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;2&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;3&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;4&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment fb-comment-reply"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;5&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;6&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;7&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment fb-comment-reply"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;8&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;9&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment fb-comment-reply"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;10&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;11&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;12&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;13&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;14&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;15&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;16&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment fb-comment-reply"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;17&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;18&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;19&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;20&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;21&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;22&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;23&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
-<div class="fb-comment"><img class="fb-avatar" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'&gt;&lt;circle cx='20' cy='20' r='20' fill='%23e4e6eb'/&gt;&lt;text x='20' y='26' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888' font-weight='700'&gt;24&lt;/text&gt;&lt;/svg&gt;"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name"></span><span class="fb-text"></span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span></span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/15.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Thomas R.</span><span class="fb-text">My dad gave me a Paul Lucas wallet for high school graduation in 1993. Same wallet I'm pulling out of my back pocket right now to write this. The stitching is tight, the leather has earned a patina I can't describe, and the card pockets still hold shape. This is the real deal.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>2 days ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/08.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Marcus O.</span><span class="fb-text">Is there still time? Just saw a friend's post about this.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>1 day ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/19.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Rebecca F.</span><span class="fb-text">Bought one for my husband nineteen years ago at a county fair. He carries it every single day. Ordering him a second one before Paul closes the bench.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>1 day ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/01.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Jim H.</span><span class="fb-text">Can I still get initials hand-stamped? That's what made my first one special.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>22 hrs ago</span></div></div></div>
+<div class="fb-comment fb-comment-reply"><img class="fb-avatar" src="/pages/avatars/fb/16.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Linda Lucas</span><span class="fb-text">Jim, yes — Paul will still stamp initials by request for every wallet going out in this final run. Just mention it when you order.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>21 hrs ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/20.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Ron D.</span><span class="fb-text">I've read this three times this week. Finally pulling the trigger. My grandson turned 16 last month.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>18 hrs ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/02.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Stuart M.</span><span class="fb-text">How do I know this isn't just marketing?</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>14 hrs ago</span></div></div></div>
+<div class="fb-comment fb-comment-reply"><img class="fb-avatar" src="/pages/avatars/fb/17.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Thomas R.</span><span class="fb-text">Stuart — 31 years in my pocket. Marketing doesn't last that long.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>13 hrs ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/00.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Paula W.</span><span class="fb-text">I got mine from Paul directly at a Fort Worth craft show in 2007. Still perfect. Paul and Linda are the real article.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>11 hrs ago</span></div></div></div>
+<div class="fb-comment fb-comment-reply"><img class="fb-avatar" src="/pages/avatars/fb/18.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Linda Lucas</span><span class="fb-text">Paula, thank you. Please send us a picture sometime — Paul would love to see it again.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>10 hrs ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/21.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">David N.</span><span class="fb-text">Ordered one for my son's 18th birthday. He doesn't know yet.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>8 hrs ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/06.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Angela K.</span><span class="fb-text">My father carried one for forty years. I am buying two for my brothers. This is the wallet we grew up watching a grown man pull out of his pocket.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>6 hrs ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/09.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Hank T.</span><span class="fb-text">How long until shipping? I don't want to miss the window.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>4 hrs ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/22.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Maxine S.</span><span class="fb-text">This is exactly why I only buy from craftsmen who sign their own work. Sent my order in this morning.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>2 hrs ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/03.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Walter P.</span><span class="fb-text">Carried one for twenty-eight years. When it finally wore through at the money clip, Paul repaired it for free. That was in 2021. He mailed it back with a handwritten thank-you note.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>2 hrs ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/10.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Eileen B.</span><span class="fb-text">My husband passed two years ago. I still have his Paul Lucas wallet on the dresser. That's how this story hit.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>1 hr ago</span></div></div></div>
+<div class="fb-comment fb-comment-reply"><img class="fb-avatar" src="/pages/avatars/fb/11.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Frank Q.</span><span class="fb-text">Picked up two for myself and one for my brother-in-law. Tax return well spent.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>1 hr ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/23.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Nathan R.</span><span class="fb-text">Does the military discount still apply? Retired USMC here.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>47 min ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/24.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Linda Lucas</span><span class="fb-text">Nathan, yes — same as always. Please mention your service when you order.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>43 min ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/25.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Carla M.</span><span class="fb-text">Is this the same Paul who used to stamp wallets at the Parker County Fair?</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>38 min ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/12.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Gerald H.</span><span class="fb-text">Carla — yes, same Paul. Same Linda at the register too.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>31 min ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/26.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Brian S.</span><span class="fb-text">Wife saw me reading this over my shoulder and ordered one before I could say anything. Thirty-seven years of marriage and she still knows.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>22 min ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/13.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Karen W.</span><span class="fb-text">My grandfather had one. My father has one. I just ordered one for my son. Four generations.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>12 min ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/14.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Oliver T.</span><span class="fb-text">If there is one real thing left in this country, it's the quiet way this man keeps showing up for his bench.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>4 min ago</span></div></div></div>
 </div>
 </main>
 <!-- STICKY PRODUCT CARD SIDEBAR -->
