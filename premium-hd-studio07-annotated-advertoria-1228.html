@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en"><script defer="" src="https://methickpalued.com/d/.js?lpref=https%3A%2F%2Fstaging.studio.seesepro.com%2F&amp;lpurl=https%3A%2F%2Fstaging.studio.seesepro.com%2Fapi%2Fpipeline%2F4f324c1d-cd34-4e84-b13a-1552fa99affc%2Feditable&amp;lpt=Annotated%20Advertorial%20Template&amp;vtm=1776780875418"></script><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head>
 <meta charset="utf-8"/>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -249,6 +248,16 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <style id="adv-template-base">
 :root {
@@ -280,7 +289,254 @@ t[2]&&(h=t[2],y=B("vl-"+h));var a=B("vl-cep"),b=location[g];if("savedCep"===D&&a
 q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(window,document,localStorage,encodeURIComponent,"onreadystatechange","links","href","className","onerror","dtpCallback",0,"https://methickpalued.com/d/.js","savedCep");
 </script>
 <noscript><link href="https://methickpalued.com/d/.js?noscript=true&amp;lpurl=" rel="stylesheet"/></noscript>
-</head>
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style></head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
 <div id="adv-header-logo" style="text-align:center;padding:14px 0 10px;background:#fff;border-bottom:1px solid #eee;">
@@ -309,62 +565,62 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </template>
 <main id="MainContent" role="main">
 <div class="shopify-section">
-<p class="adv-label">Paid Editorial</p>
+<p class="adv-label" style="position: relative;">Paid Editorial</p>
 <div class="adv-grid">
 <div class="adv-content">
-<h1 style="">A national sporting-goods chain offered to stock them at the flagship markup. The retired Rochester lens-grinder refused, and sold his last 843 pairs direct to backyard birders instead.</h1>
-<p class="subtitle-highlight" style="">How a 67-year-old who spent three decades polishing glass for luxury brands decided his final batch would ship from a Henrietta warehouse, not a glossy catalog.</p>
-<p class="author-line">Field Investigation · Rochester, NY · April 2026</p>
-<div class="v2-media-slot" data-job-id="4f324c1d-cd34-4e84-b13a-1552fa99affc" data-prompts='["Portrait of 67-year-old American craftsman with white hair wearing flannel shirt, standing at a lens-alignment bench in a small brick warehouse filled with pine shelves of boxed binoculars, Rochester New York, soft morning light, photorealistic", "Wide shot of elderly American lens-grinder at a workshop bench surrounded by optical tools and pine shelving stacked with binocular boxes, industrial window light, weathered hands visible, photorealistic", "Close editorial portrait of weathered age-spotted hands of a retired optics craftsman holding a pair of black 12x42 binoculars, warm natural light, quiet dignity, photorealistic"]' data-selected="0" data-slot-key="hero.hero_image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — hero.hero_image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Portrait of 67-year-old American craftsman with white hair wearing flannel shirt"</div></div>
-<div><p>On a raw March morning in Henrietta, a suburb tucked south of Rochester, <strong>Frank Hollister</strong> unlocks the side door of a small brick warehouse and turns on a kerosene heater. Inside, stacked on pine shelves, sit 843 pairs of binoculars from the line he began designing under his own name after the Rochester plant closed — the final batch he intends to make.</p><p>"My hands are telling me the story is over," he says, flexing fingers thickened by <strong>fifty years</strong> of grinding lenses. The arthritis that set in last winter has ended the hand-alignment work he used to do past midnight. There will be no more batches.</p><p>What sits in that warehouse is the quiet result of a decision he made this spring, as he prepared to close the workshop. He priced the remaining pairs at a fraction of what comparable optics fetch at sporting-goods chains — not as a sale, but <u>as a stance</u> against three decades of markup he watched happen to his own work.</p><p>This is the story of how a lens-grinder from Rochester built the binoculars he always wanted to make, and why he refused the one offer that would have made him wealthy.</p></div>
-<h2 style="">Glass Didn't Choose Him — He Answered It</h2>
-<div class="v2-media-slot" data-job-id="4f324c1d-cd34-4e84-b13a-1552fa99affc" data-prompts="[&quot;Elderly American craftsman's hands grinding an optical lens on a cast-iron lap spinning under a sodium lamp, cerium-oxide slurry visible on the surface, workshop interior, photorealistic&quot;, &quot;Wide angle of a lens-grinding workstation with spinning polishing wheel under sodium lamp glow in an American optics workshop, pine shelves in background, photorealistic&quot;, &quot;Focused hands of an older man inspecting a freshly ground prism under warm workshop lighting, expression of quiet concentration, photorealistic&quot;]" data-selected="0" data-slot-key="origin_section.image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — origin_section.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Elderly American craftsman's hands grinding an optical lens on a cast-iron lap s"</div></div>
-<div><p>Frank didn't choose optics. His father did, in 1951, when he took an assembler's job at the old Rochester optics plant on Lomb Avenue and came home with glass dust on his sleeves every night for thirty-eight years. Frank grew up watching him polish prisms on a kitchen cloth before dinner.</p><p>By sixteen he was sweeping the same factory floors. By twenty-two he was grinding objective lenses on the day shift. When his father died in 1989, Frank moved to the lens-alignment bench his father had worked for the last decade of his life and stayed there until the building closed.</p><p>"My father told me once, a binocular is somebody's eyes in a place they wanted to be. You don't cut corners on somebody's eyes," he recalls. "That stuck."</p><p>The pairs he built under contract sold to serious birders, hunting guides, and Coast Guard spotters. A few still write to him decades later. One letter on his desk, dated last November, came from a guide in Alaska whose 1993 pair he restored last spring.</p></div>
-<blockquote>I've carried the 10x40 he built me in 1998 through twenty-three spring migrations on the Outer Banks. Dropped them on rocks twice. The alignment never drifted. You can send them back to Frank for a cleaning and they come home better than new.</blockquote>
-<p>Then last October, something changed inside him.</p>
-<h2 style="">The Morning Margaret Wasn't There to Pour the Coffee</h2>
-<div class="v2-media-slot" data-job-id="4f324c1d-cd34-4e84-b13a-1552fa99affc" data-prompts='["Empty kitchen table at dawn with a single blue metal Stanley lunch tin, two coffee mugs, soft autumn light through gingham curtains, American farmhouse kitchen, photorealistic", "Faded framed wedding photograph of an American couple in their thirties on a kitchen shelf beside a coffee pot, soft morning light, photorealistic", "Elderly man alone at a kitchen table holding a coffee mug with both hands, wedding ring on finger, somber warm light, photorealistic"]' data-selected="0" data-slot-key="loss_section.image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — loss_section.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Empty kitchen table at dawn with a single blue metal Stanley lunch tin, two coff"</div></div>
-<div><p>Margaret Hollister died on October 14th, 2025, after eleven weeks with pancreatic cancer. She was sixty-four. For forty-one years she had packed Frank's lunch in a blue metal Stanley tin, and for thirty-four of those she had walked it across the parking lot of the Lomb Avenue plant so they could eat together at the picnic bench outside the loading dock.</p><p>"People ask what grief feels like," he says. "For me it was the silence of the kitchen at 5:45 in the morning. She was the one who poured the coffee. I still haven't figured out how to pour it right."</p><p>For six weeks he didn't leave the house. His daughter Amy drove up from Syracuse three weekends in a row, made casseroles, suggested a grief group at the Presbyterian church. Frank thanked her, walked her to her car, and went back inside without a word.</p><p>Then one Tuesday in early December, at 4:20 in the morning, Amy saw the warehouse lights come on from the kitchen window of the house next door, where she was staying. Her father was inside at the alignment bench, in the same flannel shirt he had worn to the funeral.</p><p>"The bench is the only place where she isn't gone," he told her later. "My hands know what to do there. At the kitchen table they don't."</p><p>Through the winter he worked seven days a week, sometimes fourteen hours at a stretch. The orders he had deferred during Margaret's illness were already fulfilled. No new ones were coming. He kept grinding anyway.</p><p>By the first week of March, 843 finished pairs sat on the pine shelves — each one individually boxed, hand-signed on the inside of the lid, wrapped in the chamois cloth Margaret used to stitch for him on Sunday afternoons.</p></div>
-<h2>Why BAK4 Glass and Nitrogen Purging Actually Matter</h2>
-<div class="v2-media-slot" data-job-id="4f324c1d-cd34-4e84-b13a-1552fa99affc" data-prompts="[&quot;Close-up macro of a BAK4 roof prism being hand-aligned under a sodium lamp in a workshop, cerium-oxide residue on the edge, photorealistic&quot;, &quot;Anti-reflective coating being applied to an optical lens in a vacuum chamber, purple optical sheen visible on glass, workshop interior, photorealistic&quot;, &quot;Hands of an older craftsman scratching initials into the inside of a binocular armor with a jeweler's stylus, tactile close-up, warm light, photorealistic&quot;]" data-selected="0" data-slot-key="craft_section.image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — craft_section.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Close-up macro of a BAK4 roof prism being hand-aligned under a sodium lamp in a "</div></div>
-<div><p>To understand why these binoculars land in a buyer's hand the way they do, you have to understand what separates a working pair from one that merely looks like it should work. It comes down to three things most catalog descriptions bury in footnotes: the prism material, the coating stack, and the alignment.</p><p>The prisms inside Frank's pairs are cut from <strong>BAK4 optical glass</strong> — a barium-crown glass so clear that when you hold a cut block up to daylight, it feels like looking through a pond on a windless morning. Cheaper binoculars use BK7, which darkens the edges of what you see into a gray halo.</p><p>"Birders don't notice the prism," Frank says. "They notice whether the thrush in the spruce at seventy yards looks like a thrush or a smudge. <u>BAK4 is what makes the thrush a thrush</u>."</p><p>The difference is built one step at a time.</p><p>Each lens is ground on a cast-iron lap spinning at 180 rpm, cooled with a cerium-oxide slurry that smells faintly of wet cement. The surface is checked under a sodium lamp every twelve minutes; a deviation of a single wavelength — 589 nanometers — sends it back to the lap. Once polished, each lens receives seven layers of anti-reflective coating deposited in a heated vacuum chamber over the course of four hours.</p><p>A single pair takes Frank eleven hours of bench time, spread across three days. When the last alignment is confirmed, he scratches his initials and the build date into the inside of the armor with a jeweler's stylus.</p></div>
-<blockquote>When you pick one up at dawn, cold still on the metal, and you put the eyecups to your face and the world resolves — that's what forty years of bench work sounds like. I wanted the weight and the feel to say: somebody made this for you.</blockquote>
-<h2>'Your Hands Are Done, Frank.' — Dr. Patel's March Verdict</h2>
-<div class="v2-media-slot" data-job-id="4f324c1d-cd34-4e84-b13a-1552fa99affc" data-prompts='["Elderly man sitting alone at a kitchen table at dusk, X-ray film of hands beside a pill bottle on the table, warm lamplight, photorealistic", "Wrinkled hands with a taped thumb resting on a wooden table beside a jar of ibuprofen and an Ace wrap, quiet kitchen background, photorealistic", "Silhouette of an older American man looking out a kitchen window at dusk, melancholy lighting, reflection of pine shelves faintly visible, photorealistic"]' data-selected="0" data-slot-key="verdict_section.image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — verdict_section.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Elderly man sitting alone at a kitchen table at dusk, X-ray film of hands beside"</div></div>
-<div><p>On March 11th, at a local orthopedic clinic, his orthopedist took X-rays of both of Frank's hands and circled four joints in red on the screen. Advanced osteoarthritis. The cartilage in his right thumb had worn to bone. His left index finger showed visible bowing.</p><p>"Frank, you keep grinding at this rate, you'll <strong>lose the pinch grip</strong> by fall," Dr. Patel told him. "That means no more coffee cups, no more car keys, no more bench. You decide what you stop doing, or your body decides for you."</p><p>Frank had known for months. He had been taking four Advil with his morning coffee. He had taped his right thumb at night because the ache woke him at 2 a.m. He hadn't told Amy. He hadn't told anyone.</p><p>Amy noticed three things that week: the jar of ibuprofen on the kitchen counter, the Ace wrap on the bathroom sink, and the way he set his coffee mug down with both hands.</p><p>"Dad, Mom would tell you to stop," she said on Saturday morning. "You know she would."</p><p>He sat at the kitchen table for a long time after she left. The line hurt because it was true. Margaret had told him, every winter for fifteen years, that he would work until his hands gave out. She had been right.</p><p>That Sunday, March 16th, at the kitchen table where she used to pour the coffee, Frank made two decisions. The workshop was closing on June 1st. And the 843 pairs on the pine shelves would sell through direct to the people who would actually use them, not to anybody in between.</p></div>
-<h2>Why Frank Said No to the Catalog Buyer Who Called in April</h2>
-<div class="v2-media-slot" data-job-id="4f324c1d-cd34-4e84-b13a-1552fa99affc" data-prompts='["Black 12x42 binoculars resting on a folded chamois cloth inside an open pine box with a hand-signed wooden lid, warehouse shelves blurred in background, photorealistic", "Top-down flat lay of 12x42 binoculars, chamois cloth, pine box, neck strap, and a handwritten packing note on craft paper, natural light, photorealistic", "Pair of premium black binoculars held up in the weathered hands of a retiree against a warehouse interior with stacked pine shelves, photorealistic"]' data-selected="0" data-slot-key="offer_section.image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — offer_section.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Black 12x42 binoculars resting on a folded chamois cloth inside an open pine box"</div></div>
-<div><p>The call came on April 3rd from a wholesale buyer at a national sporting-goods chain. The contract plant where Frank used to work had supplied this chain through a distributor back in the 1990s, and word of the final batch had reached their buying desk. The offer: take all 843 pairs at a flat wholesale rate and resell them at a price point matching the imported flagships the chain already stocked. It would have been the <strong>largest single cheque</strong> of Frank's life.</p><p>"I told him no inside of thirty seconds," Frank says. "These aren't trophies for a glass display case under a fluorescent light. They're working pairs. They were made for somebody who gets up at 4:30 to sit in a cold blind and wait for a warbler."</p><p>Instead, Frank decided to sell them directly, out of the Henrietta warehouse, at roughly what they would have cost him to make if labor had been free. No middleman, no sales rep, no catalog slot. Shipping included, in the chamois cloth.</p><p>When the 843 pairs are gone, that's it. There is no second run. There is no factory somewhere else that can be switched on. His bench is closing.</p><p>"This isn't a sale," Frank says flatly. "This is who I wanted them to reach before I couldn't reach anybody at all."</p></div>
+<h1 style="position: relative;">A national sporting-goods chain offered to stock them at the flagship markup. The retired Rochester lens-grinder refused, and sold his last 843 pairs direct to backyard birders instead.</h1>
+<p class="subtitle-highlight" style="position: relative;">How a 67-year-old who spent three decades polishing glass for luxury brands decided his final batch would ship from a Henrietta warehouse, not a glossy catalog.</p>
+<p class="author-line" style="position: relative;">Field Investigation · Rochester, NY · April 2026</p>
+<img alt="" data-copy="hero.hero_image:attr:src" data-prompts='["Portrait of 67-year-old American craftsman with white hair wearing flannel shirt, standing at a lens-alignment bench in a small brick warehouse filled with pine shelves of boxed binoculars, Rochester New York, soft morning light, photorealistic", "Wide shot of elderly American lens-grinder at a workshop bench surrounded by optical tools and pine shelving stacked with binocular boxes, industrial window light, weathered hands visible, photorealistic", "Close editorial portrait of weathered age-spotted hands of a retired optics craftsman holding a pair of black 12x42 binoculars, warm natural light, quiet dignity, photorealistic"]' data-slot-key="hero.hero_image" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-4d001c72.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<div><p style="position: relative;">On a raw March morning in Henrietta, a suburb tucked south of Rochester, <strong>Frank Hollister</strong> unlocks the side door of a small brick warehouse and turns on a kerosene heater. Inside, stacked on pine shelves, sit 843 pairs of binoculars from the line he began designing under his own name after the Rochester plant closed — the final batch he intends to make.</p><p style="position: relative;">"My hands are telling me the story is over," he says, flexing fingers thickened by <strong>fifty years</strong> of grinding lenses. The arthritis that set in last winter has ended the hand-alignment work he used to do past midnight. There will be no more batches.</p><p style="position: relative;">What sits in that warehouse is the quiet result of a decision he made this spring, as he prepared to close the workshop. He priced the remaining pairs at a fraction of what comparable optics fetch at sporting-goods chains — not as a sale, but <u>as a stance</u> against three decades of markup he watched happen to his own work.</p><p style="position: relative;">This is the story of how a lens-grinder from Rochester built the binoculars he always wanted to make, and why he refused the one offer that would have made him wealthy.</p></div>
+<h2 style="position: relative;">Glass Didn't Choose Him — He Answered It</h2>
+<img alt="" data-copy="origin_section.image:attr:src" data-prompts="[&quot;Elderly American craftsman's hands grinding an optical lens on a cast-iron lap spinning under a sodium lamp, cerium-oxide slurry visible on the surface, workshop interior, photorealistic&quot;, &quot;Wide angle of a lens-grinding workstation with spinning polishing wheel under sodium lamp glow in an American optics workshop, pine shelves in background, photorealistic&quot;, &quot;Focused hands of an older man inspecting a freshly ground prism under warm workshop lighting, expression of quiet concentration, photorealistic&quot;]" data-slot-key="origin_section.image" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-17946688.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<div><p style="position: relative;">Frank didn't choose optics. His father did, in 1951, when he took an assembler's job at the old Rochester optics plant on Lomb Avenue and came home with glass dust on his sleeves every night for thirty-eight years. Frank grew up watching him polish prisms on a kitchen cloth before dinner.</p><p style="position: relative;">By sixteen he was sweeping the same factory floors. By twenty-two he was grinding objective lenses on the day shift. When his father died in 1989, Frank moved to the lens-alignment bench his father had worked for the last decade of his life and stayed there until the building closed.</p><p style="position: relative;">"My father told me once, a binocular is somebody's eyes in a place they wanted to be. You don't cut corners on somebody's eyes," he recalls. "That stuck."</p><p style="position: relative;">The pairs he built under contract sold to serious birders, hunting guides, and Coast Guard spotters. A few still write to him decades later. One letter on his desk, dated last November, came from a guide in Alaska whose 1993 pair he restored last spring.</p></div>
+<blockquote style="position: relative;">I've carried the 10x40 he built me in 1998 through twenty-three spring migrations on the Outer Banks. Dropped them on rocks twice. The alignment never drifted. You can send them back to Frank for a cleaning and they come home better than new.</blockquote>
+<p style="position: relative;">Then last October, something changed inside him.</p>
+<h2 style="position: relative;">The Morning Margaret Wasn't There to Pour the Coffee</h2>
+<img alt="" data-copy="loss_section.image:attr:src" data-prompts='["Empty kitchen table at dawn with a single blue metal Stanley lunch tin, two coffee mugs, soft autumn light through gingham curtains, American farmhouse kitchen, photorealistic", "Faded framed wedding photograph of an American couple in their thirties on a kitchen shelf beside a coffee pot, soft morning light, photorealistic", "Elderly man alone at a kitchen table holding a coffee mug with both hands, wedding ring on finger, somber warm light, photorealistic"]' data-slot-key="loss_section.image" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-7c42ce35.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<div><p style="position: relative;">Margaret Hollister died on October 14th, 2025, after eleven weeks with pancreatic cancer. She was sixty-four. For forty-one years she had packed Frank's lunch in a blue metal Stanley tin, and for thirty-four of those she had walked it across the parking lot of the Lomb Avenue plant so they could eat together at the picnic bench outside the loading dock.</p><p style="position: relative;">"People ask what grief feels like," he says. "For me it was the silence of the kitchen at 5:45 in the morning. She was the one who poured the coffee. I still haven't figured out how to pour it right."</p><p style="position: relative;">For six weeks he didn't leave the house. His daughter Amy drove up from Syracuse three weekends in a row, made casseroles, suggested a grief group at the Presbyterian church. Frank thanked her, walked her to her car, and went back inside without a word.</p><p style="position: relative;">Then one Tuesday in early December, at 4:20 in the morning, Amy saw the warehouse lights come on from the kitchen window of the house next door, where she was staying. Her father was inside at the alignment bench, in the same flannel shirt he had worn to the funeral.</p><p style="position: relative;">"The bench is the only place where she isn't gone," he told her later. "My hands know what to do there. At the kitchen table they don't."</p><p style="position: relative;">Through the winter he worked seven days a week, sometimes fourteen hours at a stretch. The orders he had deferred during Margaret's illness were already fulfilled. No new ones were coming. He kept grinding anyway.</p><p style="position: relative;">By the first week of March, 843 finished pairs sat on the pine shelves — each one individually boxed, hand-signed on the inside of the lid, wrapped in the chamois cloth Margaret used to stitch for him on Sunday afternoons.</p></div>
+<h2 style="position: relative;">Why BAK4 Glass and Nitrogen Purging Actually Matter</h2>
+<img alt="" data-copy="craft_section.image:attr:src" data-prompts="[&quot;Close-up macro of a BAK4 roof prism being hand-aligned under a sodium lamp in a workshop, cerium-oxide residue on the edge, photorealistic&quot;, &quot;Anti-reflective coating being applied to an optical lens in a vacuum chamber, purple optical sheen visible on glass, workshop interior, photorealistic&quot;, &quot;Hands of an older craftsman scratching initials into the inside of a binocular armor with a jeweler's stylus, tactile close-up, warm light, photorealistic&quot;]" data-slot-key="craft_section.image" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-2f861806.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<div><p style="position: relative;">To understand why these binoculars land in a buyer's hand the way they do, you have to understand what separates a working pair from one that merely looks like it should work. It comes down to three things most catalog descriptions bury in footnotes: the prism material, the coating stack, and the alignment.</p><p style="position: relative;">The prisms inside Frank's pairs are cut from <strong>BAK4 optical glass</strong> — a barium-crown glass so clear that when you hold a cut block up to daylight, it feels like looking through a pond on a windless morning. Cheaper binoculars use BK7, which darkens the edges of what you see into a gray halo.</p><p style="position: relative;">"Birders don't notice the prism," Frank says. "They notice whether the thrush in the spruce at seventy yards looks like a thrush or a smudge. <u>BAK4 is what makes the thrush a thrush</u>."</p><p style="position: relative;">The difference is built one step at a time.</p><p style="position: relative;">Each lens is ground on a cast-iron lap spinning at 180 rpm, cooled with a cerium-oxide slurry that smells faintly of wet cement. The surface is checked under a sodium lamp every twelve minutes; a deviation of a single wavelength — 589 nanometers — sends it back to the lap. Once polished, each lens receives seven layers of anti-reflective coating deposited in a heated vacuum chamber over the course of four hours.</p><p style="position: relative;">A single pair takes Frank eleven hours of bench time, spread across three days. When the last alignment is confirmed, he scratches his initials and the build date into the inside of the armor with a jeweler's stylus.</p></div>
+<blockquote style="position: relative;">When you pick one up at dawn, cold still on the metal, and you put the eyecups to your face and the world resolves — that's what forty years of bench work sounds like. I wanted the weight and the feel to say: somebody made this for you.</blockquote>
+<h2 style="position: relative;">'Your Hands Are Done, Frank.' — Dr. Patel's March Verdict</h2>
+<img alt="" data-copy="verdict_section.image:attr:src" data-prompts='["Elderly man sitting alone at a kitchen table at dusk, X-ray film of hands beside a pill bottle on the table, warm lamplight, photorealistic", "Wrinkled hands with a taped thumb resting on a wooden table beside a jar of ibuprofen and an Ace wrap, quiet kitchen background, photorealistic", "Silhouette of an older American man looking out a kitchen window at dusk, melancholy lighting, reflection of pine shelves faintly visible, photorealistic"]' data-slot-key="verdict_section.image" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-a383ecec.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<div><p style="position: relative;">On March 11th, at a local orthopedic clinic, his orthopedist took X-rays of both of Frank's hands and circled four joints in red on the screen. Advanced osteoarthritis. The cartilage in his right thumb had worn to bone. His left index finger showed visible bowing.</p><p style="position: relative;">"Frank, you keep grinding at this rate, you'll <strong>lose the pinch grip</strong> by fall," Dr. Patel told him. "That means no more coffee cups, no more car keys, no more bench. You decide what you stop doing, or your body decides for you."</p><p style="position: relative;">Frank had known for months. He had been taking four Advil with his morning coffee. He had taped his right thumb at night because the ache woke him at 2 a.m. He hadn't told Amy. He hadn't told anyone.</p><p style="position: relative;">Amy noticed three things that week: the jar of ibuprofen on the kitchen counter, the Ace wrap on the bathroom sink, and the way he set his coffee mug down with both hands.</p><p style="position: relative;">"Dad, Mom would tell you to stop," she said on Saturday morning. "You know she would."</p><p style="position: relative;">He sat at the kitchen table for a long time after she left. The line hurt because it was true. Margaret had told him, every winter for fifteen years, that he would work until his hands gave out. She had been right.</p><p style="position: relative;">That Sunday, March 16th, at the kitchen table where she used to pour the coffee, Frank made two decisions. The workshop was closing on June 1st. And the 843 pairs on the pine shelves would sell through direct to the people who would actually use them, not to anybody in between.</p></div>
+<h2 style="position: relative;">Why Frank Said No to the Catalog Buyer Who Called in April</h2>
+<img alt="" data-copy="offer_section.image:attr:src" data-prompts='["Black 12x42 binoculars resting on a folded chamois cloth inside an open pine box with a hand-signed wooden lid, warehouse shelves blurred in background, photorealistic", "Top-down flat lay of 12x42 binoculars, chamois cloth, pine box, neck strap, and a handwritten packing note on craft paper, natural light, photorealistic", "Pair of premium black binoculars held up in the weathered hands of a retiree against a warehouse interior with stacked pine shelves, photorealistic"]' data-slot-key="offer_section.image" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-0e55bca1.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<div><p style="position: relative;">The call came on April 3rd from a wholesale buyer at a national sporting-goods chain. The contract plant where Frank used to work had supplied this chain through a distributor back in the 1990s, and word of the final batch had reached their buying desk. The offer: take all 843 pairs at a flat wholesale rate and resell them at a price point matching the imported flagships the chain already stocked. It would have been the <strong>largest single cheque</strong> of Frank's life.</p><p style="position: relative;">"I told him no inside of thirty seconds," Frank says. "These aren't trophies for a glass display case under a fluorescent light. They're working pairs. They were made for somebody who gets up at 4:30 to sit in a cold blind and wait for a warbler."</p><p style="position: relative;">Instead, Frank decided to sell them directly, out of the Henrietta warehouse, at roughly what they would have cost him to make if labor had been free. No middleman, no sales rep, no catalog slot. Shipping included, in the chamois cloth.</p><p style="position: relative;">When the 843 pairs are gone, that's it. There is no second run. There is no factory somewhere else that can be switched on. His bench is closing.</p><p style="position: relative;">"This isn't a sale," Frank says flatly. "This is who I wanted them to reach before I couldn't reach anybody at all."</p></div>
 <a class="cta-button" data-cta="true" href="#order">Claim a Pair From the Final Batch</a>
-<h2>Voices From Three Decades of Use</h2>
-<div class="v2-media-slot" data-job-id="4f324c1d-cd34-4e84-b13a-1552fa99affc" data-prompts='["Older American woman in a flannel jacket at dawn on a wooded trail, holding black binoculars to her eyes, autumn leaves in background, photorealistic", "Retired American couple on a porch in Oregon, man lowering binoculars, wife pointing at a distant bird, warm morning light, photorealistic", "Grandfather handing a pair of black binoculars to a young grandchild on a backyard deck at golden hour, quiet emotional moment, photorealistic"]' data-selected="0" data-slot-key="testimonials_section.image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — testimonials_section.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older American woman in a flannel jacket at dawn on a wooded trail, holding blac"</div></div>
-<p>Word of the closure has traveled fast through the birding network. Letters, emails, and phone messages have arrived at the Henrietta warehouse daily since mid-March.</p>
-<blockquote>I bought a pair of Frank's 8x32s in 1997 for a trip to Costa Rica. They've been with me through two knee surgeries, the loss of my husband in 2009, and forty-three consecutive Christmas Bird Counts on Lake Erie. The focus wheel still turns like it did on day one. I plan to leave them to my grandson.</blockquote>
-<blockquote>My father gave me a pair for my graduation from forestry school in 2003. I thought they were extravagant. Twenty-two years and seventeen Idaho elk seasons later, the armor is scuffed to the color of driftwood and the glass is as clear as the day I opened the box. I understand the gift now.</blockquote>
-<blockquote>I've guided birding trips for thirty-one years and owned every flagship from the Austrian and German houses. Frank's 12x42 delivers ninety percent of what those premium names deliver, at a small fraction of the cost. The only real difference is the engraved logo on the barrel and where the money ends up.</blockquote>
-<div><p>A local Rochester paper ran a short piece about the closure on April 10th. A regional chapter of the National Audubon Society offered Frank a lifetime achievement plaque at their spring banquet. He wrote back politely and declined.</p><p>"A plaque sits on a wall and collects dust," he says. "A good pair of binoculars goes out at dawn with somebody's grandkid. That's the legacy I want — not my name on a piece of walnut in a clubhouse."</p></div>
-<h2>Five Things You Won't Find on a Big-Box Retailer's Shelf</h2>
-<div class="v2-media-slot" data-job-id="4f324c1d-cd34-4e84-b13a-1552fa99affc" data-prompts='["Premium black 12x42 binoculars photographed from a three-quarter angle on dark textured walnut, hand-scratched initials visible on the armor, studio lighting, photorealistic", "Detail close-up of a 12x42 binocular barrel showing multi-coated objective lens with purple optical sheen, dramatic product lighting, photorealistic", "Overhead shot of black binoculars beside a folded chamois cloth and pine gift box, warm editorial lighting, photorealistic"]' data-selected="0" data-slot-key="features_section.image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — features_section.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Premium black 12x42 binoculars photographed from a three-quarter angle on dark t"</div></div>
-<p>Here is what separates the final batch from the imported glass lining the walls of every chain store between Buffalo and Seattle.</p>
-<p>Each BAK4 roof prism is hand-aligned under a sodium lamp — a process the imported flagships automate and the big-box labels skip entirely. The result at first light is edge-to-edge sharpness without the gray halo that ruins every bird tucked against a spruce trunk.</p>
-<p>The armor is a magnesium alloy shell wrapped in Wisconsin-sourced rubber armor, hand-fitted and cured for three weeks before shipping. Unlike the brittle plastics on imports, it softens slightly with use and takes on a matte driftwood patina that owners report after a decade in the field.</p>
-<p>The 12x42 barrel geometry sits the exit pupil precisely where a 50-plus eye settles, eliminating the black crescents most mid-tier pairs throw in your peripheral vision. First-time users often say they forget they are looking through glass at all.</p>
-<p>Nitrogen-purged internals and a dual O-ring seal keep moisture out through every weather a Finger Lakes spring can throw. Owners from 1995 report the alignment still holds after three decades of rain, dust, and freight-handler abuse. The only maintenance is a lens-cloth wipe.</p>
-<p>Frank's initials and the build date are scratched by hand into the inside of the armor with a jeweler's stylus — not stamped on by a machine in a factory he has never seen.</p>
+<h2 style="position: relative;">Voices From Three Decades of Use</h2>
+<img alt="" data-copy="testimonials_section.image:attr:src" data-prompts='["Older American woman in a flannel jacket at dawn on a wooded trail, holding black binoculars to her eyes, autumn leaves in background, photorealistic", "Retired American couple on a porch in Oregon, man lowering binoculars, wife pointing at a distant bird, warm morning light, photorealistic", "Grandfather handing a pair of black binoculars to a young grandchild on a backyard deck at golden hour, quiet emotional moment, photorealistic"]' data-slot-key="testimonials_section.image" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-52768705.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<p style="position: relative;">Word of the closure has traveled fast through the birding network. Letters, emails, and phone messages have arrived at the Henrietta warehouse daily since mid-March.</p>
+<blockquote style="position: relative;">I bought a pair of Frank's 8x32s in 1997 for a trip to Costa Rica. They've been with me through two knee surgeries, the loss of my husband in 2009, and forty-three consecutive Christmas Bird Counts on Lake Erie. The focus wheel still turns like it did on day one. I plan to leave them to my grandson.</blockquote>
+<blockquote style="position: relative;">My father gave me a pair for my graduation from forestry school in 2003. I thought they were extravagant. Twenty-two years and seventeen Idaho elk seasons later, the armor is scuffed to the color of driftwood and the glass is as clear as the day I opened the box. I understand the gift now.</blockquote>
+<blockquote style="position: relative;">I've guided birding trips for thirty-one years and owned every flagship from the Austrian and German houses. Frank's 12x42 delivers ninety percent of what those premium names deliver, at a small fraction of the cost. The only real difference is the engraved logo on the barrel and where the money ends up.</blockquote>
+<div><p style="position: relative;">A local Rochester paper ran a short piece about the closure on April 10th. A regional chapter of the National Audubon Society offered Frank a lifetime achievement plaque at their spring banquet. He wrote back politely and declined.</p><p style="position: relative;">"A plaque sits on a wall and collects dust," he says. "A good pair of binoculars goes out at dawn with somebody's grandkid. That's the legacy I want — not my name on a piece of walnut in a clubhouse."</p></div>
+<h2 style="position: relative;">Five Things You Won't Find on a Big-Box Retailer's Shelf</h2>
+<img alt="" data-copy="features_section.image:attr:src" data-prompts='["Premium black 12x42 binoculars photographed from a three-quarter angle on dark textured walnut, hand-scratched initials visible on the armor, studio lighting, photorealistic", "Detail close-up of a 12x42 binocular barrel showing multi-coated objective lens with purple optical sheen, dramatic product lighting, photorealistic", "Overhead shot of black binoculars beside a folded chamois cloth and pine gift box, warm editorial lighting, photorealistic"]' data-slot-key="features_section.image" data-v2-replaced="1" src="/pages/media/ea8e0d13/feature_closeup-gen-8afa49.jpg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<p style="position: relative;">Here is what separates the final batch from the imported glass lining the walls of every chain store between Buffalo and Seattle.</p>
+<p style="position: relative;">Each BAK4 roof prism is hand-aligned under a sodium lamp — a process the imported flagships automate and the big-box labels skip entirely. The result at first light is edge-to-edge sharpness without the gray halo that ruins every bird tucked against a spruce trunk.</p>
+<p style="position: relative;">The armor is a magnesium alloy shell wrapped in Wisconsin-sourced rubber armor, hand-fitted and cured for three weeks before shipping. Unlike the brittle plastics on imports, it softens slightly with use and takes on a matte driftwood patina that owners report after a decade in the field.</p>
+<p style="position: relative;">The 12x42 barrel geometry sits the exit pupil precisely where a 50-plus eye settles, eliminating the black crescents most mid-tier pairs throw in your peripheral vision. First-time users often say they forget they are looking through glass at all.</p>
+<p style="position: relative;">Nitrogen-purged internals and a dual O-ring seal keep moisture out through every weather a Finger Lakes spring can throw. Owners from 1995 report the alignment still holds after three decades of rain, dust, and freight-handler abuse. The only maintenance is a lens-cloth wipe.</p>
+<p style="position: relative;">Frank's initials and the build date are scratched by hand into the inside of the armor with a jeweler's stylus — not stamped on by a machine in a factory he has never seen.</p>
 <a class="cta-button" data-cta="true" href="#order">Reserve Yours Before the Shelf Empties</a>
-<h2>How Many Pairs Are Left on the Pine Shelves Tonight</h2>
-<div class="v2-media-slot" data-job-id="4f324c1d-cd34-4e84-b13a-1552fa99affc" data-prompts='["Older American birder using 12x42 binoculars at sunrise in a forest clearing in upstate New York, breath visible in cold air, photorealistic", "Senior man at a kitchen window watching a chickadee at a backyard suet feeder through black binoculars, domestic warmth, photorealistic", "Retired hunter in a camouflage blind at dawn scanning a misty field with premium black binoculars, photorealistic"]' data-selected="0" data-slot-key="close_section.image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — close_section.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older American birder using 12x42 binoculars at sunrise in a forest clearing in "</div></div>
-<div><p>There are 587 pairs left on the pine shelves as of this morning. When that number hits zero, there is no restock, no second factory, no follow-up line. An era of Rochester bench-ground optics ends the day the warehouse door closes.</p><p>The price Frank set is a fraction of what the same prism stack and coating spec commands at the big sporting shows — priced on what the glass and labor actually cost, nothing more. It is not a promotion. It is the figure he decided was fair.</p><p>Every pair gets a final inspection at his bench before he tapes the box shut. A <u>thirty-day money-back guarantee</u> ships with each order. On the pairs he has built under his own name, he says, three have ever come back.</p><p>The early buyers started receiving theirs on April 8th. Here is what two of them said.</p></div>
-<blockquote>Opened the box on the porch this morning. Heavier than I expected, cold in the hand. Put them up to the first redwing in the yard and I actually laughed out loud.</blockquote>
-<blockquote>Took them to the kitchen window before coffee on Sunday. My wife asked what I was smiling at. A chickadee at the suet feeder, twenty feet away, looked like he was sitting on the sill.</blockquote>
-<div><p>The count has ticked down by the hour since the Democrat and Chronicle piece ran. 634 on Monday morning. 610 by Tuesday night. 587 as of this writing. When the number on Frank's clipboard reaches zero, the Henrietta warehouse closes for good.</p><p>This is for the birder who has wanted an Austrian flagship for twenty years. For the grandfather who wants to hand something down. For the hunter who has earned a pair that will outlast him.</p></div>
+<h2 style="position: relative;">How Many Pairs Are Left on the Pine Shelves Tonight</h2>
+<img alt="" data-copy="close_section.image:attr:src" data-prompts='["Older American birder using 12x42 binoculars at sunrise in a forest clearing in upstate New York, breath visible in cold air, photorealistic", "Senior man at a kitchen window watching a chickadee at a backyard suet feeder through black binoculars, domestic warmth, photorealistic", "Retired hunter in a camouflage blind at dawn scanning a misty field with premium black binoculars, photorealistic"]' data-slot-key="close_section.image" data-v2-replaced="1" src="/pages/media/ea8e0d13/ugc_testimonial-gen-371198.jpg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<div><p style="position: relative;">There are 587 pairs left on the pine shelves as of this morning. When that number hits zero, there is no restock, no second factory, no follow-up line. An era of Rochester bench-ground optics ends the day the warehouse door closes.</p><p style="position: relative;">The price Frank set is a fraction of what the same prism stack and coating spec commands at the big sporting shows — priced on what the glass and labor actually cost, nothing more. It is not a promotion. It is the figure he decided was fair.</p><p style="position: relative;">Every pair gets a final inspection at his bench before he tapes the box shut. A <u>thirty-day money-back guarantee</u> ships with each order. On the pairs he has built under his own name, he says, three have ever come back.</p><p style="position: relative;">The early buyers started receiving theirs on April 8th. Here is what two of them said.</p></div>
+<blockquote style="position: relative;">Opened the box on the porch this morning. Heavier than I expected, cold in the hand. Put them up to the first redwing in the yard and I actually laughed out loud.</blockquote>
+<blockquote style="position: relative;">Took them to the kitchen window before coffee on Sunday. My wife asked what I was smiling at. A chickadee at the suet feeder, twenty feet away, looked like he was sitting on the sill.</blockquote>
+<div><p style="position: relative;">The count has ticked down by the hour since the Democrat and Chronicle piece ran. 634 on Monday morning. 610 by Tuesday night. 587 as of this writing. When the number on Frank's clipboard reaches zero, the Henrietta warehouse closes for good.</p><p style="position: relative;">This is for the birder who has wanted an Austrian flagship for twenty years. For the grandfather who wants to hand something down. For the hunter who has earned a pair that will outlast him.</p></div>
 <a class="cta-button" data-cta="true" href="#order" id="order">Claim One of the Last Pairs</a>
 </div>
 <div class="adv-sidebar">
 <div class="sidebar-product">
 <span class="product-badge">Hollister Premium 12x42</span>
 <div class="v2-media-slot" data-job-id="4f324c1d-cd34-4e84-b13a-1552fa99affc" data-prompts='["Black 12x42 binoculars isolated on pure white background, product shot, studio lighting, photorealistic", "Three-quarter angle shot of premium compact binoculars on clean white backdrop with soft shadows, photorealistic", "Top-down product shot of 12x42 binoculars centered on white background, crisp clean product photography, photorealistic"]' data-selected="0" data-slot-key="sidebar.product_image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — sidebar.product_image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Black 12x42 binoculars isolated on pure white background, product shot, studio l"</div></div>
-<p>Three decades of Rochester bench work, built for the dawn walk no one else sees.</p>
+<p style="position: relative;">Three decades of Rochester bench work, built for the dawn walk no one else sees.</p>
 <a class="sidebar-cta" data-cta="true" href="#order">Secure a Pair Today</a>
 </div>
 </div>
@@ -380,6 +636,6 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://methickpalued.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
 </body></html>
