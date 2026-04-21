@@ -1,4 +1,256 @@
-<html lang="en"><div data-channel-name="in_page_channel_GDOU2Y" id="in-page-channel-node-id"></div><script async="" src="https://scripts.clarity.ms/0.8.59-beta/clarity.js"></script><script defer="" src="https://methickpalued.com/d/.js?lpref=https%3A%2F%2Fstaging.studio.seesepro.com%2F&amp;lpurl=https%3A%2F%2Fstaging.studio.seesepro.com%2Fapi%2Fpipeline%2F49c8917b-a8fa-4faf-be64-3370d2061371%2Feditable&amp;lpt=Retired%20Birdwatcher%20Discovers%20Premium%2012x42%20Binoculars%20That%20Rival%20Brands%20Costing%20Ten%20Times%20More&amp;vtm=1776695703187"></script><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head><style>
+<html lang="en"><head><style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+</style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style></head><body><div data-channel-name="in_page_channel_GDOU2Y" id="in-page-channel-node-id"></div><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><style>
     [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
     body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
     body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
@@ -258,7 +510,7 @@ table{max-width:100%;display:block;overflow-x:auto}
 }
 @media (max-width: 639px) {
   [data-slot="media_1.url"] { aspect-ratio: 16/9 !important; object-fit: cover !important; width: 100% !important; }
-}</style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style></head><body><div data-channel-name="in_page_channel_W3jt9v" id="in-page-channel-node-id"></div><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><style>
+}</style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><div data-channel-name="in_page_channel_W3jt9v" id="in-page-channel-node-id"></div><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><style>
     [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
     body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
     body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
@@ -1000,7 +1252,7 @@ img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
 </style>
-<!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><script type="text/javascript">
+<!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><script defer="" src="https://methickpalued.com/d/.js?lpref=https%3A%2F%2Fstaging.studio.seesepro.com%2F&amp;lpurl=https%3A%2F%2Fstaging.studio.seesepro.com%2Fapi%2Fpipeline%2F49c8917b-a8fa-4faf-be64-3370d2061371%2Feditable&amp;lpt=Retired%20Birdwatcher%20Discovers%20Premium%2012x42%20Binoculars%20That%20Rival%20Brands%20Costing%20Ten%20Times%20More&amp;vtm=1776780905162"></script><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><script type="text/javascript">
 (function(c,l,a,r,i,t,y){
 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
@@ -1298,7 +1550,7 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <b class="rhetorical">Worst of all, many retirees abandon a hobby they love because their old optics just cannot keep up anymore.</b>
 <p style="position: relative;">That was my story too, until a chance conversation at a county park completely changed how I view this gear.</p>
 <!-- MEDIA 2: story / breakthrough image -->
-<div class="v2-media-slot" data-job-id="49c8917b-a8fa-4faf-be64-3370d2061371" data-prompts='["Older American man in a ranger-style khaki vest smiling, holding compact binoculars out in his palm, forest trail background, photorealistic", "Two retirees comparing binoculars on a park bench, one large pair and one compact pair, autumn leaves, photorealistic", "Close-up of compact 12x42 binoculars resting on a worn paper field guide and leather gloves, morning sunlight, photorealistic"]' data-selected="0" data-slot-key="media_2.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older American man in a ranger-style khaki vest smiling, holding compact binocul"</div></div>
+<img alt="" data-copy="media_2.url:attr:src" data-prompts='["Older American man in a ranger-style khaki vest smiling, holding compact binoculars out in his palm, forest trail background, photorealistic", "Two retirees comparing binoculars on a park bench, one large pair and one compact pair, autumn leaves, photorealistic", "Close-up of compact 12x42 binoculars resting on a worn paper field guide and leather gloves, morning sunlight, photorealistic"]' data-slot-key="media_2.url" data-v2-replaced="1" src="/pages/media/ea8e0d13/ugc_testimonial-gen-371198.jpg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
 <p style="position: relative;">Last January, a retired Park Ranger named Walter showed me something in his vest pocket that shook my assumptions about premium optics.</p>
 <!-- ROOT CAUSE -->
 <b class="rhetorical">The Real Issue</b>
@@ -1306,13 +1558,13 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <p style="position: relative;">The truth is that <strong>modern lens coatings and prism technology</strong> have become widely available to many manufacturers.</p>
 <p style="position: relative;">Yet legacy brands still charge retirees a massive markup based on heritage, packaging, and sales channel exclusivity alone.</p>
 <!-- MEDIA 3: mechanism / diagram -->
-<div class="v2-media-slot" data-job-id="49c8917b-a8fa-4faf-be64-3370d2061371" data-prompts='["Side-by-side comparison of expensive luxury binoculars next to compact 12x42 binoculars on a rustic wooden table, photorealistic", "Close-up of binocular lenses showing multi-coated green reflection, dramatic studio lighting, photorealistic", "Frustrated senior man looking at a large price tag attached to luxury binoculars, shaking his head, photorealistic"]' data-selected="0" data-slot-key="media_3.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Side-by-side comparison of expensive luxury binoculars next to compact 12x42 bin"</div></div>
+<img alt="" data-copy="media_3.url:attr:src" data-prompts='["Side-by-side comparison of expensive luxury binoculars next to compact 12x42 binoculars on a rustic wooden table, photorealistic", "Close-up of binocular lenses showing multi-coated green reflection, dramatic studio lighting, photorealistic", "Frustrated senior man looking at a large price tag attached to luxury binoculars, shaking his head, photorealistic"]' data-slot-key="media_3.url" data-v2-replaced="1" src="/pages/media/ea8e0d13/infographic_comparison-gen-f34c5a.jpg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
 <p style="position: relative;">Meanwhile, many retired Americans stretch their fixed incomes and delay enjoying hobbies because premium gear feels financially out of reach.</p>
 <b class="rhetorical">Here is the uncomfortable truth nobody at those flagship optics showrooms wants their loyal customers to hear plainly.</b>
 <p style="position: relative;">You are paying mostly for a logo engraved on the barrel, not for meaningfully sharper views of a warbler.</p>
 <p style="position: relative;">Walter himself spent thirty-eight years in the field and finally realized <u>the name on the barrel barely mattered</u>.</p>
 <!-- MEDIA 4: bad-news visual / worsening -->
-<div class="v2-media-slot" data-job-id="49c8917b-a8fa-4faf-be64-3370d2061371" data-prompts='["A pair of premium HD compact 12x42 binoculars displayed on a neutral background with soft studio lighting, photorealistic", "Top-down view of compact binoculars with neck strap, lens caps, and carrying pouch arranged on oak wood, photorealistic", "Hands of a retiree adjusting the focus wheel on compact black binoculars with a satisfied expression, photorealistic"]' data-selected="0" data-slot-key="media_4.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A pair of premium HD compact 12x42 binoculars displayed on a neutral background "</div></div>
+<img alt="" data-copy="media_4.url:attr:src" data-prompts='["A pair of premium HD compact 12x42 binoculars displayed on a neutral background with soft studio lighting, photorealistic", "Top-down view of compact binoculars with neck strap, lens caps, and carrying pouch arranged on oak wood, photorealistic", "Hands of a retiree adjusting the focus wheel on compact black binoculars with a satisfied expression, photorealistic"]' data-slot-key="media_4.url" data-v2-replaced="1" src="/pages/media/ea8e0d13/feature_closeup-gen-8afa49.jpg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
 <b class="rhetorical">So Walter pulled out a compact pair and handed them to me without saying a word for several seconds.</b>
 <p style="position: relative;">The barrel fit neatly in one hand, far smaller and lighter than anything I had hauled around for years.</p>
 <p style="position: relative;">Yet when I raised them to a red-tailed hawk across the meadow, the image quality genuinely stunned me.</p>
@@ -1321,7 +1573,7 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <p style="position: relative;">Walter watched my reaction and smiled knowingly, having made this exact demonstration to dozens of skeptical retirees before me.</p>
 <b class="rhetorical">Then he told me the name of the company quietly selling these directly to backyard birders across America.</b>
 <!-- MEDIA 5: solution reveal image/video -->
-<div class="v2-media-slot" data-job-id="49c8917b-a8fa-4faf-be64-3370d2061371" data-prompts='["Unboxing shot of premium compact 12x42 binoculars with carrying case, lens cloth, and strap on a kitchen counter, photorealistic", "Retired woman on her porch holding newly unboxed compact binoculars with a delighted smile, photorealistic", "Close-up of a hand lifting compact binoculars out of a branded foam-lined gift box, warm lighting, photorealistic"]' data-selected="0" data-slot-key="media_5.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Unboxing shot of premium compact 12x42 binoculars with carrying case, lens cloth"</div></div>
+<img alt="" data-copy="media_5.url:attr:src" data-prompts='["Unboxing shot of premium compact 12x42 binoculars with carrying case, lens cloth, and strap on a kitchen counter, photorealistic", "Retired woman on her porch holding newly unboxed compact binoculars with a delighted smile, photorealistic", "Close-up of a hand lifting compact binoculars out of a branded foam-lined gift box, warm lighting, photorealistic"]' data-slot-key="media_5.url" data-v2-replaced="1" src="/pages/media/ea8e0d13/editor-upload-manual-f51d1adb.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
 <h2 style="position: relative;">Meet the Compact 12x42 Binoculars That Are Quietly Upending American Birdwatching</h2>
 <p style="position: relative;">They sell the Premium HD Compact 12x42 exclusively through their own website.</p>
 <p style="position: relative;">By skipping the sporting goods chains and luxury retailers, they cut out layers of markup that usually triple retail prices.</p>
@@ -1332,12 +1584,12 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <h2 style="margin-top: 40px; position: relative;">Here is what arrived in the box and exactly why these binoculars are earning such strong loyalty.</h2>
 <h2 style="color: var(--ll-color-primary); margin-top: 0px; font-size: 34px; position: relative;">Premium HD Compact Binoculars 12x42</h2>
 <!-- MEDIA 6: product hero image -->
-<div class="v2-media-slot" data-job-id="49c8917b-a8fa-4faf-be64-3370d2061371" data-prompts='["Detailed product shot of premium 12x42 compact binoculars showing knurled focus wheel and rubberized grip, photorealistic", "Binoculars photographed from the eyepiece end showing twist-up eye cups and multi-coated lenses, photorealistic", "Compact binoculars partially submerged in clear water demonstrating waterproof rating, studio lighting, photorealistic"]' data-selected="0" data-slot-key="media_6.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Detailed product shot of premium 12x42 compact binoculars showing knurled focus "</div></div>
+<img alt="" data-copy="media_6.url:attr:src" data-prompts='["Detailed product shot of premium 12x42 compact binoculars showing knurled focus wheel and rubberized grip, photorealistic", "Binoculars photographed from the eyepiece end showing twist-up eye cups and multi-coated lenses, photorealistic", "Compact binoculars partially submerged in clear water demonstrating waterproof rating, studio lighting, photorealistic"]' data-slot-key="media_6.url" data-v2-replaced="1" src="/pages/media/ea8e0d13/editor-upload-manual-058ce0f1.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
 <p style="position: relative;">The 12x magnification paired with 42mm objective lenses delivers <strong>bright, detailed viewing</strong> even in low dawn light.</p>
 <p style="position: relative;">The metal chassis feels reassuringly solid in the hand, not the creaky plastic you find in budget bargain bin models.</p>
 <p style="position: relative;">Nitrogen-purged internals mean <strong>zero internal fogging</strong> when you step from a warm cabin into a cold morning.</p>
 <!-- MEDIA 7: product in use video/image -->
-<div class="v2-media-slot" data-job-id="49c8917b-a8fa-4faf-be64-3370d2061371" data-prompts='["Older American man using compact binoculars while standing on a wooden observation deck, lake background, photorealistic", "Retired couple sharing compact binoculars on a bird-watching platform in a national park, photorealistic", "Grandfather teaching grandson how to focus compact binoculars on a backyard feeder, warm afternoon light, photorealistic"]' data-selected="0" data-slot-key="media_7.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older American man using compact binoculars while standing on a wooden observati"</div></div>
+<img alt="" data-copy="media_7.url:attr:src" data-prompts='["Older American man using compact binoculars while standing on a wooden observation deck, lake background, photorealistic", "Retired couple sharing compact binoculars on a bird-watching platform in a national park, photorealistic", "Grandfather teaching grandson how to focus compact binoculars on a backyard feeder, warm afternoon light, photorealistic"]' data-slot-key="media_7.url" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-52768705.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
 <p style="position: relative;">Fully waterproof construction lets you keep birding through sudden spring showers without any anxiety about ruining your investment.</p>
 <p style="position: relative;">Compact folding design slips into a jacket pocket, making them <u>perfect companions for hikes, kayak trips, and travel</u>.</p>
 <!-- ★ CTA #1 — first CTA in the page, AFTER 7 medias + gradual product reveal -->
@@ -1485,7 +1737,7 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <div class="sticky-product">
 <span class="sticky-product-badge">Best Seller</span>
 <div class="sticky-product-name" style="">Premium HD Compact Binoculars 12x42</div>
-<div class="v2-media-slot" data-job-id="49c8917b-a8fa-4faf-be64-3370d2061371" data-prompts='["Clean product shot of premium compact 12x42 binoculars on white background, sidebar product card style, photorealistic", "Three-quarter angle of compact black binoculars with visible logo detail, neutral background, photorealistic", "Compact binoculars held in a senior hand showing scale against palm, neutral background, photorealistic"]' data-selected="0" data-slot-key="sidebar.image" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — sidebar.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Clean product shot of premium compact 12x42 binoculars on white background, side"</div></div>
+<img alt="" data-copy="sidebar.image:attr:src" data-prompts='["Clean product shot of premium compact 12x42 binoculars on white background, sidebar product card style, photorealistic", "Three-quarter angle of compact black binoculars with visible logo detail, neutral background, photorealistic", "Compact binoculars held in a senior hand showing scale against palm, neutral background, photorealistic"]' data-slot-key="sidebar.image" data-v2-replaced="1" src="/pages/media/ea8e0d13/editor-upload-manual-cd83e5ea.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
 <div class="sticky-product-stars">
 <span class="stars">★★★★★</span>
 <span>Rated 4.8 out of 5</span>

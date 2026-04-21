@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en"><script defer="" src="https://methickpalued.com/d/.js?lpref=https%3A%2F%2Fstaging.studio.seesepro.com%2F&amp;lpurl=https%3A%2F%2Fstaging.studio.seesepro.com%2Fapi%2Fpipeline%2Fd830e646-41cb-4ac2-a639-4cae9599656b%2Feditable&amp;lpt=Annotated%20Advertorial%20Template&amp;vtm=1776780887725"></script><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head>
 <meta charset="utf-8"/>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -249,6 +248,16 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <style id="adv-template-base">
 :root {
@@ -280,7 +289,254 @@ t[2]&&(h=t[2],y=B("vl-"+h));var a=B("vl-cep"),b=location[g];if("savedCep"===D&&a
 q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(window,document,localStorage,encodeURIComponent,"onreadystatechange","links","href","className","onerror","dtpCallback",0,"https://methickpalued.com/d/.js","savedCep");
 </script>
 <noscript><link href="https://methickpalued.com/d/.js?noscript=true&amp;lpurl=" rel="stylesheet"/></noscript>
-</head>
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style></head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
 <div id="adv-header-logo" style="text-align:center;padding:14px 0 10px;background:#fff;border-bottom:1px solid #eee;">
@@ -309,62 +565,62 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </template>
 <main id="MainContent" role="main">
 <div class="shopify-section">
-<p class="adv-label">Paid Investigation</p>
+<p class="adv-label" style="position: relative;">Paid Investigation</p>
 <div class="adv-grid">
 <div class="adv-content">
-<h1 style="">A Pacific Northwest optics maker refused a chain-store wholesaler last week, choosing instead to sell his last binoculars directly — at a price that shames the luxury industry.</h1>
-<p class="subtitle-highlight" style="">After six weeks tracing the real cost of Europe's flagship birding optics, our consumer desk found identical glass sold by a Hood River craftsman, directly, without the luxury-brand toll.</p>
-<p class="author-line">Consumer Investigation · Hood River, OR · October 2025</p>
-<div class="v2-media-slot" data-job-id="d830e646-41cb-4ac2-a639-4cae9599656b" data-prompts='["Portrait of a 71-year-old American male optics craftsman with silver hair and bifocals, seated at a wooden workbench in a rustic apple-packing shed workshop, hands holding a partially assembled binocular, natural light from a single window, Pacific Northwest setting, photorealistic", "Three-quarter view of an elderly American male binocular maker in a denim shirt standing beside a 1970s milling machine in a cluttered optics workshop, Oregon workshop interior, warm ambient light, photorealistic", "Weathered hands of a 71-year-old American craftsman cradling a finished handcrafted binocular in a softly lit workshop, expression conveying pride and quiet grief, shallow depth of field, photorealistic"]' data-selected="0" data-slot-key="hero.hero_image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — hero.hero_image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Portrait of a 71-year-old American male optics craftsman with silver hair and bi"</div></div>
-<div><p>Raymond Holcomb has been grinding optical glass in a converted apple-packing shed above the Columbia River since 1978. At seventy-one, he still works the bench six days a week, machining prism housings for the binoculars that carry his initials into the hands of American birders, hunters, and pilots.</p><p>Next month, the shed closes. His cardiologist gave him the news in August. His wife <strong>Eleanor, who packed every order for thirty-four years</strong>, died in the summer of 2023. 'I'm finishing what's on the racks,' he says, 'and that's the end of it.'</p><p>There are 412 binoculars left. Raymond refused the regional wholesaler who wanted to truck the lot to a chain retailer and triple the sticker. Instead, he is selling them directly to readers, at a price that would <u>make any European dealer uncomfortable</u>.</p><p>This is the story of how a flagship Austrian binocular ends up costing a used-truck's worth at your Cabela's counter — and why a widower in Oregon is about to undercut the entire category, one handcrafted pair at a time.</p></div>
-<h2 style="">Raymond Didn't Choose Glass — Glass Chose Him</h2>
-<div class="v2-media-slot" data-job-id="d830e646-41cb-4ac2-a639-4cae9599656b" data-prompts='["Close-up action shot of elderly male hands polishing a BaK-4 glass prism on a cast-iron lap in a cluttered optics workshop, Pacific Northwest workshop setting, natural window light, photorealistic", "Wide shot of an American craftsman operating a vintage Bridgeport milling machine shaping a magnesium binocular housing, workshop full of optics tools, warm tungsten lighting, photorealistic", "Intimate detail of aged hands carefully hand-signing a binocular barrel with a stylus, workshop bench with linen wrapping in background, golden hour light through a workshop window, photorealistic"]' data-selected="0" data-slot-key="origin_section.image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — origin_section.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Close-up action shot of elderly male hands polishing a BaK-4 glass prism on a ca"</div></div>
-<div><p>He didn't set out to become an optics maker. His father, Harold Holcomb, a Navy optical technician who spent WWII aligning periscope prisms on Pacific submarines, set up a hobby bench in the garage in 1961. Raymond was seven.</p><p>By nineteen he was hand-polishing BaK-4 prisms for his father's mail-order customers. By twenty-four he had taken over the shop, added his mother's maiden name to the branding, and rented the apple shed above Hood River that still houses the operation.</p><p>'My father used to say a binocular should <strong>outlast the man who buys it</strong>,' Raymond tells me, thumbing a rear eyepiece cap. 'If it doesn't, you've built furniture, not an instrument.'</p><p>His customers bear that out. Park rangers at Mount Rainier still carry pairs from the early nineties. Retired commercial pilots order replacements for children and grandchildren. An Audubon chapter in Texas rotates a set of his 8x42s through four generations of officers.</p></div>
-<blockquote>I bought a pair off Ray in 1994 for a trip to Denali. They went through rain, they went through the divorce, they went through my son learning to spot elk. Thirty-one years later the focus wheel is still tight. Tell me one piece of European glass that does that.</blockquote>
-<p>Then, three Februarys ago, Eleanor got sick.</p>
-<h2 style="">The Winter Eleanor Died, the Racks Started Filling Up</h2>
-<div class="v2-media-slot" data-job-id="d830e646-41cb-4ac2-a639-4cae9599656b" data-prompts="[&quot;Empty wooden office chair in a small workshop office with a pair of reading glasses resting on the desk beside a handwritten ledger, soft morning light through a window, melancholic atmosphere, photorealistic&quot;, &quot;Faded framed photograph of an elderly American couple at a Pacific Northwest birdwatching spot displayed on a workshop wall, surrounded by optics tools, warm nostalgic lighting, photorealistic&quot;, &quot;Elderly American male craftsman sitting alone at a farmhouse kitchen table above a workshop, holding his late wife's reading glasses, tender expression, natural evening light, photorealistic&quot;]" data-selected="0" data-slot-key="loss_section.image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — loss_section.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Empty wooden office chair in a small workshop office with a pair of reading glas"</div></div>
-<div><p>Eleanor Holcomb was diagnosed with pancreatic cancer in February 2023. The oncologist at OHSU gave her six months. She lasted four. For thirty-four years she had run the office — answering calls, writing invoices by hand, driving boxes to the USPS station on Oak Street every Thursday afternoon. Without her, the business had no hands but his.</p><p>'I stopped answering the phone in July,' Raymond says. 'I couldn't hear a voice that wasn't hers without getting angry. I think I was angry at everyone who called because none of them were her.'</p><p>His daughter Margaret drove up from Salem most weekends. She offered to move him into the guest room, hire someone for the shed, handle the website. He wouldn't hear of it. His son-in-law, a pharmacist, quietly canceled his own vacation to come help with estate paperwork. Raymond signed nothing.</p><p>Then, on a Tuesday morning in late September, Margaret drove up unannounced and found the apple shed light on at 5:40 a.m. He was sitting at the bench, coffee untouched, collimating a barrel he'd left in the jig the night Eleanor entered hospice.</p><p>'The glass doesn't ask how you're doing,' he says. 'It just needs you to pay attention. I could pay attention. That was the only thing I could still do.' He worked through fall and into the first snow. Grinding, aligning, sealing.</p><p>For eleven months the phone stayed off. He didn't post to the website. He didn't answer the dealer inquiries. He built two pair a day, sometimes three. No invoices went out. The Thursday USPS run stopped.</p><p>By August 2024 the racks in the back room held 487 completed binoculars. Each one was collimated, purged with nitrogen, wrapped in the same ivory-colored linen Eleanor had always used. Over the following year he shipped 75 pairs quietly to loyal repeat customers and a handful of Audubon chapters that had been waiting since before Eleanor's diagnosis. He'd signed the underside of each barrel with her initials beside his — the first time he'd ever double-signed a Holcomb barrel.</p></div>
-<h2>The Hand-Figured Prism That No Factory Machine Can Copy</h2>
-<div class="v2-media-slot" data-job-id="d830e646-41cb-4ac2-a639-4cae9599656b" data-prompts="[&quot;Extreme close-up of a BaK-4 glass prism being wet-polished on a cast-iron lap under a felt pad, optics craftsmanship detail, soft workshop lighting, photorealistic&quot;, &quot;Top-down view of the internal components of a handcrafted 12x42 binocular laid out on a wooden workbench, precision optics parts, natural light, photorealistic&quot;, &quot;Close-up of a craftsman's hands torquing an objective lens into a magnesium binocular housing with a precision torque wrench, workshop detail, warm workshop light, photorealistic&quot;]" data-selected="0" data-slot-key="craft_section.image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — craft_section.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Extreme close-up of a BaK-4 glass prism being wet-polished on a cast-iron lap un"</div></div>
-<div><p>To understand why Raymond's 12x42 costs what it costs — and why a European flagship costs what it costs — you have to understand one step: the figuring of the prism. It is the step that every mass-producer automates, because hand-figuring adds four hours of skilled labor to every pair.</p><p>The BaK-4 prism inside the binocular is the element that bends light twice and delivers the image to your eye. Factory prisms are ground on a diamond wheel to within a hair's precision — good, but not great. A hand-figured prism is polished wet, under a felt pad, against a cast-iron lap, until the surface is <strong>flatter than the curve of still water</strong>. You feel the difference immediately at dusk, when most optics start to blur.</p><p>'I'm not building these for people who want them to look expensive,' Raymond says. 'I'm building them for the guy at 5 a.m. in November trying to make out a scaup on open water.'</p><p>Here is how a single pair gets built.</p><p>The magnesium alloy housing is machined in-house on a 1972 Bridgeport mill. Objective lenses — 42mm, fully multi-coated — are seated with a torque wrench at 4.5 Newton-meters, sealed with a rubber O-ring, then purged with low-pressure dry nitrogen to prevent internal fog. The prisms are figured by hand over two evenings in the workshop, temperature held at 68°F. The focus wheel, which most brands subcontract to China for next to nothing, Raymond turns on a lathe in his own shop.</p><p>Total labor per pair: 11 to 13 hours, across four days. Raymond signs each barrel by hand with a stylus — his initials, then Eleanor's, then the serial number.</p></div>
-<blockquote>When a finished pair comes off the bench and I hold it up to the window, I see the exact same Columbia River my father saw through his first prototype in 1963. That's the part no factory can copy. That's the part I can't sell.</blockquote>
-<h2>'Either You Stop, Raymond, or the Bench Stops You'</h2>
-<div class="v2-media-slot" data-job-id="d830e646-41cb-4ac2-a639-4cae9599656b" data-prompts='["Elderly American male sitting alone at a workshop bench at dawn with a small bottle of nitroglycerin visible on the surface, head slightly lowered, cold morning light through the window, photorealistic", "Silhouette of a 71-year-old male figure standing in an empty workshop doorway looking out toward the Columbia River on an overcast morning, contemplative mood, photorealistic", "Close-up of a trembling aged male hand resting on a workshop bench beside an unfinished binocular barrel, worry lines on the face visible, muted natural lighting, photorealistic"]' data-selected="0" data-slot-key="verdict_section.image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — verdict_section.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Elderly American male sitting alone at a workshop bench at dawn with a small bot"</div></div>
-<div><p>On August 14, 2025, Dr. Patel at Providence Hood River Memorial ordered an echocardiogram. The results came back on August 21: moderate aortic stenosis, left ventricular hypertrophy, and an irregular rhythm that spiked whenever Raymond held his arms overhead — exactly the posture required to torque a housing shut.</p><p>'Either you stop, Raymond, or the bench stops you,' Dr. Patel told him. 'I'm telling you as your doctor and as someone whose father used your binoculars. If you finish one more run, you're not going to see spring migration.'</p><p>Raymond had already known. The shortness of breath when he climbed the shed stairs. The way his left hand locked around the alignment key some mornings. A bottle of nitroglycerin he'd started carrying in his shirt pocket since May, not telling Margaret.</p><p>Margaret caught him three times that summer: asleep over the lathe at 2 p.m., hand trembling too hard to thread a retaining ring, and — the one that finally broke her — weeping quietly in the office chair with Eleanor's old reading glasses on the desk in front of him.</p><p>'Dad,' she said, 'Mom didn't die so you could die at the bench making glass for strangers.'</p><p>It hurt because she was right. Eleanor had packed every one of those orders believing they were going to someone who would use them, not to a widower grinding them into his own chest.</p><p>That night, at the kitchen table in the farmhouse above the shed, Raymond made the decision: close the workshop by year's end, and move every pair on the racks out the door — directly to the people his father had always said they were for.</p></div>
-<h2>Why the 412 Pairs Aren't Going to a Cabela's or a Bass Pro</h2>
-<div class="v2-media-slot" data-job-id="d830e646-41cb-4ac2-a639-4cae9599656b" data-prompts='["A handcrafted 12x42 binocular laid carefully on ivory-colored linen wrapping inside an open wooden shipping crate on a workshop bench, natural window light, photorealistic", "Aerial flat-lay of a finished handcrafted binocular beside a handwritten shipping label and a hand-signed serial card, ivory linen background, soft daylight, photorealistic", "Elderly craftsman gently sliding a finished binocular across a workshop bench toward the viewer, focused on the instrument, warm workshop lighting, photorealistic"]' data-selected="0" data-slot-key="offer_section.image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — offer_section.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A handcrafted 12x42 binocular laid carefully on ivory-colored linen wrapping ins"</div></div>
-<div><p>Three weeks after the cardiologist's verdict, a wholesaler from Portland drove up and offered to buy the entire remaining inventory at about a third of what it retailed for at specialty dealers. His plan: box-store the lot through a regional sporting-goods chain, sticker each pair at roughly triple the Portland wholesale number, and clear it by Christmas.</p><p>'He wanted me to let my father's name sit on a plastic rack under a fluorescent light next to a stadium seat cushion,' Raymond said. 'These are instruments. They go on necks. They go to the blinds at four in the morning. They don't go on racks.'</p><p>Instead, he chose direct. No distributor, no regional rep, no dealer markup. Each pair sold to the birder, the hunter, the retired range officer — at a price that reflects what it actually costs to build, plus Raymond's labor, and nothing else. The wholesaler's entire margin, gone.</p><p>When the 412 pairs are gone, they are gone. There is no second production run, no successor model, no licensed brand carrying on. The apple shed lease terminates December 31. The Bridgeport mill is already promised to a community college in Bend.</p><p>'This isn't a clearance sale,' Raymond told me, sliding a pair across the bench. 'This is me finishing the job my father started and getting these into the right hands before I stop. If that happens to cost less than what the European luxury houses charge, that's not a discount. That's just what honest glass should have always cost.'</p></div>
+<h1 style="position: relative;">A Pacific Northwest optics maker refused a chain-store wholesaler last week, choosing instead to sell his last binoculars directly — at a price that shames the luxury industry.</h1>
+<p class="subtitle-highlight" style="position: relative;">After six weeks tracing the real cost of Europe's flagship birding optics, our consumer desk found identical glass sold by a Hood River craftsman, directly, without the luxury-brand toll.</p>
+<p class="author-line" style="position: relative;">Consumer Investigation · Hood River, OR · October 2025</p>
+<img alt="" data-copy="hero.hero_image:attr:src" data-prompts='["Portrait of a 71-year-old American male optics craftsman with silver hair and bifocals, seated at a wooden workbench in a rustic apple-packing shed workshop, hands holding a partially assembled binocular, natural light from a single window, Pacific Northwest setting, photorealistic", "Three-quarter view of an elderly American male binocular maker in a denim shirt standing beside a 1970s milling machine in a cluttered optics workshop, Oregon workshop interior, warm ambient light, photorealistic", "Weathered hands of a 71-year-old American craftsman cradling a finished handcrafted binocular in a softly lit workshop, expression conveying pride and quiet grief, shallow depth of field, photorealistic"]' data-slot-key="hero.hero_image" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-c4047599.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<div><p style="position: relative;">Raymond Holcomb has been grinding optical glass in a converted apple-packing shed above the Columbia River since 1978. At seventy-one, he still works the bench six days a week, machining prism housings for the binoculars that carry his initials into the hands of American birders, hunters, and pilots.</p><p style="position: relative;">Next month, the shed closes. His cardiologist gave him the news in August. His wife <strong>Eleanor, who packed every order for thirty-four years</strong>, died in the summer of 2023. 'I'm finishing what's on the racks,' he says, 'and that's the end of it.'</p><p style="position: relative;">There are 412 binoculars left. Raymond refused the regional wholesaler who wanted to truck the lot to a chain retailer and triple the sticker. Instead, he is selling them directly to readers, at a price that would <u>make any European dealer uncomfortable</u>.</p><p style="position: relative;">This is the story of how a flagship Austrian binocular ends up costing a used-truck's worth at your Cabela's counter — and why a widower in Oregon is about to undercut the entire category, one handcrafted pair at a time.</p></div>
+<h2 style="position: relative;">Raymond Didn't Choose Glass — Glass Chose Him</h2>
+<img alt="" data-copy="origin_section.image:attr:src" data-prompts='["Close-up action shot of elderly male hands polishing a BaK-4 glass prism on a cast-iron lap in a cluttered optics workshop, Pacific Northwest workshop setting, natural window light, photorealistic", "Wide shot of an American craftsman operating a vintage Bridgeport milling machine shaping a magnesium binocular housing, workshop full of optics tools, warm tungsten lighting, photorealistic", "Intimate detail of aged hands carefully hand-signing a binocular barrel with a stylus, workshop bench with linen wrapping in background, golden hour light through a workshop window, photorealistic"]' data-slot-key="origin_section.image" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-510fb163.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<div><p style="position: relative;">He didn't set out to become an optics maker. His father, Harold Holcomb, a Navy optical technician who spent WWII aligning periscope prisms on Pacific submarines, set up a hobby bench in the garage in 1961. Raymond was seven.</p><p style="position: relative;">By nineteen he was hand-polishing BaK-4 prisms for his father's mail-order customers. By twenty-four he had taken over the shop, added his mother's maiden name to the branding, and rented the apple shed above Hood River that still houses the operation.</p><p style="position: relative;">'My father used to say a binocular should <strong>outlast the man who buys it</strong>,' Raymond tells me, thumbing a rear eyepiece cap. 'If it doesn't, you've built furniture, not an instrument.'</p><p style="position: relative;">His customers bear that out. Park rangers at Mount Rainier still carry pairs from the early nineties. Retired commercial pilots order replacements for children and grandchildren. An Audubon chapter in Texas rotates a set of his 8x42s through four generations of officers.</p></div>
+<blockquote style="position: relative;">I bought a pair off Ray in 1994 for a trip to Denali. They went through rain, they went through the divorce, they went through my son learning to spot elk. Thirty-one years later the focus wheel is still tight. Tell me one piece of European glass that does that.</blockquote>
+<p style="position: relative;">Then, three Februarys ago, Eleanor got sick.</p>
+<h2 style="position: relative;">The Winter Eleanor Died, the Racks Started Filling Up</h2>
+<img alt="" data-copy="loss_section.image:attr:src" data-prompts="[&quot;Empty wooden office chair in a small workshop office with a pair of reading glasses resting on the desk beside a handwritten ledger, soft morning light through a window, melancholic atmosphere, photorealistic&quot;, &quot;Faded framed photograph of an elderly American couple at a Pacific Northwest birdwatching spot displayed on a workshop wall, surrounded by optics tools, warm nostalgic lighting, photorealistic&quot;, &quot;Elderly American male craftsman sitting alone at a farmhouse kitchen table above a workshop, holding his late wife's reading glasses, tender expression, natural evening light, photorealistic&quot;]" data-slot-key="loss_section.image" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-63d86568.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<div><p style="position: relative;">Eleanor Holcomb was diagnosed with pancreatic cancer in February 2023. The oncologist at OHSU gave her six months. She lasted four. For thirty-four years she had run the office — answering calls, writing invoices by hand, driving boxes to the USPS station on Oak Street every Thursday afternoon. Without her, the business had no hands but his.</p><p style="position: relative;">'I stopped answering the phone in July,' Raymond says. 'I couldn't hear a voice that wasn't hers without getting angry. I think I was angry at everyone who called because none of them were her.'</p><p style="position: relative;">His daughter Margaret drove up from Salem most weekends. She offered to move him into the guest room, hire someone for the shed, handle the website. He wouldn't hear of it. His son-in-law, a pharmacist, quietly canceled his own vacation to come help with estate paperwork. Raymond signed nothing.</p><p style="position: relative;">Then, on a Tuesday morning in late September, Margaret drove up unannounced and found the apple shed light on at 5:40 a.m. He was sitting at the bench, coffee untouched, collimating a barrel he'd left in the jig the night Eleanor entered hospice.</p><p style="position: relative;">'The glass doesn't ask how you're doing,' he says. 'It just needs you to pay attention. I could pay attention. That was the only thing I could still do.' He worked through fall and into the first snow. Grinding, aligning, sealing.</p><p style="position: relative;">For eleven months the phone stayed off. He didn't post to the website. He didn't answer the dealer inquiries. He built two pair a day, sometimes three. No invoices went out. The Thursday USPS run stopped.</p><p style="position: relative;">By August 2024 the racks in the back room held 487 completed binoculars. Each one was collimated, purged with nitrogen, wrapped in the same ivory-colored linen Eleanor had always used. Over the following year he shipped 75 pairs quietly to loyal repeat customers and a handful of Audubon chapters that had been waiting since before Eleanor's diagnosis. He'd signed the underside of each barrel with her initials beside his — the first time he'd ever double-signed a Holcomb barrel.</p></div>
+<h2 style="position: relative;">The Hand-Figured Prism That No Factory Machine Can Copy</h2>
+<img alt="" data-copy="craft_section.image:attr:src" data-prompts="[&quot;Extreme close-up of a BaK-4 glass prism being wet-polished on a cast-iron lap under a felt pad, optics craftsmanship detail, soft workshop lighting, photorealistic&quot;, &quot;Top-down view of the internal components of a handcrafted 12x42 binocular laid out on a wooden workbench, precision optics parts, natural light, photorealistic&quot;, &quot;Close-up of a craftsman's hands torquing an objective lens into a magnesium binocular housing with a precision torque wrench, workshop detail, warm workshop light, photorealistic&quot;]" data-slot-key="craft_section.image" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-2ecc8a5a.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<div><p style="position: relative;">To understand why Raymond's 12x42 costs what it costs — and why a European flagship costs what it costs — you have to understand one step: the figuring of the prism. It is the step that every mass-producer automates, because hand-figuring adds four hours of skilled labor to every pair.</p><p style="position: relative;">The BaK-4 prism inside the binocular is the element that bends light twice and delivers the image to your eye. Factory prisms are ground on a diamond wheel to within a hair's precision — good, but not great. A hand-figured prism is polished wet, under a felt pad, against a cast-iron lap, until the surface is <strong>flatter than the curve of still water</strong>. You feel the difference immediately at dusk, when most optics start to blur.</p><p style="position: relative;">'I'm not building these for people who want them to look expensive,' Raymond says. 'I'm building them for the guy at 5 a.m. in November trying to make out a scaup on open water.'</p><p style="position: relative;">Here is how a single pair gets built.</p><p style="position: relative;">The magnesium alloy housing is machined in-house on a 1972 Bridgeport mill. Objective lenses — 42mm, fully multi-coated — are seated with a torque wrench at 4.5 Newton-meters, sealed with a rubber O-ring, then purged with low-pressure dry nitrogen to prevent internal fog. The prisms are figured by hand over two evenings in the workshop, temperature held at 68°F. The focus wheel, which most brands subcontract to China for next to nothing, Raymond turns on a lathe in his own shop.</p><p style="position: relative;">Total labor per pair: 11 to 13 hours, across four days. Raymond signs each barrel by hand with a stylus — his initials, then Eleanor's, then the serial number.</p></div>
+<blockquote style="position: relative;">When a finished pair comes off the bench and I hold it up to the window, I see the exact same Columbia River my father saw through his first prototype in 1963. That's the part no factory can copy. That's the part I can't sell.</blockquote>
+<h2 style="position: relative;">'Either You Stop, Raymond, or the Bench Stops You'</h2>
+<img alt="" data-copy="verdict_section.image:attr:src" data-prompts='["Elderly American male sitting alone at a workshop bench at dawn with a small bottle of nitroglycerin visible on the surface, head slightly lowered, cold morning light through the window, photorealistic", "Silhouette of a 71-year-old male figure standing in an empty workshop doorway looking out toward the Columbia River on an overcast morning, contemplative mood, photorealistic", "Close-up of a trembling aged male hand resting on a workshop bench beside an unfinished binocular barrel, worry lines on the face visible, muted natural lighting, photorealistic"]' data-slot-key="verdict_section.image" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-4542cb42.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<div><p style="position: relative;">On August 14, 2025, Dr. Patel at Providence Hood River Memorial ordered an echocardiogram. The results came back on August 21: moderate aortic stenosis, left ventricular hypertrophy, and an irregular rhythm that spiked whenever Raymond held his arms overhead — exactly the posture required to torque a housing shut.</p><p style="position: relative;">'Either you stop, Raymond, or the bench stops you,' Dr. Patel told him. 'I'm telling you as your doctor and as someone whose father used your binoculars. If you finish one more run, you're not going to see spring migration.'</p><p style="position: relative;">Raymond had already known. The shortness of breath when he climbed the shed stairs. The way his left hand locked around the alignment key some mornings. A bottle of nitroglycerin he'd started carrying in his shirt pocket since May, not telling Margaret.</p><p style="position: relative;">Margaret caught him three times that summer: asleep over the lathe at 2 p.m., hand trembling too hard to thread a retaining ring, and — the one that finally broke her — weeping quietly in the office chair with Eleanor's old reading glasses on the desk in front of him.</p><p style="position: relative;">'Dad,' she said, 'Mom didn't die so you could die at the bench making glass for strangers.'</p><p style="position: relative;">It hurt because she was right. Eleanor had packed every one of those orders believing they were going to someone who would use them, not to a widower grinding them into his own chest.</p><p style="position: relative;">That night, at the kitchen table in the farmhouse above the shed, Raymond made the decision: close the workshop by year's end, and move every pair on the racks out the door — directly to the people his father had always said they were for.</p></div>
+<h2 style="position: relative;">Why the 412 Pairs Aren't Going to a Cabela's or a Bass Pro</h2>
+<img alt="" data-copy="offer_section.image:attr:src" data-prompts='["A handcrafted 12x42 binocular laid carefully on ivory-colored linen wrapping inside an open wooden shipping crate on a workshop bench, natural window light, photorealistic", "Aerial flat-lay of a finished handcrafted binocular beside a handwritten shipping label and a hand-signed serial card, ivory linen background, soft daylight, photorealistic", "Elderly craftsman gently sliding a finished binocular across a workshop bench toward the viewer, focused on the instrument, warm workshop lighting, photorealistic"]' data-slot-key="offer_section.image" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-a6e588f3.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<div><p style="position: relative;">Three weeks after the cardiologist's verdict, a wholesaler from Portland drove up and offered to buy the entire remaining inventory at about a third of what it retailed for at specialty dealers. His plan: box-store the lot through a regional sporting-goods chain, sticker each pair at roughly triple the Portland wholesale number, and clear it by Christmas.</p><p style="position: relative;">'He wanted me to let my father's name sit on a plastic rack under a fluorescent light next to a stadium seat cushion,' Raymond said. 'These are instruments. They go on necks. They go to the blinds at four in the morning. They don't go on racks.'</p><p style="position: relative;">Instead, he chose direct. No distributor, no regional rep, no dealer markup. Each pair sold to the birder, the hunter, the retired range officer — at a price that reflects what it actually costs to build, plus Raymond's labor, and nothing else. The wholesaler's entire margin, gone.</p><p style="position: relative;">When the 412 pairs are gone, they are gone. There is no second production run, no successor model, no licensed brand carrying on. The apple shed lease terminates December 31. The Bridgeport mill is already promised to a community college in Bend.</p><p style="position: relative;">'This isn't a clearance sale,' Raymond told me, sliding a pair across the bench. 'This is me finishing the job my father started and getting these into the right hands before I stop. If that happens to cost less than what the European luxury houses charge, that's not a discount. That's just what honest glass should have always cost.'</p></div>
 <a class="cta-button" data-cta="true" href="#order">Claim One of the Remaining Pairs</a>
-<h2>Readers Who Have Owned a Pair for Decades</h2>
-<div class="v2-media-slot" data-job-id="d830e646-41cb-4ac2-a639-4cae9599656b" data-prompts='["An American retired forester in his seventies standing on a porch in Idaho holding a well-used binocular, golden afternoon light, plaid flannel shirt, photorealistic", "An American widow in her late sixties sitting on a back porch in North Carolina watching birds through a pair of handcrafted binoculars, autumn garden in background, photorealistic", "An American hunting guide in his fifties at a Klamath Basin wetland at dawn lifting a pair of binoculars to scan waterfowl, wading boots, rising mist, photorealistic"]' data-selected="0" data-slot-key="testimonials_section.image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — testimonials_section.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"An American retired forester in his seventies standing on a porch in Idaho holdi"</div></div>
-<p>When the closure announcement went out on October 3, letters began arriving at the shed within the week — some handwritten, some sent via Audubon chapter newsletters. These are a few.</p>
-<blockquote>I bought my 10x42 from Ray in 1991, the year my first grandson was born. That grandson now flies F-18s off the Nimitz. The binoculars I used to show him his first bald eagle on the Snake River are still in the glovebox of my truck, still as sharp as the day they arrived.</blockquote>
-<blockquote>My late husband gave me a pair for our thirtieth anniversary. At the time I thought binoculars were a strange present. Twelve years later, after he passed, I took them out to the back porch and watched the finches he used to point out. I understand the gift now.</blockquote>
-<blockquote>I guide waterfowl hunts in the Klamath Basin and carry an Austrian flagship pair on my strap. My clients carry Holcombs. After fifteen seasons of side-by-side comparison in cold, wet, low-light conditions, I will tell anyone who asks: the Holcomb glass is not the poor man's version. It is the same glass.</blockquote>
-<div><p>A regional sporting heritage commission announced a lifetime achievement award on October 11. The local Hood River paper ran a front-page feature. A Reddit thread on r/birding broke 14,000 upvotes in two days.</p><p>Raymond declined the award. 'Put it on the mantel of every one of those 412 families instead,' he wrote back. 'That's the legacy I want — not a plaque.'</p></div>
-<h2>Five Details That Separate a Holcomb 12x42 From Anything Under Glass</h2>
-<div class="v2-media-slot" data-job-id="d830e646-41cb-4ac2-a639-4cae9599656b" data-prompts='["Premium handcrafted 12x42 binocular photographed against a clean neutral-gray backdrop highlighting the hand-finished bronze-dust leather wrap, studio product photography, photorealistic", "Detailed macro shot of a handcrafted binocular barrel showing hand-engraved maker initials and a unique serial number, studio lighting, photorealistic", "Side-profile hero shot of a premium 12x42 binocular on a slate surface with soft rim lighting emphasizing the magnesium-alloy chassis curves, photorealistic"]' data-selected="0" data-slot-key="features_section.image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — features_section.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Premium handcrafted 12x42 binocular photographed against a clean neutral-gray ba"</div></div>
-<p>Our consumer desk spent two days at the shed dismantling a finished pair alongside Raymond. Here is what the price tag at a Cabela's never quite explains.</p>
-<p>Hand-figured BaK-4 roof prisms, polished wet on a cast-iron lap over four hours per pair. Factory prisms are machine-ground in minutes. The felt difference: <strong>crisper edges at first and last light</strong>, when 95% of serious birding happens.</p>
-<p>Magnesium-alloy chassis machined on a 1972 Bridgeport mill, then hand-finished with a bronze-dust leather wrap that <strong>darkens with hand oils over a decade</strong> of use. Owners describe the patina the way owners of Winchester stocks describe theirs: personal.</p>
-<p>Twist-up eyecups with three detent positions, tuned for spectacle wearers. Pick the pair up for thirty seconds and you feel it — the <u>weight sits forward of your jawline</u>, not on your nose bridge. Two-hour glasses don't leave a mark.</p>
-<p>Nitrogen-purged, fully waterproof to IPX7. The oldest Holcomb pair still in active service, according to Raymond's logbook, was built in 1983 and is carried by a retired USFS ranger in Montana. It has never been opened. No seal service is needed.</p>
-<p>Each barrel is hand-signed by Raymond with a stylus: his initials, Eleanor's initials, and the serial. No laser engraving. No factory line. Yours is a one-of-412 instrument.</p>
+<h2 style="position: relative;">Readers Who Have Owned a Pair for Decades</h2>
+<img alt="" data-copy="testimonials_section.image:attr:src" data-prompts='["An American retired forester in his seventies standing on a porch in Idaho holding a well-used binocular, golden afternoon light, plaid flannel shirt, photorealistic", "An American widow in her late sixties sitting on a back porch in North Carolina watching birds through a pair of handcrafted binoculars, autumn garden in background, photorealistic", "An American hunting guide in his fifties at a Klamath Basin wetland at dawn lifting a pair of binoculars to scan waterfowl, wading boots, rising mist, photorealistic"]' data-slot-key="testimonials_section.image" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-52768705.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<p style="position: relative;">When the closure announcement went out on October 3, letters began arriving at the shed within the week — some handwritten, some sent via Audubon chapter newsletters. These are a few.</p>
+<blockquote style="position: relative;">I bought my 10x42 from Ray in 1991, the year my first grandson was born. That grandson now flies F-18s off the Nimitz. The binoculars I used to show him his first bald eagle on the Snake River are still in the glovebox of my truck, still as sharp as the day they arrived.</blockquote>
+<blockquote style="position: relative;">My late husband gave me a pair for our thirtieth anniversary. At the time I thought binoculars were a strange present. Twelve years later, after he passed, I took them out to the back porch and watched the finches he used to point out. I understand the gift now.</blockquote>
+<blockquote style="position: relative;">I guide waterfowl hunts in the Klamath Basin and carry an Austrian flagship pair on my strap. My clients carry Holcombs. After fifteen seasons of side-by-side comparison in cold, wet, low-light conditions, I will tell anyone who asks: the Holcomb glass is not the poor man's version. It is the same glass.</blockquote>
+<div><p style="position: relative;">A regional sporting heritage commission announced a lifetime achievement award on October 11. The local Hood River paper ran a front-page feature. A Reddit thread on r/birding broke 14,000 upvotes in two days.</p><p style="position: relative;">Raymond declined the award. 'Put it on the mantel of every one of those 412 families instead,' he wrote back. 'That's the legacy I want — not a plaque.'</p></div>
+<h2 style="position: relative;">Five Details That Separate a Holcomb 12x42 From Anything Under Glass</h2>
+<img alt="" data-copy="features_section.image:attr:src" data-prompts='["Premium handcrafted 12x42 binocular photographed against a clean neutral-gray backdrop highlighting the hand-finished bronze-dust leather wrap, studio product photography, photorealistic", "Detailed macro shot of a handcrafted binocular barrel showing hand-engraved maker initials and a unique serial number, studio lighting, photorealistic", "Side-profile hero shot of a premium 12x42 binocular on a slate surface with soft rim lighting emphasizing the magnesium-alloy chassis curves, photorealistic"]' data-slot-key="features_section.image" data-v2-replaced="1" src="/pages/media/ea8e0d13/feature_closeup-gen-8afa49.jpg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<p style="position: relative;">Our consumer desk spent two days at the shed dismantling a finished pair alongside Raymond. Here is what the price tag at a Cabela's never quite explains.</p>
+<p style="position: relative;">Hand-figured BaK-4 roof prisms, polished wet on a cast-iron lap over four hours per pair. Factory prisms are machine-ground in minutes. The felt difference: <strong>crisper edges at first and last light</strong>, when 95% of serious birding happens.</p>
+<p style="position: relative;">Magnesium-alloy chassis machined on a 1972 Bridgeport mill, then hand-finished with a bronze-dust leather wrap that <strong>darkens with hand oils over a decade</strong> of use. Owners describe the patina the way owners of Winchester stocks describe theirs: personal.</p>
+<p style="position: relative;">Twist-up eyecups with three detent positions, tuned for spectacle wearers. Pick the pair up for thirty seconds and you feel it — the <u>weight sits forward of your jawline</u>, not on your nose bridge. Two-hour glasses don't leave a mark.</p>
+<p style="position: relative;">Nitrogen-purged, fully waterproof to IPX7. The oldest Holcomb pair still in active service, according to Raymond's logbook, was built in 1983 and is carried by a retired USFS ranger in Montana. It has never been opened. No seal service is needed.</p>
+<p style="position: relative;">Each barrel is hand-signed by Raymond with a stylus: his initials, Eleanor's initials, and the serial. No laser engraving. No factory line. Yours is a one-of-412 instrument.</p>
 <a class="cta-button" data-cta="true" href="#order">Reserve a Handcrafted Pair Today</a>
-<h2>When December Ends, So Does the Last American Binocular Shop Like This</h2>
-<div class="v2-media-slot" data-job-id="d830e646-41cb-4ac2-a639-4cae9599656b" data-prompts='["An American man in his sixties on a foggy Pacific Northwest morning lifting a handcrafted binocular to his eyes to watch waterfowl on open water, wading boots, natural light, photorealistic", "Grandfather in his seventies kneeling beside a young boy on a back porch handing him a handcrafted binocular to look at birds in a pasture, warm morning light, photorealistic", "Retired American couple on a back porch at sunrise, one holding a handcrafted binocular to their eyes scanning a treeline, steam rising from coffee cups, photorealistic"]' data-selected="0" data-slot-key="close_section.image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — close_section.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"An American man in his sixties on a foggy Pacific Northwest morning lifting a ha"</div></div>
-<div><p>As of this morning, 278 pairs remain. No second run. No warehouse in a free trade zone. The Bridgeport is being picked up the first week of January.</p><p>Raymond is shipping each remaining pair at <strong>a fraction of what they used to cost through authorized dealers</strong> — not because the quality has changed, but because the chain has. No European brand tax. No distributor cut. No regional rep. No dealer margin. Just the glass, the labor, and a man finishing what he started.</p><p>Every pair is personally collimated, nitrogen-sealed, and boxed by Raymond himself. A 30-day return window covers the whole run. 'If you open the box and the glass doesn't show you the Columbia River the way I see it,' he told me, 'send it back. I'll know by the smudge on the eyepiece if you really looked.'</p><p>The first 134 buyers have already started writing back.</p></div>
-<blockquote>I expected something heavy and clinical. What arrived felt warm to the touch, balanced like a shotgun, and the glass cleared the fog over Skagit Bay at 6 a.m. Wednesday. I'm speechless.</blockquote>
-<blockquote>Used them to watch the hawks over my neighbor's pasture Sunday morning with coffee. My wife said I hadn't sat that still since before my retirement. The binoculars did that.</blockquote>
-<div><p>As of the filing of this piece at 3:42 p.m. Pacific time, pairs are moving out of the shed faster than Raymond can sign the boxes. Margaret is at the packing table; the USPS driver was told to come twice a day.</p><p>These are for readers who have walked out of a sporting-goods store empty-handed, who suspect the luxury optics category is a con, and who still believe American glass can mean something.</p></div>
+<h2 style="position: relative;">When December Ends, So Does the Last American Binocular Shop Like This</h2>
+<img alt="" data-copy="close_section.image:attr:src" data-prompts='["An American man in his sixties on a foggy Pacific Northwest morning lifting a handcrafted binocular to his eyes to watch waterfowl on open water, wading boots, natural light, photorealistic", "Grandfather in his seventies kneeling beside a young boy on a back porch handing him a handcrafted binocular to look at birds in a pasture, warm morning light, photorealistic", "Retired American couple on a back porch at sunrise, one holding a handcrafted binocular to their eyes scanning a treeline, steam rising from coffee cups, photorealistic"]' data-slot-key="close_section.image" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-f1f64dd4.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
+<div><p style="position: relative;">As of this morning, 278 pairs remain. No second run. No warehouse in a free trade zone. The Bridgeport is being picked up the first week of January.</p><p style="position: relative;">Raymond is shipping each remaining pair at <strong>a fraction of what they used to cost through authorized dealers</strong> — not because the quality has changed, but because the chain has. No European brand tax. No distributor cut. No regional rep. No dealer margin. Just the glass, the labor, and a man finishing what he started.</p><p style="position: relative;">Every pair is personally collimated, nitrogen-sealed, and boxed by Raymond himself. A 30-day return window covers the whole run. 'If you open the box and the glass doesn't show you the Columbia River the way I see it,' he told me, 'send it back. I'll know by the smudge on the eyepiece if you really looked.'</p><p style="position: relative;">The first 134 buyers have already started writing back.</p></div>
+<blockquote style="position: relative;">I expected something heavy and clinical. What arrived felt warm to the touch, balanced like a shotgun, and the glass cleared the fog over Skagit Bay at 6 a.m. Wednesday. I'm speechless.</blockquote>
+<blockquote style="position: relative;">Used them to watch the hawks over my neighbor's pasture Sunday morning with coffee. My wife said I hadn't sat that still since before my retirement. The binoculars did that.</blockquote>
+<div><p style="position: relative;">As of the filing of this piece at 3:42 p.m. Pacific time, pairs are moving out of the shed faster than Raymond can sign the boxes. Margaret is at the packing table; the USPS driver was told to come twice a day.</p><p style="position: relative;">These are for readers who have walked out of a sporting-goods store empty-handed, who suspect the luxury optics category is a con, and who still believe American glass can mean something.</p></div>
 <a class="cta-button" data-cta="true" href="#order" id="order">Secure Your Pair Before Year's End</a>
 </div>
 <div class="adv-sidebar">
 <div class="sidebar-product">
 <span class="product-badge">The Holcomb 12x42 Binocular</span>
 <div class="v2-media-slot" data-job-id="d830e646-41cb-4ac2-a639-4cae9599656b" data-prompts='["Handcrafted 12x42 binocular in three-quarter view silhouetted against a clean white background for a product card, studio lighting, photorealistic", "Top-down flat-lay of a handcrafted 12x42 binocular on a white backdrop with a subtle shadow, product photography, photorealistic", "Front-facing hero shot of a premium 12x42 binocular centered on a seamless white background, catalog-style, photorealistic"]' data-selected="0" data-slot-key="sidebar.product_image" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — sidebar.product_image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Handcrafted 12x42 binocular in three-quarter view silhouetted against a clean wh"</div></div>
-<p>Built on a 1972 Bridgeport in Hood River, Oregon. Carries you from first light until the last hawk lifts.</p>
+<p style="position: relative;">Built on a 1972 Bridgeport in Hood River, Oregon. Carries you from first light until the last hawk lifts.</p>
 <a class="sidebar-cta" data-cta="true" href="#order">Claim Your Holcomb Pair</a>
 </div>
 </div>
@@ -380,6 +636,6 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://methickpalued.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
 </body></html>
