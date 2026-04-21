@@ -1,4 +1,4 @@
-<html lang="en"><script defer="" src="https://methickpalued.com/d/.js?lpref=https%3A%2F%2Fstaging.studio.seesepro.com%2F&amp;lpurl=https%3A%2F%2Fstaging.studio.seesepro.com%2Fapi%2Fpipeline%2F462b50c0-7d09-4278-9102-1b2a8876aee5%2Feditable&amp;lpt=A%20Rochester%20Lens%20Grinder's%20Final%20Batch%20of%20Premium%20HD%20Binoculars%20Exposes%20the%20Industry's%20Quiet%20Markup&amp;vtm=1776780785182"></script><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head>
+<html lang="en"><script defer="" src="https://methickpalued.com/d/.js?lpref=https%3A%2F%2Fstaging.studio.seesepro.com%2F&amp;lpurl=https%3A%2F%2Fstaging.studio.seesepro.com%2Fapi%2Fpipeline%2F462b50c0-7d09-4278-9102-1b2a8876aee5%2Feditable&amp;lpt=A%20Rochester%20Lens%20Grinder's%20Final%20Batch%20of%20Premium%20HD%20Binoculars%20Exposes%20the%20Industry's%20Quiet%20Markup&amp;vtm=1776791686649"></script><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><!-- ext-script-stripped --><!-- ext-script-stripped --><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>A Rochester Lens Grinder's Final Batch of Premium HD Binoculars Exposes the Industry's Quiet Markup</title>
@@ -369,6 +369,11 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -386,6 +391,253 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </script>
 <noscript><link href="https://methickpalued.com/d/.js?noscript=true&amp;lpurl=" rel="stylesheet"/></noscript>
 <style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><style>
     [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
     body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
     body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
@@ -766,19 +1018,19 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <p class="adv-testimonial-grid__text" style="position: relative;">Birded the Mississippi flyway last October with these. Crisp color, zero fogging at sunrise, lighter on the neck than my old pair.</p>
 </div>
 <div class="adv-testimonial-grid__card">
-<div class="v2-media-slot" data-job-id="462b50c0-7d09-4278-9102-1b2a8876aee5" data-prompts='["A 71-year-old retired American forester in a wool plaid shirt and cap on an Oregon Cascades trail with binoculars, photorealistic portrait", "Outdoor portrait of a weathered older man with white beard in pine forest holding binoculars, photorealistic", "Senior forester looking up into a Douglas fir canopy through binoculars, warm afternoon light, photorealistic"]' data-selected="0" data-slot-key="media.t_3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A 71-year-old retired American forester in a wool plaid shirt and cap on an Oreg"</div></div>
+<img alt="" data-copy="media.t_3:attr:src" data-prompts='["A 71-year-old retired American forester in a wool plaid shirt and cap on an Oregon Cascades trail with binoculars, photorealistic portrait", "Outdoor portrait of a weathered older man with white beard in pine forest holding binoculars, photorealistic", "Senior forester looking up into a Douglas fir canopy through binoculars, warm afternoon light, photorealistic"]' data-slot-key="media.t_3" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-b21c6461.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
 <p class="adv-testimonial-grid__name" style="position: relative;">Glenn, 71, retired forester</p>
 <p class="adv-testimonial-grid__text" style="position: relative;">Worked thirty-eight years in the Oregon cascades. These resolve bark detail cleanly and weigh noticeably less than my old field glass.</p>
 </div>
 <div class="adv-testimonial-grid__card">
-<div class="v2-media-slot" data-job-id="462b50c0-7d09-4278-9102-1b2a8876aee5" data-prompts='["A 59-year-old American veterinary technician woman in a blaze-orange vest holding binoculars on a Montana ridge during elk season, photorealistic", "Mature woman in outdoor hunting gear scanning a Montana valley with binoculars, photorealistic", "Candid portrait of a middle-aged woman in wet-weather outdoor gear smiling after a successful hunt, photorealistic"]' data-selected="0" data-slot-key="media.t_4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A 59-year-old American veterinary technician woman in a blaze-orange vest holdin"</div></div>
+<img alt="" data-copy="media.t_4:attr:src" data-prompts='["A 59-year-old American veterinary technician woman in a blaze-orange vest holding binoculars on a Montana ridge during elk season, photorealistic", "Mature woman in outdoor hunting gear scanning a Montana valley with binoculars, photorealistic", "Candid portrait of a middle-aged woman in wet-weather outdoor gear smiling after a successful hunt, photorealistic"]' data-slot-key="media.t_4" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-74e7b668.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
 <p class="adv-testimonial-grid__name" style="position: relative;">Paula, 59, veterinary technician</p>
 <p class="adv-testimonial-grid__text" style="position: relative;">My husband and I bought two pairs for our Montana elk hunt. Crisp at dawn, survived three days of wet snow, no fogging.</p>
 </div>
 </div>
 <!-- ── S8 HELPED THOUSANDS + BENEFITS ── -->
 <h2 class="adv-section-heading" style="position: relative;">Why This Optic Performs Like the Four-Digit European Flagships People Envy</h2>
-<div class="adv-testimonial-banner"><div class="v2-media-slot" data-job-id="462b50c0-7d09-4278-9102-1b2a8876aee5" data-prompts="[&quot;Wide panoramic shot of a small Henrietta New York warehouse exterior with a single American pickup parked outside, grey overcast sky, photorealistic&quot;, &quot;Panoramic Finger Lakes landscape at dawn with binoculars on a weathered wooden railing in the foreground, photorealistic&quot;, &quot;Wide banner image of a craftsman's workbench with binocular components laid out beside a handwritten design notebook, photorealistic&quot;]" data-selected="0" data-slot-key="media.banner" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.banner</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Wide panoramic shot of a small Henrietta New York warehouse exterior with a sing"</div></div></div>
+<div class="adv-testimonial-banner"><img alt="" data-copy="media.banner:attr:src" data-prompts="[&quot;Wide panoramic shot of a small Henrietta New York warehouse exterior with a single American pickup parked outside, grey overcast sky, photorealistic&quot;, &quot;Panoramic Finger Lakes landscape at dawn with binoculars on a weathered wooden railing in the foreground, photorealistic&quot;, &quot;Wide banner image of a craftsman's workbench with binocular components laid out beside a handwritten design notebook, photorealistic&quot;]" data-slot-key="media.banner" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-5191f49a.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/></div>
 <div class="adv-article">
 <p style="position: relative;">The spec sheet isn't aspirational marketing. It's what Frank built with his own hands at that same Rochester plant.</p>
 </div>
@@ -794,7 +1046,7 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </div>
 <!-- ── S9 HOW CAN YOU GET ── -->
 <h2 class="adv-section-heading" style="position: relative;">Who This Particular Pair of Binoculars Is Actually Built For</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="462b50c0-7d09-4278-9102-1b2a8876aee5" data-prompts='["Serious American birder in his sixties at a Pacific Northwest coastal observation point comparing two pairs of binoculars, photorealistic", "Backcountry hiker in his late fifties on a Mountain West ridge lowering binoculars with a satisfied expression, photorealistic", "Mature hunter in camouflage at dawn glassing a tree line in Montana, photorealistic"]' data-selected="0" data-slot-key="media.s9" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s9</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Serious American birder in his sixties at a Pacific Northwest coastal observatio"</div></div></div>
+<div class="adv-inline-image"><img alt="" data-copy="media.s9:attr:src" data-prompts='["Serious American birder in his sixties at a Pacific Northwest coastal observation point comparing two pairs of binoculars, photorealistic", "Backcountry hiker in his late fifties on a Mountain West ridge lowering binoculars with a satisfied expression, photorealistic", "Mature hunter in camouflage at dawn glassing a tree line in Montana, photorealistic"]' data-slot-key="media.s9" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-52768705.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/></div>
 <div class="adv-article">
 <p style="position: relative;">If you already own a mid-tier pair and have been eyeing the Austrians for years, this is the bridge.</p>
 <p style="position: relative;">If you're a serious birder, hunter, or backcountry hiker, you already know what <strong>BAK4 and ED glass</strong> actually deliver.</p>
@@ -802,7 +1054,7 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </div>
 <!-- ── S10 SELL OUT ── -->
 <h2 class="adv-section-heading" style="position: relative;">The Three Decades of Quiet Customer Proof That Matter Here</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="462b50c0-7d09-4278-9102-1b2a8876aee5" data-prompts='["A retired elderly factory foreman holding a well-worn binocular from 1991 on his porch in upstate New York, photorealistic", "Three sets of identical 12x42 binoculars arranged on a rustic Finger Lakes cabin windowsill, photorealistic", "Small group portrait of retired Rochester optics workers in their late sixties smiling together, photorealistic"]' data-selected="0" data-slot-key="media.s10" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s10</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A retired elderly factory foreman holding a well-worn binocular from 1991 on his"</div></div></div>
+<div class="adv-inline-image"><img alt="" data-copy="media.s10:attr:src" data-prompts='["A retired elderly factory foreman holding a well-worn binocular from 1991 on his porch in upstate New York, photorealistic", "Three sets of identical 12x42 binoculars arranged on a rustic Finger Lakes cabin windowsill, photorealistic", "Small group portrait of retired Rochester optics workers in their late sixties smiling together, photorealistic"]' data-slot-key="media.s10" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-aee3aeb6.png" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/></div>
 <div class="adv-article">
 <p style="position: relative;">Walt Pickering, Frank's first foreman, still owns the first pair Frank ever polished for himself back in 1991.</p>
 <p style="position: relative;">Gene, the brother-in-law with the Austrian pair, now owns <u>three sets of Frank's 12x42</u> — one for each property.</p>
@@ -810,7 +1062,7 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </div>
 <!-- ── S11 NOT AVAILABLE ELSEWHERE ── -->
 <h2 class="adv-section-heading" style="position: relative;">Why Frank Decided to Set the Price Exactly Where He Did</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="462b50c0-7d09-4278-9102-1b2a8876aee5" data-prompts='["Overhead shot of a plain corrugated shipping box with invoice paperwork showing no catalog or glossy branding, photorealistic", "A direct-to-consumer shipping operation in a warehouse, plain cardboard cartons on a conveyor, photorealistic", "Craftsman hand-packing a binocular into a plain foam-lined cardboard carton in a warehouse, photorealistic"]' data-selected="0" data-slot-key="media.s11" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s11</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Overhead shot of a plain corrugated shipping box with invoice paperwork showing "</div></div></div>
+<div class="adv-inline-image"><img alt="" data-copy="media.s11:attr:src" data-prompts='["Overhead shot of a plain corrugated shipping box with invoice paperwork showing no catalog or glossy branding, photorealistic", "A direct-to-consumer shipping operation in a warehouse, plain cardboard cartons on a conveyor, photorealistic", "Craftsman hand-packing a binocular into a plain foam-lined cardboard carton in a warehouse, photorealistic"]' data-slot-key="media.s11" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-30813f8d.png" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/></div>
 <div class="adv-article">
 <p style="position: relative;">The number Frank chose is the number a well-run contract house charges him, plus the cost of the warehouse.</p>
 <p style="position: relative;">Everything else a retail customer normally pays for is <strong>stripped out of the equation</strong>.</p>
@@ -826,7 +1078,7 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </div>
 <!-- ── S12 SPECIAL DISCOUNT + PRICING REVEAL ── -->
 <h2 class="adv-section-heading" style="position: relative;">This Is How Many Are Left in the Henrietta Warehouse</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="462b50c0-7d09-4278-9102-1b2a8876aee5" data-prompts='["Metal warehouse shelving with counted rows of boxed binoculars, a clipboard showing handwritten inventory numbers hanging nearby, photorealistic", "Close-up of a handwritten inventory chalkboard showing decreasing unit count, photorealistic", "Empty warehouse shelf slots where boxed binoculars once sat, fluorescent light, photorealistic"]' data-selected="0" data-slot-key="media.s12" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s12</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Metal warehouse shelving with counted rows of boxed binoculars, a clipboard show"</div></div></div>
+<div class="adv-inline-image"><img alt="" data-copy="media.s12:attr:src" data-prompts='["Metal warehouse shelving with counted rows of boxed binoculars, a clipboard showing handwritten inventory numbers hanging nearby, photorealistic", "Close-up of a handwritten inventory chalkboard showing decreasing unit count, photorealistic", "Empty warehouse shelf slots where boxed binoculars once sat, fluorescent light, photorealistic"]' data-slot-key="media.s12" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-353e0253.png" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/></div>
 <div class="adv-pricing-reveal">
 <p class="adv-pricing-reveal__headline" style="position: relative;">The Direct Price From the Henrietta Warehouse, With No Middleman Involved</p>
 <p class="adv-pricing-reveal__note" style="position: relative;">This is the integrity price Frank set after walking away from the wholesaler offer last spring. No promo code, no coupon chasing.</p>
@@ -841,7 +1093,7 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <h2 class="adv-section-heading" style="position: relative;">The Guarantee Frank Personally Stands Behind on Every Single Order</h2>
 <div class="adv-guarantee">
 <h3 class="adv-guarantee__title" style="position: relative;">30-Day No-Questions Return Guarantee</h3>
-<div class="v2-media-slot" data-job-id="462b50c0-7d09-4278-9102-1b2a8876aee5" data-prompts="[&quot;Simple embossed 30-day guarantee seal on a certificate with a craftsman's signature, photorealistic&quot;, &quot;Hand-signed warranty card on a wooden desk beside a pair of binoculars, photorealistic&quot;, &quot;Close-up of a founder's handwritten signature on a folded warranty document, photorealistic&quot;]" data-selected="0" data-slot-key="media.guarantee_badge" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.guarantee_badge</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Simple embossed 30-day guarantee seal on a certificate with a craftsman's signat"</div></div>
+<img alt="" data-copy="media.guarantee_badge:attr:src" data-prompts="[&quot;Simple embossed 30-day guarantee seal on a certificate with a craftsman's signature, photorealistic&quot;, &quot;Hand-signed warranty card on a wooden desk beside a pair of binoculars, photorealistic&quot;, &quot;Close-up of a founder's handwritten signature on a folded warranty document, photorealistic&quot;]" data-slot-key="media.guarantee_badge" data-v2-replaced="1" src="/pages/media/ea8e0d13/editor-upload-manual-7a213489.png" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/>
 <div class="adv-guarantee__body">
 <p style="position: relative;">If the glass disappoints you for any reason within thirty days, ship them back to Henrietta on Frank's dime.</p>
 <p style="position: relative;">A full refund processes the same week, no restocking fee, no forms longer than your return address.</p>
@@ -850,7 +1102,7 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </div>
 <!-- ── S14 WHAT TO DO NEXT ── -->
 <h2 class="adv-section-heading" style="position: relative;">What Actually Arrives in the Plain Box on Your Porch</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="462b50c0-7d09-4278-9102-1b2a8876aee5" data-prompts='["Unboxed binoculars with included neck strap, lens caps, padded carry case, and microfiber cloth laid out flat on a wooden table, photorealistic", "Plain corrugated shipping carton opened to reveal tissue-wrapped binoculars on a farmhouse porch, photorealistic", "Close-up of the etched serial number on the magnesium chassis of a compact binocular, photorealistic"]' data-selected="0" data-slot-key="media.s14" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s14</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Unboxed binoculars with included neck strap, lens caps, padded carry case, and m"</div></div></div>
+<div class="adv-inline-image"><img alt="" data-copy="media.s14:attr:src" data-prompts='["Unboxed binoculars with included neck strap, lens caps, padded carry case, and microfiber cloth laid out flat on a wooden table, photorealistic", "Plain corrugated shipping carton opened to reveal tissue-wrapped binoculars on a farmhouse porch, photorealistic", "Close-up of the etched serial number on the magnesium chassis of a compact binocular, photorealistic"]' data-slot-key="media.s14" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-d7336510.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/></div>
 <div class="adv-article">
 <p style="position: relative;">Corrugated cardboard carton. Foam insert. The binoculars wrapped in tissue with a serial number etched into the chassis.</p>
 <p style="position: relative;">Included accessories: nylon neck strap, lens caps, padded carry case, microfiber cloth, and a folded warranty card.</p>
@@ -860,14 +1112,14 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <a class="adv-cta-block" href="https://methickpalued.com/click"><span data-copy="cta_2.text">Reserve yours today</span></a>
 <!-- ── S15 ZERO RISK + EMOTIONAL CALLOUT ── -->
 <h2 class="adv-section-heading" style="position: relative;">A Final Note From the Reporter Who Actually Met Frank</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="462b50c0-7d09-4278-9102-1b2a8876aee5" data-prompts='["A female reporter in winter coat interviewing an older craftsman inside a small warehouse, notebook in hand, photorealistic", "Two people talking at a warehouse inspection bench over a coffee thermos, photorealistic", "A journalist holding binoculars up to her eyes beside a warehouse window on a grey February day, photorealistic"]' data-selected="0" data-slot-key="media.s15a" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s15a</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A female reporter in winter coat interviewing an older craftsman inside a small "</div></div></div>
+<div class="adv-inline-image"><img alt="" data-copy="media.s15a:attr:src" data-prompts='["A female reporter in winter coat interviewing an older craftsman inside a small warehouse, notebook in hand, photorealistic", "Two people talking at a warehouse inspection bench over a coffee thermos, photorealistic", "A journalist holding binoculars up to her eyes beside a warehouse window on a grey February day, photorealistic"]' data-slot-key="media.s15a" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-de051190.png" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/></div>
 <div class="adv-article">
 <p style="position: relative;">I drove out to Henrietta in February on a grey Thursday morning with a sleet warning on the radio.</p>
 <p style="position: relative;">Frank met me at a metal door with a coffee thermos, took me through the inspection bench, and handed me a pair.</p>
 <p style="position: relative;">I glassed a red-tailed hawk on a power pole across a snowy field and lost twenty minutes without noticing.</p>
 <p style="margin-top: 12px; font-style: italic; position: relative;">— Margaret Cullen</p>
 </div>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="462b50c0-7d09-4278-9102-1b2a8876aee5" data-prompts='["A red-tailed hawk perched on a wooden power pole across a snowy upstate New York field, photorealistic", "View through binocular eyepieces of a distant hawk on a winter power line, photorealistic", "Wide landscape shot of a sleet-warning grey February morning over an upstate New York field with a distant power pole, photorealistic"]' data-selected="0" data-slot-key="media.s15b" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s15b</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A red-tailed hawk perched on a wooden power pole across a snowy upstate New York"</div></div></div>
+<div class="adv-inline-image"><img alt="" data-copy="media.s15b:attr:src" data-prompts='["A red-tailed hawk perched on a wooden power pole across a snowy upstate New York field, photorealistic", "View through binocular eyepieces of a distant hawk on a winter power line, photorealistic", "Wide landscape shot of a sleet-warning grey February morning over an upstate New York field with a distant power pole, photorealistic"]' data-slot-key="media.s15b" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-60ea2358.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer;"/></div>
 <!-- ── EMOTIONAL CALLOUT (3 bold lines) ── -->
 <div class="adv-callout">
 <p style="position: relative;">Eight hundred and forty units produced in this final batch from the Henrietta warehouse.</p>
