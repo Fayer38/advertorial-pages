@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><!-- ext-script-stripped --><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>A Former Home Depot Buyer Exposes the Blower Aisle Markup Racket</title>
@@ -367,6 +364,26 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -375,10 +392,748 @@ t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "wb35vpdfk1");
 </script>
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
 
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
 
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
 
-<script src="https://terica-store.com/tracker.js" async></script>
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
@@ -387,12 +1142,12 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <!-- ── HERO ── -->
 <div class="adv-hero">
-<h1 class="adv-hero__title">I Bought Blowers for Home Depot. Here's the Markup They Never Showed You.</h1>
-<p class="adv-hero__subtitle">Seven things the power-tool aisle hopes you never figure out</p>
+<h1 class="adv-hero__title" style="position: relative;">I Bought Blowers for Home Depot. Here's the Markup They Never Showed You.</h1>
+<p class="adv-hero__subtitle" style="position: relative;">Seven things the power-tool aisle hopes you never figure out</p>
 </div>
 <!-- ── LEAD IMAGE ── -->
 <div class="adv-lead-image">
-<div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts="[&quot;A retired 60-year-old American man in a flannel shirt sitting at a garage workbench surrounded by disassembled leaf blowers, invoice papers spread around, photorealistic&quot;, &quot;Overhead shot of a cluttered suburban garage with three broken gas and corded blowers lined up next to a clipboard of price tags, photorealistic&quot;, &quot;Close-up of a weathered man's hands holding a pricing invoice next to a heavy commercial blower, natural window light, photorealistic&quot;]" data-selected="0" data-slot-key="media.lead" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.lead</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A retired 60-year-old American man in a flannel shirt sitting at a garage workbe"</div></div>
+<img alt="" class="" data-copy="media.lead:attr:src" data-prompts="[&quot;A retired 60-year-old American man in a flannel shirt sitting at a garage workbench surrounded by disassembled leaf blowers, invoice papers spread around, photorealistic&quot;, &quot;Overhead shot of a cluttered suburban garage with three broken gas and corded blowers lined up next to a clipboard of price tags, photorealistic&quot;, &quot;Close-up of a weathered man's hands holding a pricing invoice next to a heavy commercial blower, natural window light, photorealistic&quot;]" data-slot-key="media.lead" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-66efd2b8.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 10; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <!-- ── BYLINE (local avatar pool) ── -->
 <div class="adv-byline">
@@ -405,89 +1160,89 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <!-- ── OPENING PARAGRAPHS ── -->
 <div class="adv-article">
-<p>My name is Dale, I'm 63, and I spent twenty-two years buying power tools for a chain you've shopped at.</p>
-<p>I signed off on the invoices. I saw every margin sheet, every vendor kickback, every line item of the retail ticket.</p>
-<p>Now that I'm retired and nobody can fire me, I want to tell you exactly how the blower aisle gets priced.</p>
-<p>If you've ever stood there wondering why a plastic leaf blower costs as much as a used transmission, keep reading.</p>
+<p style="position: relative;">My name is Dale, I'm 63, and I spent twenty-two years buying power tools for a chain you've shopped at.</p>
+<p style="position: relative;">I signed off on the invoices. I saw every margin sheet, every vendor kickback, every line item of the retail ticket.</p>
+<p style="position: relative;">Now that I'm retired and nobody can fire me, I want to tell you exactly how the blower aisle gets priced.</p>
+<p style="position: relative;">If you've ever stood there wondering why a plastic leaf blower costs as much as a used transmission, keep reading.</p>
 </div>
 <!-- ── S1 ANATOMY ── -->
-<h2 class="adv-section-heading">Reason 1: The dealer-network markup tax nobody in retail talks about</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts='["Wide shot of a Home Depot power-tool aisle with rows of expensive gas blowers, fluorescent lighting, photorealistic", "A dealer in a branded polo shirt handing a receipt to a suburban homeowner inside a big-box garden section, photorealistic", "Close-up of a yellow retail price tag on a commercial blower reading a high three-digit figure, shallow depth of field, photorealistic"]' data-selected="0" data-slot-key="media.s1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Wide shot of a Home Depot power-tool aisle with rows of expensive gas blowers, f"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">Reason 1: The dealer-network markup tax nobody in retail talks about</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s1:attr:src" data-prompts='["Wide shot of a Home Depot power-tool aisle with rows of expensive gas blowers, fluorescent lighting, photorealistic", "A dealer in a branded polo shirt handing a receipt to a suburban homeowner inside a big-box garden section, photorealistic", "Close-up of a yellow retail price tag on a commercial blower reading a high three-digit figure, shallow depth of field, photorealistic"]' data-slot-key="media.s1" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-6398ee4b.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <div class="adv-article">
-<p>Here's the first thing to understand. <strong>The blower on that shelf has been marked up four times</strong> before you touch it.</p>
-<p>Factory sells to importer. Importer sells to distributor. Distributor sells to the regional dealer network. Dealer sells to the retailer.</p>
-<p>Each hand in that chain takes between <strong>fifteen and thirty percent</strong>. By the time you see the price tag, the tool has tripled.</p>
-<p>I signed purchase orders where the unit cost landed in the low double digits and we ticketed it three hundred percent higher.</p>
-<p>That's not a product cost. <u>That's a middleman tax</u>, and you pay it every single time you walk out of the store.</p>
+<p style="position: relative;">Here's the first thing to understand. <strong>The blower on that shelf has been marked up four times</strong> before you touch it.</p>
+<p style="position: relative;">Factory sells to importer. Importer sells to distributor. Distributor sells to the regional dealer network. Dealer sells to the retailer.</p>
+<p style="position: relative;">Each hand in that chain takes between <strong>fifteen and thirty percent</strong>. By the time you see the price tag, the tool has tripled.</p>
+<p style="position: relative;">I signed purchase orders where the unit cost landed in the low double digits and we ticketed it three hundred percent higher.</p>
+<p style="position: relative;">That's not a product cost. <u>That's a middleman tax</u>, and you pay it every single time you walk out of the store.</p>
 </div>
 <!-- ── S2 ARTHRITIS PROGRESSION ── -->
-<h2 class="adv-section-heading">Reason 2: The 'pro-grade' label is a sticker, not engineering</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts="[&quot;A 'PRO-GRADE' sticker peeling off a plastic blower housing on a workshop bench, photorealistic&quot;, &quot;Two nearly identical leaf blowers side by side, one with a pro-grade label and one without, studio lighting, photorealistic&quot;, &quot;Close-up macro of cheap plastic internal parts inside a disassembled so-called professional blower, photorealistic&quot;]" data-selected="0" data-slot-key="media.s2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A 'PRO-GRADE' sticker peeling off a plastic blower housing on a workshop bench, "</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">Reason 2: The 'pro-grade' label is a sticker, not engineering</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s2:attr:src" data-prompts="[&quot;A 'PRO-GRADE' sticker peeling off a plastic blower housing on a workshop bench, photorealistic&quot;, &quot;Two nearly identical leaf blowers side by side, one with a pro-grade label and one without, studio lighting, photorealistic&quot;, &quot;Close-up macro of cheap plastic internal parts inside a disassembled so-called professional blower, photorealistic&quot;]" data-slot-key="media.s2" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-05660555.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <div class="adv-article">
-<p>This one makes me angry. The word <strong>pro-grade</strong> on a blower housing means almost nothing.</p>
-<p>I saw it with my own eyes on the vendor spec sheets. Same motor, same fan, same plastic body. Different sticker, different aisle.</p>
+<p style="position: relative;">This one makes me angry. The word <strong>pro-grade</strong> on a blower housing means almost nothing.</p>
+<p style="position: relative;">I saw it with my own eyes on the vendor spec sheets. Same motor, same fan, same plastic body. Different sticker, different aisle.</p>
 </div>
 <div class="adv-feature-list">
-<p>The 'pro' model usually shares <strong>eighty to ninety percent</strong> of its parts with the consumer model next to it.</p>
-<p>The warranty paperwork is often identical, printed in the same factory, signed by the same service rep.</p>
-<p>The only real upgrade tends to be <strong>a slightly bigger battery or a louder branding decal</strong> on the shroud.</p>
-<p>Yet the ticket price jumps by roughly the cost of a decent used laptop for no engineering reason.</p>
-<p>The label exists to justify the premium aisle placement, not to deliver a meaningfully better tool.</p>
+<p style="position: relative;">The 'pro' model usually shares <strong>eighty to ninety percent</strong> of its parts with the consumer model next to it.</p>
+<p style="position: relative;">The warranty paperwork is often identical, printed in the same factory, signed by the same service rep.</p>
+<p style="position: relative;">The only real upgrade tends to be <strong>a slightly bigger battery or a louder branding decal</strong> on the shroud.</p>
+<p style="position: relative;">Yet the ticket price jumps by roughly the cost of a decent used laptop for no engineering reason.</p>
+<p style="position: relative;">The label exists to justify the premium aisle placement, not to deliver a meaningfully better tool.</p>
 </div>
 <div class="adv-article">
-<p>I watched grown homeowners talk themselves into the pro version because the dealer told them the consumer one would die.</p>
-<p>It was the same machine. The dealer just needed the bigger commission, and the store needed the bigger ring.</p>
+<p style="position: relative;">I watched grown homeowners talk themselves into the pro version because the dealer told them the consumer one would die.</p>
+<p style="position: relative;">It was the same machine. The dealer just needed the bigger commission, and the store needed the bigger ring.</p>
 </div>
 <!-- ── S3 SCARY TRUTH + FAILED SOLUTIONS ── -->
-<h2 class="adv-section-heading">Reason 3: The fuel-mix racket is pure recurring revenue for retailers</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts='["Red plastic gas can next to a two-stroke oil bottle and a gas-powered blower on a driveway, photorealistic", "Frustrated suburban homeowner mixing fuel in a measuring cup next to a leaf blower, photorealistic", "Close-up of an old corroded carburetor covered in varnish deposits, photorealistic"]' data-selected="0" data-slot-key="media.s3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Red plastic gas can next to a two-stroke oil bottle and a gas-powered blower on "</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">Reason 3: The fuel-mix racket is pure recurring revenue for retailers</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s3:attr:src" data-prompts='["Red plastic gas can next to a two-stroke oil bottle and a gas-powered blower on a driveway, photorealistic", "Frustrated suburban homeowner mixing fuel in a measuring cup next to a leaf blower, photorealistic", "Close-up of an old corroded carburetor covered in varnish deposits, photorealistic"]' data-slot-key="media.s3" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-865a2628.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <div class="adv-article">
-<p>Gas blowers are not sold to you once. <strong>They're sold to you every weekend</strong>, in small expensive bottles.</p>
-<p>Two-stroke oil, premixed cans, stabilizer, carb cleaner. The accessory wall is where the real margin lives.</p>
+<p style="position: relative;">Gas blowers are not sold to you once. <strong>They're sold to you every weekend</strong>, in small expensive bottles.</p>
+<p style="position: relative;">Two-stroke oil, premixed cans, stabilizer, carb cleaner. The accessory wall is where the real margin lives.</p>
 </div>
 <div class="adv-feature-list">
-<p>Premixed fuel cans carry some of the <strong>fattest margins in the entire outdoor category</strong>, well above the tool itself.</p>
-<p>Stabilizer bottles sit at eye level near the register because impulse buyers forget and then come back guilty next spring.</p>
-<p>Carb rebuild kits are priced like jewelry because by the time you need one, you're desperate and out of season.</p>
-<p>Two-stroke oil in tiny bottles costs more per ounce than some imported olive oils, and the vendor knows it.</p>
-<p>Every mixing mistake, every gummed-up carburetor, every seasonal tune-up is <u>a recurring charge on a product you already bought</u>.</p>
+<p style="position: relative;">Premixed fuel cans carry some of the <strong>fattest margins in the entire outdoor category</strong>, well above the tool itself.</p>
+<p style="position: relative;">Stabilizer bottles sit at eye level near the register because impulse buyers forget and then come back guilty next spring.</p>
+<p style="position: relative;">Carb rebuild kits are priced like jewelry because by the time you need one, you're desperate and out of season.</p>
+<p style="position: relative;">Two-stroke oil in tiny bottles costs more per ounce than some imported olive oils, and the vendor knows it.</p>
+<p style="position: relative;">Every mixing mistake, every gummed-up carburetor, every seasonal tune-up is <u>a recurring charge on a product you already bought</u>.</p>
 </div>
 <div class="adv-article">
-<p>The gas blower isn't a tool in that model. It's a subscription disguised as a machine, billed in little red bottles.</p>
+<p style="position: relative;">The gas blower isn't a tool in that model. It's a subscription disguised as a machine, billed in little red bottles.</p>
 </div>
 <!-- ── S4 SOLUTION ── -->
-<h2 class="adv-section-heading">Reason 4: Weight hasn't dropped in twenty years on purpose</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts="[&quot;Heavy old gas blower weighing down a man's shoulder strap, visible strain on his posture, backyard setting, photorealistic&quot;, &quot;Engineer's side-by-side comparison of old heavy blower motor and modern lightweight brushless motor on a workbench, photorealistic&quot;, &quot;Older American man wincing and shifting his shoulder while holding a heavy blower, autumn leaves around him, photorealistic&quot;]" data-selected="0" data-slot-key="media.s4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Heavy old gas blower weighing down a man's shoulder strap, visible strain on his"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">Reason 4: Weight hasn't dropped in twenty years on purpose</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s4:attr:src" data-prompts="[&quot;Heavy old gas blower weighing down a man's shoulder strap, visible strain on his posture, backyard setting, photorealistic&quot;, &quot;Engineer's side-by-side comparison of old heavy blower motor and modern lightweight brushless motor on a workbench, photorealistic&quot;, &quot;Older American man wincing and shifting his shoulder while holding a heavy blower, autumn leaves around him, photorealistic&quot;]" data-slot-key="media.s4" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-e0156251.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <div class="adv-article">
-<p>This one I couldn't believe when the engineer finally told me. <strong>Battery tech has advanced for two decades.</strong></p>
-<p>Brushless motors are lighter, smaller, and more efficient. Yet the average big-brand blower still tips the scale at roughly the same weight.</p>
+<p style="position: relative;">This one I couldn't believe when the engineer finally told me. <strong>Battery tech has advanced for two decades.</strong></p>
+<p style="position: relative;">Brushless motors are lighter, smaller, and more efficient. Yet the average big-brand blower still tips the scale at roughly the same weight.</p>
 </div>
 <ul class="adv-bullet-list">
-<li>Heavy tools feel <strong>more substantial on the shelf</strong>, which lets stores justify the premium ticket to first-time buyers.</li>
-<li>The old gas frame tooling is already paid off, so brands keep pumping out yesterday's chassis to protect their margin.</li>
-<li>Dealer networks push the heavy commercial line because the service visits, batteries, and accessories are where their bonuses live.</li>
-<li>Redesigning for true lightweight use means retooling the entire factory line, and <u>nobody in legacy retail wants that invoice</u>.</li>
-<li>So the shoulder strain, the wrist fatigue, the quitting halfway through the yard — that's a design choice, not physics.</li>
+<li style="position: relative;">Heavy tools feel <strong>more substantial on the shelf</strong>, which lets stores justify the premium ticket to first-time buyers.</li>
+<li style="position: relative;">The old gas frame tooling is already paid off, so brands keep pumping out yesterday's chassis to protect their margin.</li>
+<li style="position: relative;">Dealer networks push the heavy commercial line because the service visits, batteries, and accessories are where their bonuses live.</li>
+<li style="position: relative;">Redesigning for true lightweight use means retooling the entire factory line, and <u>nobody in legacy retail wants that invoice</u>.</li>
+<li style="position: relative;">So the shoulder strain, the wrist fatigue, the quitting halfway through the yard — that's a design choice, not physics.</li>
 </ul>
 <!-- ── S5 SOMETHING REMARKABLE ── -->
-<h2 class="adv-section-heading">Reason 5: Extended warranties quietly eat forty percent of margin</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts='["Cashier at a hardware store register pushing an extended warranty form toward a customer, photorealistic", "Close-up of a warranty brochure with fine print highlighted in yellow marker, photorealistic", "Disappointed couple reading denial letter from a warranty service center at their kitchen table, photorealistic"]' data-selected="0" data-slot-key="media.s5" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s5</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Cashier at a hardware store register pushing an extended warranty form toward a "</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">Reason 5: Extended warranties quietly eat forty percent of margin</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s5:attr:src" data-prompts='["Cashier at a hardware store register pushing an extended warranty form toward a customer, photorealistic", "Close-up of a warranty brochure with fine print highlighted in yellow marker, photorealistic", "Disappointed couple reading denial letter from a warranty service center at their kitchen table, photorealistic"]' data-slot-key="media.s5" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-51e855c6.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <div class="adv-article">
-<p>When a cashier pushes you toward the protection plan, they aren't helping you. <strong>They're closing their quota.</strong></p>
-<p>Inside the numbers, extended warranties frequently carry around forty percent pure margin for the retailer and almost nothing for the customer.</p>
-<p>Most claims get denied on technicalities. The brands count on it, and <u>the plan is a second product you didn't need</u>.</p>
+<p style="position: relative;">When a cashier pushes you toward the protection plan, they aren't helping you. <strong>They're closing their quota.</strong></p>
+<p style="position: relative;">Inside the numbers, extended warranties frequently carry around forty percent pure margin for the retailer and almost nothing for the customer.</p>
+<p style="position: relative;">Most claims get denied on technicalities. The brands count on it, and <u>the plan is a second product you didn't need</u>.</p>
 </div>
 <!-- ── S6 ONLY ONE CATCH ── -->
-<h2 class="adv-section-heading">Reason 6: The word 'commercial' in suburban ads is a lie</h2>
+<h2 class="adv-section-heading" style="position: relative;">Reason 6: The word 'commercial' in suburban ads is a lie</h2>
 <div class="adv-article">
-<p>If you live in a normal neighborhood with a normal yard, you do not need a commercial blower. Full stop.</p>
-<p>The word <strong>commercial</strong> in those weekend circulars is a pricing trick, not a spec. It lives on the shelf to anchor the premium.</p>
+<p style="position: relative;">If you live in a normal neighborhood with a normal yard, you do not need a commercial blower. Full stop.</p>
+<p style="position: relative;">The word <strong>commercial</strong> in those weekend circulars is a pricing trick, not a spec. It lives on the shelf to anchor the premium.</p>
 </div>
 <!-- ── PRODUCT SHOWCASE ── -->
 <div class="adv-product-showcase">
-<h3 class="adv-product-showcase__title">Seese Pro™ Ultra-Light, Ultra-Powerful Blower</h3>
-<p class="adv-product-showcase__tagline">Lightweight cordless power without the dealer-network markup.</p>
-<a href="https://terica-store.com/click"><div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts='["Seese Pro Ultra-Light cordless blower on a clean white background, highlighting compact shape and weight, product photography, photorealistic", "Seese Pro V9 cordless blower held effortlessly in one hand by an older man, natural daylight, photorealistic", "Seese Pro cordless blower sitting on a porch next to a coffee mug and fallen leaves, warm morning light, photorealistic"]' data-selected="0" data-slot-key="media.product" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.product</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Seese Pro Ultra-Light cordless blower on a clean white background, highlighting "</div></div></a>
+<h3 class="adv-product-showcase__title" style="position: relative;">Seese Pro™ Ultra-Light, Ultra-Powerful Blower</h3>
+<p class="adv-product-showcase__tagline" style="position: relative;">Lightweight cordless power without the dealer-network markup.</p>
+<a href="https://terica-store.com/click"><img alt="" data-copy="media.product:attr:src" data-prompts='["Seese Pro Ultra-Light cordless blower on a clean white background, highlighting compact shape and weight, product photography, photorealistic", "Seese Pro V9 cordless blower held effortlessly in one hand by an older man, natural daylight, photorealistic", "Seese Pro cordless blower sitting on a porch next to a coffee mug and fallen leaves, warm morning light, photorealistic"]' data-slot-key="media.product" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-29729ba4.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 1 / 1; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></a>
 <div class="adv-product-showcase__rating">
 <span class="adv-product-showcase__rating-stars">★★★★★</span>
 <span class="adv-product-showcase__rating-score">4.8</span>
@@ -497,142 +1252,141 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <a class="adv-cta-inline" href="https://terica-store.com/click"><span data-copy="cta_check.text">See the real price</span></a>
 </div>
 <!-- ── S7 INTRODUCING ── -->
-<h2 class="adv-section-heading">Reason 7: DTC brands broke the circuit and the industry noticed</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts='["Suburban man easily clearing leaves from his driveway with a lightweight cordless blower, autumn afternoon, photorealistic", "Older woman using a cordless blower to clean her front porch, effortless posture, photorealistic", "Grandfather showing his grandson how to use a compact cordless blower in the backyard, photorealistic"]' data-selected="0" data-slot-key="media.s7a" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s7a</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Suburban man easily clearing leaves from his driveway with a lightweight cordles"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">Reason 7: DTC brands broke the circuit and the industry noticed</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s7a:attr:src" data-prompts='["Suburban man easily clearing leaves from his driveway with a lightweight cordless blower, autumn afternoon, photorealistic", "Older woman using a cordless blower to clean her front porch, effortless posture, photorealistic", "Grandfather showing his grandson how to use a compact cordless blower in the backyard, photorealistic"]' data-slot-key="media.s7a" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-59bbee5f.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <div class="adv-article">
-<p>This is where brands like <strong>Seese Pro</strong> change the math. They skip the importer, the distributor, the dealer, and ship straight to you.</p>
-<p>No fuel-mix upsell, no commissioned cashier, no pro-grade sticker — <u>just the tool, the battery, and a real 30-day risk-free trial</u>.</p>
+<p style="position: relative;">This is where brands like <strong>Seese Pro</strong> change the math. They skip the importer, the distributor, the dealer, and ship straight to you.</p>
+<p style="position: relative;">No fuel-mix upsell, no commissioned cashier, no pro-grade sticker — <u>just the tool, the battery, and a real 30-day risk-free trial</u>.</p>
 </div>
 <!-- ── TESTIMONIAL GRID (4 cards) ── -->
 <div class="adv-testimonial-grid">
 <div class="adv-testimonial-grid__card">
-<div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts='["Smiling 58-year-old American man in a polo shirt standing in his driveway, friendly portrait, photorealistic", "Middle-aged homeowner holding a lightweight blower, natural smile, suburban background, photorealistic", "Casual portrait of a retired man in work clothes, warm expression, photorealistic"]' data-selected="0" data-slot-key="media.t_1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Smiling 58-year-old American man in a polo shirt standing in his driveway, frien"</div></div>
-<p class="adv-testimonial-grid__name">Mark, 58, Retired electrician</p>
-<p class="adv-testimonial-grid__text">Three gas blowers in fifteen years. This one weighs less than my coffee thermos and I finally finished the driveway without resting.</p>
+<img alt="" data-copy="media.t_1:attr:src" data-prompts='["Smiling 58-year-old American man in a polo shirt standing in his driveway, friendly portrait, photorealistic", "Middle-aged homeowner holding a lightweight blower, natural smile, suburban background, photorealistic", "Casual portrait of a retired man in work clothes, warm expression, photorealistic"]' data-slot-key="media.t_1" data-v2-replaced="1" src="/pages/media/seese-pro-v9/hero-manual-223030.jpeg" style="width: 48px; height: 48px; display: block; cursor: pointer; aspect-ratio: 1 / 1; border-radius: 50%; object-fit: cover;"/>
+<p class="adv-testimonial-grid__name" style="position: relative;">Mark, 58, Retired electrician</p>
+<p class="adv-testimonial-grid__text" style="position: relative;">Three gas blowers in fifteen years. This one weighs less than my coffee thermos and I finally finished the driveway without resting.</p>
 </div>
 <div class="adv-testimonial-grid__card">
-<div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts='["Portrait of a 62-year-old American woman with gray hair smiling in front of her garden, photorealistic", "Retired schoolteacher holding a cordless leaf blower, relaxed pose, photorealistic", "Warm natural portrait of a woman laughing near her porch, autumn leaves, photorealistic"]' data-selected="0" data-slot-key="media.t_2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Portrait of a 62-year-old American woman with gray hair smiling in front of her "</div></div>
-<p class="adv-testimonial-grid__name">Linda, 62, Former schoolteacher</p>
-<p class="adv-testimonial-grid__text">I didn't think I'd ever use a blower again after my shoulder surgery. This one, I can hold one-handed and actually enjoy.</p>
+<img alt="" data-copy="media.t_2:attr:src" data-prompts='["Portrait of a 62-year-old American woman with gray hair smiling in front of her garden, photorealistic", "Retired schoolteacher holding a cordless leaf blower, relaxed pose, photorealistic", "Warm natural portrait of a woman laughing near her porch, autumn leaves, photorealistic"]' data-slot-key="media.t_2" data-v2-replaced="1" src="/pages/media/seese-pro-v9/lifestyle_product-v2-04-4x3.jpg" style="width: 48px; height: 48px; display: block; cursor: pointer; aspect-ratio: 1 / 1; border-radius: 50%; object-fit: cover;"/>
+<p class="adv-testimonial-grid__name" style="position: relative;">Linda, 62, Former schoolteacher</p>
+<p class="adv-testimonial-grid__text" style="position: relative;">I didn't think I'd ever use a blower again after my shoulder surgery. This one, I can hold one-handed and actually enjoy.</p>
 </div>
 <div class="adv-testimonial-grid__card">
-<div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts='["65-year-old American man in a flannel shirt standing in his backyard, confident smile, photorealistic", "Older man holding a compact cordless blower in one hand, showing how light it is, photorealistic", "Veteran-looking retiree in a ball cap smiling in his driveway, photorealistic"]' data-selected="0" data-slot-key="media.t_3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"65-year-old American man in a flannel shirt standing in his backyard, confident "</div></div>
-<p class="adv-testimonial-grid__name">Gary, 65, Navy veteran</p>
-<p class="adv-testimonial-grid__text">I've been burned by dealer warranties my whole life. Buying direct, reading the receipt, and getting a real trial period felt refreshingly honest.</p>
+<img alt="" data-copy="media.t_3:attr:src" data-prompts='["65-year-old American man in a flannel shirt standing in his backyard, confident smile, photorealistic", "Older man holding a compact cordless blower in one hand, showing how light it is, photorealistic", "Veteran-looking retiree in a ball cap smiling in his driveway, photorealistic"]' data-slot-key="media.t_3" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-b9e280ce.jpeg" style="width: 48px; height: 48px; display: block; cursor: pointer; aspect-ratio: 1 / 1; border-radius: 50%; object-fit: cover;"/>
+<p class="adv-testimonial-grid__name" style="position: relative;">Gary, 65, Navy veteran</p>
+<p class="adv-testimonial-grid__text" style="position: relative;">I've been burned by dealer warranties my whole life. Buying direct, reading the receipt, and getting a real trial period felt refreshingly honest.</p>
 </div>
 <div class="adv-testimonial-grid__card">
-<div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts='["Portrait of a 54-year-old American contractor in a work shirt in front of his pickup truck, photorealistic", "Suburban homeowner giving a thumbs up while holding a lightweight cordless blower, photorealistic", "Casual outdoor portrait of a smiling man in his fifties, driveway background, photorealistic"]' data-selected="0" data-slot-key="media.t_4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Portrait of a 54-year-old American contractor in a work shirt in front of his pi"</div></div>
-<p class="adv-testimonial-grid__name">Tom, 54, General contractor</p>
-<p class="adv-testimonial-grid__text">I expected toy-grade airflow at this weight. Instead it moved wet leaves off my patio faster than the heavy gas unit it replaced.</p>
+<img alt="" data-copy="media.t_4:attr:src" data-prompts='["Portrait of a 54-year-old American contractor in a work shirt in front of his pickup truck, photorealistic", "Suburban homeowner giving a thumbs up while holding a lightweight cordless blower, photorealistic", "Casual outdoor portrait of a smiling man in his fifties, driveway background, photorealistic"]' data-slot-key="media.t_4" data-v2-replaced="1" src="/pages/media/seese-pro-v9/lifestyle_product-v2-01-16x9.jpg" style="width: 48px; height: 48px; display: block; cursor: pointer; aspect-ratio: 1 / 1; border-radius: 50%; object-fit: cover;"/>
+<p class="adv-testimonial-grid__name" style="position: relative;">Tom, 54, General contractor</p>
+<p class="adv-testimonial-grid__text" style="position: relative;">I expected toy-grade airflow at this weight. Instead it moved wet leaves off my patio faster than the heavy gas unit it replaced.</p>
 </div>
 </div>
 <!-- ── S8 HELPED THOUSANDS + BENEFITS ── -->
-<h2 class="adv-section-heading">What you actually get when you skip the middleman tax</h2>
-<div class="adv-testimonial-banner"><div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts='["Wide lifestyle banner of a suburban American homeowner using a lightweight cordless blower on his driveway, photorealistic", "Panoramic shot of a neatly kept American suburban home with a man clearing leaves using a compact cordless blower, photorealistic", "Family-friendly suburban yard with grandfather and grandson using a lightweight blower together, warm afternoon light, photorealistic"]' data-selected="0" data-slot-key="media.banner" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.banner</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Wide lifestyle banner of a suburban American homeowner using a lightweight cordl"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">What you actually get when you skip the middleman tax</h2>
+<div class="adv-testimonial-banner"><img alt="" data-copy="media.banner:attr:src" data-prompts='["Wide lifestyle banner of a suburban American homeowner using a lightweight cordless blower on his driveway, photorealistic", "Panoramic shot of a neatly kept American suburban home with a man clearing leaves using a compact cordless blower, photorealistic", "Family-friendly suburban yard with grandfather and grandson using a lightweight blower together, warm afternoon light, photorealistic"]' data-slot-key="media.banner" data-v2-replaced="1" src="/pages/media/seese-pro-v9/lifestyle-04-4x3.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 10; object-fit: cover; margin: 8px 0px;"/></div>
 <div class="adv-article">
-<p>Once you strip out the distributor, the dealer bonus, and the pro-grade theater, <strong>what's left is the honest tool</strong>.</p>
+<p style="position: relative;">Once you strip out the distributor, the dealer bonus, and the pro-grade theater, <strong>what's left is the honest tool</strong>.</p>
 </div>
 <div class="adv-feature-list">
-<p>Ultra-light 2.1 pound frame that respects your shoulders and wrists</p>
-<p>Cordless brushless motor: no gas, no mixing, no carburetor headaches</p>
-<p>Four-season range covering leaves, grass clippings, dust, and light snow</p>
-<p>Direct-to-door shipping with no dealer markup and no service-center runaround</p>
-<p>30-day risk-free trial backed by the brand, not some reseller</p>
+<p style="position: relative;">Ultra-light 2.1 pound frame that respects your shoulders and wrists</p>
+<p style="position: relative;">Cordless brushless motor: no gas, no mixing, no carburetor headaches</p>
+<p style="position: relative;">Four-season range covering leaves, grass clippings, dust, and light snow</p>
+<p style="position: relative;">Direct-to-door shipping with no dealer markup and no service-center runaround</p>
+<p style="position: relative;">30-day risk-free trial backed by the brand, not some reseller</p>
 </div>
 <div class="adv-article">
-<p>In plain English, you get the engineering the legacy brands have been sitting on — <u>without the four-hand markup chain</u>.</p>
+<p style="position: relative;">In plain English, you get the engineering the legacy brands have been sitting on — <u>without the four-hand markup chain</u>.</p>
 </div>
 <!-- ── S9 HOW CAN YOU GET ── -->
-<h2 class="adv-section-heading">Why the legacy brands are quietly panicking right about now</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts='["Factory workers on an American small-business assembly line building cordless blowers, photorealistic", "Quality control technician inspecting a brushless motor under bright workshop light, photorealistic", "Close-up of a blower being carefully packaged in a plain branded box at a modest warehouse, photorealistic"]' data-selected="0" data-slot-key="media.s9" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s9</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Factory workers on an American small-business assembly line building cordless bl"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">Why the legacy brands are quietly panicking right about now</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s9:attr:src" data-prompts='["Factory workers on an American small-business assembly line building cordless blowers, photorealistic", "Quality control technician inspecting a brushless motor under bright workshop light, photorealistic", "Close-up of a blower being carefully packaged in a plain branded box at a modest warehouse, photorealistic"]' data-slot-key="media.s9" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-50200390.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <div class="adv-article">
-<p>I still talk to people on the vendor side. <strong>They are watching their dealer margin compress</strong> and their warranty attach rates collapse.</p>
-<p>When a homeowner orders direct, the distributor loses its cut, the dealer loses the service visit, and the retailer loses the fuel-mix wall.</p>
-<p>That is why you're suddenly seeing aggressive 'clearance' events on gas models. The old business model is <u>quietly unwinding in front of us</u>.</p>
+<p style="position: relative;">I still talk to people on the vendor side. <strong>They are watching their dealer margin compress</strong> and their warranty attach rates collapse.</p>
+<p style="position: relative;">When a homeowner orders direct, the distributor loses its cut, the dealer loses the service visit, and the retailer loses the fuel-mix wall.</p>
+<p style="position: relative;">That is why you're suddenly seeing aggressive 'clearance' events on gas models. The old business model is <u>quietly unwinding in front of us</u>.</p>
 </div>
 <!-- ── S10 SELL OUT ── -->
-<h2 class="adv-section-heading">What the dealer network really hopes you never stop to compare</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts="[&quot;Angry executive in a suit looking at a DTC competitor's website on his laptop in a corner office, photorealistic&quot;, &quot;Big-box retailer aisle with a 'clearance' sign being taped on gas blower models, photorealistic&quot;, &quot;Older homeowner smiling at his laptop as he checks out online, photorealistic&quot;]" data-selected="0" data-slot-key="media.s10" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s10</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Angry executive in a suit looking at a DTC competitor's website on his laptop in"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">What the dealer network really hopes you never stop to compare</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s10:attr:src" data-prompts="[&quot;Angry executive in a suit looking at a DTC competitor's website on his laptop in a corner office, photorealistic&quot;, &quot;Big-box retailer aisle with a 'clearance' sign being taped on gas blower models, photorealistic&quot;, &quot;Older homeowner smiling at his laptop as he checks out online, photorealistic&quot;]" data-slot-key="media.s10" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-80d4d9c1.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <div class="adv-article">
-<p>If you line up a Seese Pro next to a legacy pro-grade blower on a bench, <strong>the engineering gap is much smaller than the price gap</strong>.</p>
-<p>Same brushless principle. Similar airflow in real suburban use. Dramatically lower weight, and none of the dealer-network overhead baked into the ticket.</p>
-<p>The only thing the legacy brand really offers extra is the chain of hands between the factory and your driveway — and you pay for every one.</p>
+<p style="position: relative;">If you line up a Seese Pro next to a legacy pro-grade blower on a bench, <strong>the engineering gap is much smaller than the price gap</strong>.</p>
+<p style="position: relative;">Same brushless principle. Similar airflow in real suburban use. Dramatically lower weight, and none of the dealer-network overhead baked into the ticket.</p>
+<p style="position: relative;">The only thing the legacy brand really offers extra is the chain of hands between the factory and your driveway — and you pay for every one.</p>
 </div>
 <!-- ── S11 NOT AVAILABLE ELSEWHERE ── -->
-<h2 class="adv-section-heading">What actually justifies a fair price tag on a blower</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts='["Split image comparing a bulky old gas blower and a sleek lightweight cordless blower on a workbench, photorealistic", "Detailed view of the brushless motor and lithium battery inside a compact cordless blower, photorealistic", "Man easily lifting a lightweight blower with two fingers, showcasing its weight, photorealistic"]' data-selected="0" data-slot-key="media.s11" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s11</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Split image comparing a bulky old gas blower and a sleek lightweight cordless bl"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">What actually justifies a fair price tag on a blower</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s11:attr:src" data-prompts='["Split image comparing a bulky old gas blower and a sleek lightweight cordless blower on a workbench, photorealistic", "Detailed view of the brushless motor and lithium battery inside a compact cordless blower, photorealistic", "Man easily lifting a lightweight blower with two fingers, showcasing its weight, photorealistic"]' data-slot-key="media.s11" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-dcb001a6.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <div class="adv-article">
-<p>I'm not here to tell you every tool should be cheap. <strong>Some things genuinely deserve a premium.</strong> Here's what I'd actually pay for.</p>
-<p>These are the line items I watched land on the vendor invoice back when I had the authority to approve them.</p>
+<p style="position: relative;">I'm not here to tell you every tool should be cheap. <strong>Some things genuinely deserve a premium.</strong> Here's what I'd actually pay for.</p>
+<p style="position: relative;">These are the line items I watched land on the vendor invoice back when I had the authority to approve them.</p>
 </div>
 <ul class="adv-bullet-list">
-<li>A genuine brushless motor with real copper windings and a service life measured in years, not seasons.</li>
-<li>A lithium cell pack from a reputable chemistry supplier, not a no-name rebadge that swells after one winter.</li>
-<li>An impact-grade housing that survives being <strong>dropped off a tailgate</strong> and kicked across a garage.</li>
-<li>Real customer support sitting inside the brand, <u>not a third-party call center reading denial scripts</u>.</li>
+<li style="position: relative;">A genuine brushless motor with real copper windings and a service life measured in years, not seasons.</li>
+<li style="position: relative;">A lithium cell pack from a reputable chemistry supplier, not a no-name rebadge that swells after one winter.</li>
+<li style="position: relative;">An impact-grade housing that survives being <strong>dropped off a tailgate</strong> and kicked across a garage.</li>
+<li style="position: relative;">Real customer support sitting inside the brand, <u>not a third-party call center reading denial scripts</u>.</li>
 </ul>
 <div class="adv-article">
-<p>That's a fair tool. Everything on top of that — the sticker, the aisle placement, the dealer bonus — is just theater.</p>
+<p style="position: relative;">That's a fair tool. Everything on top of that — the sticker, the aisle placement, the dealer bonus — is just theater.</p>
 </div>
 <!-- ── S12 SPECIAL DISCOUNT + PRICING REVEAL ── -->
-<h2 class="adv-section-heading">Why the 30-day risk-free trial actually matters a lot here</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts="[&quot;Customer's hand unboxing a cordless blower with the packing slip visible, photorealistic&quot;, &quot;Delivery driver handing a blower package to a smiling homeowner on a porch, photorealistic&quot;, &quot;Close-up of a 30-day risk-free trial card tucked inside a product box, photorealistic&quot;]" data-selected="0" data-slot-key="media.s12" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s12</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Customer's hand unboxing a cordless blower with the packing slip visible, photor"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">Why the 30-day risk-free trial actually matters a lot here</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s12:attr:src" data-prompts="[&quot;Customer's hand unboxing a cordless blower with the packing slip visible, photorealistic&quot;, &quot;Delivery driver handing a blower package to a smiling homeowner on a porch, photorealistic&quot;, &quot;Close-up of a 30-day risk-free trial card tucked inside a product box, photorealistic&quot;]" data-slot-key="media.s12" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-1b39a0d3.png" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <div class="adv-pricing-reveal">
-<p class="adv-pricing-reveal__headline">The direct-from-brand route, without the four-hand markup chain or dealer tax</p>
-<p class="adv-pricing-reveal__note">You're not paying the distributor, the dealer, or the service-center kickback. You're paying for a lightweight cordless blower and a real trial window.</p>
+<p class="adv-pricing-reveal__headline" style="position: relative;">The direct-from-brand route, without the four-hand markup chain or dealer tax</p>
+<p class="adv-pricing-reveal__note" style="position: relative;">You're not paying the distributor, the dealer, or the service-center kickback. You're paying for a lightweight cordless blower and a real trial window.</p>
 </div>
 <div class="adv-article">
-<p>When a brand skips the dealer network, <strong>it has to stand behind the tool itself</strong>. There's nobody else to blame.</p>
-<p>A real 30-day window to use it on your leaves, your snow, your driveway — and send it back if it doesn't hold up — is the receipt of confidence.</p>
+<p style="position: relative;">When a brand skips the dealer network, <strong>it has to stand behind the tool itself</strong>. There's nobody else to blame.</p>
+<p style="position: relative;">A real 30-day window to use it on your leaves, your snow, your driveway — and send it back if it doesn't hold up — is the receipt of confidence.</p>
 </div>
 <!-- ── CTA BLOCK #1 ── -->
-<a class="adv-cta-block" href="https://terica-store.com/click"><span >CHECK AVAILABILITY</span></a>
+<a class="adv-cta-block" href="https://terica-store.com/click"><span>CHECK AVAILABILITY</span></a>
 <!-- ── S13 60 DAYS RISK FREE + GUARANTEE ── -->
-<h2 class="adv-section-heading">What actually happens after you click, in plain honest English</h2>
+<h2 class="adv-section-heading" style="position: relative;">What actually happens after you click, in plain honest English</h2>
 <div class="adv-guarantee">
-<h3 class="adv-guarantee__title">30-Day Risk-Free Home Trial</h3>
-
+<h3 class="adv-guarantee__title" style="position: relative;">30-Day Risk-Free Home Trial</h3>
 <div class="adv-guarantee__body">
-<p>You get a full thirty days to use the blower on your own driveway, your own leaves, and your own snow.</p>
-<p>If it doesn't feel dramatically lighter, quieter, and more capable than the gas or corded unit it replaces, send it back.</p>
-<p>No dealer middleman. No warranty reseller. <strong>The brand stands behind the tool</strong>, and the receipt proves it.</p>
+<p style="position: relative;">You get a full thirty days to use the blower on your own driveway, your own leaves, and your own snow.</p>
+<p style="position: relative;">If it doesn't feel dramatically lighter, quieter, and more capable than the gas or corded unit it replaces, send it back.</p>
+<p style="position: relative;">No dealer middleman. No warranty reseller. <strong>The brand stands behind the tool</strong>, and the receipt proves it.</p>
 </div>
 </div>
 <!-- ── S14 WHAT TO DO NEXT ── -->
-<h2 class="adv-section-heading">What to expect in the hours after your order is placed</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts='["Older American man checking his cordless blower order confirmation on his phone at the kitchen table, photorealistic", "Husband and wife reviewing their new lightweight blower on the porch, relaxed mood, photorealistic", "Retiree smiling while reading a packing slip next to his new blower, photorealistic"]' data-selected="0" data-slot-key="media.s14" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s14</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older American man checking his cordless blower order confirmation on his phone "</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">What to expect in the hours after your order is placed</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s14:attr:src" data-prompts='["Older American man checking his cordless blower order confirmation on his phone at the kitchen table, photorealistic", "Husband and wife reviewing their new lightweight blower on the porch, relaxed mood, photorealistic", "Retiree smiling while reading a packing slip next to his new blower, photorealistic"]' data-slot-key="media.s14" data-v2-replaced="1" src="/pages/media/seese-pro-v9/editor-upload-manual-0b1003b3.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <div class="adv-article">
-<p>First, you get an order confirmation directly from the brand — <strong>no dealer, no regional distributor</strong> in the email chain.</p>
-<p>The blower ships from the brand's warehouse with a packing slip, a charged battery, and the 30-day trial card inside.</p>
-<p>From that moment, the clock on your honest trial starts, and <u>you decide whether the tool earned its place</u> in your garage.</p>
+<p style="position: relative;">First, you get an order confirmation directly from the brand — <strong>no dealer, no regional distributor</strong> in the email chain.</p>
+<p style="position: relative;">The blower ships from the brand's warehouse with a packing slip, a charged battery, and the 30-day trial card inside.</p>
+<p style="position: relative;">From that moment, the clock on your honest trial starts, and <u>you decide whether the tool earned its place</u> in your garage.</p>
 </div>
 <!-- ── CTA BLOCK #2 ── -->
-<a class="adv-cta-block" href="https://terica-store.com/click"><span >CHECK AVAILABILITY</span></a>
+<a class="adv-cta-block" href="https://terica-store.com/click"><span>CHECK AVAILABILITY</span></a>
 <!-- ── S15 ZERO RISK + EMOTIONAL CALLOUT ── -->
-<h2 class="adv-section-heading">A final word from someone who saw every single invoice</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts='["Grandfather clearing leaves with a lightweight cordless blower while grandchildren rake nearby, autumn afternoon, photorealistic", "Retired couple tending their front yard together using a compact cordless blower, photorealistic", "Older man relaxing on his porch with a clean yard behind him, quiet satisfaction, photorealistic"]' data-selected="0" data-slot-key="media.s15a" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s15a</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Grandfather clearing leaves with a lightweight cordless blower while grandchildr"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">A final word from someone who saw every single invoice</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s15a:attr:src" data-prompts='["Grandfather clearing leaves with a lightweight cordless blower while grandchildren rake nearby, autumn afternoon, photorealistic", "Retired couple tending their front yard together using a compact cordless blower, photorealistic", "Older man relaxing on his porch with a clean yard behind him, quiet satisfaction, photorealistic"]' data-slot-key="media.s15a" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-19e208fe.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <div class="adv-article">
-<p>I spent two decades inside this industry. I know exactly how the blower aisle gets priced, and now you do too.</p>
-<p><strong>The four-hand markup chain</strong>, the pro-grade sticker, the fuel-mix racket, the warranty upsell — none of it is about your yard.</p>
-<p>The only reason any of it exists is to feed the distributors, the dealers, and the service-center bonuses stacked between the factory and your driveway.</p>
+<p style="position: relative;">I spent two decades inside this industry. I know exactly how the blower aisle gets priced, and now you do too.</p>
+<p style="position: relative;"><strong>The four-hand markup chain</strong>, the pro-grade sticker, the fuel-mix racket, the warranty upsell — none of it is about your yard.</p>
+<p style="position: relative;">The only reason any of it exists is to feed the distributors, the dealers, and the service-center bonuses stacked between the factory and your driveway.</p>
 </div>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="b49d195b-c1c3-4912-9895-dfcabdfab370" data-prompts='["Overhead shot of a tidy suburban driveway being cleared with a cordless blower, photorealistic", "Older man wiping his brow and smiling after finishing yard work with a lightweight blower, photorealistic", "Quiet suburban street in autumn with a homeowner finishing his driveway cleanup, golden hour, photorealistic"]' data-selected="0" data-slot-key="media.s15b" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s15b</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Overhead shot of a tidy suburban driveway being cleared with a cordless blower, "</div></div></div>
+<div class="adv-inline-image"><img alt="" data-copy="media.s15b:attr:src" data-prompts='["Overhead shot of a tidy suburban driveway being cleared with a cordless blower, photorealistic", "Older man wiping his brow and smiling after finishing yard work with a lightweight blower, photorealistic", "Quiet suburban street in autumn with a homeowner finishing his driveway cleanup, golden hour, photorealistic"]' data-slot-key="media.s15b" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-9210786b.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <!-- ── EMOTIONAL CALLOUT (3 bold lines) ── -->
 <div class="adv-callout">
-<p>No dealer network. No fuel-mix subscription. No pro-grade sticker theater on the aisle shelf.</p>
-<p>Just a 2.1 pound cordless blower, a real brushless motor, and a 30-day home trial.</p>
-<p>If it doesn't outwork your old gas unit in thirty days, send it back — no service-center runaround.</p>
+<p style="position: relative;">No dealer network. No fuel-mix subscription. No pro-grade sticker theater on the aisle shelf.</p>
+<p style="position: relative;">Just a 2.1 pound cordless blower, a real brushless motor, and a 30-day home trial.</p>
+<p style="position: relative;">If it doesn't outwork your old gas unit in thirty days, send it back — no service-center runaround.</p>
 </div>
 <div class="adv-article">
-<p>Going direct is not a gimmick. It is simply <u>what buying a tool used to look like</u> before the middlemen learned to charge rent.</p>
+<p style="position: relative;">Going direct is not a gimmick. It is simply <u>what buying a tool used to look like</u> before the middlemen learned to charge rent.</p>
 </div>
 <!-- ── CLOSING PREAMBLE ── -->
 <div class="adv-closing-preamble">
-<p>I'm not asking you to trust a salesman. I'm asking you to trust the invoice math I spent my career signing off on.</p>
-<p>Try the tool at home, on your own schedule, and let your driveway decide whether the legacy markup was ever earned.</p>
+<p style="position: relative;">I'm not asking you to trust a salesman. I'm asking you to trust the invoice math I spent my career signing off on.</p>
+<p style="position: relative;">Try the tool at home, on your own schedule, and let your driveway decide whether the legacy markup was ever earned.</p>
 </div>
 <!-- ── CTA BLOCK #3 (final) ── -->
-<a class="adv-cta-block" href="https://terica-store.com/click"><span >CHECK AVAILABILITY</span></a>
+<a class="adv-cta-block" href="https://terica-store.com/click"><span>CHECK AVAILABILITY</span></a>
 <footer id="adv-footer" style="background:#f5f5f5;border-top:1px solid #e5e5e5;padding:30px 20px;text-align:center;margin-top:40px;">
 <img alt="Logo" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="display:block;height:36px;max-width:180px;object-fit:contain;margin:0 auto 12px;"/>
 <div style="font-size:11px;color:#999;margin:0 auto 10px;font-family:system-ui,-apple-system,sans-serif;">
@@ -642,7 +1396,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>
