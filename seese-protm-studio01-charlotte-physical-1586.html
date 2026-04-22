@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Charlotte Physical Therapist Explains Why Fall Yard Work Is Hurting Shoulders After 55 — And The One Tool Fix</title>
@@ -228,6 +225,16 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -236,10 +243,254 @@ t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "wb35vpdfk1");
 </script>
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
 
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
 
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
 
-<script src="https://terica-store.com/tracker.js" async></script>
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
@@ -253,8 +504,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <a href="https://terica-store.com/click"><span>Home</span></a><span class="breadcrumb-sep">›</span><a href="https://terica-store.com/click"><span>Health</span></a><span class="breadcrumb-sep">›</span><a href="https://terica-store.com/click"><span>Healthy Aging</span></a>
 </nav>
 <!-- HEADLINE AREA -->
-<h1>The Leaf Blower Is Quietly Injuring More Homeowners Over 55 Than Any Other Tool</h1>
-<p class="article-subtitle">A Charlotte physical therapist traces a strange autumn pattern to one tool.</p>
+<h1 style="position: relative;">The Leaf Blower Is Quietly Injuring More Homeowners Over 55 Than Any Other Tool</h1>
+<p class="article-subtitle" style="position: relative;">A Charlotte physical therapist traces a strange autumn pattern to one tool.</p>
 <div class="article-byline">
 <img alt="Author" class="article-byline-photo" src="/pages/avatars/author/neutral_male.jpg"/>
 <div class="article-byline-info">
@@ -265,149 +516,149 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <!-- MEDIA 1: hero video (or image) after headline -->
 <div class="v2-media-slot" data-job-id="81cc214f-b7f3-4adb-9ae4-273dba4d9215" data-prompts='["Female physical therapist in her late forties wearing a clinical polo, reviewing a patient chart at a sports-medicine clinic in Charlotte, warm natural window light, photorealistic", "Wide shot of a bright physical-therapy clinic treatment room with rehabilitation equipment in the background, female clinician at a standing desk, photorealistic", "Thoughtful female physical therapist pausing mid-note, soft clinical lighting, conveying pattern recognition and curiosity, photorealistic"]' data-selected="0" data-slot-key="media_1.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Female physical therapist in her late forties wearing a clinical polo, reviewing"</div></div>
 <!-- STORY INTRO -->
-<p>Dr. Marissa Caldwell has been practicing physical therapy in Charlotte, North Carolina for nineteen years, mostly with active patients over fifty.</p>
-<p>Every October, she noticed the same thing: her schedule filled with homeowners complaining about <strong>stiff shoulders, weak grip, and nagging lower-back pain</strong>.</p>
+<p style="position: relative;">Dr. Marissa Caldwell has been practicing physical therapy in Charlotte, North Carolina for nineteen years, mostly with active patients over fifty.</p>
+<p style="position: relative;">Every October, she noticed the same thing: her schedule filled with homeowners complaining about <strong>stiff shoulders, weak grip, and nagging lower-back pain</strong>.</p>
 <!-- BULLET LIST 1: list of conditions -->
 <ul class="bullet-list">
-<li>Patients arrive favoring one arm after weekend cleanup, struggling to reach overhead cabinets or lift a coffee pot comfortably.</li>
-<li>Others describe a dull ache between the shoulder blades that lingers for days after clearing the driveway.</li>
-<li>A growing number report <strong>tingling in the dominant hand</strong>, usually after long sessions holding a heavy outdoor tool.</li>
-<li>And several mention a sharp twinge in the lower back that appears when they twist while standing still.</li>
+<li style="position: relative;">Patients arrive favoring one arm after weekend cleanup, struggling to reach overhead cabinets or lift a coffee pot comfortably.</li>
+<li style="position: relative;">Others describe a dull ache between the shoulder blades that lingers for days after clearing the driveway.</li>
+<li style="position: relative;">A growing number report <strong>tingling in the dominant hand</strong>, usually after long sessions holding a heavy outdoor tool.</li>
+<li style="position: relative;">And several mention a sharp twinge in the lower back that appears when they twist while standing still.</li>
 </ul>
-<p>The pattern was so consistent she pulled her records and counted: a <strong>41% spike</strong> in patients over fifty-five every fall.</p>
+<p style="position: relative;">The pattern was so consistent she pulled her records and counted: a <strong>41% spike</strong> in patients over fifty-five every fall.</p>
 <b class="rhetorical">In the worst cases, patients needed months of therapy for impingement syndrome, paraspinal strain, or partial rotator cuff tears.</b>
-<p>She started asking every new patient the same simple question during intake: <strong>what is the heaviest thing you lift regularly</strong>?</p>
+<p style="position: relative;">She started asking every new patient the same simple question during intake: <strong>what is the heaviest thing you lift regularly</strong>?</p>
 <!-- MEDIA 2: story / breakthrough image -->
 <div class="v2-media-slot" data-job-id="81cc214f-b7f3-4adb-9ae4-273dba4d9215" data-prompts="[&quot;Close-up of an older man's hands gripping the handle of a heavy gas leaf blower, visible strain in the forearm, autumn leaves on the ground, photorealistic&quot;, &quot;Side profile of a man in his sixties carrying a gas-powered backpack blower through a suburban American yard, shoulders slightly hunched, photorealistic&quot;, &quot;Tight shot on an aging shoulder and rotator cuff area under a flannel shirt while lifting a yard tool, conveying strain and fatigue, photorealistic&quot;]" data-selected="0" data-slot-key="media_2.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Close-up of an older man's hands gripping the handle of a heavy gas leaf blower,"</div></div>
-<p>The answers surprised her. Not groceries. Not grandchildren. Not moving furniture. The same answer kept coming back, week after week.</p>
+<p style="position: relative;">The answers surprised her. Not groceries. Not grandchildren. Not moving furniture. The same answer kept coming back, week after week.</p>
 <!-- ROOT CAUSE -->
 <b class="rhetorical">The Hidden Cause</b>
-<p>The answer, she eventually realized, was the <strong>leaf blower</strong>. Most patients owned the same kind: a heavy gas unit from decades ago.</p>
-<p>A typical backpack or handheld gas blower weighs between eight and twelve pounds, held away from the body for extended stretches.</p>
-<p>The math surprises most homeowners. <strong>Ten pounds held at arm's length</strong> places roughly fifty pounds of torque on the shoulder joint.</p>
+<p style="position: relative;">The answer, she eventually realized, was the <strong>leaf blower</strong>. Most patients owned the same kind: a heavy gas unit from decades ago.</p>
+<p style="position: relative;">A typical backpack or handheld gas blower weighs between eight and twelve pounds, held away from the body for extended stretches.</p>
+<p style="position: relative;">The math surprises most homeowners. <strong>Ten pounds held at arm's length</strong> places roughly fifty pounds of torque on the shoulder joint.</p>
 <!-- MEDIA 3: mechanism / diagram -->
 <div class="v2-media-slot" data-job-id="81cc214f-b7f3-4adb-9ae4-273dba4d9215" data-prompts='["Anatomical diagram-style illustration of a human shoulder showing the rotator cuff under load, clinical reference photo aesthetic, photorealistic", "Physical therapist pointing to a shoulder model in her clinic, explaining joint mechanics, warm office light, photorealistic", "Close-up of an older patient rubbing his sore shoulder on a treatment table, subtle grimace, soft clinical lighting, photorealistic"]' data-selected="0" data-slot-key="media_3.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Anatomical diagram-style illustration of a human shoulder showing the rotator cu"</div></div>
-<p class="media-caption">/v2/media-slot/81cc214f-b7f3-4adb-9ae4-273dba4d9215/media_3__caption</p>
-<p>Multiply that by forty-five minutes of continuous use, twice a week, through October and November, and the tissue simply cannot keep up.</p>
+<p class="media-caption" style="position: relative;">/v2/media-slot/81cc214f-b7f3-4adb-9ae4-273dba4d9215/media_3__caption</p>
+<p style="position: relative;">Multiply that by forty-five minutes of continuous use, twice a week, through October and November, and the tissue simply cannot keep up.</p>
 <b class="rhetorical">The tissue most at risk is already the most vulnerable past age fifty-five, according to orthopedic literature.</b>
-<p>The rotator cuff thins naturally with age. The paraspinals, which stabilize the spine, lose strength faster after the mid-fifties.</p>
-<p>Add a sustained load, awkward angle, and vibration, and you have what Dr. Caldwell calls a predictable October injury.</p>
+<p style="position: relative;">The rotator cuff thins naturally with age. The paraspinals, which stabilize the spine, lose strength faster after the mid-fifties.</p>
+<p style="position: relative;">Add a sustained load, awkward angle, and vibration, and you have what Dr. Caldwell calls a predictable October injury.</p>
 <!-- MEDIA 4: bad-news visual / worsening -->
 <div class="v2-media-slot" data-job-id="81cc214f-b7f3-4adb-9ae4-273dba4d9215" data-prompts='["Older woman in her mid-sixties struggling to start a heavy gas leaf blower in her driveway, frustrated expression, suburban North Carolina setting, photorealistic", "Retired couple looking at their garage full of old yard equipment, overwhelmed expression, morning light, photorealistic", "Senior homeowner sitting on porch steps rubbing his lower back after yard work, autumn leaves around him, photorealistic"]' data-selected="0" data-slot-key="media_4.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older woman in her mid-sixties struggling to start a heavy gas leaf blower in he"</div></div>
 <b class="rhetorical">Once Dr. Caldwell identified the pattern, she began experimenting with lighter alternatives she could recommend to patients over sixty.</b>
-<p>Her first instinct was to suggest electric corded models, which weigh less than gas. But cords tangle around feet and shrubs.</p>
-<p>Several older patients had tripped, and two arrived at her clinic with bruised hips after catching a cord on stairs.</p>
+<p style="position: relative;">Her first instinct was to suggest electric corded models, which weigh less than gas. But cords tangle around feet and shrubs.</p>
+<p style="position: relative;">Several older patients had tripped, and two arrived at her clinic with bruised hips after catching a cord on stairs.</p>
 <b class="rhetorical">The challenge was finding something genuinely lightweight, cordless, powerful enough for real debris, and simple for less dexterous hands.</b>
-<p>Most battery blowers she tested still weighed six to eight pounds, barely better than the gas units her patients already owned.</p>
-<p>Others were light but gutless, moving only surface dust and failing the moment wet leaves or grass clippings appeared on the driveway.</p>
+<p style="position: relative;">Most battery blowers she tested still weighed six to eight pounds, barely better than the gas units her patients already owned.</p>
+<p style="position: relative;">Others were light but gutless, moving only surface dust and failing the moment wet leaves or grass clippings appeared on the driveway.</p>
 <b class="rhetorical">Then a colleague in sports medicine mentioned a newer cordless model her husband had been using that weighed almost nothing.</b>
 <!-- MEDIA 5: solution reveal image/video -->
 <div class="v2-media-slot" data-job-id="81cc214f-b7f3-4adb-9ae4-273dba4d9215" data-prompts='["Close-up of the Seese Pro ultra-light cordless blower held effortlessly in one hand by an older man, suburban driveway background, photorealistic", "Overhead product shot of the ultra-light cordless blower resting on a kitchen scale showing 2.1 lbs, neutral background, photorealistic", "Smiling woman in her sixties holding the lightweight blower with visible relief, autumn leaves around her feet, warm afternoon light, photorealistic"]' data-selected="0" data-slot-key="media_5.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Close-up of the Seese Pro ultra-light cordless blower held effortlessly in one h"</div></div>
-<h2>A New Class Of Ultra-Light Cordless Blower Is Changing Everything</h2>
-<p>It was called <strong>Seese Pro™</strong>, and the first thing she noticed was the weight — barely more than two pounds total.</p>
-<p>At 2.1 pounds, the <strong>torque load on the shoulder</strong> drops from fifty pounds to roughly ten — a fivefold reduction.</p>
-<p>That difference is enormous for <strong>aging rotator cuffs and weakened paraspinals</strong>, turning a high-risk chore into a manageable task.</p>
-<p>She brought one to the clinic and passed it around during staff lunch. Every therapist reached the same conclusion within minutes.</p>
-<p>Within a month, it had quietly become the <u>single tool she recommended most</u> to patients over sixty across greater Charlotte.</p>
+<h2 style="position: relative;">A New Class Of Ultra-Light Cordless Blower Is Changing Everything</h2>
+<p style="position: relative;">It was called <strong>Seese Pro™</strong>, and the first thing she noticed was the weight — barely more than two pounds total.</p>
+<p style="position: relative;">At 2.1 pounds, the <strong>torque load on the shoulder</strong> drops from fifty pounds to roughly ten — a fivefold reduction.</p>
+<p style="position: relative;">That difference is enormous for <strong>aging rotator cuffs and weakened paraspinals</strong>, turning a high-risk chore into a manageable task.</p>
+<p style="position: relative;">She brought one to the clinic and passed it around during staff lunch. Every therapist reached the same conclusion within minutes.</p>
+<p style="position: relative;">Within a month, it had quietly become the <u>single tool she recommended most</u> to patients over sixty across greater Charlotte.</p>
 <!-- PRODUCT REVEAL -->
-<h2 style="margin-top:40px">Meet the cordless blower physical therapists across the Carolinas are now quietly recommending to older homeowners for routine cleanup.</h2>
-<h2 style="color:var(--ll-color-primary);margin-top:0;font-size:34px">Seese Pro™ Ultra-Light, Ultra-Powerful Blower</h2>
+<h2 style="margin-top: 40px; position: relative;">Meet the cordless blower physical therapists across the Carolinas are now quietly recommending to older homeowners for routine cleanup.</h2>
+<h2 style="color: var(--ll-color-primary); margin-top: 0px; font-size: 34px; position: relative;">Seese Pro™ Ultra-Light, Ultra-Powerful Blower</h2>
 <!-- MEDIA 6: product hero image -->
 <div class="v2-media-slot" data-job-id="81cc214f-b7f3-4adb-9ae4-273dba4d9215" data-prompts='["The ultra-light cordless blower being used to clear a covered porch of pine needles by a senior woman, easy one-handed grip, photorealistic", "Side-by-side comparison of a heavy gas blower next to the tiny Seese Pro unit on a workbench, scale clearly visible, photorealistic", "Older man smiling as he effortlessly clears his driveway with the lightweight blower, autumn leaves swirling, golden hour light, photorealistic"]' data-selected="0" data-slot-key="media_6.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"The ultra-light cordless blower being used to clear a covered porch of pine need"</div></div>
-<p>The entire unit weighs <strong>2.1 pounds</strong>, roughly the weight of a small carton of milk, balanced naturally at the hand.</p>
-<p>A brushless motor delivers steady airflow strong enough to clear wet leaves, pine needles, dry snow, and grass clippings.</p>
-<p>The battery is swappable, charges in under an hour, and runs long enough for a full driveway and backyard cycle.</p>
+<p style="position: relative;">The entire unit weighs <strong>2.1 pounds</strong>, roughly the weight of a small carton of milk, balanced naturally at the hand.</p>
+<p style="position: relative;">A brushless motor delivers steady airflow strong enough to clear wet leaves, pine needles, dry snow, and grass clippings.</p>
+<p style="position: relative;">The battery is swappable, charges in under an hour, and runs long enough for a full driveway and backyard cycle.</p>
 <!-- MEDIA 7: product in use video/image -->
 <div class="v2-media-slot" data-job-id="81cc214f-b7f3-4adb-9ae4-273dba4d9215" data-prompts='["Close-up of the thumb control and ergonomic grip of the ultra-light cordless blower held by an older hand, shallow depth of field, photorealistic", "Swappable battery being clicked into the base of the lightweight blower on a tidy garage workbench, detail shot, photorealistic", "Relaxed older couple on their front porch after finishing yard work quickly with the lightweight tool, no visible strain, photorealistic"]' data-selected="0" data-slot-key="media_7.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Close-up of the thumb control and ergonomic grip of the ultra-light cordless blo"</div></div>
-<p>There are no cords to trip over, no gas to mix, no pull-start, and no shoulder strap pulling on aging joints.</p>
-<p>Controls are placed where the thumb naturally rests, which matters for patients managing <strong>arthritis or early grip weakness</strong>.</p>
+<p style="position: relative;">There are no cords to trip over, no gas to mix, no pull-start, and no shoulder strap pulling on aging joints.</p>
+<p style="position: relative;">Controls are placed where the thumb naturally rests, which matters for patients managing <strong>arthritis or early grip weakness</strong>.</p>
 <!-- ★ CTA #1 — first CTA in the page, AFTER 7 medias + gradual product reveal -->
-<a class="cta-btn" href="https://terica-store.com/click"><span>Check Availability</span><small>Direct from the manufacturer</small></a>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;"><span>Check Availability</span><small>Direct from the manufacturer</small></a>
 <!-- TRUSTPILOT REVIEWS (2 featured) -->
 <div class="trustpilot-intro">
-<h3>Verified owners share how the lighter tool changed their weekend routine and their recovery time afterward.</h3>
-<p>Feedback collected from homeowners across the United States who switched from traditional gas or heavy battery models.</p>
+<h3 style="position: relative;">Verified owners share how the lighter tool changed their weekend routine and their recovery time afterward.</h3>
+<p style="position: relative;">Feedback collected from homeowners across the United States who switched from traditional gas or heavy battery models.</p>
 </div>
 <div class="featured-review">
 <span class="stars">★★★★★</span>
 <div class="featured-review-title">My shoulder finally stopped complaining</div>
 <div class="featured-review-meta">Reviewed by <strong>Richard H.</strong> on <span>March 14, 2026</span> — <strong>Verified Buyer</strong></div>
-<p class="featured-review-body">I am sixty-seven, still take care of my own yard in Asheville, and my right shoulder had been giving me grief every fall for six years. Switched from an old gas blower to this one after my physical therapist recommended lighter tools. The weight difference is night and day. I cleared the whole front yard last Saturday and woke up Sunday with zero stiffness, which I honestly cannot remember happening before.</p>
+<p class="featured-review-body" style="position: relative;">I am sixty-seven, still take care of my own yard in Asheville, and my right shoulder had been giving me grief every fall for six years. Switched from an old gas blower to this one after my physical therapist recommended lighter tools. The weight difference is night and day. I cleared the whole front yard last Saturday and woke up Sunday with zero stiffness, which I honestly cannot remember happening before.</p>
 <div class="featured-review-helpful">82 people found helpful</div>
 </div>
 <div class="featured-review">
 <span class="stars">★★★★★</span>
 <div class="featured-review-title">Lighter than my coffee mug</div>
 <div class="featured-review-meta">Reviewed by <strong>Patricia M.</strong> on <span>February 28, 2026</span> — <strong>Verified Buyer</strong></div>
-<p class="featured-review-body">My husband passed two years ago and I took over all the yard work at sixty-two. The old gas unit was simply too heavy for me, and I was paying the neighbor's son to do it. This tool changed things. It runs long enough for my small yard, starts with a button, and I can actually hold it with one hand while I walk.</p>
+<p class="featured-review-body" style="position: relative;">My husband passed two years ago and I took over all the yard work at sixty-two. The old gas unit was simply too heavy for me, and I was paying the neighbor's son to do it. This tool changed things. It runs long enough for my small yard, starts with a button, and I can actually hold it with one hand while I walk.</p>
 <div class="featured-review-helpful">64 people found helpful</div>
 </div>
 <!-- BENEFITS — Just imagine -->
-<h2>Why Clinicians Are Quietly Recommending This Blower To Older Homeowners</h2>
-<p><strong>The reasoning is less about airflow specs and more about biomechanics and the aging body's tolerance for sustained load.</strong></p>
+<h2 style="position: relative;">Why Clinicians Are Quietly Recommending This Blower To Older Homeowners</h2>
+<p style="position: relative;"><strong>The reasoning is less about airflow specs and more about biomechanics and the aging body's tolerance for sustained load.</strong></p>
 <!-- BULLET LIST 2: emotional scenarios -->
 <ul class="bullet-list">
-<li>A sixty-four-year-old patient clearing his driveway without triggering the dull rotator cuff ache he used to accept as normal.</li>
-<li>A grandmother who can once again manage her own patio without waiting for her son to visit on weekends.</li>
-<li>A retired teacher returning to gardening after a year off because gas-blower vibration had aggravated her carpal tunnel.</li>
+<li style="position: relative;">A sixty-four-year-old patient clearing his driveway without triggering the dull rotator cuff ache he used to accept as normal.</li>
+<li style="position: relative;">A grandmother who can once again manage her own patio without waiting for her son to visit on weekends.</li>
+<li style="position: relative;">A retired teacher returning to gardening after a year off because gas-blower vibration had aggravated her carpal tunnel.</li>
 </ul>
-<p>None of these outcomes involve heroic effort or new exercises. The tool simply removes the load that was causing the problem.</p>
-<p>That is why Dr. Caldwell calls it a <strong>mechanical intervention</strong> rather than a lifestyle change — far easier to implement.</p>
-<p>Her patients follow through because nothing about their routine has to change. Only the weight of the tool in hand.</p>
+<p style="position: relative;">None of these outcomes involve heroic effort or new exercises. The tool simply removes the load that was causing the problem.</p>
+<p style="position: relative;">That is why Dr. Caldwell calls it a <strong>mechanical intervention</strong> rather than a lifestyle change — far easier to implement.</p>
+<p style="position: relative;">Her patients follow through because nothing about their routine has to change. Only the weight of the tool in hand.</p>
 <!-- SCARCITY / AVAILABILITY BUILD-UP (no prices) -->
-<p>Because clinicians and word of mouth have driven most of the interest, availability has been uneven throughout the spring.</p>
-<h2>The blower is not sold through big box retailers, lawn centers, or the usual hardware chains.</h2>
-<p>The manufacturer ships directly to customers from a single warehouse, which keeps overhead down but also limits weekly inventory.</p>
-<p>You will not find it at Home Depot, Lowe's, or Walmart, and it is not currently listed on major third-party marketplaces.</p>
+<p style="position: relative;">Because clinicians and word of mouth have driven most of the interest, availability has been uneven throughout the spring.</p>
+<h2 style="position: relative;">The blower is not sold through big box retailers, lawn centers, or the usual hardware chains.</h2>
+<p style="position: relative;">The manufacturer ships directly to customers from a single warehouse, which keeps overhead down but also limits weekly inventory.</p>
+<p style="position: relative;">You will not find it at Home Depot, Lowe's, or Walmart, and it is not currently listed on major third-party marketplaces.</p>
 <b class="rhetorical">Demand has climbed sharply as clinicians in orthopedics and physical therapy have begun recommending it to patients over sixty.</b>
-<p>The fall months are predictably the busiest, coinciding with leaf season across the Carolinas, Mid-Atlantic, and Northeast.</p>
-<p>Spring has brought a second wave, driven by homeowners preparing for pollen, pine straw, and the first grass clippings.</p>
-<p>Customer service has confirmed that several regional shipments have sold through within days of arriving at the warehouse.</p>
-<p>The manufacturer has added production capacity but is still catching up with orders from the most recent PT referral wave.</p>
+<p style="position: relative;">The fall months are predictably the busiest, coinciding with leaf season across the Carolinas, Mid-Atlantic, and Northeast.</p>
+<p style="position: relative;">Spring has brought a second wave, driven by homeowners preparing for pollen, pine straw, and the first grass clippings.</p>
+<p style="position: relative;">Customer service has confirmed that several regional shipments have sold through within days of arriving at the warehouse.</p>
+<p style="position: relative;">The manufacturer has added production capacity but is still catching up with orders from the most recent PT referral wave.</p>
 <b class="rhetorical">Inventory tends to sell out fastest in the weeks leading up to predictable seasonal cleanup cycles.</b>
-<p>If you are reading this ahead of fall yard work, ordering now avoids the backorder window that typically opens in September.</p>
-<p>Most orders from the direct warehouse ship within two business days, with standard tracked delivery across the continental United States.</p>
+<p style="position: relative;">If you are reading this ahead of fall yard work, ordering now avoids the backorder window that typically opens in September.</p>
+<p style="position: relative;">Most orders from the direct warehouse ship within two business days, with standard tracked delivery across the continental United States.</p>
 <!-- EXCLUSIVITY -->
-<h2>You will not find this model on Amazon, eBay, or through any secondary reseller at the moment.</h2>
-<p>The decision to sell direct keeps the price honest and allows the manufacturer to handle warranty claims without a middleman.</p>
-<p>It also means any unit you see on a third-party marketplace is either counterfeit or a resale with no warranty coverage.</p>
-<p>Customer service has fielded several calls from owners of counterfeit units that broke within weeks of first use.</p>
-<p>Ordering directly from the official website is the only way to receive a genuine unit with the full manufacturer warranty.</p>
+<h2 style="position: relative;">You will not find this model on Amazon, eBay, or through any secondary reseller at the moment.</h2>
+<p style="position: relative;">The decision to sell direct keeps the price honest and allows the manufacturer to handle warranty claims without a middleman.</p>
+<p style="position: relative;">It also means any unit you see on a third-party marketplace is either counterfeit or a resale with no warranty coverage.</p>
+<p style="position: relative;">Customer service has fielded several calls from owners of counterfeit units that broke within weeks of first use.</p>
+<p style="position: relative;">Ordering directly from the official website is the only way to receive a genuine unit with the full manufacturer warranty.</p>
 <!-- ★ CTA #2 -->
-<a class="cta-btn" href="https://terica-store.com/click"><span>Order Direct</span><small>From the official manufacturer website</small></a>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;"><span>Order Direct</span><small>From the official manufacturer website</small></a>
 <!-- GUARANTEE -->
 <div class="guarantee-box">
 <span class="days">30 Days</span>
-<h3>A simple thirty-day return window if the blower does not meet your expectations.</h3>
-<p>The manufacturer offers a thirty-day return period from the date your package arrives at your doorstep.</p>
-<p>If the tool does not perform as described, customer service arranges a return shipment and refund without hassle.</p>
-<p>There is no restocking fee and no requirement to explain yourself beyond a brief note in the return form.</p>
+<h3 style="position: relative;">A simple thirty-day return window if the blower does not meet your expectations.</h3>
+<p style="position: relative;">The manufacturer offers a thirty-day return period from the date your package arrives at your doorstep.</p>
+<p style="position: relative;">If the tool does not perform as described, customer service arranges a return shipment and refund without hassle.</p>
+<p style="position: relative;">There is no restocking fee and no requirement to explain yourself beyond a brief note in the return form.</p>
 </div>
 <!-- HERE'S WHAT TO DO NEXT -->
-<h2>What To Do If Any Of This Pattern Sounds Familiar To You</h2>
-<p>If you recognize yourself in the patterns Dr. Caldwell described, the first step is simpler than most people expect.</p>
-<p>Replace the heaviest outdoor tool you use regularly with something that matches your current strength, not what you had a decade ago.</p>
-<p>For most homeowners over fifty-five, that single swap resolves the majority of fall shoulder and lower-back complaints she sees.</p>
-<p>It is the kind of quiet adjustment that preserves independence without requiring you to stop doing the things you enjoy.</p>
+<h2 style="position: relative;">What To Do If Any Of This Pattern Sounds Familiar To You</h2>
+<p style="position: relative;">If you recognize yourself in the patterns Dr. Caldwell described, the first step is simpler than most people expect.</p>
+<p style="position: relative;">Replace the heaviest outdoor tool you use regularly with something that matches your current strength, not what you had a decade ago.</p>
+<p style="position: relative;">For most homeowners over fifty-five, that single swap resolves the majority of fall shoulder and lower-back complaints she sees.</p>
+<p style="position: relative;">It is the kind of quiet adjustment that preserves independence without requiring you to stop doing the things you enjoy.</p>
 <!-- ★ CTA #4 -->
-<a class="cta-btn" href="https://terica-store.com/click"><span>Check Availability</span><small>Shipped direct to your door</small></a>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;"><span>Check Availability</span><small>Shipped direct to your door</small></a>
 <!-- REMEMBER / ZERO RISK -->
-<h2>A Measured Decision Protected By A Full Thirty-Day Return Window</h2>
-<p>Because the return window runs a full thirty days, there is time to test the blower across different cleanup scenarios.</p>
-<p>You can use it through a weekend of leaves, a round of grass clippings, and a dusting of early snow if applicable.</p>
-<p>If the weight, airflow, or battery life does not feel right in your hands, you return it without penalty.</p>
+<h2 style="position: relative;">A Measured Decision Protected By A Full Thirty-Day Return Window</h2>
+<p style="position: relative;">Because the return window runs a full thirty days, there is time to test the blower across different cleanup scenarios.</p>
+<p style="position: relative;">You can use it through a weekend of leaves, a round of grass clippings, and a dusting of early snow if applicable.</p>
+<p style="position: relative;">If the weight, airflow, or battery life does not feel right in your hands, you return it without penalty.</p>
 <!-- FINAL UPDATE BANNER -->
 <div style="background:var(--ll-color-background-alt);border-radius:10px;margin:24px 0;padding:16px 20px;font-size:14px;color:var(--ll-color-text-secondary)">
 <strong style="color:var(--ll-color-text-primary)">Latest Stock Update</strong>
 <span>The warehouse confirmed additional inventory arrived this week, though the next shipment is not expected until mid-May.</span>
 </div>
-<p style="text-align:center;font-size:14px;color:var(--ll-color-warning);font-weight:700">Orders are processed in the order received, so placing yours today avoids the wait that tends to develop by month's end.</p>
+<p style="text-align: center; font-size: 14px; color: var(--ll-color-warning); font-weight: 700; position: relative;">Orders are processed in the order received, so placing yours today avoids the wait that tends to develop by month's end.</p>
 <!-- ★ CTA #5 final -->
-<a class="cta-btn" href="https://terica-store.com/click"><span>Order Yours</span><small>Ships from the direct warehouse</small></a>
-<p style="text-align:center;font-size:13px;color:var(--ll-color-text-secondary);margin-top:4px">Thirty-day return window included</p>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;"><span>Order Yours</span><small>Ships from the direct warehouse</small></a>
+<p style="text-align: center; font-size: 13px; color: var(--ll-color-text-secondary); margin-top: 4px; position: relative;">Thirty-day return window included</p>
 <!-- AMAZON REVIEWS -->
 <div class="amazon-reviews">
-<h3>What Verified Owners Are Saying About The Ultra-Light Cordless Blower</h3>
+<h3 style="position: relative;">What Verified Owners Are Saying About The Ultra-Light Cordless Blower</h3>
 <div class="amazon-avg">
 <div class="amazon-avg-number">4.8</div>
 <span class="stars">★★★★★</span>
@@ -466,7 +717,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="sticky-product">
 <span class="sticky-product-badge">Best Seller</span>
 <div class="sticky-product-name">Seese Pro™ Ultra-Light, Ultra-Powerful Blower</div>
-<div class="v2-media-slot" data-job-id="81cc214f-b7f3-4adb-9ae4-273dba4d9215" data-prompts='["Clean product photo of the Seese Pro ultra-light cordless blower on a neutral white background, subtle shadow, studio lighting, photorealistic", "Three-quarter angle product shot of the ultra-light blower with battery attached, light gray backdrop, soft lighting, photorealistic", "Senior hand comfortably holding the lightweight cordless blower, conveying ease and relief, soft natural light, photorealistic"]' data-selected="0" data-slot-key="sidebar.image" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — sidebar.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Clean product photo of the Seese Pro ultra-light cordless blower on a neutral wh"</div></div>
+<img alt="" data-copy="sidebar.image:attr:src" data-prompts='["Clean product photo of the Seese Pro ultra-light cordless blower on a neutral white background, subtle shadow, studio lighting, photorealistic", "Three-quarter angle product shot of the ultra-light blower with battery attached, light gray backdrop, soft lighting, photorealistic", "Senior hand comfortably holding the lightweight cordless blower, conveying ease and relief, soft natural light, photorealistic"]' data-slot-key="sidebar.image" data-v2-replaced="1" src="/pages/media/seese-pro-v9/editor-upload-manual-18a78c08.png" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 1 / 1; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 <div class="sticky-product-stars">
 <span class="stars">★★★★★</span>
 <span>Rated 4.8 out of 5</span>
@@ -493,7 +744,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>
