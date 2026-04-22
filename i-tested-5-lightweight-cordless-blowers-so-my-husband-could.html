@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><head>
 <title>I Tested 5 Lightweight Cordless Blowers — The Cheapest Won</title>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -11,7 +8,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Merriweather',Georgia,serif;color:#2c2c2c;background:#faf9f6;font-size:18px;line-height:1.8;padding-bottom:60px}
-.wrapper{max-width:920px;margin:0 auto;padding:32px 24px}
+.wrapper{max-width:720px;margin:0 auto;padding:32px 24px}
 .top-bar{text-align:center;padding:8px 0;font-size:11px;color:#999;letter-spacing:1px;text-transform:uppercase;font-family:'Inter',sans-serif;border-bottom:1px solid #e8e4df}
 .byline{text-align:center;font-size:13px;color:#999;margin:12px 0 28px;font-family:'Inter',sans-serif}
 h1{font-size:34px;line-height:1.25;margin-bottom:8px;color:#1a1a1a;text-align:center;font-weight:900}
@@ -35,10 +32,14 @@ blockquote,.pullquote{border-left:4px solid #f26722;margin:24px 0;padding:16px 2
 .sticky-footer a{color:#fff;text-decoration:none;font-weight:700;font-size:15px;font-family:'Inter',sans-serif}
 ul,ol{padding-left:24px;margin-bottom:12px}li{margin-bottom:6px}
 @media(max-width:640px){
-.wrapper{padding:20px 10px}h1{font-size:26px}h2{font-size:19px}
+.wrapper{padding:20px 16px}h1{font-size:26px}h2{font-size:19px}
 .badges{flex-direction:column;gap:6px}
-.cta-section{padding:20px 4px;margin-left:-6px;margin-right:-6px}
 }
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 
 body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
@@ -91,17 +92,261 @@ blockquote { border-left-color: #f26722 !important; }
   border-color: rgba(242, 103, 34, 0.25) !important;
 }
 </style>
-<script type="text/javascript">
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script type="text/javascript">
 (function(c,l,a,r,i,t,y){
 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "wb35vpdfk1");
 </script>
-
-
-
-<script src="https://terica-store.com/tracker.js" async></script>
+<script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:6px 20px;background:#fff;color:#bbb;font-size:10px;font-family:system-ui,sans-serif;letter-spacing:0.05em;font-weight:400;border-bottom:1px solid #f0f0f0;">THIS IS AN ADVERTORIAL</div>
@@ -109,45 +354,46 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <img alt="Seese Pro" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="height:52px;max-width:260px;object-fit:contain;display:inline-block;"/>
 </div>
 <div class="wrapper">
-<h1>I Tested 5 'Lightweight' Cordless Blowers So My Husband Could Rake Leaves After Shoulder Surgery — Here's What Won</h1>
-<p class="byline">By Diane Hollister · April 21, 2026</p>
-<div class="placeholder"><span class="tag">LIFESTYLE</span>Warm suburban driveway in North Carolina at golden hour, five cordless leaf blowers lined up in a row on the concrete, a clipboard and kitchen scale on a small folding table, autumn leaves scattered around</div>
-<p>Six weeks after a <u>full right shoulder replacement</u>, my husband Gary walked into the garage, picked up his old gas blower, and set it right back down without a word.</p><p>That's when I decided I was going to solve this before Christmas. I'm Diane, I'm 58, and I've never written a product review in my life — but I have <strong>thirty-four years of experience running an elementary school</strong>, which means I know how to run a fair test.</p><p>So I bought five of the top-rated <mark style="background:#fef08a;padding:2px 4px;border-radius:3px">lightweight cordless blowers</mark> on Amazon, lined them up on our driveway, and put each one through the same gauntlet. One of them surprised me enough that I called my sister in Asheville that same night.</p>
-<div class="placeholder"><span class="tag">LIFESTYLE</span>Middle-aged woman in a cardigan writing on a clipboard in a garage, five cardboard Amazon boxes stacked behind her, soft natural light from an open garage door</div>
-<h2>Why I Stopped Trusting the Star Ratings</h2>
-<p>Gary is 61. He's the kind of man who mows his own lawn in July, shovels his own driveway in January, and considers hiring a landscaper a personal failure. His orthopedic surgeon cleared him for "light yard activity" at the six-week mark — but "light" is a word surgeons and manufacturers use very differently.</p><p>I started where most of us start: the Amazon search bar. I typed in <em>"lightweight cordless leaf blower."</em> <strong>Over 2,000 results.</strong> Four-point-five stars everywhere. Glowing reviews that all sounded suspiciously similar.</p><p>So I ignored the stars and made a spreadsheet. I ordered five: two Ryobi models (the popular 40V Whisper and the smaller 18V ONE+), a <strong>Worx WG545</strong>, a <strong>Greenworks 24V</strong>, and a newer one I'd seen in a Facebook group — the <strong>Seese Pro</strong>. They all arrived within the same week. Gary looked at the boxes stacked in the garage and asked if I was opening a hardware store.</p><p>I told him he was about to become the tester.</p>
-<div class="placeholder"><span class="tag">LIFESTYLE</span>Close-up of a kitchen scale with a cordless leaf blower being weighed on it, stopwatch beside it, handwritten notes on a yellow legal pad</div>
-<h2>The Test: Stopwatch, Kitchen Scale, and the Grandkid</h2>
-<p>I wanted to measure the things the spec sheets don't tell you. A blower can weigh 6.2 pounds on paper and still feel like a bowling ball after three minutes of holding it out in front of you. That's the gap every older homeowner falls into.</p><p>Here's what I scored each blower on:</p><ul><li><strong>Pick-up weight</strong> — on my kitchen scale, with the battery in, ready to use</li><li><strong>One-handed hover time</strong> — how long Gary could hold it steady at arm's length before his shoulder said no</li><li><strong>Driveway clearing speed</strong> — stopwatch, same pile of oak leaves, same 24-foot driveway</li><li><strong>Start-up friction</strong> — how many steps from "grab it" to "it's blowing"</li><li><strong>The Maddie test</strong> — could our <u>9-year-old granddaughter</u> pick it up, turn it on, and actually use it?</li></ul><p>That last one was Gary's idea. "If a kid can run it," he said, "I can run it with one arm in a sling." Fair point.</p>
-<div class="placeholder"><span class="tag">PRODUCT</span>Older man in a denim shirt holding a compact cordless leaf blower one-handed, relaxed expression, clearing leaves on a suburban driveway, autumn trees in background</div>
-<h2>What Actually Happened on the Driveway</h2>
-<p>Let me be fair to every contender — each one did <em>something</em> well.</p><p>The <strong>Ryobi 40V Whisper</strong> was genuinely powerful. It cleared the driveway in 2 minutes 41 seconds, the fastest of the group. But it weighed <span style="color:#e05a00;font-weight:700">8.4 pounds</span> with the battery, and Gary's one-handed hover time was 47 seconds before he had to switch arms. Maddie couldn't lift it at all.</p><p>The <strong>Ryobi 18V ONE+</strong> was lighter but felt underpowered — it took Gary almost 6 minutes to clear the same driveway, and he had to go back over several spots. Good for patios, not great for fall cleanup.</p><p>The <strong>Worx WG545</strong> was the quietest by a mile and surprisingly comfortable — but it's really a sweeper, not a leaf blower. Wet leaves defeated it.</p><p>The <strong>Greenworks 24V</strong> was the one I <em>expected</em> to win. Solid brand, great reviews, balanced feel. It cleared in 3:55. Gary's hover time was 1 minute 12 seconds. Respectable.</p><p>And then we got to the <strong>Seese Pro</strong>. I'll be honest — I'd ordered it almost as a control, expecting it to underperform and make the Greenworks look good by comparison.</p>
-<div class="placeholder"><span class="tag">TESTIMONIAL</span>Young girl around 9 years old easily holding a small cordless blower with two fingers, laughing, grandmother watching and smiling in the background</div>
-<h2>The Number That Stopped Me Cold</h2>
-<p>The Seese Pro hit the kitchen scale at <span style="color:#e05a00;font-weight:700">2.4 pounds</span> with the battery in. I weighed it twice because I didn't believe it. That's lighter than the gallon of milk in my fridge.</p><p>Gary picked it up with his <u>non-operated</u> left hand, pressed the single button, and cleared the driveway in 3 minutes 18 seconds. Not the fastest — the big Ryobi still won on raw speed — but here's the thing: <strong>his one-handed hover time was 4 minutes 30 seconds</strong>, and he stopped because I told him to, not because his shoulder did.</p><blockquote>"I forgot I was holding it. That's the weird part. With the gas one I counted the seconds until I could put it down. With this one I was actually looking at what I was blowing." — Gary, after test #3</blockquote><p>Then Maddie came outside. She's 9, about 62 pounds, and uninterested in yard work. She picked up the Seese Pro with two fingers on the handle, pressed the button, and blew a pile of leaves across the driveway while giggling. She could not lift a single one of the other four.</p><blockquote>"Grandma, this one's easy. Why don't you just use this one?" — Maddie, age 9, unintentionally writing my conclusion</blockquote><p>That was the moment I called my sister Carol in Asheville. Her husband Ron had rotator cuff surgery last spring and has been dreading leaf season. I told her: <em>"Forget the research. Just buy the light one."</em></p>
-<div class="placeholder"><span class="tag">PRODUCT</span>Overhead flat-lay of five cordless leaf blowers arranged in ranking order on a wooden workbench, with handwritten scorecard beside them</div>
-<h2>The Final Scorecard</h2>
-<p>Here's how the five blowers actually ranked, head to head. I'm writing this as someone who had zero loyalty to any of them a month ago.</p><p><strong>1. Seese Pro</strong> — Winner. Not because it's the most powerful (it isn't) but because it's the only one Gary could hold <mark style="background:#fef08a;padding:2px 4px;border-radius:3px">one-handed for the entire job</mark>. Single-button start. No cord, no gas, no pull-start. Quiet enough that we kept talking through the test.</p><p><strong>2. Greenworks 24V</strong> — Solid second. Good power, balanced, reliable brand. But at 5.8 pounds it's more than double the weight, and that matters when you're recovering from surgery.</p><p><strong>3. Ryobi 40V Whisper</strong> — The powerhouse. If you're 35 and have two good shoulders, buy this one. For Gary, it was a no.</p><p><strong>4. Worx WG545</strong> — Great for a clean patio, underpowered for actual leaves.</p><p><strong>5. Ryobi 18V ONE+</strong> — Light-ish, but you'll be working too long to make it worth it.</p><p>What surprised me most was this: <strong>the cheapest one won</strong>. I'd expected to end up recommending the $180 Greenworks and feeling smart about it. Instead I'm recommending the one that cost less than dinner out, because it was the only one that actually solved Gary's problem.</p>
+<h1 style="position: relative;">I Tested 5 'Lightweight' Cordless Blowers So My Husband Could Rake Leaves After Shoulder Surgery — Here's What Won</h1>
+<p class="byline" style="position: relative;">By Editorial Team · April 21, 2026</p>
+<img alt="" src="/pages/media/seese-pro-v9/editor-upload-manual-97928a1e.png" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<p style="position: relative;">Six weeks after a <u>full right shoulder replacement</u>, my husband Gary walked into the garage, picked up his old gas blower, and set it right back down without a word.</p><p style="position: relative;">That's when I decided I was going to solve this before Christmas. I'm Diane, I'm 58, and I've never written a product review in my life — but I have <strong>thirty-four years of experience running an elementary school</strong>, which means I know how to run a fair test.</p><p style="position: relative;">So I bought five of the top-rated <mark style="background:#fef08a;padding:2px 4px;border-radius:3px">lightweight cordless blowers</mark> on Amazon, lined them up on our driveway, and put each one through the same gauntlet. One of them surprised me enough that I called my sister in Asheville that same night.</p>
+<img alt="" src="/pages/media/seese-pro-v9/manual_upload-manual-d89e287b.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<h2 style="position: relative;">Why I Stopped Trusting the Star Ratings</h2>
+<p style="position: relative;">Gary is 61. He's the kind of man who mows his own lawn in July, shovels his own driveway in January, and considers hiring a landscaper a personal failure. His orthopedic surgeon cleared him for "light yard activity" at the six-week mark — but "light" is a word surgeons and manufacturers use very differently.</p><p style="position: relative;">I started where most of us start: the Amazon search bar. I typed in <em>"lightweight cordless leaf blower."</em> <strong>Over 2,000 results.</strong> Four-point-five stars everywhere. Glowing reviews that all sounded suspiciously similar.</p><p style="position: relative;">So I ignored the stars and made a spreadsheet. I ordered five: two Ryobi models (the popular 40V Whisper and the smaller 18V ONE+), a <strong>Worx WG545</strong>, a <strong>Greenworks 24V</strong>, and a newer one I'd seen in a Facebook group — the <strong>Seese Pro</strong>. They all arrived within the same week. Gary looked at the boxes stacked in the garage and asked if I was opening a hardware store.</p><p style="position: relative;">I told him he was about to become the tester.</p>
+<img alt="" src="/pages/media/seese-pro-v9/manual_upload-manual-262f77bd.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<h2 style="position: relative;">The Test: Stopwatch, Kitchen Scale, and the Grandkid</h2>
+<p style="position: relative;">I wanted to measure the things the spec sheets don't tell you. A blower can weigh 6.2 pounds on paper and still feel like a bowling ball after three minutes of holding it out in front of you. That's the gap every older homeowner falls into.</p><p style="position: relative;">Here's what I scored each blower on:</p><ul><li style="position: relative;"><strong>Pick-up weight</strong> — on my kitchen scale, with the battery in, ready to use</li><li style="position: relative;"><strong>One-handed hover time</strong> — how long Gary could hold it steady at arm's length before his shoulder said no</li><li style="position: relative;"><strong>Driveway clearing speed</strong> — stopwatch, same pile of oak leaves, same 24-foot driveway</li><li style="position: relative;"><strong>Start-up friction</strong> — how many steps from "grab it" to "it's blowing"</li><li style="position: relative;"><strong>The Maddie test</strong> — could our <u>9-year-old granddaughter</u> pick it up, turn it on, and actually use it?</li></ul><p style="position: relative;">That last one was Gary's idea. "If a kid can run it," he said, "I can run it with one arm in a sling." Fair point.</p>
+<img alt="" src="/pages/media/seese-pro-v9/manual_upload-manual-60951ff5.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<h2 style="position: relative;">What Actually Happened on the Driveway</h2>
+<p style="position: relative;">Let me be fair to every contender — each one did <em>something</em> well.</p><p style="position: relative;">The <strong>Ryobi 40V Whisper</strong> was genuinely powerful. It cleared the driveway in 2 minutes 41 seconds, the fastest of the group. But it weighed <span style="color:#e05a00;font-weight:700">8.4 pounds</span> with the battery, and Gary's one-handed hover time was 47 seconds before he had to switch arms. Maddie couldn't lift it at all.</p><p style="position: relative;">The <strong>Ryobi 18V ONE+</strong> was lighter but felt underpowered — it took Gary almost 6 minutes to clear the same driveway, and he had to go back over several spots. Good for patios, not great for fall cleanup.</p><p style="position: relative;">The <strong>Worx WG545</strong> was the quietest by a mile and surprisingly comfortable — but it's really a sweeper, not a leaf blower. Wet leaves defeated it.</p><p style="position: relative;">The <strong>Greenworks 24V</strong> was the one I <em>expected</em> to win. Solid brand, great reviews, balanced feel. It cleared in 3:55. Gary's hover time was 1 minute 12 seconds. Respectable.</p><p style="position: relative;">And then we got to the <strong>Seese Pro</strong>. I'll be honest — I'd ordered it almost as a control, expecting it to underperform and make the Greenworks look good by comparison.</p>
+<img alt="" src="/pages/media/seese-pro-v9/manual_upload-manual-289feb04.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<h2 style="position: relative;">The Number That Stopped Me Cold</h2>
+<p style="position: relative;">The Seese Pro hit the kitchen scale at <span style="color:#e05a00;font-weight:700">2.4 pounds</span> with the battery in. I weighed it twice because I didn't believe it. That's lighter than the gallon of milk in my fridge.</p><p style="position: relative;">Gary picked it up with his <u>non-operated</u> left hand, pressed the single button, and cleared the driveway in 3 minutes 18 seconds. Not the fastest — the big Ryobi still won on raw speed — but here's the thing: <strong>his one-handed hover time was 4 minutes 30 seconds</strong>, and he stopped because I told him to, not because his shoulder did.</p><blockquote style="position: relative;">"I forgot I was holding it. That's the weird part. With the gas one I counted the seconds until I could put it down. With this one I was actually looking at what I was blowing." — Gary, after test #3</blockquote><p style="position: relative;">Then Maddie came outside. She's 9, about 62 pounds, and uninterested in yard work. She picked up the Seese Pro with two fingers on the handle, pressed the button, and blew a pile of leaves across the driveway while giggling. She could not lift a single one of the other four.</p><blockquote style="position: relative;">"Grandma, this one's easy. Why don't you just use this one?" — Maddie, age 9, unintentionally writing my conclusion</blockquote><p style="position: relative;">That was the moment I called my sister Carol in Asheville. Her husband Ron had rotator cuff surgery last spring and has been dreading leaf season. I told her: <em>"Forget the research. Just buy the light one."</em></p>
+<img alt="" src="/pages/media/seese-pro-v9/manual_upload-manual-5e2e9ae3.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<h2 style="position: relative;">The Final Scorecard</h2>
+<p style="position: relative;">Here's how the five blowers actually ranked, head to head. I'm writing this as someone who had zero loyalty to any of them a month ago.</p><p style="position: relative;"><strong>1. Seese Pro</strong> — Winner. Not because it's the most powerful (it isn't) but because it's the only one Gary could hold <mark style="background:#fef08a;padding:2px 4px;border-radius:3px">one-handed for the entire job</mark>. Single-button start. No cord, no gas, no pull-start. Quiet enough that we kept talking through the test.</p><p style="position: relative;"><strong>2. Greenworks 24V</strong> — Solid second. Good power, balanced, reliable brand. But at 5.8 pounds it's more than double the weight, and that matters when you're recovering from surgery.</p><p style="position: relative;"><strong>3. Ryobi 40V Whisper</strong> — The powerhouse. If you're 35 and have two good shoulders, buy this one. For Gary, it was a no.</p><p style="position: relative;"><strong>4. Worx WG545</strong> — Great for a clean patio, underpowered for actual leaves.</p><p style="position: relative;"><strong>5. Ryobi 18V ONE+</strong> — Light-ish, but you'll be working too long to make it worth it.</p><p style="position: relative;">What surprised me most was this: <strong>the cheapest one won</strong>. I'd expected to end up recommending the $180 Greenworks and feeling smart about it. Instead I'm recommending the one that cost less than dinner out, because it was the only one that actually solved Gary's problem.</p>
 <div class="cta-section">
-<h3>Seese Pro</h3>
-<p style="font-size:15px;color:#555;margin-bottom:14px">Available <strong>ONLY</strong> on the official store — at the lowest price of the year.</p><div class="v2-media-slot" data-slot-key="cta.product_image" style="width:100%;max-width:260px;aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:10px;padding:20px;margin:14px auto 18px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-sizing:border-box;color:#a855f7;font-size:13px"><div style="font-size:32px">🖼️</div><div style="margin-top:8px">Emplacement média — cta.product_image</div></div><div class="steps">
-<div class="step-card"><div class="step-num">1</div><div>Order yours today to lock in the exclusive discount — only while supplies last.</div></div>
-<div class="step-card"><div class="step-num">2</div><div>When it arrives (2-5 business days), unbox it and start using it immediately. No setup needed.</div></div>
-<div class="step-card"><div class="step-num">3</div><div>Make it part of your routine. See the difference in minutes — <strong>without any effort</strong>.</div></div>
+<h3 style="position: relative;">Seese Pro</h3>
+<p style="font-size: 15px; color: rgb(85, 85, 85); margin-bottom: 14px; position: relative;">Available <strong>ONLY</strong> on the official store — at the lowest price of the year.</p>
+<div class="steps">
+<div class="step-card"><div class="step-num" style="position: relative;">1</div><div style="position: relative;">Order yours today to lock in the exclusive discount — only while supplies last.</div></div>
+<div class="step-card"><div class="step-num" style="position: relative;">2</div><div style="position: relative;">When it arrives (2-5 business days), unbox it and start using it immediately. No setup needed.</div></div>
+<div class="step-card"><div class="step-num" style="position: relative;">3</div><div style="position: relative;">Make it part of your routine. See the difference in minutes — <strong>without any effort</strong>.</div></div>
 </div>
-<p>If you're reading this because someone in your life is slowing down — a husband, a dad, a father-in-law — and you're tired of watching him push through pain to keep his pride, this is the easiest call I can make for you.</p><p>Gary has used the Seese Pro every Saturday since Halloween. The gas blower is still sitting in the back of the garage. He hasn't touched it.</p><p><strong>➡️ Check the Seese Pro directly on the manufacturer's site</strong> — 60-day guarantee, free US shipping, and the current discount is still live as of this writing.</p><p><em>— Diane H., Raleigh, NC</em></p>
-<a class="cta-btn" href="https://terica-store.com/click">Check Availability</a>
-<div class="badges"><span>30-day money-back guarantee</span><span>Free shipping (2–5 days)</span></div>
+<p style="position: relative;">If you're reading this because someone in your life is slowing down — a husband, a dad, a father-in-law — and you're tired of watching him push through pain to keep his pride, this is the easiest call I can make for you.</p><p style="position: relative;">Gary has used the Seese Pro every Saturday since Halloween. The gas blower is still sitting in the back of the garage. He hasn't touched it.</p><p style="position: relative;"><strong>➡️ Check the Seese Pro directly on the manufacturer's site</strong> — 60-day guarantee, free US shipping, and the current discount is still live as of this writing.</p><p style="position: relative;"><em>— Diane H., Raleigh, NC</em></p>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;">Check Availability</a>
+<div class="badges"><span style="position: relative;">30-day money-back guarantee</span><span style="position: relative;">Free shipping (2–5 days)</span></div>
 </div>
-<div class="tip-box">💡 <strong>Useful tip:</strong><br/>Know someone who would love this? It makes an incredible gift — the kind that gets used every week.</div>
+<div class="tip-box" style="position: relative;">💡 <strong>Useful tip:</strong><br/>Know someone who would love this? It makes an incredible gift — the kind that gets used every week.</div>
 </div>
 <div class="sticky-footer">
-<a href="https://terica-store.com/click">👉 Skip to offer — Check availability</a>
+<a href="https://terica-store.com/click" style="position: relative;">👉 Skip to offer — Check availability</a>
 </div>
 <style>#adv-footer{display:block!important;visibility:visible!important;}</style>
 <footer id="adv-footer" style="display:block!important;background:#f5f5f5;border-top:1px solid #e8e8e8;padding:40px 20px 36px;text-align:center;margin-top:40px;">
 <img alt="Seese Pro" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="height:40px;max-width:200px;object-fit:contain;margin-bottom:16px;opacity:0.65;display:block;margin-left:auto;margin-right:auto;"/>
-<p style="font-size:9px;color:#ccc;line-height:1.5;max-width:680px;margin:8px auto 0;letter-spacing:0.02em;">ADVERTISING DISCLOSURE: The story, persons, and results depicted on this site are illustrative. Individual results may vary. This content is sponsored advertising and not intended as news or editorial content.</p>
+<p style="font-size: 9px; color: rgb(204, 204, 204); line-height: 1.5; max-width: 680px; margin: 8px auto 0px; letter-spacing: 0.02em; position: relative;">ADVERTISING DISCLOSURE: The story, persons, and results depicted on this site are illustrative. Individual results may vary. This content is sponsored advertising and not intended as news or editorial content.</p>
 <div style="font-size:11px;color:#999;margin:14px auto 8px;font-family:system-ui,-apple-system,sans-serif;">
 <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Terms of Use</a>
 <span style="margin:0 6px;color:#ccc;">·</span>
@@ -155,7 +401,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>
