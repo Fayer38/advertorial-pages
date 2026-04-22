@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>How a 67-Year-Old Back Surgery Patient in Ohio Cleared His Entire Driveway One-Handed After Doctors Banned His Gas Blower</title>
@@ -112,6 +109,16 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -120,10 +127,254 @@ t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "wb35vpdfk1");
 </script>
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
 
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
 
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
 
-<script src="https://terica-store.com/tracker.js" async></script>
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
@@ -134,88 +385,88 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <!-- MAIN ARTICLE CONTENT (left column) -->
 <main class="adv-content">
 <!-- HEADLINE -->
-<h1>I Thought the Box Was Empty — Until I Started My Yard Again</h1>
+<h1 style="position: relative;">I Thought the Box Was Empty — Until I Started My Yard Again</h1>
 <!-- SUBTITLE HIGHLIGHT (cream box) -->
-<p class="subtitle-highlight">After my back fusion, I could not lift a gas blower anymore.</p>
+<p class="subtitle-highlight" style="position: relative;">After my back fusion, I could not lift a gas blower anymore.</p>
 <!-- AUTHOR LINE — investigation style -->
-<p class="author-line">By Robert Mallon, retired HVAC installer, Loveland</p>
+<p class="author-line" style="position: relative;">By Robert Mallon, retired HVAC installer, Loveland</p>
 <!-- IMAGE 1: hero (the protagonist in their setting) -->
-<div class="v2-media-slot" data-job-id="eb2a48a1-7c19-4e97-8a77-2b7bc722ad60" data-prompts='["A 67-year-old American man with silver hair and glasses standing in the driveway of a modest suburban single-family home in Ohio during late fall, oak leaves scattered across the concrete, holding a small cordless handheld blower in one hand, looking down at it with mild disbelief, warm overcast afternoon light, photorealistic", "Wide shot of a retired man in a flannel jacket on a Midwestern brick driveway with a pile of oak leaves, small cordless blower held casually at his side, garage door open in background, autumn hues, photorealistic", "Close-up on the lined hands of a retired tradesman holding a lightweight white-and-gray cordless blower, wedding ring visible, soft side light suggesting quiet pride and relief, photorealistic"]' data-selected="0" data-slot-key="media_1.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A 67-year-old American man with silver hair and glasses standing in the driveway"</div></div>
+<img alt="" data-copy="media_1.url:attr:src" data-prompts='["A 67-year-old American man with silver hair and glasses standing in the driveway of a modest suburban single-family home in Ohio during late fall, oak leaves scattered across the concrete, holding a small cordless handheld blower in one hand, looking down at it with mild disbelief, warm overcast afternoon light, photorealistic", "Wide shot of a retired man in a flannel jacket on a Midwestern brick driveway with a pile of oak leaves, small cordless blower held casually at his side, garage door open in background, autumn hues, photorealistic", "Close-up on the lined hands of a retired tradesman holding a lightweight white-and-gray cordless blower, wedding ring visible, soft side light suggesting quiet pride and relief, photorealistic"]' data-slot-key="media_1.url" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-16a9f20e.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 <!-- INTRO PARAGRAPHS (investigation setup) -->
-<p>The surgeon looked me straight in the eye at Christ Hospital and laid down the rules. No more gas blower. No twisting. <strong>Nothing over eight pounds</strong>. I nodded like a man who still had his pride, and then I walked out to our driveway in Loveland.</p>
-<p>By October the oak leaves had covered the drive. Patty was calling lawn services that charged more each visit, and I stood at the garage door every Saturday staring at my old gas blower like it sat on the <strong>other side of a canyon</strong> I could not cross.</p>
-<p>I'm Robert Mallon. I turned sixty-seven last March. I spent forty-one years crawling through attics and basements installing HVAC systems, and I always took care of my own property. Hiring someone to blow my own leaves felt like handing a stranger <strong>my keys and my dignity</strong>.</p>
-<p>Then the Saturday before Thanksgiving, Patty handed me a small box from an online order. I lifted the box, frowned, and told her it had to be <strong>empty</strong>. She laughed and told me to open it. Inside sat the tool that would <u>give me my fall back</u>.</p>
+<p style="position: relative;">The surgeon looked me straight in the eye at Christ Hospital and laid down the rules. No more gas blower. No twisting. <strong>Nothing over eight pounds</strong>. I nodded like a man who still had his pride, and then I walked out to our driveway in Loveland.</p>
+<p style="position: relative;">By October the oak leaves had covered the drive. Patty was calling lawn services that charged more each visit, and I stood at the garage door every Saturday staring at my old gas blower like it sat on the <strong>other side of a canyon</strong> I could not cross.</p>
+<p style="position: relative;">I'm Robert Mallon. I turned sixty-seven last March. I spent forty-one years crawling through attics and basements installing HVAC systems, and I always took care of my own property. Hiring someone to blow my own leaves felt like handing a stranger <strong>my keys and my dignity</strong>.</p>
+<p style="position: relative;">Then the Saturday before Thanksgiving, Patty handed me a small box from an online order. I lifted the box, frowned, and told her it had to be <strong>empty</strong>. She laughed and told me to open it. Inside sat the tool that would <u>give me my fall back</u>.</p>
 <!-- H2 #1 — backstory / origin -->
-<h2>What the Surgeon Said and What the Fall Took</h2>
-<div class="v2-media-slot" data-job-id="eb2a48a1-7c19-4e97-8a77-2b7bc722ad60" data-prompts="[&quot;A retired American man in his late sixties standing at the threshold of an attached suburban garage in Ohio, looking at a heavy orange gas leaf blower on a wall shelf with visible frustration, oak leaves piled outside, overcast autumn morning, photorealistic&quot;, &quot;Rear view of a silver-haired man in jeans and a fleece jacket hesitating in front of a cluttered garage workbench with an old gas blower, soft diffused window light, photorealistic&quot;, &quot;Tight portrait of a sixty-seven-year-old man's face showing quiet defeat as he looks past the camera at unreachable yard equipment, kitchen window reflection softly visible, photorealistic&quot;]" data-selected="0" data-slot-key="media_2.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A retired American man in his late sixties standing at the threshold of an attac"</div></div>
-<p>The fusion was at L4-L5. I came out of surgery in February twenty twenty-four, and for weeks I shuffled down our hallway in Loveland holding onto the walls. The doctor said I would get stronger, but he would <strong>not lie about the limits</strong>.</p>
-<p>No lifting over eight pounds. No twisting motion. No yanking on a pull cord. My old gas blower alone weighed <strong>eleven pounds dry</strong>, and after I filled it with gas it sat closer to fourteen. That machine was finished for me, and so was half the work I used to do.</p>
-<p>Patty never complained, but I saw her looking out the kitchen window at the leaves collecting along the fence. She had started writing lists of lawn companies, and the numbers she was quoting made me <strong>wince</strong>. The work used to be free when I did it. Now it had a bill attached.</p>
-<p>I had spent my working life climbing ladders and carrying copper line sets. I had shown up at <strong>five in the morning for forty-one winters</strong>. And now I could not pick up a two-gallon can of driveway salt without my back sending a warning through my hip down to my knee.</p>
-<p>By the end of October I was avoiding the garage altogether. Patty would ask if I wanted to go look at the yard, and I would invent some project inside the house. A man with a fused spine does not want to stand next to the <strong>equipment he can no longer use</strong>.</p>
+<h2 style="position: relative;">What the Surgeon Said and What the Fall Took</h2>
+<img alt="" data-copy="media_2.url:attr:src" data-prompts="[&quot;A retired American man in his late sixties standing at the threshold of an attached suburban garage in Ohio, looking at a heavy orange gas leaf blower on a wall shelf with visible frustration, oak leaves piled outside, overcast autumn morning, photorealistic&quot;, &quot;Rear view of a silver-haired man in jeans and a fleece jacket hesitating in front of a cluttered garage workbench with an old gas blower, soft diffused window light, photorealistic&quot;, &quot;Tight portrait of a sixty-seven-year-old man's face showing quiet defeat as he looks past the camera at unreachable yard equipment, kitchen window reflection softly visible, photorealistic&quot;]" data-slot-key="media_2.url" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-e934b219.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
+<p style="position: relative;">The fusion was at L4-L5. I came out of surgery in February twenty twenty-four, and for weeks I shuffled down our hallway in Loveland holding onto the walls. The doctor said I would get stronger, but he would <strong>not lie about the limits</strong>.</p>
+<p style="position: relative;">No lifting over eight pounds. No twisting motion. No yanking on a pull cord. My old gas blower alone weighed <strong>eleven pounds dry</strong>, and after I filled it with gas it sat closer to fourteen. That machine was finished for me, and so was half the work I used to do.</p>
+<p style="position: relative;">Patty never complained, but I saw her looking out the kitchen window at the leaves collecting along the fence. She had started writing lists of lawn companies, and the numbers she was quoting made me <strong>wince</strong>. The work used to be free when I did it. Now it had a bill attached.</p>
+<p style="position: relative;">I had spent my working life climbing ladders and carrying copper line sets. I had shown up at <strong>five in the morning for forty-one winters</strong>. And now I could not pick up a two-gallon can of driveway salt without my back sending a warning through my hip down to my knee.</p>
+<p style="position: relative;">By the end of October I was avoiding the garage altogether. Patty would ask if I wanted to go look at the yard, and I would invent some project inside the house. A man with a fused spine does not want to stand next to the <strong>equipment he can no longer use</strong>.</p>
 <!-- H2 #2 — loss / turning point -->
-<h2>The Box I Thought Was Empty</h2>
-<div class="v2-media-slot" data-job-id="eb2a48a1-7c19-4e97-8a77-2b7bc722ad60" data-prompts="[&quot;A small unbranded cardboard shipping box open on a Midwestern kitchen counter revealing a slim white-and-gray handheld cordless blower, older couple's hands in frame, morning light through kitchen window, photorealistic&quot;, &quot;Overhead shot of a compact cordless blower, lithium battery, and nozzle attachment laid out on a wooden kitchen table next to a coffee mug, warm domestic lighting, photorealistic&quot;, &quot;A retired man holding a tiny cordless blower up with two fingers in surprised disbelief while his wife watches smiling in the kitchen background, soft natural light, photorealistic&quot;]" data-selected="0" data-slot-key="media_3.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A small unbranded cardboard shipping box open on a Midwestern kitchen counter re"</div></div>
-<p>Patty had been doing her own research. She watches those home reviews on her tablet at night, and she had <strong>ordered a blower without telling me</strong> because she knew I would have said no. The Saturday before Thanksgiving the package showed up on the porch.</p>
-<p>She set the box on the kitchen counter and pushed it toward me. It was maybe the size of a cereal box. I picked it up with one hand, felt nothing, and told her somebody had shipped her an <strong>empty carton</strong>. Patty grinned and told me to cut the tape.</p>
-<p>Inside was a slim handheld machine with a battery on the side, a nozzle on the front, and a trigger on the grip. I lifted it with two fingers. <strong>Two point one pounds</strong>. It felt like a hair dryer that belonged in her bathroom drawer, not a yard tool.</p>
-<p>It was called Seese Pro. Patty had read reviews from men my age with back surgeries and rotator cuffs and hip replacements. She had not told me because she <strong>did not want me to talk myself out of it</strong> before I tried it. She had a point.</p>
-<p>I carried it out to the driveway with my coffee still in the other hand. I pushed the battery into the slot, squeezed the trigger once, and the thing <strong>jumped to life</strong>. No pull cord. No choke. No cloud of exhaust. Just a quiet, steady rush of air.</p>
-<p>I aimed it at a pile of oak leaves near the front steps and they moved like a swarm. I did not believe it for a second. I turned the nozzle toward a patch of acorns, and they rolled across the concrete like marbles. <strong>One hand. No back strain</strong>. Nothing.</p>
+<h2 style="position: relative;">The Box I Thought Was Empty</h2>
+<img alt="" data-copy="media_3.url:attr:src" data-prompts="[&quot;A small unbranded cardboard shipping box open on a Midwestern kitchen counter revealing a slim white-and-gray handheld cordless blower, older couple's hands in frame, morning light through kitchen window, photorealistic&quot;, &quot;Overhead shot of a compact cordless blower, lithium battery, and nozzle attachment laid out on a wooden kitchen table next to a coffee mug, warm domestic lighting, photorealistic&quot;, &quot;A retired man holding a tiny cordless blower up with two fingers in surprised disbelief while his wife watches smiling in the kitchen background, soft natural light, photorealistic&quot;]" data-slot-key="media_3.url" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-7c083a9b.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
+<p style="position: relative;">Patty had been doing her own research. She watches those home reviews on her tablet at night, and she had <strong>ordered a blower without telling me</strong> because she knew I would have said no. The Saturday before Thanksgiving the package showed up on the porch.</p>
+<p style="position: relative;">She set the box on the kitchen counter and pushed it toward me. It was maybe the size of a cereal box. I picked it up with one hand, felt nothing, and told her somebody had shipped her an <strong>empty carton</strong>. Patty grinned and told me to cut the tape.</p>
+<p style="position: relative;">Inside was a slim handheld machine with a battery on the side, a nozzle on the front, and a trigger on the grip. I lifted it with two fingers. <strong>Two point one pounds</strong>. It felt like a hair dryer that belonged in her bathroom drawer, not a yard tool.</p>
+<p style="position: relative;">It was called Seese Pro. Patty had read reviews from men my age with back surgeries and rotator cuffs and hip replacements. She had not told me because she <strong>did not want me to talk myself out of it</strong> before I tried it. She had a point.</p>
+<p style="position: relative;">I carried it out to the driveway with my coffee still in the other hand. I pushed the battery into the slot, squeezed the trigger once, and the thing <strong>jumped to life</strong>. No pull cord. No choke. No cloud of exhaust. Just a quiet, steady rush of air.</p>
+<p style="position: relative;">I aimed it at a pile of oak leaves near the front steps and they moved like a swarm. I did not believe it for a second. I turned the nozzle toward a patch of acorns, and they rolled across the concrete like marbles. <strong>One hand. No back strain</strong>. Nothing.</p>
 <!-- H2 #3 — craft deep-dive -->
-<h2>How a Two-Pound Tool Changes a Bad Day</h2>
-<div class="v2-media-slot" data-job-id="eb2a48a1-7c19-4e97-8a77-2b7bc722ad60" data-prompts="[&quot;A 67-year-old American man cleanly clearing a suburban Ohio driveway of oak leaves using a small lightweight cordless blower held one-handed, visible stream of leaves curving away, late fall morning light, photorealistic&quot;, &quot;Side profile of a retired tradesman in a flannel shirt operating a compact handheld blower along a brick walkway, relaxed upright posture, photorealistic&quot;, &quot;Close-up of a man's relaxed face as he works his own yard without strain, gentle smile, soft autumn backlight, photorealistic&quot;]" data-selected="0" data-slot-key="media_4.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A 67-year-old American man cleanly clearing a suburban Ohio driveway of oak leav"</div></div>
-<p>Here is what I did not expect. <strong>The power was real</strong>. This is not a toy that moves a few leaves around. The air comes out fast and focused, and when I aimed it at wet leaves packed against the curb, they broke loose and rolled where I pointed them.</p>
-<p>I worked the front walk in ten minutes. Then the driveway. Then the porch. I kept stopping because I expected my lower back to speak up, <strong>and it was quiet</strong>. The machine was doing the work the way my arms used to. I did not have to brace or twist.</p>
-<p>The battery lasted longer than I did. I ran the blower for <strong>close to forty minutes</strong> before I stopped for a water break, and the indicator was still showing plenty of charge. By the time I came back out, I had forgotten I was supposed to be careful.</p>
-<p>Patty brought me a sandwich at lunch and stood on the porch watching me move acorns around the dogwood tree. She did not say anything for a minute. Then she said I <strong>looked like myself again</strong>. That was the first time she had used that word since the surgery.</p>
-<p>I want to be clear. This is not a miracle. My back is still fused. I still get stiff if I sit too long. But the difference between standing at the garage door feeling useless and <u>finishing the driveway before coffee gets cold</u> — that difference is everything.</p>
+<h2 style="position: relative;">How a Two-Pound Tool Changes a Bad Day</h2>
+<img alt="" data-copy="media_4.url:attr:src" data-prompts="[&quot;A 67-year-old American man cleanly clearing a suburban Ohio driveway of oak leaves using a small lightweight cordless blower held one-handed, visible stream of leaves curving away, late fall morning light, photorealistic&quot;, &quot;Side profile of a retired tradesman in a flannel shirt operating a compact handheld blower along a brick walkway, relaxed upright posture, photorealistic&quot;, &quot;Close-up of a man's relaxed face as he works his own yard without strain, gentle smile, soft autumn backlight, photorealistic&quot;]" data-slot-key="media_4.url" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-8b6082ba.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
+<p style="position: relative;">Here is what I did not expect. <strong>The power was real</strong>. This is not a toy that moves a few leaves around. The air comes out fast and focused, and when I aimed it at wet leaves packed against the curb, they broke loose and rolled where I pointed them.</p>
+<p style="position: relative;">I worked the front walk in ten minutes. Then the driveway. Then the porch. I kept stopping because I expected my lower back to speak up, <strong>and it was quiet</strong>. The machine was doing the work the way my arms used to. I did not have to brace or twist.</p>
+<p style="position: relative;">The battery lasted longer than I did. I ran the blower for <strong>close to forty minutes</strong> before I stopped for a water break, and the indicator was still showing plenty of charge. By the time I came back out, I had forgotten I was supposed to be careful.</p>
+<p style="position: relative;">Patty brought me a sandwich at lunch and stood on the porch watching me move acorns around the dogwood tree. She did not say anything for a minute. Then she said I <strong>looked like myself again</strong>. That was the first time she had used that word since the surgery.</p>
+<p style="position: relative;">I want to be clear. This is not a miracle. My back is still fused. I still get stiff if I sit too long. But the difference between standing at the garage door feeling useless and <u>finishing the driveway before coffee gets cold</u> — that difference is everything.</p>
 <!-- H2 #4 — breaking point / medical -->
-<h2>Why the Old Gas Blower Nearly Put Me in a Chair</h2>
-<div class="v2-media-slot" data-job-id="eb2a48a1-7c19-4e97-8a77-2b7bc722ad60" data-prompts='["Side-by-side visual comparison on a concrete garage floor of a bulky orange gas leaf blower next to a small white-and-gray 2.1-pound cordless handheld blower, tape measure nearby, photorealistic", "Overhead shot contrasting heavy gas-powered yard equipment against a slim cordless blower, clean workshop lighting, photorealistic", "An older man holds the heavy gas blower with a grimace in one frame and the light cordless blower with a smile in the other, split composition, photorealistic"]' data-selected="0" data-slot-key="media_5.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Side-by-side visual comparison on a concrete garage floor of a bulky orange gas "</div></div>
-<p>Before the fusion, I fought that gas blower every fall. The pull cord alone was a <strong>three-jerk operation</strong> on a cold morning. You plant your feet, twist your core, and yank. For a healthy thirty-year-old, that is nothing. For a man with lumbar damage, that is how backs break.</p>
-<p>Then there is the weight. A full gas blower sits around <strong>thirteen or fourteen pounds with fuel</strong>. Carry that on your right side for thirty minutes while leaning forward, and every disc in your lower spine pays the bill. My surgeon did not forbid yard work. He forbade that machine.</p>
-<p>The engine noise wore me down too. Those two-stroke engines shake your arms and ring in your ears for an hour after you shut them off. My neighbor in Loveland uses one, and his wife says he <strong>cannot hear the television anymore</strong> on Saturday nights. That is not retirement.</p>
-<p>And the fumes. You are breathing hot exhaust the entire time you work. After forty years in crawl spaces breathing things I should not have been breathing, my <strong>lungs have paid enough</strong>. I do not need a fall chore that leaves me coughing all the way through dinner.</p>
-<p>The cord blowers were not an option either. Our lot is long and wraps behind the garage. You drag a hundred-foot extension cord, it gets caught on a root, you pull it, <strong>and your shoulder goes</strong>. I tore a rotator cuff in ninety-eight. I have no interest in finding the other one.</p>
-<p>So what was left? Nothing I could afford to buy and then hate. This is why the Seese Pro mattered. It <u>solves all four problems at once</u> — no pull cord, no fumes, no heavy weight, no cord to snag. It was made for somebody in my exact shape.</p>
+<h2 style="position: relative;">Why the Old Gas Blower Nearly Put Me in a Chair</h2>
+<img alt="" data-copy="media_5.url:attr:src" data-prompts='["Side-by-side visual comparison on a concrete garage floor of a bulky orange gas leaf blower next to a small white-and-gray 2.1-pound cordless handheld blower, tape measure nearby, photorealistic", "Overhead shot contrasting heavy gas-powered yard equipment against a slim cordless blower, clean workshop lighting, photorealistic", "An older man holds the heavy gas blower with a grimace in one frame and the light cordless blower with a smile in the other, split composition, photorealistic"]' data-slot-key="media_5.url" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-96e2b82a.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
+<p style="position: relative;">Before the fusion, I fought that gas blower every fall. The pull cord alone was a <strong>three-jerk operation</strong> on a cold morning. You plant your feet, twist your core, and yank. For a healthy thirty-year-old, that is nothing. For a man with lumbar damage, that is how backs break.</p>
+<p style="position: relative;">Then there is the weight. A full gas blower sits around <strong>thirteen or fourteen pounds with fuel</strong>. Carry that on your right side for thirty minutes while leaning forward, and every disc in your lower spine pays the bill. My surgeon did not forbid yard work. He forbade that machine.</p>
+<p style="position: relative;">The engine noise wore me down too. Those two-stroke engines shake your arms and ring in your ears for an hour after you shut them off. My neighbor in Loveland uses one, and his wife says he <strong>cannot hear the television anymore</strong> on Saturday nights. That is not retirement.</p>
+<p style="position: relative;">And the fumes. You are breathing hot exhaust the entire time you work. After forty years in crawl spaces breathing things I should not have been breathing, my <strong>lungs have paid enough</strong>. I do not need a fall chore that leaves me coughing all the way through dinner.</p>
+<p style="position: relative;">The cord blowers were not an option either. Our lot is long and wraps behind the garage. You drag a hundred-foot extension cord, it gets caught on a root, you pull it, <strong>and your shoulder goes</strong>. I tore a rotator cuff in ninety-eight. I have no interest in finding the other one.</p>
+<p style="position: relative;">So what was left? Nothing I could afford to buy and then hate. This is why the Seese Pro mattered. It <u>solves all four problems at once</u> — no pull cord, no fumes, no heavy weight, no cord to snag. It was made for somebody in my exact shape.</p>
 <!-- H2 #5 — the decision / price reveal -->
-<h2>Six Weeks of Doing My Own Yard Again</h2>
-<div class="v2-media-slot" data-job-id="eb2a48a1-7c19-4e97-8a77-2b7bc722ad60" data-prompts='["An older American man clearing mulch and leaves from a suburban backyard flowerbed in Ohio using a compact cordless blower, autumn flowers in the beds, relaxed posture, warm late-afternoon light, photorealistic", "Wide shot of a tidy Midwestern backyard with a man working near a dogwood tree with a small lightweight blower, his wife visible on the porch with coffee, photorealistic", "Older couple on the back porch smiling as he finishes the last patch of the yard, blower resting at his side, golden-hour lighting, photorealistic"]' data-selected="0" data-slot-key="media_6.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"An older American man clearing mulch and leaves from a suburban backyard flowerb"</div></div>
-<p>By the second weekend I had my rhythm back. I would take the blower out right after breakfast while the air was still cold, work for thirty or forty minutes, come in for coffee, and go back out. I was <strong>getting more done than I did before the surgery</strong>.</p>
-<p>Patty's flowerbeds run along the back of the house. She had been worried about the dead pachysandra and the mulch that the squirrels had kicked all over the patio. I cleared the whole bed in <strong>fifteen minutes holding the blower in my right hand</strong>, resting my left on my hip.</p>
-<p>The snow came the second week of December. I was a little nervous, but I took the blower out on the back porch and pushed the light dusting right off into the yard. It moved the dry snow as easily as it moved dry leaves. My porch was <strong>clear in three minutes</strong>.</p>
-<p>Come spring I used it on the driveway to move the fine dust and gravel that the salt trucks had left. Later I used it on grass clippings after Patty ran the push mower. It <strong>earned its keep in every season</strong>, not just the fall. That surprised me the most.</p>
-<p>Six weeks in, I sat on the back porch with Patty and realized I had not called a lawn service all fall. The yard looked better than it had in years. And my back felt fine. I had <u>not needed ibuprofen after a single session</u>. That had never been true before.</p>
+<h2 style="position: relative;">Six Weeks of Doing My Own Yard Again</h2>
+<img alt="" data-copy="media_6.url:attr:src" data-prompts='["An older American man clearing mulch and leaves from a suburban backyard flowerbed in Ohio using a compact cordless blower, autumn flowers in the beds, relaxed posture, warm late-afternoon light, photorealistic", "Wide shot of a tidy Midwestern backyard with a man working near a dogwood tree with a small lightweight blower, his wife visible on the porch with coffee, photorealistic", "Older couple on the back porch smiling as he finishes the last patch of the yard, blower resting at his side, golden-hour lighting, photorealistic"]' data-slot-key="media_6.url" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-3d7fb564.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
+<p style="position: relative;">By the second weekend I had my rhythm back. I would take the blower out right after breakfast while the air was still cold, work for thirty or forty minutes, come in for coffee, and go back out. I was <strong>getting more done than I did before the surgery</strong>.</p>
+<p style="position: relative;">Patty's flowerbeds run along the back of the house. She had been worried about the dead pachysandra and the mulch that the squirrels had kicked all over the patio. I cleared the whole bed in <strong>fifteen minutes holding the blower in my right hand</strong>, resting my left on my hip.</p>
+<p style="position: relative;">The snow came the second week of December. I was a little nervous, but I took the blower out on the back porch and pushed the light dusting right off into the yard. It moved the dry snow as easily as it moved dry leaves. My porch was <strong>clear in three minutes</strong>.</p>
+<p style="position: relative;">Come spring I used it on the driveway to move the fine dust and gravel that the salt trucks had left. Later I used it on grass clippings after Patty ran the push mower. It <strong>earned its keep in every season</strong>, not just the fall. That surprised me the most.</p>
+<p style="position: relative;">Six weeks in, I sat on the back porch with Patty and realized I had not called a lawn service all fall. The yard looked better than it had in years. And my back felt fine. I had <u>not needed ibuprofen after a single session</u>. That had never been true before.</p>
 <!-- ★ CTA #1 -->
 <a class="cta-button" href="https://terica-store.com/click">Check Availability</a>
 <!-- H2 #6 — community / testimonials -->
-<h2>What Makes This Thing Actually Work</h2>
-<div class="v2-media-slot" data-job-id="eb2a48a1-7c19-4e97-8a77-2b7bc722ad60" data-prompts='["Detailed close-up of a compact cordless handheld leaf blower hanging on a utility hook inside a tidy suburban garage, lithium battery visible, soft natural light from open garage door, photorealistic", "Product-focused shot of the slim blower and its battery pack side by side on a workbench with a coffee mug and work gloves nearby, photorealistic", "Macro view of a hand squeezing the variable-speed trigger of a lightweight cordless blower, shallow depth of field, photorealistic"]' data-selected="0" data-slot-key="media_7.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Detailed close-up of a compact cordless handheld leaf blower hanging on a utilit"</div></div>
-<p>I asked Patty to show me what she had read. The motor is <strong>brushless, which means it runs cooler and lasts longer</strong> than the cheap ones. The battery is lithium and clips in like a drill battery. And the body is built with the same reinforced polymer used in power tools.</p>
-<p>The nozzle narrows the air so the output <strong>hits harder than the horsepower would suggest</strong>. On the box they quote numbers I do not fully understand, but I can tell you it moves a wet oak leaf that a big-box blower leaves behind. That is the test I care about.</p>
-<p>The trigger has a <strong>variable speed</strong>, which I did not expect. You can start soft for the flowerbed and crank it hard for the gravel. One hand, one trigger, no wrestling. And the whole thing fits on a hook next to Patty's gardening basket in the garage. That matters at my age.</p>
+<h2 style="position: relative;">What Makes This Thing Actually Work</h2>
+<img alt="" data-copy="media_7.url:attr:src" data-prompts='["Detailed close-up of a compact cordless handheld leaf blower hanging on a utility hook inside a tidy suburban garage, lithium battery visible, soft natural light from open garage door, photorealistic", "Product-focused shot of the slim blower and its battery pack side by side on a workbench with a coffee mug and work gloves nearby, photorealistic", "Macro view of a hand squeezing the variable-speed trigger of a lightweight cordless blower, shallow depth of field, photorealistic"]' data-slot-key="media_7.url" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-23f0f695.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
+<p style="position: relative;">I asked Patty to show me what she had read. The motor is <strong>brushless, which means it runs cooler and lasts longer</strong> than the cheap ones. The battery is lithium and clips in like a drill battery. And the body is built with the same reinforced polymer used in power tools.</p>
+<p style="position: relative;">The nozzle narrows the air so the output <strong>hits harder than the horsepower would suggest</strong>. On the box they quote numbers I do not fully understand, but I can tell you it moves a wet oak leaf that a big-box blower leaves behind. That is the test I care about.</p>
+<p style="position: relative;">The trigger has a <strong>variable speed</strong>, which I did not expect. You can start soft for the flowerbed and crank it hard for the gravel. One hand, one trigger, no wrestling. And the whole thing fits on a hook next to Patty's gardening basket in the garage. That matters at my age.</p>
 <!-- H2 #7 — features / what makes it different -->
-<h2>What You Get With the Seese Pro</h2>
-<div class="v2-media-slot" data-job-id="eb2a48a1-7c19-4e97-8a77-2b7bc722ad60" data-prompts="[&quot;Clean studio product photograph of the Seese Pro cordless blower on a neutral gray background with key parts highlighted, photorealistic&quot;, &quot;Flat-lay composition of the blower disassembled into main body, nozzle, and battery on a wooden surface, photorealistic&quot;, &quot;Cordless handheld blower resting in an older man's steady hand showing its small size against his palm, photorealistic&quot;]" data-selected="0" data-slot-key="media_8.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_8.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Clean studio product photograph of the Seese Pro cordless blower on a neutral gr"</div></div>
-<p>For anyone my age who is still trying to take care of their own property, these are the specs that actually matter. I have spent four months with this tool, and these are the features I noticed, not the ones the marketing copy leads with. These are the ones that <u>change your Saturday</u>.</p>
-<p>Weighs just over two pounds, lighter than your coffee mug</p>
-<p>Instant trigger start, no pull cord and no choke needed</p>
-<p>Cordless lithium battery runs the whole yard on one charge</p>
-<p>Variable speed trigger handles snow, leaves, dust, and grass clippings</p>
-<p>Operates one-handed with no twisting, no bending, no back strain</p>
+<h2 style="position: relative;">What You Get With the Seese Pro</h2>
+<img alt="" data-copy="media_8.url:attr:src" data-prompts="[&quot;Clean studio product photograph of the Seese Pro cordless blower on a neutral gray background with key parts highlighted, photorealistic&quot;, &quot;Flat-lay composition of the blower disassembled into main body, nozzle, and battery on a wooden surface, photorealistic&quot;, &quot;Cordless handheld blower resting in an older man's steady hand showing its small size against his palm, photorealistic&quot;]" data-slot-key="media_8.url" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-1b39a0d3.png" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
+<p style="position: relative;">For anyone my age who is still trying to take care of their own property, these are the specs that actually matter. I have spent four months with this tool, and these are the features I noticed, not the ones the marketing copy leads with. These are the ones that <u>change your Saturday</u>.</p>
+<p style="position: relative;">Weighs just over two pounds, lighter than your coffee mug</p>
+<p style="position: relative;">Instant trigger start, no pull cord and no choke needed</p>
+<p style="position: relative;">Cordless lithium battery runs the whole yard on one charge</p>
+<p style="position: relative;">Variable speed trigger handles snow, leaves, dust, and grass clippings</p>
+<p style="position: relative;">Operates one-handed with no twisting, no bending, no back strain</p>
 <!-- ★ CTA #2 -->
 <a class="cta-button" href="https://terica-store.com/click">Check Availability</a>
 <!-- H2 #8 — final urgency / how to order -->
-<h2>What I Would Tell a Man My Age</h2>
-<div class="v2-media-slot" data-job-id="eb2a48a1-7c19-4e97-8a77-2b7bc722ad60" data-prompts="[&quot;Older American couple sitting together on a back porch in suburban Ohio at golden hour, the husband holding a small cordless blower across his lap, both smiling warmly, fallen oak leaves raked neatly in yard behind them, photorealistic&quot;, &quot;Wide environmental shot of a tidy freshly cleared suburban driveway and porch with the retired homeowner walking back toward his wife at the door, photorealistic&quot;, &quot;Intimate portrait of a 67-year-old man looking out over his cleared yard with quiet satisfaction, wife's hand on his shoulder, soft warm light, photorealistic&quot;]" data-selected="0" data-slot-key="media_9.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_9.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older American couple sitting together on a back porch in suburban Ohio at golde"</div></div>
-<p>Look, I am not going to tell you this tool fixed my spine. A blower cannot do that. But I will tell you what it did do. It <strong>gave me back a task I had written off</strong>. It let me stand on my own driveway and finish what I started.</p>
-<p>If you have had back surgery, a hip replacement, or a bad shoulder, or you are tired of fighting heavy gas equipment every weekend, this is the tool you want in the garage. It weighs nothing. It runs instantly. It does the work <strong>without the cost to your body</strong>.</p>
-<p>Patty figured out the part I would have missed. She <strong>bought it directly from the company</strong>, not a random seller. It came fast, it was packed clean, and she said customer service answered her first email. That was a change from the usual online runaround I have gotten used to.</p>
-<p>The thirty-day return is what took the last bit of doubt out for me. If the thing had shown up and not done the job, we would have <strong>sent it back and been made whole</strong>. There was no catch. That kind of policy tells you the company expects the product to work.</p>
-<p>I am not a reviewer. I am a sixty-seven-year-old retired HVAC guy from Loveland, Ohio who got his fall back. If you are reading this because your wife or your husband or your kids have been telling you to slow down — this is the tool that <u>lets you not slow down</u>.</p>
-<p>Patty has already asked our son to order one for our daughter-in-law's father up in Dayton, who had a knee replacement last spring and has been asking the neighbors to help with his leaves. I do not know him well. But I know what that feels like. <strong>Nobody should have to ask</strong>.</p>
+<h2 style="position: relative;">What I Would Tell a Man My Age</h2>
+<img alt="" data-copy="media_9.url:attr:src" data-prompts="[&quot;Older American couple sitting together on a back porch in suburban Ohio at golden hour, the husband holding a small cordless blower across his lap, both smiling warmly, fallen oak leaves raked neatly in yard behind them, photorealistic&quot;, &quot;Wide environmental shot of a tidy freshly cleared suburban driveway and porch with the retired homeowner walking back toward his wife at the door, photorealistic&quot;, &quot;Intimate portrait of a 67-year-old man looking out over his cleared yard with quiet satisfaction, wife's hand on his shoulder, soft warm light, photorealistic&quot;]" data-slot-key="media_9.url" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-35375982.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
+<p style="position: relative;">Look, I am not going to tell you this tool fixed my spine. A blower cannot do that. But I will tell you what it did do. It <strong>gave me back a task I had written off</strong>. It let me stand on my own driveway and finish what I started.</p>
+<p style="position: relative;">If you have had back surgery, a hip replacement, or a bad shoulder, or you are tired of fighting heavy gas equipment every weekend, this is the tool you want in the garage. It weighs nothing. It runs instantly. It does the work <strong>without the cost to your body</strong>.</p>
+<p style="position: relative;">Patty figured out the part I would have missed. She <strong>bought it directly from the company</strong>, not a random seller. It came fast, it was packed clean, and she said customer service answered her first email. That was a change from the usual online runaround I have gotten used to.</p>
+<p style="position: relative;">The thirty-day return is what took the last bit of doubt out for me. If the thing had shown up and not done the job, we would have <strong>sent it back and been made whole</strong>. There was no catch. That kind of policy tells you the company expects the product to work.</p>
+<p style="position: relative;">I am not a reviewer. I am a sixty-seven-year-old retired HVAC guy from Loveland, Ohio who got his fall back. If you are reading this because your wife or your husband or your kids have been telling you to slow down — this is the tool that <u>lets you not slow down</u>.</p>
+<p style="position: relative;">Patty has already asked our son to order one for our daughter-in-law's father up in Dayton, who had a knee replacement last spring and has been asking the neighbors to help with his leaves. I do not know him well. But I know what that feels like. <strong>Nobody should have to ask</strong>.</p>
 <!-- ★ CTA #3 -->
 <a class="cta-button" href="https://terica-store.com/click">Check Availability</a>
 <!-- SIGNATURE -->
@@ -229,7 +480,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="sidebar-product">
 <span class="product-badge">Seese Pro™ Ultra-Light, Ultra-Powerful Blower</span>
 <div class="v2-media-slot" data-job-id="eb2a48a1-7c19-4e97-8a77-2b7bc722ad60" data-prompts="[&quot;Hero product shot of the Seese Pro cordless handheld blower on a clean white background with its lithium battery attached, photorealistic&quot;, &quot;Three-quarter angled studio shot of the lightweight cordless blower with soft shadow, photorealistic&quot;, &quot;Cordless blower held in a retired man's weathered hand against a plain neutral backdrop, suggesting ease of use, photorealistic&quot;]" data-selected="0" data-slot-key="media_10.url" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_10.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Hero product shot of the Seese Pro cordless handheld blower on a clean white bac"</div></div>
-<p class="sidebar-tagline">Excellent</p>
+<p class="sidebar-tagline" style="position: relative;">Excellent</p>
 <div class="sidebar-stars">
 <span class="stars">★★★★★</span>
 <span class="rating-num">4.85</span>
@@ -252,7 +503,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>

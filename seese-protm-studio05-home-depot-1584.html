@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>The Home Depot Buyer Who Quit And Finally Exposed The Blower Aisle Markup Racket</title>
@@ -668,6 +665,16 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -676,10 +683,254 @@ t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "wb35vpdfk1");
 </script>
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
 
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
 
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
 
-<script src="https://terica-store.com/tracker.js" async></script>
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
@@ -695,8 +946,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <main class="adv-main">
 <!-- ── HERO ── -->
 <div class="adv-hero">
-<h1 class="adv-hero__title">Seven Things The Blower Aisle Never Wanted Retirees To Know</h1>
-<p class="adv-hero__subtitle"><strong>A retired category buyer walks through the receipts, the margin math, and the one direct brand that has dealer networks scrambling.</strong></p>
+<h1 class="adv-hero__title" style="position: relative;">Seven Things The Blower Aisle Never Wanted Retirees To Know</h1>
+<p class="adv-hero__subtitle" style="position: relative;"><strong>A retired category buyer walks through the receipts, the margin math, and the one direct brand that has dealer networks scrambling.</strong></p>
 </div>
 <!-- ── BYLINE (avatar injected from local pool) ── -->
 <div class="adv-byline">
@@ -713,166 +964,165 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <!-- ── LEAD IMAGE ── -->
 <div class="adv-lead-image">
-<div class="v2-media-slot" data-job-id="a7deaf75-d828-4955-85a4-1d3851e891e9" data-prompts='["Retired American man in his late sixties, plaid shirt and work pants, holding a compact cordless leaf blower in a suburban driveway at golden hour, Midwestern neighborhood background, photorealistic", "Close-up overhead shot of a lightweight cordless blower resting on a Home Depot-style receipt with handwritten markup notes in margin, photorealistic", "Weathered hands of a retired American man holding a small cordless blower, expression of quiet satisfaction, warm afternoon light, photorealistic"]' data-selected="0" data-slot-key="media.lead" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.lead</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Retired American man in his late sixties, plaid shirt and work pants, holding a "</div></div>
+<img alt="" data-copy="media.lead:attr:src" data-prompts='["Retired American man in his late sixties, plaid shirt and work pants, holding a compact cordless leaf blower in a suburban driveway at golden hour, Midwestern neighborhood background, photorealistic", "Close-up overhead shot of a lightweight cordless blower resting on a Home Depot-style receipt with handwritten markup notes in margin, photorealistic", "Weathered hands of a retired American man holding a small cordless blower, expression of quiet satisfaction, warm afternoon light, photorealistic"]' data-slot-key="media.lead" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-740246ee.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 10; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <!-- ── OPENING PULLQUOTE ── -->
-<blockquote class="adv-pullquote">THE MARKUP IS NOT THE TOOL. IT IS THE AISLE.</blockquote>
+<blockquote class="adv-pullquote" style="position: relative;">THE MARKUP IS NOT THE TOOL. IT IS THE AISLE.</blockquote>
 <!-- ── INTRO PARAGRAPHS ── -->
 <div class="adv-article">
-<p>For twenty-two years I sat on the other side of the blower aisle, approving invoices, negotiating pallet rates, and watching <strong>the same cordless unit get stamped with three different price tags</strong> depending on which badge the factory glued onto it.</p>
-<p>Now I am retired, my non-compete is gone, and the guilt is not. I watched neighbors my age lug heavy gas units around their yards because every cordless option on the shelf was engineered to <strong>keep the old distribution chain fed</strong>.</p>
-<p>What follows is not marketing. It is seven receipts. Seven reasons your last three blowers cost what they did, and one reason the industry is finally panicking about a direct brand called <strong>Seese Pro</strong>.</p>
+<p style="position: relative;">For twenty-two years I sat on the other side of the blower aisle, approving invoices, negotiating pallet rates, and watching <strong>the same cordless unit get stamped with three different price tags</strong> depending on which badge the factory glued onto it.</p>
+<p style="position: relative;">Now I am retired, my non-compete is gone, and the guilt is not. I watched neighbors my age lug heavy gas units around their yards because every cordless option on the shelf was engineered to <strong>keep the old distribution chain fed</strong>.</p>
+<p style="position: relative;">What follows is not marketing. It is seven receipts. Seven reasons your last three blowers cost what they did, and one reason the industry is finally panicking about a direct brand called <strong>Seese Pro</strong>.</p>
 </div>
 <!-- ── S1 "THE MOMENT EVERYTHING CHANGED" ── -->
-<h2 class="adv-section-heading">Reason One: The Dealer Network Tax</h2>
+<h2 class="adv-section-heading" style="position: relative;">Reason One: The Dealer Network Tax</h2>
 <div class="adv-inline-image">
-<div class="v2-media-slot" data-job-id="a7deaf75-d828-4955-85a4-1d3851e891e9" data-prompts='["Cross-section diagram illustration of a power-tool distribution chain from factory to big-box shelf, dollar signs stacking at each middleman node, photorealistic flat-lay composition", "Row of nearly identical cordless blowers on a Home Depot-style retail shelf with different price tags, fluorescent overhead lighting, photorealistic", "American suburban homeowner frowning at a long store receipt in a big-box parking lot, pickup truck in background, photorealistic"]' data-selected="0" data-slot-key="media.s1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Cross-section diagram illustration of a power-tool distribution chain from facto"</div></div>
+<img alt="" data-copy="media.s1:attr:src" data-prompts='["Cross-section diagram illustration of a power-tool distribution chain from factory to big-box shelf, dollar signs stacking at each middleman node, photorealistic flat-lay composition", "Row of nearly identical cordless blowers on a Home Depot-style retail shelf with different price tags, fluorescent overhead lighting, photorealistic", "American suburban homeowner frowning at a long store receipt in a big-box parking lot, pickup truck in background, photorealistic"]' data-slot-key="media.s1" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-e200b3c9.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <div class="adv-article">
-<p>Every blower that passes through a regional distributor picks up a <strong>margin stack the engineer never sees</strong>. The factory ships it, the distributor warehouses it, the big-box regional manager tacks on his cut, and the shelf price absorbs all of it.</p>
-<p>I signed those invoices. I know the spread. The tool leaves the assembly line at one cost and arrives on your shelf at a <strong>number that would make the factory manager laugh</strong>, because none of that extra markup built a better motor.</p>
-<p>The dealer network is not a service. It is a <u>toll road built between you and a pretty ordinary brushless motor</u>. Every mile of that road gets charged to the homeowner, and the homeowner has been told to call it quality.</p>
+<p style="position: relative;">Every blower that passes through a regional distributor picks up a <strong>margin stack the engineer never sees</strong>. The factory ships it, the distributor warehouses it, the big-box regional manager tacks on his cut, and the shelf price absorbs all of it.</p>
+<p style="position: relative;">I signed those invoices. I know the spread. The tool leaves the assembly line at one cost and arrives on your shelf at a <strong>number that would make the factory manager laugh</strong>, because none of that extra markup built a better motor.</p>
+<p style="position: relative;">The dealer network is not a service. It is a <u>toll road built between you and a pretty ordinary brushless motor</u>. Every mile of that road gets charged to the homeowner, and the homeowner has been told to call it quality.</p>
 </div>
 <!-- ── ESTHETICIAN PULLQUOTE ── -->
-<blockquote class="adv-pullquote">THE PRO-GRADE BADGE IS PAINT. NOT ENGINEERING.</blockquote>
+<blockquote class="adv-pullquote" style="position: relative;">THE PRO-GRADE BADGE IS PAINT. NOT ENGINEERING.</blockquote>
 <div class="adv-article">
-<p>Direct brands bypass the whole road. No regional office. No territory rep flying in for a steak dinner. No co-op advertising fund baked into the invoice. The <strong>same motor, the same battery chemistry</strong>, delivered from a warehouse to your driveway.</p>
-<p>That is the first receipt. The dealer network is an aisle, not an engineering team, and when a brand like <strong>Seese Pro</strong> skips the aisle entirely, the price falls through the floor without a single component getting cheaper.</p>
+<p style="position: relative;">Direct brands bypass the whole road. No regional office. No territory rep flying in for a steak dinner. No co-op advertising fund baked into the invoice. The <strong>same motor, the same battery chemistry</strong>, delivered from a warehouse to your driveway.</p>
+<p style="position: relative;">That is the first receipt. The dealer network is an aisle, not an engineering team, and when a brand like <strong>Seese Pro</strong> skips the aisle entirely, the price falls through the floor without a single component getting cheaper.</p>
 </div>
 <!-- ── S2 "THE SHOCKING PRICE TAG" ── -->
-<h2 class="adv-section-heading">Reason Two: The Pro-Grade Lie</h2>
+<h2 class="adv-section-heading" style="position: relative;">Reason Two: The Pro-Grade Lie</h2>
 <div class="adv-inline-image">
-<div class="v2-media-slot" data-job-id="a7deaf75-d828-4955-85a4-1d3851e891e9" data-prompts='["Two visually similar blowers side by side on a workbench, one with a bold pro-grade label sticker, identical internals implied, studio lighting, photorealistic", "Close-up of a shiny pro-grade sticker being peeled off a black plastic power-tool housing, photorealistic macro shot", "Retired American man smirking skeptically at a pro-grade labeled blower under warehouse lighting, photorealistic"]' data-selected="0" data-slot-key="media.s2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Two visually similar blowers side by side on a workbench, one with a bold pro-gr"</div></div>
+<img alt="" data-copy="media.s2:attr:src" data-prompts='["Two visually similar blowers side by side on a workbench, one with a bold pro-grade label sticker, identical internals implied, studio lighting, photorealistic", "Close-up of a shiny pro-grade sticker being peeled off a black plastic power-tool housing, photorealistic macro shot", "Retired American man smirking skeptically at a pro-grade labeled blower under warehouse lighting, photorealistic"]' data-slot-key="media.s2" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-25dedf0d.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <div class="adv-article">
-<p>Walk the aisle and you will see two blowers that look almost identical. The cheaper one is labeled homeowner. The other wears a <strong>pro-grade sticker and costs significantly more</strong>. I sat in the meetings where we picked those stickers.</p>
-<p>The engineering file on those two units was <strong>the same document</strong>. Same motor housing. Same brushless winding. Same battery cells from the same Korean supplier. The pro-grade version had a different color plastic and a longer warranty card printed at a different vendor.</p>
-<p>The label added nothing a landscaper could feel, but it added a <u>full dinner tab to the final ticket</u>. Suburban homeowners bought it because pro sounded serious. The factory laughed. The distributor laughed louder. I stopped laughing around year fifteen.</p>
+<p style="position: relative;">Walk the aisle and you will see two blowers that look almost identical. The cheaper one is labeled homeowner. The other wears a <strong>pro-grade sticker and costs significantly more</strong>. I sat in the meetings where we picked those stickers.</p>
+<p style="position: relative;">The engineering file on those two units was <strong>the same document</strong>. Same motor housing. Same brushless winding. Same battery cells from the same Korean supplier. The pro-grade version had a different color plastic and a longer warranty card printed at a different vendor.</p>
+<p style="position: relative;">The label added nothing a landscaper could feel, but it added a <u>full dinner tab to the final ticket</u>. Suburban homeowners bought it because pro sounded serious. The factory laughed. The distributor laughed louder. I stopped laughing around year fifteen.</p>
 </div>
 <!-- ── S3 "THE DISCOVERY" + PRODUCT HIGHLIGHT ── -->
-<h2 class="adv-section-heading">Reason Three: Fuel Mix And Fake Weight</h2>
+<h2 class="adv-section-heading" style="position: relative;">Reason Three: Fuel Mix And Fake Weight</h2>
 <div class="adv-article">
-<p>Gas blowers are a racket within the racket. Two-stroke engines need a <strong>fuel mix the manufacturer conveniently sells by the bottle</strong>. Miss the ratio and the warranty voids. Use the branded bottle and you pay for gasoline at gourmet olive oil rates.</p>
-<p>Cordless fixes the fuel problem but introduces the weight problem, except it does not have to. Lithium cells have <strong>dropped in mass every year for a decade</strong>, yet the blower on the shelf weighs about what it did when my daughter was in high school.</p>
+<p style="position: relative;">Gas blowers are a racket within the racket. Two-stroke engines need a <strong>fuel mix the manufacturer conveniently sells by the bottle</strong>. Miss the ratio and the warranty voids. Use the branded bottle and you pay for gasoline at gourmet olive oil rates.</p>
+<p style="position: relative;">Cordless fixes the fuel problem but introduces the weight problem, except it does not have to. Lithium cells have <strong>dropped in mass every year for a decade</strong>, yet the blower on the shelf weighs about what it did when my daughter was in high school.</p>
 </div>
 <!-- ── BUYER QUOTES (2 back-to-back) ── -->
-<blockquote class="adv-buyer-quote">
+<blockquote class="adv-buyer-quote" style="position: relative;">
 <span>Traded in my old gas unit last Saturday. First time my shoulder did not ache by Sunday morning. The weight is real.</span>
 <span class="adv-buyer-quote__attr">— <strong>Randy, 62</strong> <span>Retired contractor from Ohio</span></span>
 </blockquote>
-<blockquote class="adv-buyer-quote">
+<blockquote class="adv-buyer-quote" style="position: relative;">
 <span>Been on r/BuyItForLife for years. This is the first blower that actually earns the phrase. No dealer, no fuel mix, no drama.</span>
 <span class="adv-buyer-quote__attr">— <strong>Greg, 58</strong> <span>BuyItForLife forum regular, Texas</span></span>
 </blockquote>
 <div class="adv-article">
-<p>Why? Because the housing is oversized to justify the pro-grade sticker, and the battery is oversized to justify the runtime claim on the box. Seese Pro landed at <strong>just over two pounds</strong> by refusing both lies.</p>
+<p style="position: relative;">Why? Because the housing is oversized to justify the pro-grade sticker, and the battery is oversized to justify the runtime claim on the box. Seese Pro landed at <strong>just over two pounds</strong> by refusing both lies.</p>
 </div>
 <!-- ── VIDEO #1 ── -->
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="a7deaf75-d828-4955-85a4-1d3851e891e9" data-prompts='["Video thumbnail style image of an American man demonstrating Seese Pro blower in his driveway, play button overlay, photorealistic", "Suburban yard cleanup demo thumbnail, lightweight cordless blower in motion, photorealistic", "Before and after driveway thumbnail with lightweight cordless blower, photorealistic"]' data-selected="0" data-slot-key="media.video_1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.video_1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Video thumbnail style image of an American man demonstrating Seese Pro blower in"</div></div></div>
+<div class="adv-inline-image"><img alt="" data-copy="media.video_1:attr:src" data-prompts='["Video thumbnail style image of an American man demonstrating Seese Pro blower in his driveway, play button overlay, photorealistic", "Suburban yard cleanup demo thumbnail, lightweight cordless blower in motion, photorealistic", "Before and after driveway thumbnail with lightweight cordless blower, photorealistic"]' data-slot-key="media.video_1" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-005ffd78.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <!-- ── S4 "MY FIRST EXPERIENCE" ── -->
-<h2 class="adv-section-heading">Reason Four: Warranties Priced As Margin</h2>
+<h2 class="adv-section-heading" style="position: relative;">Reason Four: Warranties Priced As Margin</h2>
 <div class="adv-article">
-<p>Extended warranties in the power-tool aisle are not insurance. They are a <strong>margin line on the quarterly report</strong>. The manufacturer covers the claim at factory cost, and the store collects a number that would embarrass a casino.</p>
-<p>I watched a regional VP refer to the extended plan as <strong>pure oxygen</strong>. That meant no cost of goods, no shipping, no service liability worth counting. Just a line item the checkout clerk was coached to recite at the register.</p>
-<p>A direct brand does not need the extra plan, because the actual warranty on the unit is already <u>carried by the brand, not rented to you</u>. Seese Pro simply backs the tool. No upsell. No coached clerk. No warehouse margin stuffed into your receipt.</p>
+<p style="position: relative;">Extended warranties in the power-tool aisle are not insurance. They are a <strong>margin line on the quarterly report</strong>. The manufacturer covers the claim at factory cost, and the store collects a number that would embarrass a casino.</p>
+<p style="position: relative;">I watched a regional VP refer to the extended plan as <strong>pure oxygen</strong>. That meant no cost of goods, no shipping, no service liability worth counting. Just a line item the checkout clerk was coached to recite at the register.</p>
+<p style="position: relative;">A direct brand does not need the extra plan, because the actual warranty on the unit is already <u>carried by the brand, not rented to you</u>. Seese Pro simply backs the tool. No upsell. No coached clerk. No warehouse margin stuffed into your receipt.</p>
 </div>
 <div class="adv-inline-image">
-<div class="v2-media-slot" data-job-id="a7deaf75-d828-4955-85a4-1d3851e891e9" data-prompts='["Extended warranty upsell paperwork stacked on a retail checkout counter with a power tool box, photorealistic", "Big-box store clerk handing a receipt with an extended plan highlighted to an older American customer, photorealistic", "Close-up of a warranty card being torn in half over a workbench, symbolic of rejecting the upsell, photorealistic"]' data-selected="0" data-slot-key="media.s4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Extended warranty upsell paperwork stacked on a retail checkout counter with a p"</div></div>
+<img alt="" data-copy="media.s4:attr:src" data-prompts='["Extended warranty upsell paperwork stacked on a retail checkout counter with a power tool box, photorealistic", "Big-box store clerk handing a receipt with an extended plan highlighted to an older American customer, photorealistic", "Close-up of a warranty card being torn in half over a workbench, symbolic of rejecting the upsell, photorealistic"]' data-slot-key="media.s4" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-7f159514.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <!-- ── S5 "THE TRANSFORMATION WAS IMMEDIATE" ── -->
-<h2 class="adv-section-heading">Reason Five: The Commercial Lie</h2>
+<h2 class="adv-section-heading" style="position: relative;">Reason Five: The Commercial Lie</h2>
 <div class="adv-article">
-<p>You have seen the ads. A landscaper with a backpack blower walking a professional property, voice-over about commercial-grade power. The unit on screen <strong>costs more than a washer and dryer</strong>, and the homeowner at home watches it thinking he needs the same thing.</p>
-<p>He does not. A suburban driveway, a back patio, a bed of fall leaves — these are <strong>twelve-minute jobs</strong>. A commercial unit is engineered for eight hours a day, five days a week, which is why it is heavy, loud, and priced like a rental car.</p>
-<p>The industry leaned on the commercial lie because <u>residential honesty would have collapsed the price structure</u>. A two-pound cordless unit built for twelve-minute driveway jobs is exactly what the suburbs need, and exactly what the aisle has refused to sell them.</p>
+<p style="position: relative;">You have seen the ads. A landscaper with a backpack blower walking a professional property, voice-over about commercial-grade power. The unit on screen <strong>costs more than a washer and dryer</strong>, and the homeowner at home watches it thinking he needs the same thing.</p>
+<p style="position: relative;">He does not. A suburban driveway, a back patio, a bed of fall leaves — these are <strong>twelve-minute jobs</strong>. A commercial unit is engineered for eight hours a day, five days a week, which is why it is heavy, loud, and priced like a rental car.</p>
+<p style="position: relative;">The industry leaned on the commercial lie because <u>residential honesty would have collapsed the price structure</u>. A two-pound cordless unit built for twelve-minute driveway jobs is exactly what the suburbs need, and exactly what the aisle has refused to sell them.</p>
 </div>
 <!-- ── VIDEO #2 ── -->
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="a7deaf75-d828-4955-85a4-1d3851e891e9" data-prompts='["Video thumbnail showing side-by-side comparison of big-box blower versus Seese Pro direct unit, photorealistic", "Retired American buyer Dale-style man explaining markup math at a workbench, thumbnail composition, photorealistic", "Teardown thumbnail of a cordless blower with internal components laid out, photorealistic"]' data-selected="0" data-slot-key="media.video_2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.video_2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Video thumbnail showing side-by-side comparison of big-box blower versus Seese P"</div></div></div>
+<div class="adv-inline-image"><img alt="" data-copy="media.video_2:attr:src" data-prompts='["Video thumbnail showing side-by-side comparison of big-box blower versus Seese Pro direct unit, photorealistic", "Retired American buyer Dale-style man explaining markup math at a workbench, thumbnail composition, photorealistic", "Teardown thumbnail of a cordless blower with internal components laid out, photorealistic"]' data-slot-key="media.video_2" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-dcb001a6.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <!-- ── S6 "WHY THIS WORKS WHEN NOTHING ELSE DOES" ── -->
-<h2 class="adv-section-heading">Reason Six: What Direct Actually Changes</h2>
+<h2 class="adv-section-heading" style="position: relative;">Reason Six: What Direct Actually Changes</h2>
 <div class="adv-article">
-<p>Here is the part the category meetings do not want printed. A direct-to-consumer brand takes the <strong>same factory, the same motor, the same battery</strong>, and strips out the regional distributor, the big-box markup, the co-op ad fund, and the coached upsell.</p>
-<p>The tool does not get cheaper to build. The path from factory to homeowner gets shorter. That shorter path is the entire difference between the shelf sticker you remember and the <u>honest number a brand like Seese Pro can deliver</u>.</p>
+<p style="position: relative;">Here is the part the category meetings do not want printed. A direct-to-consumer brand takes the <strong>same factory, the same motor, the same battery</strong>, and strips out the regional distributor, the big-box markup, the co-op ad fund, and the coached upsell.</p>
+<p style="position: relative;">The tool does not get cheaper to build. The path from factory to homeowner gets shorter. That shorter path is the entire difference between the shelf sticker you remember and the <u>honest number a brand like Seese Pro can deliver</u>.</p>
 </div>
 <ul class="adv-compare-list">
-<li><strong>Old Gas Unit</strong> <span>Heavy, fuel mix upsell, dealer-only service, warranty card routed through three distributors before anyone calls you back.</span></li>
-<li><strong>Big-Box Cordless</strong> <span>Same factory, pro-grade paint, extended warranty upsell, coached clerk, margin stack baked into every line on your receipt.</span></li>
-<li><strong>Seese Pro Direct</strong> <span>Two pounds, brushless motor, brand-backed warranty, thirty-day trial, shipped from warehouse to driveway with nobody taking a cut.</span></li>
+<li style="position: relative;"><strong>Old Gas Unit</strong> <span>Heavy, fuel mix upsell, dealer-only service, warranty card routed through three distributors before anyone calls you back.</span></li>
+<li style="position: relative;"><strong>Big-Box Cordless</strong> <span>Same factory, pro-grade paint, extended warranty upsell, coached clerk, margin stack baked into every line on your receipt.</span></li>
+<li style="position: relative;"><strong>Seese Pro Direct</strong> <span>Two pounds, brushless motor, brand-backed warranty, thirty-day trial, shipped from warehouse to driveway with nobody taking a cut.</span></li>
 </ul>
 <div class="adv-article">
-<p>It also changes accountability. When something breaks, you are not arguing with a store manager who gets paid to say no. You are contacting the <strong>brand that owns the engineering file</strong>. They either stand behind it or they do not sell another unit.</p>
-<p>That is why the dealer networks are quietly panicking. A <strong>thirty-day risk-free trial</strong> on a direct brand is not a gimmick. It is a message to the industry: we will let the homeowner test the whole invoice, because we are the whole invoice.</p>
+<p style="position: relative;">It also changes accountability. When something breaks, you are not arguing with a store manager who gets paid to say no. You are contacting the <strong>brand that owns the engineering file</strong>. They either stand behind it or they do not sell another unit.</p>
+<p style="position: relative;">That is why the dealer networks are quietly panicking. A <strong>thirty-day risk-free trial</strong> on a direct brand is not a gimmick. It is a message to the industry: we will let the homeowner test the whole invoice, because we are the whole invoice.</p>
 </div>
 <!-- ── TESTIMONIAL SCREENSHOT ── -->
 <div class="adv-testimonial-screens adv-testimonial-screens--single">
-<div class="v2-media-slot" data-job-id="a7deaf75-d828-4955-85a4-1d3851e891e9" data-prompts='["Suburban American homeowner using a compact cordless blower on a short driveway clearing a few autumn leaves, casual weekend clothing, photorealistic", "Contrast image of a heavy commercial backpack blower next to a tiny cordless unit on a suburban lawn, photorealistic", "Satisfied American homeowner wrapping up a quick driveway cleanup with a lightweight cordless blower, golden hour lighting, photorealistic"]' data-selected="0" data-slot-key="media.screen_1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.screen_1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Suburban American homeowner using a compact cordless blower on a short driveway "</div></div>
+<img alt="" data-copy="media.screen_1:attr:src" data-prompts='["Suburban American homeowner using a compact cordless blower on a short driveway clearing a few autumn leaves, casual weekend clothing, photorealistic", "Contrast image of a heavy commercial backpack blower next to a tiny cordless unit on a suburban lawn, photorealistic", "Satisfied American homeowner wrapping up a quick driveway cleanup with a lightweight cordless blower, golden hour lighting, photorealistic"]' data-slot-key="media.screen_1" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-c9db5f3f.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <!-- ── S7 FAQ ── -->
-<h2 class="adv-section-heading">Reason Seven: Why The Industry Is Panicking</h2>
+<h2 class="adv-section-heading" style="position: relative;">Reason Seven: Why The Industry Is Panicking</h2>
 <div class="adv-faq">
 <div class="adv-faq__item">
-<p class="adv-faq__q">Is a two-pound cordless unit really enough power for an actual suburban driveway with wet leaves in fall?</p>
-<p class="adv-faq__a">Yes. Brushless efficiency plus modern lithium means output per pound has doubled. The weight cut is engineering, not corner-cutting, and the airflow numbers back it up.</p>
+<p class="adv-faq__q" style="position: relative;">Is a two-pound cordless unit really enough power for an actual suburban driveway with wet leaves in fall?</p>
+<p class="adv-faq__a" style="position: relative;">Yes. Brushless efficiency plus modern lithium means output per pound has doubled. The weight cut is engineering, not corner-cutting, and the airflow numbers back it up.</p>
 </div>
 <div class="adv-faq__item">
-<p class="adv-faq__q">What actually happens if something goes wrong after I open the box and start using it in my yard?</p>
-<p class="adv-faq__a">You contact the brand directly. No dealer runaround, no regional service center. The thirty-day risk-free trial means you can return it, no coached scripts required.</p>
+<p class="adv-faq__q" style="position: relative;">What actually happens if something goes wrong after I open the box and start using it in my yard?</p>
+<p class="adv-faq__a" style="position: relative;">You contact the brand directly. No dealer runaround, no regional service center. The thirty-day risk-free trial means you can return it, no coached scripts required.</p>
 </div>
 <div class="adv-faq__item">
-<p class="adv-faq__q">Why is the Seese Pro unit available directly from the brand instead of on a Home Depot shelf?</p>
-<p class="adv-faq__a">Because the shelf forces a distributor margin, a store margin, and an upsell stack. Going direct kills the whole chain and lets the engineering speak for itself.</p>
+<p class="adv-faq__q" style="position: relative;">Why is the Seese Pro unit available directly from the brand instead of on a Home Depot shelf?</p>
+<p class="adv-faq__a" style="position: relative;">Because the shelf forces a distributor margin, a store margin, and an upsell stack. Going direct kills the whole chain and lets the engineering speak for itself.</p>
 </div>
 </div>
 <!-- ── S8 TESTIMONIALS TRIO ── -->
-<h2 class="adv-section-heading">Homeowners Who Read The Receipts</h2>
+<h2 class="adv-section-heading" style="position: relative;">Homeowners Who Read The Receipts</h2>
 <div class="adv-article">
-<p>I posted a rough version of this on a forum last month. The messages from homeowners in the markup fog started arriving the next morning.</p>
+<p style="position: relative;">I posted a rough version of this on a forum last month. The messages from homeowners in the markup fog started arriving the next morning.</p>
 </div>
 <div class="adv-testimonials">
 <div class="adv-testimonials__card">
 <div class="adv-testimonials__stars">★★★★★</div>
-<p class="adv-testimonials__text">Three gas blowers in twelve years, every one of them leaked or died. Seese Pro arrived Tuesday. Cleaned the whole driveway without a single backache.</p>
-<p class="adv-testimonials__author">— <strong>Bill, 67</strong> <span>Retired electrician, Michigan</span></p>
+<p class="adv-testimonials__text" style="position: relative;">Three gas blowers in twelve years, every one of them leaked or died. Seese Pro arrived Tuesday. Cleaned the whole driveway without a single backache.</p>
+<p class="adv-testimonials__author" style="position: relative;">— <strong>Bill, 67</strong> <span>Retired electrician, Michigan</span></p>
 </div>
 <div class="adv-testimonials__card">
 <div class="adv-testimonials__stars">★★★★★</div>
-<p class="adv-testimonials__text">I checked the teardown photos before I ordered. Same brushless motor the big brands use, minus the dealer markup. Exactly what the math said.</p>
-<p class="adv-testimonials__author">— <strong>Marcus, 54</strong> <span>Teardown enthusiast, Arizona</span></p>
+<p class="adv-testimonials__text" style="position: relative;">I checked the teardown photos before I ordered. Same brushless motor the big brands use, minus the dealer markup. Exactly what the math said.</p>
+<p class="adv-testimonials__author" style="position: relative;">— <strong>Marcus, 54</strong> <span>Teardown enthusiast, Arizona</span></p>
 </div>
 <div class="adv-testimonials__card">
 <div class="adv-testimonials__stars">★★★★★</div>
-<p class="adv-testimonials__text">My shoulder surgery was four years ago. This is the first blower I can actually run without paying for it the next morning.</p>
-<p class="adv-testimonials__author">— <strong>Dave, 71</strong> <span>Retired carpenter, Florida</span></p>
+<p class="adv-testimonials__text" style="position: relative;">My shoulder surgery was four years ago. This is the first blower I can actually run without paying for it the next morning.</p>
+<p class="adv-testimonials__author" style="position: relative;">— <strong>Dave, 71</strong> <span>Retired carpenter, Florida</span></p>
 </div>
 </div>
 <!-- ── OFFER IMAGE ── -->
 <div class="adv-offer-image">
-<div class="v2-media-slot" data-job-id="a7deaf75-d828-4955-85a4-1d3851e891e9" data-prompts='["Seese Pro cordless blower in its shipping box on a suburban front porch, delivery fresh, photorealistic", "Lightweight cordless blower being unboxed on a kitchen table by an older American man, excited expression, photorealistic", "Seese Pro blower sitting on a workbench beside a thirty-day trial card, clean composition, photorealistic"]' data-selected="0" data-slot-key="media.offer" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.offer</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Seese Pro cordless blower in its shipping box on a suburban front porch, deliver"</div></div>
+<img alt="" data-copy="media.offer:attr:src" data-prompts='["Seese Pro cordless blower in its shipping box on a suburban front porch, delivery fresh, photorealistic", "Lightweight cordless blower being unboxed on a kitchen table by an older American man, excited expression, photorealistic", "Seese Pro blower sitting on a workbench beside a thirty-day trial card, clean composition, photorealistic"]' data-slot-key="media.offer" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-283b4e25.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <!-- ── S9 "LIMITED TIME OFFER" + OFFER BOX ── -->
-<h2 class="adv-section-heading">The Honest Choice</h2>
+<h2 class="adv-section-heading" style="position: relative;">The Honest Choice</h2>
 <div class="adv-article">
-<p>After twenty-two years inside the aisle, I finally found a blower I recommend without apology. Direct from the brand. No coaching. No upsell. No regrets.</p>
+<p style="position: relative;">After twenty-two years inside the aisle, I finally found a blower I recommend without apology. Direct from the brand. No coaching. No upsell. No regrets.</p>
 </div><div class="adv-offer-box">
-<h3>Seese Pro Ships Direct To Your Driveway With Full Risk-Free Trial</h3>
-<p>No dealer, no fuel tax, no pro-grade paint job. Just a brushless cordless unit at the honest number direct shipping allows.</p>
+<h3 style="position: relative;">Seese Pro Ships Direct To Your Driveway With Full Risk-Free Trial</h3>
+<p style="position: relative;">No dealer, no fuel tax, no pro-grade paint job. Just a brushless cordless unit at the honest number direct shipping allows.</p>
 <ul class="adv-offer-box__list">
-<li>Ultra-light two-pound housing engineered with modern brushless motor components throughout</li>
-<li>Cordless battery runtime handles driveways, patios, and light snow loads</li>
-<li>Thirty day risk-free trial backed directly by the manufacturer warranty</li>
+<li style="position: relative;">Ultra-light two-pound housing engineered with modern brushless motor components throughout</li>
+<li style="position: relative;">Cordless battery runtime handles driveways, patios, and light snow loads</li>
+<li style="position: relative;">Thirty day risk-free trial backed directly by the manufacturer warranty</li>
 </ul>
 </div>
-
 <!-- ── BLOCK CTA #1 ── -->
 <a class="adv-cta-block" href="https://terica-store.com/click">CHECK AVAILABILITY</a>
 <!-- ── VIDEO #3 ── -->
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="a7deaf75-d828-4955-85a4-1d3851e891e9" data-prompts='["Video thumbnail of suburban homeowner clearing fall leaves with compact Seese Pro blower, photorealistic", "Thumbnail showing light snow being cleared from a walkway with a cordless blower, photorealistic", "Senior American homeowner smiling while holding the lightweight cordless blower in his garage, thumbnail composition, photorealistic"]' data-selected="0" data-slot-key="media.video_3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.video_3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Video thumbnail of suburban homeowner clearing fall leaves with compact Seese Pr"</div></div></div>
+<div class="adv-inline-image"><img alt="" data-copy="media.video_3:attr:src" data-prompts='["Video thumbnail of suburban homeowner clearing fall leaves with compact Seese Pro blower, photorealistic", "Thumbnail showing light snow being cleared from a walkway with a cordless blower, photorealistic", "Senior American homeowner smiling while holding the lightweight cordless blower in his garage, thumbnail composition, photorealistic"]' data-slot-key="media.video_3" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-f4952c88.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <!-- ── S10 "DON'T WAIT UNTIL IT'S TOO LATE" ── -->
-<h2 class="adv-section-heading">One Last Receipt</h2>
+<h2 class="adv-section-heading" style="position: relative;">One Last Receipt</h2>
 <div class="adv-article">
-<p>Before you click away, consider what the last three blowers in your garage actually were. Two gas units that leaked, one corded model you tripped over every Saturday, and a <strong>cumulative receipt you would rather not add up</strong>.</p>
-<p>Every dollar of those three receipts paid for the dealer network, the pro-grade paint, the fuel-mix racket, and the coached warranty upsell. Not one of them paid for a <u>meaningfully better tool in your hands</u>.</p>
-<p>Seese Pro is the first unit that treats the homeowner as the customer instead of the mark. The thirty-day trial proves the brand believes its own receipts. If it does not hold up, you send it back. <strong>No dealer to argue with</strong>.</p>
+<p style="position: relative;">Before you click away, consider what the last three blowers in your garage actually were. Two gas units that leaked, one corded model you tripped over every Saturday, and a <strong>cumulative receipt you would rather not add up</strong>.</p>
+<p style="position: relative;">Every dollar of those three receipts paid for the dealer network, the pro-grade paint, the fuel-mix racket, and the coached warranty upsell. Not one of them paid for a <u>meaningfully better tool in your hands</u>.</p>
+<p style="position: relative;">Seese Pro is the first unit that treats the homeowner as the customer instead of the mark. The thirty-day trial proves the brand believes its own receipts. If it does not hold up, you send it back. <strong>No dealer to argue with</strong>.</p>
 </div>
 <!-- ── GUARANTEE BLOCK ── -->
 <div class="adv-guarantee">
@@ -881,14 +1131,14 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-guarantee__badge-sub">Risk Free</div>
 </div>
 <div class="adv-guarantee__body">
-<h3>A Thirty-Day Promise That Actually Comes From The Brand Itself</h3>
-<p>The big-box extended plan is a revenue stream. The direct-brand promise is a <strong>confidence statement</strong>. Seese Pro lets you run the unit for a full month on your own yard, your own leaves, your own schedule, with a real return path if it falls short.</p>
-<p>No coached clerk to talk you out of it. No regional service center three states away. You contact the brand, the brand covers the return, and the brand <strong>eats the cost if it missed the mark</strong>. That is what accountability looks like when the aisle is gone.</p>
+<h3 style="position: relative;">A Thirty-Day Promise That Actually Comes From The Brand Itself</h3>
+<p style="position: relative;">The big-box extended plan is a revenue stream. The direct-brand promise is a <strong>confidence statement</strong>. Seese Pro lets you run the unit for a full month on your own yard, your own leaves, your own schedule, with a real return path if it falls short.</p>
+<p style="position: relative;">No coached clerk to talk you out of it. No regional service center three states away. You contact the brand, the brand covers the return, and the brand <strong>eats the cost if it missed the mark</strong>. That is what accountability looks like when the aisle is gone.</p>
 </div>
 </div>
 <!-- ── P.S. LINE ── -->
 <div class="adv-article">
-<p>One final note from my old desk: the dealer networks saw this report. Expect them to pressure-test every direct brand they can. Order while direct still means direct.</p>
+<p style="position: relative;">One final note from my old desk: the dealer networks saw this report. Expect them to pressure-test every direct brand they can. Order while direct still means direct.</p>
 </div>
 <!-- ── BLOCK CTA #3 ── -->
 <a class="adv-cta-block" href="https://terica-store.com/click">CHECK AVAILABILITY</a>
@@ -904,7 +1154,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Randy Schaefer</span>
-<p class="adv-fb-comment__text">My brother-in-law worked at a dealer warehouse for fifteen years. He said the same thing about the pro-grade sticker. This article nails it.</p>
+<p class="adv-fb-comment__text" style="position: relative;">My brother-in-law worked at a dealer warehouse for fifteen years. He said the same thing about the pro-grade sticker. This article nails it.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -918,7 +1168,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Carol Whitfield</span>
-<p class="adv-fb-comment__text">Bought my gas unit in 2018. Leaked fuel all over my garage floor by 2022. Never again. Ordering the Seese Pro this afternoon.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Bought my gas unit in 2018. Leaked fuel all over my garage floor by 2022. Never again. Ordering the Seese Pro this afternoon.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -932,7 +1182,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Greg Morales</span>
-<p class="adv-fb-comment__text">Dale is the real deal. I worked adjacent to that whole aisle, and every one of these seven points is accurate down to the dollar.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Dale is the real deal. I worked adjacent to that whole aisle, and every one of these seven points is accurate down to the dollar.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -946,7 +1196,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Linda Brockman</span>
-<p class="adv-fb-comment__text">Husband has a bad shoulder from roofing work. He handled his first Seese Pro run last Saturday without a single complaint. Huge win here.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Husband has a bad shoulder from roofing work. He handled his first Seese Pro run last Saturday without a single complaint. Huge win here.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -960,7 +1210,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Tom Richardson</span>
-<p class="adv-fb-comment__text">Reddit r/BuyItForLife sent me here. Teardown photos match what Dale describes. Motor is standard, housing is smart. Ordered one, arrived in four days.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Reddit r/BuyItForLife sent me here. Teardown photos match what Dale describes. Motor is standard, housing is smart. Ordered one, arrived in four days.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -974,7 +1224,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Patricia Hollis</span>
-<p class="adv-fb-comment__text">Retired from a hardware co-op buying office myself. Same exact markups. Same exact coaching scripts at the register. Somebody finally said it out loud.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Retired from a hardware co-op buying office myself. Same exact markups. Same exact coaching scripts at the register. Somebody finally said it out loud.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -988,7 +1238,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Frank Delaney</span>
-<p class="adv-fb-comment__text">Ordered mine after reading reason four. The extended warranty upsell at checkout has bugged me for years. Good to have confirmation of the margin.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Ordered mine after reading reason four. The extended warranty upsell at checkout has bugged me for years. Good to have confirmation of the margin.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -1002,7 +1252,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Susan Kellerman</span>
-<p class="adv-fb-comment__text">My husband refused to believe a cordless could handle wet leaves. First Sunday with Seese Pro he cleared the whole front lawn grinning.</p>
+<p class="adv-fb-comment__text" style="position: relative;">My husband refused to believe a cordless could handle wet leaves. First Sunday with Seese Pro he cleared the whole front lawn grinning.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -1016,7 +1266,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Bob Prescott</span>
-<p class="adv-fb-comment__text">The fuel mix racket had me fuming for twenty years. Branded bottle prices are absurd. Going cordless, going direct, never buying another two-stroke again.</p>
+<p class="adv-fb-comment__text" style="position: relative;">The fuel mix racket had me fuming for twenty years. Branded bottle prices are absurd. Going cordless, going direct, never buying another two-stroke again.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -1030,7 +1280,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Diane Fairchild</span>
-<p class="adv-fb-comment__text">Bought one for my father, age seventy-three. He handled the whole back patio without putting it down. First time in years he smiled.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Bought one for my father, age seventy-three. He handled the whole back patio without putting it down. First time in years he smiled.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -1044,7 +1294,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Jeff Marston</span>
-<p class="adv-fb-comment__text">Seven receipts, one honest blower. This is the article the aisle did not want written. Sharing it with my neighborhood forum tonight.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Seven receipts, one honest blower. This is the article the aisle did not want written. Sharing it with my neighborhood forum tonight.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -1067,7 +1317,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span class="score"><span>4.8</span>/5</span>
 </div>
 <div class="v2-media-slot" data-job-id="a7deaf75-d828-4955-85a4-1d3851e891e9" data-prompts='["Seese Pro cordless blower isolated on white background, angled hero shot, product photography, photorealistic", "Seese Pro cordless blower front-facing on clean white backdrop, branding subtle, photorealistic", "Seese Pro cordless blower with battery detached shown beside it, studio lighting, photorealistic"]' data-selected="0" data-slot-key="media.sidebar_product" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.sidebar_product</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Seese Pro cordless blower isolated on white background, angled hero shot, produc"</div></div>
-<a class="adv-cta-inline" href="https://terica-store.com/click"><span >CHECK AVAILABILITY</span></a>
+<a class="adv-cta-inline" href="https://terica-store.com/click"><span>CHECK AVAILABILITY</span></a>
 </div>
 <!-- ── SIDEBAR COMPACT REVIEWS ── -->
 <div class="sidebar-reviews">
@@ -1111,7 +1361,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>
