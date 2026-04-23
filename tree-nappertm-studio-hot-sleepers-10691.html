@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Why Hot Sleepers Are Finally Getting the Weighted Blanket Benefits They Gave Up On</title>
+<meta content="A sleep journalist explains the material science behind cooling weighted blankets and why eucalyptus fiber changes everything for hot sleepers." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ll-color-primary: #007ea8;
+  --ll-color-primary-rgb: 74, 124, 89;
+  --ll-color-primary-dark: #3a6246;
+  --ll-color-secondary: #e0eff4;
+  --ll-color-secondary-rgb: 255, 244, 211;
+  --ll-color-tertiary: #eff7f9;
+  --ll-color-tertiary-rgb: 245, 197, 24;
+  --ll-color-background: #ffffff;
+  --ll-color-background-rgb: 255, 255, 255;
+  --ll-color-background-alt: #e0eff4;
+  --ll-color-background-page: #f6f6f6;
+  --ll-color-text-primary: #000000;
+  --ll-color-text-primary-rgb: 0, 0, 0;
+  --ll-color-text-secondary: #555555;
+  --ll-color-text-muted: #888888;
+  --ll-color-border: #dddddd;
+  --ll-color-accent: #eff7f9;
+  --ll-color-success: #009004;
+  --ll-color-success-rgb: 0, 144, 4;
+  --ll-color-warning: #e74c3c;
+  --ll-color-dark: #071f2f;
+  --lxs-rating-icon-color: #eff7f9;
+  --ll-font-heading: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --ll-font-body: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --ll-radius-sm: 4px;
+  --ll-radius-md: 8px;
+  --ll-radius-lg: 16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--ll-font-body);color:var(--ll-color-text-primary);background:var(--ll-color-background-page);-webkit-font-smoothing:antialiased;min-height:100vh;line-height:1.6;font-size:17px}
+img{max-width:100%;height:auto;display:block}
+#adv-header-logo img,#adv-footer img{margin:0 auto}
+
+/* 2-COLUMN GRID — Damascus layout */
+.adv-grid{display:grid;grid-template-columns:1fr 300px;gap:30px;max-width:1200px;margin:20px auto 40px;padding:0 20px;align-items:start}
+.adv-content{background:var(--ll-color-background);border-radius:var(--ll-radius-md);padding:18px 40px 30px;box-shadow:0 0 18px -4px rgba(0,0,0,0.15);order:1;min-width:0}
+.adv-sidebar{position:sticky;top:20px;align-self:start;order:2;display:flex;flex-direction:column;gap:20px}
+
+/* TYPOGRAPHY — narrative journalism style */
+h1{font-family:var(--ll-font-heading);font-size:44px;font-weight:900;line-height:1.2;color:var(--ll-color-text-primary);padding:0 0 4px;margin:0 0 10px;text-align:left}
+h2{font-family:var(--ll-font-heading);font-size:34px;font-weight:900;line-height:1.25;color:var(--ll-color-text-primary);padding:10px 0 4px;margin:32px 0 14px;text-align:left}
+h3{font-family:var(--ll-font-heading);font-size:22px;font-weight:700;line-height:1.3;color:var(--ll-color-text-primary);margin:20px 0 10px}
+p{font-family:var(--ll-font-body);font-size:17px;line-height:1.7;color:var(--ll-color-text-primary);margin-bottom:16px}
+a{color:var(--ll-color-primary);text-decoration:underline;font-weight:600}
+a:hover{color:var(--ll-color-primary-dark)}
+strong{font-weight:700;color:var(--ll-color-text-primary)}
+em{font-style:italic;color:var(--ll-color-text-secondary)}
+
+/* SUBTITLE HIGHLIGHT — cream box under H1 */
+.subtitle-highlight{background:var(--ll-color-background-alt);padding:18px 20px !important;text-align:left;font-size:19px;font-family:var(--ll-font-body);font-weight:600;line-height:1.5;color:var(--ll-color-text-primary);border-radius:var(--ll-radius-sm);margin:12px 0 18px}
+
+/* AUTHOR LINE */
+.author-line{font-family:var(--ll-font-body);font-size:14px;color:var(--ll-color-text-secondary);font-style:italic;text-align:left;margin:0 0 26px;padding-bottom:18px;border-bottom:1px solid var(--ll-color-border);letter-spacing:0.3px}
+
+/* CONTENT IMAGES */
+.content-image{width:100%;border-radius:var(--ll-radius-md);margin:14px 0 18px;aspect-ratio:16/9;object-fit:cover;background:#f0f0f0;box-shadow:0 2px 12px rgba(0,0,0,0.08)}
+.adv-content > .content-image:first-of-type,.adv-content > img.content-image:first-of-type{margin-top:6px}
+
+/* CTA BUTTON — Damascus style: full-width, green, uppercase, shadow */
+.cta-button{display:block;width:100%;max-width:520px;margin:30px auto;background:var(--ll-color-primary);color:#fff;padding:22px 26px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:22px;font-weight:900;text-decoration:none;box-shadow:0 4px 8px rgba(0,0,0,0.2);text-transform:uppercase;letter-spacing:0.4px;transition:filter 0.15s, transform 0.15s, box-shadow 0.15s;text-align:center;line-height:1.2}
+.cta-button:hover{filter:brightness(0.88);transform:translateY(-1px);box-shadow:0 6px 14px rgba(0,0,0,0.28);color:#fff;text-decoration:none}
+
+/* SIGNATURE — end of article */
+.signature{margin-top:40px;padding:24px;background:var(--ll-color-background-alt);border-left:3px solid var(--ll-color-primary);border-radius:var(--ll-radius-sm);font-style:italic;text-align:center}
+.signature-name{font-family:var(--ll-font-heading);font-weight:900;font-size:18px;color:var(--ll-color-text-primary);margin-bottom:4px;font-style:normal}
+.signature-role{font-size:13px;color:var(--ll-color-text-secondary)}
+
+/* SIDEBAR PRODUCT CARD */
+.sidebar-product{background:var(--ll-color-background);padding:22px 20px;border-radius:var(--ll-radius-md);box-shadow:0 0 18px -4px rgba(0,0,0,0.15);text-align:center}
+.product-badge{display:block;font-family:var(--ll-font-heading);font-size:15px;font-weight:700;color:var(--ll-color-text-primary);margin-bottom:10px;line-height:1.3}
+.sidebar-product-img{width:100%;max-width:220px;margin:6px auto 12px;border-radius:var(--ll-radius-sm);aspect-ratio:1/1;object-fit:cover;background:#f0f0f0}
+.sidebar-tagline{font-family:var(--ll-font-body);font-size:13px;color:var(--ll-color-text-secondary);font-style:italic;line-height:1.4;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis}
+.sidebar-stars{display:flex;align-items:center;justify-content:center;gap:6px;margin:8px 0 4px;font-size:13px;color:var(--ll-color-text-secondary);font-weight:600}
+.sidebar-stars .stars{color:#f5b40a;font-size:16px;letter-spacing:1px;line-height:1}
+.sidebar-stars .rating-num{color:#111;font-weight:700}
+.sidebar-cta{display:block;background:var(--ll-color-primary);color:#fff;padding:11px 14px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:13px;font-weight:700;text-decoration:none;box-shadow:0 2px 6px rgba(0,0,0,0.18);text-align:center;margin-top:12px;transition:filter 0.15s}
+.sidebar-cta:hover{filter:brightness(0.88);color:#fff;text-decoration:none}
+.sidebar-trust{margin-top:14px;padding-top:14px;border-top:1px solid var(--ll-color-border);text-align:left}
+.sidebar-trust-item{display:flex;align-items:center;gap:8px;font-size:12px;color:#444;line-height:1.4;padding:3px 0}
+.sidebar-trust-item::before{content:"✓";color:#22c55e;font-weight:900;font-size:14px;flex-shrink:0}
+
+/* RESPONSIVE — collapse to single column under 900px */
+@media (max-width:900px){
+  .adv-grid{grid-template-columns:1fr;gap:24px;padding:0 14px;margin-bottom:24px}
+  .adv-content{padding:22px 20px;order:2}
+  .adv-sidebar{position:static;order:1;max-width:500px;margin:0 auto}
+  h1{font-size:30px}
+  h2{font-size:24px;margin:24px 0 10px}
+  h3{font-size:19px}
+  body{font-size:16px}
+  p{font-size:16px;line-height:1.65}
+  .subtitle-highlight{font-size:16px;padding:14px 16px !important}
+  .cta-button{font-size:18px;padding:18px 20px}
+  .signature{padding:20px 16px}
+}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+</style>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "wb35vpdfk1");
+</script>
+<script async="" src="https://terica-store.com/tracker.js"></script>
+</head>
+<body>
+<div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
+<div id="adv-header-logo" style="text-align:center;padding:14px 0 10px;background:#fff;border-bottom:1px solid #eee;">
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="display:block;height:52px;max-width:260px;object-fit:contain;margin:0 auto;"/>
+</div>
+<div class="adv-grid">
+<!-- MAIN ARTICLE CONTENT (left column) -->
+<main class="adv-content">
+<!-- HEADLINE -->
+<h1>I Run Hot at Night. Here's Why I Stopped Dismissing Weighted Blankets.</h1>
+<!-- SUBTITLE HIGHLIGHT (cream box) -->
+<p class="subtitle-highlight">The material science breakthrough that finally solved the overheating problem for good.</p>
+<!-- AUTHOR LINE — investigation style -->
+<p class="author-line">By Rachel Simmons, certified sleep science writer and lifelong hot sleeper based in Austin, Texas</p>
+<!-- IMAGE 1: hero (the protagonist in their setting) -->
+<div class="v2-media-slot" data-job-id="93ff3909-9d61-4af1-8c8d-20c6deb8a801" data-prompts='["A woman in her mid-30s lying awake in bed at night, kicking off a heavy blanket, bedside fan visible, dim bedroom lighting, photorealistic", "Overhead shot of a messy bed with tangled sheets half on the floor, a small fan on the nightstand, warm-toned bedroom, photorealistic", "Frustrated expression of a 35-year-old woman sitting up in bed at 2 AM, sweaty forehead, looking at her phone, soft ambient light, photorealistic"]' data-selected="0" data-slot-key="media_1.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A woman in her mid-30s lying awake in bed at night, kicking off a heavy blanket,"</div></div>
+<!-- INTRO PARAGRAPHS (investigation setup) -->
+<p>I keep my thermostat at 66 degrees. I sleep with a fan aimed directly at my face. I own three different moisture-wicking pillowcases. And most nights, I still wake up at 2 AM kicking covers onto the floor.</p>
+<p>If that sounds familiar, you already know the frustration. You've read the studies about weighted blankets reducing anxiety and improving sleep quality. You've watched the videos. You want those benefits.</p>
+<p>But every time you get close to buying one, the same warning appears in every comment section and review thread: they sleep hot. Unbearably hot. Like being trapped under a heated comforter in July.</p>
+<p>So you keep scrolling. You keep losing sleep. And the racing thoughts that a weighted blanket might actually quiet down just keep running. I lived in that exact loop for three years.</p>
+<!-- H2 #1 — backstory / origin -->
+<h2>Why Every Weighted Blanket You've Tried Traps Heat</h2>
+<div class="v2-media-slot" data-job-id="93ff3909-9d61-4af1-8c8d-20c6deb8a801" data-prompts='["Close-up cross-section comparison of polyester quilted fabric versus open-knit natural fiber blanket, showing airflow arrows, educational diagram style, photorealistic", "A woman holding up a thick polyester weighted blanket looking skeptical, bright daylight, modern bedroom setting, photorealistic", "Macro shot of tightly woven synthetic blanket fabric with visible trapped heat haze, studio lighting, photorealistic"]' data-selected="0" data-slot-key="media_2.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Close-up cross-section comparison of polyester quilted fabric versus open-knit n"</div></div>
+<p>Here's what most blanket companies won't explain. Traditional weighted blankets use polyester fabric stuffed with glass microbeads or plastic pellets. The weight itself isn't the heat problem. The construction is.</p>
+<p>Polyester is essentially plastic woven into fabric. It doesn't breathe. It doesn't wick moisture. It creates a sealed pocket of warm air between your body and the blanket that has nowhere to escape.</p>
+<p>Add ten to twenty pounds of filler packed into tight quilted squares, and you've built an insulation chamber. Your body heat gets trapped, your skin can't release moisture efficiently, and your core temperature rises.</p>
+<p>Your body's natural thermoregulation needs two things to work at night: airflow across the skin's surface and a material that pulls moisture away rather than holding it against you.</p>
+<p>Most weighted blankets fail on both counts. The tightly stitched compartments block air circulation, and the synthetic materials act like a moisture barrier. That's not a design flaw they're working on. It's fundamental to how they're built.</p>
+<!-- H2 #2 — loss / turning point -->
+<h2>What Actually Keeps You Cool While You Sleep</h2>
+<div class="v2-media-slot" data-job-id="93ff3909-9d61-4af1-8c8d-20c6deb8a801" data-prompts='["Macro shot of eucalyptus Tencel lyocell fiber strands showing smooth texture and microscopic structure, studio lighting, photorealistic", "Side-by-side comparison of a damp cotton swatch and a dry eucalyptus fiber swatch after moisture test, clean white background, photorealistic", "A woman peacefully sleeping under a lightweight knit blanket, cool blue-toned bedroom lighting, serene expression, photorealistic"]' data-selected="0" data-slot-key="media_3.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Macro shot of eucalyptus Tencel lyocell fiber strands showing smooth texture and"</div></div>
+<p>Before we talk about any product, let's talk about what the research actually says about sleeping cool. Your core body temperature needs to drop roughly two degrees Fahrenheit to initiate sleep onset.</p>
+<p>This is why you sleep better in a cold room. It's why that one-leg-out trick works. Your body is constantly radiating heat through your skin, and it needs materials and environments that support that process rather than fight it.</p>
+<p>Moisture-wicking matters more than most people realize. You lose roughly one cup of water vapor through your skin each night. If that moisture sits on your skin instead of being pulled away, it creates a humid microclimate that feels suffocating.</p>
+<p>Cotton, the go-to natural fabric, absorbs moisture but holds it. It gets damp and stays damp. That's why cotton sheets can feel clammy by morning. You need a fiber that actively transports moisture away from the body.</p>
+<p>Eucalyptus-derived fibers, specifically Tencel lyocell, manage moisture fundamentally differently. The fiber's structure contains microscopic channels that wick sweat away from skin and release it into the surrounding air through evaporation.</p>
+<p>Independent textile testing shows eucalyptus fiber moves moisture fifty percent more efficiently than cotton. It also feels noticeably cooler to the touch because of its smooth molecular surface, which transfers heat away from skin on contact.</p>
+<!-- H2 #3 — craft deep-dive -->
+<h2>The Construction Detail That Changes Everything</h2>
+<div class="v2-media-slot" data-job-id="93ff3909-9d61-4af1-8c8d-20c6deb8a801" data-prompts='["Close-up of chunky open-knit weighted blanket draped over a bed, showing visible gaps and breathable construction, natural daylight, photorealistic", "Hands touching and stretching an open-knit eucalyptus fiber blanket showing the weave pattern and airflow gaps, warm studio lighting, photorealistic", "A cozy bedroom scene with a sage green knit weighted blanket folded at the foot of a modern bed, morning light streaming in, photorealistic"]' data-selected="0" data-slot-key="media_4.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Close-up of chunky open-knit weighted blanket draped over a bed, showing visible"</div></div>
+<p>Here's where it gets interesting. Even if you use the right fiber, you can still trap heat if the blanket is constructed wrong. A tightly quilted blanket made from eucalyptus fiber would still block airflow.</p>
+<p>The breakthrough isn't just the material. It's using an open-knit construction instead of traditional quilted compartments. Think of it like a chunky hand-knit throw versus a sealed down comforter. One breathes. The other suffocates.</p>
+<p>An open-knit design creates hundreds of tiny air pockets throughout the blanket. Warm air rises through them naturally instead of getting trapped. Your body heat escapes continuously while the weight stays distributed evenly across your body.</p>
+<p>This is the combination that a friend of mine, a textile engineer at Colorado State, told me to look for specifically: a plant-based fiber with natural moisture-wicking properties paired with a construction that allows continuous airflow.</p>
+<p>She'd been studying weighted blanket materials for a graduate research project and said most brands were solving the wrong problem. They were adding cooling gel layers or phase-change chemicals on top of heat-trapping designs instead of rethinking the structure entirely.</p>
+<!-- H2 #4 — breaking point / medical -->
+<h2>When I Finally Found a Weighted Blanket That Got It Right</h2>
+<div class="v2-media-slot" data-job-id="93ff3909-9d61-4af1-8c8d-20c6deb8a801" data-prompts='["A woman in her late 30s unboxing a knit weighted blanket on her bed, genuine curiosity on her face, bright modern bedroom, photorealistic", "Flat lay of a sage-colored chunky knit weighted blanket on a clean white bed with eucalyptus leaves beside it, overhead shot, photorealistic", "Woman sleeping deeply and peacefully under a lightweight knit blanket, cool-toned bedroom, soft morning light on her relaxed face, photorealistic"]' data-selected="0" data-slot-key="media_5.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A woman in her late 30s unboxing a knit weighted blanket on her bed, genuine cur"</div></div>
+<p>I'll be honest. When my friend mentioned the Tree Napper by name, I almost didn't look it up. I had already tried a bamboo weighted blanket that was marketed as cooling and still woke up sweating through it within a week.</p>
+<p>But she was specific about why this one was different. The Tree Napper uses TENCEL lyocell derived from sustainably harvested eucalyptus trees. Not blended with polyester. Not eucalyptus-scented cotton. Actual eucalyptus-based fiber throughout.</p>
+<p>More importantly, it uses a hand-knit open-loop construction. There are no quilted pockets trapping air. No synthetic fillers. The weight comes from the density of the knit itself, which means every inch of the blanket breathes.</p>
+<p>I was skeptical. I'd spent years assuming that weighted blankets and hot sleepers simply weren't compatible. The idea that a material and construction change could solve a problem that seemed inherent to the category felt too convenient.</p>
+<p>But the research backed it up. Eucalyptus lyocell's moisture management properties are well documented in textile science literature. And the physics of open-knit airflow versus sealed compartment insulation isn't controversial. It's basic thermodynamics.</p>
+<p>So I ordered one. I told myself I'd give it the full thirty-day trial period and return it the moment I woke up overheated. That was four months ago, and I haven't had a single night where heat was the reason I woke up.</p>
+<!-- H2 #5 — the decision / price reveal -->
+<h2>What the First Week Actually Felt Like</h2>
+<div class="v2-media-slot" data-job-id="93ff3909-9d61-4af1-8c8d-20c6deb8a801" data-prompts="[&quot;A woman waking up refreshed in the morning under a knit weighted blanket, stretching with a calm smile, sunlit bedroom, photorealistic&quot;, &quot;Close-up of a woman's hand resting on a chunky knit blanket texture, soft focus bedroom background, warm morning light, photorealistic&quot;, &quot;A peaceful bedroom scene at dawn, a woman sleeping soundly with a knit blanket draped naturally over her body, no fan visible, photorealistic&quot;]" data-selected="0" data-slot-key="media_6.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A woman waking up refreshed in the morning under a knit weighted blanket, stretc"</div></div>
+<p>The first thing I noticed was the texture. It feels cool immediately when it touches your skin. Not cold, not clammy, just noticeably cooler than cotton or any synthetic blanket I'd tried before.</p>
+<p>The weight distribution surprised me too. Because it's knit rather than filled with beads, the weight moves with you. It drapes around your body rather than sitting on top of it like a rigid slab.</p>
+<p>Night one, I slept with my fan on as usual. I woke up at 5 AM, which was unusual only because I normally wake up at 2. The blanket was still on me. That hadn't happened in years.</p>
+<p>By night four, I turned the fan off as an experiment. I slept straight through until my alarm. My sheets weren't damp. I wasn't tangled in anything. I just woke up rested, which felt almost disorienting.</p>
+<p>The anxiety piece was the part I wasn't expecting to notice so quickly. The gentle pressure across my chest and legs created this grounding sensation that quieted the mental noise I usually spend an hour fighting before sleep comes.</p>
+<!-- ★ CTA #1 -->
+<a class="cta-button" href="https://terica-store.com/click">Try the Tree Napper</a>
+<!-- H2 #6 — community / testimonials -->
+<h2>The Science Behind Deep Pressure Stimulation</h2>
+<div class="v2-media-slot" data-job-id="93ff3909-9d61-4af1-8c8d-20c6deb8a801" data-prompts='["Infographic-style image showing a calm nervous system diagram with a weighted blanket illustration, clean modern design, photorealistic elements", "A woman meditating peacefully in bed with a knit weighted blanket across her lap, serene expression, soft neutral bedroom, photorealistic", "Close-up of relaxed shoulders and peaceful face of a woman lying under a weighted knit blanket, warm ambient lighting, photorealistic"]' data-selected="0" data-slot-key="media_7.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Infographic-style image showing a calm nervous system diagram with a weighted bl"</div></div>
+<p>Weighted blankets work through deep pressure stimulation, which research shows increases serotonin production and decreases cortisol levels. Your nervous system shifts from sympathetic activation into parasympathetic rest mode.</p>
+<p>The challenge has always been that the materials needed to create enough weight also created enough heat to wake you up, completely undermining the calming benefits. Cooling and weight seemed mutually exclusive until the material science caught up.</p>
+<p>With the Tree Napper, the eucalyptus fiber and open-knit construction finally let hot sleepers access those deep pressure benefits without the thermal penalty. You get the serotonin boost and cortisol reduction without the 2 AM wake-up.</p>
+<!-- H2 #7 — features / what makes it different -->
+<h2>What Makes the Tree Napper Different at a Glance</h2>
+<div class="v2-media-slot" data-job-id="93ff3909-9d61-4af1-8c8d-20c6deb8a801" data-prompts='["Flat lay of a chunky knit eucalyptus weighted blanket with detail callouts showing weave structure, clean white background, photorealistic", "A hand pulling apart the open-knit loops of a weighted blanket to show breathability, bright studio lighting, photorealistic", "A modern bedroom with a neatly draped knit weighted blanket in sage green, minimalist decor, golden hour light, photorealistic"]' data-selected="0" data-slot-key="media_8.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_8.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Flat lay of a chunky knit eucalyptus weighted blanket with detail callouts showi"</div></div>
+<p>After four months of use, testing in summer heat with no air conditioning some nights, here are the specific features that matter most if you run hot and want weighted blanket benefits.</p>
+<p>TENCEL lyocell eucalyptus wicks moisture fifty percent better than cotton</p>
+<p>Open-knit construction allows continuous airflow instead of trapping body heat</p>
+<p>Weight comes from knit density with no glass beads or plastic pellets</p>
+<p>Sustainably sourced eucalyptus requires no pesticides or irrigation to grow</p>
+<p>Machine washable design retains shape and cooling properties after washes</p>
+<!-- ★ CTA #2 -->
+<a class="cta-button" href="https://terica-store.com/click">See the Tree Napper</a>
+<!-- H2 #8 — final urgency / how to order -->
+<h2>What I'd Tell a Fellow Hot Sleeper Right Now</h2>
+<div class="v2-media-slot" data-job-id="93ff3909-9d61-4af1-8c8d-20c6deb8a801" data-prompts='["A content woman in her late 30s sitting in bed reading a book with a knit weighted blanket over her legs, cozy modern bedroom, photorealistic", "A couple sleeping peacefully in a cool bedroom, the woman covered by a chunky knit blanket, soft blue moonlight, photorealistic", "Morning scene of a well-rested woman stretching in bed with a smile, knit blanket at her feet, bright natural light flooding the room, photorealistic"]' data-selected="0" data-slot-key="media_9.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_9.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A content woman in her late 30s sitting in bed reading a book with a knit weight"</div></div>
+<p>If you've written off weighted blankets because of heat, I completely understand. I did the same thing for three years. Every product I tried confirmed the assumption that weight and coolness couldn't coexist.</p>
+<p>What changed my mind wasn't marketing. It was understanding the material science. Polyester traps heat because it's plastic. Quilted compartments trap air because they're sealed. Solve both of those problems simultaneously and the equation changes.</p>
+<p>The Tree Napper solves both. Eucalyptus fiber handles moisture. Open-knit construction handles airflow. The weight stays. The heat doesn't. It's not magic. It's textile engineering that finally caught up to the problem.</p>
+<p>I still keep my bedroom at 66 degrees because I like it cool. But my fan is off most nights now. I sleep through until morning. And the low-grade anxiety that used to keep me up for an hour has noticeably quieted.</p>
+<p>They offer a thirty-day return window, which is exactly what I needed to commit. If you wake up overheating, you send it back. I almost wish I'd needed to use it, because that would have saved me from admitting I should've tried this years ago.</p>
+<p>If you're a hot sleeper who wants the proven calming benefits of weighted pressure without waking up in a pool of sweat, this is the first product I've found that genuinely delivers on both promises.</p>
+<!-- ★ CTA #3 -->
+<a class="cta-button" href="https://terica-store.com/click">Get Your Tree Napper</a>
+<!-- SIGNATURE -->
+<div class="signature">
+<div class="signature-name">Rachel Simmons</div>
+<div class="signature-role">Certified Sleep Science Writer</div>
+</div>
+</main>
+<!-- STICKY PRODUCT SIDEBAR -->
+<aside class="adv-sidebar">
+<div class="sidebar-product">
+<span class="product-badge">Tree Napper™ — Stay Cool. Sleep Deep.</span>
+<div class="v2-media-slot" data-job-id="93ff3909-9d61-4af1-8c8d-20c6deb8a801" data-prompts='["Product shot of a chunky knit weighted blanket in sage green draped over a modern sofa arm, minimalist living room, natural daylight, photorealistic", "A woman carrying a folded knit weighted blanket toward her bed, cozy evening bedroom setting, warm lamp light, photorealistic", "Close-up texture shot of eucalyptus fiber knit blanket loops with soft bokeh background, tactile detail visible, studio lighting, photorealistic"]' data-selected="0" data-slot-key="media_10.url" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_10.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Product shot of a chunky knit weighted blanket in sage green draped over a moder"</div></div>
+<p class="sidebar-tagline">The weighted blanket built for hot sleepers</p>
+<div class="sidebar-stars">
+<span class="stars">★★★★★</span>
+<span class="rating-num">4.85</span>
+</div>
+<a class="sidebar-cta" href="https://terica-store.com/click">Shop Now</a>
+<div class="sidebar-trust">
+<div class="sidebar-trust-item">Naturally cooling eucalyptus</div>
+<div class="sidebar-trust-item">30-day risk-free trial</div>
+<div class="sidebar-trust-item">Sustainably sourced materials</div>
+</div>
+</div>
+</aside>
+</div><!-- /adv-grid -->
+<style id="adv-brand-secondary">
+:root{ --ll-color-secondary: #e0eff4; }
+</style>
+<style id="adv-brand-hover">
+.cta-btn:hover,.ll-btn-temp:hover{background:#006b8e !important;box-shadow:0 6px 25px rgba(0,126,168,0.4) !important;}
+</style>
+<footer id="adv-footer" style="background:#f5f5f5;border-top:1px solid #e5e5e5;padding:30px 20px;text-align:center;margin-top:40px;">
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="display:block;height:36px;max-width:180px;object-fit:contain;margin:0 auto 12px;"/>
+<div style="font-size:11px;color:#999;margin:0 auto 10px;font-family:system-ui,-apple-system,sans-serif;">
+<a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Terms of Use</a>
+<span style="margin:0 6px;color:#ccc;">·</span>
+<a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Privacy Policy</a>
+<span style="margin:0 6px;color:#ccc;">·</span>
+<a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
+</div>
+<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+</footer>
+</body>
+</html>
