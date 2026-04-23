@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><head>
 <title>Seese Pro Review: 950g Blower That Restores Independence</title>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -29,7 +26,7 @@ body{font-family:'Source Sans 3',sans-serif;background:#e8e5de;color:#1a1a1a;fon
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.7}}
 
 /* PAGE WRAP */
-.page-wrap{max-width:1100px;margin:28px auto;padding:0 16px}
+.page-wrap{max-width:920px;margin:28px auto;padding:0 16px}
 
 /* ARTICLE CARD */
 .article-card{background:#fff;box-shadow:0 2px 28px rgba(0,0,0,.12);border-radius:2px}
@@ -134,18 +131,272 @@ h1{font-family:'Source Serif 4',serif;font-weight:900;font-size:36px;line-height
   .related-grid{grid-template-columns:1fr}
   .offer-verdict{padding:20px 16px}
 }
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
-<script type="text/javascript">
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script type="text/javascript">
 (function(c,l,a,r,i,t,y){
 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "wb35vpdfk1");
 </script>
-
-
-
-<script src="https://terica-store.com/tracker.js" async></script>
+<script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">Advertorial</div>
@@ -156,9 +407,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <article class="article-card">
 <div class="art-header">
 <div class="cat-badge">Health Investigation</div>
-<h1>You Stopped Blowing Leaves Yourself — Our Investigation Reveals the 950g Device That's Giving Seniors Their Independence Back</h1>
-<p class="art-subtitle">A Home &amp; Garden investigation into the ultra-light cordless blower quietly replacing gas models, push brooms, and drying cloths in garages across America — and why every senior who finds it says the same thing</p>
-<div class="byline">
+<h1 style="position: relative;">You Stopped Blowing Leaves Yourself — Our Investigation Reveals the 950g Device That's Giving Seniors Their Independence Back</h1>
+<p class="art-subtitle" style="position: relative;">A Home &amp; Garden investigation into the ultra-light cordless blower quietly replacing gas models, push brooms, and drying cloths in garages across America — and why every senior who finds it says the same thing</p>
+<div class="byline" style="position: relative;">
 <div class="auth-avatar">ET</div>
 <div class="byline-info">
 <div class="auth-name">Editorial Team</div>
@@ -174,32 +425,32 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 </div>
 <div class="art-content">
-<div class="placeholder"><div class="tbadge">LIFESTYLE</div><span style="display:block;margin-top:6px;color:#999;font-size:13px;font-style:italic">Woman in her mid-60s, smiling, standing on a clean sun-lit patio with fallen leaves visible in the far background, holding the Seese Pro with one hand in a completely relaxed posture — warm afternoon light, domestic setting, expression of quiet pride and self-satisfaction</span></div>
-<div class="art-body"><p>You stopped blowing leaves yourself. Not because you didn't want to. Because your back didn't give you a choice.</p><p>That's what Barbara, 67, from Phoenix told us — almost word for word — when we found her post on a neighborhood forum. The caption under her photo of a freshly swept patio read: <em>"First time in two years I did this myself. I actually cried a little."</em></p><p>We called her. Then we called 47 other homeowners between 55 and 74 who had posted something similar. What we found was the same story, told in a hundred different ways — and at the center of every single one of them, a device that weighs less than a liter of milk.</p></div>
-<h2 class="sec-head">What Our Investigation Found</h2>
-<div class="art-body"><p>Our editorial team spent three weeks investigating the growing segment of ultra-light cordless blowers — and what we uncovered about the traditional outdoor power equipment industry is not flattering.</p><ul><li><strong>Finding #1:</strong> The average residential gas leaf blower weighs between 18 and 25 pounds. To operate one, you need two hands, a healthy lumbar spine, and enough grip strength to yank a pull-start cord repeatedly until the engine catches. For millions of homeowners over 55, that combination is no longer a given.</li><li><strong>Finding #2:</strong> Outdoor power equipment injuries — herniated discs, rotator cuff tears, falls caused by loss of balance under load — send tens of thousands of Americans to emergency rooms each year. Homeowners over 55 represent a disproportionate share of those hospital visits.</li><li><strong>Finding #3:</strong> The majority of seniors who stop doing their own yard work do not do it by choice. They do it because the tools they grew up with have become physically incompatible with the body they have today.</li><li><strong>Finding #4:</strong> A new category of ultra-light, brushless cordless blowers weighing under one kilogram has been gaining ground for two years. They do not look like the tools people expect. But they outperform them in the ways that matter most to the people who actually use them.</li><li><strong>Finding #5:</strong> The Seese Pro Ultra-Light Blower, at exactly 950 grams, has emerged as the most-discussed device in this category. We ordered one. We tested it for 30 days. Here is what we found.</li></ul></div>
-<div class="placeholder"><div class="tbadge">LIFESTYLE</div><span style="display:block;margin-top:6px;color:#999;font-size:13px;font-style:italic">Side-by-side visual contrast: left side shows an older man holding a heavy gas blower with both hands, body slightly bent forward under the weight — right side shows the same age profile holding the Seese Pro effortlessly in one hand, standing fully upright — clear visual contrast in effort and posture</span></div>
-<h2 class="sec-head">"The Heaviest Thing About These Tools Is the Price Your Body Pays"</h2>
-<div class="art-body"><p>We contacted Dr. Karen Simms, a certified occupational therapist and ergonomics consultant who has worked with aging adults and senior workers for over 22 years. We described the tools most homeowners over 60 are still using — gas blowers between 18 and 25 pounds, push brooms requiring sustained forward pressure, chamois cloths that demand awkward bending and arm extension — and asked for her clinical perspective.</p><p><em>"The problem with traditional outdoor power tools is not the task itself,"</em> she told us. <em>"It is the weight, the vibration, and the grip demand sustained over time. When you ask a 65-year-old body to repeatedly handle something that weighs 20 pounds — with resistance, vibration, and a pull-start mechanism — you are not just risking fatigue. You are risking a disc, a rotator cuff, a loss of balance. And the worst part is that most people push through it anyway, because asking for help feels worse than the pain."</em></p><p>We described the Seese Pro to her: 950 grams, one-hand operation, push-button start, no gas, no vibration beyond the airflow itself.</p><p><em>"That,"</em> she said, <em>"is what this category of tools should have looked like fifteen years ago. The technology existed. The will to design for aging users apparently did not."</em></p></div>
-<div class="placeholder"><div class="tbadge">LIFESTYLE</div><span style="display:block;margin-top:6px;color:#999;font-size:13px;font-style:italic">Professional woman in her early 50s seated at a calm, warmly lit workspace — credible, approachable, expert body language — expression of calm authority, neutral background, no clinical setting, feels like a trusted advisor rather than a doctor's office</span></div>
-<h2 class="sec-head">The Numbers: What 950 Grams Actually Means in Practice</h2>
-<div class="art-body"><p>We do not print claims without context. Here are the Seese Pro's key specifications — and what each one means for a homeowner over 55 using it on a Saturday morning.</p><ul><li><strong>950g</strong> — total operating weight with battery. A gallon of milk weighs 3,800g. This device weighs one quarter of that. You can hold it at arm's length for 10 minutes without fatigue.</li><li><strong>200 mph</strong> — maximum jet speed. Sufficient to move wet, compacted leaves off brick and concrete surfaces without secondary sweeping.</li><li><strong>1,200 CFM</strong> — airflow volume. Most residential gas blowers produce 400 to 500 CFM at full throttle. The Seese Pro generates more than double that — in a package you can carry in one hand.</li><li><strong>40 minutes</strong> — battery runtime per charge. Our test team cleaned a 400-square-foot patio, dried a mid-size sedan, and cleared a garage floor in a single session with battery remaining.</li><li><strong>30,000 RPM</strong> — brushless motor speed. The same motor architecture used in professional drones, high-performance cordless tools, and electric vehicles. No brushes means no friction wear — which is why it carries a lifetime replacement warranty.</li><li><strong>1 second</strong> — time from pickup to operation. No priming. No choking. No pull cord. Press the button. It runs.</li></ul><p>In timed field tests run by our team: a 400-square-foot patio covered in wet autumn leaves was cleared in under 5 minutes, compared to 25 minutes with a push broom. A mid-size car was dried contactlessly in under 3 minutes, compared to 15 minutes or more with a chamois cloth — with zero micro-scratches on the finish. A frosted windshield was cleared in under 2 minutes without a scraper.</p></div>
-<div class="placeholder"><div class="tbadge">LIFESTYLE</div><span style="display:block;margin-top:6px;color:#999;font-size:13px;font-style:italic">Split-panel before and after: left panel shows a patio covered in wet, dark autumn leaves — right panel shows the same patio completely clean, with the Seese Pro resting on the edge of a chair in the corner — warm afternoon light, realistic residential setting</span></div>
-<h2 class="sec-head">What the Power Equipment Industry Would Rather You Not Calculate</h2>
-<div class="art-body"><p>Here is the part of this story that gave our editorial team pause.</p><p>The brushless turbine motor technology at the core of the Seese Pro has been commercially available for years. The engineering required to pack it into a sub-kilogram housing has been feasible for at least a decade. The demand from an aging homeowner population has existed for longer than that.</p><p>So why has no major outdoor power brand produced something like this for the mainstream consumer market?</p><ul><li><strong>Gas equipment is a recurring revenue ecosystem.</strong> The initial purchase is only the beginning. Fuel, oil, spark plug replacements, carburetor cleanings, seasonal tune-ups — a gas-powered blower generates years of downstream spend. A sealed brushless unit that requires zero maintenance and carries a lifetime replacement warranty does not.</li><li><strong>The industry built a mythology around weight.</strong> Decades of marketing have trained consumers to associate heaviness with power. A contractor-grade tool weighing 25 pounds reads as serious. A 950-gram device reads as a toy — until you hold one and realize the airflow is coming out at 200 miles per hour.</li><li><strong>Seniors were not the design target.</strong> The baseline user imagined by most outdoor power tool designers is a physically fit adult in their 30s or 40s. The person actually buying a leaf blower on a Saturday morning in suburban America is increasingly in their 60s — and the tools have not moved to meet them.</li></ul><p>The Seese Pro was built for exactly that gap. One hand. No back engagement. No gas, no maintenance, no startup ritual. No reason left to avoid the yard work you used to do without thinking twice.</p></div>
-<div class="placeholder"><div class="tbadge">LIFESTYLE</div><span style="display:block;margin-top:6px;color:#999;font-size:13px;font-style:italic">Man in his early 60s standing confidently in a garage, holding the Seese Pro in one hand, pointed at a dusty workshop shelf — relaxed upright posture, look of easy competence, clean domestic garage with natural light filtering through a window</span></div>
-<h2 class="sec-head">Real Homeowners. Unscripted.</h2>
-<div class="art-body"><p>We asked homeowners who had been using the Seese Pro for at least 30 days to describe what changed — in their own words, without prompting. Three responses reflect what we heard most consistently.</p><p><em>"My husband hadn't touched the back patio in two years. The day the Seese Pro arrived, he was out there in under 5 minutes. I watched from the kitchen and didn't say a word. He was grinning like it was 1995."</em><br/><strong>— Sandra T., 63, Raleigh, NC</strong></p><p><em>"I used to call my son every fall to help with the leaves. This year I didn't call once. I did the whole yard myself, three Saturdays in a row. That might not sound like much. It was everything."</em><br/><strong>— Robert D., 71, Portland, OR</strong></p><p><em>"Bad shoulder for years — rotator cuff. Gas blowers were completely out. This one I can use for 40 minutes and feel nothing the next morning. I also use it to dry my car now. Two chamois cloths in the trash where they belong."</em><br/><strong>— Patricia M., 67, Scottsdale, AZ</strong></p></div>
-<div class="placeholder"><div class="tbadge">TESTIMONIAL</div><span style="display:block;margin-top:6px;color:#999;font-size:13px;font-style:italic">Three candid-feel lifestyle images in a horizontal row: (1) older couple sharing a quiet moment on a clean patio, both smiling — (2) man standing in a leaf-free yard, relaxed and upright — (3) woman holding the Seese Pro next to a gleaming car in a driveway — all warm-toned, domestic, natural light</span></div>
-<h2 class="sec-head">Our Team Tested It for 30 Days. Here Is the Unvarnished Result.</h2>
-<div class="art-body"><p>We gave the Seese Pro to three members of our editorial team — aged 58, 64, and 71 — with different home setups: a townhouse with a small patio, a detached home with a 600-square-foot yard, and a property with a two-car garage and a long driveway. No coaching. No contact with the brand during the test period. Just the device, the charger, and the instruction to use it as they normally would their existing tools.</p><p><strong>Week 1:</strong> All three testers reported the same reaction within the first use — surprise at the airflow. The power output was not what any of them expected from a device this light. Leaves moved. Dust scattered from surfaces a broom would have taken three passes to reach. One tester dried her car in under 4 minutes and later told us she felt a specific kind of irritation — the kind you feel when you realize you could have had something years earlier.</p><p><strong>Week 2:</strong> The 71-year-old tester has a documented history of lower back pain that led him to stop using his gas blower two years ago. During this week, he used the Seese Pro four times — patio, driveway, garage floor, car. He reported no pain during any session and no soreness the following day in any case. He also noted, unprompted, that he had quietly stopped doing several yard tasks over the past two years and had not fully registered how much had accumulated.</p><p><strong>Weeks 3–4:</strong> The device had become part of routine. One tester began using it to clear dust from garage shelving and workshop equipment. Another used it to blow debris from her car's air vents and the gaps around her dashboard. On a cold morning during week four, one tester used it to clear a lightly frosted windshield — confirmed effective in under 90 seconds without a scraper or fluid.</p><p><strong>What failed:</strong> Nothing. Over 30 days of regular residential use across three users and multiple environments, the Seese Pro required no maintenance, no repairs, and no replacement. The lifetime warranty was not called upon.</p><p><strong>Editorial verdict:</strong> The Seese Pro performs as advertised — and it does so in a form factor that makes it genuinely accessible to homeowners who have been quietly stepping back from yard maintenance not because they want to, but because their current tools stopped working for them. If you are over 55 and you have been postponing tasks, asking for help you would rather not ask for, or simply tolerating more physical cost than the job should require — this changes what is possible on a Saturday morning.</p></div>
-<div class="placeholder"><div class="tbadge">PRODUCT</div><span style="display:block;margin-top:6px;color:#999;font-size:13px;font-style:italic">Editorial flat-lay: Seese Pro with open carrying case, battery inserted, fast charger and accessories neatly arranged on a clean wooden surface — autumn leaves softly out of focus in the background — product looks compact, purposeful, well-engineered rather than toy-like</span></div>
+<img alt="" class="" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/seese-pro-v9/manual_upload-manual-1974705b.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<div class="art-body"><p style="position: relative;">You stopped blowing leaves yourself. Not because you didn't want to. Because your back didn't give you a choice.</p><p style="position: relative;">That's what Barbara, 67, from Phoenix told us — almost word for word — when we found her post on a neighborhood forum. The caption under her photo of a freshly swept patio read: <em>"First time in two years I did this myself. I actually cried a little."</em></p><p style="position: relative;">We called her. Then we called 47 other homeowners between 55 and 74 who had posted something similar. What we found was the same story, told in a hundred different ways — and at the center of every single one of them, a device that weighs less than a liter of milk.</p></div>
+<h2 class="sec-head" style="position: relative;">What Our Investigation Found</h2>
+<div class="art-body"><p style="position: relative;">Our editorial team spent three weeks investigating the growing segment of ultra-light cordless blowers — and what we uncovered about the traditional outdoor power equipment industry is not flattering.</p><ul><li style="position: relative;"><strong>Finding #1:</strong> The average residential gas leaf blower weighs between 18 and 25 pounds. To operate one, you need two hands, a healthy lumbar spine, and enough grip strength to yank a pull-start cord repeatedly until the engine catches. For millions of homeowners over 55, that combination is no longer a given.</li><li style="position: relative;"><strong>Finding #2:</strong> Outdoor power equipment injuries — herniated discs, rotator cuff tears, falls caused by loss of balance under load — send tens of thousands of Americans to emergency rooms each year. Homeowners over 55 represent a disproportionate share of those hospital visits.</li><li style="position: relative;"><strong>Finding #3:</strong> The majority of seniors who stop doing their own yard work do not do it by choice. They do it because the tools they grew up with have become physically incompatible with the body they have today.</li><li style="position: relative;"><strong>Finding #4:</strong> A new category of ultra-light, brushless cordless blowers weighing under one kilogram has been gaining ground for two years. They do not look like the tools people expect. But they outperform them in the ways that matter most to the people who actually use them.</li><li style="position: relative;"><strong>Finding #5:</strong> The Seese Pro Ultra-Light Blower, at exactly 950 grams, has emerged as the most-discussed device in this category. We ordered one. We tested it for 30 days. Here is what we found.</li></ul></div>
+<img alt="" src="/pages/media/seese-pro-v9/edited-f86379ab.jpg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<h2 class="sec-head" style="position: relative;">"The Heaviest Thing About These Tools Is the Price Your Body Pays"</h2>
+<div class="art-body"><p style="position: relative;">We contacted Dr. Karen Simms, a certified occupational therapist and ergonomics consultant who has worked with aging adults and senior workers for over 22 years. We described the tools most homeowners over 60 are still using — gas blowers between 18 and 25 pounds, push brooms requiring sustained forward pressure, chamois cloths that demand awkward bending and arm extension — and asked for her clinical perspective.</p><p style="position: relative;"><em>"The problem with traditional outdoor power tools is not the task itself,"</em> she told us. <em>"It is the weight, the vibration, and the grip demand sustained over time. When you ask a 65-year-old body to repeatedly handle something that weighs 20 pounds — with resistance, vibration, and a pull-start mechanism — you are not just risking fatigue. You are risking a disc, a rotator cuff, a loss of balance. And the worst part is that most people push through it anyway, because asking for help feels worse than the pain."</em></p><p style="position: relative;">We described the Seese Pro to her: 950 grams, one-hand operation, push-button start, no gas, no vibration beyond the airflow itself.</p><p style="position: relative;"><em>"That,"</em> she said, <em>"is what this category of tools should have looked like fifteen years ago. The technology existed. The will to design for aging users apparently did not."</em></p></div>
+<img alt="" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/seese-pro-v9/manual_upload-manual-ebb164c3.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<h2 class="sec-head" style="position: relative;">The Numbers: What 950 Grams Actually Means in Practice</h2>
+<div class="art-body"><p style="position: relative;">We do not print claims without context. Here are the Seese Pro's key specifications — and what each one means for a homeowner over 55 using it on a Saturday morning.</p><ul><li style="position: relative;"><strong>950g</strong> — total operating weight with battery. A gallon of milk weighs 3,800g. This device weighs one quarter of that. You can hold it at arm's length for 10 minutes without fatigue.</li><li style="position: relative;"><strong>200 mph</strong> — maximum jet speed. Sufficient to move wet, compacted leaves off brick and concrete surfaces without secondary sweeping.</li><li style="position: relative;"><strong>1,200 CFM</strong> — airflow volume. Most residential gas blowers produce 400 to 500 CFM at full throttle. The Seese Pro generates more than double that — in a package you can carry in one hand.</li><li style="position: relative;"><strong>40 minutes</strong> — battery runtime per charge. Our test team cleaned a 400-square-foot patio, dried a mid-size sedan, and cleared a garage floor in a single session with battery remaining.</li><li style="position: relative;"><strong>30,000 RPM</strong> — brushless motor speed. The same motor architecture used in professional drones, high-performance cordless tools, and electric vehicles. No brushes means no friction wear — which is why it carries a lifetime replacement warranty.</li><li style="position: relative;"><strong>1 second</strong> — time from pickup to operation. No priming. No choking. No pull cord. Press the button. It runs.</li></ul><p style="position: relative;">In timed field tests run by our team: a 400-square-foot patio covered in wet autumn leaves was cleared in under 5 minutes, compared to 25 minutes with a push broom. A mid-size car was dried contactlessly in under 3 minutes, compared to 15 minutes or more with a chamois cloth — with zero micro-scratches on the finish. A frosted windshield was cleared in under 2 minutes without a scraper.</p></div>
+<img alt="" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/seese-pro-v9/manual_upload-manual-ea8fdbeb.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<h2 class="sec-head" style="position: relative;">What the Power Equipment Industry Would Rather You Not Calculate</h2>
+<div class="art-body"><p style="position: relative;">Here is the part of this story that gave our editorial team pause.</p><p style="position: relative;">The brushless turbine motor technology at the core of the Seese Pro has been commercially available for years. The engineering required to pack it into a sub-kilogram housing has been feasible for at least a decade. The demand from an aging homeowner population has existed for longer than that.</p><p style="position: relative;">So why has no major outdoor power brand produced something like this for the mainstream consumer market?</p><ul><li style="position: relative;"><strong>Gas equipment is a recurring revenue ecosystem.</strong> The initial purchase is only the beginning. Fuel, oil, spark plug replacements, carburetor cleanings, seasonal tune-ups — a gas-powered blower generates years of downstream spend. A sealed brushless unit that requires zero maintenance and carries a lifetime replacement warranty does not.</li><li style="position: relative;"><strong>The industry built a mythology around weight.</strong> Decades of marketing have trained consumers to associate heaviness with power. A contractor-grade tool weighing 25 pounds reads as serious. A 950-gram device reads as a toy — until you hold one and realize the airflow is coming out at 200 miles per hour.</li><li style="position: relative;"><strong>Seniors were not the design target.</strong> The baseline user imagined by most outdoor power tool designers is a physically fit adult in their 30s or 40s. The person actually buying a leaf blower on a Saturday morning in suburban America is increasingly in their 60s — and the tools have not moved to meet them.</li></ul><p style="position: relative;">The Seese Pro was built for exactly that gap. One hand. No back engagement. No gas, no maintenance, no startup ritual. No reason left to avoid the yard work you used to do without thinking twice.</p></div>
+<img alt="" src="/pages/media/seese-pro-v9/manual_upload-manual-c868c187.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<h2 class="sec-head" style="position: relative;">Real Homeowners. Unscripted.</h2>
+<div class="art-body"><p style="position: relative;">We asked homeowners who had been using the Seese Pro for at least 30 days to describe what changed — in their own words, without prompting. Three responses reflect what we heard most consistently.</p><p style="position: relative;"><em>"My husband hadn't touched the back patio in two years. The day the Seese Pro arrived, he was out there in under 5 minutes. I watched from the kitchen and didn't say a word. He was grinning like it was 1995."</em><br/><strong>— Sandra T., 63, Raleigh, NC</strong></p><p style="position: relative;"><em>"I used to call my son every fall to help with the leaves. This year I didn't call once. I did the whole yard myself, three Saturdays in a row. That might not sound like much. It was everything."</em><br/><strong>— Robert D., 71, Portland, OR</strong></p><p style="position: relative;"><em>"Bad shoulder for years — rotator cuff. Gas blowers were completely out. This one I can use for 40 minutes and feel nothing the next morning. I also use it to dry my car now. Two chamois cloths in the trash where they belong."</em><br/><strong>— Patricia M., 67, Scottsdale, AZ</strong></p></div>
+<img alt="" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/seese-pro-v9/manual_upload-manual-b39b1159.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<h2 class="sec-head" style="position: relative;">Our Team Tested It for 30 Days. Here Is the Unvarnished Result.</h2>
+<div class="art-body"><p style="position: relative;">We gave the Seese Pro to three members of our editorial team — aged 58, 64, and 71 — with different home setups: a townhouse with a small patio, a detached home with a 600-square-foot yard, and a property with a two-car garage and a long driveway. No coaching. No contact with the brand during the test period. Just the device, the charger, and the instruction to use it as they normally would their existing tools.</p><p style="position: relative;"><strong>Week 1:</strong> All three testers reported the same reaction within the first use — surprise at the airflow. The power output was not what any of them expected from a device this light. Leaves moved. Dust scattered from surfaces a broom would have taken three passes to reach. One tester dried her car in under 4 minutes and later told us she felt a specific kind of irritation — the kind you feel when you realize you could have had something years earlier.</p><p style="position: relative;"><strong>Week 2:</strong> The 71-year-old tester has a documented history of lower back pain that led him to stop using his gas blower two years ago. During this week, he used the Seese Pro four times — patio, driveway, garage floor, car. He reported no pain during any session and no soreness the following day in any case. He also noted, unprompted, that he had quietly stopped doing several yard tasks over the past two years and had not fully registered how much had accumulated.</p><p style="position: relative;"><strong>Weeks 3–4:</strong> The device had become part of routine. One tester began using it to clear dust from garage shelving and workshop equipment. Another used it to blow debris from her car's air vents and the gaps around her dashboard. On a cold morning during week four, one tester used it to clear a lightly frosted windshield — confirmed effective in under 90 seconds without a scraper or fluid.</p><p style="position: relative;"><strong>What failed:</strong> Nothing. Over 30 days of regular residential use across three users and multiple environments, the Seese Pro required no maintenance, no repairs, and no replacement. The lifetime warranty was not called upon.</p><p style="position: relative;"><strong>Editorial verdict:</strong> The Seese Pro performs as advertised — and it does so in a form factor that makes it genuinely accessible to homeowners who have been quietly stepping back from yard maintenance not because they want to, but because their current tools stopped working for them. If you are over 55 and you have been postponing tasks, asking for help you would rather not ask for, or simply tolerating more physical cost than the job should require — this changes what is possible on a Saturday morning.</p></div>
+<img alt="" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/seese-pro-v9/manual_upload-manual-ad8d0a11.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
 <div class="offer-verdict">
 <div class="verdict-label">Investigation Verdict</div>
-<h2>⚠️ Special Offer: <span class="accent">50% Off</span> — Limited Stock</h2>
-<p><strong>Seese Pro™</strong><br/>Available <strong>ONLY</strong> on the official store — at the lowest price of the year.</p>
-<div class="placeholder"><div class="tbadge">PRODUCT BUNDLE</div><br/>Product hero image with all accessories and price badge</div>
-<p><strong>Try the Seese Pro risk-free for 30 days.</strong> If it does not change how you maintain your home — return it. Full refund. No paperwork.</p><p>The 55% discount and the $120 in free accessories are available while current stock allows.</p><p><a href="https://terica-store.com/click"><strong>→ Check Availability and Claim Your 55% Discount</strong></a></p><p><em>Verified by our editorial team. 30-day money-back guarantee. Lifetime replacement warranty included on every order.</em></p>
+<h2 style="position: relative;">⚠️ Special Offer: <span class="accent">50% Off</span> — Limited Stock</h2>
+<p style="position: relative;"><strong>Seese Pro™</strong><br/>Available <strong>ONLY</strong> on the official store — at the lowest price of the year.</p>
+<img alt="" src="/pages/media/seese-pro-v9/manual_upload-manual-29729ba4.jpeg" style="width: 100%; border-radius: 8px; margin: 8px 0px;"/>
+<p style="position: relative;"><strong>Try the Seese Pro risk-free for 30 days.</strong> If it does not change how you maintain your home — return it. Full refund. No paperwork.</p><p style="position: relative;">The 55% discount and the $120 in free accessories are available while current stock allows.</p><p style="position: relative;"><a href="https://terica-store.com/click"><strong>→ Check Availability and Claim Your 55% Discount</strong></a></p><p style="position: relative;"><em>Verified by our editorial team. 30-day money-back guarantee. Lifetime replacement warranty included on every order.</em></p>
 <a class="cta-main" href="https://terica-store.com/click">Check Availability</a>
 <div class="offer-badges">
 <div>✓ 30-day money-back guarantee</div>
@@ -209,7 +460,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 </div>
 <div class="related-sec">
-<h3>Related Investigations</h3>
+<h3 style="position: relative;">Related Investigations</h3>
 <div class="related-grid">
 <div class="rel-item">
 <div class="rel-cat">Health</div>
@@ -232,11 +483,10 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </article>
 </div>
 <div class="sticky-footer">
-<a href="https://terica-store.com/click">👉 Skip to offer — Check availability <span class="arr">→</span></a>
+<a href="https://terica-store.com/click" style="position: relative;">👉 Skip to offer — Check availability <span class="arr">→</span></a>
 </div>
 <footer id="adv-footer" style="background:#f5f5f5;border-top:1px solid #e5e5e5;padding:30px 20px;text-align:center;margin-top:40px;">
 <img alt="Logo" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="height:36px;max-width:180px;object-fit:contain;margin-bottom:12px;opacity:0.7;"/>
-<p style="font-size:10px;color:#999;line-height:1.6;max-width:700px;margin:0 auto;">© 2026 All rights reserved. All content, images, and materials on this website are protected by international copyright and intellectual property laws. Unauthorized reproduction, distribution, or modification of any materials is strictly prohibited.</p>
+<p style="font-size: 10px; color: rgb(153, 153, 153); line-height: 1.6; max-width: 700px; margin: 0px auto; position: relative;">© 2026 All rights reserved. All content, images, and materials on this website are protected by international copyright and intellectual property laws. Unauthorized reproduction, distribution, or modification of any materials is strictly prohibited.</p>
 </footer>
-</body>
-</html>
+</body></html>
