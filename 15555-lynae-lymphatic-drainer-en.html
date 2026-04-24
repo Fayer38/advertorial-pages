@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>The French Grandmother's Secret to Flat Ankles and Morning Face Depuffing That Doctors Missed</title>
@@ -668,6 +665,16 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -676,7 +683,255 @@ t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "wb35vpdfk1");
 </script>
-<script async="" src="https://terica-store.com/tracker.js"></script>
+<!-- ext-script-stripped -->
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
@@ -692,8 +947,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <main class="adv-main">
 <!-- ── HERO ── -->
 <div class="adv-hero">
-<h1 class="adv-hero__title">My French Grand-Mère Took One Look at Me and Said 'Your Body Is Stagnating'</h1>
-<p class="adv-hero__subtitle"><strong>After two years of puffy mornings and tight rings, a visit to Provence changed what I thought I knew about water retention.</strong></p>
+<h1 class="adv-hero__title" style="position: relative;">My French Grand-Mère Took One Look at Me and Said 'Your Body Is Stagnating'</h1>
+<p class="adv-hero__subtitle" style="position: relative;"><strong>After two years of puffy mornings and tight rings, a visit to Provence changed what I thought I knew about water retention.</strong></p>
 </div>
 <!-- ── BYLINE (avatar injected from local pool) ── -->
 <div class="adv-byline">
@@ -710,153 +965,153 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <!-- ── LEAD IMAGE ── -->
 <div class="adv-lead-image">
-<div class="v2-media-slot" data-job-id="c4c3b89d-da3d-49e2-9310-60e9a6f1f18c" data-prompts="[&quot;American woman in her late thirties looking at herself in a bathroom mirror in the morning, visibly puffy face and jawline, soft natural light through a window, Chicago apartment, photorealistic&quot;, &quot;Close-up of a woman's hands struggling to slide a wedding ring off a slightly swollen finger in an office setting at the end of the workday, photorealistic&quot;, &quot;Relieved looking woman seeing her slimmer ankles in front of a bathroom mirror at home, morning light, subtle emotional smile, photorealistic&quot;]" data-selected="0" data-slot-key="media.lead" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.lead</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"American woman in her late thirties looking at herself in a bathroom mirror in t"</div></div>
+<img alt="" data-copy="media.lead:attr:src" data-prompts="[&quot;American woman in her late thirties looking at herself in a bathroom mirror in the morning, visibly puffy face and jawline, soft natural light through a window, Chicago apartment, photorealistic&quot;, &quot;Close-up of a woman's hands struggling to slide a wedding ring off a slightly swollen finger in an office setting at the end of the workday, photorealistic&quot;, &quot;Relieved looking woman seeing her slimmer ankles in front of a bathroom mirror at home, morning light, subtle emotional smile, photorealistic&quot;]" data-slot-key="media.lead" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/71edb5a6/batch_763c638c1380_0_0_5d139f.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 10; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <!-- ── OPENING PULLQUOTE ── -->
-<blockquote class="adv-pullquote">HER BODY WASN'T RETAINING WATER — IT WAS STAGNATING</blockquote>
+<blockquote class="adv-pullquote" style="position: relative;">HER BODY WASN'T RETAINING WATER — IT WAS STAGNATING</blockquote>
 <!-- ── INTRO PARAGRAPHS ── -->
 <div class="adv-article">
-<p>For two years, I woke up with a face I didn't recognize on morning Zoom calls — soft, inflated, a stranger's cheeks pressing against the camera. By 3pm my wedding ring wouldn't come off, and after any flight my legs felt poured in concrete.</p>
-<p>I'm a marketing manager in Chicago, not someone who neglects herself. I drank the gallon of water. I cut the salt. I bought every detox tea on the Whole Foods shelf. My doctor, barely looking up, told me the same thing anyway.</p>
-<p>Then, last August, I flew to a tiny village outside Aix-en-Provence to see my grand-mère Yvette. She opened the door, looked at my ankles for about four seconds, and said something that reorganized everything I understood about my body.</p>
+<p style="position: relative;">For two years, I woke up with a face I didn't recognize on morning Zoom calls — soft, inflated, a stranger's cheeks pressing against the camera. By 3pm my wedding ring wouldn't come off, and after any flight my legs felt poured in concrete.</p>
+<p style="position: relative;">I'm a marketing manager in Chicago, not someone who neglects herself. I drank the gallon of water. I cut the salt. I bought every detox tea on the Whole Foods shelf. My doctor, barely looking up, told me the same thing anyway.</p>
+<p style="position: relative;">Then, last August, I flew to a tiny village outside Aix-en-Provence to see my grand-mère Yvette. She opened the door, looked at my ankles for about four seconds, and said something that reorganized everything I understood about my body.</p>
 </div>
 <!-- ── S1 "THE MOMENT EVERYTHING CHANGED" ── -->
-<h2 class="adv-section-heading">The Diagnosis My American Doctor Missed</h2>
+<h2 class="adv-section-heading" style="position: relative;">The Diagnosis My American Doctor Missed</h2>
 <div class="adv-inline-image">
-<div class="v2-media-slot" data-job-id="c4c3b89d-da3d-49e2-9310-60e9a6f1f18c" data-prompts="[&quot;Elderly French grandmother standing in the stone doorway of a small Provençal village house, looking concerned at her visiting granddaughter's ankles, warm late afternoon light, photorealistic&quot;, &quot;American woman sitting at a kitchen table in a rustic French village home, older grandmother speaking to her seriously, enamel kettle on the stove, photorealistic&quot;, &quot;Close-up of swollen ankles next to traditional provincial tile floor inside an old French stone house, photorealistic&quot;]" data-selected="0" data-slot-key="media.s1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Elderly French grandmother standing in the stone doorway of a small Provençal vi"</div></div>
+<img alt="" data-copy="media.s1:attr:src" data-prompts="[&quot;Elderly French grandmother standing in the stone doorway of a small Provençal village house, looking concerned at her visiting granddaughter's ankles, warm late afternoon light, photorealistic&quot;, &quot;American woman sitting at a kitchen table in a rustic French village home, older grandmother speaking to her seriously, enamel kettle on the stove, photorealistic&quot;, &quot;Close-up of swollen ankles next to traditional provincial tile floor inside an old French stone house, photorealistic&quot;]" data-slot-key="media.s1" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/71edb5a6/batch_763c638c1380_1_0_f055a8.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <div class="adv-article">
-<p>Grand-mère didn't invite me in first. She pointed at my legs in the doorway and said, in her thick Provençal accent, that my body wasn't holding water. It was stagnating. Like a pond, she explained, with no current running through it.</p>
-<p>That word — stagnating — hit me harder than any lab result. Because in Chicago, everyone had told me the opposite: drink more, sweat more, <strong>flush it out</strong>. Nobody had ever asked whether the system that moves fluid inside me was actually moving.</p>
-<p>The lymphatic system, she said, is not a river. It has no heart pushing it. When we sit too long, fly too often, eat food our grandmothers wouldn't recognize, the whole network <strong>slows to a crawl</strong>. And the fluid just sits there, quietly swelling us.</p>
+<p style="position: relative;">Grand-mère didn't invite me in first. She pointed at my legs in the doorway and said, in her thick Provençal accent, that my body wasn't holding water. It was stagnating. Like a pond, she explained, with no current running through it.</p>
+<p style="position: relative;">That word — stagnating — hit me harder than any lab result. Because in Chicago, everyone had told me the opposite: drink more, sweat more, <strong>flush it out</strong>. Nobody had ever asked whether the system that moves fluid inside me was actually moving.</p>
+<p style="position: relative;">The lymphatic system, she said, is not a river. It has no heart pushing it. When we sit too long, fly too often, eat food our grandmothers wouldn't recognize, the whole network <strong>slows to a crawl</strong>. And the fluid just sits there, quietly swelling us.</p>
 </div>
 <!-- ── ESTHETICIAN PULLQUOTE ── -->
-<blockquote class="adv-pullquote">THE LYMPHATIC SYSTEM HAS NO HEART — IT NEEDS A PUSH</blockquote>
+<blockquote class="adv-pullquote" style="position: relative;">THE LYMPHATIC SYSTEM HAS NO HEART — IT NEEDS A PUSH</blockquote>
 <div class="adv-article">
-<p>I thought of the thousands I'd spent on manual lymphatic drainage appointments at a fancy spa on North Michigan Avenue. The relief lasted maybe 48 hours. I thought of every detox tea box stacked in my cabinet, <strong>none of them touching</strong> the real issue.</p>
-<p>In America, we treat puffiness like a hydration problem. In that village, grand-mère treated it like a <u>traffic problem</u>. Something had to start the current again. And she knew exactly which plants, she said, her own mother had used for this.</p>
+<p style="position: relative;">I thought of the thousands I'd spent on manual lymphatic drainage appointments at a fancy spa on North Michigan Avenue. The relief lasted maybe 48 hours. I thought of every detox tea box stacked in my cabinet, <strong>none of them touching</strong> the real issue.</p>
+<p style="position: relative;">In America, we treat puffiness like a hydration problem. In that village, grand-mère treated it like a <u>traffic problem</u>. Something had to start the current again. And she knew exactly which plants, she said, her own mother had used for this.</p>
 </div>
 <!-- ── S2 "THE SHOCKING PRICE TAG" ── -->
-<h2 class="adv-section-heading">The Garden Behind Her Stone House</h2>
+<h2 class="adv-section-heading" style="position: relative;">The Garden Behind Her Stone House</h2>
 <div class="adv-inline-image">
-<div class="v2-media-slot" data-job-id="c4c3b89d-da3d-49e2-9310-60e9a6f1f18c" data-prompts="[&quot;Sunlit Provençal herb garden with meadowsweet, birch leaves and horsetail plants growing together, stone wall in background, photorealistic&quot;, &quot;Older French woman's hands gently picking fresh meadowsweet flowers in her countryside garden, soft morning light, photorealistic&quot;, &quot;Enamel kettle on a small gas stove brewing a green herbal infusion, rustic French kitchen, warm window light, photorealistic&quot;]" data-selected="0" data-slot-key="media.s2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Sunlit Provençal herb garden with meadowsweet, birch leaves and horsetail plants"</div></div>
+<img alt="" data-copy="media.s2:attr:src" data-prompts="[&quot;Sunlit Provençal herb garden with meadowsweet, birch leaves and horsetail plants growing together, stone wall in background, photorealistic&quot;, &quot;Older French woman's hands gently picking fresh meadowsweet flowers in her countryside garden, soft morning light, photorealistic&quot;, &quot;Enamel kettle on a small gas stove brewing a green herbal infusion, rustic French kitchen, warm window light, photorealistic&quot;]" data-slot-key="media.s2" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/71edb5a6/batch_763c638c1380_2_0_55ab10.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <div class="adv-article">
-<p>The next morning she led me out through a wooden gate into the garden. Lavender everywhere, bees, a fig tree heavy with fruit. But she walked past all of that. She stopped at plants I would have dismissed as weeds on any Chicago sidewalk.</p>
-<p>Meadowsweet, she said, touching the creamy flowers. Then the <strong>birch leaves</strong>. Then the horsetail, sharp and strange. These three, she told me, were what her mother brewed for women in the village whose ankles swelled in summer and whose faces puffed after the baby was born.</p>
-<p>She boiled the enamel kettle on a tiny gas stove and handed me a mug every morning for ten days. I did not love the taste. But by day seven, something I hadn't felt in two years happened: <strong>my ankles reappeared</strong>.</p>
+<p style="position: relative;">The next morning she led me out through a wooden gate into the garden. Lavender everywhere, bees, a fig tree heavy with fruit. But she walked past all of that. She stopped at plants I would have dismissed as weeds on any Chicago sidewalk.</p>
+<p style="position: relative;">Meadowsweet, she said, touching the creamy flowers. Then the <strong>birch leaves</strong>. Then the horsetail, sharp and strange. These three, she told me, were what her mother brewed for women in the village whose ankles swelled in summer and whose faces puffed after the baby was born.</p>
+<p style="position: relative;">She boiled the enamel kettle on a tiny gas stove and handed me a mug every morning for ten days. I did not love the taste. But by day seven, something I hadn't felt in two years happened: <strong>my ankles reappeared</strong>.</p>
 </div>
 <!-- ── S3 "THE DISCOVERY" + PRODUCT HIGHLIGHT ── -->
-<h2 class="adv-section-heading">Coming Home and Looking for It</h2>
+<h2 class="adv-section-heading" style="position: relative;">Coming Home and Looking for It</h2>
 <div class="adv-article">
-<p>I flew back to O'Hare with a small paper bag of her dried blend in my carry-on. It lasted six weeks. Then I was staring at an empty kitchen counter, already feeling my rings get tight by late afternoon, back where I started.</p>
-<p>I was not going to fly to Provence every two months. And the herbs sold loose in Chicago shops were dusty, or blended wrong, or labeled for something else entirely. What I needed was grand-mère's logic, delivered in a form that <strong>actually arrived at my door</strong>.</p>
+<p style="position: relative;">I flew back to O'Hare with a small paper bag of her dried blend in my carry-on. It lasted six weeks. Then I was staring at an empty kitchen counter, already feeling my rings get tight by late afternoon, back where I started.</p>
+<p style="position: relative;">I was not going to fly to Provence every two months. And the herbs sold loose in Chicago shops were dusty, or blended wrong, or labeled for something else entirely. What I needed was grand-mère's logic, delivered in a form that <strong>actually arrived at my door</strong>.</p>
 </div>
 <!-- ── BUYER QUOTES (2 back-to-back) ── -->
-<blockquote class="adv-buyer-quote">
+<blockquote class="adv-buyer-quote" style="position: relative;">
 <span>My rings fit again by dinner. I stopped booking the massage appointments I couldn't really afford anymore.</span>
 <span class="adv-buyer-quote__attr">— <strong>Megan R.</strong> <span>Verified Lynae Customer</span></span>
 </blockquote>
-<blockquote class="adv-buyer-quote">
+<blockquote class="adv-buyer-quote" style="position: relative;">
 <span>Three weeks in, my calves don't feel like bricks after the flight back to Denver. That alone was worth it.</span>
 <span class="adv-buyer-quote__attr">— <strong>Jessica T.</strong> <span>Frequent Business Traveler</span></span>
 </blockquote>
 <div class="adv-article">
-<p>That is how I found Lynae. A lymphatic drainer built on the same three plants — <strong>meadowsweet, birch, horsetail</strong> — concentrated and standardized so I didn't need a garden, a kettle, or a plane ticket to benefit from them.</p>
+<p style="position: relative;">That is how I found Lynae. A lymphatic drainer built on the same three plants — <strong>meadowsweet, birch, horsetail</strong> — concentrated and standardized so I didn't need a garden, a kettle, or a plane ticket to benefit from them.</p>
 </div>
 <!-- ── VIDEO #1 ── -->
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="c4c3b89d-da3d-49e2-9310-60e9a6f1f18c" data-prompts='["Side profile of a woman in her late thirties taking the Lynae drainer with a glass of water in a bright Chicago kitchen, photorealistic", "American woman preparing her morning routine at the kitchen counter, Lynae bottle visible next to her coffee, photorealistic", "Close-up of hands measuring a dose of Lynae into a glass of water, morning light through window, photorealistic"]' data-selected="0" data-slot-key="media.video_1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.video_1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Side profile of a woman in her late thirties taking the Lynae drainer with a gla"</div></div></div>
+<div class="adv-inline-image"><img alt="" data-copy="media.video_1:attr:src" data-prompts='["Side profile of a woman in her late thirties taking the Lynae drainer with a glass of water in a bright Chicago kitchen, photorealistic", "American woman preparing her morning routine at the kitchen counter, Lynae bottle visible next to her coffee, photorealistic", "Close-up of hands measuring a dose of Lynae into a glass of water, morning light through window, photorealistic"]' data-slot-key="media.video_1" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/71edb5a6/batch_763c638c1380_3_0_cfe5dd.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <!-- ── S4 "MY FIRST EXPERIENCE" ── -->
-<h2 class="adv-section-heading">Why the Three Plants Actually Work</h2>
+<h2 class="adv-section-heading" style="position: relative;">Why the Three Plants Actually Work</h2>
 <div class="adv-article">
-<p>Meadowsweet was the one grand-mère reached for first. In Provence, women have used it for generations to <strong>ease fluid buildup</strong> without the harsh diuretic crash that leaves you running to the bathroom all afternoon. It is gentle, and it is patient.</p>
-<p>Birch leaf is the <strong>gentle mover</strong>. It encourages the lymph to start flowing again where it had been sitting — in the ankles, around the eyes, along the jaw. Not a flush. A nudge. The difference matters more than you would think.</p>
-<p>Horsetail — the strange one, the spiky one — supports the connective tissue that the lymph moves through. Grand-mère said her mother used it for women whose skin looked <u>tired and heavy</u>. It works quietly, in the background, all day.</p>
+<p style="position: relative;">Meadowsweet was the one grand-mère reached for first. In Provence, women have used it for generations to <strong>ease fluid buildup</strong> without the harsh diuretic crash that leaves you running to the bathroom all afternoon. It is gentle, and it is patient.</p>
+<p style="position: relative;">Birch leaf is the <strong>gentle mover</strong>. It encourages the lymph to start flowing again where it had been sitting — in the ankles, around the eyes, along the jaw. Not a flush. A nudge. The difference matters more than you would think.</p>
+<p style="position: relative;">Horsetail — the strange one, the spiky one — supports the connective tissue that the lymph moves through. Grand-mère said her mother used it for women whose skin looked <u>tired and heavy</u>. It works quietly, in the background, all day.</p>
 </div>
 <div class="adv-inline-image">
-<div class="v2-media-slot" data-job-id="c4c3b89d-da3d-49e2-9310-60e9a6f1f18c" data-prompts='["Editorial flat lay of three herbs labeled meadowsweet, birch leaf, horsetail on a clean neutral surface with a notebook, photorealistic", "Close-up macro of meadowsweet flowers and birch leaves on a white marble surface, natural daylight, photorealistic", "Woman pouring a warm herbal infusion from a kettle into a simple mug in her American kitchen, calm morning mood, photorealistic"]' data-selected="0" data-slot-key="media.s4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Editorial flat lay of three herbs labeled meadowsweet, birch leaf, horsetail on "</div></div>
+<img alt="" data-copy="media.s4:attr:src" data-prompts='["Editorial flat lay of three herbs labeled meadowsweet, birch leaf, horsetail on a clean neutral surface with a notebook, photorealistic", "Close-up macro of meadowsweet flowers and birch leaves on a white marble surface, natural daylight, photorealistic", "Woman pouring a warm herbal infusion from a kettle into a simple mug in her American kitchen, calm morning mood, photorealistic"]' data-slot-key="media.s4" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/71edb5a6/batch_763c638c1380_4_0_3e9bc6.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <!-- ── S5 "THE TRANSFORMATION WAS IMMEDIATE" ── -->
-<h2 class="adv-section-heading">What Lynae Does That Detox Teas Don't</h2>
+<h2 class="adv-section-heading" style="position: relative;">What Lynae Does That Detox Teas Don't</h2>
 <div class="adv-article">
-<p>Detox teas make you run to the bathroom once and call it a cleanse. The puffiness comes back by the next evening. That is not drainage — that is <strong>dehydration dressed up</strong> as wellness, and I had a cupboard full of boxes to prove it.</p>
-<p>Lynae works the other direction. It does not drain you — it <strong>gets your own system moving</strong>, the way it did before long flights and long desk days and two decades of sitting in Chicago traffic slowed everything down. You still drink your water. You just actually use it.</p>
-<p>In my first week, I noticed it on my jawline before anywhere else. The softness I'd been blaming on turning 38 — that was <u>not age</u>. That was fluid with nowhere to go. When it started going again, my face in the mirror started looking like mine.</p>
+<p style="position: relative;">Detox teas make you run to the bathroom once and call it a cleanse. The puffiness comes back by the next evening. That is not drainage — that is <strong>dehydration dressed up</strong> as wellness, and I had a cupboard full of boxes to prove it.</p>
+<p style="position: relative;">Lynae works the other direction. It does not drain you — it <strong>gets your own system moving</strong>, the way it did before long flights and long desk days and two decades of sitting in Chicago traffic slowed everything down. You still drink your water. You just actually use it.</p>
+<p style="position: relative;">In my first week, I noticed it on my jawline before anywhere else. The softness I'd been blaming on turning 38 — that was <u>not age</u>. That was fluid with nowhere to go. When it started going again, my face in the mirror started looking like mine.</p>
 </div>
 <!-- ── VIDEO #2 ── -->
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="c4c3b89d-da3d-49e2-9310-60e9a6f1f18c" data-prompts="[&quot;Before and after comparison of a woman's ankles showing less swelling, same lighting, neutral floor, photorealistic&quot;, &quot;Woman stepping into her sandals with visibly slimmer ankles, sunny afternoon on a Chicago sidewalk, photorealistic&quot;, &quot;Close-up of a woman easily sliding her wedding ring onto her finger at the end of a workday, photorealistic&quot;]" data-selected="0" data-slot-key="media.video_2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.video_2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Before and after comparison of a woman's ankles showing less swelling, same ligh"</div></div></div>
+<div class="adv-inline-image"><img alt="" data-copy="media.video_2:attr:src" data-prompts="[&quot;Before and after comparison of a woman's ankles showing less swelling, same lighting, neutral floor, photorealistic&quot;, &quot;Woman stepping into her sandals with visibly slimmer ankles, sunny afternoon on a Chicago sidewalk, photorealistic&quot;, &quot;Close-up of a woman easily sliding her wedding ring onto her finger at the end of a workday, photorealistic&quot;]" data-slot-key="media.video_2" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/71edb5a6/batch_763c638c1380_5_1_a6a12d.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <!-- ── S6 "WHY THIS WORKS WHEN NOTHING ELSE DOES" ── -->
-<h2 class="adv-section-heading">What the First Thirty Days Look Like</h2>
+<h2 class="adv-section-heading" style="position: relative;">What the First Thirty Days Look Like</h2>
 <div class="adv-article">
-<p>Days one through four are quiet. Nothing dramatic. Grand-mère warned me about this — the system has been stalled for years, it does not leap back in a morning. A small amount of extra bathroom visits in the first days is normal and expected.</p>
-<p>By the end of the first week, most women report <strong>visible ankle relief</strong> and a less swollen feeling in the face first thing in the morning. This is where I cried in my bathroom in Lincoln Park because I could see the bone again at the side of my ankle.</p>
+<p style="position: relative;">Days one through four are quiet. Nothing dramatic. Grand-mère warned me about this — the system has been stalled for years, it does not leap back in a morning. A small amount of extra bathroom visits in the first days is normal and expected.</p>
+<p style="position: relative;">By the end of the first week, most women report <strong>visible ankle relief</strong> and a less swollen feeling in the face first thing in the morning. This is where I cried in my bathroom in Lincoln Park because I could see the bone again at the side of my ankle.</p>
 </div>
 <ul class="adv-compare-list">
-<li><strong>Detox teas</strong> <span>Run you to the bathroom for a day, then puffiness returns by the next evening unchanged.</span></li>
-<li><strong>Lymphatic massage</strong> <span>Gives real relief for two days, costs more per session than a nice dinner, never lasts.</span></li>
-<li><strong>Lynae</strong> <span>Works with the system, not against it, and the results hold through travel, hormonal weeks, and long desk days.</span></li>
+<li style="position: relative;"><strong>Detox teas</strong> <span>Run you to the bathroom for a day, then puffiness returns by the next evening unchanged.</span></li>
+<li style="position: relative;"><strong>Lymphatic massage</strong> <span>Gives real relief for two days, costs more per session than a nice dinner, never lasts.</span></li>
+<li style="position: relative;"><strong>Lynae</strong> <span>Works with the system, not against it, and the results hold through travel, hormonal weeks, and long desk days.</span></li>
 </ul>
 <div class="adv-article">
-<p>Weeks two and three are where it becomes a pattern. My <strong>rings fit by dinner</strong>. My legs felt almost weightless after flights to the coast for work. The softness under my eyes on Zoom calls stopped showing up unpredictably — it was just gone.</p>
-<p>By day thirty I was no longer thinking about any of it. That was the strangest shift. My puffiness had gone from a <u>daily chore</u> to a memory. I emailed grand-mère a photo of my ankles in sandals and she wrote back one word: voilà.</p>
+<p style="position: relative;">Weeks two and three are where it becomes a pattern. My <strong>rings fit by dinner</strong>. My legs felt almost weightless after flights to the coast for work. The softness under my eyes on Zoom calls stopped showing up unpredictably — it was just gone.</p>
+<p style="position: relative;">By day thirty I was no longer thinking about any of it. That was the strangest shift. My puffiness had gone from a <u>daily chore</u> to a memory. I emailed grand-mère a photo of my ankles in sandals and she wrote back one word: voilà.</p>
 </div>
 <!-- ── TESTIMONIAL SCREENSHOT ── -->
 <div class="adv-testimonial-screens adv-testimonial-screens--single">
-<div class="v2-media-slot" data-job-id="c4c3b89d-da3d-49e2-9310-60e9a6f1f18c" data-prompts='["Smartphone screen showing a text conversation between a woman and her grandmother with a photo of slim ankles, neutral background, photorealistic", "Woman in her thirties smiling at her phone while sitting on a couch in a Chicago living room, afternoon light, photorealistic", "Close-up of a phone screen showing a simple voilà message from grand-mère, soft blurred background, photorealistic"]' data-selected="0" data-slot-key="media.screen_1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.screen_1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Smartphone screen showing a text conversation between a woman and her grandmothe"</div></div>
+<img alt="" data-copy="media.screen_1:attr:src" data-prompts='["Smartphone screen showing a text conversation between a woman and her grandmother with a photo of slim ankles, neutral background, photorealistic", "Woman in her thirties smiling at her phone while sitting on a couch in a Chicago living room, afternoon light, photorealistic", "Close-up of a phone screen showing a simple voilà message from grand-mère, soft blurred background, photorealistic"]' data-slot-key="media.screen_1" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/71edb5a6/batch_763c638c1380_6_1_474fa1.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <!-- ── S7 FAQ ── -->
-<h2 class="adv-section-heading">Questions Women Keep Asking Me</h2>
+<h2 class="adv-section-heading" style="position: relative;">Questions Women Keep Asking Me</h2>
 <div class="adv-faq">
 <div class="adv-faq__item">
-<p class="adv-faq__q">Will I be running to the bathroom all day like on those aggressive detox teas I stopped buying?</p>
-<p class="adv-faq__a">No. That is the whole difference. Lynae gently restarts the lymph — you do not feel dehydrated or drained by midday.</p>
+<p class="adv-faq__q" style="position: relative;">Will I be running to the bathroom all day like on those aggressive detox teas I stopped buying?</p>
+<p class="adv-faq__a" style="position: relative;">No. That is the whole difference. Lynae gently restarts the lymph — you do not feel dehydrated or drained by midday.</p>
 </div>
 <div class="adv-faq__item">
-<p class="adv-faq__q">How soon did you actually see your ankles and face look different after you started taking it?</p>
-<p class="adv-faq__a">Around day seven for the ankles, a little later for the face. Three weeks in, the change was holding even after a long flight.</p>
+<p class="adv-faq__q" style="position: relative;">How soon did you actually see your ankles and face look different after you started taking it?</p>
+<p class="adv-faq__a" style="position: relative;">Around day seven for the ankles, a little later for the face. Three weeks in, the change was holding even after a long flight.</p>
 </div>
 <div class="adv-faq__item">
-<p class="adv-faq__q">Can I take Lynae if I am already on something else my doctor prescribed for blood pressure or hormones?</p>
-<p class="adv-faq__a">Always check with your own physician first. The plants are gentle, but your doctor knows what else is already in your system.</p>
+<p class="adv-faq__q" style="position: relative;">Can I take Lynae if I am already on something else my doctor prescribed for blood pressure or hormones?</p>
+<p class="adv-faq__a" style="position: relative;">Always check with your own physician first. The plants are gentle, but your doctor knows what else is already in your system.</p>
 </div>
 </div>
 <!-- ── S8 TESTIMONIALS TRIO ── -->
-<h2 class="adv-section-heading">Women Who Finally Stopped Feeling Swollen</h2>
+<h2 class="adv-section-heading" style="position: relative;">Women Who Finally Stopped Feeling Swollen</h2>
 <div class="adv-article">
-<p>A handful of the notes I kept getting from friends, coworkers, and strangers on Instagram after I started telling people about what grand-mère showed me.</p>
+<p style="position: relative;">A handful of the notes I kept getting from friends, coworkers, and strangers on Instagram after I started telling people about what grand-mère showed me.</p>
 </div>
 <div class="adv-testimonials">
 <div class="adv-testimonials__card">
 <div class="adv-testimonials__stars">★★★★★</div>
-<p class="adv-testimonials__text">I wore my wedding ring through an entire workday for the first time in two years. I actually cried at lunch.</p>
-<p class="adv-testimonials__author">— <strong>Melissa, 41</strong> <span>Boston, MA</span></p>
+<p class="adv-testimonials__text" style="position: relative;">I wore my wedding ring through an entire workday for the first time in two years. I actually cried at lunch.</p>
+<p class="adv-testimonials__author" style="position: relative;">— <strong>Melissa, 41</strong> <span>Boston, MA</span></p>
 </div>
 <div class="adv-testimonials__card">
 <div class="adv-testimonials__stars">★★★★★</div>
-<p class="adv-testimonials__text">Flew to Seattle for a conference, landed, and my calves did not turn into bricks. I almost did not believe it.</p>
-<p class="adv-testimonials__author">— <strong>Danielle, 36</strong> <span>Austin, TX</span></p>
+<p class="adv-testimonials__text" style="position: relative;">Flew to Seattle for a conference, landed, and my calves did not turn into bricks. I almost did not believe it.</p>
+<p class="adv-testimonials__author" style="position: relative;">— <strong>Danielle, 36</strong> <span>Austin, TX</span></p>
 </div>
 <div class="adv-testimonials__card">
 <div class="adv-testimonials__stars">★★★★★</div>
-<p class="adv-testimonials__text">My face on morning Zoom calls stopped looking like someone else. My team actually asked if I had started a new skincare routine.</p>
-<p class="adv-testimonials__author">— <strong>Kristen, 39</strong> <span>Denver, CO</span></p>
+<p class="adv-testimonials__text" style="position: relative;">My face on morning Zoom calls stopped looking like someone else. My team actually asked if I had started a new skincare routine.</p>
+<p class="adv-testimonials__author" style="position: relative;">— <strong>Kristen, 39</strong> <span>Denver, CO</span></p>
 </div>
 </div>
 <!-- ── OFFER IMAGE ── -->
 <div class="adv-offer-image">
-<div class="v2-media-slot" data-job-id="c4c3b89d-da3d-49e2-9310-60e9a6f1f18c" data-prompts='["Lynae Lymphatic Drainer bottle on a neutral countertop with a sprig of meadowsweet and birch leaf, editorial lighting, photorealistic", "Lynae bottle with its box on a wooden kitchen surface next to a mug of herbal tea, photorealistic", "Woman unpacking a small Lynae delivery box on her kitchen table with a content expression, photorealistic"]' data-selected="0" data-slot-key="media.offer" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.offer</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Lynae Lymphatic Drainer bottle on a neutral countertop with a sprig of meadowswe"</div></div>
+<img alt="" data-copy="media.offer:attr:src" data-prompts='["Lynae Lymphatic Drainer bottle on a neutral countertop with a sprig of meadowsweet and birch leaf, editorial lighting, photorealistic", "Lynae bottle with its box on a wooden kitchen surface next to a mug of herbal tea, photorealistic", "Woman unpacking a small Lynae delivery box on her kitchen table with a content expression, photorealistic"]' data-slot-key="media.offer" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/71edb5a6/batch_763c638c1380_7_1_1e1286.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <!-- ── S9 "LIMITED TIME OFFER" + OFFER BOX ── -->
-<h2 class="adv-section-heading">Where to Get It</h2>
+<h2 class="adv-section-heading" style="position: relative;">Where to Get It</h2>
 <div class="adv-article">
-<p>Grand-mère still makes her version with the enamel kettle. For the rest of us, Lynae is the closest thing without a plane ticket.</p>
+<p style="position: relative;">Grand-mère still makes her version with the enamel kettle. For the rest of us, Lynae is the closest thing without a plane ticket.</p>
 </div><div class="adv-offer-box">
-<h3>The three plants from grand-mère's garden, finally delivered to your door</h3>
-<p>Meadowsweet, birch leaf, and horsetail, concentrated into a daily drainer that works with your lymphatic system rather than against it.</p>
+<h3 style="position: relative;">The three plants from grand-mère's garden, finally delivered to your door</h3>
+<p style="position: relative;">Meadowsweet, birch leaf, and horsetail, concentrated into a daily drainer that works with your lymphatic system rather than against it.</p>
 <ul class="adv-offer-box__list">
-<li>Visible ankle relief and less puffy mornings by week one.</li>
-<li>No harsh diuretic crash, no bathroom sprint all afternoon long.</li>
-<li>Free shipping stateside and a thirty day money back guarantee.</li>
+<li style="position: relative;">Visible ankle relief and less puffy mornings by week one.</li>
+<li style="position: relative;">No harsh diuretic crash, no bathroom sprint all afternoon long.</li>
+<li style="position: relative;">Free shipping stateside and a thirty day money back guarantee.</li>
 </ul>
 </div>
 <!-- ── BLOCK CTA #1 ── -->
@@ -865,13 +1120,13 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <small>Free shipping and 30 day guarantee</small>
 </a>
 <!-- ── VIDEO #3 ── -->
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="c4c3b89d-da3d-49e2-9310-60e9a6f1f18c" data-prompts='["Woman on a morning Zoom call on her laptop, face looking defined and rested, bright home office in Chicago, photorealistic", "Candid portrait of a woman in her late thirties smiling softly at her reflection in a bathroom mirror, photorealistic", "Woman laughing with a friend over coffee at a sunny café table, relaxed and confident, photorealistic"]' data-selected="0" data-slot-key="media.video_3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.video_3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Woman on a morning Zoom call on her laptop, face looking defined and rested, bri"</div></div></div>
+<div class="adv-inline-image"><img alt="" data-copy="media.video_3:attr:src" data-prompts='["Woman on a morning Zoom call on her laptop, face looking defined and rested, bright home office in Chicago, photorealistic", "Candid portrait of a woman in her late thirties smiling softly at her reflection in a bathroom mirror, photorealistic", "Woman laughing with a friend over coffee at a sunny café table, relaxed and confident, photorealistic"]' data-slot-key="media.video_3" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/71edb5a6/batch_763c638c1380_8_1_b31765.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <!-- ── S10 "DON'T WAIT UNTIL IT'S TOO LATE" ── -->
-<h2 class="adv-section-heading">One Last Thing From Me</h2>
+<h2 class="adv-section-heading" style="position: relative;">One Last Thing From Me</h2>
 <div class="adv-article">
-<p>If you are reading this at 3pm and your rings are tight and your face felt different in the office bathroom mirror this morning, I want to tell you what grand-mère told me: your body is not betraying you. It is asking for a push.</p>
-<p>I spent two years and a genuinely embarrassing amount of money chasing symptoms. The answer turned out to be <strong>three plants a village woman in Provence</strong> already knew about. I wish someone had handed me a bottle of Lynae in month one instead of month twenty-four.</p>
-<p>You can try it for a month. If your ankles do not start showing up again, if the rings still do not fit by dinner, you send it back. No awkward call, no restocking fee, no lecture. <u>That is the whole deal</u>.</p>
+<p style="position: relative;">If you are reading this at 3pm and your rings are tight and your face felt different in the office bathroom mirror this morning, I want to tell you what grand-mère told me: your body is not betraying you. It is asking for a push.</p>
+<p style="position: relative;">I spent two years and a genuinely embarrassing amount of money chasing symptoms. The answer turned out to be <strong>three plants a village woman in Provence</strong> already knew about. I wish someone had handed me a bottle of Lynae in month one instead of month twenty-four.</p>
+<p style="position: relative;">You can try it for a month. If your ankles do not start showing up again, if the rings still do not fit by dinner, you send it back. No awkward call, no restocking fee, no lecture. <u>That is the whole deal</u>.</p>
 </div>
 <!-- ── GUARANTEE BLOCK ── -->
 <div class="adv-guarantee">
@@ -880,14 +1135,14 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-guarantee__badge-sub">Money Back Guarantee</div>
 </div>
 <div class="adv-guarantee__body">
-<h3>Wear your rings by dinner, or send it back easily</h3>
-<p>Grand-mère never sold anything. She gave the infusion to women in the village and watched their ankles come back. The team behind Lynae could not quite give theirs away, so they did the next best thing — they stood behind it with a <strong>real guarantee</strong>.</p>
-<p>Try it for thirty full days. If your face in the morning does not look like yours again, if your ankles stay puffy through the afternoon, write them and get your money back. <u>No lecture</u>. No quiz. No tricky return portal at midnight.</p>
+<h3 style="position: relative;">Wear your rings by dinner, or send it back easily</h3>
+<p style="position: relative;">Grand-mère never sold anything. She gave the infusion to women in the village and watched their ankles come back. The team behind Lynae could not quite give theirs away, so they did the next best thing — they stood behind it with a <strong>real guarantee</strong>.</p>
+<p style="position: relative;">Try it for thirty full days. If your face in the morning does not look like yours again, if your ankles stay puffy through the afternoon, write them and get your money back. <u>No lecture</u>. No quiz. No tricky return portal at midnight.</p>
 </div>
 </div>
 <!-- ── P.S. LINE ── -->
 <div class="adv-article">
-<p>P.S. If you are skeptical, be skeptical. Grand-mère would approve. Just try the month — that is all anyone is asking.</p>
+<p style="position: relative;">P.S. If you are skeptical, be skeptical. Grand-mère would approve. Just try the month — that is all anyone is asking.</p>
 </div>
 <!-- ── BLOCK CTA #3 ── -->
 <a class="adv-cta-block" href="https://terica-store.com/click">
@@ -906,7 +1161,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Megan O'Brien</span>
-<p class="adv-fb-comment__text">Three weeks in and my ankles are back. I stopped booking the spa drainage sessions completely, which my husband noticed on the credit card.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Three weeks in and my ankles are back. I stopped booking the spa drainage sessions completely, which my husband noticed on the credit card.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -920,7 +1175,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Rachel Park</span>
-<p class="adv-fb-comment__text">I was skeptical because I tried every detox tea out there. This actually felt different by day five. My rings fit all day again.</p>
+<p class="adv-fb-comment__text" style="position: relative;">I was skeptical because I tried every detox tea out there. This actually felt different by day five. My rings fit all day again.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -934,7 +1189,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Ashley Bennett</span>
-<p class="adv-fb-comment__text">The French grandmother story made me roll my eyes at first but the product genuinely works. My calves after my Atlanta flight last Tuesday were unrecognizable.</p>
+<p class="adv-fb-comment__text" style="position: relative;">The French grandmother story made me roll my eyes at first but the product genuinely works. My calves after my Atlanta flight last Tuesday were unrecognizable.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -948,7 +1203,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Jessica Moore</span>
-<p class="adv-fb-comment__text">Has anyone tried this during their cycle? That is when I puff the worst and I want to know if it still helps then.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Has anyone tried this during their cycle? That is when I puff the worst and I want to know if it still helps then.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -962,7 +1217,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Claire Dumont</span>
-<p class="adv-fb-comment__text">Yes, I actually wrote the piece. Cycle weeks were my worst too. Honestly that is where I noticed the biggest difference by month two.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Yes, I actually wrote the piece. Cycle weeks were my worst too. Honestly that is where I noticed the biggest difference by month two.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -976,7 +1231,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Danielle Torres</span>
-<p class="adv-fb-comment__text">Ordered a bottle after reading this last week. Two days in it is too early to tell but no weird bathroom issues which I appreciate.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Ordered a bottle after reading this last week. Two days in it is too early to tell but no weird bathroom issues which I appreciate.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -990,7 +1245,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Nicole Reyes</span>
-<p class="adv-fb-comment__text">My mom in Phoenix started it last month because of the swelling in her ankles. She texted me a photo of her ankles yesterday, smiling.</p>
+<p class="adv-fb-comment__text" style="position: relative;">My mom in Phoenix started it last month because of the swelling in her ankles. She texted me a photo of her ankles yesterday, smiling.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -1004,7 +1259,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Stephanie Cole</span>
-<p class="adv-fb-comment__text">The contrast with detox tea is exactly right. Those teas dehydrate you and call it a cleanse. This is the first thing that felt different.</p>
+<p class="adv-fb-comment__text" style="position: relative;">The contrast with detox tea is exactly right. Those teas dehydrate you and call it a cleanse. This is the first thing that felt different.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -1018,7 +1273,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Lauren Martinez</span>
-<p class="adv-fb-comment__text">I fly for work twice a month. Landed in Dallas on Monday and for once did not spend the evening with my feet on a stack of pillows.</p>
+<p class="adv-fb-comment__text" style="position: relative;">I fly for work twice a month. Landed in Dallas on Monday and for once did not spend the evening with my feet on a stack of pillows.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -1032,7 +1287,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Emma Whitaker</span>
-<p class="adv-fb-comment__text">Thirty day guarantee made me finally try it. Had written off supplements for years. This one I will probably keep in my cabinet long term.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Thirty day guarantee made me finally try it. Had written off supplements for years. This one I will probably keep in my cabinet long term.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -1046,7 +1301,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Brittany Sullivan</span>
-<p class="adv-fb-comment__text">The part about your doctor telling you to cut salt and drink more water — I have literally had that conversation three times with three different physicians.</p>
+<p class="adv-fb-comment__text" style="position: relative;">The part about your doctor telling you to cut salt and drink more water — I have literally had that conversation three times with three different physicians.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -1121,7 +1376,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>
