@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>Why I Canceled My Knee Replacement — A 71-Year-Old's Account</title>
@@ -125,6 +122,16 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -133,7 +140,255 @@ t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "wb35vpdfk1");
 </script>
-<script async="" src="https://terica-store.com/tracker.js"></script>
+<!-- ext-script-stripped -->
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
@@ -149,11 +404,11 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <a href="https://terica-store.com/click"><span>Joint Health</span></a>
 </nav>
 <!-- HEADLINE AREA -->
-<h1 class="article-headline">I Was Scheduled For Knee Replacement In June — Here's Why I Pushed It Back</h1>
-<p class="article-dek">My surgeon said bone on bone. Then I read what researchers had been quietly publishing about who actually needs surgery.</p>
+<h1 class="article-headline" style="position: relative;">I Was Scheduled For Knee Replacement In June — Here's Why I Pushed It Back</h1>
+<p class="article-dek" style="position: relative;">My surgeon said bone on bone. Then I read what researchers had been quietly publishing about who actually needs surgery.</p>
 <!-- HERO IMAGE -->
 <figure class="hero-media">
-<div class="v2-media-slot" data-job-id="b311e8fd-b8a0-482d-ad9d-9417dc0ec029" data-prompts='["Portrait of a 71-year-old American woman seated on a porch in Florida, looking thoughtful with a cane resting beside her, warm morning light, photorealistic", "Older woman at her kitchen table in a Florida retirement community, X-ray printout and laptop in front of her, photorealistic", "Close-up of weathered hands holding an X-ray film showing a knee joint, soft window light, contemplative mood, photorealistic"]' data-selected="0" data-slot-key="media.hero" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.hero</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Portrait of a 71-year-old American woman seated on a porch in Florida, looking t"</div></div>
+<img alt="" data-copy="media.hero:attr:src" data-prompts='["Portrait of a 71-year-old American woman seated on a porch in Florida, looking thoughtful with a cane resting beside her, warm morning light, photorealistic", "Older woman at her kitchen table in a Florida retirement community, X-ray printout and laptop in front of her, photorealistic", "Close-up of weathered hands holding an X-ray film showing a knee joint, soft window light, contemplative mood, photorealistic"]' data-slot-key="media.hero" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/batch_f7ce27044b9f_0_1_75d274.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 10; object-fit: cover; margin: 8px 0px;"/>
 </figure>
 <!-- BYLINE -->
 <div class="article-byline">
@@ -163,116 +418,116 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <!-- ARTICLE BODY -->
 <section class="article-body">
-<p>The surgery is scheduled for June. I'm seventy-one, I live alone in The Villages, and my orthopedic surgeon at the regional hospital used the words that everyone with arthritis eventually hears — <strong>bone on bone</strong>. He slid the X-ray across the desk and we should schedule, he said.</p>
-<p>My neighbor across the cul-de-sac had the same operation in February. She spent eleven weeks with a home health aide her Medicare supplement only partially covered, and she was back in the emergency room once already with a blood clot. I have <strong>nobody</strong> to bring meals or help me to the bathroom. That is the part the surgeon does not write down.</p>
+<p style="position: relative;">The surgery is scheduled for June. I'm seventy-one, I live alone in The Villages, and my orthopedic surgeon at the regional hospital used the words that everyone with arthritis eventually hears — <strong>bone on bone</strong>. He slid the X-ray across the desk and we should schedule, he said.</p>
+<p style="position: relative;">My neighbor across the cul-de-sac had the same operation in February. She spent eleven weeks with a home health aide her Medicare supplement only partially covered, and she was back in the emergency room once already with a blood clot. I have <strong>nobody</strong> to bring meals or help me to the bathroom. That is the part the surgeon does not write down.</p>
 <ul class="problem-list">
-<li>Has a surgeon already shown you your X-ray?</li>
-<li>Do you live alone with no caregiver nearby?</li>
-<li>Does the thought of recovery keep you awake?</li>
+<li style="position: relative;">Has a surgeon already shown you your X-ray?</li>
+<li style="position: relative;">Do you live alone with no caregiver nearby?</li>
+<li style="position: relative;">Does the thought of recovery keep you awake?</li>
 </ul>
-<p>So I did what every nervous patient does at two in the morning. I started reading. What I found in the <strong>peer-reviewed literature</strong> surprised me — and quietly, patiently, I built a case for asking my surgeon to wait.</p>
-<h2>How My Story Actually Started</h2>
-<p>The ache arrived the autumn I turned sixty-four, not long after my husband died. First it was the stairs, then getting up from the kneeler at First Baptist on Sunday mornings. My primary doctor called it wear and tear and sent me home with ibuprofen. By the time I was <strong>sixty-eight</strong>, a cortisone shot every four months was the only thing keeping me on my feet for church.</p>
-<p>I stopped volunteering at the thrift shop because I could not stand long enough to sort donations. I stopped driving my grandson's two-hour route to Gainesville for his soccer games. My son called on birthdays and holidays and heard the same sentence — I'm fine, honey, just the knee. The <strong>independence</strong> my husband and I had worked forty-two years to afford was shrinking, one cancelled plan at a time, and the shame of that was worse than the pain.</p>
-<p>The referral came in September and the consultation in October. He was a decent man with a waiting room full of patients just like me. He said <u>bone on bone</u> and we should schedule, and I said thank you and drove home and pulled up PubMed on the laptop my grandson set up last Thanksgiving. That is when I started learning what the billing codes actually looked like.</p>
+<p style="position: relative;">So I did what every nervous patient does at two in the morning. I started reading. What I found in the <strong>peer-reviewed literature</strong> surprised me — and quietly, patiently, I built a case for asking my surgeon to wait.</p>
+<h2 style="position: relative;">How My Story Actually Started</h2>
+<p style="position: relative;">The ache arrived the autumn I turned sixty-four, not long after my husband died. First it was the stairs, then getting up from the kneeler at First Baptist on Sunday mornings. My primary doctor called it wear and tear and sent me home with ibuprofen. By the time I was <strong>sixty-eight</strong>, a cortisone shot every four months was the only thing keeping me on my feet for church.</p>
+<p style="position: relative;">I stopped volunteering at the thrift shop because I could not stand long enough to sort donations. I stopped driving my grandson's two-hour route to Gainesville for his soccer games. My son called on birthdays and holidays and heard the same sentence — I'm fine, honey, just the knee. The <strong>independence</strong> my husband and I had worked forty-two years to afford was shrinking, one cancelled plan at a time, and the shame of that was worse than the pain.</p>
+<p style="position: relative;">The referral came in September and the consultation in October. He was a decent man with a waiting room full of patients just like me. He said <u>bone on bone</u> and we should schedule, and I said thank you and drove home and pulled up PubMed on the laptop my grandson set up last Thanksgiving. That is when I started learning what the billing codes actually looked like.</p>
 <div class="types-block">
-<h2>The 4 Types Of Knee Pain Worth Understanding</h2>
-<p>Not every bone on bone finding tells the same story. What I learned from the <strong>BMJ</strong> and the Arthritis &amp; Rheumatology journal is that surgeons group knee pain into categories that often respond very differently to conservative care.</p>
+<h2 style="position: relative;">The 4 Types Of Knee Pain Worth Understanding</h2>
+<p style="position: relative;">Not every bone on bone finding tells the same story. What I learned from the <strong>BMJ</strong> and the Arthritis &amp; Rheumatology journal is that surgeons group knee pain into categories that often respond very differently to conservative care.</p>
 <figure class="article-media narrow">
-<div class="v2-media-slot" data-job-id="b311e8fd-b8a0-482d-ad9d-9417dc0ec029" data-prompts="[&quot;Medical illustration of four knee conditions side by side — osteoarthritis, post-injury degeneration, inflammatory joint pain, referred nerve pain, clean clinical style, photorealistic&quot;, &quot;Overhead view of a knee anatomy diagram on a doctor's desk with patient chart and pen, natural light, photorealistic&quot;, &quot;Senior patient pointing to different parts of her knee during a consultation with a specialist, warm clinic lighting, photorealistic&quot;]" data-selected="0" data-slot-key="media.types" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.types</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Medical illustration of four knee conditions side by side — osteoarthritis, post"</div></div>
+<img alt="" data-copy="media.types:attr:src" data-prompts="[&quot;Medical illustration of four knee conditions side by side — osteoarthritis, post-injury degeneration, inflammatory joint pain, referred nerve pain, clean clinical style, photorealistic&quot;, &quot;Overhead view of a knee anatomy diagram on a doctor's desk with patient chart and pen, natural light, photorealistic&quot;, &quot;Senior patient pointing to different parts of her knee during a consultation with a specialist, warm clinic lighting, photorealistic&quot;]" data-slot-key="media.types" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/batch_f7ce27044b9f_1_1_ebdf5d.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
 <ul class="types-list">
-<li>
+<li style="position: relative;">
 <span class="type-title">MECHANICAL WEAR ARTHRITIS</span>
 <span class="type-text">The classic osteoarthritis profile — cartilage worn thin, morning stiffness, pain that improves with gentle movement but flares after a long walk on uneven ground.</span>
 </li>
-<li>
+<li style="position: relative;">
 <span class="type-title">POST INJURY DEGENERATION</span>
 <span class="type-text">An old meniscus tear, a ligament sprain from fifty years ago, a fall in the driveway — the joint never quite recovered and the cartilage has been paying for it since.</span>
 </li>
-<li>
+<li style="position: relative;">
 <span class="type-title">INFLAMMATORY JOINT PAIN</span>
 <span class="type-text">Swelling and heat that comes and goes in waves, sometimes worse in both knees at once, tied to the body's immune response rather than pure structural wear of the cartilage.</span>
 </li>
-<li>
+<li style="position: relative;">
 <span class="type-title">REFERRED NERVE PAIN</span>
 <span class="type-text">A pinched nerve in the lower back or hip radiating down into the knee — the kind of pain a replacement surgery will never actually fix because the source sits elsewhere entirely.</span>
 </li>
 </ul>
 </div>
-<h2>What Most Patients Are Offered First</h2>
-<p>The usual menu is familiar to anyone who has sat in a pain management clinic. You start with over-the-counter anti-inflammatories, graduate to prescription naproxen, then to a series of cortisone injections spaced a few months apart. When the injections stop working you get hyaluronic acid, then maybe a round of physical therapy that Medicare will reimburse for about six weeks, and then the surgical referral that everyone saw coming from the start.</p>
+<h2 style="position: relative;">What Most Patients Are Offered First</h2>
+<p style="position: relative;">The usual menu is familiar to anyone who has sat in a pain management clinic. You start with over-the-counter anti-inflammatories, graduate to prescription naproxen, then to a series of cortisone injections spaced a few months apart. When the injections stop working you get hyaluronic acid, then maybe a round of physical therapy that Medicare will reimburse for about six weeks, and then the surgical referral that everyone saw coming from the start.</p>
 <figure class="article-media">
-<div class="v2-media-slot" data-job-id="b311e8fd-b8a0-482d-ad9d-9417dc0ec029" data-prompts='["Pharmacy shelf displaying cortisone injection vials, anti-inflammatory pills, hyaluronic acid and physical therapy pamphlets, photorealistic", "Senior woman at a pain management clinic desk looking at a prescription printout with concern, neutral clinical lighting, photorealistic", "A hospital billing statement on a kitchen table beside an ibuprofen bottle and a cortisone appointment card, photorealistic"]' data-selected="0" data-slot-key="media.solutions" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.solutions</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Pharmacy shelf displaying cortisone injection vials, anti-inflammatory pills, hy"</div></div>
+<img alt="" data-copy="media.solutions:attr:src" data-prompts='["Pharmacy shelf displaying cortisone injection vials, anti-inflammatory pills, hyaluronic acid and physical therapy pamphlets, photorealistic", "Senior woman at a pain management clinic desk looking at a prescription printout with concern, neutral clinical lighting, photorealistic", "A hospital billing statement on a kitchen table beside an ibuprofen bottle and a cortisone appointment card, photorealistic"]' data-slot-key="media.solutions" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/batch_f7ce27044b9f_2_1_74f12e.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
-<p>Here is what nobody on the clipboard side of the exam room will tell you clearly. A knee replacement reimburses the hospital system at a figure that dwarfs what conservative care pays out, and device-maker consulting agreements with prominent orthopedic surgeons are a matter of public record on the <strong>CMS Open Payments database</strong>. The BMJ published a review suggesting a meaningful share of replacements performed each year in the United States may not actually have been clinically appropriate.</p>
-<p>None of that means my surgeon was wrong. It does mean the incentive structure leans one direction, and a patient like me — a widow living alone with a June surgery date — needed a <u>non-surgical bridge</u> that could let the joint rest while I thought more carefully.</p>
-<h2>Six Reasons I Chose A Different Route</h2>
-<p>After three months of reading and one long conversation with my pharmacist, I came home with a box of FlexiKnee™️ Patches and a reason for each.</p>
+<p style="position: relative;">Here is what nobody on the clipboard side of the exam room will tell you clearly. A knee replacement reimburses the hospital system at a figure that dwarfs what conservative care pays out, and device-maker consulting agreements with prominent orthopedic surgeons are a matter of public record on the <strong>CMS Open Payments database</strong>. The BMJ published a review suggesting a meaningful share of replacements performed each year in the United States may not actually have been clinically appropriate.</p>
+<p style="position: relative;">None of that means my surgeon was wrong. It does mean the incentive structure leans one direction, and a patient like me — a widow living alone with a June surgery date — needed a <u>non-surgical bridge</u> that could let the joint rest while I thought more carefully.</p>
+<h2 style="position: relative;">Six Reasons I Chose A Different Route</h2>
+<p style="position: relative;">After three months of reading and one long conversation with my pharmacist, I came home with a box of FlexiKnee™️ Patches and a reason for each.</p>
 <div class="reason">
 <span class="reason-num">Reason 01</span>
-<h3>Relief Within The First Hour</h3>
+<h3 style="position: relative;">Relief Within The First Hour</h3>
 <figure class="reason-img">
-<div class="v2-media-slot" data-job-id="b311e8fd-b8a0-482d-ad9d-9417dc0ec029" data-prompts="[&quot;Older woman applying a pain relief patch to her knee in a Florida living room, evening light, visible relief on her face, photorealistic&quot;, &quot;Close-up of a beige therapeutic patch on a senior woman's knee with a television remote beside her on the couch, photorealistic&quot;, &quot;Senior woman smiling faintly while watching the evening news after applying a knee patch, warm lamp light, photorealistic&quot;]" data-selected="0" data-slot-key="media.reason_1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.reason_1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older woman applying a pain relief patch to her knee in a Florida living room, e"</div></div>
+<img alt="" data-copy="media.reason_1:attr:src" data-prompts="[&quot;Older woman applying a pain relief patch to her knee in a Florida living room, evening light, visible relief on her face, photorealistic&quot;, &quot;Close-up of a beige therapeutic patch on a senior woman's knee with a television remote beside her on the couch, photorealistic&quot;, &quot;Senior woman smiling faintly while watching the evening news after applying a knee patch, warm lamp light, photorealistic&quot;]" data-slot-key="media.reason_1" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/batch_f7ce27044b9f_3_1_68d046.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
-<p>The first patch I applied on a Tuesday evening before bed. By the time the ten o'clock news started I could feel the joint quieting, not numbed exactly but <strong>less loud</strong>. Thirty to sixty minutes, the instruction leaflet said, and it was honest about that — no slow build, no week of waiting before the first good night.</p>
+<p style="position: relative;">The first patch I applied on a Tuesday evening before bed. By the time the ten o'clock news started I could feel the joint quieting, not numbed exactly but <strong>less loud</strong>. Thirty to sixty minutes, the instruction leaflet said, and it was honest about that — no slow build, no week of waiting before the first good night.</p>
 </div>
 <div class="reason">
 <span class="reason-num">Reason 02</span>
-<h3>Twelve Hours From One Patch</h3>
+<h3 style="position: relative;">Twelve Hours From One Patch</h3>
 <figure class="reason-img">
-<div class="v2-media-slot" data-job-id="b311e8fd-b8a0-482d-ad9d-9417dc0ec029" data-prompts='["Morning scene of a senior woman stepping out of bed with ease, knee patch visible, sunrise through the window, photorealistic", "Bedroom nightstand with coffee mug, reading glasses and an unused heating pad pushed aside, photorealistic", "Older woman stretching comfortably at dawn in a Florida bedroom, calm relief on her face, photorealistic"]' data-selected="0" data-slot-key="media.reason_2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.reason_2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Morning scene of a senior woman stepping out of bed with ease, knee patch visibl"</div></div>
+<img alt="" data-copy="media.reason_2:attr:src" data-prompts='["Morning scene of a senior woman stepping out of bed with ease, knee patch visible, sunrise through the window, photorealistic", "Bedroom nightstand with coffee mug, reading glasses and an unused heating pad pushed aside, photorealistic", "Older woman stretching comfortably at dawn in a Florida bedroom, calm relief on her face, photorealistic"]' data-slot-key="media.reason_2" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/batch_f7ce27044b9f_4_1_a4c74c.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
-<p>I sleep on my left side, which is the side of the good knee, and the patch on the right stayed put through the night. It was still working when the coffee pot clicked on at six. For a woman who used to wake at three to reposition a heating pad, <strong>twelve hours of unbroken relief</strong> is not a small thing.</p>
+<p style="position: relative;">I sleep on my left side, which is the side of the good knee, and the patch on the right stayed put through the night. It was still working when the coffee pot clicked on at six. For a woman who used to wake at three to reposition a heating pad, <strong>twelve hours of unbroken relief</strong> is not a small thing.</p>
 </div>
 <div class="reason">
 <span class="reason-num">Reason 03</span>
-<h3>Botanical Extracts Not Opioids</h3>
+<h3 style="position: relative;">Botanical Extracts Not Opioids</h3>
 <figure class="reason-img">
-<div class="v2-media-slot" data-job-id="b311e8fd-b8a0-482d-ad9d-9417dc0ec029" data-prompts='["Botanical ingredients on a wooden surface — menthol crystals, camphor, dried herbs — with a single therapeutic patch beside them, photorealistic", "Close-up of herbal extracts in glass bottles next to a pain relief patch package, clean studio lighting, photorealistic", "Senior woman reading an ingredient insert with clear relief in her expression, kitchen window light, photorealistic"]' data-selected="0" data-slot-key="media.reason_3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.reason_3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Botanical ingredients on a wooden surface — menthol crystals, camphor, dried her"</div></div>
+<img alt="" data-copy="media.reason_3:attr:src" data-prompts='["Botanical ingredients on a wooden surface — menthol crystals, camphor, dried herbs — with a single therapeutic patch beside them, photorealistic", "Close-up of herbal extracts in glass bottles next to a pain relief patch package, clean studio lighting, photorealistic", "Senior woman reading an ingredient insert with clear relief in her expression, kitchen window light, photorealistic"]' data-slot-key="media.reason_3" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/batch_f7ce27044b9f_5_1_4db79b.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
-<p>The active ingredients are plant-derived — menthol, camphor, herbal extracts that have been on the pharmacy shelf longer than I have been alive. That mattered to me. My husband spent his last eighteen months on opioid painkillers for a cancer that was going to take him anyway. I had no intention of walking into that pharmacy line myself if a <strong>topical patch</strong> could hold the line.</p>
+<p style="position: relative;">The active ingredients are plant-derived — menthol, camphor, herbal extracts that have been on the pharmacy shelf longer than I have been alive. That mattered to me. My husband spent his last eighteen months on opioid painkillers for a cancer that was going to take him anyway. I had no intention of walking into that pharmacy line myself if a <strong>topical patch</strong> could hold the line.</p>
 </div>
 <div class="reason">
 <span class="reason-num">Reason 04</span>
-<h3>Swelling Went Down Noticeably</h3>
+<h3 style="position: relative;">Swelling Went Down Noticeably</h3>
 <figure class="reason-img">
-<div class="v2-media-slot" data-job-id="b311e8fd-b8a0-482d-ad9d-9417dc0ec029" data-prompts="[&quot;Before and after comparison of a swollen senior knee and a reduced-swelling knee, clinical photography, photorealistic&quot;, &quot;Older woman's legs resting on an ottoman with visibly reduced knee swelling, living room setting, photorealistic&quot;, &quot;Close-up of a slimmed-down kneecap outline on a senior woman's leg, warm afternoon light, photorealistic&quot;]" data-selected="0" data-slot-key="media.reason_4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.reason_4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Before and after comparison of a swollen senior knee and a reduced-swelling knee"</div></div>
+<img alt="" data-copy="media.reason_4:attr:src" data-prompts="[&quot;Before and after comparison of a swollen senior knee and a reduced-swelling knee, clinical photography, photorealistic&quot;, &quot;Older woman's legs resting on an ottoman with visibly reduced knee swelling, living room setting, photorealistic&quot;, &quot;Close-up of a slimmed-down kneecap outline on a senior woman's leg, warm afternoon light, photorealistic&quot;]" data-slot-key="media.reason_4" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/batch_f7ce27044b9f_6_1_255a6b.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
-<p>The right knee had carried a visible puff for almost two years. By the end of the second week with the patches, I could see the outline of the kneecap again when I crossed my ankles on the ottoman. My daughter-in-law noticed on the video call before I did. <strong>Inflammation was the engine</strong> of my daily ache, and the patches were finally slowing it.</p>
+<p style="position: relative;">The right knee had carried a visible puff for almost two years. By the end of the second week with the patches, I could see the outline of the kneecap again when I crossed my ankles on the ottoman. My daughter-in-law noticed on the video call before I did. <strong>Inflammation was the engine</strong> of my daily ache, and the patches were finally slowing it.</p>
 </div>
 <div class="reason">
 <span class="reason-num">Reason 05</span>
-<h3>Nothing To Swallow Or Inject</h3>
+<h3 style="position: relative;">Nothing To Swallow Or Inject</h3>
 <figure class="reason-img">
-<div class="v2-media-slot" data-job-id="b311e8fd-b8a0-482d-ad9d-9417dc0ec029" data-prompts='["Kitchen counter with a weekly pill organizer and a single patch package sitting next to it, morning light, photorealistic", "Senior woman closing a medicine cabinet with relief, a knee patch in her hand rather than a pill bottle, photorealistic", "Close-up of a medication list taped to a refrigerator with a patch box on the counter nearby, photorealistic"]' data-selected="0" data-slot-key="media.reason_5" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.reason_5</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Kitchen counter with a weekly pill organizer and a single patch package sitting "</div></div>
+<img alt="" data-copy="media.reason_5:attr:src" data-prompts='["Kitchen counter with a weekly pill organizer and a single patch package sitting next to it, morning light, photorealistic", "Senior woman closing a medicine cabinet with relief, a knee patch in her hand rather than a pill bottle, photorealistic", "Close-up of a medication list taped to a refrigerator with a patch box on the counter nearby, photorealistic"]' data-slot-key="media.reason_5" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/batch_f7ce27044b9f_7_0_eb84f3.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
-<p>At my age I take a small pharmacy of pills every morning — blood pressure, cholesterol, thyroid, a low-dose aspirin. Adding another oral medication meant another interaction check with my primary. A patch sits on the skin and does its work there. <strong>No stomach upset</strong>, no new line on the medication list my daughter keeps taped to the refrigerator in case of emergency.</p>
+<p style="position: relative;">At my age I take a small pharmacy of pills every morning — blood pressure, cholesterol, thyroid, a low-dose aspirin. Adding another oral medication meant another interaction check with my primary. A patch sits on the skin and does its work there. <strong>No stomach upset</strong>, no new line on the medication list my daughter keeps taped to the refrigerator in case of emergency.</p>
 </div>
 <div class="reason">
 <span class="reason-num">Reason 06</span>
-<h3>It Bought Me Real Time</h3>
+<h3 style="position: relative;">It Bought Me Real Time</h3>
 <figure class="reason-img">
-<div class="v2-media-slot" data-job-id="b311e8fd-b8a0-482d-ad9d-9417dc0ec029" data-prompts='["Wall calendar with a surgery date crossed out and rescheduled further into the future, pen resting on the page, photorealistic", "Senior woman on a phone call with a cancellation letter beside her, soft relief on her face, photorealistic", "Florida retirement community walkway with a senior woman walking confidently without a cane, photorealistic"]' data-selected="0" data-slot-key="media.reason_6" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.reason_6</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Wall calendar with a surgery date crossed out and rescheduled further into the f"</div></div>
+<img alt="" data-copy="media.reason_6:attr:src" data-prompts='["Wall calendar with a surgery date crossed out and rescheduled further into the future, pen resting on the page, photorealistic", "Senior woman on a phone call with a cancellation letter beside her, soft relief on her face, photorealistic", "Florida retirement community walkway with a senior woman walking confidently without a cane, photorealistic"]' data-slot-key="media.reason_6" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/batch_f7ce27044b9f_8_1_5ce9c2.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
-<p>This is the reason that matters most. I called the surgeon's scheduling office in March and pushed the operation to the following spring. Delaying a replacement six to eighteen months is a <strong>perfectly reasonable medical decision</strong>, and it is a decision my body — not my billing code — finally had a vote in. The patches made that delay livable.</p>
+<p style="position: relative;">This is the reason that matters most. I called the surgeon's scheduling office in March and pushed the operation to the following spring. Delaying a replacement six to eighteen months is a <strong>perfectly reasonable medical decision</strong>, and it is a decision my body — not my billing code — finally had a vote in. The patches made that delay livable.</p>
 </div>
 <!-- IN-ARTICLE CTA -->
 <div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">Check Official Availability</a>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;">Check Official Availability</a>
 <span class="cta-sub">Thirty-day money-back guarantee and complimentary shipping on qualifying orders.</span>
 </div>
 <!-- PRODUCT RECOMMENDATION BODY -->
-<h2>Where I Actually Found The Answer</h2>
-<p>I came across FlexiKnee™️ Patches on a forum run by patients who had already postponed their replacements. Not a sponsored blog, not a television ad — a thread in which one retired nurse from South Carolina walked through exactly how she had <strong>stretched her surgery three full years</strong>. I read every post. Then I went to the manufacturer's direct retailer and ordered one box.</p>
+<h2 style="position: relative;">Where I Actually Found The Answer</h2>
+<p style="position: relative;">I came across FlexiKnee™️ Patches on a forum run by patients who had already postponed their replacements. Not a sponsored blog, not a television ad — a thread in which one retired nurse from South Carolina walked through exactly how she had <strong>stretched her surgery three full years</strong>. I read every post. Then I went to the manufacturer's direct retailer and ordered one box.</p>
 <figure class="article-media">
-<div class="v2-media-slot" data-job-id="b311e8fd-b8a0-482d-ad9d-9417dc0ec029" data-prompts="[&quot;Knee patch package on a wooden table beside a patient's laptop open to a senior health forum, photorealistic&quot;, &quot;Close-up of a single therapeutic patch being unwrapped from its sachet, clean studio light, photorealistic&quot;, &quot;Senior woman holding a patch box with satisfied expression, warm living room light, photorealistic&quot;]" data-selected="0" data-slot-key="media.product_rec" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.product_rec</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Knee patch package on a wooden table beside a patient's laptop open to a senior "</div></div>
+<img alt="" data-copy="media.product_rec:attr:src" data-prompts="[&quot;Knee patch package on a wooden table beside a patient's laptop open to a senior health forum, photorealistic&quot;, &quot;Close-up of a single therapeutic patch being unwrapped from its sachet, clean studio light, photorealistic&quot;, &quot;Senior woman holding a patch box with satisfied expression, warm living room light, photorealistic&quot;]" data-slot-key="media.product_rec" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/batch_f7ce27044b9f_9_1_2beacc.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
-<p>What separates the patch from a drugstore cream is the slow-release adhesive layer. The botanical compounds pass through the skin steadily across the full twelve hours, rather than absorbing in a rush and wearing off by lunchtime the way a topical gel will. <strong>Formulated for sustained transdermal delivery</strong> is the phrase on the insert, and the forum nurses spoke about it the same way.</p>
-<p>The brand runs its own storefront and the multi-box bundles are the only way most readers will see a <u>reasonable per-patch value</u>. Stock has been tight since the January write-up in a large senior newsletter, so I would not wait on this. The thirty-day return window is there if the patches do not work for you.</p>
+<p style="position: relative;">What separates the patch from a drugstore cream is the slow-release adhesive layer. The botanical compounds pass through the skin steadily across the full twelve hours, rather than absorbing in a rush and wearing off by lunchtime the way a topical gel will. <strong>Formulated for sustained transdermal delivery</strong> is the phrase on the insert, and the forum nurses spoke about it the same way.</p>
+<p style="position: relative;">The brand runs its own storefront and the multi-box bundles are the only way most readers will see a <u>reasonable per-patch value</u>. Stock has been tight since the January write-up in a large senior newsletter, so I would not wait on this. The thirty-day return window is there if the patches do not work for you.</p>
 <!-- FINAL IN-ARTICLE CTA — above the signature -->
 <div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">Check Availability Now</a>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;">Check Availability Now</a>
 <span class="cta-sub">Thirty-day guarantee, direct-from-brand shipping</span>
 </div>
 <!-- SIGNATURE -->
@@ -286,7 +541,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <aside class="sidebar-col">
 <div class="sticky-product">
 <figure class="sticky-product-media">
-<div class="v2-media-slot" data-job-id="b311e8fd-b8a0-482d-ad9d-9417dc0ec029" data-prompts='["Product packshot of a knee patch box on a neutral white background, clean studio lighting, photorealistic", "Therapeutic knee patches displayed open with individual sachets visible, minimal background, photorealistic", "Single therapeutic knee patch beside its package on a soft gray surface, close-up, photorealistic"]' data-selected="0" data-slot-key="media.product_card" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.product_card</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Product packshot of a knee patch box on a neutral white background, clean studio"</div></div>
+<img alt="" data-copy="media.product_card:attr:src" data-prompts='["Product packshot of a knee patch box on a neutral white background, clean studio lighting, photorealistic", "Therapeutic knee patches displayed open with individual sachets visible, minimal background, photorealistic", "Single therapeutic knee patch beside its package on a soft gray surface, close-up, photorealistic"]' data-slot-key="media.product_card" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/editor-upload-manual-2a8b8289.webp" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 1 / 1; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
 <div class="sticky-product-name">FlexiKnee™️ Patches (Official Retailer) 2026</div>
 <div class="sticky-product-rating">
@@ -294,7 +549,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span class="rating-score">4.87</span>
 <span>14,000+ verified reviews</span>
 </div>
-<a class="cta-btn" href="https://terica-store.com/click">
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;">
 <span>Check Availability</span>
 <span class="arrow">→</span>
 </a>
@@ -321,7 +576,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>
