@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>Why a Quarter of American Knee Replacements May Be Unnecessary — And What Patients Are Doing Instead</title>
@@ -668,6 +665,16 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -676,7 +683,255 @@ t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "wb35vpdfk1");
 </script>
-<script async="" src="https://terica-store.com/tracker.js"></script>
+<!-- ext-script-stripped -->
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
@@ -692,8 +947,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <main class="adv-main">
 <!-- ── HERO ── -->
 <div class="adv-hero">
-<h1 class="adv-hero__title">The Knee Replacement Pipeline: Why Thousands of Americans Are Pushing Back</h1>
-<p class="adv-hero__subtitle"><strong>A growing body of research shows that nearly a third of total knee replacements may be performed before they are medically warranted.</strong></p>
+<h1 class="adv-hero__title" style="position: relative;">The Knee Replacement Pipeline: Why Thousands of Americans Are Pushing Back</h1>
+<p class="adv-hero__subtitle" style="position: relative;"><strong>A growing body of research shows that nearly a third of total knee replacements may be performed before they are medically warranted.</strong></p>
 </div>
 <!-- ── BYLINE (avatar injected from local pool) ── -->
 <div class="adv-byline">
@@ -710,153 +965,153 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <!-- ── LEAD IMAGE ── -->
 <div class="adv-lead-image">
-<div class="v2-media-slot" data-job-id="5dc8bb10-de06-4aac-b566-470ee748eded" data-prompts='["Older American woman in her early seventies sitting at a kitchen table in a Florida retirement community home, X-ray of a knee joint laid in front of her, warm morning light, photorealistic", "Close-up of an orthopedic X-ray of a knee joint showing cartilage loss, held by weathered hands over a wooden table, soft natural lighting, photorealistic", "Pensive expression of a 71-year-old widowed woman in her living room in The Villages Florida, looking out a window at a quiet cul-de-sac, emotional and contemplative, photorealistic"]' data-selected="0" data-slot-key="media.lead" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.lead</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older American woman in her early seventies sitting at a kitchen table in a Flor"</div></div>
+<img alt="" data-copy="media.lead:attr:src" data-prompts='["Older American woman in her early seventies sitting at a kitchen table in a Florida retirement community home, X-ray of a knee joint laid in front of her, warm morning light, photorealistic", "Close-up of an orthopedic X-ray of a knee joint showing cartilage loss, held by weathered hands over a wooden table, soft natural lighting, photorealistic", "Pensive expression of a 71-year-old widowed woman in her living room in The Villages Florida, looking out a window at a quiet cul-de-sac, emotional and contemplative, photorealistic"]' data-slot-key="media.lead" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/manual_upload-manual-256e8373.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 10; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <!-- ── OPENING PULLQUOTE ── -->
-<blockquote class="adv-pullquote">ONE IN THREE KNEE REPLACEMENTS MAY NOT BE MEDICALLY NECESSARY</blockquote>
+<blockquote class="adv-pullquote" style="position: relative;">ONE IN THREE KNEE REPLACEMENTS MAY NOT BE MEDICALLY NECESSARY</blockquote>
 <!-- ── INTRO PARAGRAPHS ── -->
 <div class="adv-article">
-<p>In 2014, a study published in <strong>Arthritis &amp; Rheumatology</strong> reviewed hundreds of total knee replacements performed on American adults. The researchers concluded that roughly one-third of those surgeries were <strong>inappropriate</strong> by the medical criteria in use at the time.</p>
-<p>A separate 2017 analysis in <strong>The BMJ</strong> flagged the same pattern across industrialized health systems. Patients whose cartilage loss was real but still <strong>manageable</strong> were being routed toward the operating room before conservative options had been genuinely exhausted.</p>
-<p>Nobody is arguing that knee replacement surgery is wrong. It has given millions of people their mobility back. The argument — and it is getting louder — is about <u>timing</u>, and about who benefits when the timing is pushed forward.</p>
+<p style="position: relative;">In 2014, a study published in <strong>Arthritis &amp; Rheumatology</strong> reviewed hundreds of total knee replacements performed on American adults. The researchers concluded that roughly one-third of those surgeries were <strong>inappropriate</strong> by the medical criteria in use at the time.</p>
+<p style="position: relative;">A separate 2017 analysis in <strong>The BMJ</strong> flagged the same pattern across industrialized health systems. Patients whose cartilage loss was real but still <strong>manageable</strong> were being routed toward the operating room before conservative options had been genuinely exhausted.</p>
+<p style="position: relative;">Nobody is arguing that knee replacement surgery is wrong. It has given millions of people their mobility back. The argument — and it is getting louder — is about <u>timing</u>, and about who benefits when the timing is pushed forward.</p>
 </div>
 <!-- ── S1 "THE MOMENT EVERYTHING CHANGED" ── -->
-<h2 class="adv-section-heading">Follow The Reimbursement Money</h2>
+<h2 class="adv-section-heading" style="position: relative;">Follow The Reimbursement Money</h2>
 <div class="adv-inline-image">
-<div class="v2-media-slot" data-job-id="5dc8bb10-de06-4aac-b566-470ee748eded" data-prompts='["American hospital billing department with a computer screen showing CPT codes and Medicare reimbursement figures, fluorescent office lighting, photorealistic", "Empty orthopedic surgeon office with a desk, X-ray viewer on the wall, a consent form sitting on the desk, clinical overhead lighting, photorealistic", "Weathered hand of an older American patient signing a surgical consent form, close-up on pen and paper, soft warm light, emotional tension, photorealistic"]' data-selected="0" data-slot-key="media.s1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"American hospital billing department with a computer screen showing CPT codes an"</div></div>
+<img alt="" data-copy="media.s1:attr:src" data-prompts='["American hospital billing department with a computer screen showing CPT codes and Medicare reimbursement figures, fluorescent office lighting, photorealistic", "Empty orthopedic surgeon office with a desk, X-ray viewer on the wall, a consent form sitting on the desk, clinical overhead lighting, photorealistic", "Weathered hand of an older American patient signing a surgical consent form, close-up on pen and paper, soft warm light, emotional tension, photorealistic"]' data-slot-key="media.s1" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/manual_upload-manual-5e573e1b.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <div class="adv-article">
-<p>Under current Medicare coding, a total knee arthroplasty reimburses a hospital somewhere in the range of a brand-new compact car. A consultation about <strong>conservative management</strong> — bracing, topical relief, physical therapy — reimburses roughly what a diner pays its morning waitstaff.</p>
-<p>That gap is not the individual surgeon's fault. Most orthopedic surgeons we spoke with are <strong>careful, decent clinicians</strong> who went into medicine for the right reasons. But the billing structure they operate inside rewards the operating room, not the waiting room.</p>
-<p>Layer in the <strong>consulting fees</strong> that large orthopedic-device manufacturers pay to high-volume surgeons — figures publicly disclosed through the Sunshine Act — and you have a system in which doing something aggressive pays, and doing something <u>patient</u> doesn't.</p>
+<p style="position: relative;">Under current Medicare coding, a total knee arthroplasty reimburses a hospital somewhere in the range of a brand-new compact car. A consultation about <strong>conservative management</strong> — bracing, topical relief, physical therapy — reimburses roughly what a diner pays its morning waitstaff.</p>
+<p style="position: relative;">That gap is not the individual surgeon's fault. Most orthopedic surgeons we spoke with are <strong>careful, decent clinicians</strong> who went into medicine for the right reasons. But the billing structure they operate inside rewards the operating room, not the waiting room.</p>
+<p style="position: relative;">Layer in the <strong>consulting fees</strong> that large orthopedic-device manufacturers pay to high-volume surgeons — figures publicly disclosed through the Sunshine Act — and you have a system in which doing something aggressive pays, and doing something <u>patient</u> doesn't.</p>
 </div>
 <!-- ── ESTHETICIAN PULLQUOTE ── -->
-<blockquote class="adv-pullquote">THE BILLING CODES ARE NOT NEUTRAL. THEY PUSH IN ONE DIRECTION.</blockquote>
+<blockquote class="adv-pullquote" style="position: relative;">THE BILLING CODES ARE NOT NEUTRAL. THEY PUSH IN ONE DIRECTION.</blockquote>
 <div class="adv-article">
-<p>The patient sitting across the desk hears the phrase <strong>'bone on bone'</strong> and often does not hear what follows. They sign the consent form. They get a surgery date. They rarely get handed a pamphlet explaining what a six-month delay would actually cost them.</p>
-<p>What it would actually cost them, according to several musculoskeletal specialists we interviewed, is often <strong>nothing</strong>. The joint does not usually collapse overnight. The cartilage loss shown on the MRI was there last year too. A measured delay is not reckless.</p>
+<p style="position: relative;">The patient sitting across the desk hears the phrase <strong>'bone on bone'</strong> and often does not hear what follows. They sign the consent form. They get a surgery date. They rarely get handed a pamphlet explaining what a six-month delay would actually cost them.</p>
+<p style="position: relative;">What it would actually cost them, according to several musculoskeletal specialists we interviewed, is often <strong>nothing</strong>. The joint does not usually collapse overnight. The cartilage loss shown on the MRI was there last year too. A measured delay is not reckless.</p>
 </div>
 <!-- ── S2 "THE SHOCKING PRICE TAG" ── -->
-<h2 class="adv-section-heading">What The Recovery Actually Looks Like</h2>
+<h2 class="adv-section-heading" style="position: relative;">What The Recovery Actually Looks Like</h2>
 <div class="adv-inline-image">
-<div class="v2-media-slot" data-job-id="5dc8bb10-de06-4aac-b566-470ee748eded" data-prompts='["Older American man sitting on the edge of a bed in a Florida ranch home after knee surgery, walker beside him, leg bandaged, natural morning light, photorealistic", "Empty spare bedroom converted into recovery space with a hospital bed, home health equipment and medication bottles on nightstand, suburban American home, photorealistic", "Elderly woman alone in a quiet living room looking at a calendar with a circled surgery date, concerned expression, soft afternoon light, photorealistic"]' data-selected="0" data-slot-key="media.s2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older American man sitting on the edge of a bed in a Florida ranch home after kn"</div></div>
+<img alt="" data-copy="media.s2:attr:src" data-prompts='["Older American man sitting on the edge of a bed in a Florida ranch home after knee surgery, walker beside him, leg bandaged, natural morning light, photorealistic", "Empty spare bedroom converted into recovery space with a hospital bed, home health equipment and medication bottles on nightstand, suburban American home, photorealistic", "Elderly woman alone in a quiet living room looking at a calendar with a circled surgery date, concerned expression, soft afternoon light, photorealistic"]' data-slot-key="media.s2" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/manual_upload-manual-8aa15f54.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <div class="adv-article">
-<p>Before the scheduled surgery date gets circled on the kitchen calendar, it is worth knowing what the twelve weeks after a total knee replacement actually require. Not the brochure version — the <strong>version the home health aides see</strong>.</p>
-<p>Patients cannot drive for four to six weeks. Stairs become a project. The risk of <strong>deep vein thrombosis</strong> is real enough that blood thinners are standard. Between ten and twenty percent of patients end up back in the ER with a complication within ninety days.</p>
-<p>For a patient living alone — widowed, in a quiet cul-de-sac in <strong>The Villages</strong> or Sun City or Scottsdale — that recovery is not a small thing. It is a logistical crisis that Medicare only partially covers through a home health benefit most families underestimate.</p>
+<p style="position: relative;">Before the scheduled surgery date gets circled on the kitchen calendar, it is worth knowing what the twelve weeks after a total knee replacement actually require. Not the brochure version — the <strong>version the home health aides see</strong>.</p>
+<p style="position: relative;">Patients cannot drive for four to six weeks. Stairs become a project. The risk of <strong>deep vein thrombosis</strong> is real enough that blood thinners are standard. Between ten and twenty percent of patients end up back in the ER with a complication within ninety days.</p>
+<p style="position: relative;">For a patient living alone — widowed, in a quiet cul-de-sac in <strong>The Villages</strong> or Sun City or Scottsdale — that recovery is not a small thing. It is a logistical crisis that Medicare only partially covers through a home health benefit most families underestimate.</p>
 </div>
 <!-- ── S3 "THE DISCOVERY" + PRODUCT HIGHLIGHT ── -->
-<h2 class="adv-section-heading">The Bridge Strategy Nobody Prescribes</h2>
+<h2 class="adv-section-heading" style="position: relative;">The Bridge Strategy Nobody Prescribes</h2>
 <div class="adv-article">
-<p>Over the last three years, a quiet pattern has emerged in online communities like the <strong>Arthritis Foundation forums</strong> and Reddit's r/knees: older Americans who were told they needed a replacement in six months have, two years later, still not had one. They are walking. They are gardening.</p>
-<p>Almost without exception, what these patients describe is some combination of <strong>weight management</strong>, supervised physical therapy, appropriate bracing, and a topical anti-inflammatory delivery system that targets the joint directly rather than traveling through the liver and kidneys the way oral pain medication does.</p>
+<p style="position: relative;">Over the last three years, a quiet pattern has emerged in online communities like the <strong>Arthritis Foundation forums</strong> and Reddit's r/knees: older Americans who were told they needed a replacement in six months have, two years later, still not had one. They are walking. They are gardening.</p>
+<p style="position: relative;">Almost without exception, what these patients describe is some combination of <strong>weight management</strong>, supervised physical therapy, appropriate bracing, and a topical anti-inflammatory delivery system that targets the joint directly rather than traveling through the liver and kidneys the way oral pain medication does.</p>
 </div>
 <!-- ── BUYER QUOTES (2 back-to-back) ── -->
-<blockquote class="adv-buyer-quote">
+<blockquote class="adv-buyer-quote" style="position: relative;">
 <span>My surgeon gave me a June date. It is now April and I am still walking the dog every morning without wincing. Surgery postponed indefinitely.</span>
 <span class="adv-buyer-quote__attr">— <strong>Janet Corrigan, 68</strong> <span>Retired teacher, Sarasota Florida</span></span>
 </blockquote>
-<blockquote class="adv-buyer-quote">
+<blockquote class="adv-buyer-quote" style="position: relative;">
 <span>Bone-on-bone diagnosis last fall. I was terrified of the recovery because I live alone. Eight weeks on the patches and my orthopedist agreed to wait.</span>
 <span class="adv-buyer-quote__attr">— <strong>Robert Huffman, 72</strong> <span>Widowed retiree, Phoenix Arizona</span></span>
 </blockquote>
 <div class="adv-article">
-<p>That last piece — the topical delivery piece — is the newest of the four, and the one most patients say changed their calculation. The product that keeps getting named in these threads is <strong>FlexiKnee</strong>, a transdermal botanical patch worn directly over the knee.</p>
+<p style="position: relative;">That last piece — the topical delivery piece — is the newest of the four, and the one most patients say changed their calculation. The product that keeps getting named in these threads is <strong>FlexiKnee</strong>, a transdermal botanical patch worn directly over the knee.</p>
 </div>
 <!-- ── VIDEO #1 ── -->
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="5dc8bb10-de06-4aac-b566-470ee748eded" data-prompts='["Older American woman demonstrating how to apply a transdermal knee patch on a couch, warm living room, photorealistic", "Tutorial-style shot of hands removing the backing from a FlexiKnee patch, close-up with household background, photorealistic", "Senior American woman smiling after applying the patch, relaxing on her porch, emotional relief visible, photorealistic"]' data-selected="0" data-slot-key="media.video_1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.video_1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older American woman demonstrating how to apply a transdermal knee patch on a co"</div></div></div>
+<div class="adv-inline-image"><img alt="" data-copy="media.video_1:attr:src" data-prompts='["Older American woman demonstrating how to apply a transdermal knee patch on a couch, warm living room, photorealistic", "Tutorial-style shot of hands removing the backing from a FlexiKnee patch, close-up with household background, photorealistic", "Senior American woman smiling after applying the patch, relaxing on her porch, emotional relief visible, photorealistic"]' data-slot-key="media.video_1" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/manual_upload-manual-cedcfb4a.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <!-- ── S4 "MY FIRST EXPERIENCE" ── -->
-<h2 class="adv-section-heading">What Is Actually In The Patch</h2>
+<h2 class="adv-section-heading" style="position: relative;">What Is Actually In The Patch</h2>
 <div class="adv-article">
-<p>FlexiKnee is manufactured in an FDA-registered facility and uses a transdermal matrix — essentially a thin adhesive layer pre-loaded with plant-derived compounds that have been used in <strong>traditional joint care</strong> for generations. The delivery is slow, steady, and local to the affected joint.</p>
-<p>The botanical matrix includes <strong>wormwood, menthol, camphor</strong>, and a proprietary extract blend that the company attributes to its clinical formulation team. Users report warmth within about half an hour and a steady easing of the deep ache that oral pills never quite touched.</p>
-<p>Because the delivery is topical, it largely <u>sidesteps</u> the gastrointestinal and cardiovascular concerns that lead many older adults to avoid long-term NSAID use. For a 70-year-old on blood pressure medication and a statin, that matters. One patch is worn for up to twelve hours.</p>
+<p style="position: relative;">FlexiKnee is manufactured in an FDA-registered facility and uses a transdermal matrix — essentially a thin adhesive layer pre-loaded with plant-derived compounds that have been used in <strong>traditional joint care</strong> for generations. The delivery is slow, steady, and local to the affected joint.</p>
+<p style="position: relative;">The botanical matrix includes <strong>wormwood, menthol, camphor</strong>, and a proprietary extract blend that the company attributes to its clinical formulation team. Users report warmth within about half an hour and a steady easing of the deep ache that oral pills never quite touched.</p>
+<p style="position: relative;">Because the delivery is topical, it largely <u>sidesteps</u> the gastrointestinal and cardiovascular concerns that lead many older adults to avoid long-term NSAID use. For a 70-year-old on blood pressure medication and a statin, that matters. One patch is worn for up to twelve hours.</p>
 </div>
 <div class="adv-inline-image">
-<div class="v2-media-slot" data-job-id="5dc8bb10-de06-4aac-b566-470ee748eded" data-prompts='["Macro close-up showing cross-section of a transdermal patch with botanical extract matrix, scientific photography style, clean white backdrop, photorealistic", "Hands placing a FlexiKnee patch over a knee joint, soft lighting, clean clinical setting, photorealistic", "Older American man gardening in his suburban backyard with visible comfort and flexibility in his knees, afternoon sunshine, photorealistic"]' data-selected="0" data-slot-key="media.s4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Macro close-up showing cross-section of a transdermal patch with botanical extra"</div></div>
+<img alt="" data-copy="media.s4:attr:src" data-prompts='["Macro close-up showing cross-section of a transdermal patch with botanical extract matrix, scientific photography style, clean white backdrop, photorealistic", "Hands placing a FlexiKnee patch over a knee joint, soft lighting, clean clinical setting, photorealistic", "Older American man gardening in his suburban backyard with visible comfort and flexibility in his knees, afternoon sunshine, photorealistic"]' data-slot-key="media.s4" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/manual_upload-manual-34d15dea.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <!-- ── S5 "THE TRANSFORMATION WAS IMMEDIATE" ── -->
-<h2 class="adv-section-heading">How Quickly Patients Notice A Difference</h2>
+<h2 class="adv-section-heading" style="position: relative;">How Quickly Patients Notice A Difference</h2>
 <div class="adv-article">
-<p>The company's own data, along with the informal consensus in patient forums, is consistent: most users feel <strong>meaningful relief within thirty to sixty minutes</strong> of the first application. Not a cure. A reduction of the sharp, stabbing component of the pain that makes stairs unthinkable.</p>
-<p>By week two, most patients report they are <strong>sleeping through the night</strong> without waking up when they roll onto the bad knee. By week four, many are walking farther than they have in a year without the telltale limp their families had stopped mentioning.</p>
-<p>None of this undoes cartilage loss. No topical can. What it does is buy the patient <u>time</u> — six months, twelve months, sometimes longer — during which the surgery remains an option but stops being an <strong>emergency that cannot wait</strong>.</p>
+<p style="position: relative;">The company's own data, along with the informal consensus in patient forums, is consistent: most users feel <strong>meaningful relief within thirty to sixty minutes</strong> of the first application. Not a cure. A reduction of the sharp, stabbing component of the pain that makes stairs unthinkable.</p>
+<p style="position: relative;">By week two, most patients report they are <strong>sleeping through the night</strong> without waking up when they roll onto the bad knee. By week four, many are walking farther than they have in a year without the telltale limp their families had stopped mentioning.</p>
+<p style="position: relative;">None of this undoes cartilage loss. No topical can. What it does is buy the patient <u>time</u> — six months, twelve months, sometimes longer — during which the surgery remains an option but stops being an <strong>emergency that cannot wait</strong>.</p>
 </div>
 <!-- ── VIDEO #2 ── -->
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="5dc8bb10-de06-4aac-b566-470ee748eded" data-prompts='["Older American man walking his grandson to the mailbox at the end of a suburban driveway, visibly steady on his feet, photorealistic", "Senior couple on a Florida golf course, man holding club with comfortable knee posture, late afternoon sun, photorealistic", "Grandfather bending down to pick up his grandchild with ease, joyful expression, backyard setting, photorealistic"]' data-selected="0" data-slot-key="media.video_2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.video_2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older American man walking his grandson to the mailbox at the end of a suburban "</div></div></div>
+<div class="adv-inline-image"><img alt="" data-copy="media.video_2:attr:src" data-prompts='["Older American man walking his grandson to the mailbox at the end of a suburban driveway, visibly steady on his feet, photorealistic", "Senior couple on a Florida golf course, man holding club with comfortable knee posture, late afternoon sun, photorealistic", "Grandfather bending down to pick up his grandchild with ease, joyful expression, backyard setting, photorealistic"]' data-slot-key="media.video_2" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/manual_upload-manual-5a996757.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <!-- ── S6 "WHY THIS WORKS WHEN NOTHING ELSE DOES" ── -->
-<h2 class="adv-section-heading">Why Your Surgeon May Not Mention It</h2>
+<h2 class="adv-section-heading" style="position: relative;">Why Your Surgeon May Not Mention It</h2>
 <div class="adv-article">
-<p>Transdermal botanical patches are not a reimbursable category inside most orthopedic practices. There is no CPT code for recommending one. The <strong>twelve minutes</strong> a surgeon has for your follow-up are not structured to include a conversation about a product sold directly to the consumer.</p>
-<p>That is not the surgeon being cynical. It is the system that produced the surgeon. The <strong>American Academy of Orthopaedic Surgeons</strong> guidelines list conservative measures but do so in a tone that implies they are a formality on the way to the real intervention.</p>
+<p style="position: relative;">Transdermal botanical patches are not a reimbursable category inside most orthopedic practices. There is no CPT code for recommending one. The <strong>twelve minutes</strong> a surgeon has for your follow-up are not structured to include a conversation about a product sold directly to the consumer.</p>
+<p style="position: relative;">That is not the surgeon being cynical. It is the system that produced the surgeon. The <strong>American Academy of Orthopaedic Surgeons</strong> guidelines list conservative measures but do so in a tone that implies they are a formality on the way to the real intervention.</p>
 </div>
 <ul class="adv-compare-list">
-<li><strong>Total Knee Replacement</strong> <span>Twelve weeks of recovery, home health aide required, blood-thinner protocols, complication risk in the ten to twenty percent range, and significant out-of-pocket costs even on Medicare.</span></li>
-<li><strong>Long-Term NSAID Use</strong> <span>Oral anti-inflammatories taken daily carry real cardiovascular and gastrointestinal risk for adults over sixty-five, which is precisely the demographic that typically needs them most for joint pain.</span></li>
-<li><strong>FlexiKnee Patches</strong> <span>Topical, non-invasive, worn for up to twelve hours, bypasses the stomach and liver, and buys patients months of livable mobility while they make a careful surgical decision.</span></li>
+<li style="position: relative;"><strong>Total Knee Replacement</strong> <span>Twelve weeks of recovery, home health aide required, blood-thinner protocols, complication risk in the ten to twenty percent range, and significant out-of-pocket costs even on Medicare.</span></li>
+<li style="position: relative;"><strong>Long-Term NSAID Use</strong> <span>Oral anti-inflammatories taken daily carry real cardiovascular and gastrointestinal risk for adults over sixty-five, which is precisely the demographic that typically needs them most for joint pain.</span></li>
+<li style="position: relative;"><strong>FlexiKnee Patches</strong> <span>Topical, non-invasive, worn for up to twelve hours, bypasses the stomach and liver, and buys patients months of livable mobility while they make a careful surgical decision.</span></li>
 </ul>
 <div class="adv-article">
-<p>The real intervention — the total knee arthroplasty — makes the hospital roughly the cost of a new sedan. The patch that might let you <u>delay</u> it by a year and a half makes them nothing. The incentive arrow points in one direction, and it is not toward you.</p>
-<p>Which is why the information about FlexiKnee has been spreading the old-fashioned way — through <strong>neighbors in The Villages</strong>, through church friends in Sun City, through a daughter-in-law who saw a piece like this one and printed it for her father-in-law.</p>
+<p style="position: relative;">The real intervention — the total knee arthroplasty — makes the hospital roughly the cost of a new sedan. The patch that might let you <u>delay</u> it by a year and a half makes them nothing. The incentive arrow points in one direction, and it is not toward you.</p>
+<p style="position: relative;">Which is why the information about FlexiKnee has been spreading the old-fashioned way — through <strong>neighbors in The Villages</strong>, through church friends in Sun City, through a daughter-in-law who saw a piece like this one and printed it for her father-in-law.</p>
 </div>
 <!-- ── TESTIMONIAL SCREENSHOT ── -->
 <div class="adv-testimonial-screens adv-testimonial-screens--single">
-<div class="v2-media-slot" data-job-id="5dc8bb10-de06-4aac-b566-470ee748eded" data-prompts="[&quot;Older woman walking her small dog along a Florida retirement community street at dawn, relaxed gait, no limp, warm sunrise lighting, photorealistic&quot;, &quot;Senior American couple walking hand in hand through a suburban neighborhood sidewalk, confident steady pace, golden hour light, photorealistic&quot;, &quot;Close-up on older woman's legs walking confidently up porch steps of a Florida home, sandals, relaxed posture, photorealistic&quot;]" data-selected="0" data-slot-key="media.screen_1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.screen_1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older woman walking her small dog along a Florida retirement community street at"</div></div>
+<img alt="" data-copy="media.screen_1:attr:src" data-prompts="[&quot;Older woman walking her small dog along a Florida retirement community street at dawn, relaxed gait, no limp, warm sunrise lighting, photorealistic&quot;, &quot;Senior American couple walking hand in hand through a suburban neighborhood sidewalk, confident steady pace, golden hour light, photorealistic&quot;, &quot;Close-up on older woman's legs walking confidently up porch steps of a Florida home, sandals, relaxed posture, photorealistic&quot;]" data-slot-key="media.screen_1" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/manual_upload-manual-c6d8c791.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <!-- ── S7 FAQ ── -->
-<h2 class="adv-section-heading">Questions Patients Ask Before Ordering</h2>
+<h2 class="adv-section-heading" style="position: relative;">Questions Patients Ask Before Ordering</h2>
 <div class="adv-faq">
 <div class="adv-faq__item">
-<p class="adv-faq__q">If my surgeon says I need the replacement, is delaying actually safe from a medical standpoint?</p>
-<p class="adv-faq__a">In most non-acute cases, yes. The published orthopedic literature itself acknowledges that roughly a third of elective replacements are performed earlier than the clinical criteria require.</p>
+<p class="adv-faq__q" style="position: relative;">If my surgeon says I need the replacement, is delaying actually safe from a medical standpoint?</p>
+<p class="adv-faq__a" style="position: relative;">In most non-acute cases, yes. The published orthopedic literature itself acknowledges that roughly a third of elective replacements are performed earlier than the clinical criteria require.</p>
 </div>
 <div class="adv-faq__item">
-<p class="adv-faq__q">Is FlexiKnee going to interact with the medications I already take for blood pressure or cholesterol?</p>
-<p class="adv-faq__a">Because delivery is transdermal and localized to the joint, systemic absorption is minimal. Still, bring the ingredient list to your cardiologist at your next appointment before starting.</p>
+<p class="adv-faq__q" style="position: relative;">Is FlexiKnee going to interact with the medications I already take for blood pressure or cholesterol?</p>
+<p class="adv-faq__a" style="position: relative;">Because delivery is transdermal and localized to the joint, systemic absorption is minimal. Still, bring the ingredient list to your cardiologist at your next appointment before starting.</p>
 </div>
 <div class="adv-faq__item">
-<p class="adv-faq__q">How quickly does the patch actually begin working after application on the knee joint?</p>
-<p class="adv-faq__a">Most users report a perceptible warming sensation and reduction in sharp pain within thirty to sixty minutes. The deeper ache typically eases steadily over the first fortnight.</p>
+<p class="adv-faq__q" style="position: relative;">How quickly does the patch actually begin working after application on the knee joint?</p>
+<p class="adv-faq__a" style="position: relative;">Most users report a perceptible warming sensation and reduction in sharp pain within thirty to sixty minutes. The deeper ache typically eases steadily over the first fortnight.</p>
 </div>
 </div>
 <!-- ── S8 TESTIMONIALS TRIO ── -->
-<h2 class="adv-section-heading">Patients Who Pushed Their Surgery Date Back</h2>
+<h2 class="adv-section-heading" style="position: relative;">Patients Who Pushed Their Surgery Date Back</h2>
 <div class="adv-article">
-<p>These are three of the dozens of readers who reached out after our initial reporting on inappropriate knee replacements, each with a scheduled surgery and a story.</p>
+<p style="position: relative;">These are three of the dozens of readers who reached out after our initial reporting on inappropriate knee replacements, each with a scheduled surgery and a story.</p>
 </div>
 <div class="adv-testimonials">
 <div class="adv-testimonials__card">
 <div class="adv-testimonials__stars">★★★★★</div>
-<p class="adv-testimonials__text">Scheduled for March. I got on the patches in January and by the follow-up appointment my surgeon said we could reassess in a year. Still walking.</p>
-<p class="adv-testimonials__author">— <strong>Deborah, 69</strong> <span>Retired nurse, Ohio</span></p>
+<p class="adv-testimonials__text" style="position: relative;">Scheduled for March. I got on the patches in January and by the follow-up appointment my surgeon said we could reassess in a year. Still walking.</p>
+<p class="adv-testimonials__author" style="position: relative;">— <strong>Deborah, 69</strong> <span>Retired nurse, Ohio</span></p>
 </div>
 <div class="adv-testimonials__card">
 <div class="adv-testimonials__stars">★★★★★</div>
-<p class="adv-testimonials__text">Live on my own since my wife passed. The recovery scared me more than the pain did. Eight months in and I have not scheduled the surgery.</p>
-<p class="adv-testimonials__author">— <strong>Gerald, 73</strong> <span>Widowed retiree, Texas</span></p>
+<p class="adv-testimonials__text" style="position: relative;">Live on my own since my wife passed. The recovery scared me more than the pain did. Eight months in and I have not scheduled the surgery.</p>
+<p class="adv-testimonials__author" style="position: relative;">— <strong>Gerald, 73</strong> <span>Widowed retiree, Texas</span></p>
 </div>
 <div class="adv-testimonials__card">
 <div class="adv-testimonials__stars">★★★★★</div>
-<p class="adv-testimonials__text">My orthopedist said bone on bone in October. I wear one patch a day and I walked my granddaughter down the aisle last Saturday without a cane.</p>
-<p class="adv-testimonials__author">— <strong>Linda, 71</strong> <span>Grandmother, The Villages</span></p>
+<p class="adv-testimonials__text" style="position: relative;">My orthopedist said bone on bone in October. I wear one patch a day and I walked my granddaughter down the aisle last Saturday without a cane.</p>
+<p class="adv-testimonials__author" style="position: relative;">— <strong>Linda, 71</strong> <span>Grandmother, The Villages</span></p>
 </div>
 </div>
 <!-- ── OFFER IMAGE ── -->
 <div class="adv-offer-image">
-<div class="v2-media-slot" data-job-id="5dc8bb10-de06-4aac-b566-470ee748eded" data-prompts='["FlexiKnee patch box with American flag-themed official retailer seal and shipping packaging on wooden table, warm home lighting, photorealistic", "Unboxing shot of FlexiKnee monthly supply on a kitchen counter with glasses and reading lamp, cozy suburban home, photorealistic", "Older American hands holding a FlexiKnee box with an expression of hope and relief, soft window light, emotional mood, photorealistic"]' data-selected="0" data-slot-key="media.offer" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.offer</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"FlexiKnee patch box with American flag-themed official retailer seal and shippin"</div></div>
+<img alt="" data-copy="media.offer:attr:src" data-prompts='["FlexiKnee patch box with American flag-themed official retailer seal and shipping packaging on wooden table, warm home lighting, photorealistic", "Unboxing shot of FlexiKnee monthly supply on a kitchen counter with glasses and reading lamp, cozy suburban home, photorealistic", "Older American hands holding a FlexiKnee box with an expression of hope and relief, soft window light, emotional mood, photorealistic"]' data-slot-key="media.offer" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/manual_upload-manual-346d9294.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <!-- ── S9 "LIMITED TIME OFFER" + OFFER BOX ── -->
-<h2 class="adv-section-heading">A Reasonable Medical Decision</h2>
+<h2 class="adv-section-heading" style="position: relative;">A Reasonable Medical Decision</h2>
 <div class="adv-article">
-<p>Delaying a knee replacement by six to eighteen months is, in the majority of elective cases, a perfectly defensible decision worth discussing with your surgeon.</p>
+<p style="position: relative;">Delaying a knee replacement by six to eighteen months is, in the majority of elective cases, a perfectly defensible decision worth discussing with your surgeon.</p>
 </div><div class="adv-offer-box">
-<h3>Get FlexiKnee Direct From The Official Retailer While Stock Remains</h3>
-<p>Ordering through the official channel secures the authentic formulation, the full guarantee, and direct shipment in discreet packaging from an American fulfillment center.</p>
+<h3 style="position: relative;">Get FlexiKnee Direct From The Official Retailer While Stock Remains</h3>
+<p style="position: relative;">Ordering through the official channel secures the authentic formulation, the full guarantee, and direct shipment in discreet packaging from an American fulfillment center.</p>
 <ul class="adv-offer-box__list">
-<li>Authentic formulation shipped directly from the official American fulfillment center</li>
-<li>Thirty day satisfaction guarantee with no-questions-asked refund on unopened product</li>
-<li>Free standard shipping across all fifty states for multi-month bundles</li>
+<li style="position: relative;">Authentic formulation shipped directly from the official American fulfillment center</li>
+<li style="position: relative;">Thirty day satisfaction guarantee with no-questions-asked refund on unopened product</li>
+<li style="position: relative;">Free standard shipping across all fifty states for multi-month bundles</li>
 </ul>
 </div>
 <!-- ── BLOCK CTA #1 ── -->
@@ -865,13 +1120,13 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <small>Ships from American fulfillment center</small>
 </a>
 <!-- ── VIDEO #3 ── -->
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="5dc8bb10-de06-4aac-b566-470ee748eded" data-prompts='["Older American woman climbing porch steps confidently without assistance, Florida ranch home, morning light, photorealistic", "Senior woman pruning roses in her suburban front yard, kneeling comfortably on a garden pad, photorealistic", "Widowed older woman walking her dog past palm trees in a retirement community, content expression, photorealistic"]' data-selected="0" data-slot-key="media.video_3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.video_3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older American woman climbing porch steps confidently without assistance, Florid"</div></div></div>
+<div class="adv-inline-image"><img alt="" data-copy="media.video_3:attr:src" data-prompts='["Older American woman climbing porch steps confidently without assistance, Florida ranch home, morning light, photorealistic", "Senior woman pruning roses in her suburban front yard, kneeling comfortably on a garden pad, photorealistic", "Widowed older woman walking her dog past palm trees in a retirement community, content expression, photorealistic"]' data-slot-key="media.video_3" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/fc76d1f4/manual_upload-manual-f859bec6.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <!-- ── S10 "DON'T WAIT UNTIL IT'S TOO LATE" ── -->
-<h2 class="adv-section-heading">Before You Go Under Anesthesia</h2>
+<h2 class="adv-section-heading" style="position: relative;">Before You Go Under Anesthesia</h2>
 <div class="adv-article">
-<p>The surgery date on your kitchen calendar is not a contract. It is a placeholder. Every orthopedic practice we contacted confirmed that <strong>rescheduling a non-emergency replacement</strong> is routine, unremarkable, and something they do dozens of times each month without any bad feeling.</p>
-<p>Before you lose twelve weeks to recovery, before you put a home health aide in a spare bedroom, before your insurance absorbs whatever it is going to absorb and hands you the rest — try the <strong>non-invasive bridge</strong>. Give it sixty days. Track what happens.</p>
-<p>If the patches do nothing, the surgery is still there waiting. If they work the way they have worked for <strong>thousands of Americans over sixty-five</strong>, you will have given yourself a year or more on your <u>original knee</u> — which no replacement, however well-designed, can match.</p>
+<p style="position: relative;">The surgery date on your kitchen calendar is not a contract. It is a placeholder. Every orthopedic practice we contacted confirmed that <strong>rescheduling a non-emergency replacement</strong> is routine, unremarkable, and something they do dozens of times each month without any bad feeling.</p>
+<p style="position: relative;">Before you lose twelve weeks to recovery, before you put a home health aide in a spare bedroom, before your insurance absorbs whatever it is going to absorb and hands you the rest — try the <strong>non-invasive bridge</strong>. Give it sixty days. Track what happens.</p>
+<p style="position: relative;">If the patches do nothing, the surgery is still there waiting. If they work the way they have worked for <strong>thousands of Americans over sixty-five</strong>, you will have given yourself a year or more on your <u>original knee</u> — which no replacement, however well-designed, can match.</p>
 </div>
 <!-- ── GUARANTEE BLOCK ── -->
 <div class="adv-guarantee">
@@ -880,14 +1135,14 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-guarantee__badge-sub">Money Back Guarantee</div>
 </div>
 <div class="adv-guarantee__body">
-<h3>Try It For Thirty Days Entirely At The Manufacturer's Risk</h3>
-<p>The company behind FlexiKnee stands behind the product with a <strong>thirty-day satisfaction guarantee</strong>. If within thirty days you do not feel the knee is meaningfully more livable, you send back whatever is left and the purchase price returns to your account.</p>
-<p>That structure exists because the company's own internal numbers tell them most patients decide within the first two weeks. The thirty days is not a gimmick. It is the window patients need to <u>know</u>, and the company knows it.</p>
+<h3 style="position: relative;">Try It For Thirty Days Entirely At The Manufacturer's Risk</h3>
+<p style="position: relative;">The company behind FlexiKnee stands behind the product with a <strong>thirty-day satisfaction guarantee</strong>. If within thirty days you do not feel the knee is meaningfully more livable, you send back whatever is left and the purchase price returns to your account.</p>
+<p style="position: relative;">That structure exists because the company's own internal numbers tell them most patients decide within the first two weeks. The thirty days is not a gimmick. It is the window patients need to <u>know</u>, and the company knows it.</p>
 </div>
 </div>
 <!-- ── P.S. LINE ── -->
 <div class="adv-article">
-<p>One last note: the surgery will still be there in February, in June, in 2027. Your original knee, once replaced, will not be.</p>
+<p style="position: relative;">One last note: the surgery will still be there in February, in June, in 2027. Your original knee, once replaced, will not be.</p>
 </div>
 <!-- ── BLOCK CTA #3 ── -->
 <a class="adv-cta-block" href="https://terica-store.com/click">
@@ -906,7 +1161,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Patricia Saunders</span>
-<p class="adv-fb-comment__text">My mother-in-law in Ocala has been using these since December. Her surgeon pushed the date back twice now. She is eighty-one.</p>
+<p class="adv-fb-comment__text" style="position: relative;">My mother-in-law in Ocala has been using these since December. Her surgeon pushed the date back twice now. She is eighty-one.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -920,7 +1175,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Richard Haney</span>
-<p class="adv-fb-comment__text">Had my MRI last spring, bone on bone on the left. Put the surgery off twice. Sleeping through the night finally.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Had my MRI last spring, bone on bone on the left. Put the surgery off twice. Sleeping through the night finally.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -934,7 +1189,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Carol Whitfield</span>
-<p class="adv-fb-comment__text">Thank you for writing about the reimbursement gap. My husband's surgeon never once mentioned conservative options before handing us a surgery date.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Thank you for writing about the reimbursement gap. My husband's surgeon never once mentioned conservative options before handing us a surgery date.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -948,7 +1203,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Thomas Brennan</span>
-<p class="adv-fb-comment__text">Retired plumber. Knees have been shot since the nineties. These patches are the only thing that lets me finish nine holes without limping.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Retired plumber. Knees have been shot since the nineties. These patches are the only thing that lets me finish nine holes without limping.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -962,7 +1217,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Sandra Pritchard</span>
-<p class="adv-fb-comment__text">My sister's replacement went sideways in February, eleven weeks with an aide. I canceled mine after reading this and ordered the patches instead.</p>
+<p class="adv-fb-comment__text" style="position: relative;">My sister's replacement went sideways in February, eleven weeks with an aide. I canceled mine after reading this and ordered the patches instead.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -976,7 +1231,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Kenneth Marlowe</span>
-<p class="adv-fb-comment__text">The part about the Sunshine Act consulting fees is something everybody should read before signing the consent form for a total knee.</p>
+<p class="adv-fb-comment__text" style="position: relative;">The part about the Sunshine Act consulting fees is something everybody should read before signing the consent form for a total knee.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -990,7 +1245,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Donna Fitzgerald</span>
-<p class="adv-fb-comment__text">Seventy-four years old. Widowed. Live alone. Nobody to look after me through recovery. These patches are the reason I am still independent.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Seventy-four years old. Widowed. Live alone. Nobody to look after me through recovery. These patches are the reason I am still independent.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -1004,7 +1259,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Walter Prescott</span>
-<p class="adv-fb-comment__text">My orthopedist admitted, quietly, that he has seen patients delay replacement by two or three years on topical and PT alone.</p>
+<p class="adv-fb-comment__text" style="position: relative;">My orthopedist admitted, quietly, that he has seen patients delay replacement by two or three years on topical and PT alone.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -1018,7 +1273,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Barbara Holliday</span>
-<p class="adv-fb-comment__text">Ordered two months ago after my husband's surgery scared us both. He is walking the dog again. Surgery postponed until next year.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Ordered two months ago after my husband's surgery scared us both. He is walking the dog again. Surgery postponed until next year.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -1032,7 +1287,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Harold Dunleavy</span>
-<p class="adv-fb-comment__text">Sixty-eight, retired teacher, Medicare just kicked in last year. Cannot afford eleven weeks off my feet. The patches gave me another summer.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Sixty-eight, retired teacher, Medicare just kicked in last year. Cannot afford eleven weeks off my feet. The patches gave me another summer.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -1046,7 +1301,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Evelyn Crandall</span>
-<p class="adv-fb-comment__text">Printed this article and handed it to my father before his pre-op consult. He rescheduled. Thank you for reporting this honestly.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Printed this article and handed it to my father before his pre-op consult. He rescheduled. Thank you for reporting this honestly.</p>
 </div>
 <div class="adv-fb-comment__actions">
 <a href="https://terica-store.com/click">Like</a><a href="https://terica-store.com/click">Reply</a>
@@ -1121,7 +1376,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>
