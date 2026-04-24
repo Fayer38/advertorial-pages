@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Dayton Man Stopped Maintaining His Own Yard — Then His Daughter Brought Home Something That Changed Everything</title>
@@ -112,6 +109,16 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -120,10 +127,254 @@ t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "wb35vpdfk1");
 </script>
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
 
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
 
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
 
-<script src="https://terica-store.com/tracker.js" async></script>
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
@@ -134,88 +385,88 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <!-- MAIN ARTICLE CONTENT (left column) -->
 <main class="adv-content">
 <!-- HEADLINE -->
-<h1>He Watched Someone Else Clear His Driveway. That Was the Day Everything Changed.</h1>
+<h1 style="position: relative;">He Watched Someone Else Clear His Driveway. That Was the Day Everything Changed.</h1>
 <!-- SUBTITLE HIGHLIGHT (cream box) -->
-<p class="subtitle-highlight">How a retired homeowner quietly reclaimed the routine he thought was gone</p>
+<p class="subtitle-highlight" style="position: relative;">How a retired homeowner quietly reclaimed the routine he thought was gone</p>
 <!-- AUTHOR LINE — investigation style -->
-<p class="author-line">By David Harmon, Home &amp; Lifestyle, Dayton</p>
+<p class="author-line" style="position: relative;">By David Harmon, Home &amp; Lifestyle, Dayton</p>
 <!-- IMAGE 1: hero (the protagonist in their setting) -->
-<div class="v2-media-slot" data-job-id="b0aa48c8-dc2c-4f84-8743-9bb0d333dcde" data-prompts="[&quot;Elderly man in his early 70s looking out a kitchen window at a suburban driveway in autumn, pensive expression, Midwest ranch-style home, natural morning light, photorealistic&quot;, &quot;Modest suburban ranch home in Ohio with leaves scattered on the driveway and front walkway, early morning, overcast sky, photorealistic&quot;, &quot;Close-up of a 70-year-old man's weathered hands resting on a kitchen counter, looking through a window with a wistful expression, warm indoor light, photorealistic&quot;]" data-selected="0" data-slot-key="media_1.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Elderly man in his early 70s looking out a kitchen window at a suburban driveway"</div></div>
+<img alt="" data-copy="media_1.url:attr:src" data-prompts="[&quot;Elderly man in his early 70s looking out a kitchen window at a suburban driveway in autumn, pensive expression, Midwest ranch-style home, natural morning light, photorealistic&quot;, &quot;Modest suburban ranch home in Ohio with leaves scattered on the driveway and front walkway, early morning, overcast sky, photorealistic&quot;, &quot;Close-up of a 70-year-old man's weathered hands resting on a kitchen counter, looking through a window with a wistful expression, warm indoor light, photorealistic&quot;]" data-slot-key="media_1.url" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/seese-pro-v9/manual_upload-manual-0c5e1b6d.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 <!-- INTRO PARAGRAPHS (investigation setup) -->
-<p>Gene didn't tell anyone when he stopped blowing the driveway. He just quietly let it go — the way you stop doing things when your body starts making decisions for you.</p>
-<p>For thirty years, Saturday mornings had a rhythm. Coffee, weather check, garage door up, blower out. Leaves in the fall, pollen in the spring, dust and clippings all summer long. It was never about the driveway looking perfect. It was about <strong>doing the work himself</strong>.</p>
-<p>Then his shoulder started locking up. Then his back. After two cortisone shots and a lecture from his doctor about taking it easy, Gene's wife Linda quietly hired the neighbor's teenage son to handle it.</p>
-<p>She thought she was helping. And she was. But the morning Gene stood at the kitchen window watching a seventeen-year-old blow leaves off his own front walk, something shifted inside him. <u>That was his driveway</u>. His routine. His job.</p>
+<p style="position: relative;">Gene didn't tell anyone when he stopped blowing the driveway. He just quietly let it go — the way you stop doing things when your body starts making decisions for you.</p>
+<p style="position: relative;">For thirty years, Saturday mornings had a rhythm. Coffee, weather check, garage door up, blower out. Leaves in the fall, pollen in the spring, dust and clippings all summer long. It was never about the driveway looking perfect. It was about <strong>doing the work himself</strong>.</p>
+<p style="position: relative;">Then his shoulder started locking up. Then his back. After two cortisone shots and a lecture from his doctor about taking it easy, Gene's wife Linda quietly hired the neighbor's teenage son to handle it.</p>
+<p style="position: relative;">She thought she was helping. And she was. But the morning Gene stood at the kitchen window watching a seventeen-year-old blow leaves off his own front walk, something shifted inside him. <u>That was his driveway</u>. His routine. His job.</p>
 <!-- H2 #1 — backstory / origin -->
-<h2>When Helping Hands Start to Feel Like a Verdict</h2>
-<div class="v2-media-slot" data-job-id="b0aa48c8-dc2c-4f84-8743-9bb0d333dcde" data-prompts="[&quot;A heavy gas-powered leaf blower sitting unused on a garage shelf, dusty, next to garden tools, dim garage lighting, suburban setting, photorealistic&quot;, &quot;An older man sitting at a kitchen table with coffee, looking through a sliding glass door at an unkempt patio, soft morning light, photorealistic&quot;, &quot;Close-up of a man's hand gripping a heavy power tool with visible strain, weathered skin, natural lighting, photorealistic&quot;]" data-selected="0" data-slot-key="media_2.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A heavy gas-powered leaf blower sitting unused on a garage shelf, dusty, next to"</div></div>
-<p>Nobody says it out loud. Nobody sits you down and tells you that you're done. It happens in small, quiet steps — a son-in-law who mows without being asked, a wife who calls the handyman instead of mentioning the gutter.</p>
-<p>Gene is seventy-one. He lives in a three-bedroom ranch outside Dayton. He served in the Army, worked thirty-four years in manufacturing, and <strong>raised two daughters in that house</strong>. He built the back deck himself in 1998.</p>
-<p>He's not fragile. He's not incapable. But his body has started to disagree with what his mind still wants to do. The gas blower in the garage weighs nearly twelve pounds. After ten minutes, his shoulder burns. After fifteen, he's done for the day.</p>
-<p>So the blower sits there. And the neighbor kid comes on Saturdays. And Gene drinks his coffee at the window and tries not to think about what it means.</p>
-<p>This is the part nobody talks about — not the pain itself, but the <strong>slow erosion of the things that made you feel like yourself</strong>. The quiet math of what you can still do versus what you've handed off.</p>
+<h2 style="position: relative;">When Helping Hands Start to Feel Like a Verdict</h2>
+<img alt="" data-copy="media_2.url:attr:src" data-prompts="[&quot;A heavy gas-powered leaf blower sitting unused on a garage shelf, dusty, next to garden tools, dim garage lighting, suburban setting, photorealistic&quot;, &quot;An older man sitting at a kitchen table with coffee, looking through a sliding glass door at an unkempt patio, soft morning light, photorealistic&quot;, &quot;Close-up of a man's hand gripping a heavy power tool with visible strain, weathered skin, natural lighting, photorealistic&quot;]" data-slot-key="media_2.url" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/seese-pro-v9/manual_upload-manual-e0ca3d52.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
+<p style="position: relative;">Nobody says it out loud. Nobody sits you down and tells you that you're done. It happens in small, quiet steps — a son-in-law who mows without being asked, a wife who calls the handyman instead of mentioning the gutter.</p>
+<p style="position: relative;">Gene is seventy-one. He lives in a three-bedroom ranch outside Dayton. He served in the Army, worked thirty-four years in manufacturing, and <strong>raised two daughters in that house</strong>. He built the back deck himself in 1998.</p>
+<p style="position: relative;">He's not fragile. He's not incapable. But his body has started to disagree with what his mind still wants to do. The gas blower in the garage weighs nearly twelve pounds. After ten minutes, his shoulder burns. After fifteen, he's done for the day.</p>
+<p style="position: relative;">So the blower sits there. And the neighbor kid comes on Saturdays. And Gene drinks his coffee at the window and tries not to think about what it means.</p>
+<p style="position: relative;">This is the part nobody talks about — not the pain itself, but the <strong>slow erosion of the things that made you feel like yourself</strong>. The quiet math of what you can still do versus what you've handed off.</p>
 <!-- H2 #2 — loss / turning point -->
-<h2>It's Not About Leaves. It Never Was.</h2>
+<h2 style="position: relative;">It's Not About Leaves. It Never Was.</h2>
 <div class="v2-media-slot" data-job-id="b0aa48c8-dc2c-4f84-8743-9bb0d333dcde" data-prompts='["Two older men in their 70s talking over a fence in a suburban Midwest neighborhood, autumn leaves on the ground, natural daylight, photorealistic", "A well-maintained suburban ranch house with a tidy driveway and small yard, Midwest setting, golden hour light, photorealistic", "An older man standing in his garage doorway looking at his yard with quiet determination, warm afternoon light, photorealistic"]' data-selected="0" data-slot-key="media_3.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Two older men in their 70s talking over a fence in a suburban Midwest neighborho"</div></div>
-<p>Talk to any man over sixty-five about yard work and you'll hear the same thing. It's not a chore. It's territory. It's proof that <strong>you still run your own house</strong>.</p>
-<p>Gene's friend Walt, seventy-three, gave up his garden last year after a back surgery. He hired a landscaping crew. He says it's fine. But his wife told Linda he sits on the porch and watches them work with a look she's never seen before.</p>
-<p>Another neighbor, Frank, switched to a battery-powered mower two years ago because the pull-start on his old Craftsman was wrecking his rotator cuff. He felt defeated by it for weeks — like admitting something he didn't want to say out loud.</p>
-<p>These aren't stories about equipment. They're stories about <strong>identity</strong>. About the gap between what you want to do and what your joints allow. About watching your own home slowly become someone else's responsibility.</p>
-<p>And here's what makes it worse: most of the tools in the garage were designed for a younger version of you. They're heavy because nobody thought about who'd be holding them at seventy. They're loud and gas-powered because that's how it was always done.</p>
-<p>Nobody asked whether there was a better way. Nobody redesigned the tools for the people who needed them most — the ones with bad shoulders, stiff backs, and thirty years of muscle memory. Until recently, there wasn't a reason to.</p>
+<p style="position: relative;">Talk to any man over sixty-five about yard work and you'll hear the same thing. It's not a chore. It's territory. It's proof that <strong>you still run your own house</strong>.</p>
+<p style="position: relative;">Gene's friend Walt, seventy-three, gave up his garden last year after a back surgery. He hired a landscaping crew. He says it's fine. But his wife told Linda he sits on the porch and watches them work with a look she's never seen before.</p>
+<p style="position: relative;">Another neighbor, Frank, switched to a battery-powered mower two years ago because the pull-start on his old Craftsman was wrecking his rotator cuff. He felt defeated by it for weeks — like admitting something he didn't want to say out loud.</p>
+<p style="position: relative;">These aren't stories about equipment. They're stories about <strong>identity</strong>. About the gap between what you want to do and what your joints allow. About watching your own home slowly become someone else's responsibility.</p>
+<p style="position: relative;">And here's what makes it worse: most of the tools in the garage were designed for a younger version of you. They're heavy because nobody thought about who'd be holding them at seventy. They're loud and gas-powered because that's how it was always done.</p>
+<p style="position: relative;">Nobody asked whether there was a better way. Nobody redesigned the tools for the people who needed them most — the ones with bad shoulders, stiff backs, and thirty years of muscle memory. Until recently, there wasn't a reason to.</p>
 <!-- H2 #3 — craft deep-dive -->
-<h2>Thanksgiving Weekend Changed Everything</h2>
+<h2 style="position: relative;">Thanksgiving Weekend Changed Everything</h2>
 <div class="v2-media-slot" data-job-id="b0aa48c8-dc2c-4f84-8743-9bb0d333dcde" data-prompts='["An older man in his 70s holding a very small lightweight cordless leaf blower with one hand, surprised expression, kitchen background, natural light, photorealistic", "A compact cordless blower sitting on a kitchen counter next to a coffee mug, morning light through window, clean suburban kitchen, photorealistic", "An older man in slippers and a jacket clearing leaves from a front walkway with a small blower, early morning, suburban ranch house, photorealistic"]' data-selected="0" data-slot-key="media_4.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"An older man in his 70s holding a very small lightweight cordless leaf blower wi"</div></div>
-<p>Gene's daughter Melissa came home for the holiday. She brought her usual — a casserole, laundry she swore she'd do herself, and a small box she left on the kitchen counter without much explanation.</p>
-<p>Gene opened it the next morning. Inside was something that looked like a leaf blower, except it couldn't be. It was too small. Too light. He picked it up with one hand and almost laughed. <strong>It weighed barely over two pounds.</strong></p>
-<p>He thought it was a gag gift. Something from one of those late-night commercials. He set it on the counter and went back to his coffee. But that afternoon, he read the back of the box, and something caught his eye.</p>
-<p>Cordless. Battery-powered. <strong>2.1 pounds</strong>. No gas, no cord, no pull-start. He looked at it again. Then he looked at the twelve-pound blower collecting dust in the garage. Then he looked out at the front walk covered in dead leaves.</p>
-<p>The next morning, before Linda was awake, Gene walked out the front door and cleared the entire walkway. One-handed. In his slippers. <u>It took him eight minutes.</u></p>
+<p style="position: relative;">Gene's daughter Melissa came home for the holiday. She brought her usual — a casserole, laundry she swore she'd do herself, and a small box she left on the kitchen counter without much explanation.</p>
+<p style="position: relative;">Gene opened it the next morning. Inside was something that looked like a leaf blower, except it couldn't be. It was too small. Too light. He picked it up with one hand and almost laughed. <strong>It weighed barely over two pounds.</strong></p>
+<p style="position: relative;">He thought it was a gag gift. Something from one of those late-night commercials. He set it on the counter and went back to his coffee. But that afternoon, he read the back of the box, and something caught his eye.</p>
+<p style="position: relative;">Cordless. Battery-powered. <strong>2.1 pounds</strong>. No gas, no cord, no pull-start. He looked at it again. Then he looked at the twelve-pound blower collecting dust in the garage. Then he looked out at the front walk covered in dead leaves.</p>
+<p style="position: relative;">The next morning, before Linda was awake, Gene walked out the front door and cleared the entire walkway. One-handed. In his slippers. <u>It took him eight minutes.</u></p>
 <!-- H2 #4 — breaking point / medical -->
-<h2>Why 2.1 Pounds Changes More Than You Think</h2>
+<h2 style="position: relative;">Why 2.1 Pounds Changes More Than You Think</h2>
 <div class="v2-media-slot" data-job-id="b0aa48c8-dc2c-4f84-8743-9bb0d333dcde" data-prompts="[&quot;Older man in his 70s using a lightweight cordless blower on a suburban driveway, relaxed posture, autumn leaves scattering, natural daylight, photorealistic&quot;, &quot;Close-up of an elderly man's hand effortlessly holding a very small compact blower, showing how lightweight it is, outdoor setting, photorealistic&quot;, &quot;An older couple standing on their front porch smiling, clean driveway visible behind them, warm afternoon light, Midwest suburban home, photorealistic&quot;]" data-selected="0" data-slot-key="media_5.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older man in his 70s using a lightweight cordless blower on a suburban driveway,"</div></div>
-<p>When Melissa told Gene what she'd brought him — the Seese Pro Ultra-Light Blower — he figured it was a toy. Something that looked good in a picture but couldn't actually move a wet leaf off concrete.</p>
-<p>He was wrong. The Seese Pro pushes air at a rate that clears driveways, patios, garage floors, and porch steps without hesitation. It handles <strong>wet leaves, sawdust, grass clippings, and even light snow</strong>. Gene has tested all of them since November.</p>
-<p>But here's the part that matters most: at 2.1 pounds, it doesn't fight you. There's no weight pulling your arm down. No vibration climbing into your shoulder. No cord to trip over. No gas to mix. You press a button and you go.</p>
-<p>For a man whose shoulder locks up after ten minutes with a traditional blower, that difference isn't a feature. <u>It's a second chance.</u> It's the difference between standing at the window and standing on the driveway.</p>
-<p>Gene told Melissa the following weekend: "I didn't realize how much I missed it until I was out there again." She said she almost cried in the car on the way home.</p>
-<p>It wasn't about a blower. It was about <strong>getting a piece of himself back</strong> — the Saturday rhythm, the quiet pride of walking inside knowing the job was done, and done by his own hand.</p>
+<p style="position: relative;">When Melissa told Gene what she'd brought him — the Seese Pro Ultra-Light Blower — he figured it was a toy. Something that looked good in a picture but couldn't actually move a wet leaf off concrete.</p>
+<p style="position: relative;">He was wrong. The Seese Pro pushes air at a rate that clears driveways, patios, garage floors, and porch steps without hesitation. It handles <strong>wet leaves, sawdust, grass clippings, and even light snow</strong>. Gene has tested all of them since November.</p>
+<p style="position: relative;">But here's the part that matters most: at 2.1 pounds, it doesn't fight you. There's no weight pulling your arm down. No vibration climbing into your shoulder. No cord to trip over. No gas to mix. You press a button and you go.</p>
+<p style="position: relative;">For a man whose shoulder locks up after ten minutes with a traditional blower, that difference isn't a feature. <u>It's a second chance.</u> It's the difference between standing at the window and standing on the driveway.</p>
+<p style="position: relative;">Gene told Melissa the following weekend: "I didn't realize how much I missed it until I was out there again." She said she almost cried in the car on the way home.</p>
+<p style="position: relative;">It wasn't about a blower. It was about <strong>getting a piece of himself back</strong> — the Saturday rhythm, the quiet pride of walking inside knowing the job was done, and done by his own hand.</p>
 <!-- H2 #5 — the decision / price reveal -->
-<h2>Every Weekend Since, Without Fail</h2>
+<h2 style="position: relative;">Every Weekend Since, Without Fail</h2>
 <div class="v2-media-slot" data-job-id="b0aa48c8-dc2c-4f84-8743-9bb0d333dcde" data-prompts='["An older man blowing light snow off porch steps with a small cordless blower, winter morning, suburban home, breath visible in cold air, photorealistic", "A clean suburban driveway in winter with an older man standing proudly at the end holding a small tool, Midwest ranch home, overcast sky, photorealistic", "Two elderly men in their 70s standing in a driveway, one showing the other a compact blower, friendly conversation, natural daylight, photorealistic"]' data-selected="0" data-slot-key="media_6.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"An older man blowing light snow off porch steps with a small cordless blower, wi"</div></div>
-<p>Gene has used the Seese Pro every Saturday since Thanksgiving. Leaves through December. Snow off the porch steps in January. Dust and grit from the garage floor in February. Pollen season is just starting now, and he's ready.</p>
-<p>He charges the battery overnight. In the morning, he grabs it off the shelf, walks outside, and handles his property. The whole routine takes <strong>less than fifteen minutes</strong>. No pain. No help. No neighbor kid.</p>
-<p>Linda noticed first. She told their younger daughter Karen on the phone: "Your father is out there every weekend now. He whistles while he does it. I haven't heard him whistle in two years."</p>
-<p>The cordless design means Gene doesn't drag an extension cord across the yard or refill a gas tank in the cold. He just picks it up and goes. It runs through his entire property on <strong>a single charge</strong>.</p>
-<p>Walt came over in January to see what Gene was using. He stood in the driveway holding it, turning it over in his hands. "This is it?" he said. "This is the whole thing?" Gene just nodded. Walt ordered one that afternoon.</p>
+<p style="position: relative;">Gene has used the Seese Pro every Saturday since Thanksgiving. Leaves through December. Snow off the porch steps in January. Dust and grit from the garage floor in February. Pollen season is just starting now, and he's ready.</p>
+<p style="position: relative;">He charges the battery overnight. In the morning, he grabs it off the shelf, walks outside, and handles his property. The whole routine takes <strong>less than fifteen minutes</strong>. No pain. No help. No neighbor kid.</p>
+<p style="position: relative;">Linda noticed first. She told their younger daughter Karen on the phone: "Your father is out there every weekend now. He whistles while he does it. I haven't heard him whistle in two years."</p>
+<p style="position: relative;">The cordless design means Gene doesn't drag an extension cord across the yard or refill a gas tank in the cold. He just picks it up and goes. It runs through his entire property on <strong>a single charge</strong>.</p>
+<p style="position: relative;">Walt came over in January to see what Gene was using. He stood in the driveway holding it, turning it over in his hands. "This is it?" he said. "This is the whole thing?" Gene just nodded. Walt ordered one that afternoon.</p>
 <!-- ★ CTA #1 -->
 <a class="cta-button" href="https://terica-store.com/click">See the Seese Pro</a>
 <!-- H2 #6 — community / testimonials -->
-<h2>What Other Owners Are Saying</h2>
+<h2 style="position: relative;">What Other Owners Are Saying</h2>
 <div class="v2-media-slot" data-job-id="b0aa48c8-dc2c-4f84-8743-9bb0d333dcde" data-prompts="[&quot;Retired man in his mid-70s smiling while holding a small cordless blower in his clean garage, organized tools on wall, natural light from open garage door, photorealistic&quot;, &quot;An elderly man on a patio using a small blower to clear dust and debris, relaxed stance, suburban backyard, afternoon sun, photorealistic&quot;, &quot;Close-up of a satisfied older man's face, slight smile, standing outdoors in a yard with a clean walkway behind him, golden hour light, photorealistic&quot;]" data-selected="0" data-slot-key="media_7.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Retired man in his mid-70s smiling while holding a small cordless blower in his "</div></div>
-<p>Gene isn't alone. Across the Midwest and Southeast, men who had quietly stepped back from yard work are picking it up again. The reviews tell the same story, over and over: <strong>it's so light, I forgot I was holding it</strong>.</p>
-<p>One owner in Tennessee, a retired electrician named Harold, wrote that he'd given away his gas blower two years ago after a rotator cuff repair. He assumed he was done with that kind of work. The Seese Pro changed his mind in a single weekend.</p>
-<p>Another, a seventy-six-year-old from outside Indianapolis, said his wife bought it for him after he spent forty minutes sweeping the patio by hand. He called it <strong>the best thing in his garage</strong>.</p>
+<p style="position: relative;">Gene isn't alone. Across the Midwest and Southeast, men who had quietly stepped back from yard work are picking it up again. The reviews tell the same story, over and over: <strong>it's so light, I forgot I was holding it</strong>.</p>
+<p style="position: relative;">One owner in Tennessee, a retired electrician named Harold, wrote that he'd given away his gas blower two years ago after a rotator cuff repair. He assumed he was done with that kind of work. The Seese Pro changed his mind in a single weekend.</p>
+<p style="position: relative;">Another, a seventy-six-year-old from outside Indianapolis, said his wife bought it for him after he spent forty minutes sweeping the patio by hand. He called it <strong>the best thing in his garage</strong>.</p>
 <!-- H2 #7 — features / what makes it different -->
-<h2>Built for the Job Without the Strain</h2>
+<h2 style="position: relative;">Built for the Job Without the Strain</h2>
 <div class="v2-media-slot" data-job-id="b0aa48c8-dc2c-4f84-8743-9bb0d333dcde" data-prompts="[&quot;Product-style shot of a compact lightweight cordless leaf blower on a clean white surface, showing its small size, studio lighting, photorealistic&quot;, &quot;A cordless blower standing upright on a garage shelf next to a coffee thermos for size comparison, organized garage background, natural light, photorealistic&quot;, &quot;Older man's hand pressing a single button on a small cordless blower, close-up showing ease of use, outdoor background blurred, photorealistic&quot;]" data-selected="0" data-slot-key="media_8.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_8.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Product-style shot of a compact lightweight cordless leaf blower on a clean whit"</div></div>
-<p>The Seese Pro was designed with one question in mind: what if outdoor cleanup didn't have to hurt? Every detail — from the weight to the grip to the battery — was built for people who want results without the physical cost.</p>
-<p>Weighs 2.1 pounds so your arm and shoulder stay comfortable</p>
-<p>Fully cordless and battery-powered for complete freedom of movement outdoors</p>
-<p>Clears leaves, snow, dust, and clippings across all four seasons</p>
-<p>One-button start with no pull cord, no gas, no mixing</p>
-<p>Compact enough to store on a shelf and grab instantly</p>
+<p style="position: relative;">The Seese Pro was designed with one question in mind: what if outdoor cleanup didn't have to hurt? Every detail — from the weight to the grip to the battery — was built for people who want results without the physical cost.</p>
+<p style="position: relative;">Weighs 2.1 pounds so your arm and shoulder stay comfortable</p>
+<p style="position: relative;">Fully cordless and battery-powered for complete freedom of movement outdoors</p>
+<p style="position: relative;">Clears leaves, snow, dust, and clippings across all four seasons</p>
+<p style="position: relative;">One-button start with no pull cord, no gas, no mixing</p>
+<p style="position: relative;">Compact enough to store on a shelf and grab instantly</p>
 <!-- ★ CTA #2 -->
 <a class="cta-button" href="https://terica-store.com/click">Try It Yourself</a>
 <!-- H2 #8 — final urgency / how to order -->
-<h2>The Morning Linda Looked Out the Window</h2>
+<h2 style="position: relative;">The Morning Linda Looked Out the Window</h2>
 <div class="v2-media-slot" data-job-id="b0aa48c8-dc2c-4f84-8743-9bb0d333dcde" data-prompts="[&quot;Older woman looking through a kitchen window at a clean front walkway, surprised and touched expression, morning light, suburban home interior, photorealistic&quot;, &quot;Older man placing a small cordless blower on a garage shelf with a quiet smile, tidy garage, morning light from open door, photorealistic&quot;, &quot;Elderly couple standing together on their clean front porch, man's arm around wife, proud and content expressions, Midwest ranch home, warm light, photorealistic&quot;]" data-selected="0" data-slot-key="media_9.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_9.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older woman looking through a kitchen window at a clean front walkway, surprised"</div></div>
-<p>There's a moment Gene keeps coming back to. It was the Saturday after Thanksgiving. Linda woke up, walked to the kitchen, and looked out the front window. The walkway was clean. Every leaf, gone.</p>
-<p>She found Gene in the garage, putting the Seese Pro back on the shelf. He was smiling. Not a big grin — just the quiet, satisfied look of a man who <strong>did his own work that morning</strong>.</p>
-<p>"You did that?" she asked. He nodded. She didn't say anything else. She didn't have to. They'd been married long enough to know what it meant — all of it.</p>
-<p>Gene still doesn't talk about it in dramatic terms. He doesn't call it life-changing or revolutionary. He just says: "It lets me do what I used to do." And for a seventy-one-year-old man standing on <strong>his own clean driveway</strong>, that's everything.</p>
-<p>The neighbor kid still comes by sometimes. But now it's to borrow Gene's edger, not to do his work for him. That shift — from being helped to being the one with the right tool — is <u>worth more than any feature list</u>.</p>
-<p>If you've been watching your own yard from the window, wondering when you stopped being the one out there — you already know what this is about. The Seese Pro comes with a 30-day guarantee. But most people know by the first Saturday.</p>
+<p style="position: relative;">There's a moment Gene keeps coming back to. It was the Saturday after Thanksgiving. Linda woke up, walked to the kitchen, and looked out the front window. The walkway was clean. Every leaf, gone.</p>
+<p style="position: relative;">She found Gene in the garage, putting the Seese Pro back on the shelf. He was smiling. Not a big grin — just the quiet, satisfied look of a man who <strong>did his own work that morning</strong>.</p>
+<p style="position: relative;">"You did that?" she asked. He nodded. She didn't say anything else. She didn't have to. They'd been married long enough to know what it meant — all of it.</p>
+<p style="position: relative;">Gene still doesn't talk about it in dramatic terms. He doesn't call it life-changing or revolutionary. He just says: "It lets me do what I used to do." And for a seventy-one-year-old man standing on <strong>his own clean driveway</strong>, that's everything.</p>
+<p style="position: relative;">The neighbor kid still comes by sometimes. But now it's to borrow Gene's edger, not to do his work for him. That shift — from being helped to being the one with the right tool — is <u>worth more than any feature list</u>.</p>
+<p style="position: relative;">If you've been watching your own yard from the window, wondering when you stopped being the one out there — you already know what this is about. The Seese Pro comes with a 30-day guarantee. But most people know by the first Saturday.</p>
 <!-- ★ CTA #3 -->
 <a class="cta-button" href="https://terica-store.com/click">Get Your Seese Pro</a>
 <!-- SIGNATURE -->
@@ -229,7 +480,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="sidebar-product">
 <span class="product-badge">Seese Pro™ Ultra-Light, Ultra-Powerful Blower</span>
 <div class="v2-media-slot" data-job-id="b0aa48c8-dc2c-4f84-8743-9bb0d333dcde" data-prompts='["Product hero shot of a sleek compact cordless leaf blower against a clean background, modern design, studio lighting, photorealistic", "A lightweight cordless blower lying on a wooden deck next to scattered autumn leaves, overhead angle, natural light, photorealistic", "An older man walking confidently toward his front yard carrying a small blower at his side, clean driveway behind, warm morning light, photorealistic"]' data-selected="0" data-slot-key="media_10.url" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_10.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Product hero shot of a sleek compact cordless leaf blower against a clean backgr"</div></div>
-<p class="sidebar-tagline">Excellent</p>
+<p class="sidebar-tagline" style="position: relative;">Excellent</p>
 <div class="sidebar-stars">
 <span class="stars">★★★★★</span>
 <span class="rating-num">4.87</span>
@@ -250,15 +501,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 .cta-btn:hover,.ll-btn-temp:hover{background:#cd571c !important;box-shadow:0 6px 25px rgba(242,103,34,0.4) !important;}
 </style>
 <footer id="adv-footer" style="background:#f5f5f5;border-top:1px solid #e5e5e5;padding:30px 20px;text-align:center;margin-top:40px;">
-  <img src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" alt="Logo" style="display:block;height:36px;max-width:180px;object-fit:contain;margin:0 auto 12px;">
-  <div style="font-size:11px;color:#999;margin:0 auto 10px;font-family:system-ui,-apple-system,sans-serif;">
-    <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Terms of Use</a>
-    <span style="margin:0 6px;color:#ccc;">·</span>
-    <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Privacy Policy</a>
-    <span style="margin:0 6px;color:#ccc;">·</span>
-    <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
-  </div>
-  <p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">&copy; 2026 Daily Blog Info. All rights reserved.</p>
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="display:block;height:36px;max-width:180px;object-fit:contain;margin:0 auto 12px;"/>
+<p style="font-size: 10px; color: rgb(153, 153, 153); line-height: 1.6; max-width: 700px; margin: 0px auto; position: relative;">© 2026 All rights reserved. All content, images, and materials on this website are protected by international copyright and intellectual property laws. Unauthorized reproduction, distribution, or modification of any materials is strictly prohibited.</p>
 </footer>
-</body>
-</html>
+</body></html>
