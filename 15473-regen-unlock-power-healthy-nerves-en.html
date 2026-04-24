@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>A Retired Ohio Nurse Explains Why Neuropathy Nerves May Be Dormant, Not Dead</title>
@@ -112,6 +109,16 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -120,7 +127,255 @@ t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "wb35vpdfk1");
 </script>
-<script async="" src="https://terica-store.com/tracker.js"></script>
+<!-- ext-script-stripped -->
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
@@ -131,88 +386,88 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <!-- MAIN ARTICLE CONTENT (left column) -->
 <main class="adv-content">
 <!-- HEADLINE -->
-<h1>The Nurse Who Refused Her Own Gabapentin Script</h1>
+<h1 style="position: relative;">The Nurse Who Refused Her Own Gabapentin Script</h1>
 <!-- SUBTITLE HIGHLIGHT (cream box) -->
-<p class="subtitle-highlight">Forty-one years on the ward taught her permanent is half a lie</p>
+<p class="subtitle-highlight" style="position: relative;">Forty-one years on the ward taught her permanent is half a lie</p>
 <!-- AUTHOR LINE — investigation style -->
-<p class="author-line">By Linda Brennan, RN retired, Dayton</p>
+<p class="author-line" style="position: relative;">By Linda Brennan, RN retired, Dayton</p>
 <!-- IMAGE 1: hero (the protagonist in their setting) -->
-<div class="v2-media-slot" data-job-id="aafd611d-2d33-40d9-a60e-d4139cfbfaae" data-prompts='["Portrait of a 68-year-old American woman with short gray hair, wearing a simple cardigan, sitting at a kitchen table with old biochemistry textbooks open in front of her, soft window light, photorealistic", "Close-up of aged hands turning the pages of a worn nursing biochemistry textbook beside a coffee mug and reading glasses, kitchen setting, warm morning light, photorealistic", "A retired nurse in her late sixties looking quietly determined, seated in a modest Midwestern American home, early morning light on her face, photorealistic"]' data-selected="0" data-slot-key="media_1.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Portrait of a 68-year-old American woman with short gray hair, wearing a simple "</div></div>
+<img alt="" data-copy="media_1.url:attr:src" data-prompts='["Portrait of a 68-year-old American woman with short gray hair, wearing a simple cardigan, sitting at a kitchen table with old biochemistry textbooks open in front of her, soft window light, photorealistic", "Close-up of aged hands turning the pages of a worn nursing biochemistry textbook beside a coffee mug and reading glasses, kitchen setting, warm morning light, photorealistic", "A retired nurse in her late sixties looking quietly determined, seated in a modest Midwestern American home, early morning light on her face, photorealistic"]' data-slot-key="media_1.url" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/cf641f8d/batch_eb60737bc3e6_0_1_2bd1dc.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 <!-- INTRO PARAGRAPHS (investigation setup) -->
-<p>I spent forty-one years on the med-surg floor of a hospital in Ohio. I handed out gabapentin to hundreds of neuropathy patients. I watched every single one get <strong>quietly worse</strong> — numbness past the ankle, the falls, the resignation in their eyes.</p>
-<p>Three winters ago my own feet started burning at two in the morning. I caught my reflection in the hallway mirror doing <strong>the same slow shuffle</strong> my father did the year before he died. That was the moment I stopped being a nurse and started being a patient.</p>
-<p>My doctor wrote the same script I'd handed out a thousand times. I refused it. I went home, pulled down the biochemistry textbooks I'd kept since nursing school, and started reading the <u>chapters the protocol skips</u>.</p>
-<p>What I found changed everything. The word <strong>permanent</strong> — the word my neurologist used, the word I used on my own patients for forty-one years — turned out to be half a lie. And I'm telling you this because someone walked out of an office last Tuesday with a shrug and a pill bottle.</p>
+<p style="position: relative;">I spent forty-one years on the med-surg floor of a hospital in Ohio. I handed out gabapentin to hundreds of neuropathy patients. I watched every single one get <strong>quietly worse</strong> — numbness past the ankle, the falls, the resignation in their eyes.</p>
+<p style="position: relative;">Three winters ago my own feet started burning at two in the morning. I caught my reflection in the hallway mirror doing <strong>the same slow shuffle</strong> my father did the year before he died. That was the moment I stopped being a nurse and started being a patient.</p>
+<p style="position: relative;">My doctor wrote the same script I'd handed out a thousand times. I refused it. I went home, pulled down the biochemistry textbooks I'd kept since nursing school, and started reading the <u>chapters the protocol skips</u>.</p>
+<p style="position: relative;">What I found changed everything. The word <strong>permanent</strong> — the word my neurologist used, the word I used on my own patients for forty-one years — turned out to be half a lie. And I'm telling you this because someone walked out of an office last Tuesday with a shrug and a pill bottle.</p>
 <!-- H2 #1 — backstory / origin -->
-<h2>The Word That Kept Everyone Sitting Down</h2>
-<div class="v2-media-slot" data-job-id="aafd611d-2d33-40d9-a60e-d4139cfbfaae" data-prompts="[&quot;An older American woman sitting on the edge of her bed in the middle of the night, holding her burning foot with both hands, bedside lamp casting warm light, photorealistic&quot;, &quot;Close-up of an older woman's bare feet on a wooden bedroom floor at night, soft ambient lamp light, expression of discomfort implied through posture, photorealistic&quot;, &quot;A tired woman in her late sixties rubbing her calf in the dark hallway of a modest home, night, photorealistic&quot;]" data-selected="0" data-slot-key="media_2.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"An older American woman sitting on the edge of her bed in the middle of the nigh"</div></div>
-<p>On the ward we had a script. A patient came in with burning feet, tingling hands, the pins-and-needles that kept them awake. We tested reflexes. We ordered the nerve conduction study. We handed them the diagnosis and the prescription and the same <strong>quiet sentence</strong> every time.</p>
-<p>The damage is permanent. We can manage the pain. That was it. Fifteen minutes, a copay, a bottle of capsules, and a life that quietly got smaller every month. I said those words so many times I stopped hearing them the way patients heard them.</p>
-<p>Patients heard a verdict. They went home and stopped gardening. They stopped the evening walks around the block. They told their grandchildren Grandma's legs don't work right anymore, and the grandchildren learned to walk slower around them — which is its own kind of grief.</p>
-<p>And the thing nobody says out loud on the floor is that the pills don't fix the nerves. They never did. Gabapentin quiets the signal the way a thick blanket muffles a fire alarm. The fire is still burning underneath. The nerve is still <u>whatever it was before the pill</u>.</p>
-<p>I saw this with my own father. I saw it with a thousand strangers in paper gowns. And three winters ago at two in the morning, I saw it starting in my own feet. That's when I did something I never did in four decades of nursing. I questioned the chart.</p>
+<h2 style="position: relative;">The Word That Kept Everyone Sitting Down</h2>
+<img alt="" data-copy="media_2.url:attr:src" data-prompts="[&quot;An older American woman sitting on the edge of her bed in the middle of the night, holding her burning foot with both hands, bedside lamp casting warm light, photorealistic&quot;, &quot;Close-up of an older woman's bare feet on a wooden bedroom floor at night, soft ambient lamp light, expression of discomfort implied through posture, photorealistic&quot;, &quot;A tired woman in her late sixties rubbing her calf in the dark hallway of a modest home, night, photorealistic&quot;]" data-slot-key="media_2.url" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/cf641f8d/batch_eb60737bc3e6_1_1_e539d2.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
+<p style="position: relative;">On the ward we had a script. A patient came in with burning feet, tingling hands, the pins-and-needles that kept them awake. We tested reflexes. We ordered the nerve conduction study. We handed them the diagnosis and the prescription and the same <strong>quiet sentence</strong> every time.</p>
+<p style="position: relative;">The damage is permanent. We can manage the pain. That was it. Fifteen minutes, a copay, a bottle of capsules, and a life that quietly got smaller every month. I said those words so many times I stopped hearing them the way patients heard them.</p>
+<p style="position: relative;">Patients heard a verdict. They went home and stopped gardening. They stopped the evening walks around the block. They told their grandchildren Grandma's legs don't work right anymore, and the grandchildren learned to walk slower around them — which is its own kind of grief.</p>
+<p style="position: relative;">And the thing nobody says out loud on the floor is that the pills don't fix the nerves. They never did. Gabapentin quiets the signal the way a thick blanket muffles a fire alarm. The fire is still burning underneath. The nerve is still <u>whatever it was before the pill</u>.</p>
+<p style="position: relative;">I saw this with my own father. I saw it with a thousand strangers in paper gowns. And three winters ago at two in the morning, I saw it starting in my own feet. That's when I did something I never did in four decades of nursing. I questioned the chart.</p>
 <!-- H2 #2 — loss / turning point -->
-<h2>Dormant Is Not The Same As Dead</h2>
-<div class="v2-media-slot" data-job-id="aafd611d-2d33-40d9-a60e-d4139cfbfaae" data-prompts='["Scientific illustration style close-up of a peripheral nerve fiber with intact myelin sheath on one side and damaged myelin on the other, labeled educational diagram, photorealistic medical rendering", "Hands of an older woman holding an open anatomy textbook showing a diagram of a nerve cell and myelin sheath, reading glasses nearby, photorealistic", "Macro photograph style rendering of healthy versus damaged nerve fibers, warm clinical lighting, photorealistic medical illustration"]' data-selected="0" data-slot-key="media_3.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Scientific illustration style close-up of a peripheral nerve fiber with intact m"</div></div>
-<p>Here is what the textbooks said that the fifteen-minute appointment did not. A peripheral nerve is not a wire. It is a living cell with a long tail. That tail — the axon — is wrapped in <strong>a fatty coating called myelin</strong> that makes the signal travel fast and clean.</p>
-<p>When blood sugar runs high for years, or chemotherapy sweeps through, or the simple wear of seven decades thins the insulation — the myelin gets stripped. The signal garbles. That garbled signal is what you feel as burning, as pins and needles, as the numb patch that won't wake up.</p>
-<p>But — and this is the part the protocol skips — the axon underneath is often still there. Still alive. Still sending. It is not dead. It is <u>dormant, wrapped in damaged insulation</u>, starved of the exact raw materials the body needs to rebuild the coating.</p>
-<p>A dead nerve is a very different animal from a sleeping nerve. A dead nerve is finished. A sleeping nerve is waiting. And the difference between the two is the difference between the shuffle I watched my father do and the evening walk I took last Sunday without thinking about my feet once.</p>
-<p>Every patient I ever handed a pill bottle to — <strong>I was treating them as if the nerve was dead</strong>. I was giving them a painkiller for a corpse. What they needed was the raw material to wake the living cell. Nobody on the ward was talking about that.</p>
-<p>I did not learn this from a wellness blog. I learned it from the same biochemistry textbook a neurology resident uses. The information was always there. It is <strong>just not what gets ordered</strong> in a fifteen-minute visit with a copay clock running.</p>
+<h2 style="position: relative;">Dormant Is Not The Same As Dead</h2>
+<img alt="" data-copy="media_3.url:attr:src" data-prompts='["Scientific illustration style close-up of a peripheral nerve fiber with intact myelin sheath on one side and damaged myelin on the other, labeled educational diagram, photorealistic medical rendering", "Hands of an older woman holding an open anatomy textbook showing a diagram of a nerve cell and myelin sheath, reading glasses nearby, photorealistic", "Macro photograph style rendering of healthy versus damaged nerve fibers, warm clinical lighting, photorealistic medical illustration"]' data-slot-key="media_3.url" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/cf641f8d/batch_eb60737bc3e6_2_0_cd0c48.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
+<p style="position: relative;">Here is what the textbooks said that the fifteen-minute appointment did not. A peripheral nerve is not a wire. It is a living cell with a long tail. That tail — the axon — is wrapped in <strong>a fatty coating called myelin</strong> that makes the signal travel fast and clean.</p>
+<p style="position: relative;">When blood sugar runs high for years, or chemotherapy sweeps through, or the simple wear of seven decades thins the insulation — the myelin gets stripped. The signal garbles. That garbled signal is what you feel as burning, as pins and needles, as the numb patch that won't wake up.</p>
+<p style="position: relative;">But — and this is the part the protocol skips — the axon underneath is often still there. Still alive. Still sending. It is not dead. It is <u>dormant, wrapped in damaged insulation</u>, starved of the exact raw materials the body needs to rebuild the coating.</p>
+<p style="position: relative;">A dead nerve is a very different animal from a sleeping nerve. A dead nerve is finished. A sleeping nerve is waiting. And the difference between the two is the difference between the shuffle I watched my father do and the evening walk I took last Sunday without thinking about my feet once.</p>
+<p style="position: relative;">Every patient I ever handed a pill bottle to — <strong>I was treating them as if the nerve was dead</strong>. I was giving them a painkiller for a corpse. What they needed was the raw material to wake the living cell. Nobody on the ward was talking about that.</p>
+<p style="position: relative;">I did not learn this from a wellness blog. I learned it from the same biochemistry textbook a neurology resident uses. The information was always there. It is <strong>just not what gets ordered</strong> in a fifteen-minute visit with a copay clock running.</p>
 <!-- H2 #3 — craft deep-dive -->
-<h2>What The Nerve Actually Needs To Wake Up</h2>
+<h2 style="position: relative;">What The Nerve Actually Needs To Wake Up</h2>
 <div class="v2-media-slot" data-job-id="aafd611d-2d33-40d9-a60e-d4139cfbfaae" data-prompts='["Close-up of an assortment of supplement capsules on a wooden kitchen table beside an open anatomy textbook and a handwritten notebook, natural light, photorealistic", "Hands of an older woman arranging supplement bottles on a kitchen counter, warm morning light, photorealistic", "A retired nurse reviewing ingredient labels with reading glasses, kitchen table, focused expression, photorealistic"]' data-selected="0" data-slot-key="media_4.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Close-up of an assortment of supplement capsules on a wooden kitchen table besid"</div></div>
-<p>Once I understood the damage was mostly to the insulation and not to the wire itself, the question changed. It stopped being how do I numb this and became <strong>what does my body need to rebuild the coating</strong>. The textbooks had an unglamorous answer.</p>
-<p>Myelin is not built from wishes. It is built from a very specific short list — methylated B vitamins the aging gut actually absorbs, alpha-lipoic acid to quiet the oxidative damage chewing through the sheath, and a few botanical cofactors the old neurology texts kept mentioning in footnotes.</p>
-<p>I tried the cheap bottle first. The one from the big-box pharmacy, B-complex for under the price of a sandwich. I felt nothing. I understand now why — the form of B12 in most of those bottles is <u>cyanocobalamin, which an older body barely converts</u>.</p>
-<p>I felt betrayed by that bottle. A lot of people I talk to at church felt the same. They tried the cheap supplement, got nothing, and concluded that supplements are a scam and the neurologist was right after all. That conclusion is exactly wrong. The bottle was wrong.</p>
-<p>What the nerve actually needs is the methylated, bioavailable form — the one the body can use without converting it first. That was <strong>the missing piece</strong> my father never got. That was the missing piece I had been handing out on the ward for forty-one years without knowing it.</p>
+<p style="position: relative;">Once I understood the damage was mostly to the insulation and not to the wire itself, the question changed. It stopped being how do I numb this and became <strong>what does my body need to rebuild the coating</strong>. The textbooks had an unglamorous answer.</p>
+<p style="position: relative;">Myelin is not built from wishes. It is built from a very specific short list — methylated B vitamins the aging gut actually absorbs, alpha-lipoic acid to quiet the oxidative damage chewing through the sheath, and a few botanical cofactors the old neurology texts kept mentioning in footnotes.</p>
+<p style="position: relative;">I tried the cheap bottle first. The one from the big-box pharmacy, B-complex for under the price of a sandwich. I felt nothing. I understand now why — the form of B12 in most of those bottles is <u>cyanocobalamin, which an older body barely converts</u>.</p>
+<p style="position: relative;">I felt betrayed by that bottle. A lot of people I talk to at church felt the same. They tried the cheap supplement, got nothing, and concluded that supplements are a scam and the neurologist was right after all. That conclusion is exactly wrong. The bottle was wrong.</p>
+<p style="position: relative;">What the nerve actually needs is the methylated, bioavailable form — the one the body can use without converting it first. That was <strong>the missing piece</strong> my father never got. That was the missing piece I had been handing out on the ward for forty-one years without knowing it.</p>
 <!-- H2 #4 — breaking point / medical -->
-<h2>The Bottle I Finally Settled On</h2>
+<h2 style="position: relative;">The Bottle I Finally Settled On</h2>
 <div class="v2-media-slot" data-job-id="aafd611d-2d33-40d9-a60e-d4139cfbfaae" data-prompts='["An older American woman walking up a suburban driveway carrying two grocery bags, natural afternoon light, modest Midwestern home in the background, photorealistic", "Close-up of sensible walking shoes on a driveway, late afternoon sun, implying comfortable mobility, photorealistic", "A woman in her late sixties smiling quietly on her porch step, small moment of relief, warm evening light, photorealistic"]' data-selected="0" data-slot-key="media_5.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"An older American woman walking up a suburban driveway carrying two grocery bags"</div></div>
-<p>I am suspicious of supplements. Forty-one years of pharma reps walking onto the floor with donuts taught me to read labels the way a prosecutor reads a deposition. I wanted the methylated B forms. I wanted the full dose of alpha-lipoic acid. I wanted no filler fairy dust.</p>
-<p>I ordered three different formulas online and lined them up on my kitchen table. The one I kept taking was called <strong>Regen+</strong>. It was the only bottle whose label matched, ingredient for ingredient and milligram for milligram, what the biochemistry chapter said a dormant nerve actually needed.</p>
-<p>I was not expecting miracles. I was expecting — at best — the burning at two in the morning to go from a scream to a murmur. That is what happened in the first weeks. I slept through the night for the first time since October.</p>
-<p>Around week six I was carrying groceries up from the car and realized halfway up the driveway that <u>I had not thought about my feet once</u>. That was the first time in three years I had not thought about my feet. I sat down on the porch step and cried for about ten minutes.</p>
-<p>By month three the numb patch on the outside of my right heel — the one the neurologist pressed with a pin and said would never come back — started feeling the pin again. Not fully. But <strong>it was not dead</strong>. It had been dormant. Exactly like the textbook said.</p>
-<p>I am not telling you this is a cure. I will not use that word because I spent four decades watching that word get abused. I am telling you the nerve was not finished. It was <strong>sleeping, starving, and waiting</strong> for the raw material the cheap bottle did not contain.</p>
+<p style="position: relative;">I am suspicious of supplements. Forty-one years of pharma reps walking onto the floor with donuts taught me to read labels the way a prosecutor reads a deposition. I wanted the methylated B forms. I wanted the full dose of alpha-lipoic acid. I wanted no filler fairy dust.</p>
+<p style="position: relative;">I ordered three different formulas online and lined them up on my kitchen table. The one I kept taking was called <strong>Regen+</strong>. It was the only bottle whose label matched, ingredient for ingredient and milligram for milligram, what the biochemistry chapter said a dormant nerve actually needed.</p>
+<p style="position: relative;">I was not expecting miracles. I was expecting — at best — the burning at two in the morning to go from a scream to a murmur. That is what happened in the first weeks. I slept through the night for the first time since October.</p>
+<p style="position: relative;">Around week six I was carrying groceries up from the car and realized halfway up the driveway that <u>I had not thought about my feet once</u>. That was the first time in three years I had not thought about my feet. I sat down on the porch step and cried for about ten minutes.</p>
+<p style="position: relative;">By month three the numb patch on the outside of my right heel — the one the neurologist pressed with a pin and said would never come back — started feeling the pin again. Not fully. But <strong>it was not dead</strong>. It had been dormant. Exactly like the textbook said.</p>
+<p style="position: relative;">I am not telling you this is a cure. I will not use that word because I spent four decades watching that word get abused. I am telling you the nerve was not finished. It was <strong>sleeping, starving, and waiting</strong> for the raw material the cheap bottle did not contain.</p>
 <!-- H2 #5 — the decision / price reveal -->
-<h2>The Patients Who Refuse To Be Shuffling Parents</h2>
+<h2 style="position: relative;">The Patients Who Refuse To Be Shuffling Parents</h2>
 <div class="v2-media-slot" data-job-id="aafd611d-2d33-40d9-a60e-d4139cfbfaae" data-prompts="[&quot;An older American man sitting on the exam table in a neurologist's office, holding a small prescription bottle, looking quietly resigned, photorealistic&quot;, &quot;Close-up of a prescription bottle in weathered hands, clinical setting, soft lighting, photorealistic&quot;, &quot;A couple in their late sixties walking out of a medical office together, holding hands, uncertain expressions, natural daylight, photorealistic&quot;]" data-selected="0" data-slot-key="media_6.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"An older American man sitting on the exam table in a neurologist's office, holdi"</div></div>
-<p>I talk to a lot of neuropathy patients now. Not from behind a nurse station — from across a kitchen table at church, at the grocery store, on the phone at eleven at night when the burning wakes someone up and they remember a nurse once told them the damage was permanent.</p>
-<p>Almost every single one says the same thing. <strong>I am terrified of becoming my mother</strong>. Or my father. Of the shuffle. Of the walker. Of the grandchildren learning to speak gently to me the way I learned to speak gently to my own parent before the end.</p>
-<p>That fear is not vanity. That fear is <u>an accurate read of what usually happens</u> if you accept the permanent verdict and nothing else. I watched it on the ward a thousand times. The nerve stays dormant, the muscles atrophy around it, the balance goes, the fall comes, and the fall changes everything.</p>
-<p>But dormant is a window. Dormant does not stay dormant forever in either direction. If you feed the nerve the raw material, it can wake. If you do not, the muscles around it shrink and the window closes. That is just biology. That is the part the fifteen-minute visit does not say.</p>
-<p>The man or woman I am writing this for is the one who walked out of a neurologist's office last Tuesday with a shrug and a pill bottle. You are not imagining the burning. You are not imagining the shuffle starting. And you are <strong>not past the window yet</strong>.</p>
+<p style="position: relative;">I talk to a lot of neuropathy patients now. Not from behind a nurse station — from across a kitchen table at church, at the grocery store, on the phone at eleven at night when the burning wakes someone up and they remember a nurse once told them the damage was permanent.</p>
+<p style="position: relative;">Almost every single one says the same thing. <strong>I am terrified of becoming my mother</strong>. Or my father. Of the shuffle. Of the walker. Of the grandchildren learning to speak gently to me the way I learned to speak gently to my own parent before the end.</p>
+<p style="position: relative;">That fear is not vanity. That fear is <u>an accurate read of what usually happens</u> if you accept the permanent verdict and nothing else. I watched it on the ward a thousand times. The nerve stays dormant, the muscles atrophy around it, the balance goes, the fall comes, and the fall changes everything.</p>
+<p style="position: relative;">But dormant is a window. Dormant does not stay dormant forever in either direction. If you feed the nerve the raw material, it can wake. If you do not, the muscles around it shrink and the window closes. That is just biology. That is the part the fifteen-minute visit does not say.</p>
+<p style="position: relative;">The man or woman I am writing this for is the one who walked out of a neurologist's office last Tuesday with a shrug and a pill bottle. You are not imagining the burning. You are not imagining the shuffle starting. And you are <strong>not past the window yet</strong>.</p>
 <!-- ★ CTA #1 -->
 <a class="cta-button" href="https://terica-store.com/click">Check Availability</a>
 <!-- H2 #6 — community / testimonials -->
-<h2>Why I Will Not Promise You A Cure</h2>
+<h2 style="position: relative;">Why I Will Not Promise You A Cure</h2>
 <div class="v2-media-slot" data-job-id="aafd611d-2d33-40d9-a60e-d4139cfbfaae" data-prompts="[&quot;Close-up of a Regen+ supplement bottle on a modest wooden kitchen table beside a glass of water and a folded morning newspaper, natural morning light, photorealistic&quot;, &quot;Overhead shot of a supplement bottle, a notebook with handwritten notes, and reading glasses on a kitchen table, warm light, photorealistic&quot;, &quot;An older woman's hand reaching for a supplement bottle on a nightstand, soft morning light through curtains, photorealistic&quot;]" data-selected="0" data-slot-key="media_7.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Close-up of a Regen+ supplement bottle on a modest wooden kitchen table beside a"</div></div>
-<p>I watched four decades of cure promises wreck people. Cure is a word that makes someone stop doing the other things that matter — the walking, the blood sugar, the foot inspections, the balance work. I will not use it. I refuse it the same way I refused my own prescription.</p>
-<p>What I will tell you is this. A dormant nerve, given the right raw material and enough time, often does what a dormant nerve does. It <strong>starts firing again</strong>. Imperfectly. Partially. Unevenly. But firing. That is not a cure. That is a cell doing what cells do when you finally feed them.</p>
-<p>Your nerves are probably not dead. They are probably dormant. Starved of the methylated forms, starved of the antioxidants that protect the coating, <u>waiting for a different bottle</u> than the one you tried from the big-box pharmacy three years ago and gave up on.</p>
+<p style="position: relative;">I watched four decades of cure promises wreck people. Cure is a word that makes someone stop doing the other things that matter — the walking, the blood sugar, the foot inspections, the balance work. I will not use it. I refuse it the same way I refused my own prescription.</p>
+<p style="position: relative;">What I will tell you is this. A dormant nerve, given the right raw material and enough time, often does what a dormant nerve does. It <strong>starts firing again</strong>. Imperfectly. Partially. Unevenly. But firing. That is not a cure. That is a cell doing what cells do when you finally feed them.</p>
+<p style="position: relative;">Your nerves are probably not dead. They are probably dormant. Starved of the methylated forms, starved of the antioxidants that protect the coating, <u>waiting for a different bottle</u> than the one you tried from the big-box pharmacy three years ago and gave up on.</p>
 <!-- H2 #7 — features / what makes it different -->
-<h2>What Is Actually In The Bottle</h2>
+<h2 style="position: relative;">What Is Actually In The Bottle</h2>
 <div class="v2-media-slot" data-job-id="aafd611d-2d33-40d9-a60e-d4139cfbfaae" data-prompts='["Macro close-up of a supplement label showing ingredient list with clear readable text, soft even lighting, photorealistic", "Hands of an older woman holding a supplement bottle up to a window to read the label, natural light, photorealistic", "Flat lay of supplement capsules, a label magnifying glass, and a biochemistry textbook, kitchen table, photorealistic"]' data-selected="0" data-slot-key="media_8.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_8.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Macro close-up of a supplement label showing ingredient list with clear readable"</div></div>
-<p>I will not list every ingredient because the label does that better than I can. I will tell you the five things that made me keep the bottle on my counter after lining up three of them side by side and reading each one like a prosecutor.</p>
-<p>Methylated B12 the aging gut can actually absorb without converting</p>
-<p>Full therapeutic dose of stabilized alpha-lipoic acid per single serving</p>
-<p>Methylfolate rather than cheap folic acid the liver struggles with</p>
-<p>Benfotiamine, the fat-soluble thiamine that actually reaches damaged nerve tissue</p>
-<p>Botanical cofactors cited quietly in older neurology footnotes for decades</p>
+<p style="position: relative;">I will not list every ingredient because the label does that better than I can. I will tell you the five things that made me keep the bottle on my counter after lining up three of them side by side and reading each one like a prosecutor.</p>
+<p style="position: relative;">Methylated B12 the aging gut can actually absorb without converting</p>
+<p style="position: relative;">Full therapeutic dose of stabilized alpha-lipoic acid per single serving</p>
+<p style="position: relative;">Methylfolate rather than cheap folic acid the liver struggles with</p>
+<p style="position: relative;">Benfotiamine, the fat-soluble thiamine that actually reaches damaged nerve tissue</p>
+<p style="position: relative;">Botanical cofactors cited quietly in older neurology footnotes for decades</p>
 <!-- ★ CTA #2 -->
 <a class="cta-button" href="https://terica-store.com/click">Check Availability</a>
 <!-- H2 #8 — final urgency / how to order -->
-<h2>The Letter I Wish Someone Had Handed Me</h2>
+<h2 style="position: relative;">The Letter I Wish Someone Had Handed Me</h2>
 <div class="v2-media-slot" data-job-id="aafd611d-2d33-40d9-a60e-d4139cfbfaae" data-prompts='["An older American woman writing a handwritten letter at her kitchen table, reading glasses on, soft afternoon light, photorealistic", "Close-up of a handwritten letter on lined paper beside a supplement bottle and a cup of tea, warm domestic light, photorealistic", "A grandmother and a middle-aged adult child sitting together at a kitchen table, quiet conversation, soft natural light, photorealistic"]' data-selected="0" data-slot-key="media_9.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_9.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"An older American woman writing a handwritten letter at her kitchen table, readi"</div></div>
-<p>If I could go back to the week before my feet first started burning at two in the morning — the week before I caught my reflection doing my father's shuffle — I would hand myself the letter I am handing you now. I would be gentler with myself than the neurologist was.</p>
-<p>I would say — Linda, the word permanent is being used on you too early. The chart is wrong in the way charts are usually wrong, which is by <strong>leaving out the part that would take longer to explain</strong> than the appointment allows. Your nerve is probably dormant, not dead.</p>
-<p>I would say — do not walk into the pharmacy and buy the cheap B-complex. It will fail you and you will believe the failure is about supplements in general, and you will stop looking. The failure is about <u>the wrong form of B12</u> for a gut that has crossed sixty-five.</p>
-<p>I would say — the window is open right now. The muscles around the dormant nerve have not atrophied yet. You have not had the fall yet. The shuffle is starting but it has not become the whole way you walk. <strong>This is the moment the raw material matters most</strong>.</p>
-<p>I would say — you are going to meet a lot of people who tell you to accept it. Some of them will be wearing white coats. Most of them mean well. Almost none of them have read the chapter of the textbook that explains what dormant actually means at the cellular level.</p>
-<p>And then I would hand myself the bottle. Not as a cure. Not as magic. As the raw material a living, sleeping cell has been asking for quietly while the rest of the protocol argued about pain management. The nerve was never dead. It was <strong>waiting to be fed</strong>.</p>
+<p style="position: relative;">If I could go back to the week before my feet first started burning at two in the morning — the week before I caught my reflection doing my father's shuffle — I would hand myself the letter I am handing you now. I would be gentler with myself than the neurologist was.</p>
+<p style="position: relative;">I would say — Linda, the word permanent is being used on you too early. The chart is wrong in the way charts are usually wrong, which is by <strong>leaving out the part that would take longer to explain</strong> than the appointment allows. Your nerve is probably dormant, not dead.</p>
+<p style="position: relative;">I would say — do not walk into the pharmacy and buy the cheap B-complex. It will fail you and you will believe the failure is about supplements in general, and you will stop looking. The failure is about <u>the wrong form of B12</u> for a gut that has crossed sixty-five.</p>
+<p style="position: relative;">I would say — the window is open right now. The muscles around the dormant nerve have not atrophied yet. You have not had the fall yet. The shuffle is starting but it has not become the whole way you walk. <strong>This is the moment the raw material matters most</strong>.</p>
+<p style="position: relative;">I would say — you are going to meet a lot of people who tell you to accept it. Some of them will be wearing white coats. Most of them mean well. Almost none of them have read the chapter of the textbook that explains what dormant actually means at the cellular level.</p>
+<p style="position: relative;">And then I would hand myself the bottle. Not as a cure. Not as magic. As the raw material a living, sleeping cell has been asking for quietly while the rest of the protocol argued about pain management. The nerve was never dead. It was <strong>waiting to be fed</strong>.</p>
 <!-- ★ CTA #3 -->
 <a class="cta-button" href="https://terica-store.com/click">Check Availability</a>
 <!-- SIGNATURE -->
@@ -226,7 +481,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="sidebar-product">
 <span class="product-badge">Regen+ Unlock the Power of Healthy Nerves</span>
 <div class="v2-media-slot" data-job-id="aafd611d-2d33-40d9-a60e-d4139cfbfaae" data-prompts='["An older American woman walking comfortably on a quiet suburban sidewalk at golden hour, relaxed posture, no cane, photorealistic", "Close-up of confident steady footsteps on an autumn sidewalk, fallen leaves, warm evening light, photorealistic", "A woman in her late sixties laughing with a grandchild on a front porch, steady on her feet, warm natural light, photorealistic"]' data-selected="0" data-slot-key="media_10.url" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_10.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"An older American woman walking comfortably on a quiet suburban sidewalk at gold"</div></div>
-<p class="sidebar-tagline">Excellent</p>
+<p class="sidebar-tagline" style="position: relative;">Excellent</p>
 <div class="sidebar-stars">
 <span class="stars">★★★★★</span>
 <span class="rating-num">4.87</span>
@@ -255,7 +510,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>

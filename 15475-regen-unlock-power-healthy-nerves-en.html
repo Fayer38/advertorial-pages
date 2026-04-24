@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>I Refused the Gabapentin — My Feet Stopped Burning</title>
@@ -125,6 +122,16 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -133,7 +140,255 @@ t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "wb35vpdfk1");
 </script>
-<script async="" src="https://terica-store.com/tracker.js"></script>
+<!-- ext-script-stripped -->
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
@@ -149,11 +404,11 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <a href="https://terica-store.com/click"><span>Nerve Health</span></a>
 </nav>
 <!-- HEADLINE AREA -->
-<h1 class="article-headline">After 41 Years Handing Out Gabapentin, I Discovered My Nerves Weren't Dead — Only Dormant</h1>
-<p class="article-dek">A retired Ohio nurse explains the quiet lie behind every neuropathy diagnosis, and the 2am discovery that changed everything.</p>
+<h1 class="article-headline" style="position: relative;">After 41 Years Handing Out Gabapentin, I Discovered My Nerves Weren't Dead — Only Dormant</h1>
+<p class="article-dek" style="position: relative;">A retired Ohio nurse explains the quiet lie behind every neuropathy diagnosis, and the 2am discovery that changed everything.</p>
 <!-- HERO IMAGE -->
 <figure class="hero-media">
-<div class="v2-media-slot" data-job-id="55740c58-bf85-49f5-b2d4-ff43b2613683" data-prompts="[&quot;Retired American nurse in her late sixties, sitting on the edge of her bed at 2am holding her bare foot, kitchen nightlight visible in background, subtle grimace of burning pain, photorealistic&quot;, &quot;Close-up of an older woman's bare feet on cold bathroom tile in the middle of the night, soft moonlight, ankle visibly reddened, photorealistic&quot;, &quot;Warm portrait of a 68-year-old woman in a cardigan standing in her Ohio kitchen at dawn, relieved expression, coffee mug in hand, sunrise through the window, photorealistic&quot;]" data-selected="0" data-slot-key="media.hero" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.hero</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Retired American nurse in her late sixties, sitting on the edge of her bed at 2a"</div></div>
+<img alt="" data-copy="media.hero:attr:src" data-prompts="[&quot;Retired American nurse in her late sixties, sitting on the edge of her bed at 2am holding her bare foot, kitchen nightlight visible in background, subtle grimace of burning pain, photorealistic&quot;, &quot;Close-up of an older woman's bare feet on cold bathroom tile in the middle of the night, soft moonlight, ankle visibly reddened, photorealistic&quot;, &quot;Warm portrait of a 68-year-old woman in a cardigan standing in her Ohio kitchen at dawn, relieved expression, coffee mug in hand, sunrise through the window, photorealistic&quot;]" data-slot-key="media.hero" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/cf641f8d/batch_03aa1c99b1f6_0_1_9e435c.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 10; object-fit: cover; margin: 8px 0px;"/>
 </figure>
 <!-- BYLINE -->
 <div class="article-byline">
@@ -163,116 +418,116 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <!-- ARTICLE BODY -->
 <section class="article-body">
-<p>My father used to shuffle across the kitchen at 2am looking for a glass of water he'd never actually drink. Three winters ago, at 65 years old, I caught my own reflection doing the exact same walk. My feet were on fire. The burning had crossed my ankles. I was becoming him.</p>
-<p>For 41 years I worked the med-surg floor of a hospital outside Cleveland. I handed out <strong>gabapentin to hundreds of neuropathy patients</strong> and I watched every single one get worse. The numbness climbed past the ankle. Then came the falls. Then the wheelchair. Then the resignation in their eyes that I'd now started seeing in my own bathroom mirror every morning.</p>
+<p style="position: relative;">My father used to shuffle across the kitchen at 2am looking for a glass of water he'd never actually drink. Three winters ago, at 65 years old, I caught my own reflection doing the exact same walk. My feet were on fire. The burning had crossed my ankles. I was becoming him.</p>
+<p style="position: relative;">For 41 years I worked the med-surg floor of a hospital outside Cleveland. I handed out <strong>gabapentin to hundreds of neuropathy patients</strong> and I watched every single one get worse. The numbness climbed past the ankle. Then came the falls. Then the wheelchair. Then the resignation in their eyes that I'd now started seeing in my own bathroom mirror every morning.</p>
 <ul class="problem-list">
-<li>Do your feet burn at night?</li>
-<li>Are your hands going numb gripping things?</li>
-<li>Have you started shuffling to avoid falling?</li>
+<li style="position: relative;">Do your feet burn at night?</li>
+<li style="position: relative;">Are your hands going numb gripping things?</li>
+<li style="position: relative;">Have you started shuffling to avoid falling?</li>
 </ul>
-<p>Right now, millions of Americans over 55 are being told the exact same half-lie I spent four decades repeating: your nerve damage is permanent, here's a pill, learn to live with it. I'm writing this because that sentence is <u>not the whole truth</u>.</p>
-<h2>How My Own Burning Feet Started</h2>
-<p>I was 65 when the tingling in my right foot started. I ignored it for eighteen months — that's what nurses do. Then the 2am burning began, the kind that drives you out of bed onto the cold bathroom tile just to feel anything different. My husband Ray found me there one February night, crying on the floor, convinced I was finished.</p>
-<p>I stopped walking the dog. I stopped kneeling in my garden. I made my daughter reschedule Thanksgiving because I couldn't stand long enough to cook. Ray started doing the grocery runs I'd done for forty years. The worst part wasn't the pain — it was watching him watch me. <strong>The same quiet pity I'd given my father</strong> was now crossing the dinner table in the other direction. I had become the parent my kids would dread visiting.</p>
-<p>My own doctor wrote me a gabapentin script in February. I took it home. I held it over the kitchen trash for a long moment. Then I threw it away and drove to my storage unit instead. I pulled out the biochemistry textbooks I'd kept since nursing school in 1982 — and I found something the neurologist hadn't told me.</p>
+<p style="position: relative;">Right now, millions of Americans over 55 are being told the exact same half-lie I spent four decades repeating: your nerve damage is permanent, here's a pill, learn to live with it. I'm writing this because that sentence is <u>not the whole truth</u>.</p>
+<h2 style="position: relative;">How My Own Burning Feet Started</h2>
+<p style="position: relative;">I was 65 when the tingling in my right foot started. I ignored it for eighteen months — that's what nurses do. Then the 2am burning began, the kind that drives you out of bed onto the cold bathroom tile just to feel anything different. My husband Ray found me there one February night, crying on the floor, convinced I was finished.</p>
+<p style="position: relative;">I stopped walking the dog. I stopped kneeling in my garden. I made my daughter reschedule Thanksgiving because I couldn't stand long enough to cook. Ray started doing the grocery runs I'd done for forty years. The worst part wasn't the pain — it was watching him watch me. <strong>The same quiet pity I'd given my father</strong> was now crossing the dinner table in the other direction. I had become the parent my kids would dread visiting.</p>
+<p style="position: relative;">My own doctor wrote me a gabapentin script in February. I took it home. I held it over the kitchen trash for a long moment. Then I threw it away and drove to my storage unit instead. I pulled out the biochemistry textbooks I'd kept since nursing school in 1982 — and I found something the neurologist hadn't told me.</p>
 <div class="types-block">
-<h2>The 4 Types of Neuropathy You Were Never Told About</h2>
-<p>Here's what they don't explain in the ten-minute neurologist visit. Not all peripheral neuropathy is the same — and the distinction matters enormously, because the underlying cause decides whether your nerves are truly gone or simply starved.</p>
+<h2 style="position: relative;">The 4 Types of Neuropathy You Were Never Told About</h2>
+<p style="position: relative;">Here's what they don't explain in the ten-minute neurologist visit. Not all peripheral neuropathy is the same — and the distinction matters enormously, because the underlying cause decides whether your nerves are truly gone or simply starved.</p>
 <figure class="article-media narrow">
-<div class="v2-media-slot" data-job-id="55740c58-bf85-49f5-b2d4-ff43b2613683" data-prompts="[&quot;Clinical overhead illustration-style photograph of four medical file folders labeled with neuropathy categories on a wooden nurse's desk, stethoscope nearby, photorealistic&quot;, &quot;Older American man and woman in separate portraits side by side, both looking concerned at their hands and feet, studio lighting, photorealistic&quot;, &quot;Close-up of an elderly person's hand being examined by a gloved clinician with a small tuning fork on the fingertip, soft clinic lighting, photorealistic&quot;]" data-selected="0" data-slot-key="media.types" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.types</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Clinical overhead illustration-style photograph of four medical file folders lab"</div></div>
+<img alt="" data-copy="media.types:attr:src" data-prompts="[&quot;Clinical overhead illustration-style photograph of four medical file folders labeled with neuropathy categories on a wooden nurse's desk, stethoscope nearby, photorealistic&quot;, &quot;Older American man and woman in separate portraits side by side, both looking concerned at their hands and feet, studio lighting, photorealistic&quot;, &quot;Close-up of an elderly person's hand being examined by a gloved clinician with a small tuning fork on the fingertip, soft clinic lighting, photorealistic&quot;]" data-slot-key="media.types" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/cf641f8d/batch_03aa1c99b1f6_1_1_db50c0.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
 <ul class="types-list">
-<li>
+<li style="position: relative;">
 <span class="type-title">DIABETIC SENSORY NEUROPATHY</span>
 <span class="type-text">The most common form, caused by prolonged blood sugar damage starving the tiny capillaries that feed your nerve fibers in the feet and hands.</span>
 </li>
-<li>
+<li style="position: relative;">
 <span class="type-title">POST-CHEMOTHERAPY INDUCED NEUROPATHY</span>
 <span class="type-text">Triggered by certain chemo drugs that bluntly attack healthy nerve cells alongside cancer cells, often leaving survivors with burning hands, feet, and profound cold sensitivity for years.</span>
 </li>
-<li>
+<li style="position: relative;">
 <span class="type-title">AGE-RELATED IDIOPATHIC NEUROPATHY</span>
 <span class="type-text">The quiet one doctors label idiopathic because they can't pin a cause. It shows up after 60 as tingling, numb toes, and that unsteady gait you dread.</span>
 </li>
-<li>
+<li style="position: relative;">
 <span class="type-title">B-VITAMIN DEFICIENCY NEUROPATHY</span>
 <span class="type-text">Often missed entirely by doctors, this form stems from depleted B1, B6, and B12 levels — vitamins your body stops absorbing properly somewhere between your fifties and sixties.</span>
 </li>
 </ul>
 </div>
-<h2>What Your Neurologist Will Offer You First</h2>
-<p>Walk into any neurology office in America at 68 and you'll leave with one of three things. A gabapentin prescription. A Lyrica prescription. Or a shrug and a suggestion to try duloxetine. Maybe they'll add a lidocaine patch for the burning. Maybe they'll tell you to take a cheap B-complex from the drugstore. Most will send you home with the same flat phrase I heard thirty thousand times in my career — <strong>learn to live with it</strong>.</p>
+<h2 style="position: relative;">What Your Neurologist Will Offer You First</h2>
+<p style="position: relative;">Walk into any neurology office in America at 68 and you'll leave with one of three things. A gabapentin prescription. A Lyrica prescription. Or a shrug and a suggestion to try duloxetine. Maybe they'll add a lidocaine patch for the burning. Maybe they'll tell you to take a cheap B-complex from the drugstore. Most will send you home with the same flat phrase I heard thirty thousand times in my career — <strong>learn to live with it</strong>.</p>
 <figure class="article-media">
-<div class="v2-media-slot" data-job-id="55740c58-bf85-49f5-b2d4-ff43b2613683" data-prompts='["Assortment of prescription pill bottles and lidocaine patches on a worn kitchen table, reading glasses beside them, photorealistic", "Tired senior man sitting in a pharmacy waiting area holding an orange pill bottle, fluorescent lighting, photorealistic", "Close-up of a hand spilling gabapentin capsules from a bottle into a trash can, photorealistic"]' data-selected="0" data-slot-key="media.solutions" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.solutions</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Assortment of prescription pill bottles and lidocaine patches on a worn kitchen "</div></div>
+<img alt="" data-copy="media.solutions:attr:src" data-prompts='["Assortment of prescription pill bottles and lidocaine patches on a worn kitchen table, reading glasses beside them, photorealistic", "Tired senior man sitting in a pharmacy waiting area holding an orange pill bottle, fluorescent lighting, photorealistic", "Close-up of a hand spilling gabapentin capsules from a bottle into a trash can, photorealistic"]' data-slot-key="media.solutions" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/cf641f8d/batch_03aa1c99b1f6_2_0_e50729.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
-<p>Here's the dirty secret I watched play out on my ward for four decades. <strong>Gabapentin doesn't heal nerves</strong> — it only dulls the signal the damaged nerves are screaming. The grogginess arrives in week one. The weight gain by month three. The dizziness and falls shortly after. The cheap drugstore B-complex uses synthetic cyanocobalamin your aging gut can barely absorb. The lidocaine patch wears off in eight hours. Every single one of these is a muzzle, not a repair.</p>
-<p>That's when I stopped asking what would mask my symptoms and started asking the real question a nurse should have asked forty years ago. <u>Are these nerves actually dead, or are they just asleep?</u> Because those are two completely different problems — and only one of them has a protocol.</p>
-<h2>6 Reasons I Chose Regen+ Over the Prescription Pad</h2>
-<p>I spent four months reading studies, cross-checking clinical research, and calling former colleagues. Here is exactly why I keep this bottle on my counter.</p>
+<p style="position: relative;">Here's the dirty secret I watched play out on my ward for four decades. <strong>Gabapentin doesn't heal nerves</strong> — it only dulls the signal the damaged nerves are screaming. The grogginess arrives in week one. The weight gain by month three. The dizziness and falls shortly after. The cheap drugstore B-complex uses synthetic cyanocobalamin your aging gut can barely absorb. The lidocaine patch wears off in eight hours. Every single one of these is a muzzle, not a repair.</p>
+<p style="position: relative;">That's when I stopped asking what would mask my symptoms and started asking the real question a nurse should have asked forty years ago. <u>Are these nerves actually dead, or are they just asleep?</u> Because those are two completely different problems — and only one of them has a protocol.</p>
+<h2 style="position: relative;">6 Reasons I Chose Regen+ Over the Prescription Pad</h2>
+<p style="position: relative;">I spent four months reading studies, cross-checking clinical research, and calling former colleagues. Here is exactly why I keep this bottle on my counter.</p>
 <div class="reason">
 <span class="reason-num">Reason 01</span>
-<h3>It Feeds Dormant Nerves, Not Drugs Them</h3>
+<h3 style="position: relative;">It Feeds Dormant Nerves, Not Drugs Them</h3>
 <figure class="reason-img">
-<div class="v2-media-slot" data-job-id="55740c58-bf85-49f5-b2d4-ff43b2613683" data-prompts="[&quot;Macro photograph of nerve fibers waking up, glowing warm light traveling along a stylized peripheral nerve, scientific illustration style, photorealistic&quot;, &quot;Older woman wiggling her bare toes on a hardwood floor with a relieved smile, morning light, photorealistic&quot;, &quot;Open supplement bottle on a kitchen counter beside a biochemistry textbook, notes scribbled in a nurse's notebook, photorealistic&quot;]" data-selected="0" data-slot-key="media.reason_1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.reason_1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Macro photograph of nerve fibers waking up, glowing warm light traveling along a"</div></div>
+<img alt="" data-copy="media.reason_1:attr:src" data-prompts="[&quot;Macro photograph of nerve fibers waking up, glowing warm light traveling along a stylized peripheral nerve, scientific illustration style, photorealistic&quot;, &quot;Older woman wiggling her bare toes on a hardwood floor with a relieved smile, morning light, photorealistic&quot;, &quot;Open supplement bottle on a kitchen counter beside a biochemistry textbook, notes scribbled in a nurse's notebook, photorealistic&quot;]" data-slot-key="media.reason_1" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/cf641f8d/batch_03aa1c99b1f6_3_0_d48a63.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
-<p>The core insight I found buried in my old textbooks is this. Most nerve fibers labeled damaged are actually <strong>starved of the precise nutrients</strong> needed to fire. Regen+ delivers the exact cofactors — methylated B vitamins, R-alpha lipoic acid, benfotiamine — that your aging gut has quietly stopped absorbing. You're not medicating a dead nerve. You're feeding a sleeping one.</p>
+<p style="position: relative;">The core insight I found buried in my old textbooks is this. Most nerve fibers labeled damaged are actually <strong>starved of the precise nutrients</strong> needed to fire. Regen+ delivers the exact cofactors — methylated B vitamins, R-alpha lipoic acid, benfotiamine — that your aging gut has quietly stopped absorbing. You're not medicating a dead nerve. You're feeding a sleeping one.</p>
 </div>
 <div class="reason">
 <span class="reason-num">Reason 02</span>
-<h3>Benfotiamine Actually Reaches the Nerve</h3>
+<h3 style="position: relative;">Benfotiamine Actually Reaches the Nerve</h3>
 <figure class="reason-img">
-<div class="v2-media-slot" data-job-id="55740c58-bf85-49f5-b2d4-ff43b2613683" data-prompts='["Scientific cross-section illustration of a nerve cell membrane with fat-soluble benfotiamine molecules crossing into it, photorealistic rendering", "Comparison split image of a water-soluble tablet dissolving versus a fat-soluble capsule being absorbed, clean lab lighting, photorealistic", "Close-up of a B1 supplement capsule held between fingers of an elderly woman, natural window light, photorealistic"]' data-selected="0" data-slot-key="media.reason_2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.reason_2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Scientific cross-section illustration of a nerve cell membrane with fat-soluble "</div></div>
+<img alt="" data-copy="media.reason_2:attr:src" data-prompts='["Scientific cross-section illustration of a nerve cell membrane with fat-soluble benfotiamine molecules crossing into it, photorealistic rendering", "Comparison split image of a water-soluble tablet dissolving versus a fat-soluble capsule being absorbed, clean lab lighting, photorealistic", "Close-up of a B1 supplement capsule held between fingers of an elderly woman, natural window light, photorealistic"]' data-slot-key="media.reason_2" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/cf641f8d/batch_03aa1c99b1f6_4_1_ded2ba.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
-<p>The B1 in your drugstore multivitamin is water-soluble — your body pushes most of it out in urine within hours. Benfotiamine is the <strong>fat-soluble form</strong> that crosses nerve cell membranes and accumulates where the damage is happening. It's the difference between standing outside the burning house with a garden hose or actually walking in with the water. That distinction alone ended my two-decade cheap-B-complex betrayal.</p>
+<p style="position: relative;">The B1 in your drugstore multivitamin is water-soluble — your body pushes most of it out in urine within hours. Benfotiamine is the <strong>fat-soluble form</strong> that crosses nerve cell membranes and accumulates where the damage is happening. It's the difference between standing outside the burning house with a garden hose or actually walking in with the water. That distinction alone ended my two-decade cheap-B-complex betrayal.</p>
 </div>
 <div class="reason">
 <span class="reason-num">Reason 03</span>
-<h3>Methylcobalamin, Not Cheap Cyanocobalamin</h3>
+<h3 style="position: relative;">Methylcobalamin, Not Cheap Cyanocobalamin</h3>
 <figure class="reason-img">
-<div class="v2-media-slot" data-job-id="55740c58-bf85-49f5-b2d4-ff43b2613683" data-prompts='["Senior woman over 60 reading a supplement label carefully in her kitchen, reading glasses on nose, photorealistic", "Stylized molecular diagram of methylcobalamin versus cyanocobalamin side by side on a laboratory screen, photorealistic", "Elderly hand placing a single red capsule onto a tongue with a glass of water, soft morning light, photorealistic"]' data-selected="0" data-slot-key="media.reason_3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.reason_3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Senior woman over 60 reading a supplement label carefully in her kitchen, readin"</div></div>
+<img alt="" data-copy="media.reason_3:attr:src" data-prompts='["Senior woman over 60 reading a supplement label carefully in her kitchen, reading glasses on nose, photorealistic", "Stylized molecular diagram of methylcobalamin versus cyanocobalamin side by side on a laboratory screen, photorealistic", "Elderly hand placing a single red capsule onto a tongue with a glass of water, soft morning light, photorealistic"]' data-slot-key="media.reason_3" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/cf641f8d/batch_03aa1c99b1f6_5_0_b784a7.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
-<p>After 60, roughly a third of us lose the stomach acid needed to convert synthetic cyanocobalamin into a form nerves can use. The methylcobalamin inside Regen+ is the <strong>pre-activated form</strong> your cells recognize immediately — no conversion required. For anyone on metformin, proton pump inhibitors, or simply carrying age-related absorption issues, this single substitution took me from hopeless to genuinely curious within three weeks.</p>
+<p style="position: relative;">After 60, roughly a third of us lose the stomach acid needed to convert synthetic cyanocobalamin into a form nerves can use. The methylcobalamin inside Regen+ is the <strong>pre-activated form</strong> your cells recognize immediately — no conversion required. For anyone on metformin, proton pump inhibitors, or simply carrying age-related absorption issues, this single substitution took me from hopeless to genuinely curious within three weeks.</p>
 </div>
 <div class="reason">
 <span class="reason-num">Reason 04</span>
-<h3>Stabilized R-Alpha Lipoic Acid Inside</h3>
+<h3 style="position: relative;">Stabilized R-Alpha Lipoic Acid Inside</h3>
 <figure class="reason-img">
-<div class="v2-media-slot" data-job-id="55740c58-bf85-49f5-b2d4-ff43b2613683" data-prompts='["German diabetes clinic exterior with ivy-covered brick and a modest signpost, overcast daylight, photorealistic", "Laboratory beaker with golden R-alpha lipoic acid solution being held under clinical lighting, photorealistic", "Older woman rubbing her hands together in relief by a sunlit window, subtle warm smile, photorealistic"]' data-selected="0" data-slot-key="media.reason_4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.reason_4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"German diabetes clinic exterior with ivy-covered brick and a modest signpost, ov"</div></div>
+<img alt="" data-copy="media.reason_4:attr:src" data-prompts='["German diabetes clinic exterior with ivy-covered brick and a modest signpost, overcast daylight, photorealistic", "Laboratory beaker with golden R-alpha lipoic acid solution being held under clinical lighting, photorealistic", "Older woman rubbing her hands together in relief by a sunlit window, subtle warm smile, photorealistic"]' data-slot-key="media.reason_4" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/cf641f8d/batch_03aa1c99b1f6_6_0_8d51fa.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
-<p>Regular alpha lipoic acid degrades on the shelf before it ever reaches your bloodstream. Regen+ uses the <strong>stabilized R-isomer</strong> that German diabetes clinics have quietly used for nerve pain for thirty years. It crosses back and forth between fat and water compartments in the nerve, neutralizing the oxidative damage that's been keeping your fibers dormant. This is the exact compound I wished I'd had on my ward in 1998.</p>
+<p style="position: relative;">Regular alpha lipoic acid degrades on the shelf before it ever reaches your bloodstream. Regen+ uses the <strong>stabilized R-isomer</strong> that German diabetes clinics have quietly used for nerve pain for thirty years. It crosses back and forth between fat and water compartments in the nerve, neutralizing the oxidative damage that's been keeping your fibers dormant. This is the exact compound I wished I'd had on my ward in 1998.</p>
 </div>
 <div class="reason">
 <span class="reason-num">Reason 05</span>
-<h3>No Prescription, No Pharmacy Line</h3>
+<h3 style="position: relative;">No Prescription, No Pharmacy Line</h3>
 <figure class="reason-img">
-<div class="v2-media-slot" data-job-id="55740c58-bf85-49f5-b2d4-ff43b2613683" data-prompts='["Plain brown shipping box on a suburban Ohio front porch with autumn leaves around it, photorealistic", "Retired woman opening a cardboard package on her kitchen table, smiling at the unboxed bottle, photorealistic", "Senior hands using a laptop at the kitchen counter placing an online order, cup of tea beside it, photorealistic"]' data-selected="0" data-slot-key="media.reason_5" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.reason_5</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Plain brown shipping box on a suburban Ohio front porch with autumn leaves aroun"</div></div>
+<img alt="" data-copy="media.reason_5:attr:src" data-prompts='["Plain brown shipping box on a suburban Ohio front porch with autumn leaves around it, photorealistic", "Retired woman opening a cardboard package on her kitchen table, smiling at the unboxed bottle, photorealistic", "Senior hands using a laptop at the kitchen counter placing an online order, cup of tea beside it, photorealistic"]' data-slot-key="media.reason_5" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/cf641f8d/batch_03aa1c99b1f6_7_1_d1f868.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
-<p>You don't need to beg a neurologist for a three-month follow-up just to adjust the dose. You don't wait at the pharmacy counter while a teenager argues with your insurance. Regen+ ships to your porch in a plain box. For anyone who has spent the last five years <strong>exhausted by the medical runaround</strong>, this alone is worth the switch. I placed my order from my kitchen on a Sunday.</p>
+<p style="position: relative;">You don't need to beg a neurologist for a three-month follow-up just to adjust the dose. You don't wait at the pharmacy counter while a teenager argues with your insurance. Regen+ ships to your porch in a plain box. For anyone who has spent the last five years <strong>exhausted by the medical runaround</strong>, this alone is worth the switch. I placed my order from my kitchen on a Sunday.</p>
 </div>
 <div class="reason">
 <span class="reason-num">Reason 06</span>
-<h3>A Real Guarantee That Matters</h3>
+<h3 style="position: relative;">A Real Guarantee That Matters</h3>
 <figure class="reason-img">
-<div class="v2-media-slot" data-job-id="55740c58-bf85-49f5-b2d4-ff43b2613683" data-prompts='["Close-up of a printed guarantee certificate on a kitchen table beside a supplement bottle, photorealistic", "Elderly woman in slippers standing confidently on her living room rug, bottle in hand, warm home lighting, photorealistic", "Two hands of a retired couple holding a small supplement bottle together over a breakfast table, photorealistic"]' data-selected="0" data-slot-key="media.reason_6" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.reason_6</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Close-up of a printed guarantee certificate on a kitchen table beside a suppleme"</div></div>
+<img alt="" data-copy="media.reason_6:attr:src" data-prompts='["Close-up of a printed guarantee certificate on a kitchen table beside a supplement bottle, photorealistic", "Elderly woman in slippers standing confidently on her living room rug, bottle in hand, warm home lighting, photorealistic", "Two hands of a retired couple holding a small supplement bottle together over a breakfast table, photorealistic"]' data-slot-key="media.reason_6" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/cf641f8d/batch_03aa1c99b1f6_8_0_513093.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
-<p>After 41 years in medicine, I don't trust anything that won't stand behind its claims. Regen+ comes with a <strong>30-day money-back guarantee</strong> — enough time to feel whether something is quietly waking up inside your feet and fingertips. You try it on your own floor, in your own slippers, at your own 2am. If nothing changes, you send it back — no questions, no hoops.</p>
+<p style="position: relative;">After 41 years in medicine, I don't trust anything that won't stand behind its claims. Regen+ comes with a <strong>30-day money-back guarantee</strong> — enough time to feel whether something is quietly waking up inside your feet and fingertips. You try it on your own floor, in your own slippers, at your own 2am. If nothing changes, you send it back — no questions, no hoops.</p>
 </div>
 <!-- IN-ARTICLE CTA -->
 <div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">Try Regen+ Today</a>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;">Try Regen+ Today</a>
 <span class="cta-sub">30-day money-back guarantee and free US shipping on every order.</span>
 </div>
 <!-- PRODUCT RECOMMENDATION BODY -->
-<h2>Why I Finally Recommend Regen+</h2>
-<p>I didn't find Regen+ in a glossy magazine or a pharmacy rep pamphlet. A former colleague from the neurology floor sent me a bottle after hearing I'd refused my own script. She told me to try it for six weeks before I decided anything. I opened it on the kitchen counter in March and read the label with the same eye I used to audit hospital charts.</p>
+<h2 style="position: relative;">Why I Finally Recommend Regen+</h2>
+<p style="position: relative;">I didn't find Regen+ in a glossy magazine or a pharmacy rep pamphlet. A former colleague from the neurology floor sent me a bottle after hearing I'd refused my own script. She told me to try it for six weeks before I decided anything. I opened it on the kitchen counter in March and read the label with the same eye I used to audit hospital charts.</p>
 <figure class="article-media">
-<div class="v2-media-slot" data-job-id="55740c58-bf85-49f5-b2d4-ff43b2613683" data-prompts="[&quot;Retired nurse in her sixties seated at her kitchen table examining a supplement bottle like she's auditing a chart, reading glasses on, photorealistic&quot;, &quot;Hand holding a Regen+ style supplement bottle in front of an open biochemistry textbook, notebook with handwritten notes, photorealistic&quot;, &quot;Warm overhead shot of a supplement bottle, a mug of coffee, and an open notebook on a rustic Ohio kitchen table, photorealistic&quot;]" data-selected="0" data-slot-key="media.product_rec" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.product_rec</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Retired nurse in her sixties seated at her kitchen table examining a supplement "</div></div>
+<img alt="" data-copy="media.product_rec:attr:src" data-prompts="[&quot;Retired nurse in her sixties seated at her kitchen table examining a supplement bottle like she's auditing a chart, reading glasses on, photorealistic&quot;, &quot;Hand holding a Regen+ style supplement bottle in front of an open biochemistry textbook, notebook with handwritten notes, photorealistic&quot;, &quot;Warm overhead shot of a supplement bottle, a mug of coffee, and an open notebook on a rustic Ohio kitchen table, photorealistic&quot;]" data-slot-key="media.product_rec" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/cf641f8d/batch_03aa1c99b1f6_9_0_4c8c8f.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
-<p>Every single ingredient inside was the <strong>bioavailable form</strong> — not the cheap synthetic your drugstore sells. Methylcobalamin instead of cyanocobalamin. Benfotiamine instead of water-soluble B1. R-alpha lipoic acid, stabilized. N-acetyl-L-carnitine. Vitamin D3. Dosed at levels I'd actually seen in peer-reviewed German and Japanese neuropathy trials. This wasn't another shelf-filler vitamin. It was the <u>exact protocol I'd have written myself</u> if the hospital formulary had allowed it.</p>
-<p>Right now the brand is running a limited inventory window directly from their website. No middlemen, no pharmacy markup. They ship straight to your porch in a plain brown box, and every bottle is backed by the 30-day return. Supplies move fast in April — the neuropathy forums found them two weeks ago.</p>
+<p style="position: relative;">Every single ingredient inside was the <strong>bioavailable form</strong> — not the cheap synthetic your drugstore sells. Methylcobalamin instead of cyanocobalamin. Benfotiamine instead of water-soluble B1. R-alpha lipoic acid, stabilized. N-acetyl-L-carnitine. Vitamin D3. Dosed at levels I'd actually seen in peer-reviewed German and Japanese neuropathy trials. This wasn't another shelf-filler vitamin. It was the <u>exact protocol I'd have written myself</u> if the hospital formulary had allowed it.</p>
+<p style="position: relative;">Right now the brand is running a limited inventory window directly from their website. No middlemen, no pharmacy markup. They ship straight to your porch in a plain brown box, and every bottle is backed by the 30-day return. Supplies move fast in April — the neuropathy forums found them two weeks ago.</p>
 <!-- FINAL IN-ARTICLE CTA — above the signature -->
 <div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">Wake Them Up</a>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;">Wake Them Up</a>
 <span class="cta-sub">30-day guarantee, free US shipping included</span>
 </div>
 <!-- SIGNATURE -->
@@ -286,7 +541,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <aside class="sidebar-col">
 <div class="sticky-product">
 <figure class="sticky-product-media">
-<div class="v2-media-slot" data-job-id="55740c58-bf85-49f5-b2d4-ff43b2613683" data-prompts='["Clean product photography of a nerve support supplement bottle on a white background with soft shadow, photorealistic", "Supplement bottle beside a small bowl of capsules on a marble countertop, natural lighting, photorealistic", "Lifestyle shot of the supplement bottle on a wooden nightstand next to reading glasses and a water glass, morning light, photorealistic"]' data-selected="0" data-slot-key="media.product_card" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.product_card</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Clean product photography of a nerve support supplement bottle on a white backgr"</div></div>
+<img alt="" data-copy="media.product_card:attr:src" data-prompts='["Clean product photography of a nerve support supplement bottle on a white background with soft shadow, photorealistic", "Supplement bottle beside a small bowl of capsules on a marble countertop, natural lighting, photorealistic", "Lifestyle shot of the supplement bottle on a wooden nightstand next to reading glasses and a water glass, morning light, photorealistic"]' data-slot-key="media.product_card" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/cf641f8d/manual_upload-manual-16121e02.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 1 / 1; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 </figure>
 <div class="sticky-product-name">Regen+ Unlock the Power of Healthy Nerves</div>
 <div class="sticky-product-rating">
@@ -294,7 +549,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span class="rating-score">4.87</span>
 <span>14,328 verified reviews</span>
 </div>
-<a class="cta-btn" href="https://terica-store.com/click">
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;">
 <span>Check Availability</span>
 <span class="arrow">→</span>
 </a>
@@ -321,7 +576,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>
