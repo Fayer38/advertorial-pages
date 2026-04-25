@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Multifidus Blackout: Why Your Back Exercises Were Designed to Fail You</title>
+<meta content="A retired contractor uncovers the neurological reason eight years of physical therapy never worked — and the device that finally fixed it." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&amp;family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ll-color-primary: #2990ff;
+  --ll-color-primary-rgb: 20, 147, 18;
+  --ll-color-primary-dark: #0f6a0d;
+  --ll-color-secondary: #e5f1ff;
+  --ll-color-secondary-rgb: 226, 244, 249;
+  --ll-color-tertiary: #f2f8ff;
+  --ll-color-tertiary-rgb: 255, 191, 0;
+  --ll-color-background: #ffffff;
+  --ll-color-background-rgb: 255, 255, 255;
+  --ll-color-background-alt: #fefbd9;
+  --ll-color-background-beige: #eae4da;
+  --ll-color-text-primary: #2f2f2f;
+  --ll-color-text-primary-rgb: 47, 47, 47;
+  --ll-color-text-secondary: #565656;
+  --ll-color-text-secondary-rgb: 86, 86, 86;
+  --ll-color-border: #e0e0e0;
+  --ll-color-accent: #f2f8ff;
+  --ll-color-warning: #c0392b;
+  --ll-color-warning-rgb: 192, 57, 43;
+  --ll-color-success: #009926;
+  --ll-color-sticky-bar: #215257;
+  --lxs-rating-icon-color: #f2f8ff;
+  --ll-font-heading: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --ll-font-body: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --ll-radius-sm: 4px;
+  --ll-radius-md: 10px;
+  --ll-radius-pill: 999px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--ll-font-body);color:var(--ll-color-text-primary);background:var(--ll-color-background);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;padding-bottom:90px}
+img{max-width:100%;height:auto;display:block}
+#adv-header-logo img,#adv-footer img{margin:0 auto}
+
+/* 2-COLUMN LAYOUT */
+.article-wrap{max-width:1260px;margin:0 auto;padding:20px 24px;display:grid;grid-template-columns:minmax(0, 1fr) 300px;gap:40px;align-items:flex-start}
+.article-col{min-width:0}
+.sidebar-col{width:300px}
+.sticky-product{position:sticky;top:70px}
+
+h1{font-family:var(--ll-font-heading);font-weight:800;line-height:1.2;font-size:36px;margin:12px 0 14px;color:var(--ll-color-text-primary)}
+h2,.h2-like{font-family:var(--ll-font-heading);font-weight:800;line-height:1.3;font-size:26px;margin:28px 0 14px;color:var(--ll-color-text-primary)}
+h3,.h3-like{font-family:var(--ll-font-heading);font-weight:800;line-height:1.35;font-size:21px;margin:24px 0 12px;color:var(--ll-color-text-primary)}
+p{margin-bottom:16px;font-size:17px;line-height:1.65}
+a{color:var(--ll-color-primary);text-decoration:underline;font-weight:600}
+a:hover{color:var(--ll-color-primary-dark)}
+strong{font-weight:800;color:var(--ll-color-text-primary)}
+em{font-style:italic}
+mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-primary);padding:2px 6px;font-weight:700}
+
+/* TOP STICKY BAR */
+
+/* UPDATE BANNER */
+.update-banner{background:var(--ll-color-tertiary);color:var(--ll-color-text-primary);padding:14px 15px;text-align:center;font-family:var(--ll-font-body);font-size:15px;border-bottom:2px solid var(--ll-color-warning)}
+.update-banner strong{font-family:var(--ll-font-heading);font-weight:800;text-transform:uppercase;display:inline-block;font-size:13px;letter-spacing:0.6px;margin-right:6px;color:var(--ll-color-warning)}
+
+.adv-disclosure{text-align:center;padding:6px 10px;background:#f5f5f5;font-size:10px;color:#888;letter-spacing:0.1em;text-transform:uppercase;font-weight:600}
+.site-header{background:#fff;border-bottom:1px solid var(--ll-color-border);padding:15px 0;text-align:center}
+.site-header img{height:38px;max-width:220px;margin:0 auto}
+
+.breadcrumb{font-size:12px;color:var(--ll-color-text-secondary);margin:8px 0 8px;text-transform:uppercase;letter-spacing:0.5px}
+.breadcrumb a{color:var(--ll-color-text-secondary);text-decoration:none;font-weight:400}
+.breadcrumb-sep{margin:0 8px;opacity:0.5}
+
+.kicker{display:block;font-family:var(--ll-font-heading);font-size:14px;font-weight:700;color:var(--ll-color-primary);text-transform:uppercase;letter-spacing:0.8px;margin:10px 0 6px}
+.article-subtitle{font-size:20px;color:var(--ll-color-text-secondary);margin:8px 0 14px;font-weight:500;line-height:1.45}
+.headline-stars-row{display:flex;align-items:center;gap:8px;margin:12px 0 14px;flex-wrap:wrap}
+.headline-stars-row .stars{font-size:20px}
+.headline-stars-row .ratings-count{font-size:14px;color:var(--ll-color-text-secondary);font-weight:600}
+.article-byline{display:flex;gap:12px;align-items:center;padding:14px 0;font-size:13px;border-top:1px solid var(--ll-color-border);border-bottom:1px solid var(--ll-color-border);margin:10px 0 24px}
+.article-byline-photo{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#ddd}
+.article-byline-info{display:flex;flex-direction:column;gap:2px}
+.article-byline-name{font-weight:700;color:var(--ll-color-text-primary);font-family:var(--ll-font-heading);font-size:14px}
+.article-byline-date{font-size:12px;color:var(--ll-color-text-secondary)}
+
+/* MEDIA — video and image both use same class, 16:9 aspect */
+.media{width:100%;border-radius:var(--ll-radius-md);margin:22px 0 10px;box-shadow:0 4px 20px rgba(0,0,0,0.1);aspect-ratio:16/9;object-fit:cover;background:#f0f0f0;overflow:hidden;position:relative}
+.media-img{width:100%;border-radius:var(--ll-radius-md);margin:22px 0 10px;box-shadow:0 4px 20px rgba(0,0,0,0.1);aspect-ratio:16/9;object-fit:cover;background:#f0f0f0}
+.media-video{width:100%;border-radius:var(--ll-radius-md);margin:22px 0 10px;box-shadow:0 4px 20px rgba(0,0,0,0.1);aspect-ratio:16/9;object-fit:cover;background:#f0f0f0}
+.media-caption{font-size:12px;color:var(--ll-color-text-secondary);text-align:center;margin:0 0 22px;font-style:italic}
+
+/* HEADING-LIKE B — emphasized question or statement line */
+.rhetorical{display:block;font-family:var(--ll-font-heading);font-size:22px;font-weight:800;color:var(--ll-color-text-primary);line-height:1.35;margin:22px 0 14px}
+.highlight-line{background:var(--ll-color-tertiary);padding:4px 10px;display:inline}
+
+/* BULLET LIST with check icons */
+.bullet-list{list-style:none;margin:22px 0;padding:0}
+.bullet-list li{position:relative;padding:10px 0 10px 38px;font-size:17px;color:var(--ll-color-text-primary);font-weight:600;line-height:1.5}
+.bullet-list li::before{content:"";position:absolute;left:0;top:12px;width:24px;height:24px;border-radius:50%;background:var(--ll-color-success) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'><path d='M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z'/></svg>") center/70% no-repeat;box-shadow:0 2px 6px rgba(var(--ll-color-primary-rgb), 0.2)}
+
+/* INLINE CALLOUT BOXES */
+.callout{border-radius:var(--ll-radius-md);padding:22px 26px;margin:24px 0;border-width:2px;border-style:solid}
+.callout-cream{background:var(--ll-color-background-alt);border-color:var(--ll-color-tertiary)}
+.callout-blue{background:var(--ll-color-secondary);border-color:var(--ll-color-primary)}
+
+/* CTA BUTTON */
+.cta-btn{display:block;width:100%;max-width:480px;margin:24px auto;background:var(--ll-color-primary);color:#fff;padding:22px 26px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:22px;font-weight:800;text-decoration:none;box-shadow:0 4px 7px 1px rgba(0,0,0,0.19);letter-spacing:0.2px;transition:filter 0.15s, transform 0.15s, box-shadow 0.15s;text-align:center;line-height:1.2}
+.cta-btn:hover{filter:brightness(0.88);transform:translateY(-1px);box-shadow:0 6px 14px 2px rgba(0,0,0,0.25);color:#fff;text-decoration:none}
+.cta-btn span{display:block}
+.cta-btn small{display:block;font-size:13px;font-weight:600;text-transform:none;letter-spacing:0.2px;margin-top:5px;opacity:0.92}
+
+.stars{color:#f5b40a !important;font-size:20px;letter-spacing:2px;line-height:1;font-weight:700;display:inline-block}
+
+/* STICKY PRODUCT CARD */
+.sticky-product{background:#fff;border:3px solid var(--ll-color-primary);border-radius:var(--ll-radius-md);padding:22px 18px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,0.08)}
+.sticky-product-badge{display:inline-block;background:var(--ll-color-warning);color:#fff;padding:5px 12px;border-radius:var(--ll-radius-pill);font-size:11px;font-weight:800;letter-spacing:0.2px;margin-bottom:12px;font-family:var(--ll-font-heading)}
+.sticky-product-name{font-family:var(--ll-font-heading);font-size:19px;font-weight:800;color:var(--ll-color-text-primary);line-height:1.2;margin-bottom:4px}
+.sticky-product-tagline{font-size:12px;color:var(--ll-color-text-secondary);margin-bottom:12px;line-height:1.4}
+.sticky-product-img{width:100%;max-width:220px;margin:8px auto 12px;border-radius:var(--ll-radius-sm);aspect-ratio:1/1;object-fit:cover;background:#f0f0f0}
+.sticky-product-stars{display:flex;align-items:center;justify-content:center;gap:6px;margin:8px 0;font-size:13px;color:var(--ll-color-text-secondary)}
+.sticky-product-stars .stars{font-size:14px}
+.sticky-product-price{display:flex;justify-content:center;gap:10px;align-items:center;margin:10px 0 5px;flex-wrap:wrap}
+.sticky-product-price-original{font-size:15px;text-decoration:line-through;color:#888;font-family:var(--ll-font-heading);font-weight:600}
+.sticky-product-price-sale{font-family:var(--ll-font-heading);font-size:30px;font-weight:900;color:var(--ll-color-primary);line-height:1}
+.sticky-product-discount{background:var(--ll-color-warning);color:#fff;padding:3px 8px;border-radius:var(--ll-radius-sm);font-size:10px;font-weight:800;font-family:var(--ll-font-heading);display:inline-block;margin-bottom:10px}
+.sticky-product-cta{display:block;background:var(--ll-color-primary);color:#fff;padding:14px 12px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 3px 6px 1px rgba(0,0,0,0.18);letter-spacing:0.2px;text-align:center;line-height:1.2;margin:12px 0 10px;transition:filter 0.15s}
+.sticky-product-cta:hover{filter:brightness(0.88);color:#fff;text-decoration:none}
+.sticky-product-trust{display:flex;flex-direction:column;gap:6px;margin-top:12px;padding-top:12px;border-top:1px dashed rgba(var(--ll-color-primary-rgb), 0.3);font-size:11px;color:var(--ll-color-text-secondary);text-align:left}
+.sticky-product-trust-item{display:flex;align-items:center;gap:6px;font-weight:600}
+.sticky-product-trust-item::before{content:"✓";color:var(--ll-color-primary);font-weight:800;font-size:13px}
+
+/* TRUSTPILOT REVIEWS */
+.trustpilot-intro{text-align:center;margin:24px 0 18px}
+.trustpilot-intro h3{color:var(--ll-color-success);font-size:22px;margin-bottom:5px}
+.trustpilot-intro p{color:var(--ll-color-text-secondary);font-size:14px;margin:0}
+.featured-review{background:#fff;border:1px solid var(--ll-color-border);border-radius:var(--ll-radius-md);padding:22px;margin-bottom:15px;box-shadow:0 2px 10px rgba(0,0,0,0.04)}
+.featured-review-title{font-family:var(--ll-font-heading);font-size:17px;font-weight:800;color:var(--ll-color-text-primary);margin:8px 0 5px}
+.featured-review-meta{font-size:12px;color:var(--ll-color-text-secondary);margin-bottom:10px}
+.featured-review-meta strong{color:var(--ll-color-success);font-weight:700}
+.featured-review-body{font-size:14px;color:var(--ll-color-text-secondary);line-height:1.65;margin-bottom:12px}
+.featured-review-helpful{font-size:11px;color:#888;padding-top:10px;border-top:1px solid var(--ll-color-border);font-weight:600}
+
+/* AS SEEN ON */
+
+/* TRUST BADGES */
+
+/* GUARANTEE BOX */
+.guarantee-box{background:var(--ll-color-background-alt);border:3px dashed var(--ll-color-tertiary);border-radius:var(--ll-radius-md);padding:24px;margin:24px 0;text-align:center}
+.guarantee-box h3{color:var(--ll-color-primary);font-size:22px;margin:4px 0 12px}
+.guarantee-box .days{display:inline-block;background:var(--ll-color-primary);color:#fff;padding:6px 18px;border-radius:var(--ll-radius-pill);font-family:var(--ll-font-heading);font-weight:800;font-size:13px;margin-bottom:4px}
+.guarantee-box p{font-size:15px;color:var(--ll-color-text-secondary);margin-bottom:8px;line-height:1.6}
+.guarantee-contact{margin-top:16px;padding-top:14px;border-top:1px solid rgba(var(--ll-color-primary-rgb), 0.3);font-size:13px}
+.guarantee-contact a{display:inline-block;margin:0 6px;color:var(--ll-color-primary);font-weight:700}
+
+/* AMAZON REVIEWS */
+.amazon-reviews{background:#fff;border:1px solid var(--ll-color-border);border-radius:var(--ll-radius-md);padding:24px;margin:24px 0;box-shadow:0 2px 15px rgba(0,0,0,0.05)}
+.amazon-reviews h3{text-align:center;margin:0 0 18px;font-size:22px}
+.amazon-avg{text-align:center;margin-bottom:20px}
+.amazon-avg-number{font-family:var(--ll-font-heading);font-size:46px;font-weight:800;color:var(--ll-color-text-primary);line-height:1}
+.amazon-avg .stars{font-size:26px;letter-spacing:3px;display:block;margin:4px 0}
+.amazon-avg-count{font-size:14px;color:var(--ll-color-text-secondary)}
+.amazon-bars{margin:18px 0}
+.amazon-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:6px;font-size:13px;color:var(--ll-color-text-secondary)}
+.amazon-bar-label{flex:0 0 58px;font-weight:600;color:var(--ll-color-text-primary);white-space:nowrap}
+.amazon-bar-track{flex:1 1 auto;min-width:80px;height:14px;background:var(--ll-color-border);border-radius:var(--ll-radius-sm);overflow:hidden}
+.amazon-bar-fill{height:100%;background:#f5b40a;border-radius:var(--ll-radius-sm)}
+.amazon-bar-pct{flex:0 0 50px;text-align:right;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.amazon-features{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;padding-top:18px;border-top:1px solid var(--ll-color-border);font-size:14px}
+.amazon-feature{display:flex;align-items:center;gap:6px;padding:4px 0}
+.amazon-feature-label{color:var(--ll-color-text-secondary);flex:0 0 auto;white-space:nowrap}
+.amazon-feature::after{content:"";flex:1;border-bottom:1px dotted var(--ll-color-border);margin:0 4px}
+.amazon-feature-score{font-family:var(--ll-font-heading);font-weight:800;color:var(--ll-color-text-primary);flex:0 0 auto;white-space:nowrap}
+
+/* FACEBOOK COMMENTS */
+.fb-comments{background:#fff;padding:24px 20px;border-radius:var(--ll-radius-md);border:1px solid var(--ll-color-border);margin:24px 0}
+.fb-comments-header{font-family:var(--ll-font-heading);font-weight:800;font-size:18px;margin-bottom:14px;color:var(--ll-color-text-primary);padding-bottom:10px;border-bottom:1px solid var(--ll-color-border)}
+.fb-input-row{display:flex;gap:10px;align-items:center;padding:8px 0 14px;border-bottom:1px solid var(--ll-color-border);margin-bottom:14px}
+.fb-input-avatar{width:38px;height:38px;border-radius:50%;background:#e4e6eb;flex-shrink:0}
+.fb-input{flex:1;padding:9px 14px;background:#f0f2f5;border-radius:var(--ll-radius-pill);font-size:13px;color:#888}
+.fb-publish-btn{background:#1877f2;color:#fff;padding:7px 16px;border-radius:var(--ll-radius-sm);font-size:12px;font-weight:700;border:none;cursor:pointer;font-family:var(--ll-font-heading)}
+.fb-comment{display:flex;gap:10px;padding:10px 0;align-items:flex-start}
+.fb-comment-reply{margin-left:46px}
+.fb-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#e4e6eb}
+.fb-comment-body{flex:1;min-width:0}
+.fb-bubble{background:#f0f2f5;border-radius:16px;padding:10px 14px;display:inline-block;max-width:100%}
+.fb-name{font-family:var(--ll-font-heading);font-weight:700;font-size:13px;color:#050505;margin-bottom:2px;display:block}
+.fb-text{font-size:14px;color:#050505;line-height:1.4}
+.fb-actions{padding:4px 14px 0;font-size:12px;color:#65676b;font-weight:600}
+.fb-actions span{margin-right:10px;cursor:pointer}
+
+.disclaimer{padding:26px 0;font-size:11px;color:#888;line-height:1.65}
+.disclaimer strong{color:var(--ll-color-text-primary);text-transform:uppercase;font-family:var(--ll-font-heading);font-size:12px;display:block;margin-bottom:8px}
+.disclaimer p{margin-bottom:10px}
+
+.site-footer{background:var(--ll-color-sticky-bar);color:#aaa;padding:25px 0;font-size:13px;text-align:center}
+.site-footer a{color:#ddd;margin:0 10px;text-decoration:none}
+.site-footer a:hover{color:#fff}
+.site-footer-copy{margin-bottom:10px;color:#ccc}
+
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:var(--ll-color-primary);color:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap}
+.sticky-cta-text{font-family:var(--ll-font-heading);font-weight:700;font-size:18px;color:#fff}
+.sticky-cta-btn{background:#fff;color:var(--ll-color-primary);padding:10px 22px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-weight:800;font-size:13px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
+
+@media (max-width:900px){
+  .article-wrap{grid-template-columns:1fr;padding:18px 16px;gap:0}
+  .sidebar-col{width:100%;max-width:500px;margin:28px auto}
+  .sticky-product{position:static}
+  h1{font-size:27px}
+  h2,.h2-like{font-size:22px;margin:24px 0 12px}
+  h3,.h3-like{font-size:19px}
+  body{font-size:16px;padding-bottom:80px}
+  .article-subtitle{font-size:17px}
+  .cta-btn{font-size:18px;padding:18px 20px}
+  .rhetorical{font-size:19px}
+  .amazon-avg-number{font-size:38px}
+  .amazon-features{grid-template-columns:1fr}
+  .featured-review{padding:18px}
+  .sticky-cta-text{display:none}
+  .sticky-cta-btn{width:90%;padding:12px 16px;font-size:14px;text-align:center}
+  .bullet-list li{font-size:16px;padding:8px 0 8px 34px}
+  .bullet-list li::before{width:22px;height:22px;top:10px}
+}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+</style>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "wb35vpdfk1");
+</script>
+<script async="" src="https://terica-store.com/tracker.js"></script>
+</head>
+<body>
+<div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
+<div id="adv-header-logo" style="text-align:center;padding:14px 0 10px;background:#fff;border-bottom:1px solid #eee;">
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="display:block;height:52px;max-width:260px;object-fit:contain;margin:0 auto;"/>
+</div>
+<!-- UPDATE BANNER -->
+<div class="article-wrap">
+<main class="article-col">
+<nav class="breadcrumb">
+<a href="https://terica-store.com/click"><span>Home</span></a><span class="breadcrumb-sep">›</span><a href="https://terica-store.com/click"><span>Health</span></a><span class="breadcrumb-sep">›</span><a href="https://terica-store.com/click"><span>Investigations</span></a>
+</nav>
+<!-- HEADLINE AREA -->
+<h1>The Hidden Muscle Failure Quietly Sabotaging Every Back Exercise You Were Ever Given</h1>
+<p class="article-subtitle">Why your physical therapist never told you the truth about it</p>
+<div class="article-byline">
+<img alt="Author" class="article-byline-photo" src="/pages/avatars/author/neutral_female.jpg"/>
+<div class="article-byline-info">
+<span class="article-byline-name">By Margaret Holloway, Health Desk</span>
+<span class="article-byline-date">April 24, 2026</span>
+</div>
+</div>
+<!-- MEDIA 1: hero video (or image) after headline -->
+<div class="v2-media-slot" data-job-id="17f6bfad-6e89-4b83-b119-05c6eb0d8c35" data-prompts="[&quot;A 61-year-old American man in flannel shirt sitting at kitchen table at dawn, holding coffee mug, hand pressed to lower back, manila folder of papers in front of him, photorealistic&quot;, &quot;Older man's hands gripping coffee mug at sunlit kitchen table, scattered physical therapy exercise sheets visible, somber lighting, photorealistic&quot;, &quot;Pensive close-up of weathered older man staring out window at morning, deep contemplation, soft natural light, photorealistic&quot;]" data-selected="0" data-slot-key="media_1.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A 61-year-old American man in flannel shirt sitting at kitchen table at dawn, ho"</div></div>
+<!-- STORY INTRO -->
+<p>For nearly a decade, Frank told himself the same private lie every morning before his wife woke up.</p>
+<p>He believed he was the problem. The undisciplined one. The patient who never <strong>truly committed</strong> to the exercises.</p>
+<!-- BULLET LIST 1: list of conditions -->
+<ul class="bullet-list">
+<li>Chronic lower back pain that lingers more than two years despite stretching, walking, or yoga consistently</li>
+<li>Sciatica, herniated disc, spinal stenosis, spondylolisthesis, or degenerative disc disease diagnoses from your doctor</li>
+<li>A folder of physical therapy exercise sheets you abandoned within weeks, possibly months, every single time</li>
+<li>The quiet shame of believing you simply lack the willpower others apparently have for recovery</li>
+</ul>
+<p>If any of those describe you, please <u>read every word that follows</u>. You were not the problem.</p>
+<b class="rhetorical">The worst-case scenario is not the pain. It is another decade lost <strong>blaming yourself</strong> for a biological failure.</b>
+<p>What researchers have quietly documented since 2019 changes the entire conversation about chronic lower back pain in older adults.</p>
+<!-- MEDIA 2: story / breakthrough image -->
+<div class="v2-media-slot" data-job-id="17f6bfad-6e89-4b83-b119-05c6eb0d8c35" data-prompts='["", "", ""]' data-selected="0" data-slot-key="media_2.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"No prompt"</div></div>
+<p>And what your physical therapist almost certainly did not explain to you has a name. It is called <strong>The Multifidus Blackout</strong>.</p>
+<!-- ROOT CAUSE -->
+<b class="rhetorical">The Hidden Cause</b>
+<p>Deep beneath the muscles you can flex sits a small stabilizer called the <strong>multifidus</strong>, the spine's true scaffolding.</p>
+<p>Within 24 hours of your first serious back injury, the brain quietly switches it off. It does not switch back on.</p>
+<p>Researchers call this <strong>arthrogenic muscle inhibition</strong>. The signal pathway between your brain and that muscle goes silent.</p>
+<!-- MEDIA 3: mechanism / diagram -->
+<div class="v2-media-slot" data-job-id="17f6bfad-6e89-4b83-b119-05c6eb0d8c35" data-prompts='["Split-screen comparison showing inactive multifidus muscle versus activated multifidus, anatomical rendering, photorealistic", "Frustrated older man crumpling physical therapy exercise sheet at kitchen table, photorealistic", "Stack of unused exercise pamphlets and pain medication bottles on nightstand, melancholy lighting, photorealistic"]' data-selected="0" data-slot-key="media_3.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Split-screen comparison showing inactive multifidus muscle versus activated mult"</div></div>
+<p class="media-caption">/v2/media-slot/17f6bfad-6e89-4b83-b119-05c6eb0d8c35/media_3__caption</p>
+<p>And here is the part nobody tells you. <u>No conventional exercise can voluntarily reach a neurologically inhibited muscle.</u></p>
+<b class="rhetorical">Which means every plank, every bridge, every bird-dog you ever attempted was working a muscle that was already offline.</b>
+<p>You were not lazy. You were not undisciplined. You were trying to lift a phone with the battery removed.</p>
+<p>Eight years of physical therapy <strong>could not have worked</strong>. Not yours, not anyone's. The science was hidden in plain sight.</p>
+<!-- MEDIA 4: bad-news visual / worsening -->
+<div class="v2-media-slot" data-job-id="17f6bfad-6e89-4b83-b119-05c6eb0d8c35" data-prompts='["Older man relaxed in armchair with small medical device positioned on lower back, content expression, photorealistic", "Compact FDA-cleared back therapy device on wooden table beside coffee mug, natural lighting, photorealistic", "Wife smiling as older husband stands upright without pain in sunlit living room, photorealistic"]' data-selected="0" data-slot-key="media_4.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older man relaxed in armchair with small medical device positioned on lower back"</div></div>
+<b class="rhetorical">For two decades, the only way to reactivate the multifidus required a clinical implant and an outpatient surgical procedure.</b>
+<p>That treatment exists. It costs tens of thousands of dollars. Most insurance plans <strong>refuse to cover it</strong>.</p>
+<p>For the average retiree on a fixed income, the surgical option is essentially imaginary. It might as well not exist at all.</p>
+<b class="rhetorical">So an Ohio-based engineering team spent six years asking a different question entirely about deep muscle reactivation.</b>
+<p>Could the same neurological signal that costs surgeons forty thousand dollars be delivered <strong>through the skin</strong>, at home, without a scalpel?</p>
+<p>For a long time, the answer was no. The waveform precision required simply did not exist outside hospital settings.</p>
+<b class="rhetorical">Then in late 2023, a breakthrough in pulse modulation finally made the impossible affordable for ordinary households.</b>
+<!-- MEDIA 5: solution reveal image/video -->
+<div class="v2-media-slot" data-job-id="17f6bfad-6e89-4b83-b119-05c6eb0d8c35" data-prompts='["AMD Life Corrective Therapy Device positioned on lower back of seated older man reading newspaper, photorealistic", "Close-up product shot of compact corrective therapy device with control panel on wooden surface, photorealistic", "Older couple smiling together on porch, husband standing tall without back pain, warm light, photorealistic"]' data-selected="0" data-slot-key="media_5.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"AMD Life Corrective Therapy Device positioned on lower back of seated older man "</div></div>
+<h2>How A Quiet Garage Project Replaced A Forty-Thousand-Dollar Spinal Surgery</h2>
+<p>The result was reviewed, tested against clinical benchmarks, and eventually <strong>cleared by the FDA</strong> as a Class II medical device.</p>
+<p>It does not stretch you. It does not strengthen visible muscles. It does not require you to remember an exercise routine.</p>
+<p>Instead, it sends a precisely calibrated signal that wakes the multifidus directly, <u>bypassing the neurological blackout entirely</u>.</p>
+<p>You sit. You place it on your lower back. You go about your morning. The reactivation happens without conscious effort.</p>
+<p>And for the first time in your adult life, the muscle your therapist begged you to strengthen <strong>finally responds</strong>.</p>
+<!-- PRODUCT REVEAL -->
+<h2 style="margin-top:40px">It is called the AMD Life Corrective Therapy Device, and it represents a genuine first in non-invasive back care.</h2>
+<h2 style="color:var(--ll-color-primary);margin-top:0;font-size:34px">AMD Life Corrective Therapy Device® for Back Pain</h2>
+<!-- MEDIA 6: product hero image -->
+<div class="v2-media-slot" data-job-id="17f6bfad-6e89-4b83-b119-05c6eb0d8c35" data-prompts='["Older man holding AMD Life device in hand examining it with curiosity at kitchen table, photorealistic", "Top-down view of corrective therapy device, instruction guide, and reading glasses on table, photorealistic", "Relieved older man stretching upright in garden after using device, golden hour light, photorealistic"]' data-selected="0" data-slot-key="media_6.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older man holding AMD Life device in hand examining it with curiosity at kitchen"</div></div>
+<p>It is a <strong>FDA-cleared Class II medical device</strong> built specifically to reactivate the inhibited multifidus muscle.</p>
+<p>It uses a clinically validated pulse pattern, not generic TENS-style electrical stimulation that simply masks pain temporarily.</p>
+<p>You wear it for short, comfortable sessions while seated. <u>No exercises required.</u> No therapist appointments to attend.</p>
+<!-- MEDIA 7: product in use video/image -->
+<div class="v2-media-slot" data-job-id="17f6bfad-6e89-4b83-b119-05c6eb0d8c35" data-prompts='["Older man laughing while lifting young grandchild without back strain in backyard, photorealistic", "Retired couple walking confidently on suburban Ohio street at sunset, photorealistic", "Older man kneeling in garden planting tomatoes pain-free, content expression, photorealistic"]' data-selected="0" data-slot-key="media_7.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older man laughing while lifting young grandchild without back strain in backyar"</div></div>
+<p>It is fully <strong>HSA and FSA eligible</strong>, which meaningfully reduces the real out-of-pocket burden for most American households.</p>
+<p>And unlike the surgical version, it travels with you, works in your kitchen, and belongs to you forever.</p>
+<!-- ★ CTA #1 — first CTA in the page, AFTER 7 medias + gradual product reveal -->
+<a class="cta-btn" href="https://terica-store.com/click"><span>Reactivate Now</span><small>Free shipping, HSA and FSA eligible</small></a>
+<!-- TRUSTPILOT REVIEWS (2 featured) -->
+<div class="trustpilot-intro">
+<h3>What Verified American Buyers Are Quietly Saying After Their First Two Weeks</h3>
+<p>Independent reviews from Trustpilot, all written by users who confirmed they did not perform the exercises.</p>
+</div>
+<div class="featured-review">
+<span class="stars">★★★★★</span>
+<div class="featured-review-title">I Didn't Do A Single Exercise And It Worked</div>
+<div class="featured-review-meta">Reviewed by <strong>Robert M.</strong> on <span>March 2026</span> — <strong>Verified Buyer</strong></div>
+<p class="featured-review-body">I want to be clear because I think it matters. I did not follow any of the stretches my last therapist gave me. I refused to. I had done them for years and gotten nowhere. I just sat with the device for the recommended sessions while drinking my morning coffee. By the end of week two, I bent down to grab the newspaper and realized I had not braced for the pain. My wife noticed before I did. I am sixty-four and standing straighter than I have in a decade.</p>
+<div class="featured-review-helpful">218 found helpful</div>
+</div>
+<div class="featured-review">
+<span class="stars">★★★★★</span>
+<div class="featured-review-title">My Physical Therapist Owes Me An Apology</div>
+<div class="featured-review-meta">Reviewed by <strong>Linda K.</strong> on <span>February 2026</span> — <strong>Verified Buyer</strong></div>
+<p class="featured-review-body">I spent eleven years convinced I was the problem. Three different therapists, four exercise programs, two specialists. Every one of them told me I needed to be more consistent. I tried this device against my better judgment because I was tired of feeling broken. I did not do any homework. I did not stretch. I just used it as instructed. The shift in my lower back was undeniable within sixteen days. The shame I carried for over a decade lifted with the pain.</p>
+<div class="featured-review-helpful">347 found helpful</div>
+</div>
+<!-- BENEFITS — Just imagine -->
+<h2>What Actually Changes When The Multifidus Finally Comes Back Online</h2>
+<p><strong>Reactivating the right deep muscle does not feel like a workout. It feels like <strong>something quietly returning to its proper place</strong>.</strong></p>
+<!-- BULLET LIST 2: emotional scenarios -->
+<ul class="bullet-list">
+<li>You bend to load the dishwasher and realize, halfway through, that you forgot to brace your lower back</li>
+<li>You climb the porch steps without that involuntary grunt your wife stopped mentioning two years ago</li>
+<li>You sit through a full church service or Sunday dinner without shifting every four minutes for relief</li>
+</ul>
+<p>None of these involve discipline. None require you to remember a single exercise. The body simply <strong>resumes function it had forgotten</strong>.</p>
+<p>Most users report meaningful change between days twelve and twenty-one. Not because they tried harder. Because the muscle finally received its signal.</p>
+<p>The exoneration is real. <u>You were never the failure.</u> The instrument you needed had simply not been invented yet.</p>
+<!-- SCARCITY / AVAILABILITY BUILD-UP (no prices) -->
+<p>Now, a quiet warning for anyone considering this device. Demand has moved faster than the manufacturer expected this spring.</p>
+<h2>Where Things Stand At This Moment, And Why You Should Not Wait Until Next Month</h2>
+<p>Each device requires precision-calibrated components manufactured in limited monthly batches. There is no quick way to scale production overnight.</p>
+<p>The brand has chosen quality control over rapid expansion, which is the right call but creates a meaningful supply problem.</p>
+<b class="rhetorical">Why Demand Has Suddenly Outpaced Supply In The Past Several Weeks Across America</b>
+<p>Word of mouth among adults sixty and older has done in two months what advertising did not do in two years.</p>
+<p>Spouses are telling spouses. Retired contractors are telling their old crews. <strong>Pickleball groups are passing the name around quietly</strong>.</p>
+<p>The result is a backlog. Inventory now ships in waves rather than continuously, and gaps between waves are widening.</p>
+<p>If your order lands during a gap, the wait can stretch beyond a month before the next batch arrives ready.</p>
+<b class="rhetorical">Why The Current Batch Is Expected To Sell Out Before The End Of The Week</b>
+<p>As of this morning, fewer units remain in this batch than the brand typically holds in two days of normal sales.</p>
+<p>Reserving one now means you receive yours <strong>before the next gap</strong>. Waiting means joining a queue you did not need to join.</p>
+<!-- EXCLUSIVITY -->
+<h2>You Will Not Find This Device At Walmart, Costco, Or Even Your Local Pharmacy Counter</h2>
+<p>The brand has refused every offer from major retailers. Not for marketing reasons. For <strong>quality control reasons</strong>.</p>
+<p>Selling through middlemen would force them to triple production, drop standards, and lose direct contact with customers.</p>
+<p>So they sell only through their own site. <u>This is the only authorized channel anywhere in the country.</u></p>
+<p>Anything else you see online claiming to be the same device is either expired stock or, more likely, a counterfeit imitation.</p>
+<!-- ★ CTA #2 -->
+<a class="cta-btn" href="https://terica-store.com/click"><span>Reserve Mine Today</span><small>Ships from Ohio in 24 hours</small></a>
+<!-- GUARANTEE -->
+<div class="guarantee-box">
+<span class="days">30 Days</span>
+<h3>Try It For A Full Thirty Days With Absolutely Zero Risk To Your Wallet</h3>
+<p>If the device does not deliver meaningful change in your lower back within thirty days, you return it for a full refund.</p>
+<p>No restocking fee. No interrogation about whether you used it correctly. No buried fine print about original packaging required.</p>
+<p>You either feel the multifidus reactivate, or <strong>you keep your money</strong>. The brand assumes the entire risk, not you.</p>
+</div>
+<!-- HERE'S WHAT TO DO NEXT -->
+<h2>What Happens In The Three Weeks After You Reserve Yours</h2>
+<p>Your device ships from the Ohio facility within twenty-four hours of order confirmation, with free standard delivery to your door.</p>
+<p>You unbox it, plug it in once to charge, and begin your first short session that very same evening if you wish.</p>
+<p>By day twelve, most users report a quiet shift. Not dramatic. <strong>Subtle, then suddenly undeniable</strong>, the way real recovery happens.</p>
+<p>By day twenty-one, the question changes from whether the pain is leaving to <u>what you will do with the years it gives back</u>.</p>
+<!-- ★ CTA #4 -->
+<a class="cta-btn" href="https://terica-store.com/click"><span>Claim My Device</span><small>Limited batch, ships within 24 hours</small></a>
+<!-- REMEMBER / ZERO RISK -->
+<h2>This Is The First Risk-Free Decision The Industry Has Ever Offered You</h2>
+<p>You have already paid for therapists, specialists, supplements, braces, creams, and exercise programs that quietly failed you.</p>
+<p>None of them refunded a single dollar when nothing changed. None of them admitted the science was simply incomplete.</p>
+<p>This time, the burden of proof sits with the device, not with you. <strong>That is the way it should have always been.</strong></p>
+<!-- FINAL UPDATE BANNER -->
+<div style="background:var(--ll-color-background-alt);border-radius:10px;margin:24px 0;padding:16px 20px;font-size:14px;color:var(--ll-color-text-secondary)">
+<strong style="color:var(--ll-color-text-primary)">Final Update</strong>
+<span>As of this afternoon, this batch is expected to be reserved out before the weekend ends, based on current pace.</span>
+</div>
+<p style="text-align:center;font-size:14px;color:var(--ll-color-warning);font-weight:700">After this batch closes, the next confirmed shipping window opens approximately five to six weeks later, not sooner.</p>
+<!-- ★ CTA #5 final -->
+<a class="cta-btn" href="https://terica-store.com/click"><span>Reserve Before Sellout</span><small>FDA-cleared, HSA and FSA eligible</small></a>
+<p style="text-align:center;font-size:13px;color:var(--ll-color-text-secondary);margin-top:4px">Backed by full 30-day money-back guarantee</p>
+<!-- AMAZON REVIEWS -->
+<div class="amazon-reviews">
+<h3>What Verified Owners Have Rated The Device Across Key Categories</h3>
+<div class="amazon-avg">
+<div class="amazon-avg-number">4.8</div>
+<span class="stars">★★★★★</span>
+<div class="amazon-avg-count">3,142 verified ratings</div>
+</div>
+<div class="amazon-bars">
+<div class="amazon-bar-row"><span class="amazon-bar-label">5 Star</span><div class="amazon-bar-track"><div class="amazon-bar-fill" style="width:90%"></div></div><span class="amazon-bar-pct">86%</span></div>
+<div class="amazon-bar-row"><span class="amazon-bar-label">4 Star</span><div class="amazon-bar-track"><div class="amazon-bar-fill" style="width:6%"></div></div><span class="amazon-bar-pct">9%</span></div>
+<div class="amazon-bar-row"><span class="amazon-bar-label">3 Star</span><div class="amazon-bar-track"><div class="amazon-bar-fill" style="width:2%"></div></div><span class="amazon-bar-pct">3%</span></div>
+<div class="amazon-bar-row"><span class="amazon-bar-label">2 Star</span><div class="amazon-bar-track"><div class="amazon-bar-fill" style="width:1%"></div></div><span class="amazon-bar-pct">1%</span></div>
+<div class="amazon-bar-row"><span class="amazon-bar-label">1 Star</span><div class="amazon-bar-track"><div class="amazon-bar-fill" style="width:1%"></div></div><span class="amazon-bar-pct">1%</span></div>
+</div>
+<div class="amazon-features">
+<div class="amazon-feature"><span class="amazon-feature-label">Pain Relief</span><span class="amazon-feature-score">4.9</span></div>
+<div class="amazon-feature"><span class="amazon-feature-label">Ease of Use</span><span class="amazon-feature-score">4.8</span></div>
+<div class="amazon-feature"><span class="amazon-feature-label">Build Quality</span><span class="amazon-feature-score">4.7</span></div>
+<div class="amazon-feature"><span class="amazon-feature-label">Value</span><span class="amazon-feature-score">4.8</span></div>
+</div>
+</div>
+<!-- FACEBOOK COMMENTS (24 comments — matches Nooro) -->
+<div class="fb-comments">
+<div class="fb-comments-header">Comments</div>
+<div class="fb-input-row">
+<div class="fb-input-avatar"></div>
+<div class="fb-input">Write a comment…</div>
+<button class="fb-publish-btn">Publish</button>
+</div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/08.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Patricia W.</span><span class="fb-text">My husband refused to do PT exercises for years. This actually worked without him having to do them.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>2 hours ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/17.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Greg T.</span><span class="fb-text">Sixty-eight years old, herniated disc since 2014. Two weeks in and I am sleeping through the night.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>4 hours ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/02.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Diane R.</span><span class="fb-text">I cried reading about the multifidus blackout. I genuinely thought I had failed myself for ten years.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>5 hours ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/03.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Mike H.</span><span class="fb-text">Retired carpenter here. Picked up my granddaughter yesterday without thinking. First time in eight years.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>6 hours ago</span></div></div></div>
+<div class="fb-comment fb-comment-reply"><img class="fb-avatar" src="/pages/avatars/fb/23.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Susan K.</span><span class="fb-text">My physical therapist never once mentioned this muscle by name. Now I understand why nothing she gave me worked.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>7 hours ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/14.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Frank D.</span><span class="fb-text">Ordered last month. Shipped same day from Ohio. Felt the difference around day fourteen, just like the article said.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>8 hours ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/18.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Beverly J.</span><span class="fb-text">Stenosis diagnosis in 2020. Tried everything. This is the only thing that has actually changed how I feel.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>9 hours ago</span></div></div></div>
+<div class="fb-comment fb-comment-reply"><img class="fb-avatar" src="/pages/avatars/fb/04.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Tom S.</span><span class="fb-text">Skeptical retired engineer here. The waveform technology is legitimate. I checked the FDA filing myself before ordering.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>10 hours ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/19.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Rosa M.</span><span class="fb-text">My HSA covered most of it. Felt good not having to argue with insurance for once in my life.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>11 hours ago</span></div></div></div>
+<div class="fb-comment fb-comment-reply"><img class="fb-avatar" src="/pages/avatars/fb/20.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Wayne P.</span><span class="fb-text">Spondylolisthesis since fifty-four. I am sixty-three now. First three weeks of relief I have had in nine years.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>12 hours ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/15.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Carol B.</span><span class="fb-text">Bought it for my husband. He uses it every morning with his coffee. Stopped grunting when he stands up.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>13 hours ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/16.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Jim L.</span><span class="fb-text">Did not believe a word of this article. Bought it anyway out of desperation. I owe the writer an apology.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>14 hours ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/28.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Helen G.</span><span class="fb-text">Sciatica down my left leg for six years. Gone. Not reduced. Gone. I still cannot quite believe it.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>15 hours ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/00.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Doug F.</span><span class="fb-text">My wife stopped asking if I was really trying. That alone was worth what I paid for this thing.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>16 hours ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/06.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Marie A.</span><span class="fb-text">Sixty-seven and gardening again. Three weeks ago I could not kneel without bracing for thirty seconds first.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>17 hours ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/05.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Charles N.</span><span class="fb-text">The thirty-day guarantee made me try it. Kept it on day eighteen. Returns were not necessary at all.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>18 hours ago</span></div></div></div>
+<div class="fb-comment fb-comment-reply"><img class="fb-avatar" src="/pages/avatars/fb/07.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Joyce E.</span><span class="fb-text">Five physical therapists in twelve years told me to be more consistent. Turns out they were the inconsistent ones.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>19 hours ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/21.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Ray V.</span><span class="fb-text">Ohio facility shipped fast. Customer service answered the phone on the second ring. American operation, real humans.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>20 hours ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/22.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Nancy O.</span><span class="fb-text">My spouse used it. Now I am ordering one too. Watching him stand straighter convinced me completely.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>21 hours ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/09.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Ed B.</span><span class="fb-text">Degenerative disc since fifty-eight. Sixty-six now. The relief feels structural, not temporary like every cream and patch tried.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>22 hours ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/24.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Sandra Q.</span><span class="fb-text">I genuinely thought I was just genetically built for back pain. Article changed my whole understanding of my body.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>23 hours ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/25.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Walt C.</span><span class="fb-text">Ordered Monday, arrived Wednesday. Used it Thursday. Slept through the night Saturday for the first time since 2018.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>1 day ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/26.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Gloria Y.</span><span class="fb-text">Refunded my last useless TENS unit and put the money toward this. Completely different category of device entirely.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>1 day ago</span></div></div></div>
+<div class="fb-comment"><img class="fb-avatar" src="/pages/avatars/fb/10.jpg"/><div class="fb-comment-body"><div class="fb-bubble"><span class="fb-name">Hank Z.</span><span class="fb-text">The exoneration angle in the article hit me hard. I have been apologizing to myself for ten silent years.</span></div><div class="fb-actions"><span>Like</span><span>Reply</span><span>1 day ago</span></div></div></div>
+</div>
+</main>
+<!-- STICKY PRODUCT CARD SIDEBAR -->
+<aside class="sidebar-col">
+<div class="sticky-product">
+<span class="sticky-product-badge">FDA-Cleared</span>
+<div class="sticky-product-name">AMD Life Corrective Therapy Device® for Back Pain</div>
+<div class="v2-media-slot" data-job-id="17f6bfad-6e89-4b83-b119-05c6eb0d8c35" data-prompts='["Clean product shot of AMD Life Corrective Therapy Device on white background, soft studio lighting, photorealistic", "Angled view of compact medical device with charging cable, neutral background, photorealistic", "Device positioned beside lifestyle items: coffee mug, reading glasses, newspaper, photorealistic"]' data-selected="0" data-slot-key="sidebar.image" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — sidebar.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Clean product shot of AMD Life Corrective Therapy Device on white background, so"</div></div>
+<div class="sticky-product-stars">
+<span class="stars">★★★★★</span>
+<span>Rated 4.8 out of 5</span>
+</div>
+<a class="sticky-product-cta" href="https://terica-store.com/click"><span>Reserve Mine</span></a>
+<div class="sticky-product-trust">
+<span class="sticky-product-trust-item">Free US Shipping</span>
+<span class="sticky-product-trust-item">30-Day Guarantee</span>
+<span class="sticky-product-trust-item">HSA and FSA Eligible</span>
+</div>
+</div>
+</aside>
+</div><!-- /article-wrap -->
+<div class="sticky-cta">
+<span class="sticky-cta-text">Last batch ships this week</span>
+<a class="sticky-cta-btn" href="https://terica-store.com/click"><span>Reserve Now</span></a>
+</div>
+<style id="adv-brand-secondary">
+:root{ --ll-color-secondary: #e5f1ff; }
+</style>
+<style id="adv-brand-hover">
+.cta-btn:hover,.ll-btn-temp:hover{background:#227ad8 !important;box-shadow:0 6px 25px rgba(41,144,255,0.4) !important;}
+</style>
+<footer id="adv-footer" style="background:#f5f5f5;border-top:1px solid #e5e5e5;padding:30px 20px;text-align:center;margin-top:40px;">
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="display:block;height:36px;max-width:180px;object-fit:contain;margin:0 auto 12px;"/>
+<div style="font-size:11px;color:#999;margin:0 auto 10px;font-family:system-ui,-apple-system,sans-serif;">
+<a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Terms of Use</a>
+<span style="margin:0 6px;color:#ccc;">·</span>
+<a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Privacy Policy</a>
+<span style="margin:0 6px;color:#ccc;">·</span>
+<a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
+</div>
+<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+</footer>
+</body>
+</html>
