@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>The Saturday Morning Conversation That Finally Explained My Stuck Blood Sugar After Six Frustrating Years</title>
+<meta content="A retired bookkeeper from Arizona asked her endocrinologist neighbor one question over the back fence — and finally heard the truth nobody told her." name="description"/>
+<style>
+:root{
+  --ll-color-primary:          #2a2a2a;
+  --ll-color-primary-dark:     #000000;
+  --ll-color-primary-rgb:      42, 42, 42;
+
+  --ll-color-secondary:        #fdf4e7;
+
+  --ll-color-cta:              #f07f1c;
+  --ll-color-cta-dark:         #d66a0e;
+  --ll-color-cta-rgb:          240, 127, 28;
+
+  --ll-color-background:       #ffffff;
+  --ll-color-background-alt:   #f5f0e6;
+  --ll-color-background-soft:  #faf5ea;
+
+  --ll-color-text-primary:     #2a2a2a;
+  --ll-color-text-secondary:   #4a4a4a;
+  --ll-color-muted:            #7a7a7a;
+
+  --ll-color-border:           #e3dcc9;
+  --ll-color-border-soft:      #eee6d3;
+
+  --ll-color-warning:          #c62828;
+
+  --lxs-rating-icon-color:     #f5c518;
+  --lxs-disclaimer-color:      #888888;
+
+  --ll-font-heading: Georgia, "Times New Roman", serif;
+  --ll-font-body:    "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:var(--ll-font-body);
+  font-size:17px;line-height:1.6;
+  color:var(--ll-color-text-primary);
+  background:#ffffff;
+}
+img{max-width:100%;display:block}
+
+/* ── Hero ───────────────────────────────────────────────────── */
+.adv-hero{max-width:960px;margin:0 auto;padding:12px 24px 16px}
+.adv-hero__title{
+  font-family:var(--ll-font-heading);
+  font-size:30px;line-height:1.25;font-weight:700;
+  color:#111;
+  margin:0 0 16px;
+}
+.adv-hero__subtitle{
+  font-family:var(--ll-font-body);
+  font-size:17px;line-height:1.5;
+  color:var(--ll-color-text-primary);
+  margin:0;
+}
+@media (min-width:768px){.adv-hero__title{font-size:38px}}
+
+/* ── Lead image ─────────────────────────────────────────────── */
+.adv-lead-image{max-width:960px;margin:0 auto 14px;padding:0 24px}
+.adv-lead-image img{
+  width:100%;aspect-ratio:16/11;object-fit:cover;
+  background:var(--ll-color-background-alt);
+}
+
+/* ── Byline (with local avatar pool hook) ──────────────────── */
+.adv-byline{
+  max-width:960px;margin:0 auto 32px;padding:0 24px;
+  display:flex;align-items:center;gap:12px;
+  font-family:var(--ll-font-body);
+}
+.article-byline-photo{
+  width:60px;height:60px;border-radius:50%;
+  background:var(--ll-color-background-alt);
+  border:1px solid var(--ll-color-border);
+  flex-shrink:0;object-fit:cover;
+}
+.adv-byline__meta{
+  font-size:14px;color:var(--ll-color-text-secondary);
+  line-height:1.45;display:flex;flex-direction:column;gap:2px;
+}
+.adv-byline__name-line{font-size:15px;color:var(--ll-color-text-primary)}
+.article-byline-name{font-weight:700;color:var(--ll-color-text-primary)}
+.adv-byline__cred{font-style:italic;font-size:13px;color:var(--ll-color-text-secondary)}
+.adv-byline__date{font-size:12px;color:var(--ll-color-text-muted);text-transform:uppercase;letter-spacing:0.4px}
+
+/* ── Article body ───────────────────────────────────────────── */
+.adv-article{
+  max-width:960px;margin:0 auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.7;
+  color:var(--ll-color-text-primary);
+}
+.adv-article p{margin:0 0 18px}
+.adv-article p strong{font-weight:700;color:#111}
+.adv-article p em{font-style:italic;color:#111}
+.adv-article p .accent, .adv-article p strong.accent{color:#dc2626}
+.adv-article p u{text-decoration:underline;text-decoration-color:#dc2626;text-decoration-thickness:2px;text-underline-offset:3px}
+.adv-article mark, .adv-article .highlight{background:#fff3bf;padding:0 2px;color:#111;border-radius:2px}
+
+/* ── Section heading (H2) ───────────────────────────────────── */
+.adv-section-heading{
+  max-width:960px;margin:22px auto 14px;padding:0 24px;
+  font-family:var(--ll-font-heading);
+  font-size:26px;line-height:1.3;font-weight:700;
+  color:#111;
+}
+@media (min-width:768px){.adv-section-heading{font-size:32px}}
+
+/* ── Inline image ───────────────────────────────────────────── */
+.adv-inline-image{max-width:960px;margin:20px auto;padding:0 24px}
+.adv-inline-image img{
+  width:100%;aspect-ratio:16/10;object-fit:cover;
+  background:var(--ll-color-background-alt);
+}
+
+/* ── Bullet list (neutral dark dots) ───────────────────────── */
+.adv-bullet-list{
+  max-width:960px;margin:20px auto;padding:0 24px;
+  list-style:none;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.8;
+  color:var(--ll-color-text-primary);
+}
+.adv-bullet-list li{
+  padding:8px 0 8px 24px;position:relative;
+}
+.adv-bullet-list li::before{
+  content:"";
+  position:absolute;left:0;top:18px;
+  width:8px;height:8px;
+  background:#111;
+  border-radius:50%;
+}
+
+/* ── Feature list (accent arrows) ──────────────────────────── */
+.adv-feature-list{
+  max-width:960px;margin:20px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.8;
+}
+.adv-feature-list p{
+  margin:0 0 14px;padding-left:24px;position:relative;
+  color:var(--ll-color-text-primary);
+}
+.adv-feature-list p::before{
+  content:"→";
+  position:absolute;left:0;top:0;
+  color:var(--ll-color-cta);
+  font-weight:700;
+}
+
+/* ── Product showcase ──────────────────────────────────────── */
+.adv-product-showcase{
+  max-width:960px;margin:24px auto;padding:24px 24px;
+  background:var(--ll-color-background);
+  border:1px solid var(--ll-color-border);
+  text-align:center;
+  font-family:var(--ll-font-body);
+}
+.adv-product-showcase__eyebrow{
+  font-family:var(--ll-font-heading);
+  font-size:22px;font-weight:700;
+  color:#111;
+  margin:0 0 12px;
+}
+.adv-product-showcase__rating{
+  display:flex;justify-content:center;align-items:center;gap:8px;
+  margin-bottom:14px;
+  font-size:14px;color:#444;font-weight:600;
+}
+.adv-product-showcase__rating-stars{
+  color:#f5b40a;
+  letter-spacing:1px;font-size:18px;
+}
+.adv-product-showcase__rating-score{
+  font-size:15px;font-weight:700;color:#111;
+}
+.adv-product-showcase__rating-sep{color:#bbb}
+.adv-product-showcase__title{
+  font-family:var(--ll-font-heading);
+  font-size:18px;font-weight:700;
+  color:var(--ll-color-text-primary);
+  margin:0 0 6px;
+}
+.adv-product-showcase__tagline{
+  font-size:14px;color:var(--ll-color-text-secondary);
+  font-style:italic;margin:0 0 18px;line-height:1.4;
+}
+.adv-product-showcase__image{
+  width:100%;max-width:220px;margin:0 auto 14px;
+  aspect-ratio:1/1;object-fit:cover;
+  background:var(--ll-color-background-alt);
+  border-radius:8px;
+}
+.adv-product-showcase > a{display:flex;justify-content:center;align-items:center;margin:0 auto 14px;max-width:220px}
+.adv-product-showcase .v2-media-slot{max-width:220px;width:100%;margin:0!important;aspect-ratio:1/1;display:flex!important}
+
+
+/* ── CTAs ──────────────────────────────────────────────────── */
+.adv-cta-inline{
+  display:inline-block;
+  background:var(--ll-color-cta);
+  color:#fff !important;text-decoration:none !important;
+  font-family:var(--ll-font-body);
+  font-weight:700;font-size:15px;
+  padding:12px 26px;border-radius:6px;
+  text-align:center;transition:background .15s;
+  letter-spacing:.2px;
+}
+.adv-cta-inline:hover{background:var(--ll-color-cta-dark)}
+
+.adv-cta-block{
+  display:block;max-width:520px;width:85%;margin:32px auto;
+  padding:18px 24px;border-radius:8px;
+  background:var(--ll-color-cta);
+  color:#fff !important;text-decoration:none !important;
+  text-align:center;
+  font-family:var(--ll-font-body);
+  font-weight:700;font-size:17px;
+  line-height:1.25;letter-spacing:.5px;
+  text-transform:uppercase;
+  box-shadow:0 4px 14px rgba(var(--ll-color-cta-rgb),.3);
+  transition:all .18s;
+  box-sizing:border-box;
+}
+.adv-cta-block:hover{
+  background:var(--ll-color-cta-dark);
+  transform:translateY(-1px);
+  box-shadow:0 8px 22px rgba(var(--ll-color-cta-rgb),.45);
+}
+
+/* ── Testimonial grid (4 cards) ────────────────────────────── */
+.adv-testimonial-grid{
+  max-width:960px;margin:32px auto;padding:0 24px;
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;
+  font-family:var(--ll-font-body);
+}
+.adv-testimonial-grid__card{
+  background:var(--ll-color-background);
+  padding:20px;
+  border:1px solid var(--ll-color-border);
+  display:flex;flex-direction:column;gap:12px;
+}
+.adv-testimonial-grid__photo{
+  width:100%;aspect-ratio:1/1;object-fit:cover;
+  background:var(--ll-color-background-alt);
+}
+.adv-testimonial-grid__name{
+  font-weight:700;font-size:16px;
+  color:#111;
+  margin:0;
+}
+.adv-testimonial-grid__text{
+  font-size:15px;line-height:1.55;
+  color:var(--ll-color-text-primary);
+  font-style:italic;margin:0;
+}
+@media (max-width:600px){.adv-testimonial-grid{grid-template-columns:1fr}}
+
+/* ── Testimonial banner ────────────────────────────────────── */
+.adv-testimonial-banner{max-width:960px;margin:24px auto;padding:0 24px}
+.adv-testimonial-banner img{
+  width:100%;aspect-ratio:16/9;object-fit:cover;
+  background:var(--ll-color-background-alt);
+}
+
+/* ── Pricing reveal (no price, just headline + note) ────────── */
+.adv-pricing-reveal{
+  max-width:960px;margin:32px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  text-align:left;
+}
+.adv-pricing-reveal__headline{
+  font-family:var(--ll-font-heading);
+  font-size:24px;font-weight:700;
+  color:#111;
+  margin:0 0 16px;line-height:1.3;
+}
+.adv-pricing-reveal__note{
+  font-size:18px;color:var(--ll-color-text-primary);
+  margin:0;line-height:1.7;
+}
+.adv-pricing-reveal__note strong{color:#111;font-weight:700}
+
+/* ── Guarantee ─────────────────────────────────────────────── */
+.adv-guarantee{
+  max-width:960px;margin:24px auto;padding:22px 24px;
+  background:#f7f7f8;
+  border:1px solid #e5e5e5;
+  border-radius:8px;
+  text-align:center;
+  font-family:var(--ll-font-body);
+  color:#111;
+}
+.adv-guarantee__title{
+  font-family:var(--ll-font-heading);
+  font-size:22px;font-weight:700;
+  color:#111;
+  margin:0 0 16px;line-height:1.3;
+}
+.adv-guarantee__image{
+  max-width:100px;margin:0 auto 12px;
+  aspect-ratio:1/1;object-fit:contain;
+  background:transparent;
+}
+.adv-guarantee__body{
+  font-size:16px;line-height:1.6;
+  color:#222;
+  text-align:left;
+  max-width:540px;margin:0 auto;
+}
+.adv-guarantee__body p{margin:0 0 14px}
+.adv-guarantee__body strong{font-weight:700;color:#111}
+.adv-guarantee__contact{
+  margin-top:18px;padding-top:18px;border-top:1px solid #e5e5e5;
+  font-size:14px;text-align:center;color:#444;
+}
+.adv-guarantee__contact a{color:#111;font-weight:700;text-decoration:underline}
+.adv-guarantee__contact a:hover{text-decoration:underline}
+
+/* ── Support ───────────────────────────────────────────────── */
+.adv-support{
+  max-width:960px;margin:24px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:16px;color:var(--ll-color-text-primary);
+  text-align:center;line-height:1.7;
+}
+.adv-support a{
+  color:var(--ll-color-cta);
+  text-decoration:underline;font-weight:600;
+}
+.adv-support a:hover{color:var(--ll-color-cta-dark)}
+
+/* ── Callout (emphasis) ────────────────────────────────────── */
+.adv-callout{
+  max-width:960px;margin:24px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.7;
+}
+.adv-callout p{margin:0 0 14px;color:var(--ll-color-text-primary)}
+.adv-callout p strong{font-weight:700;color:#dc2626}
+
+/* ── Closing preamble ──────────────────────────────────────── */
+.adv-closing-preamble{
+  max-width:960px;margin:24px auto;padding:0 24px;
+  font-family:var(--ll-font-body);
+  font-size:18px;line-height:1.7;
+  color:var(--ll-color-text-primary);
+  text-align:left;
+}
+.adv-closing-preamble p{margin:0 0 12px}
+.adv-closing-preamble em{
+  font-weight:700;font-style:normal;
+  color:#dc2626;
+}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+</style>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "wb35vpdfk1");
+</script>
+<script async="" src="https://terica-store.com/tracker.js"></script>
+</head>
+<body>
+<div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
+<div id="adv-header-logo" style="text-align:center;padding:14px 0 10px;background:#fff;border-bottom:1px solid #eee;">
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="display:block;height:52px;max-width:260px;object-fit:contain;margin:0 auto;"/>
+</div>
+<!-- ── HERO ── -->
+<div class="adv-hero">
+<h1 class="adv-hero__title">My Neighbor Spent 31 Years As An Endocrinologist. Here's What He Told Me.</h1>
+<p class="adv-hero__subtitle">The back-fence conversation that changed how I see my numbers forever.</p>
+</div>
+<!-- ── LEAD IMAGE ── -->
+<div class="adv-lead-image">
+<div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts="[&quot;Two neighbors talking over a low backyard fence in suburban Arizona, retired woman in her sixties holding a continuous glucose monitor reader, retired man with reading glasses listening, warm morning light, photorealistic&quot;, &quot;Wide shot of a sun-bleached desert backyard with a wooden fence between two homes, two seniors in casual clothes leaning on the fence in conversation, photorealistic&quot;, &quot;Close-up of a woman's hand holding a Stelo CGM reader showing a glucose graph, second hand pointing at the screen, soft morning sunlight, photorealistic&quot;]" data-selected="0" data-slot-key="media.lead" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.lead</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Two neighbors talking over a low backyard fence in suburban Arizona, retired wom"</div></div>
+</div>
+<!-- ── BYLINE (local avatar pool) ── -->
+<div class="adv-byline">
+<img alt="" class="article-byline-photo" src="/pages/avatars/author/neutral_female.jpg"/>
+<div class="adv-byline__meta">
+<div class="adv-byline__name-line">By <span class="article-byline-name">Linda Marsh</span></div>
+<div class="adv-byline__cred">Retired bookkeeper · Surprise, Arizona</div>
+<div class="adv-byline__date">Published April 18, 2026</div>
+</div>
+</div>
+<!-- ── OPENING PARAGRAPHS ── -->
+<div class="adv-article">
+<p>My name is Linda. I am sixty-four, retired, and have been called pre-diabetic for six long years.</p>
+<p>My A1C climbed from 5.9 to 6.2 to 6.4, even after I cut bread, pasta, and three rounds of keto.</p>
+<p>Then one Saturday at 7:18 in the morning, my <strong>continuous glucose monitor jumped seventy-one points</strong> after a single black coffee.</p>
+<p>I leaned over the back fence and asked my neighbor, a retired endocrinologist, what on earth was happening to me.</p>
+</div>
+<!-- ── S1 ANATOMY ── -->
+<h2 class="adv-section-heading">The Saturday Morning My Coffee Sent My Glucose Soaring Seventy Points</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts="[&quot;Continuous glucose monitor screen showing a sharp 71-point morning spike on a graph, woman's hands holding a coffee mug nearby, kitchen counter, photorealistic&quot;, &quot;Black coffee cup steaming on a Saturday morning kitchen table beside a phone showing a glucose tracking app, photorealistic&quot;, &quot;Worried sixty-four-year-old woman staring at her glucose reader at the kitchen table, soft morning light through window, photorealistic&quot;]" data-selected="0" data-slot-key="media.s1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Continuous glucose monitor screen showing a sharp 71-point morning spike on a gr"</div></div></div>
+<div class="adv-article">
+<p>It was a quiet Surprise, Arizona morning. No toast, no cereal, no juice — just one cup of black coffee at the patio table.</p>
+<p>My daughter had ordered me a Stelo continuous glucose monitor, the over-the-counter kind, because my last lab made her nervous.</p>
+<p>At 7:18 the little graph on my phone <strong>shot straight up like a rocket</strong>. Seventy-one points. From nothing but coffee.</p>
+<p>I had not eaten in eleven hours. I had done everything the clinic told me to do. And still, the line climbed.</p>
+<p>That was the morning I walked across the yard, leaned on the fence, and said, <strong>'Ray, can you look at this?'</strong></p>
+</div>
+<!-- ── S2 ARTHRITIS PROGRESSION ── -->
+<h2 class="adv-section-heading">What Six Years Of Pre-Diabetes Actually Felt Like Every Day</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts="[&quot;American woman in her sixties looking tired at her kitchen table mid-afternoon, half-eaten sandwich, brain fog expression, photorealistic&quot;, &quot;Senior woman rubbing her temples in a suburban living room, daylight, signs of fatigue and frustration, photorealistic&quot;, &quot;Close-up of an older woman's hand on a half-empty coffee cup, lab printout visible on the counter, photorealistic&quot;]" data-selected="0" data-slot-key="media.s2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"American woman in her sixties looking tired at her kitchen table mid-afternoon, "</div></div></div>
+<div class="adv-article">
+<p>For most of those years, I told myself the numbers were just numbers and I felt fine. I did not feel fine.</p>
+<p>Looking back, the warning signs were everywhere — quiet little things I blamed on age, on retirement, on a long Arizona summer.</p>
+</div>
+<div class="adv-feature-list">
+<p>A two o'clock <strong>energy crash</strong> so heavy I would lie down on the guest bed for forty minutes.</p>
+<p>Brain fog at the grocery store — standing in the cereal aisle, forgetting what I came in for.</p>
+<p>Waking up at 3 a.m. with a pounding heart and an inexplicably <u>dry, parched mouth</u>.</p>
+<p>A soft roll of weight around my middle that no walk and no salad ever seemed to budge.</p>
+<p>Sudden, almost panicked hunger an hour after a sensible lunch — the kind that makes you raid a pantry.</p>
+</div>
+<div class="adv-article">
+<p>My primary doctor called it 'mild' and told me to lose twenty pounds. The visit lasted under seven minutes.</p>
+<p>Nobody ever asked what my mornings actually felt like, or why a black coffee could light my blood sugar on fire.</p>
+</div>
+<!-- ── S3 SCARY TRUTH + FAILED SOLUTIONS ── -->
+<h2 class="adv-section-heading">Every Single Thing I Tried Before That Saturday Morning Conversation</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts="[&quot;Pantry shelves emptied of bread, pasta and cereal boxes piled in a donation bag, suburban Arizona kitchen, photorealistic&quot;, &quot;Older woman crossing items off a meal plan list with frustration, kitchen table covered in keto cookbooks, photorealistic&quot;, &quot;Bathroom scale on tile floor with a senior woman's bare feet stepping off in disappointment, photorealistic&quot;]" data-selected="0" data-slot-key="media.s3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Pantry shelves emptied of bread, pasta and cereal boxes piled in a donation bag,"</div></div></div>
+<div class="adv-article">
+<p>I am a bookkeeper by training. I keep ledgers. So I tracked every change I made, and I made <strong>a lot</strong> of changes.</p>
+<p>Here is the honest list of what I tried, what it cost me, and what my A1C did anyway.</p>
+</div>
+<div class="adv-feature-list">
+<p>Cutting bread, rice, and pasta entirely for fourteen straight months. My A1C still <strong>climbed from 5.9 to 6.2</strong>.</p>
+<p>Three separate rounds of strict keto, including the one where I lost eleven pounds and gained fourteen back.</p>
+<p>Walking forty-five minutes after dinner every single night through one full Sun City summer. Numbers did not move.</p>
+<p>Skipping fruit — yes, even fresh peaches in season — because a wellness blog told me to.</p>
+<p>Intermittent fasting until two in the afternoon, which only made the <u>brain fog and crashes</u> worse.</p>
+</div>
+<div class="adv-article">
+<p>By the time the coffee spike happened, I was exhausted, embarrassed, and one bad lab away from being put on metformin.</p>
+</div>
+<!-- ── S4 SOLUTION ── -->
+<h2 class="adv-section-heading">What My Neighbor The Retired Endocrinologist Actually Said To Me</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts='["Retired endocrinologist in his late sixties, glasses, calm expression, sitting at a patio table with a Sunday crossword in pen, warm light, photorealistic", "Older male doctor with kind face explaining something with his hands, casual polo shirt, suburban patio backdrop, photorealistic", "Hands of an older man pointing to a printed glucose chart on a patio table, coffee cups visible, photorealistic"]' data-selected="0" data-slot-key="media.s4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Retired endocrinologist in his late sixties, glasses, calm expression, sitting a"</div></div></div>
+<div class="adv-article">
+<p>Ray Hollis is seventy-one. He spent thirty-one years at a Phoenix hospital practice, and now he does the Sunday crossword in pen.</p>
+<p>He took one long look at my CGM, sighed, and said, <strong>'Sit down a minute, Linda.'</strong> No clipboard. No clock running.</p>
+</div>
+<ul class="adv-bullet-list">
+<li><strong>'The coffee isn't the villain — your liver is.'</strong> He drew the cortisol-glucose loop on a napkin in three lines.</li>
+<li>'Your morning cortisol tells the liver to dump stored sugar. In a body like yours, it dumps too much, too fast.'</li>
+<li>'That is why fasting numbers stay stuck between 105 and 125 no matter how cleanly you eat the night before.'</li>
+<li>'I saw this in thousands of patients. The seven-minute visit can't catch it. <u>It is not your willpower.</u>'</li>
+<li>'I put my own sister on a small daily stack six months ago when her A1C hit 6.5. Her last bloodwork surprised even me.'</li>
+</ul>
+<!-- ── S5 SOMETHING REMARKABLE ── -->
+<h2 class="adv-section-heading">The Two Specific Ingredients He Quietly Told Me To Look For</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts='["Bottle of berberine and Ceylon cinnamon supplement on a kitchen counter beside a glass of water, soft morning light, photorealistic", "Hand of a sixty-year-old woman holding a single capsule above an open palm, kitchen window light, photorealistic", "Supplement bottle next to a continuous glucose monitor reader showing a flatter glucose line, photorealistic"]' data-selected="0" data-slot-key="media.s5" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s5</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Bottle of berberine and Ceylon cinnamon supplement on a kitchen counter beside a"</div></div></div>
+<div class="adv-article">
+<p>Ray was careful. He said no capsule replaces a doctor, and no capsule lowers A1C on its own — that was important to him.</p>
+<p>But he said two ingredients had earned his quiet respect over three decades: <strong>500 milligrams of berberine</strong> and real Ceylon cinnamon.</p>
+<p>'Not cassia,' he warned, tapping the patio table. 'Cassia is the cheap grocery-store stuff. <u>Ceylon is the one I'd take.</u>'</p>
+</div>
+<!-- ── S6 ONLY ONE CATCH ── -->
+<h2 class="adv-section-heading">Why The Standard Medical Advice Keeps Failing Real People Like Me</h2>
+<div class="adv-article">
+<p>He said the cruelest part was watching capable, disciplined people blame themselves for a problem that was never about discipline.</p>
+<p>'You can't out-salad a liver that won't stop dumping sugar at sunrise. You need to support the system, not just starve it.'</p>
+</div>
+<!-- ── PRODUCT SHOWCASE ── -->
+<div class="adv-product-showcase">
+<h3 class="adv-product-showcase__title">GlucoSync</h3>
+<p class="adv-product-showcase__tagline">Daily morning support for healthy blood sugar already in normal range.</p>
+<a href="https://terica-store.com/click"><div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts='["GlucoSync supplement bottle on clean white background, professional product photography, soft shadow, photorealistic", "GlucoSync bottle with capsules spilled beside cinnamon sticks and berberine root, lifestyle product shot, photorealistic", "GlucoSync bottle held in the hand of a senior woman in a sunlit kitchen, photorealistic"]' data-selected="0" data-slot-key="media.product" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.product</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"GlucoSync supplement bottle on clean white background, professional product phot"</div></div></a>
+<div class="adv-product-showcase__rating">
+<span class="adv-product-showcase__rating-stars">★★★★★</span>
+<span class="adv-product-showcase__rating-score">4.8</span>
+<span class="adv-product-showcase__rating-sep">·</span>
+<span>3,200+ reviews</span>
+</div>
+<a class="adv-cta-inline" href="https://terica-store.com/click"><span data-copy="cta_check.text">Check Availability</span></a>
+</div>
+<!-- ── S7 INTRODUCING ── -->
+<h2 class="adv-section-heading">How GlucoSync Lined Up With What Ray Described To Me</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts='["Ceylon cinnamon sticks neatly arranged beside a small bowl of golden berberine powder, natural wood surface, photorealistic", "Close-up of Ceylon cinnamon bark curls compared to darker cassia bark, labeled side by side, photorealistic", "Botanical-style flat lay of cinnamon bark, berberine root and a supplement capsule, photorealistic"]' data-selected="0" data-slot-key="media.s7a" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s7a</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Ceylon cinnamon sticks neatly arranged beside a small bowl of golden berberine p"</div></div></div>
+<div class="adv-article">
+<p>When I got home, I looked for a formula that matched what Ray said — full berberine dose, real Ceylon cinnamon, nothing extra.</p>
+<p>GlucoSync was the only one I found with <strong>500 mg of berberine and Ceylon, not cassia</strong>, in a single morning capsule.</p>
+</div>
+<!-- ── TESTIMONIAL GRID (4 cards) ── -->
+<div class="adv-testimonial-grid">
+<div class="adv-testimonial-grid__card">
+<div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts='["Smiling sixty-two-year-old American woman in casual clothes at her kitchen table, natural light, photorealistic", "Mid-sixties woman gardening in a Sun Belt backyard, content expression, photorealistic", "Headshot of cheerful retired American woman with grey hair, soft window light, photorealistic"]' data-selected="0" data-slot-key="media.t_1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Smiling sixty-two-year-old American woman in casual clothes at her kitchen table"</div></div>
+<p class="adv-testimonial-grid__name">Carol, 62, retired teacher</p>
+<p class="adv-testimonial-grid__text">My two o'clock crash is just gone. I make it to dinner without lying down, and my fasting numbers finally stopped climbing.</p>
+</div>
+<div class="adv-testimonial-grid__card">
+<div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts='["Sixty-eight-year-old American man in a polo shirt smiling on his front porch, photorealistic", "Retired senior man drinking coffee on a Midwest patio, relaxed posture, photorealistic", "Headshot of a friendly older American man with glasses, suburban background, photorealistic"]' data-selected="0" data-slot-key="media.t_2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Sixty-eight-year-old American man in a polo shirt smiling on his front porch, ph"</div></div>
+<p class="adv-testimonial-grid__name">Frank, 68, retired contractor</p>
+<p class="adv-testimonial-grid__text">Wife saw my CGM line flatten out the second week. <strong>No more breakfast spike</strong>, and I am sleeping through the night.</p>
+</div>
+<div class="adv-testimonial-grid__card">
+<div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts='["Cheerful sixty-year-old American woman walking in a suburban neighborhood at sunrise, photorealistic", "Senior woman preparing breakfast in a sunny kitchen, calm expression, photorealistic", "Headshot of a smiling retired woman in her early sixties with short hair, photorealistic"]' data-selected="0" data-slot-key="media.t_3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Cheerful sixty-year-old American woman walking in a suburban neighborhood at sun"</div></div>
+<p class="adv-testimonial-grid__name">Diane, 60, part-time bookkeeper</p>
+<p class="adv-testimonial-grid__text">I tried keto twice and gave up. One capsule with my coffee and my mornings finally feel <strong>steady, not shaky</strong>.</p>
+</div>
+<div class="adv-testimonial-grid__card">
+<div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts='["Sixty-five-year-old American man checking a continuous glucose monitor on his arm, kitchen setting, photorealistic", "Retired man in casual button-down reviewing lab results at his desk, content expression, photorealistic", "Older couple at breakfast, husband holding a supplement bottle, natural light, photorealistic"]' data-selected="0" data-slot-key="media.t_4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Sixty-five-year-old American man checking a continuous glucose monitor on his ar"</div></div>
+<p class="adv-testimonial-grid__name">Robert, 65, retired engineer</p>
+<p class="adv-testimonial-grid__text">My CGM used to look like a roller coaster. After six weeks the line is calmer than it has been in years.</p>
+</div>
+</div>
+<!-- ── S8 HELPED THOUSANDS + BENEFITS ── -->
+<h2 class="adv-section-heading">What This Single Morning Capsule Is Actually Designed To Do</h2>
+<div class="adv-testimonial-banner"><div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts='["Wide lifestyle banner of GlucoSync bottle on a kitchen counter beside a CGM reader and morning coffee, photorealistic", "Sunlit kitchen scene with supplement bottle, glass of water, and folded newspaper, photorealistic", "Hands of a senior woman placing a GlucoSync bottle next to her morning vitamins, photorealistic"]' data-selected="0" data-slot-key="media.banner" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.banner</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Wide lifestyle banner of GlucoSync bottle on a kitchen counter beside a CGM read"</div></div></div>
+<div class="adv-article">
+<p>GlucoSync is a once-daily capsule meant to support healthy blood sugar already within normal range, taken with breakfast and a glass of water.</p>
+</div>
+<div class="adv-feature-list">
+<p>Supports healthy blood sugar already within normal range in adults.</p>
+<p>Helps soften post-meal sugar spikes that drive afternoon energy crashes.</p>
+<p>Promotes steady morning-to-evening energy without the familiar two o'clock slump.</p>
+<p>Pairs Ceylon cinnamon with a clinically familiar 500 mg berberine.</p>
+<p>One capsule, one glass of water, one minute every morning.</p>
+</div>
+<div class="adv-article">
+<p>It is not a prescription. It is not a replacement for one. It is the small daily support Ray described over the back fence.</p>
+</div>
+<!-- ── S9 HOW CAN YOU GET ── -->
+<h2 class="adv-section-heading">What My Own Mornings Have Actually Looked Like Since Then</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts='["Senior woman taking a single capsule with a glass of water at her sunlit breakfast table, photorealistic", "Morning routine flat lay: supplement capsule, glass of water, oatmeal bowl, CGM reader, photorealistic", "Older woman smiling as she places a capsule into a weekly pill organizer, photorealistic"]' data-selected="0" data-slot-key="media.s9" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s9</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Senior woman taking a single capsule with a glass of water at her sunlit breakfa"</div></div></div>
+<div class="adv-article">
+<p>I take one capsule with my black coffee at 6:45. By 7:18 — the old spike hour — my CGM line now reads almost flat.</p>
+<p>The two o'clock crash is the change my husband noticed first. I stopped retreating to the guest bed after lunch.</p>
+<p>I am not making medical claims. I am telling you what a sixty-four-year-old retired bookkeeper sees on her own monitor.</p>
+</div>
+<!-- ── S10 SELL OUT ── -->
+<h2 class="adv-section-heading">What Ray's Own Sister's Bloodwork Quietly Showed Six Months Later</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts="[&quot;Doctor's hands holding a clipboard with bloodwork results, A1C value highlighted, photorealistic&quot;, &quot;Older woman reading her lab printout at her kitchen table with relieved expression, photorealistic&quot;, &quot;CGM graph trending downward and steady over a two-month period on a tablet screen, photorealistic&quot;]" data-selected="0" data-slot-key="media.s10" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s10</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Doctor's hands holding a clipboard with bloodwork results, A1C value highlighted"</div></div></div>
+<div class="adv-article">
+<p>Ray told me his sister's morning numbers had drifted back into a range her own doctor described as 'reassuring' and 'unremarkable.'</p>
+<p>He was careful with the words. He never said 'reversed.' He never said 'cured.' He said her doctor stopped frowning.</p>
+<p>For someone who had spent thirty-one years watching people drift the other direction, that quiet sentence carried real weight.</p>
+</div>
+<!-- ── S11 NOT AVAILABLE ELSEWHERE ── -->
+<h2 class="adv-section-heading">Why I Did Not Buy The Cheaper Bottles On The Shelf</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts='["Side-by-side product comparison of supplement bottles on a clean countertop, GlucoSync clearly featured, photorealistic", "Hands holding two different supplement bottles, comparing labels under kitchen lighting, photorealistic", "Magnifying glass over a supplement label showing dosage and Ceylon cinnamon, photorealistic"]' data-selected="0" data-slot-key="media.s11" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s11</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Side-by-side product comparison of supplement bottles on a clean countertop, Glu"</div></div></div>
+<div class="adv-article">
+<p>I priced four other formulas at the big-box pharmacy on Bell Road. Most failed at least one of Ray's two simple tests.</p>
+<p>Here is what made GlucoSync worth ordering directly from the brand instead of grabbing whatever was on the endcap.</p>
+</div>
+<ul class="adv-bullet-list">
+<li>Real <strong>Ceylon cinnamon</strong>, not cassia — the cheaper grocery-store version most labels quietly hide behind the word 'cinnamon.'</li>
+<li>A full <strong>500 mg berberine dose</strong>, not a sprinkle of it tucked inside a crowded proprietary blend.</li>
+<li>Made in an FDA-registered facility in the United States, with a third-party batch certificate available on request.</li>
+<li>A clean label — no sugar alcohols, no artificial dyes, no fillers a retired endocrinologist would frown at.</li>
+</ul>
+<div class="adv-article">
+<p>Ray's rule of thumb was simple: if the label hides the dose, the dose is hiding for a reason.</p>
+</div>
+<!-- ── S12 SPECIAL DISCOUNT + PRICING REVEAL ── -->
+<h2 class="adv-section-heading">What Steady Mornings Have Actually Given Me Back At Sixty-Four</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts='["Senior couple laughing together at a backyard breakfast table, GlucoSync bottle visible, photorealistic", "Retired woman walking through a farmers market with steady energy, golden morning light, photorealistic", "Older man playing with grandchildren in a suburban backyard, content expression, photorealistic"]' data-selected="0" data-slot-key="media.s12" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s12</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Senior couple laughing together at a backyard breakfast table, GlucoSync bottle "</div></div></div>
+<div class="adv-pricing-reveal">
+<p class="adv-pricing-reveal__headline">Available Directly From The Brand While The Current Stock Lasts</p>
+<p class="adv-pricing-reveal__note">Ordered straight from the maker, with the multi-bottle option Ray nudged me toward so I would not have to reorder mid-month.</p>
+</div>
+<div class="adv-article">
+<p>It is not dramatic. It is quieter than that. I cook breakfast, I do the crossword, I walk the block without bracing for a crash.</p>
+<p>My husband said the other night, <strong>'You seem more like yourself.'</strong> That is what I was paying attention for.</p>
+</div>
+<!-- ── CTA BLOCK #1 ── -->
+<a class="adv-cta-block" href="https://terica-store.com/click">
+<span>CHECK AVAILABILITY</span>
+</a>
+<!-- ── S13 60 DAYS RISK FREE + GUARANTEE ── -->
+<h2 class="adv-section-heading">Every Bottle Is Backed By A Simple Promise From The Brand</h2>
+<div class="adv-guarantee">
+<h3 class="adv-guarantee__title">30-Day Money-Back Guarantee</h3>
+<circle cx="200" cy="200" fill="none" r="180" stroke="%23e3dcc9" stroke-width="2"></circle>" alt="Guarantee badge"&gt;
+  <div class="adv-guarantee__body">
+<p>You have a full thirty days to try GlucoSync, watch your own mornings, and decide if it earns its place on your counter.</p>
+<p>If it does not, you email the company, send back the bottle — even an empty one — and they refund your order.</p>
+<p>That is the promise. No restocking fee, no hoops, no seven-minute clock running. Just a fair window to <strong>see for yourself</strong>.</p>
+</div>
+</div>
+<!-- ── S14 WHAT TO DO NEXT ── -->
+<h2 class="adv-section-heading">The Questions My Friends At The Card Table Kept Asking</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts='["Frequently asked questions section displayed on a tablet beside a GlucoSync bottle, photorealistic", "Senior woman reading product information on her phone at the kitchen counter, photorealistic", "Pen, notepad with handwritten questions and a supplement bottle on a wooden table, photorealistic"]' data-selected="0" data-slot-key="media.s14" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s14</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Frequently asked questions section displayed on a tablet beside a GlucoSync bott"</div></div></div>
+<div class="adv-article">
+<p>Can I take it with metformin? Ray's answer was always the same: <strong>ask your own prescribing doctor first</strong>, then decide together.</p>
+<p>Will it lower my A1C? Nobody can promise that. GlucoSync supports healthy blood sugar already in normal range, nothing more.</p>
+<p>How long until I notice anything? Most people I know felt the afternoon crash soften somewhere in the second or third week.</p>
+</div>
+<!-- ── CTA BLOCK #2 ── -->
+<a class="adv-cta-block" href="https://terica-store.com/click">
+<span>CHECK AVAILABILITY</span>
+</a>
+<!-- ── S15 ZERO RISK + EMOTIONAL CALLOUT ── -->
+<h2 class="adv-section-heading">What I Wish Someone Had Told Me Six Years Ago Honestly</h2>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts="[&quot;Linda's hands holding the GlucoSync bottle with a Stelo CGM reader showing steady line, photorealistic&quot;, &quot;Senior woman writing in a journal beside her morning supplement and coffee, photorealistic&quot;, &quot;Close-up of a sixty-four-year-old woman's calm smile in her sunlit Arizona kitchen, photorealistic&quot;]" data-selected="0" data-slot-key="media.s15a" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s15a</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Linda's hands holding the GlucoSync bottle with a Stelo CGM reader showing stead"</div></div></div>
+<div class="adv-article">
+<p>It was never my willpower. It was a cortisol-glucose loop nobody had seven minutes to explain in a fluorescent exam room.</p>
+<p>It took a Saturday morning, a low backyard fence, and a man who had been retired long enough to <strong>tell the truth slowly</strong>.</p>
+<p>If your numbers are stuck and your mornings feel like mine did, you deserve the same unhurried explanation Ray gave me.</p>
+</div>
+<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="16c4a735-9561-4d2c-b5b3-7617ae5724a1" data-prompts='["Two neighbors waving over a backyard fence at sunset, Arizona desert landscape, photorealistic", "Retired endocrinologist sitting on his patio with a Sunday crossword and coffee, photorealistic", "Senior woman placing a supplement bottle in her kitchen cabinet next to her morning vitamins, photorealistic"]' data-selected="0" data-slot-key="media.s15b" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s15b</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Two neighbors waving over a backyard fence at sunset, Arizona desert landscape, "</div></div></div>
+<!-- ── EMOTIONAL CALLOUT (3 bold lines) ── -->
+<div class="adv-callout">
+<p>You are not lazy. You are not failing. You have been handed seven-minute advice for a sunrise problem.</p>
+<p>Real Ceylon cinnamon. A full 500 mg of berberine. One capsule with your morning coffee — that is the whole routine.</p>
+<p>Backed by a thirty-day promise so you can watch your own monitor, your own mornings, and decide for yourself.</p>
+</div>
+<div class="adv-article">
+<p>And if a single morning capsule is part of the answer, at least now you know which two ingredients to look for.</p>
+</div>
+<!-- ── CLOSING PREAMBLE ── -->
+<div class="adv-closing-preamble">
+<p>Ray still does the Sunday crossword in pen. He still wears his own CGM, out of curiosity more than worry.</p>
+<p>And every Saturday, when I lean on the fence with my coffee, my line stays calm — and so, finally, do I.</p>
+</div>
+<!-- ── CTA BLOCK #3 (final) ── -->
+<a class="adv-cta-block" href="https://terica-store.com/click">
+<span>CHECK AVAILABILITY</span>
+</a>
+<footer id="adv-footer" style="background:#f5f5f5;border-top:1px solid #e5e5e5;padding:30px 20px;text-align:center;margin-top:40px;">
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="display:block;height:36px;max-width:180px;object-fit:contain;margin:0 auto 12px;"/>
+<div style="font-size:11px;color:#999;margin:0 auto 10px;font-family:system-ui,-apple-system,sans-serif;">
+<a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Terms of Use</a>
+<span style="margin:0 6px;color:#ccc;">·</span>
+<a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Privacy Policy</a>
+<span style="margin:0 6px;color:#ccc;">·</span>
+<a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
+</div>
+<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+</footer>
+</body>
+</html>
