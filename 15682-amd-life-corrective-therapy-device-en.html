@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>The Multifidus Blackout: The Hidden Spinal Muscle Failure Behind Decades Of Failed Back Pain Exercises</title>
@@ -228,6 +225,16 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -236,7 +243,255 @@ t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "wb35vpdfk1");
 </script>
-<script async="" src="https://terica-store.com/tracker.js"></script>
+<!-- ext-script-stripped -->
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
@@ -250,8 +505,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <a href="https://terica-store.com/click"><span>Home</span></a><span class="breadcrumb-sep">›</span><a href="https://terica-store.com/click"><span>Spine Health</span></a><span class="breadcrumb-sep">›</span><a href="https://terica-store.com/click"><span>Pain Research</span></a>
 </nav>
 <!-- HEADLINE AREA -->
-<h1>The Multifidus Blackout: Why Your Back Exercises Were Doomed Before You Even Started</h1>
-<p class="article-subtitle">An overlooked neurological glitch silences the one muscle every program targets.</p>
+<h1 style="position: relative;">The Multifidus Blackout: Why Your Back Exercises Were Doomed Before You Even Started</h1>
+<p class="article-subtitle" style="position: relative;">An overlooked neurological glitch silences the one muscle every program targets.</p>
 <div class="article-byline">
 <img alt="Author" class="article-byline-photo" src="/pages/avatars/author/neutral_female.jpg"/>
 <div class="article-byline-info">
@@ -262,149 +517,149 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <!-- MEDIA 1: hero video (or image) after headline -->
 <div class="v2-media-slot" data-job-id="990c394e-6c20-4383-afdd-23adc913f917" data-prompts='["Tired man in his early sixties at a kitchen table at dawn, manila folder of physical therapy exercise sheets open in front of him, coffee mug, warm window light, photorealistic", "Overhead shot of a stack of crumpled physical therapy handouts on a worn wooden kitchen table beside reading glasses, photorealistic", "Close-up of a weathered hand pressing the small of a lower back at sunrise, kitchen interior softly blurred, photorealistic"]' data-selected="0" data-slot-key="media_1.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Tired man in his early sixties at a kitchen table at dawn, manila folder of phys"</div></div>
 <!-- STORY INTRO -->
-<p>If you have spent years doing the exercises your physical therapist prescribed and quietly wondering why nothing holds, please keep reading.</p>
-<p>What follows is not another routine. It is the explanation no clinician ever sat you down and gave you.</p>
+<p style="position: relative;">If you have spent years doing the exercises your physical therapist prescribed and quietly wondering why nothing holds, please keep reading.</p>
+<p style="position: relative;">What follows is not another routine. It is the explanation no clinician ever sat you down and gave you.</p>
 <!-- BULLET LIST 1: list of conditions -->
 <ul class="bullet-list">
-<li>Chronic lower back pain that returns every morning, no matter how carefully you slept the night before.</li>
-<li>A diagnosis of sciatica, spinal stenosis, herniated disc, or degenerative disc disease that simply will not stabilize.</li>
-<li>Three or more abandoned home exercise programs and the gnawing suspicion that you are the problem.</li>
-<li>A spouse, a doctor, or a therapist who has gently implied you are not really trying.</li>
+<li style="position: relative;">Chronic lower back pain that returns every morning, no matter how carefully you slept the night before.</li>
+<li style="position: relative;">A diagnosis of sciatica, spinal stenosis, herniated disc, or degenerative disc disease that simply will not stabilize.</li>
+<li style="position: relative;">Three or more abandoned home exercise programs and the gnawing suspicion that you are the problem.</li>
+<li style="position: relative;">A spouse, a doctor, or a therapist who has gently implied you are not really trying.</li>
 </ul>
-<p>If even one of those describes you, you have been carrying a private shame that does not belong to you.</p>
+<p style="position: relative;">If even one of those describes you, you have been carrying a private shame that does not belong to you.</p>
 <b class="rhetorical">The worst case is not the pain. It is believing, for years, that your discipline failed when your nervous system never engaged.</b>
-<p>Spinal researchers have a clinical name for this silent failure now. They call it <strong>The Multifidus Blackout</strong>.</p>
+<p style="position: relative;">Spinal researchers have a clinical name for this silent failure now. They call it <strong>The Multifidus Blackout</strong>.</p>
 <!-- MEDIA 2: story / breakthrough image -->
 <div class="v2-media-slot" data-job-id="990c394e-6c20-4383-afdd-23adc913f917" data-prompts="[&quot;Anatomical illustration of the lumbar multifidus muscle highlighted in red along the spine, clean medical poster style, photorealistic rendering&quot;, &quot;Side-view 3D render of a human lower spine with the deep multifidus muscle isolated and glowing faintly, dark medical background, photorealistic&quot;, &quot;Close-up of an MRI scan of a lumbar spine on a backlit viewer, a doctor's hand pointing to the deep paraspinal muscle, photorealistic&quot;]" data-selected="0" data-slot-key="media_2.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Anatomical illustration of the lumbar multifidus muscle highlighted in red along"</div></div>
-<p>And once you understand what it is, every abandoned exercise sheet in your drawer suddenly makes painful, vindicating sense.</p>
+<p style="position: relative;">And once you understand what it is, every abandoned exercise sheet in your drawer suddenly makes painful, vindicating sense.</p>
 <!-- ROOT CAUSE -->
 <b class="rhetorical">The Hidden Cause</b>
-<p>Deep along the base of your spine sits a small, ribbon-like muscle called the lumbar multifidus.</p>
-<p>It is the only muscle whose entire job is to stabilize each individual vertebra during every movement you make.</p>
-<p>When your back is healthy, this muscle fires automatically, hundreds of times an hour, without you noticing.</p>
+<p style="position: relative;">Deep along the base of your spine sits a small, ribbon-like muscle called the lumbar multifidus.</p>
+<p style="position: relative;">It is the only muscle whose entire job is to stabilize each individual vertebra during every movement you make.</p>
+<p style="position: relative;">When your back is healthy, this muscle fires automatically, hundreds of times an hour, without you noticing.</p>
 <!-- MEDIA 3: mechanism / diagram -->
 <div class="v2-media-slot" data-job-id="990c394e-6c20-4383-afdd-23adc913f917" data-prompts="[&quot;Older man in athletic clothes attempting a bird-dog exercise on a yoga mat in a living room, frustrated expression, photorealistic&quot;, &quot;Crumpled physical therapy exercise sheets piled in a kitchen wastebasket, soft daylight, photorealistic&quot;, &quot;Close-up of an older man's hands gripping his lower back with visible tension, neutral home interior, photorealistic&quot;]" data-selected="0" data-slot-key="media_3.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older man in athletic clothes attempting a bird-dog exercise on a yoga mat in a "</div></div>
-<p class="media-caption">/v2/media-slot/990c394e-6c20-4383-afdd-23adc913f917/media_3__caption</p>
-<p>But within seventy-two hours of your first acute back episode, the nervous system <strong>shuts the multifidus down</strong> as a protective reflex.</p>
+<p class="media-caption" style="position: relative;">/v2/media-slot/990c394e-6c20-4383-afdd-23adc913f917/media_3__caption</p>
+<p style="position: relative;">But within seventy-two hours of your first acute back episode, the nervous system <strong>shuts the multifidus down</strong> as a protective reflex.</p>
 <b class="rhetorical">And here is the part nobody warned you about: that shutdown does not switch back on by itself.</b>
-<p>Years later, while you are sweating through bird dogs and bridges, your multifidus is still <u>neurologically offline</u>.</p>
-<p>You were never lazy. You were performing surface exercises on a deep muscle that could not even hear the command.</p>
+<p style="position: relative;">Years later, while you are sweating through bird dogs and bridges, your multifidus is still <u>neurologically offline</u>.</p>
+<p style="position: relative;">You were never lazy. You were performing surface exercises on a deep muscle that could not even hear the command.</p>
 <!-- MEDIA 4: bad-news visual / worsening -->
 <div class="v2-media-slot" data-job-id="990c394e-6c20-4383-afdd-23adc913f917" data-prompts='["Older man wearing a discreet lower back therapy device under his shirt while reading a newspaper at home, calm expression, photorealistic", "Close-up of a slim medical lower back device with electrode pads being placed on the lumbar region, photorealistic", "Relieved older man stretching gently in a sunlit living room, hand resting on lower back, photorealistic"]' data-selected="0" data-slot-key="media_4.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older man wearing a discreet lower back therapy device under his shirt while rea"</div></div>
 <b class="rhetorical">For decades, the only people who could reactivate a blacked-out multifidus were elite spine clinic patients.</b>
-<p>Inside specialized rehabilitation centers, doctors used a precise electrical signal to wake the dormant muscle directly.</p>
-<p>The protocol worked. The problem was access — the equipment cost a fortune and stayed locked behind hospital doors.</p>
+<p style="position: relative;">Inside specialized rehabilitation centers, doctors used a precise electrical signal to wake the dormant muscle directly.</p>
+<p style="position: relative;">The protocol worked. The problem was access — the equipment cost a fortune and stayed locked behind hospital doors.</p>
 <b class="rhetorical">Meanwhile, the rest of the country was handed photocopied exercise sheets and a quiet implication of failure.</b>
-<p>Insurance covered the handouts. It did not cover the only intervention that addressed the actual neurological problem.</p>
-<p>An entire generation of back pain sufferers blamed themselves for the limits of what their coverage allowed.</p>
+<p style="position: relative;">Insurance covered the handouts. It did not cover the only intervention that addressed the actual neurological problem.</p>
+<p style="position: relative;">An entire generation of back pain sufferers blamed themselves for the limits of what their coverage allowed.</p>
 <b class="rhetorical">That gap between clinic-grade reactivation and the home patient has finally been closed.</b>
 <!-- MEDIA 5: solution reveal image/video -->
 <div class="v2-media-slot" data-job-id="990c394e-6c20-4383-afdd-23adc913f917" data-prompts='["Sleek wearable lower back medical device shown on a clean white surface beside its charging cradle, photorealistic studio lighting", "Older man comfortably wearing a discreet back therapy device while gardening in his backyard, photorealistic", "Close-up of a hand pressing the activation button on a slim medical back device worn at the waistline, photorealistic"]' data-selected="0" data-slot-key="media_5.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Sleek wearable lower back medical device shown on a clean white surface beside i"</div></div>
-<h2>A pocket-sized device now delivers the same multifidus reactivation signal at home.</h2>
-<p>A small American medical company spent years miniaturizing the clinical reactivation protocol into a wearable, FDA-cleared device.</p>
-<p>It does not stretch the back. It does not strengthen what you can already feel firing.</p>
-<p>It targets the <strong>deep, silent multifidus</strong> directly through the skin and reawakens the neurological signal.</p>
-<p>Within a few weeks, the muscle that has been offline for years begins firing automatically again, on its own.</p>
-<p>And the back pain you were told was structural starts behaving, for the first time, like something that can heal.</p>
+<h2 style="position: relative;">A pocket-sized device now delivers the same multifidus reactivation signal at home.</h2>
+<p style="position: relative;">A small American medical company spent years miniaturizing the clinical reactivation protocol into a wearable, FDA-cleared device.</p>
+<p style="position: relative;">It does not stretch the back. It does not strengthen what you can already feel firing.</p>
+<p style="position: relative;">It targets the <strong>deep, silent multifidus</strong> directly through the skin and reawakens the neurological signal.</p>
+<p style="position: relative;">Within a few weeks, the muscle that has been offline for years begins firing automatically again, on its own.</p>
+<p style="position: relative;">And the back pain you were told was structural starts behaving, for the first time, like something that can heal.</p>
 <!-- PRODUCT REVEAL -->
-<h2 style="margin-top:40px">Meet the device that finally reaches what voluntary exercise physiologically cannot reach in a damaged lower back.</h2>
-<h2 style="color:var(--ll-color-primary);margin-top:0;font-size:34px">AMD Life Corrective Therapy Device® for Back Pain</h2>
+<h2 style="margin-top: 40px; position: relative;">Meet the device that finally reaches what voluntary exercise physiologically cannot reach in a damaged lower back.</h2>
+<h2 style="color: var(--ll-color-primary); margin-top: 0px; font-size: 34px; position: relative;">AMD Life Corrective Therapy Device® for Back Pain</h2>
 <!-- MEDIA 6: product hero image -->
 <div class="v2-media-slot" data-job-id="990c394e-6c20-4383-afdd-23adc913f917" data-prompts='["Top-down view of the AMD Life back therapy device with electrode pads, charging cable, and instruction card neatly arranged, photorealistic", "Older couple sitting together on a couch, the man wearing a slim back therapy device under his shirt, relaxed and smiling, photorealistic", "Close-up of an older woman placing an electrode pad on her lower back at home, soft natural lighting, photorealistic"]' data-selected="0" data-slot-key="media_6.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Top-down view of the AMD Life back therapy device with electrode pads, charging "</div></div>
-<p>The AMD Life Corrective Therapy Device is the first FDA-cleared at-home unit engineered specifically for multifidus reactivation in chronic lower back patients.</p>
-<p>It uses a precisely tuned therapeutic signal to bypass conscious effort and restore the involuntary firing pattern of the deep stabilizers.</p>
-<p>You wear it for around twenty minutes a day. You do not sweat, stretch, or follow any prescribed movement.</p>
+<p style="position: relative;">The AMD Life Corrective Therapy Device is the first FDA-cleared at-home unit engineered specifically for multifidus reactivation in chronic lower back patients.</p>
+<p style="position: relative;">It uses a precisely tuned therapeutic signal to bypass conscious effort and restore the involuntary firing pattern of the deep stabilizers.</p>
+<p style="position: relative;">You wear it for around twenty minutes a day. You do not sweat, stretch, or follow any prescribed movement.</p>
 <!-- MEDIA 7: product in use video/image -->
 <div class="v2-media-slot" data-job-id="990c394e-6c20-4383-afdd-23adc913f917" data-prompts='["Older man tying his shoes effortlessly in his entryway with a relaxed posture, photorealistic morning light", "Older man lifting a grandchild off the floor with no visible discomfort, sunlit living room, photorealistic", "Older man walking confidently along a quiet suburban sidewalk, hands free, no cane, photorealistic"]' data-selected="0" data-slot-key="media_7.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older man tying his shoes effortlessly in his entryway with a relaxed posture, p"</div></div>
-<p>The signal does the work that your nervous system has been refusing to do on its own since the original injury.</p>
-<p>It is FSA and HSA eligible, drug-free, surgery-free, and built to be used quietly in your own living room.</p>
+<p style="position: relative;">The signal does the work that your nervous system has been refusing to do on its own since the original injury.</p>
+<p style="position: relative;">It is FSA and HSA eligible, drug-free, surgery-free, and built to be used quietly in your own living room.</p>
 <!-- ★ CTA #1 — first CTA in the page, AFTER 7 medias + gradual product reveal -->
-<a class="cta-btn" href="https://terica-store.com/click"><span>Reactivate My Multifidus</span><small>Available directly through the brand</small></a>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;"><span>Reactivate My Multifidus</span><small>Available directly through the brand</small></a>
 <!-- TRUSTPILOT REVIEWS (2 featured) -->
 <div class="trustpilot-intro">
-<h3>Real Trustpilot reviews from people who never managed to stick with a single home exercise program.</h3>
-<p>Notice the pattern: none of them succeeded by finally being more disciplined with the sheets.</p>
+<h3 style="position: relative;">Real Trustpilot reviews from people who never managed to stick with a single home exercise program.</h3>
+<p style="position: relative;">Notice the pattern: none of them succeeded by finally being more disciplined with the sheets.</p>
 </div>
 <div class="featured-review">
 <span class="stars">★★★★★</span>
 <div class="featured-review-title">I Did Not Do The Exercises And It Worked Anyway</div>
 <div class="featured-review-meta">Reviewed by <strong>Raymond T.</strong> on <span>March 12, 2026</span> — <strong>Verified Purchase</strong></div>
-<p class="featured-review-body">I am sixty-three. I have eight years of physical therapy paperwork in a folder on my desk. I have abandoned every single program inside a month. My wife had stopped asking. I bought this device fully expecting to fail again. The instructions said wear it twenty minutes a day. That was the entire protocol. No bridges. No bird dogs. No planks. By week three I bent down and tied my own boots without bracing. I cried in the kitchen. The shame I had been carrying was not mine.</p>
+<p class="featured-review-body" style="position: relative;">I am sixty-three. I have eight years of physical therapy paperwork in a folder on my desk. I have abandoned every single program inside a month. My wife had stopped asking. I bought this device fully expecting to fail again. The instructions said wear it twenty minutes a day. That was the entire protocol. No bridges. No bird dogs. No planks. By week three I bent down and tied my own boots without bracing. I cried in the kitchen. The shame I had been carrying was not mine.</p>
 <div class="featured-review-helpful">412 readers found helpful</div>
 </div>
 <div class="featured-review">
 <span class="stars">★★★★★</span>
 <div class="featured-review-title">My Physical Therapist Owes Me An Apology</div>
 <div class="featured-review-meta">Reviewed by <strong>Carol J.</strong> on <span>February 28, 2026</span> — <strong>Verified Purchase</strong></div>
-<p class="featured-review-body">Two herniated discs and a decade of being told I was not committed to my home program. I was committed. I was furious and committed and I still could not hold the gains for more than a few weeks. Reading about the multifidus shutdown was the first time anyone had explained why. I started using the device while watching the evening news. I have not picked up an exercise sheet since. The morning stiffness that ran my whole life is genuinely gone. I am still angry it took this long.</p>
+<p class="featured-review-body" style="position: relative;">Two herniated discs and a decade of being told I was not committed to my home program. I was committed. I was furious and committed and I still could not hold the gains for more than a few weeks. Reading about the multifidus shutdown was the first time anyone had explained why. I started using the device while watching the evening news. I have not picked up an exercise sheet since. The morning stiffness that ran my whole life is genuinely gone. I am still angry it took this long.</p>
 <div class="featured-review-helpful">357 readers found helpful</div>
 </div>
 <!-- BENEFITS — Just imagine -->
-<h2>What changes when the silenced muscle finally comes back online again.</h2>
-<p><strong>Once the multifidus is firing automatically again, your spine stops being the unstable structure your other muscles have been overcompensating for.</strong></p>
+<h2 style="position: relative;">What changes when the silenced muscle finally comes back online again.</h2>
+<p style="position: relative;"><strong>Once the multifidus is firing automatically again, your spine stops being the unstable structure your other muscles have been overcompensating for.</strong></p>
 <!-- BULLET LIST 2: emotional scenarios -->
 <ul class="bullet-list">
-<li>Tying your shoes in the morning without first sitting on the edge of the bed to brace yourself.</li>
-<li>Lifting a grandchild, a bag of mulch, or a laundry basket without the involuntary breath you have been holding for years.</li>
-<li>Sleeping through the night and waking up without the first ten minutes being a careful negotiation with your lower back.</li>
+<li style="position: relative;">Tying your shoes in the morning without first sitting on the edge of the bed to brace yourself.</li>
+<li style="position: relative;">Lifting a grandchild, a bag of mulch, or a laundry basket without the involuntary breath you have been holding for years.</li>
+<li style="position: relative;">Sleeping through the night and waking up without the first ten minutes being a careful negotiation with your lower back.</li>
 </ul>
-<p>These are not promises of perfection. They are the ordinary movements that quiet, working multifidus muscles allow to happen.</p>
-<p>The relief feels less like a treatment and more like a return to the body you remember having before all this began.</p>
-<p>And the most important thing is that none of it required you to finally become more disciplined than you already were.</p>
+<p style="position: relative;">These are not promises of perfection. They are the ordinary movements that quiet, working multifidus muscles allow to happen.</p>
+<p style="position: relative;">The relief feels less like a treatment and more like a return to the body you remember having before all this began.</p>
+<p style="position: relative;">And the most important thing is that none of it required you to finally become more disciplined than you already were.</p>
 <!-- SCARCITY / AVAILABILITY BUILD-UP (no prices) -->
-<p>Demand for the device has been climbing every month since the multifidus research entered mainstream spinal medicine.</p>
-<h2>Why you will not find this device at your local pharmacy or big-box retailer.</h2>
-<p>The brand made an early decision to keep the device out of third-party retail and away from drop-shippers.</p>
-<p>That choice protects the clinical integrity of the protocol but it also caps how fast inventory can move.</p>
+<p style="position: relative;">Demand for the device has been climbing every month since the multifidus research entered mainstream spinal medicine.</p>
+<h2 style="position: relative;">Why you will not find this device at your local pharmacy or big-box retailer.</h2>
+<p style="position: relative;">The brand made an early decision to keep the device out of third-party retail and away from drop-shippers.</p>
+<p style="position: relative;">That choice protects the clinical integrity of the protocol but it also caps how fast inventory can move.</p>
 <b class="rhetorical">What that means for you, practically, is that restocks have been running behind orders since late winter.</b>
-<p>Each unit is calibrated and quality-checked before it ships from the company's facility, not assembled in bulk overseas.</p>
-<p>When a wave of new orders hits, the production line cannot simply double overnight to catch up.</p>
-<p>We have watched the available inventory window shrink in real time over the last several weeks.</p>
-<p>Readers who hesitated in February are now being quoted multi-week wait times for the next production run.</p>
+<p style="position: relative;">Each unit is calibrated and quality-checked before it ships from the company's facility, not assembled in bulk overseas.</p>
+<p style="position: relative;">When a wave of new orders hits, the production line cannot simply double overnight to catch up.</p>
+<p style="position: relative;">We have watched the available inventory window shrink in real time over the last several weeks.</p>
+<p style="position: relative;">Readers who hesitated in February are now being quoted multi-week wait times for the next production run.</p>
 <b class="rhetorical">If you are reading this and the order page is still showing units in stock, treat that as the signal.</b>
-<p>There is no benefit to waiting another back-pain morning to do something the science has finally caught up to.</p>
-<p>And there is a significant cost, in time and in mornings, to assuming the next batch will appear quickly.</p>
+<p style="position: relative;">There is no benefit to waiting another back-pain morning to do something the science has finally caught up to.</p>
+<p style="position: relative;">And there is a significant cost, in time and in mornings, to assuming the next batch will appear quickly.</p>
 <!-- EXCLUSIVITY -->
-<h2>You will not find the AMD Life device on Amazon, Walmart, or any major drugstore shelf.</h2>
-<p>The company sells exclusively through its own site to keep the clinical signal calibration verifiable on every unit shipped.</p>
-<p>Listings that appear elsewhere under similar names are not the same device and do not carry the FDA clearance.</p>
-<p>If you want the actual reactivation protocol the spinal researchers tested, the brand's own page is the only path.</p>
-<p>It is also why this device costs a fraction of what an in-clinic reactivation series would normally bill at.</p>
+<h2 style="position: relative;">You will not find the AMD Life device on Amazon, Walmart, or any major drugstore shelf.</h2>
+<p style="position: relative;">The company sells exclusively through its own site to keep the clinical signal calibration verifiable on every unit shipped.</p>
+<p style="position: relative;">Listings that appear elsewhere under similar names are not the same device and do not carry the FDA clearance.</p>
+<p style="position: relative;">If you want the actual reactivation protocol the spinal researchers tested, the brand's own page is the only path.</p>
+<p style="position: relative;">It is also why this device costs a fraction of what an in-clinic reactivation series would normally bill at.</p>
 <!-- ★ CTA #2 -->
-<a class="cta-btn" href="https://terica-store.com/click"><span>Check Availability Now</span><small>Direct from the brand only</small></a>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;"><span>Check Availability Now</span><small>Direct from the brand only</small></a>
 <!-- GUARANTEE -->
 <div class="guarantee-box">
 <span class="days">30 Days</span>
-<h3>Try the device at home for thirty full days with absolutely no risk to you.</h3>
-<p>The brand backs every unit with a thirty-day at-home trial because they know what the first weeks tend to feel like.</p>
-<p>If your mornings are not measurably easier within that window, you return the device for a complete refund.</p>
-<p>No clinic visit. No doctor's note. No restocking maze. Just the same direct customer service line that took your order.</p>
+<h3 style="position: relative;">Try the device at home for thirty full days with absolutely no risk to you.</h3>
+<p style="position: relative;">The brand backs every unit with a thirty-day at-home trial because they know what the first weeks tend to feel like.</p>
+<p style="position: relative;">If your mornings are not measurably easier within that window, you return the device for a complete refund.</p>
+<p style="position: relative;">No clinic visit. No doctor's note. No restocking maze. Just the same direct customer service line that took your order.</p>
 </div>
 <!-- HERE'S WHAT TO DO NEXT -->
-<h2>What happens after you place your order from the brand's site.</h2>
-<p>Your device ships from the company's domestic facility, typically within two business days of the order being placed.</p>
-<p>Inside the box you will find the calibrated unit, the medical-grade pads, the charging cable, and a single-page protocol card.</p>
-<p>There are no apps to install, no subscriptions to manage, and no exercise sheets waiting to make you feel guilty.</p>
-<p>You wear the device. You read your book. The signal does the work your body could not do alone.</p>
+<h2 style="position: relative;">What happens after you place your order from the brand's site.</h2>
+<p style="position: relative;">Your device ships from the company's domestic facility, typically within two business days of the order being placed.</p>
+<p style="position: relative;">Inside the box you will find the calibrated unit, the medical-grade pads, the charging cable, and a single-page protocol card.</p>
+<p style="position: relative;">There are no apps to install, no subscriptions to manage, and no exercise sheets waiting to make you feel guilty.</p>
+<p style="position: relative;">You wear the device. You read your book. The signal does the work your body could not do alone.</p>
 <!-- ★ CTA #4 -->
-<a class="cta-btn" href="https://terica-store.com/click"><span>Order The Device</span><small>Ships from the United States</small></a>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;"><span>Order The Device</span><small>Ships from the United States</small></a>
 <!-- REMEMBER / ZERO RISK -->
-<h2>There is genuinely no scenario in which trying this costs you anything.</h2>
-<p>If the device works, you get back the mornings, the sleep, and the movements you had quietly given up on.</p>
-<p>If it does not work for your specific spine, the brand refunds you in full inside the trial window.</p>
-<p>The only thing the decision actually costs you is the next month of waking up the way you have been waking up.</p>
+<h2 style="position: relative;">There is genuinely no scenario in which trying this costs you anything.</h2>
+<p style="position: relative;">If the device works, you get back the mornings, the sleep, and the movements you had quietly given up on.</p>
+<p style="position: relative;">If it does not work for your specific spine, the brand refunds you in full inside the trial window.</p>
+<p style="position: relative;">The only thing the decision actually costs you is the next month of waking up the way you have been waking up.</p>
 <!-- FINAL UPDATE BANNER -->
 <div style="background:var(--ll-color-background-alt);border-radius:10px;margin:24px 0;padding:16px 20px;font-size:14px;color:var(--ll-color-text-secondary)">
 <strong style="color:var(--ll-color-text-primary)">Final Update</strong>
 <span>As of this morning, the production line is shipping the most recent batch and stock is moving quickly.</span>
 </div>
-<p style="text-align:center;font-size:14px;color:var(--ll-color-warning);font-weight:700">If the order page still shows units available when you click through, you are inside the current shipping window.</p>
+<p style="text-align: center; font-size: 14px; color: var(--ll-color-warning); font-weight: 700; position: relative;">If the order page still shows units available when you click through, you are inside the current shipping window.</p>
 <!-- ★ CTA #5 final -->
-<a class="cta-btn" href="https://terica-store.com/click"><span>Claim My Unit</span><small>Before the current batch sells through</small></a>
-<p style="text-align:center;font-size:13px;color:var(--ll-color-text-secondary);margin-top:4px">Backed by a full thirty-day guarantee</p>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;"><span>Claim My Unit</span><small>Before the current batch sells through</small></a>
+<p style="text-align: center; font-size: 13px; color: var(--ll-color-text-secondary); margin-top: 4px; position: relative;">Backed by a full thirty-day guarantee</p>
 <!-- AMAZON REVIEWS -->
 <div class="amazon-reviews">
-<h3>What verified buyers are reporting after their first month of use.</h3>
+<h3 style="position: relative;">What verified buyers are reporting after their first month of use.</h3>
 <div class="amazon-avg">
 <div class="amazon-avg-number">4.8</div>
 <span class="stars">★★★★★</span>
@@ -463,7 +718,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="sticky-product">
 <span class="sticky-product-badge">Editor's Pick</span>
 <div class="sticky-product-name">AMD Life Corrective Therapy Device® for Back Pain</div>
-<div class="v2-media-slot" data-job-id="990c394e-6c20-4383-afdd-23adc913f917" data-prompts='["Studio product shot of the AMD Life lower back therapy device on a clean white background, photorealistic", "Angled product shot of the device beside its electrode pads and charging cable, soft shadows, photorealistic", "Lifestyle shot of the device resting on a bedside table next to reading glasses and a book, photorealistic"]' data-selected="0" data-slot-key="sidebar.image" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — sidebar.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Studio product shot of the AMD Life lower back therapy device on a clean white b"</div></div>
+<img alt="" data-copy="sidebar.image:attr:src" data-prompts='["Studio product shot of the AMD Life lower back therapy device on a clean white background, photorealistic", "Angled product shot of the device beside its electrode pads and charging cable, soft shadows, photorealistic", "Lifestyle shot of the device resting on a bedside table next to reading glasses and a book, photorealistic"]' data-slot-key="sidebar.image" data-v2-replaced="1" src="/pages/media/60482721/manual_upload-manual-26cf109e.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 1 / 1; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 <div class="sticky-product-stars">
 <span class="stars">★★★★★</span>
 <span>Rated 4.8 out of 5</span>
@@ -496,7 +751,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>
