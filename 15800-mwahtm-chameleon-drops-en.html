@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><div data-channel-name="in_page_channel_IsAMge" id="in-page-channel-node-id"></div><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>The 4K Threshold: Why Your Foundation Betrays You</title>
@@ -196,8 +193,260 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
-<script type="text/javascript">
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script type="text/javascript">
 (function(c,l,a,r,i,t,y){
 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
@@ -213,9 +462,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <div class="article-wrap">
 <!-- HEADLINE -->
-<h1 class="article-headline">I Was Being Edited Out Of My Own Family's Photo Album</h1>
-<h1 class="article-headline-sub">And It Wasn't My Face</h1>
-<p class="article-dek">For two years I blamed my skin. Then I matched every hated photo to the bottle on my counter.</p>
+<h1 class="article-headline" style="position: relative;">I Was Being Edited Out Of My Own Family's Photo Album</h1>
+<h1 class="article-headline-sub" style="position: relative;">And It Wasn't My Face</h1>
+<p class="article-dek" style="position: relative;">For two years I blamed my skin. Then I matched every hated photo to the bottle on my counter.</p>
 <!-- BYLINE -->
 <div class="article-byline">
 <span>By <span class="byline-author">Margaret Whitfield</span>,</span>
@@ -224,159 +473,159 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <!-- HERO IMAGE -->
 <figure class="hero-media">
-<img alt="Hero" data-slot="media.hero" src="/pages/media/2fc898ba/f040e26a73ea.jpeg"/>
+<img alt="Hero" data-slot="media.hero" src="/pages/media/2fc898ba/b2377a516b63.jpeg"/>
 </figure>
 <section class="article-body">
 <!-- INTRO: 8 paragraphs + 1 mid-intro image -->
-<p>I am fifty-eight years old, and for the last two years I have been quietly editing myself out of my own family's photo album. Not dramatically. Just a half-turn at the wedding. A polite excuse during the holiday group shot.</p>
-<p>My granddaughter is nineteen and lives on TikTok. My daughter runs the family Instagram like an unpaid archivist. Between the two of them, every birthday, brunch, and Sunday dinner becomes a permanent record. And in every record, I looked ten years older than I do in my own bathroom mirror.</p>
-<p>I blamed my face. I blamed the lighting. I blamed the harsh front-camera flash. I blamed the granddaughter, briefly, until I felt guilty and apologized over coffee. I never once blamed the bottle of foundation sitting on my counter.</p>
-<p>That bottle had cost me a small fortune over the decade. <strong>Charlotte Tilbury Magic. Estée Lauder Double Wear. IT Cosmetics CC+. Lancôme Teint Idole.</strong> I had been a Sephora loyalist since my fortieth birthday. I trusted those names the way my mother trusted Pond's.</p>
-<p>Then one Sunday night, after another video I had begged my daughter to delete, I sat down with my camera roll and a glass of wine. I lined up every photo I had hated. Beside each one, I noted which foundation I had been wearing that day.</p>
-<p>The pattern was perfect. The bottle was the variable. <strong>My face was the constant.</strong> I had spent two years assuming gravity had finally caught me, when in truth I had been wearing a formula designed for a camera that no longer exists.</p>
-<p>What I learned in the rabbit hole that followed made me genuinely angry. Not the soft, dinner-party kind of angry. The kind of angry where you start naming names. Because the names deserve it.</p>
-<p>This is the article I needed two years ago. If you have started dodging the camera at family events, please read to the end. Your face is almost certainly fine. Your foundation almost certainly is not.</p>
-<figure class="article-media"><img alt="" data-slot="media.intro" src="/pages/media/2fc898ba/056940e4734e.jpeg"/></figure>
+<p style="position: relative;">I am fifty-eight years old, and for the last two years I have been quietly editing myself out of my own family's photo album. Not dramatically. Just a half-turn at the wedding. A polite excuse during the holiday group shot.</p>
+<p style="position: relative;">My granddaughter is nineteen and lives on TikTok. My daughter runs the family Instagram like an unpaid archivist. Between the two of them, every birthday, brunch, and Sunday dinner becomes a permanent record. And in every record, I looked ten years older than I do in my own bathroom mirror.</p>
+<p style="position: relative;">I blamed my face. I blamed the lighting. I blamed the harsh front-camera flash. I blamed the granddaughter, briefly, until I felt guilty and apologized over coffee. I never once blamed the bottle of foundation sitting on my counter.</p>
+<p style="position: relative;">That bottle had cost me a small fortune over the decade. <strong>Charlotte Tilbury Magic. Estée Lauder Double Wear. IT Cosmetics CC+. Lancôme Teint Idole.</strong> I had been a Sephora loyalist since my fortieth birthday. I trusted those names the way my mother trusted Pond's.</p>
+<p style="position: relative;">Then one Sunday night, after another video I had begged my daughter to delete, I sat down with my camera roll and a glass of wine. I lined up every photo I had hated. Beside each one, I noted which foundation I had been wearing that day.</p>
+<p style="position: relative;">The pattern was perfect. The bottle was the variable. <strong>My face was the constant.</strong> I had spent two years assuming gravity had finally caught me, when in truth I had been wearing a formula designed for a camera that no longer exists.</p>
+<p style="position: relative;">What I learned in the rabbit hole that followed made me genuinely angry. Not the soft, dinner-party kind of angry. The kind of angry where you start naming names. Because the names deserve it.</p>
+<p style="position: relative;">This is the article I needed two years ago. If you have started dodging the camera at family events, please read to the end. Your face is almost certainly fine. Your foundation almost certainly is not.</p>
+<figure class="article-media"><img alt="" data-slot="media.intro" src="/pages/media/2fc898ba/3cf7f2250a51.jpeg"/></figure>
 <!-- SECTION 1 -->
-<h2>The Bottle Was Made For A Camera That No Longer Exists</h2>
-<p>Here is the part nobody at the beauty counter will tell you. The flagship foundations American women in our age bracket buy on autopilot were formulated, in most cases, before the iPhone front camera could even shoot in HD.</p>
-<p>Charlotte Tilbury Magic Foundation launched in 2016, but its core pigment system traces back further. <strong>Estée Lauder Double Wear is from 1990.</strong> IT Cosmetics CC+ launched in 2011. Lancôme Teint Idole has been reformulated, but its base architecture predates 4K video on a phone.</p>
-<p>Back then, the highest-resolution camera most of us encountered was a wedding photographer's DSLR, and even that was kind. Front-camera selfies were potato-quality. A foundation could afford to sit slightly heavy on the skin because nothing in our daily life was sharp enough to catch it.</p>
+<h2 style="position: relative;">The Bottle Was Made For A Camera That No Longer Exists</h2>
+<p style="position: relative;">Here is the part nobody at the beauty counter will tell you. The flagship foundations American women in our age bracket buy on autopilot were formulated, in most cases, before the iPhone front camera could even shoot in HD.</p>
+<p style="position: relative;">Charlotte Tilbury Magic Foundation launched in 2016, but its core pigment system traces back further. <strong>Estée Lauder Double Wear is from 1990.</strong> IT Cosmetics CC+ launched in 2011. Lancôme Teint Idole has been reformulated, but its base architecture predates 4K video on a phone.</p>
+<p style="position: relative;">Back then, the highest-resolution camera most of us encountered was a wedding photographer's DSLR, and even that was kind. Front-camera selfies were potato-quality. A foundation could afford to sit slightly heavy on the skin because nothing in our daily life was sharp enough to catch it.</p>
 <div class="callout callout-warning">
 <span class="callout-title">The 4K Threshold</span>
-<p>It is the resolution at which a foundation stops being makeup and starts being evidence. Past that threshold, every formula choice the chemists made for a 720p world becomes brutally visible: the pigment density, the matte finish, the dry edges around your laugh lines.</p>
+<p style="position: relative;">It is the resolution at which a foundation stops being makeup and starts being evidence. Past that threshold, every formula choice the chemists made for a 720p world becomes brutally visible: the pigment density, the matte finish, the dry edges around your laugh lines.</p>
 </div>
-<p>The chemists building those formulas were optimizing for a forgiving world. They formulated for grocery store fluorescents and grandkids' point-and-shoots. Nobody at the lab bench was thinking about a granddaughter's iPhone three feet from your face at a wedding reception.</p>
-<p>Now pick up your iPhone. Open the camera. Flip to selfie. That lens shoots in 4K by default. So does your daughter's. So does your granddaughter's. Every Zoom call, every TikTok, every casual brunch photo is being captured at a resolution the chemists who built your foundation never planned for.</p>
+<p style="position: relative;">The chemists building those formulas were optimizing for a forgiving world. They formulated for grocery store fluorescents and grandkids' point-and-shoots. Nobody at the lab bench was thinking about a granddaughter's iPhone three feet from your face at a wedding reception.</p>
+<p style="position: relative;">Now pick up your iPhone. Open the camera. Flip to selfie. That lens shoots in 4K by default. So does your daughter's. So does your granddaughter's. Every Zoom call, every TikTok, every casual brunch photo is being captured at a resolution the chemists who built your foundation never planned for.</p>
 <ul class="list-cross">
-<li>Pigment particles too large for HD sensors</li>
-<li>Matte finishes that read as dry on 4K video</li>
-<li>Single-shade coverage that highlights neck mismatch</li>
-<li>Heavy texture that settles into every fine line</li>
+<li style="position: relative;">Pigment particles too large for HD sensors</li>
+<li style="position: relative;">Matte finishes that read as dry on 4K video</li>
+<li style="position: relative;">Single-shade coverage that highlights neck mismatch</li>
+<li style="position: relative;">Heavy texture that settles into every fine line</li>
 </ul>
-<p>And here is the part that should make every woman my age furious. The formula sitting on your bathroom counter was never updated to match. The architecture you are paying ninety dollars an ounce for is the same architecture that was failing women fifteen years ago, only louder now.</p>
-<p>Once you see it, you cannot unsee it. The foundation is doing exactly what it was designed to do, in 2009. The cameras simply moved on a decade ahead of the chemists. And we, the loyal customers, were never told.</p>
-<p>That is not a skin problem. That is a <u>category obsolescence problem</u>. And it has been sitting on millions of bathroom counters, quietly aging women on camera while we paid full department-store prices for the privilege.</p>
-<figure class="article-media"><img alt="" data-slot="media.s1" src="/pages/media/2fc898ba/7bca27017dda.jpeg"/></figure>
+<p style="position: relative;">And here is the part that should make every woman my age furious. The formula sitting on your bathroom counter was never updated to match. The architecture you are paying ninety dollars an ounce for is the same architecture that was failing women fifteen years ago, only louder now.</p>
+<p style="position: relative;">Once you see it, you cannot unsee it. The foundation is doing exactly what it was designed to do, in 2009. The cameras simply moved on a decade ahead of the chemists. And we, the loyal customers, were never told.</p>
+<p style="position: relative;">That is not a skin problem. That is a <u>category obsolescence problem</u>. And it has been sitting on millions of bathroom counters, quietly aging women on camera while we paid full department-store prices for the privilege.</p>
+<figure class="article-media"><img alt="" data-slot="media.s1" src="/pages/media/2fc898ba/a2aced2d107b.jpeg"/></figure>
 <!-- SECTION 2 -->
-<h2>What Korean Pharmacies Quietly Did A Decade Ago</h2>
-<p>While American beauty conglomerates kept reformulating the same architecture in new packaging, something very different was happening on the other side of the world. Korean cosmetic chemists had a problem the rest of us would not face for years.</p>
-<p>K-pop and K-drama production moved to HD broadcast roughly a decade before American social media did. Suddenly every idol, every actress, every news anchor was being shot at a resolution that exposed every flaw a traditional foundation could hide. The industry had to adapt or look ridiculous on national television.</p>
-<p>So the Korean pharmacy aisle quietly rebuilt the category from scratch. Pigment particles were micronized. Finishes shifted from matte coverage to soft-focus light diffusion. Single-shade bottles were replaced with <strong>skin-adaptive formulas</strong> that read your tone and matched it.</p>
-<p>The result is a generation of HD-era foundations that look like skin on camera, not like makeup applied to skin. They were designed for the resolution we now carry in our pockets every day, here in Cleveland and Charlotte and Phoenix and Tampa.</p>
-<p>Meanwhile, on this side of the Pacific, the same six American brands kept reformulating around the same problem in new shades, new packaging, new celebrity ambassadors. The architecture never changed. <strong>The cameras did.</strong> Nobody in the boardroom apparently mentioned it.</p>
-<p>I want to be careful here, because I am not a chemist and I am not interested in pretending to be one. But the difference is not subtle once you know what to look for. It is the difference between a film print and a 4K digital master.</p>
-<p>The Korean formulators understood something American marketing teams have refused to acknowledge for ten years. <u>A foundation is no longer a product you wear in person. It is a product you wear on camera.</u> And those are two completely different jobs.</p>
-<p>Which is how I ended up, at fifty-eight, ordering a tiny bottle of Korean-formulated drops three weeks before my niece's wedding. Mostly out of curiosity. Partly out of spite. Entirely out of a quiet, growing fury at the industry I had funded for twenty years.</p>
-<figure class="article-media"><img alt="" data-slot="media.s2" src="/pages/media/2fc898ba/d50aa6e9e52b.jpeg"/></figure>
+<h2 style="position: relative;">What Korean Pharmacies Quietly Did A Decade Ago</h2>
+<p style="position: relative;">While American beauty conglomerates kept reformulating the same architecture in new packaging, something very different was happening on the other side of the world. Korean cosmetic chemists had a problem the rest of us would not face for years.</p>
+<p style="position: relative;">K-pop and K-drama production moved to HD broadcast roughly a decade before American social media did. Suddenly every idol, every actress, every news anchor was being shot at a resolution that exposed every flaw a traditional foundation could hide. The industry had to adapt or look ridiculous on national television.</p>
+<p style="position: relative;">So the Korean pharmacy aisle quietly rebuilt the category from scratch. Pigment particles were micronized. Finishes shifted from matte coverage to soft-focus light diffusion. Single-shade bottles were replaced with <strong>skin-adaptive formulas</strong> that read your tone and matched it.</p>
+<p style="position: relative;">The result is a generation of HD-era foundations that look like skin on camera, not like makeup applied to skin. They were designed for the resolution we now carry in our pockets every day, here in Cleveland and Charlotte and Phoenix and Tampa.</p>
+<p style="position: relative;">Meanwhile, on this side of the Pacific, the same six American brands kept reformulating around the same problem in new shades, new packaging, new celebrity ambassadors. The architecture never changed. <strong>The cameras did.</strong> Nobody in the boardroom apparently mentioned it.</p>
+<p style="position: relative;">I want to be careful here, because I am not a chemist and I am not interested in pretending to be one. But the difference is not subtle once you know what to look for. It is the difference between a film print and a 4K digital master.</p>
+<p style="position: relative;">The Korean formulators understood something American marketing teams have refused to acknowledge for ten years. <u>A foundation is no longer a product you wear in person. It is a product you wear on camera.</u> And those are two completely different jobs.</p>
+<p style="position: relative;">Which is how I ended up, at fifty-eight, ordering a tiny bottle of Korean-formulated drops three weeks before my niece's wedding. Mostly out of curiosity. Partly out of spite. Entirely out of a quiet, growing fury at the industry I had funded for twenty years.</p>
+<figure class="article-media"><img alt="" data-slot="media.s2" src="/pages/media/2fc898ba/f1d5cca9a216.jpeg"/></figure>
 <!-- SECTION 3 -->
-<h2>The Two-Minute Test You Can Run Tonight</h2>
-<p>Before I tell you what happened at the wedding, I want you to do something for me. It will take two minutes. It will cost you nothing. It will tell you, with brutal clarity, whether you have the same problem I had.</p>
-<p>Put on the foundation you wore today, the one sitting on your counter. Stand near a window in indirect daylight. Hold your iPhone about ten inches from your face, front camera, no filter, no portrait mode, no beauty smoothing.</p>
-<p>Take three photos. One straight on. One at a slight angle, the way a relative would catch you across a dinner table. One looking down slightly, the way a grandchild would film you from below. Look at all three at full size on the screen.</p>
-<p>Now look at your bare hand in the same light. Look at your forearm. Look at your neck above your collar. Compare the texture and tone of those bare areas to the area where the foundation lives. <strong>You are looking for two things.</strong></p>
-<p>First, a color line at the jaw. The neck never matches because traditional foundation cannot adapt down a tone. Second, a texture difference. Your bare skin will look softer and more diffused than the foundation area, which will look slightly textured, slightly dry, slightly older.</p>
-<p>If you see what I saw, do not blame your face. Your face is doing what faces do at our age, and it is beautiful. The bottle is failing the camera. <u>The bottle has been failing the camera since the iPhone front lens went HD.</u> You were simply never told.</p>
-<figure class="article-media"><img alt="" data-slot="media.s3" src="/pages/media/2fc898ba/434b1e2b008c.jpeg"/></figure>
+<h2 style="position: relative;">The Two-Minute Test You Can Run Tonight</h2>
+<p style="position: relative;">Before I tell you what happened at the wedding, I want you to do something for me. It will take two minutes. It will cost you nothing. It will tell you, with brutal clarity, whether you have the same problem I had.</p>
+<p style="position: relative;">Put on the foundation you wore today, the one sitting on your counter. Stand near a window in indirect daylight. Hold your iPhone about ten inches from your face, front camera, no filter, no portrait mode, no beauty smoothing.</p>
+<p style="position: relative;">Take three photos. One straight on. One at a slight angle, the way a relative would catch you across a dinner table. One looking down slightly, the way a grandchild would film you from below. Look at all three at full size on the screen.</p>
+<p style="position: relative;">Now look at your bare hand in the same light. Look at your forearm. Look at your neck above your collar. Compare the texture and tone of those bare areas to the area where the foundation lives. <strong>You are looking for two things.</strong></p>
+<p style="position: relative;">First, a color line at the jaw. The neck never matches because traditional foundation cannot adapt down a tone. Second, a texture difference. Your bare skin will look softer and more diffused than the foundation area, which will look slightly textured, slightly dry, slightly older.</p>
+<p style="position: relative;">If you see what I saw, do not blame your face. Your face is doing what faces do at our age, and it is beautiful. The bottle is failing the camera. <u>The bottle has been failing the camera since the iPhone front lens went HD.</u> You were simply never told.</p>
+<figure class="article-media"><img alt="" data-slot="media.s3" src="/pages/media/2fc898ba/fdb19090576c.jpeg"/></figure>
 <!-- SECTION 4 -->
-<h2>The Bottle That Stopped The Bleeding</h2>
-<p>The product I switched to is called <strong>MWAH Chameleon Drops</strong>. I will not pretend I researched it for months. I read three Reddit threads, watched two unsponsored YouTube reviews from women in their fifties, and ordered one bottle. Three weeks before the wedding.</p>
-<p>It is not a foundation in the traditional sense. It is a small bottle of skin-adaptive drops that you mix into your moisturizer, your serum, or apply directly. Two or three drops covers the entire face. Two more cover the neck and decolletage with no demarcation line.</p>
-<p>The pigment is micronized to a particle size designed for HD sensors. The finish is soft-focus rather than matte. And the formula is what they call adaptive, meaning it reads your undertone and adjusts within a range, instead of forcing your skin to match a pre-poured shade.</p>
-<p>The first morning I used it, I did the same iPhone test I just asked you to do. The texture difference was gone. The jawline color line was gone. The crepey-looking patch under my eye that had haunted every Christmas photo for two years was, simply, not there.</p>
-<p>I want to be clear about what it is not. It is not an anti-aging miracle. It did not lift my jaw or fill my lines. <u>My face is the same face.</u> The drops simply stopped advertising my face's age louder than my face actually was.</p>
-<p>That is the entire pitch. It is not skincare. It is not surgery. It is a category upgrade, the way you would update an iPhone operating system. The hardware is the same. The software finally caught up to the year we are living in.</p>
-<p>And for the first time in two years, I stopped flinching when somebody pulled out a phone. I stopped rehearsing the half-turn. I stopped timing my bathroom breaks around the group photo. I just stood where the family wanted me, smiled, and let the shutter do its work.</p>
-<figure class="article-media"><img alt="" data-slot="media.s4" src="/pages/media/2fc898ba/50ee81b3f909.jpeg"/></figure>
+<h2 style="position: relative;">The Bottle That Stopped The Bleeding</h2>
+<p style="position: relative;">The product I switched to is called <strong>MWAH Chameleon Drops</strong>. I will not pretend I researched it for months. I read three Reddit threads, watched two unsponsored YouTube reviews from women in their fifties, and ordered one bottle. Three weeks before the wedding.</p>
+<p style="position: relative;">It is not a foundation in the traditional sense. It is a small bottle of skin-adaptive drops that you mix into your moisturizer, your serum, or apply directly. Two or three drops covers the entire face. Two more cover the neck and decolletage with no demarcation line.</p>
+<p style="position: relative;">The pigment is micronized to a particle size designed for HD sensors. The finish is soft-focus rather than matte. And the formula is what they call adaptive, meaning it reads your undertone and adjusts within a range, instead of forcing your skin to match a pre-poured shade.</p>
+<p style="position: relative;">The first morning I used it, I did the same iPhone test I just asked you to do. The texture difference was gone. The jawline color line was gone. The crepey-looking patch under my eye that had haunted every Christmas photo for two years was, simply, not there.</p>
+<p style="position: relative;">I want to be clear about what it is not. It is not an anti-aging miracle. It did not lift my jaw or fill my lines. <u>My face is the same face.</u> The drops simply stopped advertising my face's age louder than my face actually was.</p>
+<p style="position: relative;">That is the entire pitch. It is not skincare. It is not surgery. It is a category upgrade, the way you would update an iPhone operating system. The hardware is the same. The software finally caught up to the year we are living in.</p>
+<p style="position: relative;">And for the first time in two years, I stopped flinching when somebody pulled out a phone. I stopped rehearsing the half-turn. I stopped timing my bathroom breaks around the group photo. I just stood where the family wanted me, smiled, and let the shutter do its work.</p>
+<figure class="article-media"><img alt="" data-slot="media.s4" src="/pages/media/2fc898ba/9c0eb3b39845.jpeg"/></figure>
 <!-- SECTION 5 -->
-<h2>The Niece's Wedding And The Comment That Stopped Me</h2>
-<p>Three weeks after my first bottle arrived, my niece got married at a vineyard outside Sonoma. It was the kind of event our family had been quietly building toward for a year. White tents, three photographers, two videographers, every guest with an iPhone.</p>
-<p>In the past two years, I would have rehearsed my dodges. Stand at the edge of group photos. Position the tallest cousin in front of me. Time my bathroom break to coincide with the formal portraits. Decline the videographer's roving microphone interviews. Quietly disappear from the record.</p>
+<h2 style="position: relative;">The Niece's Wedding And The Comment That Stopped Me</h2>
+<p style="position: relative;">Three weeks after my first bottle arrived, my niece got married at a vineyard outside Sonoma. It was the kind of event our family had been quietly building toward for a year. White tents, three photographers, two videographers, every guest with an iPhone.</p>
+<p style="position: relative;">In the past two years, I would have rehearsed my dodges. Stand at the edge of group photos. Position the tallest cousin in front of me. Time my bathroom break to coincide with the formal portraits. Decline the videographer's roving microphone interviews. Quietly disappear from the record.</p>
 <div class="callout callout-warning">
 <span class="callout-title">The Comment</span>
-<p>The first photo my daughter posted from the reception, without asking my permission as usual, was a candid shot of me dancing with my husband. The top comment, from a friend of my niece's I had never met, said only: your aunt is glowing.</p>
+<p style="position: relative;">The first photo my daughter posted from the reception, without asking my permission as usual, was a candid shot of me dancing with my husband. The top comment, from a friend of my niece's I had never met, said only: your aunt is glowing.</p>
 </div>
-<p>I read the comment three times. Then I went into the bathroom of our hotel and looked at the photo at full screen. I was not glowing. I was not lit differently. The vineyard sun was the same sun every other guest was standing in.</p>
-<p>I had simply stopped wearing pigment my skin could not hold. That was the entire trick. <strong>The bottle had been doing the aging.</strong> Not the years. Not the late nights. Not the gravity. The bottle.</p>
+<p style="position: relative;">I read the comment three times. Then I went into the bathroom of our hotel and looked at the photo at full screen. I was not glowing. I was not lit differently. The vineyard sun was the same sun every other guest was standing in.</p>
+<p style="position: relative;">I had simply stopped wearing pigment my skin could not hold. That was the entire trick. <strong>The bottle had been doing the aging.</strong> Not the years. Not the late nights. Not the gravity. The bottle.</p>
 <ul class="list-cross">
-<li>No more dodging the videographer at family events</li>
-<li>No more begging my daughter to delete the candid</li>
-<li>No more Zoom calls with the camera mysteriously off</li>
+<li style="position: relative;">No more dodging the videographer at family events</li>
+<li style="position: relative;">No more begging my daughter to delete the candid</li>
+<li style="position: relative;">No more Zoom calls with the camera mysteriously off</li>
 </ul>
-<figure class="article-media"><img alt="" data-slot="media.s5a" src="/pages/media/2fc898ba/0b6b6930a15e.jpeg"/></figure>
-<p>I cried a little, in that hotel bathroom. Not from joy, exactly. From two years of grief I had been carrying for a face I thought I had lost. A face that had been fine the whole time. A face that had simply been wearing the wrong tool for the job.</p>
-<p>I came back to the reception and let the videographer interview me. I sat for the formal portraits with the rest of the family. I posed with my granddaughter for a TikTok. I did not check the result before she posted it.</p>
-<p>That night, in the hotel bed, I scrolled the wedding hashtag for an hour. I was in dozens of photos. I had not asked anyone to delete a single one. <u>For the first time in two years, I was back in the family record.</u></p>
-<p>The next morning, I ordered three more bottles. One for my bathroom counter, one for my travel bag, one for my daughter, who had just turned forty-two and was beginning to make the same set of small dodges I had spent two years making.</p>
-<p>She called me the following week. The first thing she said was, where has this been my whole life. The second thing she said was, why did nobody at Sephora ever tell us.</p>
-<figure class="article-media"><img alt="" data-slot="media.s5b" src="/pages/media/2fc898ba/77c5d2b071cd.jpeg"/></figure>
+<figure class="article-media"><img alt="" data-slot="media.s5a" src="/pages/media/2fc898ba/d0a400b304ba.jpeg"/></figure>
+<p style="position: relative;">I cried a little, in that hotel bathroom. Not from joy, exactly. From two years of grief I had been carrying for a face I thought I had lost. A face that had been fine the whole time. A face that had simply been wearing the wrong tool for the job.</p>
+<p style="position: relative;">I came back to the reception and let the videographer interview me. I sat for the formal portraits with the rest of the family. I posed with my granddaughter for a TikTok. I did not check the result before she posted it.</p>
+<p style="position: relative;">That night, in the hotel bed, I scrolled the wedding hashtag for an hour. I was in dozens of photos. I had not asked anyone to delete a single one. <u>For the first time in two years, I was back in the family record.</u></p>
+<p style="position: relative;">The next morning, I ordered three more bottles. One for my bathroom counter, one for my travel bag, one for my daughter, who had just turned forty-two and was beginning to make the same set of small dodges I had spent two years making.</p>
+<p style="position: relative;">She called me the following week. The first thing she said was, where has this been my whole life. The second thing she said was, why did nobody at Sephora ever tell us.</p>
+<figure class="article-media"><img alt="" data-slot="media.s5b" src="/pages/media/2fc898ba/d0a85297cd6d.jpeg"/></figure>
 <!-- SECTION 6 - BREAKTHROUGH -->
-<h2>Why Nobody At The Counter Will Tell You This</h2>
-<p>That is the question I cannot stop turning over. Why has nobody at the counter told us. The women who sell us our foundations are, in my experience, kind, knowledgeable, and genuinely trying to help. So why are they steering us, decade after decade, toward formulas built for a camera that no longer exists.</p>
-<p>The answer is not a conspiracy. It is something duller and more profitable. The big American beauty houses sell shelf space, and shelf space lives in department stores, and department store buyers reorder what sold last quarter. Reformulating an entire pigment architecture for HD sensors is expensive, slow, and risky.</p>
+<h2 style="position: relative;">Why Nobody At The Counter Will Tell You This</h2>
+<p style="position: relative;">That is the question I cannot stop turning over. Why has nobody at the counter told us. The women who sell us our foundations are, in my experience, kind, knowledgeable, and genuinely trying to help. So why are they steering us, decade after decade, toward formulas built for a camera that no longer exists.</p>
+<p style="position: relative;">The answer is not a conspiracy. It is something duller and more profitable. The big American beauty houses sell shelf space, and shelf space lives in department stores, and department store buyers reorder what sold last quarter. Reformulating an entire pigment architecture for HD sensors is expensive, slow, and risky.</p>
 <div class="callout callout-info">
 <span class="callout-title">The Real Math</span>
-<p>It is cheaper for a legacy brand to release a new shade range, a new celebrity ambassador, and a new bottle design every eighteen months than to rebuild the underlying chemistry. The marketing budget protects the architecture. The architecture, meanwhile, quietly fails on every iPhone in America.</p>
+<p style="position: relative;">It is cheaper for a legacy brand to release a new shade range, a new celebrity ambassador, and a new bottle design every eighteen months than to rebuild the underlying chemistry. The marketing budget protects the architecture. The architecture, meanwhile, quietly fails on every iPhone in America.</p>
 </div>
-<p>Meanwhile, the women on the other side of the counter are trained on the products their employer sells. Nobody at a Lancôme counter is going to tell you that a Korean pharmacy line has lapped the entire American category for the cameras you actually use.</p>
-<p>And the magazines we used to trust have, for a generation, been funded by the same six conglomerates whose foundations are quietly aging us on video. There is no incentive in that ecosystem to publish the article you are reading right now.</p>
-<blockquote class="big-quote">
+<p style="position: relative;">Meanwhile, the women on the other side of the counter are trained on the products their employer sells. Nobody at a Lancôme counter is going to tell you that a Korean pharmacy line has lapped the entire American category for the cameras you actually use.</p>
+<p style="position: relative;">And the magazines we used to trust have, for a generation, been funded by the same six conglomerates whose foundations are quietly aging us on video. There is no incentive in that ecosystem to publish the article you are reading right now.</p>
+<blockquote class="big-quote" style="position: relative;">
 <span>The American foundation industry has spent fifteen years selling us shade extensions while the Koreans rebuilt the entire category for HD. We funded the wrong revolution. The good news is the right one is one bottle away.</span>
 <span class="bq-attrib">— Margaret W., 58, on her own bathroom counter</span>
 </blockquote>
-<p>I am not telling you to throw out everything you own. I am telling you to do the two-minute iPhone test. If your current bottle passes, keep it. Keep loving it. Keep buying it. Nothing here is a moral judgment on the makeup you have worn for twenty years.</p>
-<p>But if your current bottle fails the test the way mine did, you deserve to know there is an alternative the industry never bothered to put in front of you. <strong>You deserve to know it before another two years of family photos go by.</strong></p>
-<p>I am writing this for the version of me who sat on the bathroom floor at fifty-six, scrolling a Thanksgiving album, wondering when she had become the elderly relative in the back of every shot. That woman did not need an injection. She did not need a peel. She did not need a procedure.</p>
-<p>She needed somebody to tell her, plainly and without commercial interest, that the bottle on her counter was the variable. That her face was fine. That the cameras had moved a decade ahead of her makeup, and she had been gaslit by an entire industry into blaming her own reflection.</p>
-<p>So that is what I am telling you now. The bottle is the variable. Your face is the constant. <u>And the constant is more beautiful than the bottle has been letting it look.</u></p>
-<p>What follows is the deeper research that turned my late-night camera-roll experiment into a small, focused fury. If you have ever stepped out of a family photo because you did not recognize the woman the camera kept showing you, please keep reading.</p>
-<figure class="article-media"><img alt="" data-slot="media.s6" src="/pages/media/2fc898ba/1296f113f49a.jpeg"/></figure>
+<p style="position: relative;">I am not telling you to throw out everything you own. I am telling you to do the two-minute iPhone test. If your current bottle passes, keep it. Keep loving it. Keep buying it. Nothing here is a moral judgment on the makeup you have worn for twenty years.</p>
+<p style="position: relative;">But if your current bottle fails the test the way mine did, you deserve to know there is an alternative the industry never bothered to put in front of you. <strong>You deserve to know it before another two years of family photos go by.</strong></p>
+<p style="position: relative;">I am writing this for the version of me who sat on the bathroom floor at fifty-six, scrolling a Thanksgiving album, wondering when she had become the elderly relative in the back of every shot. That woman did not need an injection. She did not need a peel. She did not need a procedure.</p>
+<p style="position: relative;">She needed somebody to tell her, plainly and without commercial interest, that the bottle on her counter was the variable. That her face was fine. That the cameras had moved a decade ahead of her makeup, and she had been gaslit by an entire industry into blaming her own reflection.</p>
+<p style="position: relative;">So that is what I am telling you now. The bottle is the variable. Your face is the constant. <u>And the constant is more beautiful than the bottle has been letting it look.</u></p>
+<p style="position: relative;">What follows is the deeper research that turned my late-night camera-roll experiment into a small, focused fury. If you have ever stepped out of a family photo because you did not recognize the woman the camera kept showing you, please keep reading.</p>
+<figure class="article-media"><img alt="" data-slot="media.s6" src="/pages/media/2fc898ba/e5b90499b86c.jpeg"/></figure>
 <!-- CTA #1 -->
 <div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">See The Drops</a>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;">See The Drops</a>
 </div>
 <!-- SECTION 7 - CLINICAL RESULTS (4 studies) -->
-<h2>What The HD-Era Research Actually Shows</h2>
-<p>After the wedding, I went looking for the science. Not because I needed convincing. Because I was furious and wanted to know exactly how badly I had been sold to. Here is what I found, written for a curious reader, not a chemist.</p>
-<p>The studies below are not promotional. They come from cosmetic chemistry journals, broadcast engineering papers, and consumer-camera research published over the last decade. None of them mention any specific brand. All of them describe the gap that the American beauty industry has refused to close.</p>
-<p>I have summarized each one in plain language. If a paragraph below sounds like the chemists were yelling into a void for ten years while the rest of us kept buying the wrong bottle, that is because they were.</p>
+<h2 style="position: relative;">What The HD-Era Research Actually Shows</h2>
+<p style="position: relative;">After the wedding, I went looking for the science. Not because I needed convincing. Because I was furious and wanted to know exactly how badly I had been sold to. Here is what I found, written for a curious reader, not a chemist.</p>
+<p style="position: relative;">The studies below are not promotional. They come from cosmetic chemistry journals, broadcast engineering papers, and consumer-camera research published over the last decade. None of them mention any specific brand. All of them describe the gap that the American beauty industry has refused to close.</p>
+<p style="position: relative;">I have summarized each one in plain language. If a paragraph below sounds like the chemists were yelling into a void for ten years while the rest of us kept buying the wrong bottle, that is because they were.</p>
 <div class="study">
 <span class="study-tag">Study 01</span>
 <div class="study-title">The Pigment Particle Size Study That Nobody Acted On</div>
-<figure class="study-img"><img alt="" data-slot="media.study_1" src="/pages/media/2fc898ba/31e232159635.jpeg"/></figure>
-<p>A 2014 paper out of Seoul measured the average pigment particle size in fourteen leading global foundations. The Korean and Japanese formulations averaged particles roughly half the diameter of the American and French ones tested.</p>
-<p>The smaller the particle, the more light it diffuses rather than reflects. The more light it diffuses, the softer the finish reads on a high-resolution sensor. <strong>Larger particles, by contrast, catch HD light at sharp angles and produce a textured, aging effect on camera.</strong></p>
-<p>The study concluded that legacy Western formulations would need to micronize their pigments by roughly fifty percent to match the new generation of broadcast-ready Asian formulas. Twelve years later, most American flagship foundations still have not done it.</p>
-<p class="study-source">Journal of Cosmetic Chemistry, Seoul, 2014</p>
+<figure class="study-img"><img alt="" data-slot="media.study_1" src="/pages/media/2fc898ba/dbb704f6718b.jpeg"/></figure>
+<p style="position: relative;">A 2014 paper out of Seoul measured the average pigment particle size in fourteen leading global foundations. The Korean and Japanese formulations averaged particles roughly half the diameter of the American and French ones tested.</p>
+<p style="position: relative;">The smaller the particle, the more light it diffuses rather than reflects. The more light it diffuses, the softer the finish reads on a high-resolution sensor. <strong>Larger particles, by contrast, catch HD light at sharp angles and produce a textured, aging effect on camera.</strong></p>
+<p style="position: relative;">The study concluded that legacy Western formulations would need to micronize their pigments by roughly fifty percent to match the new generation of broadcast-ready Asian formulas. Twelve years later, most American flagship foundations still have not done it.</p>
+<p class="study-source" style="position: relative;">Journal of Cosmetic Chemistry, Seoul, 2014</p>
 </div>
 <div class="study">
 <span class="study-tag">Study 02</span>
 <div class="study-title">Why Front Cameras Punish Matte Foundations</div>
-<figure class="study-img"><img alt="" data-slot="media.study_2" src="/pages/media/2fc898ba/9c7f8277c8c7.jpeg"/></figure>
-<p>A 2018 broadcast engineering paper looked at how mobile phone front-facing cameras render skin compared to professional studio cameras. The conclusion was unambiguous. Phone sensors over-sharpen matte surfaces and over-soften reflective ones.</p>
-<p>In practice, this means a matte-finish foundation, the kind most American long-wear formulas use, will read as drier and more textured on an iPhone selfie than it does in your bathroom mirror. <strong>The camera is not lying. It is doing exactly what its sharpening algorithm was designed to do.</strong></p>
-<p>Soft-focus and luminous finishes, by contrast, are smoothed by the same algorithm. The same face, in the same light, can look ten years younger or ten years older depending purely on the finish of the foundation it is wearing.</p>
-<p class="study-source">International Broadcast Engineering Review, 2018</p>
+<figure class="study-img"><img alt="" data-slot="media.study_2" src="/pages/media/2fc898ba/afab2402b99e.jpeg"/></figure>
+<p style="position: relative;">A 2018 broadcast engineering paper looked at how mobile phone front-facing cameras render skin compared to professional studio cameras. The conclusion was unambiguous. Phone sensors over-sharpen matte surfaces and over-soften reflective ones.</p>
+<p style="position: relative;">In practice, this means a matte-finish foundation, the kind most American long-wear formulas use, will read as drier and more textured on an iPhone selfie than it does in your bathroom mirror. <strong>The camera is not lying. It is doing exactly what its sharpening algorithm was designed to do.</strong></p>
+<p style="position: relative;">Soft-focus and luminous finishes, by contrast, are smoothed by the same algorithm. The same face, in the same light, can look ten years younger or ten years older depending purely on the finish of the foundation it is wearing.</p>
+<p class="study-source" style="position: relative;">International Broadcast Engineering Review, 2018</p>
 </div>
 <div class="study">
 <span class="study-tag">Study 03</span>
 <div class="study-title">The Korean Skin-Adaptive Pigment Trial</div>
-<figure class="study-img"><img alt="" data-slot="media.study_3" src="/pages/media/2fc898ba/7d19325236e5.jpeg"/></figure>
-<p>A 2021 trial out of a Seoul dermatology center tested skin-adaptive pigment formulas on a panel of one hundred and twenty women aged forty to seventy. Each subject was photographed in standardized HD lighting before and after application.</p>
-<p>The adaptive formulas, which adjust within a range to match the wearer's undertone, scored significantly higher on perceived skin uniformity, neck-to-face match, and what the panel called <u>natural age expression</u> than the traditional pre-shaded products tested alongside them.</p>
-<p>The most striking result was on the neck. Traditional foundations produced a visible color line at the jaw in eighty-three percent of subjects. The adaptive formulas produced a visible line in nine percent. That is the gap I saw in my own camera roll.</p>
-<p class="study-source">Korean Dermatological Society Bulletin, 2021</p>
+<figure class="study-img"><img alt="" data-slot="media.study_3" src="/pages/media/2fc898ba/dd4f96e3e063.jpeg"/></figure>
+<p style="position: relative;">A 2021 trial out of a Seoul dermatology center tested skin-adaptive pigment formulas on a panel of one hundred and twenty women aged forty to seventy. Each subject was photographed in standardized HD lighting before and after application.</p>
+<p style="position: relative;">The adaptive formulas, which adjust within a range to match the wearer's undertone, scored significantly higher on perceived skin uniformity, neck-to-face match, and what the panel called <u>natural age expression</u> than the traditional pre-shaded products tested alongside them.</p>
+<p style="position: relative;">The most striking result was on the neck. Traditional foundations produced a visible color line at the jaw in eighty-three percent of subjects. The adaptive formulas produced a visible line in nine percent. That is the gap I saw in my own camera roll.</p>
+<p class="study-source" style="position: relative;">Korean Dermatological Society Bulletin, 2021</p>
 </div>
 <div class="study">
 <span class="study-tag">Study 04</span>
 <div class="study-title">The Long-Term Confidence Follow-Up Survey</div>
-<figure class="study-img"><img alt="" data-slot="media.study_4" src="/pages/media/2fc898ba/a65560e33572.jpeg"/></figure>
-<p>A 2023 follow-up surveyed two hundred women aged fifty to sixty-five who had switched from a legacy Western foundation to a Korean HD-era formula. Twelve months after the switch, the panel was asked about photo and video behavior at family events.</p>
-<p>Seventy-one percent reported that they no longer asked relatives to delete photos of themselves. Sixty-four percent reported turning their video on during work and family calls more often. <strong>Forty-eight percent reported that a relative had spontaneously commented that they looked younger or healthier.</strong></p>
-<p>None of the women in the follow-up reported any change to their skincare routine, weight, hairstyle, or medical interventions during the study window. The only variable was the bottle on their counter.</p>
-<p class="study-source">Consumer Beauty Research Quarterly, 2023</p>
+<figure class="study-img"><img alt="" data-slot="media.study_4" src="/pages/media/2fc898ba/b0e67945cd3c.jpeg"/></figure>
+<p style="position: relative;">A 2023 follow-up surveyed two hundred women aged fifty to sixty-five who had switched from a legacy Western foundation to a Korean HD-era formula. Twelve months after the switch, the panel was asked about photo and video behavior at family events.</p>
+<p style="position: relative;">Seventy-one percent reported that they no longer asked relatives to delete photos of themselves. Sixty-four percent reported turning their video on during work and family calls more often. <strong>Forty-eight percent reported that a relative had spontaneously commented that they looked younger or healthier.</strong></p>
+<p style="position: relative;">None of the women in the follow-up reported any change to their skincare routine, weight, hairstyle, or medical interventions during the study window. The only variable was the bottle on their counter.</p>
+<p class="study-source" style="position: relative;">Consumer Beauty Research Quarterly, 2023</p>
 </div>
-<p>Read those four together and the picture is hard to misread. The chemists have known. The broadcast engineers have known. The Korean dermatologists have known. The American beauty conglomerates have known. The only people who were never told, in plain language, were the women writing the checks at the Sephora counter.</p>
+<p style="position: relative;">Read those four together and the picture is hard to misread. The chemists have known. The broadcast engineers have known. The Korean dermatologists have known. The American beauty conglomerates have known. The only people who were never told, in plain language, were the women writing the checks at the Sephora counter.</p>
 <div class="stat-row">
 <div class="stat-card">
 <span class="stat-num">50%</span>
@@ -393,63 +642,63 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <div class="callout callout-highlight">
 <span class="callout-title">The Verdict</span>
-<p>The science behind HD-era formulas is not new, not exotic, and not controversial. It has simply been trapped on the wrong continent and outside the reach of the women who needed it most. That is the gap a small skin-adaptive bottle finally closes.</p>
+<p style="position: relative;">The science behind HD-era formulas is not new, not exotic, and not controversial. It has simply been trapped on the wrong continent and outside the reach of the women who needed it most. That is the gap a small skin-adaptive bottle finally closes.</p>
 </div>
 <!-- SECTION 8 - PRODUCT INTRO -->
-<h2>How The Drops Actually Work On A Real Face</h2>
-<p>Let me walk you through what the bottle actually does, because the marketing copy on most adaptive formulas is, frankly, embarrassing. Glow this. Quantum that. I am going to describe it the way I would describe it to a friend over coffee.</p>
-<p>You start with clean skin. Whatever serum or moisturizer you already use is fine. The drops are designed to layer over existing skincare without pilling, and after three months on mine, I have not had a single pilling incident, which is more than I can say for my old primer.</p>
-<figure class="article-media"><img alt="Product" data-slot="media.s8a" src="/pages/media/2fc898ba/cfaa539ce5b5.jpeg"/></figure>
-<p>You dispense two to three drops onto the back of your hand. The liquid in the dropper looks far darker than your skin. This is normal and, the first time, alarming. The pigment is encapsulated and only releases when it contacts the warmth and moisture of your face.</p>
-<p>You press the drops into your skin with clean fingertips, working from the center of the face outward. Within about thirty seconds, the color shifts. <strong>Not dramatically. Subtly.</strong> The drops read your undertone and settle to a tone that matches the surrounding skin within a usable range.</p>
-<p>For the neck and decolletage, which are usually a half-shade lighter than the face on women our age, you use one or two more drops and blend down. Because the formula adapts, there is no demarcation line. <u>This is the single biggest visual difference on camera.</u></p>
-<p>For coverage, two drops gives a sheer, skin-like finish. Three to four gives a light-medium that still photographs as skin, not as makeup. I have not personally needed more than four. If you want full coverage, you are probably in the wrong category of product.</p>
-<p>The finish is what the chemists call soft-focus. It is not dewy in the wet, glossy sense. It is not matte in the powdery sense. It is the finish of skin photographed in window light, which is exactly the finish a 4K front camera knows how to render flatteringly.</p>
-<p>It lasts. Through a long dinner, through a wedding reception, through a hot August afternoon at my grandson's baseball game in Tampa. <strong>It does not break down into the lines around my mouth.</strong> It does not separate at the sides of my nose. It does not turn orange by hour six.</p>
-<figure class="article-media"><img alt="" data-slot="media.s8b" src="/pages/media/2fc898ba/481348afe436.jpeg"/></figure>
-<p>And it removes cleanly. A regular cleansing balm or oil cleanser takes it off. There is no clinging residue, no stained pillowcase, no panda eyes the next morning if you fall asleep in it once after a long day, which I have, twice, and survived without consequence.</p>
-<p>That is the entire user experience. There is no gimmick. There is no ritual. It is a small bottle of drops that does the one job a foundation is supposed to do in 2026: look like skin on the cameras the people who love you actually use.</p>
-<figure class="article-media"><img alt="" data-slot="media.s8c" src="/pages/media/2fc898ba/b6981a220e7e.jpeg"/></figure>
+<h2 style="position: relative;">How The Drops Actually Work On A Real Face</h2>
+<p style="position: relative;">Let me walk you through what the bottle actually does, because the marketing copy on most adaptive formulas is, frankly, embarrassing. Glow this. Quantum that. I am going to describe it the way I would describe it to a friend over coffee.</p>
+<p style="position: relative;">You start with clean skin. Whatever serum or moisturizer you already use is fine. The drops are designed to layer over existing skincare without pilling, and after three months on mine, I have not had a single pilling incident, which is more than I can say for my old primer.</p>
+<figure class="article-media"><img alt="Product" data-slot="media.s8a" src="/pages/media/2fc898ba/328a5dcdece8.jpeg"/></figure>
+<p style="position: relative;">You dispense two to three drops onto the back of your hand. The liquid in the dropper looks far darker than your skin. This is normal and, the first time, alarming. The pigment is encapsulated and only releases when it contacts the warmth and moisture of your face.</p>
+<p style="position: relative;">You press the drops into your skin with clean fingertips, working from the center of the face outward. Within about thirty seconds, the color shifts. <strong>Not dramatically. Subtly.</strong> The drops read your undertone and settle to a tone that matches the surrounding skin within a usable range.</p>
+<p style="position: relative;">For the neck and decolletage, which are usually a half-shade lighter than the face on women our age, you use one or two more drops and blend down. Because the formula adapts, there is no demarcation line. <u>This is the single biggest visual difference on camera.</u></p>
+<p style="position: relative;">For coverage, two drops gives a sheer, skin-like finish. Three to four gives a light-medium that still photographs as skin, not as makeup. I have not personally needed more than four. If you want full coverage, you are probably in the wrong category of product.</p>
+<p style="position: relative;">The finish is what the chemists call soft-focus. It is not dewy in the wet, glossy sense. It is not matte in the powdery sense. It is the finish of skin photographed in window light, which is exactly the finish a 4K front camera knows how to render flatteringly.</p>
+<p style="position: relative;">It lasts. Through a long dinner, through a wedding reception, through a hot August afternoon at my grandson's baseball game in Tampa. <strong>It does not break down into the lines around my mouth.</strong> It does not separate at the sides of my nose. It does not turn orange by hour six.</p>
+<figure class="article-media"><img alt="" data-slot="media.s8b" src="/pages/media/2fc898ba/02ab45b89e3d.jpeg"/></figure>
+<p style="position: relative;">And it removes cleanly. A regular cleansing balm or oil cleanser takes it off. There is no clinging residue, no stained pillowcase, no panda eyes the next morning if you fall asleep in it once after a long day, which I have, twice, and survived without consequence.</p>
+<p style="position: relative;">That is the entire user experience. There is no gimmick. There is no ritual. It is a small bottle of drops that does the one job a foundation is supposed to do in 2026: look like skin on the cameras the people who love you actually use.</p>
+<figure class="article-media"><img alt="" data-slot="media.s8c" src="/pages/media/2fc898ba/33cb59b9fffa.jpeg"/></figure>
 <!-- SECTION 9 - TIMELINE -->
-<h2>The First Four Weeks, Honestly</h2>
-<p>I want to walk you through what the first four weeks looked like for me, because every product page on the internet promises instant transformation, and I think honesty serves you better than hype.</p>
-<p>This is not a clinical timeline. It is one woman's experience. Yours may run faster or slower depending on your starting skin, your current routine, and how often you photograph yourself. But the rough shape of the change has held for every friend I have since converted.</p>
+<h2 style="position: relative;">The First Four Weeks, Honestly</h2>
+<p style="position: relative;">I want to walk you through what the first four weeks looked like for me, because every product page on the internet promises instant transformation, and I think honesty serves you better than hype.</p>
+<p style="position: relative;">This is not a clinical timeline. It is one woman's experience. Yours may run faster or slower depending on your starting skin, your current routine, and how often you photograph yourself. But the rough shape of the change has held for every friend I have since converted.</p>
 <div class="phase">
 <span class="phase-num">DAYS<br/>1-7</span>
 <div class="phase-title">Week One: The Camera Test</div>
-<p>In the first week, I mostly used the drops the way I used my old foundation. Same routine, same coverage instinct, same morning rush. The difference showed up not in the mirror but on my phone.</p>
-<p>By day three, I noticed I was not flinching when I opened the front camera. By day five, I had taken a selfie on purpose, which I had not done in eighteen months. By day seven, I sent that selfie to my sister, with no caption.</p>
-<p>She called me back within an hour and asked what I had done. I told her, nothing. <strong>I had not done anything to my face.</strong> I had simply changed the bottle. She did not believe me. She bought her own bottle the following Tuesday.</p>
+<p style="position: relative;">In the first week, I mostly used the drops the way I used my old foundation. Same routine, same coverage instinct, same morning rush. The difference showed up not in the mirror but on my phone.</p>
+<p style="position: relative;">By day three, I noticed I was not flinching when I opened the front camera. By day five, I had taken a selfie on purpose, which I had not done in eighteen months. By day seven, I sent that selfie to my sister, with no caption.</p>
+<p style="position: relative;">She called me back within an hour and asked what I had done. I told her, nothing. <strong>I had not done anything to my face.</strong> I had simply changed the bottle. She did not believe me. She bought her own bottle the following Tuesday.</p>
 </div>
 <div class="phase">
 <span class="phase-num">DAYS<br/>8-14</span>
 <div class="phase-title">Week Two: The Neck Stops Lying</div>
-<p>In the second week, I started using the drops on my neck and decolletage with the same casual confidence I used them on my face. This was the area I had been hiding under scarves and high collars for two years.</p>
-<p>The demarcation line at the jaw, the one I had quietly hated since fifty-five, simply disappeared. <u>Not improved. Disappeared.</u> When I tilted my chin up at the bathroom mirror, the color flowed continuously from cheekbone to collarbone.</p>
-<p>This is the change my husband noticed first, and he is not a man who notices makeup. He said I looked rested. I had not slept any better. I had simply stopped wearing two different shades on the same body.</p>
+<p style="position: relative;">In the second week, I started using the drops on my neck and decolletage with the same casual confidence I used them on my face. This was the area I had been hiding under scarves and high collars for two years.</p>
+<p style="position: relative;">The demarcation line at the jaw, the one I had quietly hated since fifty-five, simply disappeared. <u>Not improved. Disappeared.</u> When I tilted my chin up at the bathroom mirror, the color flowed continuously from cheekbone to collarbone.</p>
+<p style="position: relative;">This is the change my husband noticed first, and he is not a man who notices makeup. He said I looked rested. I had not slept any better. I had simply stopped wearing two different shades on the same body.</p>
 </div>
-<figure class="article-media"><img alt="" data-slot="media.s9a" src="/pages/media/2fc898ba/9a8a694dd5c5.jpeg"/></figure>
+<figure class="article-media"><img alt="" data-slot="media.s9a" src="/pages/media/2fc898ba/783570d12198.jpeg"/></figure>
 <div class="phase">
 <span class="phase-num">DAYS<br/>15-30</span>
 <div class="phase-title">Week Three: Video Calls Without Dread</div>
-<p>Week three was when the change moved off my phone and into my work life. I had been keeping my camera off on Zoom calls for over a year. Telling colleagues my connection was bad. Telling my book club my hair was a disaster.</p>
-<p>On a Wednesday morning call, I forgot to switch the video off. By the time I noticed, three colleagues had already joined and nobody had recoiled. I left it on for the rest of the meeting. Then for the next call. Then for the next.</p>
-<p>Within a week I was back to camera-on as a default. <strong>The version of me who hid from work calls had been gone for two years.</strong> I had assumed she was a permanent fixture of my late fifties. She was, it turns out, a foundation problem.</p>
+<p style="position: relative;">Week three was when the change moved off my phone and into my work life. I had been keeping my camera off on Zoom calls for over a year. Telling colleagues my connection was bad. Telling my book club my hair was a disaster.</p>
+<p style="position: relative;">On a Wednesday morning call, I forgot to switch the video off. By the time I noticed, three colleagues had already joined and nobody had recoiled. I left it on for the rest of the meeting. Then for the next call. Then for the next.</p>
+<p style="position: relative;">Within a week I was back to camera-on as a default. <strong>The version of me who hid from work calls had been gone for two years.</strong> I had assumed she was a permanent fixture of my late fifties. She was, it turns out, a foundation problem.</p>
 </div>
 <div class="phase">
 <span class="phase-num">DAYS<br/>31-45</span>
 <div class="phase-title">Week Four: The Family Photo Shift</div>
-<p>By week four, the change had reached the family group chat. My daughter posted an unedited candid of me reading to my grandson, the kind of photo I would have asked her to take down a month earlier. I let it stay.</p>
-<p>My granddaughter filmed me for one of her TikToks, which I had previously refused to participate in on principle and on vanity. I sat through the filming, I let her post it, and I did not check the comments for a single hour.</p>
-<p>That hour, sitting on my back porch, deliberately not checking, was when I knew the change was permanent. <u>I had stopped negotiating with cameras.</u> I had not won by becoming younger. I had won by no longer being mistranslated.</p>
+<p style="position: relative;">By week four, the change had reached the family group chat. My daughter posted an unedited candid of me reading to my grandson, the kind of photo I would have asked her to take down a month earlier. I let it stay.</p>
+<p style="position: relative;">My granddaughter filmed me for one of her TikToks, which I had previously refused to participate in on principle and on vanity. I sat through the filming, I let her post it, and I did not check the comments for a single hour.</p>
+<p style="position: relative;">That hour, sitting on my back porch, deliberately not checking, was when I knew the change was permanent. <u>I had stopped negotiating with cameras.</u> I had not won by becoming younger. I had won by no longer being mistranslated.</p>
 </div>
-<figure class="article-media"><img alt="" data-slot="media.s9b" src="/pages/media/2fc898ba/6b7c6ea045b8.jpeg"/></figure>
+<figure class="article-media"><img alt="" data-slot="media.s9b" src="/pages/media/2fc898ba/7ff65357f9d0.png"/></figure>
 <!-- SECTION 10 - TESTIMONIALS FIRST BLOCK -->
-<h2>What Other Women In Our Bracket Are Saying</h2>
-<p>I asked the brand to share unedited notes from women in our age range who had switched. I read through dozens before picking these four. They were not the most flattering. They were the most familiar. Each one sounded like a friend.</p>
+<h2 style="position: relative;">What Other Women In Our Bracket Are Saying</h2>
+<p style="position: relative;">I asked the brand to share unedited notes from women in our age range who had switched. I read through dozens before picking these four. They were not the most flattering. They were the most familiar. Each one sounded like a friend.</p>
 <div class="testimonial">
 <div class="tm-stars">★★★★★</div>
-<p class="tm-quote">I had been quietly pulling out of every group photo at our church potluck for three years. Last Sunday I was in the front row, smiling at my granddaughter's phone, and I did not flinch once. I do not know how to thank a bottle.</p>
+<p class="tm-quote" style="position: relative;">I had been quietly pulling out of every group photo at our church potluck for three years. Last Sunday I was in the front row, smiling at my granddaughter's phone, and I did not flinch once. I do not know how to thank a bottle.</p>
 <div class="tm-attrib">
 <span class="tm-name">Linda M., 61, Charlotte</span>
 <span class="tm-verified">Verified Buyer</span>
@@ -457,7 +706,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <div class="testimonial">
 <div class="tm-stars">★★★★★</div>
-<p class="tm-quote">My daughter took a candid of me at the Thanksgiving table. I asked her to send it without thinking. I had not done that in five years. I keep opening the photo because the woman in it is finally me.</p>
+<p class="tm-quote" style="position: relative;">My daughter took a candid of me at the Thanksgiving table. I asked her to send it without thinking. I had not done that in five years. I keep opening the photo because the woman in it is finally me.</p>
 <div class="tm-attrib">
 <span class="tm-name">Patricia R., 57, Tampa</span>
 <span class="tm-verified">Verified Buyer</span>
@@ -465,7 +714,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <div class="testimonial">
 <div class="tm-stars">★★★★★</div>
-<p class="tm-quote">I run a small business and had been hiding from video calls with clients for over a year. Two weeks after switching, I led a webinar with my camera on. I closed three deals. I do not think that is a coincidence.</p>
+<p class="tm-quote" style="position: relative;">I run a small business and had been hiding from video calls with clients for over a year. Two weeks after switching, I led a webinar with my camera on. I closed three deals. I do not think that is a coincidence.</p>
 <div class="tm-attrib">
 <span class="tm-name">Susan T., 59, Phoenix</span>
 <span class="tm-verified">Verified Buyer</span>
@@ -473,16 +722,16 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <div class="testimonial">
 <div class="tm-stars">★★★★★</div>
-<p class="tm-quote">My husband took a selfie of us on our anniversary. He showed me the photo, smiling, and asked when I had gotten work done. I had not. I had switched a bottle. I have not laughed that hard at a compliment in decades.</p>
+<p class="tm-quote" style="position: relative;">My husband took a selfie of us on our anniversary. He showed me the photo, smiling, and asked when I had gotten work done. I had not. I had switched a bottle. I have not laughed that hard at a compliment in decades.</p>
 <div class="tm-attrib">
 <span class="tm-name">Janet B., 64, Cleveland</span>
 <span class="tm-verified">Verified Buyer</span>
 </div>
 </div>
 <!-- SECTION 11 - COMPARISON TABLE -->
-<h2>Side By Side With What Most Of Us Already Own</h2>
-<p>I want to make this comparison fair. The legacy foundations on most of our counters are not bad products. They were excellent products for the cameras of the decade in which they were designed. The problem is the cameras moved on and the formulas did not.</p>
-<p>This is what the difference actually looks like, on the dimensions that matter to women being photographed by their grandchildren in 2026, not by professional photographers in 2009.</p>
+<h2 style="position: relative;">Side By Side With What Most Of Us Already Own</h2>
+<p style="position: relative;">I want to make this comparison fair. The legacy foundations on most of our counters are not bad products. They were excellent products for the cameras of the decade in which they were designed. The problem is the cameras moved on and the formulas did not.</p>
+<p style="position: relative;">This is what the difference actually looks like, on the dimensions that matter to women being photographed by their grandchildren in 2026, not by professional photographers in 2009.</p>
 <div class="comparison">
 <div class="comparison-head">
 <div>Performance Area</div>
@@ -499,110 +748,110 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="comparison-row"><div>Dropper precision and waste</div><div class="yes"></div><div class="no"></div></div>
 <div class="comparison-row"><div>Removal at the end of the day</div><div class="yes"></div><div class="no"></div></div>
 </div>
-<p>The chart is not a value judgment on the foundation you have loved for twenty years. If your current bottle still photographs you the way you want to be seen, keep it. There is no rule that says you must switch.</p>
-<p><strong>But if it does not, the difference is not marginal.</strong> It is the difference between being mistranslated by every camera in the room and being recognized by them. That is not vanity. That is being seen.</p>
-<p>I switched at fifty-eight after twenty years of department-store loyalty. I do not regret a single bottle of the old stuff. I just wish someone had pulled me aside ten years ago and told me the cameras were about to change.</p>
+<p style="position: relative;">The chart is not a value judgment on the foundation you have loved for twenty years. If your current bottle still photographs you the way you want to be seen, keep it. There is no rule that says you must switch.</p>
+<p style="position: relative;"><strong>But if it does not, the difference is not marginal.</strong> It is the difference between being mistranslated by every camera in the room and being recognized by them. That is not vanity. That is being seen.</p>
+<p style="position: relative;">I switched at fifty-eight after twenty years of department-store loyalty. I do not regret a single bottle of the old stuff. I just wish someone had pulled me aside ten years ago and told me the cameras were about to change.</p>
 <!-- CTA #2 -->
 <div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">Try The Drops</a>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;">Try The Drops</a>
 </div>
 <!-- SECTION 14 - GUARANTEE -->
 <div class="guarantee-block">
 <figure class="guarantee-img">
-<img alt="Guarantee badge" data-slot="media.guarantee" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'&gt;&lt;rect width='400' height='400' fill='%23f0f0f0'/&gt;&lt;/svg&gt;"/>
+<img alt="Guarantee badge" data-slot="media.guarantee" src="/pages/media/2fc898ba/c79bf644e034.jpeg"/>
 </figure>
-<h2>What Happens If It Does Not Work For You</h2>
-<p>The brand offers a thirty-day return window from delivery. If the drops do not solve your camera problem, you send the bottle back and they refund you. Plain and simple.</p>
-<p>The window is built around real use, not a sealed-bottle trial. Try it through a normal month of photos and video calls before you decide.</p>
-<p>The risk sits with the brand. Your only job is to run the iPhone test before and after, and tell yourself the truth.</p>
+<h2 style="position: relative;">What Happens If It Does Not Work For You</h2>
+<p style="position: relative;">The brand offers a thirty-day return window from delivery. If the drops do not solve your camera problem, you send the bottle back and they refund you. Plain and simple.</p>
+<p style="position: relative;">The window is built around real use, not a sealed-bottle trial. Try it through a normal month of photos and video calls before you decide.</p>
+<p style="position: relative;">The risk sits with the brand. Your only job is to run the iPhone test before and after, and tell yourself the truth.</p>
 </div>
 <!-- SECTION 15 - HOW TO GET STARTED -->
-<h2>What You Should Actually Expect</h2>
-<p>I want to set realistic expectations, because the worst thing a product can do is over-promise. The drops will not erase a decade. They will not lift your jaw, fill your nasolabial folds, or replace a dermatology appointment you have been postponing.</p>
-<p>What they will do, based on my own three months and the dozens of women I have since pushed into trying them, is close the gap between the face you see in your own bathroom mirror and the face the cameras around you keep showing.</p>
+<h2 style="position: relative;">What You Should Actually Expect</h2>
+<p style="position: relative;">I want to set realistic expectations, because the worst thing a product can do is over-promise. The drops will not erase a decade. They will not lift your jaw, fill your nasolabial folds, or replace a dermatology appointment you have been postponing.</p>
+<p style="position: relative;">What they will do, based on my own three months and the dozens of women I have since pushed into trying them, is close the gap between the face you see in your own bathroom mirror and the face the cameras around you keep showing.</p>
 <ul class="list-check">
-<li>A face-to-neck color match that finally looks continuous</li>
-<li>A soft-focus finish on iPhone front cameras and Zoom</li>
-<li>No settling into the lines around your mouth and eyes</li>
-<li>A formula that layers cleanly over your existing skincare</li>
-<li>Confidence the next time a grandchild lifts a phone</li>
+<li style="position: relative;">A face-to-neck color match that finally looks continuous</li>
+<li style="position: relative;">A soft-focus finish on iPhone front cameras and Zoom</li>
+<li style="position: relative;">No settling into the lines around your mouth and eyes</li>
+<li style="position: relative;">A formula that layers cleanly over your existing skincare</li>
+<li style="position: relative;">Confidence the next time a grandchild lifts a phone</li>
 </ul>
-<p>That is, in my experience, more than enough. The two years I spent quietly disappearing from the family record were not caused by my actual face. They were caused by the gap between the camera and the bottle. Closing that gap was, to my surprise, all I needed.</p>
-<p>You may not need to switch at all. The two-minute iPhone test will tell you. If your current foundation passes, you are done. Save your money, keep your loyalty, and please ignore everything I have written here with my blessing.</p>
-<p>But if it fails, you now know what I did not know two years ago. You know the gap exists. You know the chemistry to close it has been on a different continent for a decade. And you know there is, finally, a small bottle of drops that brings it within reach.</p>
+<p style="position: relative;">That is, in my experience, more than enough. The two years I spent quietly disappearing from the family record were not caused by my actual face. They were caused by the gap between the camera and the bottle. Closing that gap was, to my surprise, all I needed.</p>
+<p style="position: relative;">You may not need to switch at all. The two-minute iPhone test will tell you. If your current foundation passes, you are done. Save your money, keep your loyalty, and please ignore everything I have written here with my blessing.</p>
+<p style="position: relative;">But if it fails, you now know what I did not know two years ago. You know the gap exists. You know the chemistry to close it has been on a different continent for a decade. And you know there is, finally, a small bottle of drops that brings it within reach.</p>
 <div class="inline-link-row">
 <span>The brand sells directly here, at</span>
 <a href="https://terica-store.com/click">the official Chameleon Drops page</a>
 </div>
 <!-- CTA #3 -->
 <div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">Order The Drops</a>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;">Order The Drops</a>
 </div>
 <!-- SECTION 16 - URGENCY -->
-<h2>What Two Years Of Hiding Actually Cost Me</h2>
-<p>I want to close on the part that still makes me angry, because I think it is the part nobody talks about. The cost of being mistranslated by cameras for two years was not a beauty cost. It was a relationship cost.</p>
-<p>I missed my granddaughter's first homecoming photos because I made an excuse about the lighting. I missed my daughter's surprise birthday brunch group shot because I timed a bathroom break. I missed a Zoom call with my own mother in Florida because I told her the camera was broken.</p>
-<p>None of those moments come back. The homecoming photo exists with everyone in it except me. The brunch group shot is framed in my daughter's hallway, and there is a polite gap where I should have been standing. <strong>The Zoom call with my mother was, it turned out, one of the last.</strong></p>
-<p>I did not know it was one of the last when I declined the camera. I thought I was sparing her the sight of me. I was, in fact, sparing her the sight of me. <u>That is not the same thing as a kindness.</u> That is a small disappearance that I cannot take back.</p>
-<p>That is the cost the beauty industry quietly imposed on a generation of women while it kept reformulating shade ranges and rebottling the same architecture. It is not a cost they will be charged for. It is a cost we have absorbed in silence, family by family, photo by photo.</p>
-<p>The reason I am writing this with my real anger showing is that I do not want any other woman in our bracket to find out, the way I did, that she has been quietly editing herself out of the only record her grandchildren will ever have of her.</p>
-<p>You do not have to switch to this product. You do not have to take my word for it. You do have to run the iPhone test. And if it fails, do something about it, because the next two years will go by exactly as quickly as the last two.</p>
-<p>My niece's wedding album arrived in the mail last month. I am in seventy-one of the photos. <strong>I counted.</strong> Two years ago I would have been in three. That is the entire difference one small bottle of drops made in my actual life.</p>
-<figure class="article-media"><img alt="" data-slot="media.s16" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1000'&gt;&lt;rect width='1600' height='1000' fill='%23f0f0f0'/&gt;&lt;/svg&gt;"/></figure>
+<h2 style="position: relative;">What Two Years Of Hiding Actually Cost Me</h2>
+<p style="position: relative;">I want to close on the part that still makes me angry, because I think it is the part nobody talks about. The cost of being mistranslated by cameras for two years was not a beauty cost. It was a relationship cost.</p>
+<p style="position: relative;">I missed my granddaughter's first homecoming photos because I made an excuse about the lighting. I missed my daughter's surprise birthday brunch group shot because I timed a bathroom break. I missed a Zoom call with my own mother in Florida because I told her the camera was broken.</p>
+<p style="position: relative;">None of those moments come back. The homecoming photo exists with everyone in it except me. The brunch group shot is framed in my daughter's hallway, and there is a polite gap where I should have been standing. <strong>The Zoom call with my mother was, it turned out, one of the last.</strong></p>
+<p style="position: relative;">I did not know it was one of the last when I declined the camera. I thought I was sparing her the sight of me. I was, in fact, sparing her the sight of me. <u>That is not the same thing as a kindness.</u> That is a small disappearance that I cannot take back.</p>
+<p style="position: relative;">That is the cost the beauty industry quietly imposed on a generation of women while it kept reformulating shade ranges and rebottling the same architecture. It is not a cost they will be charged for. It is a cost we have absorbed in silence, family by family, photo by photo.</p>
+<p style="position: relative;">The reason I am writing this with my real anger showing is that I do not want any other woman in our bracket to find out, the way I did, that she has been quietly editing herself out of the only record her grandchildren will ever have of her.</p>
+<p style="position: relative;">You do not have to switch to this product. You do not have to take my word for it. You do have to run the iPhone test. And if it fails, do something about it, because the next two years will go by exactly as quickly as the last two.</p>
+<p style="position: relative;">My niece's wedding album arrived in the mail last month. I am in seventy-one of the photos. <strong>I counted.</strong> Two years ago I would have been in three. That is the entire difference one small bottle of drops made in my actual life.</p>
+<figure class="article-media"><img alt="" data-slot="media.s16" src="/pages/media/2fc898ba/6cec56f78c81.jpeg"/></figure>
 <!-- SECTION 17 - FUTURE SELF -->
-<h2>The Quiet Math Of Switching Now Versus Later</h2>
-<p>If you are reading this in late April, the math of when you switch matters more than you might think. Memorial Day weekend is roughly a month away. Father's Day is six weeks. Graduations across the country start within days.</p>
-<p>Each one of those dates is a photo event. Each one will be captured by the iPhones of the people who love you. Each one will go into a family album, a group chat, an Instagram archive, a TikTok, or a school yearbook. Each one is a chance to be in the record or not.</p>
+<h2 style="position: relative;">The Quiet Math Of Switching Now Versus Later</h2>
+<p style="position: relative;">If you are reading this in late April, the math of when you switch matters more than you might think. Memorial Day weekend is roughly a month away. Father's Day is six weeks. Graduations across the country start within days.</p>
+<p style="position: relative;">Each one of those dates is a photo event. Each one will be captured by the iPhones of the people who love you. Each one will go into a family album, a group chat, an Instagram archive, a TikTok, or a school yearbook. Each one is a chance to be in the record or not.</p>
 <div class="callout callout-highlight">
 <span class="callout-title">The Window</span>
-<p>You have roughly three weeks to test the drops, run the iPhone comparison, and decide whether they belong in your routine before the spring photo season really starts. After Memorial Day, you are no longer testing. You are simply living in whatever bottle you brought with you.</p>
+<p style="position: relative;">You have roughly three weeks to test the drops, run the iPhone comparison, and decide whether they belong in your routine before the spring photo season really starts. After Memorial Day, you are no longer testing. You are simply living in whatever bottle you brought with you.</p>
 </div>
-<p>I switched three weeks before my niece's wedding and it was, by accident, exactly the right window. Long enough to learn the application, short enough to feel the contrast. If you are reading this on the day it published, you have the same window now.</p>
-<p>That is not a high-pressure pitch. It is calendar math. The cameras are coming for you in the next sixty days whether you switch or not. The only question is which bottle is on your counter when they arrive.</p>
-<p>I am not going to tell you that the brand is selling out, because I do not know its inventory and would not lie about it if I did. <u>I am going to tell you that your spring is coming whether the bottle on your counter is ready for it or not.</u></p>
-<p>If you switch this week, you will go into Memorial Day weekend already past the awkward learning curve. You will have run the iPhone test twice. You will know what the drops do and do not do. You will not be experimenting on the day of the family barbecue.</p>
-<p>If you switch in three weeks, you will be learning the application on the morning of the holiday. That is doable, but it is not what I would recommend. The drops are simple, but every new product has a small adjustment week.</p>
-<p>And if you do not switch at all, that is also a perfectly valid choice. <strong>You are not obligated to update your foundation any more than you are obligated to update your phone.</strong> You can keep the bottle you love and accept the camera math as it is.</p>
-<p>Just do not, please, spend another spring season blaming your face for what the bottle is doing. That is the trade I am asking you not to make. Whatever you decide about the drops, the iPhone test costs nothing.</p>
-<p>Run it tonight. If your bottle passes, keep it. If it fails, you now know what to do. That is the entire promise of this article. The rest is, as it always was, your decision.</p>
+<p style="position: relative;">I switched three weeks before my niece's wedding and it was, by accident, exactly the right window. Long enough to learn the application, short enough to feel the contrast. If you are reading this on the day it published, you have the same window now.</p>
+<p style="position: relative;">That is not a high-pressure pitch. It is calendar math. The cameras are coming for you in the next sixty days whether you switch or not. The only question is which bottle is on your counter when they arrive.</p>
+<p style="position: relative;">I am not going to tell you that the brand is selling out, because I do not know its inventory and would not lie about it if I did. <u>I am going to tell you that your spring is coming whether the bottle on your counter is ready for it or not.</u></p>
+<p style="position: relative;">If you switch this week, you will go into Memorial Day weekend already past the awkward learning curve. You will have run the iPhone test twice. You will know what the drops do and do not do. You will not be experimenting on the day of the family barbecue.</p>
+<p style="position: relative;">If you switch in three weeks, you will be learning the application on the morning of the holiday. That is doable, but it is not what I would recommend. The drops are simple, but every new product has a small adjustment week.</p>
+<p style="position: relative;">And if you do not switch at all, that is also a perfectly valid choice. <strong>You are not obligated to update your foundation any more than you are obligated to update your phone.</strong> You can keep the bottle you love and accept the camera math as it is.</p>
+<p style="position: relative;">Just do not, please, spend another spring season blaming your face for what the bottle is doing. That is the trade I am asking you not to make. Whatever you decide about the drops, the iPhone test costs nothing.</p>
+<p style="position: relative;">Run it tonight. If your bottle passes, keep it. If it fails, you now know what to do. That is the entire promise of this article. The rest is, as it always was, your decision.</p>
 <!-- CTA #4 -->
 <div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">Get The Drops</a>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;">Get The Drops</a>
 </div>
 <!-- SECTION 18 - FAQ -->
-<h2>Questions I Asked Before I Ordered</h2>
+<h2 style="position: relative;">Questions I Asked Before I Ordered</h2>
 <div class="faq-item">
-<p class="faq-q">Is this an anti-aging product or a foundation?</p>
-<p class="faq-a">It is a foundation. The drops do not change your underlying skin, lift anything, or fill any lines. What they do is replace a legacy pigment architecture with one designed for HD cameras, so your actual skin reads on camera the way it reads in a bathroom mirror. There is no skincare claim attached.</p>
+<p class="faq-q" style="position: relative;">Is this an anti-aging product or a foundation?</p>
+<p class="faq-a" style="position: relative;">It is a foundation. The drops do not change your underlying skin, lift anything, or fill any lines. What they do is replace a legacy pigment architecture with one designed for HD cameras, so your actual skin reads on camera the way it reads in a bathroom mirror. There is no skincare claim attached.</p>
 </div>
 <div class="faq-item">
-<p class="faq-q">Will it match my undertone if I am cool, warm, or neutral?</p>
-<p class="faq-a">The formula is adaptive within a range. It reads the warmth or coolness of your skin and settles into a matching tone within a window. If you are at an extreme end of the undertone spectrum, blend a small test patch on your jawline first. Most women in our bracket land comfortably inside the adaptive range.</p>
+<p class="faq-q" style="position: relative;">Will it match my undertone if I am cool, warm, or neutral?</p>
+<p class="faq-a" style="position: relative;">The formula is adaptive within a range. It reads the warmth or coolness of your skin and settles into a matching tone within a window. If you are at an extreme end of the undertone spectrum, blend a small test patch on your jawline first. Most women in our bracket land comfortably inside the adaptive range.</p>
 </div>
 <div class="faq-item">
-<p class="faq-q">Can I use it on my neck and decolletage too?</p>
-<p class="faq-a">Yes, and this is, in my experience, the single biggest reason to switch. Most legacy foundations create a visible color line at the jaw because they cannot adjust between face and neck tone. The drops adapt to both, so the coverage flows continuously from cheekbone to collarbone without a demarcation.</p>
+<p class="faq-q" style="position: relative;">Can I use it on my neck and decolletage too?</p>
+<p class="faq-a" style="position: relative;">Yes, and this is, in my experience, the single biggest reason to switch. Most legacy foundations create a visible color line at the jaw because they cannot adjust between face and neck tone. The drops adapt to both, so the coverage flows continuously from cheekbone to collarbone without a demarcation.</p>
 </div>
 <div class="faq-item">
-<p class="faq-q">Will it pill on top of my serum or moisturizer?</p>
-<p class="faq-a">It has not on me, on my daughter, or on any of the women I have converted. The formula is designed to layer over standard skincare without separating. If you use a heavy silicone primer, you may want to skip it on the days you wear the drops. Otherwise your existing routine should hold.</p>
+<p class="faq-q" style="position: relative;">Will it pill on top of my serum or moisturizer?</p>
+<p class="faq-a" style="position: relative;">It has not on me, on my daughter, or on any of the women I have converted. The formula is designed to layer over standard skincare without separating. If you use a heavy silicone primer, you may want to skip it on the days you wear the drops. Otherwise your existing routine should hold.</p>
 </div>
 <div class="faq-item">
-<p class="faq-q">How long does one bottle actually last?</p>
-<p class="faq-a">At two to three drops for the face and one to two for the neck, a single bottle has lasted me roughly ten weeks of daily wear. Your usage will vary based on your coverage preference and how often you reapply. It is, in my experience, a longer-running bottle than the legacy foundations I came from.</p>
+<p class="faq-q" style="position: relative;">How long does one bottle actually last?</p>
+<p class="faq-a" style="position: relative;">At two to three drops for the face and one to two for the neck, a single bottle has lasted me roughly ten weeks of daily wear. Your usage will vary based on your coverage preference and how often you reapply. It is, in my experience, a longer-running bottle than the legacy foundations I came from.</p>
 </div>
 <div class="faq-item">
-<p class="faq-q">What if it does not work for me on camera?</p>
-<p class="faq-a">The brand offers a thirty-day return window from delivery. Run the iPhone test before you start, run it again after two weeks, and trust the photos. If the gap has not closed, send the bottle back. The whole point of this article is that the camera is the honest judge, not the bathroom mirror.</p>
+<p class="faq-q" style="position: relative;">What if it does not work for me on camera?</p>
+<p class="faq-a" style="position: relative;">The brand offers a thirty-day return window from delivery. Run the iPhone test before you start, run it again after two weeks, and trust the photos. If the gap has not closed, send the bottle back. The whole point of this article is that the camera is the honest judge, not the bathroom mirror.</p>
 </div>
 <!-- CTA #5 (final) -->
 <div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">Try It Today</a>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;">Try It Today</a>
 <span class="cta-sub">Backed by a thirty-day return window from delivery</span>
 </div>
 <!-- REFERENCES -->
 <div class="references">
-<h2>Sources, Studies, And Further Reading</h2>
+<h2 style="position: relative;">Sources, Studies, And Further Reading</h2>
 <div class="ref-item"><span class="ref-num">1.</span><span class="ref-text">Journal of Cosmetic Chemistry, Pigment Particle Size in Global Foundations, Seoul, 2014</span></div>
 <div class="ref-item"><span class="ref-num">2.</span><span class="ref-text">International Broadcast Engineering Review, Front-Facing Camera Sharpening Algorithms, 2018</span></div>
 <div class="ref-item"><span class="ref-num">3.</span><span class="ref-text">Korean Dermatological Society Bulletin, Skin-Adaptive Pigment Trial, 2021</span></div>
@@ -631,7 +880,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>
