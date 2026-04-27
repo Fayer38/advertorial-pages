@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>The Quiet Reckoning Over Nightly Melatonin: What Atlanta Doctors Are Telling Patients About a Drug-Free Path to Sleep</title>
@@ -228,6 +225,16 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -236,7 +243,255 @@ t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "wb35vpdfk1");
 </script>
-<script async="" src="https://terica-store.com/tracker.js"></script>
+<!-- ext-script-stripped -->
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
@@ -250,8 +505,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <a href="https://terica-store.com/click"><span>Home</span></a><span class="breadcrumb-sep">›</span><a href="https://terica-store.com/click"><span>Health</span></a><span class="breadcrumb-sep">›</span><a href="https://terica-store.com/click"><span>Sleep Science</span></a>
 </nav>
 <!-- HEADLINE AREA -->
-<h1>The Sleep Aid Quietly Suppressing Your Body's Own Melatonin, And the Mechanism Replacing It</h1>
-<p class="article-subtitle">A growing number of physicians are quietly recommending deep pressure stimulation.</p>
+<h1 style="position: relative;">The Sleep Aid Quietly Suppressing Your Body's Own Melatonin, And the Mechanism Replacing It</h1>
+<p class="article-subtitle" style="position: relative;">A growing number of physicians are quietly recommending deep pressure stimulation.</p>
 <div class="article-byline">
 <img alt="Author" class="article-byline-photo" src="/pages/avatars/author/neutral_female.jpg"/>
 <div class="article-byline-info">
@@ -260,151 +515,151 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 </div>
 <!-- MEDIA 1: hero video (or image) after headline -->
-<div class="v2-media-slot" data-job-id="d480430f-d5e3-4938-9ade-98d33b5540ba" data-prompts="[&quot;Editorial portrait of a 41-year-old American woman, dark hair, professional, sitting on the edge of a softly lit bedroom bed at dusk, looking thoughtfully at a small bottle of melatonin gummies on her nightstand, photorealistic&quot;, &quot;Wide editorial shot of a modern Atlanta bedroom at twilight, neutral linen bedding, a TENCEL weighted blanket folded at the foot of the bed, melatonin bottle on the nightstand in soft focus, photorealistic&quot;, &quot;Close-up of a woman's hands holding a half-empty bottle of melatonin gummies, soft window light, expression of quiet doubt and reflection, photorealistic&quot;]" data-selected="0" data-slot-key="media_1.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Editorial portrait of a 41-year-old American woman, dark hair, professional, sit"</div></div>
+<img alt="" data-copy="media_1.url:attr:src" data-prompts="[&quot;Editorial portrait of a 41-year-old American woman, dark hair, professional, sitting on the edge of a softly lit bedroom bed at dusk, looking thoughtfully at a small bottle of melatonin gummies on her nightstand, photorealistic&quot;, &quot;Wide editorial shot of a modern Atlanta bedroom at twilight, neutral linen bedding, a TENCEL weighted blanket folded at the foot of the bed, melatonin bottle on the nightstand in soft focus, photorealistic&quot;, &quot;Close-up of a woman's hands holding a half-empty bottle of melatonin gummies, soft window light, expression of quiet doubt and reflection, photorealistic&quot;]" data-slot-key="media_1.url" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/d6c650dd/manual_upload-manual-6c8c83e0.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 <!-- STORY INTRO -->
-<p>Dana Alvarez, 41, a tax attorney in midtown Atlanta, had taken 10mg of melatonin every night for four years before her primary care physician at Emory said something unusual.</p>
-<p>Her bloodwork showed something most patients are never told. Her natural melatonin production had effectively collapsed, and her morning cortisol was elevated.</p>
+<p style="position: relative;">Dana Alvarez, 41, a tax attorney in midtown Atlanta, had taken 10mg of melatonin every night for four years before her primary care physician at Emory said something unusual.</p>
+<p style="position: relative;">Her bloodwork showed something most patients are never told. Her natural melatonin production had effectively collapsed, and her morning cortisol was elevated.</p>
 <!-- BULLET LIST 1: list of conditions -->
 <ul class="bullet-list">
-<li>You take melatonin gummies every night and now feel groggier, foggier, and somehow more awake at 3 a.m. than before.</li>
-<li>You started with magnesium, then added Unisom, then ZzzQuil, and the stack keeps growing while your sleep keeps shrinking.</li>
-<li>Your physician casually renewed your trazodone or Ambien prescription, and you walked out feeling something between relief and quiet unease.</li>
-<li>You wake at 5 a.m. with a heavy, sedated grogginess that takes two coffees and a cold shower to lift.</li>
+<li style="position: relative;">You take melatonin gummies every night and now feel groggier, foggier, and somehow more awake at 3 a.m. than before.</li>
+<li style="position: relative;">You started with magnesium, then added Unisom, then ZzzQuil, and the stack keeps growing while your sleep keeps shrinking.</li>
+<li style="position: relative;">Your physician casually renewed your trazodone or Ambien prescription, and you walked out feeling something between relief and quiet unease.</li>
+<li style="position: relative;">You wake at 5 a.m. with a heavy, sedated grogginess that takes two coffees and a cold shower to lift.</li>
 </ul>
-<p>If any of these scenarios feel familiar, what Dana's physician told her in the exam room may matter more than you think.</p>
+<p style="position: relative;">If any of these scenarios feel familiar, what Dana's physician told her in the exam room may matter more than you think.</p>
 <b class="rhetorical">The very products marketed to fix insomnia, recent research suggests, may be the precise reason millions of women cannot sleep through the night.</b>
-<p>A 2022 JAMA analysis found over-the-counter melatonin doses are routinely far higher than physiological levels, with documented cases of long-term <strong>suppression of endogenous production</strong>.</p>
+<p style="position: relative;">A 2022 JAMA analysis found over-the-counter melatonin doses are routinely far higher than physiological levels, with documented cases of long-term <strong>suppression of endogenous production</strong>.</p>
 <!-- MEDIA 2: story / breakthrough image -->
-<div class="v2-media-slot" data-job-id="d480430f-d5e3-4938-9ade-98d33b5540ba" data-prompts="[&quot;Overhead editorial flat-lay of an American medicine cabinet shelf showing melatonin bottles, ZzzQuil, Unisom, magnesium, and a prescription bottle of trazodone, soft natural light, photorealistic&quot;, &quot;Close-up of a woman's hand reaching into a medicine cabinet crowded with sleep aids, neutral bathroom tile in background, photorealistic&quot;, &quot;Tired woman in her early forties sitting on the edge of her bed at 3 a.m., bedside lamp on, holding a glass of water and a melatonin gummy, photorealistic&quot;]" data-selected="0" data-slot-key="media_2.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Overhead editorial flat-lay of an American medicine cabinet shelf showing melato"</div></div>
-<p>Dana's doctor pointed to a different mechanism entirely, one that did not require swallowing anything at all before bed.</p>
+<img alt="" data-copy="media_2.url:attr:src" data-prompts="[&quot;Overhead editorial flat-lay of an American medicine cabinet shelf showing melatonin bottles, ZzzQuil, Unisom, magnesium, and a prescription bottle of trazodone, soft natural light, photorealistic&quot;, &quot;Close-up of a woman's hand reaching into a medicine cabinet crowded with sleep aids, neutral bathroom tile in background, photorealistic&quot;, &quot;Tired woman in her early forties sitting on the edge of her bed at 3 a.m., bedside lamp on, holding a glass of water and a melatonin gummy, photorealistic&quot;]" data-slot-key="media_2.url" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/d6c650dd/manual_upload-manual-a595b5b4.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
+<p style="position: relative;">Dana's doctor pointed to a different mechanism entirely, one that did not require swallowing anything at all before bed.</p>
 <!-- ROOT CAUSE -->
 <b class="rhetorical">The Real Problem</b>
-<p>For decades, the conventional wisdom positioned melatonin as a benign sleep nudge, a soft alternative to prescription sedatives, and largely free of consequence.</p>
-<p>That framing has unraveled quickly. Sleep specialists are now publishing on the precise issue Dana's physician identified: <strong>the body adapts, and adapts badly</strong>.</p>
-<p>When exogenous melatonin floods the bloodstream nightly, the pineal gland receives the signal to slow its own output, sometimes for months after stopping.</p>
+<p style="position: relative;">For decades, the conventional wisdom positioned melatonin as a benign sleep nudge, a soft alternative to prescription sedatives, and largely free of consequence.</p>
+<p style="position: relative;">That framing has unraveled quickly. Sleep specialists are now publishing on the precise issue Dana's physician identified: <strong>the body adapts, and adapts badly</strong>.</p>
+<p style="position: relative;">When exogenous melatonin floods the bloodstream nightly, the pineal gland receives the signal to slow its own output, sometimes for months after stopping.</p>
 <!-- MEDIA 3: mechanism / diagram -->
-<div class="v2-media-slot" data-job-id="d480430f-d5e3-4938-9ade-98d33b5540ba" data-prompts="[&quot;Editorial photo of a female physician in her late forties speaking with a 41-year-old female patient in a bright Atlanta exam room, lab coat, stethoscope, warm and serious expression, photorealistic&quot;, &quot;Over-the-shoulder shot of a doctor showing a patient her bloodwork results on a tablet, exam room background slightly blurred, photorealistic&quot;, &quot;Close-up of a printed lab report showing cortisol and melatonin levels with a doctor's pen circling abnormal values, soft light, photorealistic&quot;]" data-selected="0" data-slot-key="media_3.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Editorial photo of a female physician in her late forties speaking with a 41-yea"</div></div>
-<p class="media-caption">/v2/media-slot/d480430f-d5e3-4938-9ade-98d33b5540ba/media_3__caption</p>
-<p>Prescription options are no kinder. A 2023 Sleep Medicine review documented <strong>residual sedation, memory disruption, and rebound insomnia</strong> tied to chronic z-drug and antihistamine use.</p>
+<img alt="" data-copy="media_3.url:attr:src" data-prompts="[&quot;Editorial photo of a female physician in her late forties speaking with a 41-year-old female patient in a bright Atlanta exam room, lab coat, stethoscope, warm and serious expression, photorealistic&quot;, &quot;Over-the-shoulder shot of a doctor showing a patient her bloodwork results on a tablet, exam room background slightly blurred, photorealistic&quot;, &quot;Close-up of a printed lab report showing cortisol and melatonin levels with a doctor's pen circling abnormal values, soft light, photorealistic&quot;]" data-slot-key="media_3.url" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/d6c650dd/manual_upload-manual-9e886244.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
+<p class="media-caption" style="position: relative;">/v2/media-slot/d480430f-d5e3-4938-9ade-98d33b5540ba/media_3__caption</p>
+<p style="position: relative;">Prescription options are no kinder. A 2023 Sleep Medicine review documented <strong>residual sedation, memory disruption, and rebound insomnia</strong> tied to chronic z-drug and antihistamine use.</p>
 <b class="rhetorical">The unsettling part is what most physicians never explain when handing over the prescription pad.</b>
-<p>Dana's cortisol pattern was the tell. Her body had stopped producing the right hormones at the right times, a quiet <u>circadian collapse</u> most patients never see coming.</p>
-<p>The supplement aisle had not solved her insomnia. It had, in the words of her physician, become the source of it.</p>
+<p style="position: relative;">Dana's cortisol pattern was the tell. Her body had stopped producing the right hormones at the right times, a quiet <u>circadian collapse</u> most patients never see coming.</p>
+<p style="position: relative;">The supplement aisle had not solved her insomnia. It had, in the words of her physician, become the source of it.</p>
 <!-- MEDIA 4: bad-news visual / worsening -->
-<div class="v2-media-slot" data-job-id="d480430f-d5e3-4938-9ade-98d33b5540ba" data-prompts="[&quot;Calm 41-year-old woman lying on her side in a softly lit bedroom under a sage green TENCEL weighted blanket, eyes closed, peaceful breathing, photorealistic&quot;, &quot;Editorial side view of a weighted blanket draped over a linen-dressed bed, morning light filtering through sheer curtains, photorealistic&quot;, &quot;Close-up of a woman's relaxed face on a white pillow, shoulder covered by a textured cooling weighted blanket, soft warm light, photorealistic&quot;]" data-selected="0" data-slot-key="media_4.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Calm 41-year-old woman lying on her side in a softly lit bedroom under a sage gr"</div></div>
+<img alt="" data-copy="media_4.url:attr:src" data-prompts="[&quot;Calm 41-year-old woman lying on her side in a softly lit bedroom under a sage green TENCEL weighted blanket, eyes closed, peaceful breathing, photorealistic&quot;, &quot;Editorial side view of a weighted blanket draped over a linen-dressed bed, morning light filtering through sheer curtains, photorealistic&quot;, &quot;Close-up of a woman's relaxed face on a white pillow, shoulder covered by a textured cooling weighted blanket, soft warm light, photorealistic&quot;]" data-slot-key="media_4.url" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/d6c650dd/editor-upload-manual-fb017e14.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 <b class="rhetorical">What changed for Dana was not another pill, capsule, or strip placed under the tongue.</b>
-<p>Her physician described a body of clinical literature on <strong>deep pressure stimulation</strong>, a sensory mechanism studied for decades in occupational therapy and pediatric sleep research.</p>
-<p>The mechanism works on the autonomic nervous system, gently shifting the body from sympathetic activation into the <strong>parasympathetic state</strong> where natural sleep architecture rebuilds itself.</p>
+<p style="position: relative;">Her physician described a body of clinical literature on <strong>deep pressure stimulation</strong>, a sensory mechanism studied for decades in occupational therapy and pediatric sleep research.</p>
+<p style="position: relative;">The mechanism works on the autonomic nervous system, gently shifting the body from sympathetic activation into the <strong>parasympathetic state</strong> where natural sleep architecture rebuilds itself.</p>
 <b class="rhetorical">The challenge, until recently, was that most weighted blankets failed the second test that mattered: temperature.</b>
-<p>Conventional weighted blankets trapped heat. Hot sleepers, particularly women approaching perimenopause, kicked them off by midnight and slid right back into the supplement cycle.</p>
-<p>Dana told us she had already returned two weighted options before her appointment, both lined with polyester and described as breathable, neither remotely so.</p>
+<p style="position: relative;">Conventional weighted blankets trapped heat. Hot sleepers, particularly women approaching perimenopause, kicked them off by midnight and slid right back into the supplement cycle.</p>
+<p style="position: relative;">Dana told us she had already returned two weighted options before her appointment, both lined with polyester and described as breathable, neither remotely so.</p>
 <b class="rhetorical">Then a colleague at her firm forwarded a quiet recommendation circulating among physicians and Huberman listeners.</b>
 <!-- MEDIA 5: solution reveal image/video -->
-<div class="v2-media-slot" data-job-id="d480430f-d5e3-4938-9ade-98d33b5540ba" data-prompts='["Editorial product photo of the Tree Napper weighted blanket folded neatly on a wooden bench, sage green TENCEL fabric visible in detail, soft natural window light, photorealistic", "Macro close-up showing the eucalyptus TENCEL weave texture and stitched chamber pattern of a cooling weighted blanket, photorealistic", "Hands of a woman gently unfolding a sage green weighted blanket on a bed at dusk, anticipation and calm, photorealistic"]' data-selected="0" data-slot-key="media_5.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Editorial product photo of the Tree Napper weighted blanket folded neatly on a w"</div></div>
-<h2>A weighted blanket finally engineered around active cooling, not just calming.</h2>
-<p>The product is called <strong>Tree Napper</strong>, and the engineering is what physicians find most interesting.</p>
-<p>Its outer layer is woven from <strong>eucalyptus-derived TENCEL fiber</strong>, a botanical textile measurably cooler against the skin than cotton, polyester, or microfiber knit.</p>
-<p>Inside, distributed glass microbeads provide the <strong>even, joint-by-joint pressure</strong> the deep pressure literature describes, without the lumpiness that defines cheaper weighted options.</p>
-<p>The combination addresses both halves of the problem at once: parasympathetic activation through pressure, and <u>thermoregulation through fiber</u>, with no ingestion required.</p>
-<p>By week three, Dana told us, she had stopped reaching for the bottle on her nightstand entirely. The bottle is still there, unopened.</p>
+<img alt="" data-copy="media_5.url:attr:src" data-prompts='["Editorial product photo of the Tree Napper weighted blanket folded neatly on a wooden bench, sage green TENCEL fabric visible in detail, soft natural window light, photorealistic", "Macro close-up showing the eucalyptus TENCEL weave texture and stitched chamber pattern of a cooling weighted blanket, photorealistic", "Hands of a woman gently unfolding a sage green weighted blanket on a bed at dusk, anticipation and calm, photorealistic"]' data-slot-key="media_5.url" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/d6c650dd/manual_upload-manual-9f0daa06.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
+<h2 style="position: relative;">A weighted blanket finally engineered around active cooling, not just calming.</h2>
+<p style="position: relative;">The product is called <strong>Tree Napper</strong>, and the engineering is what physicians find most interesting.</p>
+<p style="position: relative;">Its outer layer is woven from <strong>eucalyptus-derived TENCEL fiber</strong>, a botanical textile measurably cooler against the skin than cotton, polyester, or microfiber knit.</p>
+<p style="position: relative;">Inside, distributed glass microbeads provide the <strong>even, joint-by-joint pressure</strong> the deep pressure literature describes, without the lumpiness that defines cheaper weighted options.</p>
+<p style="position: relative;">The combination addresses both halves of the problem at once: parasympathetic activation through pressure, and <u>thermoregulation through fiber</u>, with no ingestion required.</p>
+<p style="position: relative;">By week three, Dana told us, she had stopped reaching for the bottle on her nightstand entirely. The bottle is still there, unopened.</p>
 <!-- PRODUCT REVEAL -->
-<h2 style="margin-top:40px">Engineered in Austin, manufactured to clinical-grade specifications, and tested by sleep researchers across two academic medical centers in the Southeast.</h2>
-<h2 style="color:var(--ll-color-primary);margin-top:0;font-size:34px">Tree Napper™ — Stay Cool. Sleep Deep.</h2>
+<h2 style="margin-top: 40px; position: relative;">Engineered in Austin, manufactured to clinical-grade specifications, and tested by sleep researchers across two academic medical centers in the Southeast.</h2>
+<h2 style="color: var(--ll-color-primary); margin-top: 0px; font-size: 34px; position: relative;">Tree Napper™ — Stay Cool. Sleep Deep.</h2>
 <!-- MEDIA 6: product hero image -->
-<div class="v2-media-slot" data-job-id="d480430f-d5e3-4938-9ade-98d33b5540ba" data-prompts='["Cross-section style detail photo of a weighted blanket showing distributed glass microbead chambers and TENCEL outer fabric, studio lighting, photorealistic", "Editorial close-up of a hand resting on top of a sage green cooling weighted blanket, fingers pressing gently into the soft surface, photorealistic", "Side view of a woman draping a Tree Napper blanket over herself on a couch, late afternoon light, calm expression, photorealistic"]' data-selected="0" data-slot-key="media_6.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Cross-section style detail photo of a weighted blanket showing distributed glass"</div></div>
-<p>The cover is 100% TENCEL lyocell, derived from sustainably harvested eucalyptus, with a <strong>moisture-wicking weave</strong> that pulls heat away from the body throughout the night.</p>
-<p>The internal weight is delivered through medical-grade glass microbeads sewn into <strong>small individual chambers</strong>, eliminating the bunching that ruins lesser blankets within months.</p>
-<p>Available in 15-pound and 20-pound configurations, calibrated to roughly <strong>ten percent of body weight</strong>, the threshold cited in the original deep pressure stimulation studies.</p>
+<img alt="" data-copy="media_6.url:attr:src" data-prompts='["Cross-section style detail photo of a weighted blanket showing distributed glass microbead chambers and TENCEL outer fabric, studio lighting, photorealistic", "Editorial close-up of a hand resting on top of a sage green cooling weighted blanket, fingers pressing gently into the soft surface, photorealistic", "Side view of a woman draping a Tree Napper blanket over herself on a couch, late afternoon light, calm expression, photorealistic"]' data-slot-key="media_6.url" data-v2-replaced="1" src="/pages/media/d6c650dd/manual_upload-manual-5cea5d58.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
+<p style="position: relative;">The cover is 100% TENCEL lyocell, derived from sustainably harvested eucalyptus, with a <strong>moisture-wicking weave</strong> that pulls heat away from the body throughout the night.</p>
+<p style="position: relative;">The internal weight is delivered through medical-grade glass microbeads sewn into <strong>small individual chambers</strong>, eliminating the bunching that ruins lesser blankets within months.</p>
+<p style="position: relative;">Available in 15-pound and 20-pound configurations, calibrated to roughly <strong>ten percent of body weight</strong>, the threshold cited in the original deep pressure stimulation studies.</p>
 <!-- MEDIA 7: product in use video/image -->
-<div class="v2-media-slot" data-job-id="d480430f-d5e3-4938-9ade-98d33b5540ba" data-prompts='["Bright morning bedroom scene of a 41-year-old American woman waking up rested, stretching arms above her head under a Tree Napper blanket, golden sunrise light, photorealistic", "Editorial wide shot of an unmade bed in soft morning light, weighted blanket pulled back, an empty coffee cup on the nightstand, photorealistic", "Close-up of a relaxed woman smiling slightly with eyes still closed, sunrise glow on her face, sense of restored sleep, photorealistic"]' data-selected="0" data-slot-key="media_7.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Bright morning bedroom scene of a 41-year-old American woman waking up rested, s"</div></div>
-<p>It is fully machine washable, OEKO-TEX certified for skin contact, and shipped from a fulfillment center in Texas with carbon-neutral delivery across the continental United States.</p>
-<p>There is nothing to swallow, nothing to remember, nothing to taper. The mechanism is mechanical, and that is precisely why physicians have begun recommending it.</p>
+<img alt="" data-copy="media_7.url:attr:src" data-prompts='["Bright morning bedroom scene of a 41-year-old American woman waking up rested, stretching arms above her head under a Tree Napper blanket, golden sunrise light, photorealistic", "Editorial wide shot of an unmade bed in soft morning light, weighted blanket pulled back, an empty coffee cup on the nightstand, photorealistic", "Close-up of a relaxed woman smiling slightly with eyes still closed, sunrise glow on her face, sense of restored sleep, photorealistic"]' data-slot-key="media_7.url" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/d6c650dd/manual_upload-manual-3a03bd44.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
+<p style="position: relative;">It is fully machine washable, OEKO-TEX certified for skin contact, and shipped from a fulfillment center in Texas with carbon-neutral delivery across the continental United States.</p>
+<p style="position: relative;">There is nothing to swallow, nothing to remember, nothing to taper. The mechanism is mechanical, and that is precisely why physicians have begun recommending it.</p>
 <!-- ★ CTA #1 — first CTA in the page, AFTER 7 medias + gradual product reveal -->
-<a class="cta-btn" href="https://terica-store.com/click"><span>Check Availability</span><small>Direct from the brand, ships from Texas</small></a>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;"><span>Check Availability</span><small>Direct from the brand, ships from Texas</small></a>
 <!-- TRUSTPILOT REVIEWS (2 featured) -->
 <div class="trustpilot-intro">
-<h3>What women who left the supplement aisle behind are saying after a full quarter of consistent use.</h3>
-<p>Verified reviews collected over the past ninety days from buyers who confirmed they had previously relied on nightly sleep aids.</p>
+<h3 style="position: relative;">What women who left the supplement aisle behind are saying after a full quarter of consistent use.</h3>
+<p style="position: relative;">Verified reviews collected over the past ninety days from buyers who confirmed they had previously relied on nightly sleep aids.</p>
 </div>
 <div class="featured-review">
 <span class="stars">★★★★★</span>
 <div class="featured-review-title">Off melatonin in nineteen days</div>
 <div class="featured-review-meta">Reviewed by <strong>Rachel M.</strong> on <span>March 14, 2026</span> — <strong>Verified Buyer</strong></div>
-<p class="featured-review-body">I had been on 5mg of melatonin every night since residency, almost six years. My sleep medicine fellow at the hospital where I work mentioned the JAMA piece and suggested deep pressure as a transition tool. I bought the 15-pound version and used it for three weeks before I tried a night without the gummy. I slept through. I have not taken melatonin since, and my morning grogginess is gone.</p>
+<p class="featured-review-body" style="position: relative;">I had been on 5mg of melatonin every night since residency, almost six years. My sleep medicine fellow at the hospital where I work mentioned the JAMA piece and suggested deep pressure as a transition tool. I bought the 15-pound version and used it for three weeks before I tried a night without the gummy. I slept through. I have not taken melatonin since, and my morning grogginess is gone.</p>
 <div class="featured-review-helpful">Helpful to 1,247 readers</div>
 </div>
 <div class="featured-review">
 <span class="stars">★★★★★</span>
 <div class="featured-review-title">Finally, a weighted blanket that does not roast me</div>
 <div class="featured-review-meta">Reviewed by <strong>Jennifer K.</strong> on <span>February 28, 2026</span> — <strong>Verified Buyer</strong></div>
-<p class="featured-review-body">Perimenopause hit me at forty-three and the night sweats made every weighted blanket I tried unusable. I would wake up drenched and end up taking a Unisom just to fall back asleep. The TENCEL cover on this one actually feels cool to the touch when you slide under it. I have not woken up overheated once in two months. My husband stole it twice and I had to hide it under my side of the bed.</p>
+<p class="featured-review-body" style="position: relative;">Perimenopause hit me at forty-three and the night sweats made every weighted blanket I tried unusable. I would wake up drenched and end up taking a Unisom just to fall back asleep. The TENCEL cover on this one actually feels cool to the touch when you slide under it. I have not woken up overheated once in two months. My husband stole it twice and I had to hide it under my side of the bed.</p>
 <div class="featured-review-helpful">Helpful to 892 readers</div>
 </div>
 <!-- BENEFITS — Just imagine -->
-<h2>Why physicians have quietly started suggesting this over another prescription.</h2>
-<p><strong>The mechanism is what makes the recommendation defensible in clinical settings. Deep pressure stimulation does not interact with medications, hormones, or downstream metabolic pathways.</strong></p>
+<h2 style="position: relative;">Why physicians have quietly started suggesting this over another prescription.</h2>
+<p style="position: relative;"><strong>The mechanism is what makes the recommendation defensible in clinical settings. Deep pressure stimulation does not interact with medications, hormones, or downstream metabolic pathways.</strong></p>
 <!-- BULLET LIST 2: emotional scenarios -->
 <ul class="bullet-list">
-<li>Patients tapering off Ambien or trazodone use it as a bridge, restoring natural sleep onset without the rebound insomnia that derails most discontinuation attempts.</li>
-<li>Women in early perimenopause use the cooling fiber to address night sweats while the weighted pressure blunts the cortisol spikes driving 3 a.m. wakings.</li>
-<li>Healthcare workers on rotating shifts use it to rebuild a fragile circadian rhythm without adding another substance to an already complicated metabolism.</li>
+<li style="position: relative;">Patients tapering off Ambien or trazodone use it as a bridge, restoring natural sleep onset without the rebound insomnia that derails most discontinuation attempts.</li>
+<li style="position: relative;">Women in early perimenopause use the cooling fiber to address night sweats while the weighted pressure blunts the cortisol spikes driving 3 a.m. wakings.</li>
+<li style="position: relative;">Healthcare workers on rotating shifts use it to rebuild a fragile circadian rhythm without adding another substance to an already complicated metabolism.</li>
 </ul>
-<p>What surprised researchers most was the consistency of the response across very different patient profiles, from postpartum mothers to litigators on trial schedules.</p>
-<p>The pressure activates the <strong>vagus nerve</strong>, which signals the heart to slow, the breath to deepen, and the cortisol curve to bend back toward its proper morning peak.</p>
-<p>Most users report a measurable shift within the <u>first ten consecutive nights</u>, with deeper architecture, fewer awakenings, and the kind of mornings melatonin users had forgotten existed.</p>
+<p style="position: relative;">What surprised researchers most was the consistency of the response across very different patient profiles, from postpartum mothers to litigators on trial schedules.</p>
+<p style="position: relative;">The pressure activates the <strong>vagus nerve</strong>, which signals the heart to slow, the breath to deepen, and the cortisol curve to bend back toward its proper morning peak.</p>
+<p style="position: relative;">Most users report a measurable shift within the <u>first ten consecutive nights</u>, with deeper architecture, fewer awakenings, and the kind of mornings melatonin users had forgotten existed.</p>
 <!-- SCARCITY / AVAILABILITY BUILD-UP (no prices) -->
-<p>Demand has placed the brand in an unusual position for a sleep product. The waitlist, when it appears, tends to clear within weeks.</p>
-<h2>Where the company chooses to sell this is part of the story.</h2>
-<p>The brand has declined every offer to list on Amazon, Walmart, or Target, a position the founders have made publicly known on multiple occasions.</p>
-<p>Their reasoning is simple. Big-box retail margins would force compromises in fiber sourcing and stitching that would gut the very mechanism the product is built around.</p>
+<p style="position: relative;">Demand has placed the brand in an unusual position for a sleep product. The waitlist, when it appears, tends to clear within weeks.</p>
+<h2 style="position: relative;">Where the company chooses to sell this is part of the story.</h2>
+<p style="position: relative;">The brand has declined every offer to list on Amazon, Walmart, or Target, a position the founders have made publicly known on multiple occasions.</p>
+<p style="position: relative;">Their reasoning is simple. Big-box retail margins would force compromises in fiber sourcing and stitching that would gut the very mechanism the product is built around.</p>
 <b class="rhetorical">What the founders did not anticipate was the volume of physician referrals coming from major academic medical centers.</b>
-<p>Following coverage in two sleep medicine podcasts and a quiet share among Huberman Lab listeners, weekly orders <strong>tripled, then quadrupled</strong>, in the span of a quarter.</p>
-<p>The TENCEL fiber the cover is woven from comes from a single Austrian mill with a long lead time, and the supply chain cannot scale on demand.</p>
-<p>Production runs are now scheduled six months in advance. When a run sells through, the next batch is genuinely unavailable until the mill ships.</p>
-<p>The current run was meant to last through summer. At present rates, it will not.</p>
+<p style="position: relative;">Following coverage in two sleep medicine podcasts and a quiet share among Huberman Lab listeners, weekly orders <strong>tripled, then quadrupled</strong>, in the span of a quarter.</p>
+<p style="position: relative;">The TENCEL fiber the cover is woven from comes from a single Austrian mill with a long lead time, and the supply chain cannot scale on demand.</p>
+<p style="position: relative;">Production runs are now scheduled six months in advance. When a run sells through, the next batch is genuinely unavailable until the mill ships.</p>
+<p style="position: relative;">The current run was meant to last through summer. At present rates, it will not.</p>
 <b class="rhetorical">Stock levels for the most requested weight class are visibly thinning across both color options.</b>
-<p>The 15-pound configuration, the most clinically referenced size, is the first to deplete in nearly every production cycle the brand has shipped.</p>
-<p>Buyers waiting for restocks have historically waited eight to ten weeks. The company has chosen to be transparent rather than overpromise.</p>
+<p style="position: relative;">The 15-pound configuration, the most clinically referenced size, is the first to deplete in nearly every production cycle the brand has shipped.</p>
+<p style="position: relative;">Buyers waiting for restocks have historically waited eight to ten weeks. The company has chosen to be transparent rather than overpromise.</p>
 <!-- EXCLUSIVITY -->
-<h2>You will not find this on Amazon, in Target, or anywhere else.</h2>
-<p>The decision to sell exclusively through the brand's own site is not a marketing tactic. It is a <strong>quality control mechanism</strong>.</p>
-<p>Counterfeit weighted blankets sold through major marketplaces have been documented to substitute polyester for TENCEL and plastic pellets for the calibrated glass microbeads.</p>
-<p>By selling direct, the brand maintains <strong>chain of custody</strong> from the Austrian mill through the Texas fulfillment center to your doorstep.</p>
-<p>Every blanket arriving at a customer's home has been inspected, weighed, and packaged by the same team that engineered the original specification.</p>
+<h2 style="position: relative;">You will not find this on Amazon, in Target, or anywhere else.</h2>
+<p style="position: relative;">The decision to sell exclusively through the brand's own site is not a marketing tactic. It is a <strong>quality control mechanism</strong>.</p>
+<p style="position: relative;">Counterfeit weighted blankets sold through major marketplaces have been documented to substitute polyester for TENCEL and plastic pellets for the calibrated glass microbeads.</p>
+<p style="position: relative;">By selling direct, the brand maintains <strong>chain of custody</strong> from the Austrian mill through the Texas fulfillment center to your doorstep.</p>
+<p style="position: relative;">Every blanket arriving at a customer's home has been inspected, weighed, and packaged by the same team that engineered the original specification.</p>
 <!-- ★ CTA #2 -->
-<a class="cta-btn" href="https://terica-store.com/click"><span>See Availability</span><small>Direct from the brand only</small></a>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;"><span>See Availability</span><small>Direct from the brand only</small></a>
 <!-- GUARANTEE -->
 <div class="guarantee-box">
 <span class="days">30-Night Trial</span>
-<h3>Sleep with it for thirty nights, or send it back free.</h3>
-<p>The brand offers an unconditional thirty-night home trial because deep pressure stimulation requires roughly two weeks of consistent use to register in sleep architecture.</p>
-<p>If after thirty nights you have not noticed a measurable improvement, the company arranges return shipping and refunds the full purchase, no questions, no restocking fees.</p>
-<p>Less than three percent of buyers have requested returns, a figure the founders cite when asked why the policy remains as generous as it does.</p>
+<h3 style="position: relative;">Sleep with it for thirty nights, or send it back free.</h3>
+<p style="position: relative;">The brand offers an unconditional thirty-night home trial because deep pressure stimulation requires roughly two weeks of consistent use to register in sleep architecture.</p>
+<p style="position: relative;">If after thirty nights you have not noticed a measurable improvement, the company arranges return shipping and refunds the full purchase, no questions, no restocking fees.</p>
+<p style="position: relative;">Less than three percent of buyers have requested returns, a figure the founders cite when asked why the policy remains as generous as it does.</p>
 </div>
 <!-- HERE'S WHAT TO DO NEXT -->
-<h2>What to expect across the first month of nightly use.</h2>
-<p>The first three nights are about habituation. Your nervous system, accustomed to chemical sedation, will register the new pressure and gradually surrender to it.</p>
-<p>By the end of the first week, most users report falling asleep faster and waking less often, even before they have begun to taper supplements.</p>
-<p>Around night ten the morning shift becomes obvious. <strong>Cortisol curves normalize</strong>, energy returns earlier in the day, and the afternoon coffee starts feeling unnecessary.</p>
-<p>By the end of the first month, what Dana described to her physician at her follow-up: a quiet, drug-free baseline that no supplement had ever delivered.</p>
+<h2 style="position: relative;">What to expect across the first month of nightly use.</h2>
+<p style="position: relative;">The first three nights are about habituation. Your nervous system, accustomed to chemical sedation, will register the new pressure and gradually surrender to it.</p>
+<p style="position: relative;">By the end of the first week, most users report falling asleep faster and waking less often, even before they have begun to taper supplements.</p>
+<p style="position: relative;">Around night ten the morning shift becomes obvious. <strong>Cortisol curves normalize</strong>, energy returns earlier in the day, and the afternoon coffee starts feeling unnecessary.</p>
+<p style="position: relative;">By the end of the first month, what Dana described to her physician at her follow-up: a quiet, drug-free baseline that no supplement had ever delivered.</p>
 <!-- ★ CTA #4 -->
-<a class="cta-btn" href="https://terica-store.com/click"><span>Start Tonight</span><small>Ships within forty-eight hours from Texas</small></a>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;"><span>Start Tonight</span><small>Ships within forty-eight hours from Texas</small></a>
 <!-- REMEMBER / ZERO RISK -->
-<h2>There is genuinely nothing to lose by trying this once.</h2>
-<p>The brand absorbs the cost of return shipping if the blanket does not work for you, a policy almost no weighted blanket competitor matches in writing.</p>
-<p>The mechanism, deep pressure stimulation, has <strong>no contraindications</strong> for healthy adults and does not interact with any medication a physician has likely already prescribed you.</p>
-<p>If you are reading this in a bed where a melatonin bottle sits within arm's reach, the most rigorous thing you can do is test the alternative.</p>
+<h2 style="position: relative;">There is genuinely nothing to lose by trying this once.</h2>
+<p style="position: relative;">The brand absorbs the cost of return shipping if the blanket does not work for you, a policy almost no weighted blanket competitor matches in writing.</p>
+<p style="position: relative;">The mechanism, deep pressure stimulation, has <strong>no contraindications</strong> for healthy adults and does not interact with any medication a physician has likely already prescribed you.</p>
+<p style="position: relative;">If you are reading this in a bed where a melatonin bottle sits within arm's reach, the most rigorous thing you can do is test the alternative.</p>
 <!-- FINAL UPDATE BANNER -->
 <div style="background:var(--ll-color-background-alt);border-radius:10px;margin:24px 0;padding:16px 20px;font-size:14px;color:var(--ll-color-text-secondary)">
 <strong style="color:var(--ll-color-text-primary)">Final Update</strong>
 <span>As of this morning, the 15-pound configuration in stone is approaching its production cap, with restocks pushed into the late summer window.</span>
 </div>
-<p style="text-align:center;font-size:14px;color:var(--ll-color-warning);font-weight:700">Buyers placing orders today will ship within forty-eight hours from the Austin fulfillment center, ahead of the next scheduled production gap.</p>
+<p style="text-align: center; font-size: 14px; color: var(--ll-color-warning); font-weight: 700; position: relative;">Buyers placing orders today will ship within forty-eight hours from the Austin fulfillment center, ahead of the next scheduled production gap.</p>
 <!-- ★ CTA #5 final -->
-<a class="cta-btn" href="https://terica-store.com/click"><span>Reserve Yours</span><small>Ships within forty-eight hours from Texas</small></a>
-<p style="text-align:center;font-size:13px;color:var(--ll-color-text-secondary);margin-top:4px">Thirty-night trial, free returns guaranteed</p>
+<a class="cta-btn" href="https://terica-store.com/click" style="position: relative;"><span>Reserve Yours</span><small>Ships within forty-eight hours from Texas</small></a>
+<p style="text-align: center; font-size: 13px; color: var(--ll-color-text-secondary); margin-top: 4px; position: relative;">Thirty-night trial, free returns guaranteed</p>
 <!-- AMAZON REVIEWS -->
 <div class="amazon-reviews">
-<h3>Direct buyer feedback verified across the past ninety days only.</h3>
+<h3 style="position: relative;">Direct buyer feedback verified across the past ninety days only.</h3>
 <div class="amazon-avg">
 <div class="amazon-avg-number">4.8</div>
 <span class="stars">★★★★★</span>
@@ -463,7 +718,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="sticky-product">
 <span class="sticky-product-badge">Editor's Pick</span>
 <div class="sticky-product-name">Tree Napper™ — Stay Cool. Sleep Deep.</div>
-<div class="v2-media-slot" data-job-id="d480430f-d5e3-4938-9ade-98d33b5540ba" data-prompts='["Studio product photo of the Tree Napper weighted blanket folded neatly on a clean white background, sage green TENCEL cover visible, soft shadows, photorealistic", "Three-quarter angle product shot of a folded cooling weighted blanket with a small label tag visible, neutral backdrop, photorealistic", "Lifestyle product image of the Tree Napper draped softly over a linen bench in a sunlit bedroom corner, photorealistic"]' data-selected="0" data-slot-key="sidebar.image" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — sidebar.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Studio product photo of the Tree Napper weighted blanket folded neatly on a clea"</div></div>
+<img alt="" data-copy="sidebar.image:attr:src" data-prompts='["Studio product photo of the Tree Napper weighted blanket folded neatly on a clean white background, sage green TENCEL cover visible, soft shadows, photorealistic", "Three-quarter angle product shot of a folded cooling weighted blanket with a small label tag visible, neutral backdrop, photorealistic", "Lifestyle product image of the Tree Napper draped softly over a linen bench in a sunlit bedroom corner, photorealistic"]' data-slot-key="sidebar.image" data-v2-replaced="1" src="/pages/media/d6c650dd/manual_upload-manual-feb3780b.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 1 / 1; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/>
 <div class="sticky-product-stars">
 <span class="stars">★★★★★</span>
 <span>Rated 4.8 out of 5</span>
@@ -496,7 +751,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>
