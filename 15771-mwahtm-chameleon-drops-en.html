@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><div data-channel-name="in_page_channel_SpxiYS" id="in-page-channel-node-id"></div><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>Why American Women Over 50 Keep Getting Matched to the Wrong Foundation Shade</title>
@@ -367,8 +364,260 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
-<script type="text/javascript">
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script type="text/javascript">
 (function(c,l,a,r,i,t,y){
 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
@@ -384,12 +633,12 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <!-- ── HERO ── -->
 <div class="adv-hero">
-<h1 class="adv-hero__title">My Korean Friend Asked Why I Was Paying To Look Older</h1>
-<p class="adv-hero__subtitle">One sentence in the parking lot rewired twenty-five years of habit.</p>
+<h1 class="adv-hero__title" style="position: relative;">My Korean Friend Asked Why I Was Paying To Look Older</h1>
+<p class="adv-hero__subtitle" style="position: relative;">One sentence in the parking lot rewired twenty-five years of habit.</p>
 </div>
 <!-- ── LEAD IMAGE ── -->
 <div class="adv-lead-image">
-<div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts="[&quot;Polished 58-year-old American woman in soft cashmere, sitting at a vanity holding a small dropper bottle, warm window light, natural fine lines visible, photorealistic&quot;, &quot;Two women mid-fifties friends laughing in a sunlit kitchen, one Korean-American, coffee cups, intimate confidante mood, photorealistic&quot;, &quot;Close-up of a woman's hands holding a glass dropper bottle of luxury skincare, soft morning light on aging hands with wedding ring, photorealistic&quot;]" data-selected="0" data-slot-key="media.lead" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.lead</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Polished 58-year-old American woman in soft cashmere, sitting at a vanity holdin"</div></div>
+<img alt="" data-slot="media.lead" src="/pages/media/2fc898ba/4cfefd90eda2.png"/>
 </div>
 <!-- ── BYLINE (local avatar pool) ── -->
 <div class="adv-byline">
@@ -402,89 +651,89 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <!-- ── OPENING PARAGRAPHS ── -->
 <div class="adv-article">
-<p>I am fifty-eight, and until last spring I had been a faithful Sephora customer for <strong>twenty-five uninterrupted years</strong>.</p>
-<p>I knew my Charlotte Tilbury number. I knew my Lancôme number. I knew, apparently, almost nothing useful.</p>
-<p>Then my college friend Ji-Yeon flew in from Seoul, watched me get matched three times in one afternoon, and said one sentence in the car.</p>
-<p>I have not walked back into that store since, and my husband keeps asking whether I had something done.</p>
+<p style="position: relative;">I am fifty-eight, and until last spring I had been a faithful Sephora customer for <strong>twenty-five uninterrupted years</strong>.</p>
+<p style="position: relative;">I knew my Charlotte Tilbury number. I knew my Lancôme number. I knew, apparently, almost nothing useful.</p>
+<p style="position: relative;">Then my college friend Ji-Yeon flew in from Seoul, watched me get matched three times in one afternoon, and said one sentence in the car.</p>
+<p style="position: relative;">I have not walked back into that store since, and my husband keeps asking whether I had something done.</p>
 </div>
 <!-- ── S1 ANATOMY ── -->
-<h2 class="adv-section-heading">The Sephora Visit That Quietly Ended Twenty-Five Years Of Loyalty</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts="[&quot;Sephora-style cosmetics counter with foundation swatches on a 58-year-old woman's jawline, three mismatched stripes visible, fluorescent retail lighting, photorealistic&quot;, &quot;Mature woman looking uncertain in a department store beauty mirror while a young associate applies foundation, photorealistic&quot;, &quot;Close-up of foundation settling into smile lines on mature skin, harsh ring light, candid uncomfortable moment, photorealistic&quot;]" data-selected="0" data-slot-key="media.s1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Sephora-style cosmetics counter with foundation swatches on a 58-year-old woman'"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">The Sephora Visit That Quietly Ended Twenty-Five Years Of Loyalty</h2>
+<div class="adv-inline-image"><img alt="" data-slot="media.s1" src="/pages/media/2fc898ba/e508f3027ad0.png"/></div>
 <div class="adv-article">
-<p>It was a Tuesday. Ji-Yeon wanted iced matcha and a wander through the mall, and I wanted to show off my favorite counter.</p>
-<p>The first associate looked roughly twenty-four. She swiped three stripes down my jaw and decided I was <strong>warm beige</strong>.</p>
-<p>The second one, summoned for a second opinion, painted a different stripe and called me <strong>cool sand</strong> with great confidence.</p>
-<p>The third simply blended both, smiled, and rang up a small bottle that already looked orange against my collarbone in the parking lot.</p>
-<p>Ji-Yeon waited until we were buckled in. Then, quietly, she said, <strong>why are American women over fifty paying to look older</strong>?</p>
+<p style="position: relative;">It was a Tuesday. Ji-Yeon wanted iced matcha and a wander through the mall, and I wanted to show off my favorite counter.</p>
+<p style="position: relative;">The first associate looked roughly twenty-four. She swiped three stripes down my jaw and decided I was <strong>warm beige</strong>.</p>
+<p style="position: relative;">The second one, summoned for a second opinion, painted a different stripe and called me <strong>cool sand</strong> with great confidence.</p>
+<p style="position: relative;">The third simply blended both, smiled, and rang up a small bottle that already looked orange against my collarbone in the parking lot.</p>
+<p style="position: relative;">Ji-Yeon waited until we were buckled in. Then, quietly, she said, <strong>why are American women over fifty paying to look older</strong>?</p>
 </div>
 <!-- ── S2 ARTHRITIS PROGRESSION ── -->
-<h2 class="adv-section-heading">The Five PM Bathroom Mirror Moment Nobody Honestly Talks About</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts="[&quot;5pm bathroom mirror moment, woman in her late fifties examining cakey foundation creased into laugh lines, soft overhead light, photorealistic&quot;, &quot;Close-up of mature woman's neck showing visible foundation line at jawline, beige makeup ending abruptly above crepey skin, photorealistic&quot;, &quot;Tired 58-year-old woman removing makeup at end of day, weary expression in vanity mirror, photorealistic&quot;]" data-selected="0" data-slot-key="media.s2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"5pm bathroom mirror moment, woman in her late fifties examining cakey foundation"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">The Five PM Bathroom Mirror Moment Nobody Honestly Talks About</h2>
+<div class="adv-inline-image"><img alt="" data-slot="media.s2" src="/pages/media/2fc898ba/702b06bd0f7f.png"/></div>
 <div class="adv-article">
-<p>If you are reading this, you already know the moment I mean. It happens between the school pickup line and pouring the first glass of wine.</p>
-<p>You glance up, the overhead light catches your face, and every dollar you spent that morning seems to have <u>worked against you</u>.</p>
+<p style="position: relative;">If you are reading this, you already know the moment I mean. It happens between the school pickup line and pouring the first glass of wine.</p>
+<p style="position: relative;">You glance up, the overhead light catches your face, and every dollar you spent that morning seems to have <u>worked against you</u>.</p>
 </div>
 <div class="adv-feature-list">
-<p>The foundation has migrated into the two parentheses around your mouth and settled there like grout in tile.</p>
-<p>Your forehead, which felt smooth at eight in the morning, now reads as a <strong>topographical map</strong> under any harsh light.</p>
-<p>There is a faint orange tide line where your jaw meets the soft, untouched, slightly crepey skin of your neck.</p>
-<p>The dark spot on your cheekbone, the one you specifically bought concealer to hide, is somehow back and slightly larger.</p>
-<p>And the powder you set everything with has gathered, like fine sand, in the corner of each eye.</p>
+<p style="position: relative;">The foundation has migrated into the two parentheses around your mouth and settled there like grout in tile.</p>
+<p style="position: relative;">Your forehead, which felt smooth at eight in the morning, now reads as a <strong>topographical map</strong> under any harsh light.</p>
+<p style="position: relative;">There is a faint orange tide line where your jaw meets the soft, untouched, slightly crepey skin of your neck.</p>
+<p style="position: relative;">The dark spot on your cheekbone, the one you specifically bought concealer to hide, is somehow back and slightly larger.</p>
+<p style="position: relative;">And the powder you set everything with has gathered, like fine sand, in the corner of each eye.</p>
 </div>
 <div class="adv-article">
-<p>I used to think this was simply what fifty-eight looked like, and that the problem was, regrettably, <strong>my face</strong>.</p>
-<p>Ji-Yeon's mother is seventy-nine and lives in Busan, and I have never seen her face do that. Not once. Not on a video call.</p>
+<p style="position: relative;">I used to think this was simply what fifty-eight looked like, and that the problem was, regrettably, <strong>my face</strong>.</p>
+<p style="position: relative;">Ji-Yeon's mother is seventy-nine and lives in Busan, and I have never seen her face do that. Not once. Not on a video call.</p>
 </div>
 <!-- ── S3 SCARY TRUTH + FAILED SOLUTIONS ── -->
-<h2 class="adv-section-heading">Everything I Tried Before Listening To My Friend From Seoul</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts="[&quot;Bathroom counter cluttered with luxury foundation bottles from major beauty brands, mature woman's hand reaching past them, photorealistic&quot;, &quot;Open vanity drawer overflowing with half-used foundations, primers, and color correctors, top-down view, photorealistic&quot;, &quot;Frustrated woman in her late fifties surrounded by cosmetic bottles on bathroom counter, soft natural light, photorealistic&quot;]" data-selected="0" data-slot-key="media.s3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Bathroom counter cluttered with luxury foundation bottles from major beauty bran"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">Everything I Tried Before Listening To My Friend From Seoul</h2>
+<div class="adv-inline-image"><img alt="" data-slot="media.s3" src="/pages/media/2fc898ba/22fdf6591e58.jpeg"/></div>
 <div class="adv-article">
-<p>I am not someone who gives up easily, especially on a beauty problem. My bathroom drawer was, frankly, an embarrassment of failed attempts.</p>
-<p>Each one had felt, at the counter, like a <strong>sensible investment</strong>. Each one ended its life in the same drawer, half-used.</p>
+<p style="position: relative;">I am not someone who gives up easily, especially on a beauty problem. My bathroom drawer was, frankly, an embarrassment of failed attempts.</p>
+<p style="position: relative;">Each one had felt, at the counter, like a <strong>sensible investment</strong>. Each one ended its life in the same drawer, half-used.</p>
 </div>
 <div class="adv-feature-list">
-<p>The luxury full-coverage foundation in the heavy glass bottle that promised <strong>twenty-four-hour wear</strong> and creased by lunch.</p>
-<p>The lightweight tinted serum that looked beautiful for an hour, then turned slightly grey in the office air conditioning.</p>
-<p>The expensive primer that was supposed to fill in <strong>every fine line</strong> and instead pilled along my temples.</p>
-<p>The color-correcting cream the associate insisted I needed underneath everything, which simply added a fourth layer to crack.</p>
-<p>And the famous cushion compact, which matched my hand, my jaw, and my neck in three subtly wrong shades.</p>
+<p style="position: relative;">The luxury full-coverage foundation in the heavy glass bottle that promised <strong>twenty-four-hour wear</strong> and creased by lunch.</p>
+<p style="position: relative;">The lightweight tinted serum that looked beautiful for an hour, then turned slightly grey in the office air conditioning.</p>
+<p style="position: relative;">The expensive primer that was supposed to fill in <strong>every fine line</strong> and instead pilled along my temples.</p>
+<p style="position: relative;">The color-correcting cream the associate insisted I needed underneath everything, which simply added a fourth layer to crack.</p>
+<p style="position: relative;">And the famous cushion compact, which matched my hand, my jaw, and my neck in three subtly wrong shades.</p>
 </div>
 <div class="adv-article">
-<p>Ji-Yeon watched me list all of this over a glass of wine, nodded politely, and then walked upstairs to get her toiletry bag.</p>
+<p style="position: relative;">Ji-Yeon watched me list all of this over a glass of wine, nodded politely, and then walked upstairs to get her toiletry bag.</p>
 </div>
 <!-- ── S4 SOLUTION ── -->
-<h2 class="adv-section-heading">What Korean Women Of A Certain Age Actually Use At Home</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts="[&quot;Elegant Korean grandmother in her seventies applying skincare drops at a softly lit Busan vanity, multi-generational ritual, photorealistic&quot;, &quot;Close-up of dropper releasing serum onto mature Asian woman's palm, glass bottle, calm Korean apothecary aesthetic, photorealistic&quot;, &quot;Three generations of Korean women — grandmother, mother, daughter — sharing a skincare moment by a window, photorealistic&quot;]" data-selected="0" data-slot-key="media.s4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Elegant Korean grandmother in her seventies applying skincare drops at a softly "</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">What Korean Women Of A Certain Age Actually Use At Home</h2>
+<div class="adv-inline-image"><img alt="" data-slot="media.s4" src="/pages/media/2fc898ba/690655b8e97b.jpeg"/></div>
 <div class="adv-article">
-<p>She came back down with a small frosted dropper bottle. <strong>MWAH Chameleon Drops</strong>. The same one her mother keeps on her vanity in Busan.</p>
-<p>She told me her mother has used the same approach for years, and that in Korea it is treated less like makeup and more like a <strong>quiet daily ritual</strong>.</p>
+<p style="position: relative;">She came back down with a small frosted dropper bottle. <strong>MWAH Chameleon Drops</strong>. The same one her mother keeps on her vanity in Busan.</p>
+<p style="position: relative;">She told me her mother has used the same approach for years, and that in Korea it is treated less like makeup and more like a <strong>quiet daily ritual</strong>.</p>
 </div>
 <ul class="adv-bullet-list">
-<li>Three drops on the back of the hand, warmed for a moment between two fingertips, never shaken or rushed.</li>
-<li>Pressed, not rubbed, into the cheeks first, then outward toward the temples in slow, calm strokes.</li>
-<li>Carried, without thinking, all the way down the jawline and over the front of the neck, like skincare.</li>
-<li>Layered with one or two more drops only on the spots that ask for it, never across the entire face.</li>
-<li>Left to settle for a full minute before anything else, so it can <u>read your actual skin</u> and adjust.</li>
+<li style="position: relative;">Three drops on the back of the hand, warmed for a moment between two fingertips, never shaken or rushed.</li>
+<li style="position: relative;">Pressed, not rubbed, into the cheeks first, then outward toward the temples in slow, calm strokes.</li>
+<li style="position: relative;">Carried, without thinking, all the way down the jawline and over the front of the neck, like skincare.</li>
+<li style="position: relative;">Layered with one or two more drops only on the spots that ask for it, never across the entire face.</li>
+<li style="position: relative;">Left to settle for a full minute before anything else, so it can <u>read your actual skin</u> and adjust.</li>
 </ul>
 <!-- ── S5 SOMETHING REMARKABLE ── -->
-<h2 class="adv-section-heading">The First Night I Tried It, And What My Husband Said</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts="[&quot;Close-up of woman's face mid-fifties applying clear adaptive foundation drops with fingertips, dewy skin finish, photorealistic&quot;, &quot;Side-by-side of mature skin: left side bare with fine lines, right side after adaptive foundation, soft natural finish, photorealistic&quot;, &quot;Relaxed 58-year-old woman in soft morning light examining her skin in a hand mirror, content expression, photorealistic&quot;]" data-selected="0" data-slot-key="media.s5" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s5</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Close-up of woman's face mid-fifties applying clear adaptive foundation drops wi"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">The First Night I Tried It, And What My Husband Said</h2>
+<div class="adv-inline-image"><img alt="" data-slot="media.s5" src="/pages/media/2fc898ba/c2fe1b4267d8.jpeg"/></div>
 <div class="adv-article">
-<p>I tested it that evening, alone, in the harsh light I usually avoid. I expected another disappointment. I prepared my speech for Ji-Yeon.</p>
-<p>Instead, my skin looked like skin. <strong>Smoother, more even, slightly luminous</strong>, but unmistakably mine, just on a very forgiving day.</p>
-<p>When my husband walked in, he asked, with genuine confusion, whether I had gone for a facial. I had not. I had used three drops.</p>
+<p style="position: relative;">I tested it that evening, alone, in the harsh light I usually avoid. I expected another disappointment. I prepared my speech for Ji-Yeon.</p>
+<p style="position: relative;">Instead, my skin looked like skin. <strong>Smoother, more even, slightly luminous</strong>, but unmistakably mine, just on a very forgiving day.</p>
+<p style="position: relative;">When my husband walked in, he asked, with genuine confusion, whether I had gone for a facial. I had not. I had used three drops.</p>
 </div>
 <!-- ── S6 ONLY ONE CATCH ── -->
-<h2 class="adv-section-heading">Why One Quiet Dropper Adapts Where Twenty Expensive Foundations Failed</h2>
+<h2 class="adv-section-heading" style="position: relative;">Why One Quiet Dropper Adapts Where Twenty Expensive Foundations Failed</h2>
 <div class="adv-article">
-<p>The drops carry pigments that respond to the warmth and tone of <strong>your specific skin</strong>, rather than the guess of a counter associate.</p>
-<p>Which is why one small bottle works on my face and on my niece's, on my jawline and on my neck, without ever drawing a line.</p>
+<p style="position: relative;">The drops carry pigments that respond to the warmth and tone of <strong>your specific skin</strong>, rather than the guess of a counter associate.</p>
+<p style="position: relative;">Which is why one small bottle works on my face and on my niece's, on my jawline and on my neck, without ever drawing a line.</p>
 </div>
 <!-- ── PRODUCT SHOWCASE ── -->
 <div class="adv-product-showcase">
-<h3 class="adv-product-showcase__title">MWAH™ Chameleon Drops</h3>
-<p class="adv-product-showcase__tagline">The skin-adaptive foundation drop trusted across generations.</p>
-<a href="https://terica-store.com/click"><div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts="[&quot;Small frosted glass dropper bottle of MWAH Chameleon Drops on a marble vanity, soft natural light, minimalist Korean skincare aesthetic, photorealistic&quot;, &quot;MWAH Chameleon Drops bottle held in mature woman's manicured hand, neutral background, photorealistic&quot;, &quot;Overhead flat lay of MWAH Chameleon Drops bottle beside silk scarf and pearl earrings, editorial styling, photorealistic&quot;]" data-selected="0" data-slot-key="media.product" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.product</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Small frosted glass dropper bottle of MWAH Chameleon Drops on a marble vanity, s"</div></div></a>
+<h3 class="adv-product-showcase__title" style="position: relative;">MWAH™ Chameleon Drops</h3>
+<p class="adv-product-showcase__tagline" style="position: relative;">The skin-adaptive foundation drop trusted across generations.</p>
+<a href="https://terica-store.com/click"><img alt="" class="adv-product-showcase__image" data-slot="media.product" src="/pages/media/2fc898ba/186916b5584b.jpeg" style="aspect-ratio:1/1;width:100%;height:100%;object-fit:cover"/></a>
 <div class="adv-product-showcase__rating">
 <span class="adv-product-showcase__rating-stars">★★★★★</span>
 <span class="adv-product-showcase__rating-score">4.9</span>
@@ -494,143 +743,143 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <a class="adv-cta-inline" href="https://terica-store.com/click"><span data-copy="cta_check.text">Check availability</span></a>
 </div>
 <!-- ── S7 INTRODUCING ── -->
-<h2 class="adv-section-heading">How Three Quiet Drops Replace An Entire Cluttered Makeup Bag</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts='["Dropper releasing a single golden drop onto fingertip, extreme close-up, soft studio light, photorealistic", "Woman in late fifties blending adaptive foundation drops down her neck in front of bathroom mirror, photorealistic", "Side-by-side comparison: jawline with traditional foundation line vs seamless blended skin, photorealistic"]' data-selected="0" data-slot-key="media.s7a" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s7a</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Dropper releasing a single golden drop onto fingertip, extreme close-up, soft st"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">How Three Quiet Drops Replace An Entire Cluttered Makeup Bag</h2>
+<div class="adv-inline-image"><img alt="" data-slot="media.s7a" src="/pages/media/2fc898ba/f798d3b41bcc.jpeg"/></div>
 <div class="adv-article">
-<p>After two weeks I emptied the drawer. Primer, foundation, color corrector, setting powder, neck-and-décolleté tint — into a paper bag, into the donation bin.</p>
-<p>On the counter now sits one small bottle, a clean brush, and a tinted lip balm. <strong>That is the entire morning</strong>.</p>
+<p style="position: relative;">After two weeks I emptied the drawer. Primer, foundation, color corrector, setting powder, neck-and-décolleté tint — into a paper bag, into the donation bin.</p>
+<p style="position: relative;">On the counter now sits one small bottle, a clean brush, and a tinted lip balm. <strong>That is the entire morning</strong>.</p>
 </div>
 <!-- ── TESTIMONIAL GRID (4 cards) ── -->
 <div class="adv-testimonial-grid">
 <div class="adv-testimonial-grid__card">
-<div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts='["Headshot of polished 56-year-old American woman with silver-streaked bob, natural makeup, soft window light, photorealistic", "Mid-fifties woman in linen blouse smiling gently at camera, neutral background, photorealistic", "Mature woman holding small dropper bottle near her cheek, content expression, photorealistic"]' data-selected="0" data-slot-key="media.t_1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Headshot of polished 56-year-old American woman with silver-streaked bob, natura"</div></div>
-<p class="adv-testimonial-grid__name">Linda, 56, Realtor</p>
-<p class="adv-testimonial-grid__text">My closing clients keep asking if I had a peel. I keep saying <strong>good lighting</strong>. We both know it is not the lighting.</p>
+<img alt="" class="adv-testimonial-grid__photo" data-slot="media.t_1" src="/pages/media/2fc898ba/3dc4b473b435.jpeg"/>
+<p class="adv-testimonial-grid__name" style="position: relative;">Linda, 56, Realtor</p>
+<p class="adv-testimonial-grid__text" style="position: relative;">My closing clients keep asking if I had a peel. I keep saying <strong>good lighting</strong>. We both know it is not the lighting.</p>
 </div>
 <div class="adv-testimonial-grid__card">
-<div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts='["Headshot of elegant 61-year-old African American woman with short natural curls, glowing even complexion, photorealistic", "Mature woman in her early sixties laughing at a dinner party, soft candlelight, photorealistic", "Sixties woman touching her smooth jawline in front of vanity mirror, photorealistic"]' data-selected="0" data-slot-key="media.t_2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Headshot of elegant 61-year-old African American woman with short natural curls,"</div></div>
-<p class="adv-testimonial-grid__name">Denise, 61, School principal</p>
-<p class="adv-testimonial-grid__text">The first day with no foundation line at my collar, I almost cried in the staff bathroom. Twenty years of that line. Gone.</p>
+<img alt="" class="adv-testimonial-grid__photo" data-slot="media.t_2" src="/pages/media/2fc898ba/ed4d6e82e5be.jpeg"/>
+<p class="adv-testimonial-grid__name" style="position: relative;">Denise, 61, School principal</p>
+<p class="adv-testimonial-grid__text" style="position: relative;">The first day with no foundation line at my collar, I almost cried in the staff bathroom. Twenty years of that line. Gone.</p>
 </div>
 <div class="adv-testimonial-grid__card">
-<div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts='["Headshot of sophisticated 64-year-old white woman with chin-length blonde hair, pearl earrings, soft daylight, photorealistic", "Sixties woman in cashmere sweater at coffee shop, content expression, photorealistic", "Mature woman applying skincare drops at her bathroom counter, calm morning light, photorealistic"]' data-selected="0" data-slot-key="media.t_3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Headshot of sophisticated 64-year-old white woman with chin-length blonde hair, "</div></div>
-<p class="adv-testimonial-grid__name">Carol, 64, Retired nurse</p>
-<p class="adv-testimonial-grid__text">I stopped going to the department store counter entirely. My granddaughter says I look <strong>like the photo on my desk</strong> from 2008.</p>
+<img alt="" class="adv-testimonial-grid__photo" data-slot="media.t_3" src="/pages/media/2fc898ba/ff00606f684f.jpeg"/>
+<p class="adv-testimonial-grid__name" style="position: relative;">Carol, 64, Retired nurse</p>
+<p class="adv-testimonial-grid__text" style="position: relative;">I stopped going to the department store counter entirely. My granddaughter says I look <strong>like the photo on my desk</strong> from 2008.</p>
 </div>
 <div class="adv-testimonial-grid__card">
-<div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts="[&quot;Headshot of warm 52-year-old Latina woman with dark wavy hair, dewy natural complexion, photorealistic&quot;, &quot;Early-fifties woman at her daughter's wedding, glowing skin, soft golden hour light, photorealistic&quot;, &quot;Mature woman reading a book in a sunlit reading chair, peaceful expression, photorealistic&quot;]" data-selected="0" data-slot-key="media.t_4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Headshot of warm 52-year-old Latina woman with dark wavy hair, dewy natural comp"</div></div>
-<p class="adv-testimonial-grid__name">Elena, 52, Interior designer</p>
-<p class="adv-testimonial-grid__text">I brought it on a client trip and forgot every other product. <strong>It quietly handled everything</strong>, including the awful hotel bathroom light.</p>
+<img alt="" class="adv-testimonial-grid__photo" data-slot="media.t_4" src="/pages/media/2fc898ba/e10ac55ecea0.jpeg"/>
+<p class="adv-testimonial-grid__name" style="position: relative;">Elena, 52, Interior designer</p>
+<p class="adv-testimonial-grid__text" style="position: relative;">I brought it on a client trip and forgot every other product. <strong>It quietly handled everything</strong>, including the awful hotel bathroom light.</p>
 </div>
 </div>
 <!-- ── S8 HELPED THOUSANDS + BENEFITS ── -->
-<h2 class="adv-section-heading">Five Things It Quietly Does That My Foundations Never Did</h2>
-<div class="adv-testimonial-banner"><div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts='["Wide cinematic banner of MWAH Chameleon Drops bottle with soft pink peony petals scattered around on white marble, photorealistic", "Editorial wide shot of mature woman in white robe at vanity, dropper bottle in foreground, photorealistic", "Soft pastel banner of skincare bottle and silk ribbon, luxury Korean apothecary mood, photorealistic"]' data-selected="0" data-slot-key="media.banner" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.banner</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Wide cinematic banner of MWAH Chameleon Drops bottle with soft pink peony petals"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">Five Things It Quietly Does That My Foundations Never Did</h2>
+<div class="adv-testimonial-banner"><img alt="" data-slot="media.banner" src="/pages/media/2fc898ba/37f8d0f25596.jpeg"/></div>
 <div class="adv-article">
-<p>I am not the type to make lists, but my best friend asked me to be specific, so here, finally, are the specifics.</p>
+<p style="position: relative;">I am not the type to make lists, but my best friend asked me to be specific, so here, finally, are the specifics.</p>
 </div>
 <div class="adv-feature-list">
-<p>Blurs every fine line without pooling inside them by lunchtime.</p>
-<p>Adapts the shade to face and neck without visible lines.</p>
-<p>Softens the look of crepey neck skin instead of clinging.</p>
-<p>Evens out dark spots without burying them in cakey beige.</p>
-<p>Lasts through dinner without that grey, tired, late evening shift.</p>
+<p style="position: relative;">Blurs every fine line without pooling inside them by lunchtime.</p>
+<p style="position: relative;">Adapts the shade to face and neck without visible lines.</p>
+<p style="position: relative;">Softens the look of crepey neck skin instead of clinging.</p>
+<p style="position: relative;">Evens out dark spots without burying them in cakey beige.</p>
+<p style="position: relative;">Lasts through dinner without that grey, tired, late evening shift.</p>
 </div>
 <div class="adv-article">
-<p>None of it screams. That is, I think, exactly the point — and exactly what I had been missing for twenty-five years.</p>
+<p style="position: relative;">None of it screams. That is, I think, exactly the point — and exactly what I had been missing for twenty-five years.</p>
 </div>
 <!-- ── S9 HOW CAN YOU GET ── -->
-<h2 class="adv-section-heading">The Niece's Wedding And The Neck I Completely Forgot About</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts="[&quot;Mature woman at outdoor wedding reception, glowing seamless complexion from face down to chest, golden hour light, photorealistic&quot;, &quot;Close-up of 58-year-old woman dancing at family wedding, no foundation line visible at neckline, photorealistic&quot;, &quot;Husband admiring his wife's glowing skin at garden party, intimate candid moment, photorealistic&quot;]" data-selected="0" data-slot-key="media.s9" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s9</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Mature woman at outdoor wedding reception, glowing seamless complexion from face"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">The Niece's Wedding And The Neck I Completely Forgot About</h2>
+<div class="adv-inline-image"><img alt="" data-slot="media.s9" src="/pages/media/2fc898ba/04a6721bf860.jpeg"/></div>
 <div class="adv-article">
-<p>Three days after Ji-Yeon flew home, my niece got married in a tent in upstate Connecticut, with the kind of light that punishes everyone over forty.</p>
-<p>I did my face in the hotel bathroom, hurried, distracted, and walked out without ever touching the dropper to my <strong>neck or chest</strong>.</p>
-<p>Halfway through the reception I caught my reflection in a window and realized, with a quiet jolt, <u>there was no line to fix</u>.</p>
+<p style="position: relative;">Three days after Ji-Yeon flew home, my niece got married in a tent in upstate Connecticut, with the kind of light that punishes everyone over forty.</p>
+<p style="position: relative;">I did my face in the hotel bathroom, hurried, distracted, and walked out without ever touching the dropper to my <strong>neck or chest</strong>.</p>
+<p style="position: relative;">Halfway through the reception I caught my reflection in a window and realized, with a quiet jolt, <u>there was no line to fix</u>.</p>
 </div>
 <!-- ── S10 SELL OUT ── -->
-<h2 class="adv-section-heading">Why This Approach Was Never Going To Come From A Counter</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts='["Korean apothecary shelf displaying minimalist skincare bottles, warm wood and white tile, photorealistic", "Elegant Seoul beauty counter with soft pink lighting, mature woman browsing serums, photorealistic", "Three generations of Korean women laughing at a quiet kitchen table at night, skincare ritual, photorealistic"]' data-selected="0" data-slot-key="media.s10" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s10</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Korean apothecary shelf displaying minimalist skincare bottles, warm wood and wh"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">Why This Approach Was Never Going To Come From A Counter</h2>
+<div class="adv-inline-image"><img alt="" data-slot="media.s10" src="/pages/media/2fc898ba/4756ea766701.jpeg"/></div>
 <div class="adv-article">
-<p>In Korea, mature skin is a <strong>multi-generational craft</strong>. Mothers pass down rituals at the bathroom mirror. Daughters borrow from grandmothers without irony.</p>
-<p>In American beauty halls, mature skin is a problem, and the people selling the solution are often young enough to be your daughter's roommate.</p>
-<p>Neither group is wrong, exactly. But one of them is selling more product every time the match fails, and the other quietly is not.</p>
+<p style="position: relative;">In Korea, mature skin is a <strong>multi-generational craft</strong>. Mothers pass down rituals at the bathroom mirror. Daughters borrow from grandmothers without irony.</p>
+<p style="position: relative;">In American beauty halls, mature skin is a problem, and the people selling the solution are often young enough to be your daughter's roommate.</p>
+<p style="position: relative;">Neither group is wrong, exactly. But one of them is selling more product every time the match fails, and the other quietly is not.</p>
 </div>
 <!-- ── S11 NOT AVAILABLE ELSEWHERE ── -->
-<h2 class="adv-section-heading">Four Reasons Women My Age Are Quietly Switching Over Now</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts="[&quot;Open dropper bottle and ingredient labels on white marble, clean minimalist Korean skincare flat lay, photorealistic&quot;, &quot;Close-up of golden serum drop suspended on mature woman's fingertip, photorealistic&quot;, &quot;Calm overhead arrangement of MWAH Chameleon Drops with linen and dried botanicals, photorealistic&quot;]" data-selected="0" data-slot-key="media.s11" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s11</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Open dropper bottle and ingredient labels on white marble, clean minimalist Kore"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">Four Reasons Women My Age Are Quietly Switching Over Now</h2>
+<div class="adv-inline-image"><img alt="" data-slot="media.s11" src="/pages/media/2fc898ba/8edb511f601e.jpeg"/></div>
 <div class="adv-article">
-<p>Ji-Yeon's mother has been using this approach for years. Her circle of friends in Busan, several of them now in their seventies, has too.</p>
-<p>Once I started paying attention here at home, I noticed the same quiet shift among the women I respect most in my own life.</p>
+<p style="position: relative;">Ji-Yeon's mother has been using this approach for years. Her circle of friends in Busan, several of them now in their seventies, has too.</p>
+<p style="position: relative;">Once I started paying attention here at home, I noticed the same quiet shift among the women I respect most in my own life.</p>
 </div>
 <ul class="adv-bullet-list">
-<li>It travels in a single small bottle, which matters when you are over fifty and tired of overpacking for every weekend.</li>
-<li>It works on face and neck without two separate products, which finally ends the <strong>jawline tide-line</strong> problem most of us have lived with.</li>
-<li>It does not require a counter visit, a shade quiz, or a young associate guessing at your undertone in fluorescent light.</li>
-<li>It is the only thing in my routine my own daughter has quietly borrowed without telling me, which is the highest honest review.</li>
+<li style="position: relative;">It travels in a single small bottle, which matters when you are over fifty and tired of overpacking for every weekend.</li>
+<li style="position: relative;">It works on face and neck without two separate products, which finally ends the <strong>jawline tide-line</strong> problem most of us have lived with.</li>
+<li style="position: relative;">It does not require a counter visit, a shade quiz, or a young associate guessing at your undertone in fluorescent light.</li>
+<li style="position: relative;">It is the only thing in my routine my own daughter has quietly borrowed without telling me, which is the highest honest review.</li>
 </ul>
 <div class="adv-article">
-<p>Four reasons, all small, all unglamorous. Together, they are why my Sephora app has not been opened since March.</p>
+<p style="position: relative;">Four reasons, all small, all unglamorous. Together, they are why my Sephora app has not been opened since March.</p>
 </div>
 <!-- ── S12 SPECIAL DISCOUNT + PRICING REVEAL ── -->
-<h2 class="adv-section-heading">Who This Is Honestly For, And Who It Is Not</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts='["Mature woman in soft morning robe checking her reflection with quiet satisfaction, photorealistic", "Close-up of 58-year-old hand placing dropper bottle into a small leather travel pouch, photorealistic", "Woman late fifties sharing skincare bottle with adult daughter at bathroom mirror, photorealistic"]' data-selected="0" data-slot-key="media.s12" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s12</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Mature woman in soft morning robe checking her reflection with quiet satisfactio"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">Who This Is Honestly For, And Who It Is Not</h2>
+<div class="adv-inline-image"><img alt="" data-slot="media.s12" src="/pages/media/2fc898ba/c29834090de0.jpeg"/></div>
 <div class="adv-pricing-reveal">
-<p class="adv-pricing-reveal__headline">What It Costs Compared To One Year Of Counter Mistakes</p>
-<p class="adv-pricing-reveal__note">I added up everything in the donation bag. The drops are a fraction of one bad afternoon at the counter, and they actually <strong>work on my neck</strong>.</p>
+<p class="adv-pricing-reveal__headline" style="position: relative;">What It Costs Compared To One Year Of Counter Mistakes</p>
+<p class="adv-pricing-reveal__note" style="position: relative;">I added up everything in the donation bag. The drops are a fraction of one bad afternoon at the counter, and they actually <strong>work on my neck</strong>.</p>
 </div>
 <div class="adv-article">
-<p>If you want a heavy mask that hides everything, this is not that. If you want twenty-four-hour matte stage coverage, this is not that either.</p>
-<p>If you want your <strong>actual skin</strong> back, on its best forgiving day, with no line at the jaw and no creasing by five, this is exactly that.</p>
+<p style="position: relative;">If you want a heavy mask that hides everything, this is not that. If you want twenty-four-hour matte stage coverage, this is not that either.</p>
+<p style="position: relative;">If you want your <strong>actual skin</strong> back, on its best forgiving day, with no line at the jaw and no creasing by five, this is exactly that.</p>
 </div>
 <!-- ── CTA BLOCK #1 ── -->
 <a class="adv-cta-block" href="https://terica-store.com/click">
 <span>CHECK AVAILABILITY</span>
 </a>
 <!-- ── S13 60 DAYS RISK FREE + GUARANTEE ── -->
-<h2 class="adv-section-heading">What If You Try It And It Simply Is Not For You</h2>
+<h2 class="adv-section-heading" style="position: relative;">What If You Try It And It Simply Is Not For You</h2>
 <div class="adv-guarantee">
-<h3 class="adv-guarantee__title">30-Day Quiet Return Guarantee</h3>
+<h3 class="adv-guarantee__title" style="position: relative;">30-Day Quiet Return Guarantee</h3>
 <circle cx="200" cy="200" fill="none" r="180" stroke="%23e3dcc9" stroke-width="2"></circle>" alt="Guarantee badge"&gt;
   <div class="adv-guarantee__body">
-<p>You have a full thirty days to try the drops in your real life — your bathroom, your light, your husband, your niece's wedding.</p>
-<p>If your reflection at five in the afternoon is not noticeably calmer, you send the bottle back and they refund you. No counter visit required.</p>
-<p>I almost did not mention this part because it felt like a sales line. Then I realized Sephora has never offered me anything <strong>remotely that fair</strong>.</p>
+<p style="position: relative;">You have a full thirty days to try the drops in your real life — your bathroom, your light, your husband, your niece's wedding.</p>
+<p style="position: relative;">If your reflection at five in the afternoon is not noticeably calmer, you send the bottle back and they refund you. No counter visit required.</p>
+<p style="position: relative;">I almost did not mention this part because it felt like a sales line. Then I realized Sephora has never offered me anything <strong>remotely that fair</strong>.</p>
 </div>
 </div>
 <!-- ── S14 WHAT TO DO NEXT ── -->
-<h2 class="adv-section-heading">What Quietly Changed That I Did Not Expect To Change</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts='["Mature woman in her late fifties calmly reading at home, dewy bare-feeling skin, soft afternoon light, photorealistic", "Quiet bathroom counter with single dropper bottle, white tile, peaceful morning ritual, photorealistic", "Confident 58-year-old woman walking through farmers market, glowing seamless complexion, photorealistic"]' data-selected="0" data-slot-key="media.s14" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s14</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Mature woman in her late fifties calmly reading at home, dewy bare-feeling skin,"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">What Quietly Changed That I Did Not Expect To Change</h2>
+<div class="adv-inline-image"><img alt="" data-slot="media.s14" src="/pages/media/2fc898ba/a2f5537dcaa6.png"/></div>
 <div class="adv-article">
-<p>I expected better skin. I did not expect to stop dreading the bathroom mirror at five, or the camera flash at family gatherings.</p>
-<p>I did not expect my husband to keep asking, week after week, whether I had <strong>finally booked that facial</strong> I keep talking about.</p>
-<p>I did not expect to feel, of all things, slightly lighter — as if a small, daily, expensive humiliation had simply been lifted away.</p>
+<p style="position: relative;">I expected better skin. I did not expect to stop dreading the bathroom mirror at five, or the camera flash at family gatherings.</p>
+<p style="position: relative;">I did not expect my husband to keep asking, week after week, whether I had <strong>finally booked that facial</strong> I keep talking about.</p>
+<p style="position: relative;">I did not expect to feel, of all things, slightly lighter — as if a small, daily, expensive humiliation had simply been lifted away.</p>
 </div>
 <!-- ── CTA BLOCK #2 ── -->
 <a class="adv-cta-block" href="https://terica-store.com/click">
 <span>CHECK AVAILABILITY</span>
 </a>
 <!-- ── S15 ZERO RISK + EMOTIONAL CALLOUT ── -->
-<h2 class="adv-section-heading">What I Would Tell Any American Woman Over Fifty Right Now</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts='["Mature woman seated at vanity looking peacefully into the mirror, dropper bottle in foreground, photorealistic", "Close-up of late-fifties hands tilting MWAH bottle, soft window light, photorealistic", "Woman 58 smiling softly at her reflection, no harsh foundation, photorealistic"]' data-selected="0" data-slot-key="media.s15a" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s15a</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Mature woman seated at vanity looking peacefully into the mirror, dropper bottle"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">What I Would Tell Any American Woman Over Fifty Right Now</h2>
+<div class="adv-inline-image"><img alt="" data-slot="media.s15a" src="/pages/media/2fc898ba/46685f82889b.jpeg"/></div>
 <div class="adv-article">
-<p>Stop standing in front of a twenty-four-year-old with a swatch stick. She is not going to find your shade. The math does not allow it.</p>
-<p>Find the Ji-Yeon in your life — the friend, the cousin, the neighbor — who has quietly stopped doing what everyone else is doing.</p>
-<p>Ask her what is in the small bottle on her vanity, and try it for one evening, in your own bathroom, without an audience.</p>
+<p style="position: relative;">Stop standing in front of a twenty-four-year-old with a swatch stick. She is not going to find your shade. The math does not allow it.</p>
+<p style="position: relative;">Find the Ji-Yeon in your life — the friend, the cousin, the neighbor — who has quietly stopped doing what everyone else is doing.</p>
+<p style="position: relative;">Ask her what is in the small bottle on her vanity, and try it for one evening, in your own bathroom, without an audience.</p>
 </div>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="02f4aa53-3995-4b13-a75a-a84762397ccd" data-prompts='["Quiet candid of mature woman at kitchen island with morning coffee, glowing even skin, photorealistic", "Soft-lit portrait of 58-year-old woman against linen curtain, content expression, photorealistic", "Late-fifties woman touching her smooth neckline with subtle smile, photorealistic"]' data-selected="0" data-slot-key="media.s15b" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s15b</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Quiet candid of mature woman at kitchen island with morning coffee, glowing even"</div></div></div>
+<div class="adv-inline-image"><img alt="" data-slot="media.s15b" src="/pages/media/2fc898ba/2b74f1a04523.jpeg"/></div>
 <!-- ── EMOTIONAL CALLOUT (3 bold lines) ── -->
 <div class="adv-callout">
-<p>American foundation culture sells you a new shade every season because the last one inevitably failed at the jaw.</p>
-<p>Korean skincare culture sells you one quiet bottle and assumes you intend to use it on your <strong>neck as well</strong>.</p>
-<p>After twenty-five years of the first approach, I am, with great relief, switching to the second.</p>
+<p style="position: relative;">American foundation culture sells you a new shade every season because the last one inevitably failed at the jaw.</p>
+<p style="position: relative;">Korean skincare culture sells you one quiet bottle and assumes you intend to use it on your <strong>neck as well</strong>.</p>
+<p style="position: relative;">After twenty-five years of the first approach, I am, with great relief, switching to the second.</p>
 </div>
 <div class="adv-article">
-<p>If your husband walks in and asks whether you had a facial, you will know exactly what I mean by <strong>the safe sidestep</strong>.</p>
+<p style="position: relative;">If your husband walks in and asks whether you had a facial, you will know exactly what I mean by <strong>the safe sidestep</strong>.</p>
 </div>
 <!-- ── CLOSING PREAMBLE ── -->
 <div class="adv-closing-preamble">
-<p>I am not telling you to throw out everything tomorrow. I am telling you what I wish a friend had said to me at fifty-three.</p>
-<p>If your five PM mirror has been quietly disappointing you for years, this is the calm, K-pharmacy alternative I should have been handed long ago.</p>
+<p style="position: relative;">I am not telling you to throw out everything tomorrow. I am telling you what I wish a friend had said to me at fifty-three.</p>
+<p style="position: relative;">If your five PM mirror has been quietly disappointing you for years, this is the calm, K-pharmacy alternative I should have been handed long ago.</p>
 </div>
 <!-- ── CTA BLOCK #3 (final) ── -->
 <a class="adv-cta-block" href="https://terica-store.com/click">
@@ -645,7 +894,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>
