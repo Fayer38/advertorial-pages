@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<html lang="en"><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>After 41 Years as a Nurse, the Morning I Couldn't Open My Own Pill Bottle</title>
@@ -67,7 +64,7 @@ img{max-width:100%;display:block}
 /* ── Lead image ─────────────────────────────────────────────── */
 .adv-lead-image{max-width:960px;margin:0 auto 14px;padding:0 24px}
 .adv-lead-image img{
-  width:100%;aspect-ratio:16/9;object-fit:cover;
+  width:100%;aspect-ratio:16/11;object-fit:cover;
   background:var(--ll-color-background-alt);
 }
 
@@ -118,7 +115,7 @@ img{max-width:100%;display:block}
 /* ── Inline image ───────────────────────────────────────────── */
 .adv-inline-image{max-width:960px;margin:20px auto;padding:0 24px}
 .adv-inline-image img{
-  width:100%;aspect-ratio:16/9;object-fit:cover;
+  width:100%;aspect-ratio:16/10;object-fit:cover;
   background:var(--ll-color-background-alt);
 }
 
@@ -367,6 +364,16 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -375,7 +382,255 @@ t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "wb35vpdfk1");
 </script>
-<script async="" src="https://terica-store.com/tracker.js"></script>
+<!-- ext-script-stripped -->
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
@@ -384,12 +639,12 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <!-- ── HERO ── -->
 <div class="adv-hero">
-<h1 class="adv-hero__title">I Diagnosed Arthritis in Strangers for Forty Years. I Missed My Own.</h1>
-<p class="adv-hero__subtitle">A retired charge nurse on the small thing that finally worked.</p>
+<h1 class="adv-hero__title" style="position: relative;">I Diagnosed Arthritis in Strangers for Forty Years. I Missed My Own.</h1>
+<p class="adv-hero__subtitle" style="position: relative;">A retired charge nurse on the small thing that finally worked.</p>
 </div>
 <!-- ── LEAD IMAGE ── -->
 <div class="adv-lead-image">
-<div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts="[&quot;Portrait of a 68-year-old American woman with short silver hair, sitting at a kitchen table in a modest Pennsylvania home, gently flexing her hands, soft morning light, photorealistic&quot;, &quot;Close-up of a retired nurse's weathered hands resting on an open notebook, wedding ring visible, swollen knuckles, natural window light, photorealistic&quot;, &quot;Calm older woman in a cardigan looking out a kitchen window, hands wrapped in compression gloves on her lap, contemplative expression, photorealistic&quot;]" data-selected="0" data-slot-key="media.lead" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.lead</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Portrait of a 68-year-old American woman with short silver hair, sitting at a ki"</div></div>
+<img alt="" data-copy="media.lead:attr:src" data-prompts="[&quot;Portrait of a 68-year-old American woman with short silver hair, sitting at a kitchen table in a modest Pennsylvania home, gently flexing her hands, soft morning light, photorealistic&quot;, &quot;Close-up of a retired nurse's weathered hands resting on an open notebook, wedding ring visible, swollen knuckles, natural window light, photorealistic&quot;, &quot;Calm older woman in a cardigan looking out a kitchen window, hands wrapped in compression gloves on her lap, contemplative expression, photorealistic&quot;]" data-slot-key="media.lead" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/b3a99f05/manual_upload-manual-0fbbce68.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 10; object-fit: cover; margin: 8px 0px;"/>
 </div>
 <!-- ── BYLINE (local avatar pool) ── -->
 <div class="adv-byline">
@@ -402,88 +657,88 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <!-- ── OPENING PARAGRAPHS ── -->
 <div class="adv-article">
-<p>I spent forty-one years on the orthopedic floor of a Catholic hospital outside Pittsburgh, watching arthritis quietly take other people apart.</p>
-<p>I could spot it across a waiting room. The careful grip on a purse strap. The thumb that wouldn't quite straighten.</p>
-<p>What I could not see, apparently, was my own pair of hands. I denied what was happening for nearly two years.</p>
-<p>I am writing this because half my old patients are still on the same prescription conveyor belt I was, and I think they deserve options.</p>
+<p style="position: relative;">I spent forty-one years on the orthopedic floor of a Catholic hospital outside Pittsburgh, watching arthritis quietly take other people apart.</p>
+<p style="position: relative;">I could spot it across a waiting room. The careful grip on a purse strap. The thumb that wouldn't quite straighten.</p>
+<p style="position: relative;">What I could not see, apparently, was my own pair of hands. I denied what was happening for nearly two years.</p>
+<p style="position: relative;">I am writing this because half my old patients are still on the same prescription conveyor belt I was, and I think they deserve options.</p>
 </div>
 <!-- ── S1 ANATOMY ── -->
-<h2 class="adv-section-heading">The Morning I Sat Down On My Own Kitchen Floor</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts="[&quot;Older woman sitting on a tiled kitchen floor in a bathrobe, an unopened prescription bottle beside her, quiet morning light, photorealistic&quot;, &quot;Close-up of a woman's hand struggling to twist a child-proof prescription cap, swollen knuckles, kitchen counter background, photorealistic&quot;, &quot;Defeated expression of a 68-year-old woman leaning against a kitchen cabinet, blurred pill bottle in foreground, soft natural light, photorealistic&quot;]" data-selected="0" data-slot-key="media.s1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older woman sitting on a tiled kitchen floor in a bathrobe, an unopened prescrip"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">The Morning I Sat Down On My Own Kitchen Floor</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s1:attr:src" data-prompts="[&quot;Older woman sitting on a tiled kitchen floor in a bathrobe, an unopened prescription bottle beside her, quiet morning light, photorealistic&quot;, &quot;Close-up of a woman's hand struggling to twist a child-proof prescription cap, swollen knuckles, kitchen counter background, photorealistic&quot;, &quot;Defeated expression of a 68-year-old woman leaning against a kitchen cabinet, blurred pill bottle in foreground, soft natural light, photorealistic&quot;]" data-slot-key="media.s1" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/b3a99f05/manual_upload-manual-8ed90d65.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <div class="adv-article">
-<p>It was a Tuesday in March. I had a blood pressure pill in front of me and a child-proof cap I could not move.</p>
-<p>I tried both hands. I tried a dish towel for grip. I tried the edge of the counter. <strong>Nothing turned.</strong></p>
-<p>I sat down on the linoleum and cried for about ten minutes. Then I called my daughter, who is a PA in Denver.</p>
-<p>She did not lecture. She just said, very quietly, <strong>Mom, you are the patient now</strong>, and we both knew it was true.</p>
-<p>That afternoon I made the rheumatology appointment I had been postponing since the previous winter. The X-rays were not subtle.</p>
+<p style="position: relative;">It was a Tuesday in March. I had a blood pressure pill in front of me and a child-proof cap I could not move.</p>
+<p style="position: relative;">I tried both hands. I tried a dish towel for grip. I tried the edge of the counter. <strong>Nothing turned.</strong></p>
+<p style="position: relative;">I sat down on the linoleum and cried for about ten minutes. Then I called my daughter, who is a PA in Denver.</p>
+<p style="position: relative;">She did not lecture. She just said, very quietly, <strong>Mom, you are the patient now</strong>, and we both knew it was true.</p>
+<p style="position: relative;">That afternoon I made the rheumatology appointment I had been postponing since the previous winter. The X-rays were not subtle.</p>
 </div>
 <!-- ── S2 ARTHRITIS PROGRESSION ── -->
-<h2 class="adv-section-heading">The Symptoms I Had Quietly Been Calling Other, Safer Things</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts='["Older woman wincing as she tries to button a blouse in a bedroom mirror, swollen finger joints visible, early morning light, photorealistic", "Close-up of arthritic hands gripping a coffee mug awkwardly, knuckles inflamed, kitchen scene, photorealistic", "A senior woman quietly hiding her stiff hands under a dinner table while her husband talks, warm domestic lighting, photorealistic"]' data-selected="0" data-slot-key="media.s2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older woman wincing as she tries to button a blouse in a bedroom mirror, swollen"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">The Symptoms I Had Quietly Been Calling Other, Safer Things</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s2:attr:src" data-prompts='["Older woman wincing as she tries to button a blouse in a bedroom mirror, swollen finger joints visible, early morning light, photorealistic", "Close-up of arthritic hands gripping a coffee mug awkwardly, knuckles inflamed, kitchen scene, photorealistic", "A senior woman quietly hiding her stiff hands under a dinner table while her husband talks, warm domestic lighting, photorealistic"]' data-slot-key="media.s2" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/b3a99f05/manual_upload-manual-073b9ae7.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <div class="adv-article">
-<p>Looking back through my own little logbook, the pattern was embarrassingly clear. I had charted versions of it on patients for decades.</p>
-<p>If any of the following sound familiar, please do not do what I did and wait two years before naming them honestly.</p>
+<p style="position: relative;">Looking back through my own little logbook, the pattern was embarrassingly clear. I had charted versions of it on patients for decades.</p>
+<p style="position: relative;">If any of the following sound familiar, please do not do what I did and wait two years before naming them honestly.</p>
 </div>
 <div class="adv-feature-list">
-<p>Waking at three in the morning with knuckles that feel <strong>hot, tight, and slightly larger</strong> than they were at bedtime.</p>
-<p>Dropping coffee mugs, pens, and car keys without warning. The grip is simply <strong>not where you left it yesterday</strong>.</p>
-<p>A finger that catches midway through closing, then snaps shut. Trigger finger, often the ring or middle digit.</p>
-<p>Quiet morning stiffness that takes <strong>thirty to ninety minutes</strong> of moving around before the joints feel like yours again.</p>
-<p>Hiding your hands under the dinner table, under a napkin, in a sweater sleeve, so your spouse will not ask.</p>
+<p style="position: relative;">Waking at three in the morning with knuckles that feel <strong>hot, tight, and slightly larger</strong> than they were at bedtime.</p>
+<p style="position: relative;">Dropping coffee mugs, pens, and car keys without warning. The grip is simply <strong>not where you left it yesterday</strong>.</p>
+<p style="position: relative;">A finger that catches midway through closing, then snaps shut. Trigger finger, often the ring or middle digit.</p>
+<p style="position: relative;">Quiet morning stiffness that takes <strong>thirty to ninety minutes</strong> of moving around before the joints feel like yours again.</p>
+<p style="position: relative;">Hiding your hands under the dinner table, under a napkin, in a sweater sleeve, so your spouse will not ask.</p>
 </div>
 <div class="adv-article">
-<p>I had four of those five. I told myself it was forty years of <u>opening IV vials with my teeth</u> finally catching up.</p>
-<p>Which was true, of course. But true is not the same as benign, and pretending it was bought me exactly nothing.</p>
+<p style="position: relative;">I had four of those five. I told myself it was forty years of <u>opening IV vials with my teeth</u> finally catching up.</p>
+<p style="position: relative;">Which was true, of course. But true is not the same as benign, and pretending it was bought me exactly nothing.</p>
 </div>
 <!-- ── S3 SCARY TRUTH + FAILED SOLUTIONS ── -->
-<h2 class="adv-section-heading">What The Standard Prescription Conveyor Belt Looked Like For Me</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts='["Cluttered bathroom counter with prescription bottles, drugstore braces, and a heating pad, soft overhead light, photorealistic", "Older woman frowning at a kitchen drawer full of unused arthritis creams and pill organizers, photorealistic", "A weathered hand pushing aside a methotrexate bottle on a nightstand, lamp light, photorealistic"]' data-selected="0" data-slot-key="media.s3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Cluttered bathroom counter with prescription bottles, drugstore braces, and a he"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">What The Standard Prescription Conveyor Belt Looked Like For Me</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s3:attr:src" data-prompts='["Cluttered bathroom counter with prescription bottles, drugstore braces, and a heating pad, soft overhead light, photorealistic", "Older woman frowning at a kitchen drawer full of unused arthritis creams and pill organizers, photorealistic", "A weathered hand pushing aside a methotrexate bottle on a nightstand, lamp light, photorealistic"]' data-slot-key="media.s3" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/b3a99f05/manual_upload-manual-fd46ba7e.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <div class="adv-article">
-<p>Once I finally walked into the office, the protocol unfolded the way I had seen it unfold on hundreds of charts.</p>
-<p>I am not against any of these. I have handed them out myself. They simply did not, on their own, give me my hands back.</p>
+<p style="position: relative;">Once I finally walked into the office, the protocol unfolded the way I had seen it unfold on hundreds of charts.</p>
+<p style="position: relative;">I am not against any of these. I have handed them out myself. They simply did not, on their own, give me my hands back.</p>
 </div>
 <div class="adv-feature-list">
-<p>Daily naproxen, then meloxicam. My stomach lining objected within a month, and the swelling came back between doses.</p>
-<p>A short course of oral prednisone. Quick relief, then a steady creep of weight, sleep loss, and rebound stiffness.</p>
-<p>Two cortisone injections into the worst MCP joint. The second one did less than the first, as the literature predicts.</p>
-<p>Methotrexate on the table for the next visit. I had counseled patients onto it for years. I could not bring myself to start.</p>
-<p>An eventual fusion consult for the right thumb. The surgeon was kind. He also confirmed it was a <strong>permanent trade</strong>.</p>
+<p style="position: relative;">Daily naproxen, then meloxicam. My stomach lining objected within a month, and the swelling came back between doses.</p>
+<p style="position: relative;">A short course of oral prednisone. Quick relief, then a steady creep of weight, sleep loss, and rebound stiffness.</p>
+<p style="position: relative;">Two cortisone injections into the worst MCP joint. The second one did less than the first, as the literature predicts.</p>
+<p style="position: relative;">Methotrexate on the table for the next visit. I had counseled patients onto it for years. I could not bring myself to start.</p>
+<p style="position: relative;">An eventual fusion consult for the right thumb. The surgeon was kind. He also confirmed it was a <strong>permanent trade</strong>.</p>
 </div>
 <div class="adv-article">
-<p>Four interventions, two years, and my hands were still waking me up at three in the morning.</p>
+<p style="position: relative;">Four interventions, two years, and my hands were still waking me up at three in the morning.</p>
 </div>
 <!-- ── S4 SOLUTION ── -->
-<h2 class="adv-section-heading">Why My Daughter Reached For Compression Instead Of Another Pill</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts='["Diagram-style anatomical close-up of a hand showing inflamed finger joints and reduced circulation, clean medical illustration, photorealistic", "Cross-section illustration of a compression glove gently pressing on swollen knuckles, soft scientific lighting, photorealistic", "Hand wearing a beige compression glove with visible seamless knit, resting on a notebook, warm window light, photorealistic"]' data-selected="0" data-slot-key="media.s4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Diagram-style anatomical close-up of a hand showing inflamed finger joints and r"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">Why My Daughter Reached For Compression Instead Of Another Pill</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s4:attr:src" data-prompts='["Diagram-style anatomical close-up of a hand showing inflamed finger joints and reduced circulation, clean medical illustration, photorealistic", "Cross-section illustration of a compression glove gently pressing on swollen knuckles, soft scientific lighting, photorealistic", "Hand wearing a beige compression glove with visible seamless knit, resting on a notebook, warm window light, photorealistic"]' data-slot-key="media.s4" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/b3a99f05/manual_upload-manual-b7b0a279.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <div class="adv-article">
-<p>She works in a sports medicine clinic and sees compression used every day on post-op knees, shoulders, and hands.</p>
-<p>The mechanism is unglamorous. <strong>Sustained, even pressure</strong> on inflamed joints does three quiet things at once.</p>
+<p style="position: relative;">She works in a sports medicine clinic and sees compression used every day on post-op knees, shoulders, and hands.</p>
+<p style="position: relative;">The mechanism is unglamorous. <strong>Sustained, even pressure</strong> on inflamed joints does three quiet things at once.</p>
 </div>
 <ul class="adv-bullet-list">
-<li>It encourages venous return, so the fluid that pools around an inflamed knuckle overnight has somewhere to go.</li>
-<li>It provides gentle warmth, which keeps the synovial fluid that lubricates each joint <strong>more mobile, less syrupy</strong>.</li>
-<li>It supplies proprioceptive feedback, so your hand knows where its fingers are without having to grip everything twice as hard.</li>
-<li>It restricts the tiny, repeated micro-movements that aggravate trigger finger between your morning coffee and your evening dishes.</li>
-<li>And, importantly for me, it does all of this <u>without adding one more thing to my liver to process</u>.</li>
+<li style="position: relative;">It encourages venous return, so the fluid that pools around an inflamed knuckle overnight has somewhere to go.</li>
+<li style="position: relative;">It provides gentle warmth, which keeps the synovial fluid that lubricates each joint <strong>more mobile, less syrupy</strong>.</li>
+<li style="position: relative;">It supplies proprioceptive feedback, so your hand knows where its fingers are without having to grip everything twice as hard.</li>
+<li style="position: relative;">It restricts the tiny, repeated micro-movements that aggravate trigger finger between your morning coffee and your evening dishes.</li>
+<li style="position: relative;">And, importantly for me, it does all of this <u>without adding one more thing to my liver to process</u>.</li>
 </ul>
 <!-- ── S5 SOMETHING REMARKABLE ── -->
-<h2 class="adv-section-heading">The Unassuming Box That Arrived From Denver Two Weeks Later</h2>
+<h2 class="adv-section-heading" style="position: relative;">The Unassuming Box That Arrived From Denver Two Weeks Later</h2>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts='["Older woman calmly pulling a compression glove onto her hand at a kitchen table, morning coffee nearby, photorealistic", "Close-up of beige compression gloves being slipped on over arthritic fingers, warm natural light, photorealistic", "Relieved expression of a senior woman flexing her fingers inside compression gloves, soft window light, photorealistic"]' data-selected="0" data-slot-key="media.s5" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s5</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older woman calmly pulling a compression glove onto her hand at a kitchen table,"</div></div></div>
 <div class="adv-article">
-<p>Two weeks after our kitchen-floor phone call, a small padded mailer showed up on the porch.</p>
-<p>Inside was a pair of Premium Onecompress Gloves and a sticky note that read, <strong>Try them for fourteen days. Then call me.</strong></p>
-<p>I will admit I rolled my eyes. I have seen every drugstore brace and copper sleeve come through that hospital.</p>
+<p style="position: relative;">Two weeks after our kitchen-floor phone call, a small padded mailer showed up on the porch.</p>
+<p style="position: relative;">Inside was a pair of Premium Onecompress Gloves and a sticky note that read, <strong>Try them for fourteen days. Then call me.</strong></p>
+<p style="position: relative;">I will admit I rolled my eyes. I have seen every drugstore brace and copper sleeve come through that hospital.</p>
 </div>
 <!-- ── S6 ONLY ONE CATCH ── -->
-<h2 class="adv-section-heading">What I Quietly Noticed In The Very First Forty-Eight Hours</h2>
+<h2 class="adv-section-heading" style="position: relative;">What I Quietly Noticed In The Very First Forty-Eight Hours</h2>
 <div class="adv-article">
-<p>The first thing was simply that my morning stiffness shortened. Ninety minutes became something closer to <strong>twenty</strong>.</p>
-<p>The second thing was that I stopped flinching when I reached for the kettle. Small, but I had been flinching for a year.</p>
+<p style="position: relative;">The first thing was simply that my morning stiffness shortened. Ninety minutes became something closer to <strong>twenty</strong>.</p>
+<p style="position: relative;">The second thing was that I stopped flinching when I reached for the kettle. Small, but I had been flinching for a year.</p>
 </div>
 <!-- ── PRODUCT SHOWCASE ── -->
 <div class="adv-product-showcase">
-<h3 class="adv-product-showcase__title">Premium Onecompress™ Gloves</h3>
-<p class="adv-product-showcase__tagline">Sustained compression for arthritic, stiff, swollen hands.</p>
+<h3 class="adv-product-showcase__title" style="position: relative;">Premium Onecompress™ Gloves</h3>
+<p class="adv-product-showcase__tagline" style="position: relative;">Sustained compression for arthritic, stiff, swollen hands.</p>
 <a href="https://terica-store.com/click"><div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts='["Pair of beige Premium Onecompress gloves laid neatly on a wooden surface, soft daylight, product photography, photorealistic", "Hands wearing Premium Onecompress gloves resting open on a linen towel, clean overhead lighting, photorealistic", "Premium Onecompress gloves folded beside a coffee cup and reading glasses on a kitchen table, photorealistic"]' data-selected="0" data-slot-key="media.product" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.product</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Pair of beige Premium Onecompress gloves laid neatly on a wooden surface, soft d"</div></div></a>
 <div class="adv-product-showcase__rating">
 <span class="adv-product-showcase__rating-stars">★★★★★</span>
@@ -494,143 +749,143 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <a class="adv-cta-inline" href="https://terica-store.com/click"><span data-copy="cta_check.text">Check availability</span></a>
 </div>
 <!-- ── S7 INTRODUCING ── -->
-<h2 class="adv-section-heading">What Two Full Weeks Of Consistent Wear Actually Looked Like</h2>
-<div class="adv-inline-image"><div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts="[&quot;Older woman comfortably knitting with compression gloves on, relaxed posture, living room setting, photorealistic&quot;, &quot;Senior gardener wearing compression gloves while pruning rose bushes in a small American backyard, photorealistic&quot;, &quot;Smiling retired woman holding a grandchild's hand, wearing beige compression gloves, soft afternoon light, photorealistic&quot;]" data-selected="0" data-slot-key="media.s7a" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s7a</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older woman comfortably knitting with compression gloves on, relaxed posture, li"</div></div></div>
+<h2 class="adv-section-heading" style="position: relative;">What Two Full Weeks Of Consistent Wear Actually Looked Like</h2>
+<div class="adv-inline-image"><img alt="" data-copy="media.s7a:attr:src" data-prompts="[&quot;Older woman comfortably knitting with compression gloves on, relaxed posture, living room setting, photorealistic&quot;, &quot;Senior gardener wearing compression gloves while pruning rose bushes in a small American backyard, photorealistic&quot;, &quot;Smiling retired woman holding a grandchild's hand, wearing beige compression gloves, soft afternoon light, photorealistic&quot;]" data-slot-key="media.s7a" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/b3a99f05/manual_upload-manual-da98f1e5.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px;"/></div>
 <div class="adv-article">
-<p>By day ten, I buttoned my own blouse without sitting down on the bed first. I had not done that in eighteen months.</p>
-<p>By day fourteen, I twisted the cap off the same blood pressure bottle that had once put me on the kitchen floor.</p>
+<p style="position: relative;">By day ten, I buttoned my own blouse without sitting down on the bed first. I had not done that in eighteen months.</p>
+<p style="position: relative;">By day fourteen, I twisted the cap off the same blood pressure bottle that had once put me on the kitchen floor.</p>
 </div>
 <!-- ── TESTIMONIAL GRID (4 cards) ── -->
 <div class="adv-testimonial-grid">
 <div class="adv-testimonial-grid__card">
 <div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts='["Portrait of a 64-year-old American man, retired carpenter, weathered face, slight smile, plain background, photorealistic", "Older man in a flannel shirt holding a coffee mug at a kitchen table, photorealistic", "Senior man flexing his hands in compression gloves at a workshop bench, warm light, photorealistic"]' data-selected="0" data-slot-key="media.t_1" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_1</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Portrait of a 64-year-old American man, retired carpenter, weathered face, sligh"</div></div>
-<p class="adv-testimonial-grid__name">Raymond, 64, Retired carpenter</p>
-<p class="adv-testimonial-grid__text">Forty years of framing houses caught up with my thumbs. The gloves let me hold a coffee cup in the morning without bracing it.</p>
+<p class="adv-testimonial-grid__name" style="position: relative;">Raymond, 64, Retired carpenter</p>
+<p class="adv-testimonial-grid__text" style="position: relative;">Forty years of framing houses caught up with my thumbs. The gloves let me hold a coffee cup in the morning without bracing it.</p>
 </div>
 <div class="adv-testimonial-grid__card">
 <div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts="[&quot;Portrait of a 59-year-old American woman, hairdresser, kind eyes, soft studio light, photorealistic&quot;, &quot;Woman in her late 50s smiling gently in a salon setting, hands resting in front, photorealistic&quot;, &quot;Close-up of mature woman's hands holding scissors, wearing thin compression gloves, photorealistic&quot;]" data-selected="0" data-slot-key="media.t_2" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_2</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Portrait of a 59-year-old American woman, hairdresser, kind eyes, soft studio li"</div></div>
-<p class="adv-testimonial-grid__name">Linda, 59, Hairdresser</p>
-<p class="adv-testimonial-grid__text">I wear a thinner pair under my work gloves now. By the end of the day, my knuckles aren't screaming the way they used to.</p>
+<p class="adv-testimonial-grid__name" style="position: relative;">Linda, 59, Hairdresser</p>
+<p class="adv-testimonial-grid__text" style="position: relative;">I wear a thinner pair under my work gloves now. By the end of the day, my knuckles aren't screaming the way they used to.</p>
 </div>
 <div class="adv-testimonial-grid__card">
 <div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts="[&quot;Portrait of a 71-year-old American woman, retired teacher, silver bob, warm smile, plain background, photorealistic&quot;, &quot;Older woman reading at a kitchen table, hands relaxed, soft window light, photorealistic&quot;, &quot;Senior woman holding a grandchild's drawing, content expression, photorealistic&quot;]" data-selected="0" data-slot-key="media.t_3" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_3</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Portrait of a 71-year-old American woman, retired teacher, silver bob, warm smil"</div></div>
-<p class="adv-testimonial-grid__name">Carolyn, 71, Retired teacher</p>
-<p class="adv-testimonial-grid__text">My rheumatologist asked what changed. I told her, and she said keep doing whatever it is. So I am.</p>
+<p class="adv-testimonial-grid__name" style="position: relative;">Carolyn, 71, Retired teacher</p>
+<p class="adv-testimonial-grid__text" style="position: relative;">My rheumatologist asked what changed. I told her, and she said keep doing whatever it is. So I am.</p>
 </div>
 <div class="adv-testimonial-grid__card">
 <div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts='["Portrait of a 67-year-old American man, retired postal worker, gray beard, calm expression, photorealistic", "Older man tying fishing lures at a workbench, wearing compression gloves, photorealistic", "Senior man waving with a relaxed open hand on a front porch, photorealistic"]' data-selected="0" data-slot-key="media.t_4" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.t_4</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Portrait of a 67-year-old American man, retired postal worker, gray beard, calm "</div></div>
-<p class="adv-testimonial-grid__name">Frank, 67, Retired postal worker</p>
-<p class="adv-testimonial-grid__text">I sleep in them. First time in three years I am not waking up at three in the morning shaking out my fingers.</p>
+<p class="adv-testimonial-grid__name" style="position: relative;">Frank, 67, Retired postal worker</p>
+<p class="adv-testimonial-grid__text" style="position: relative;">I sleep in them. First time in three years I am not waking up at three in the morning shaking out my fingers.</p>
 </div>
 </div>
 <!-- ── S8 HELPED THOUSANDS + BENEFITS ── -->
-<h2 class="adv-section-heading">What Sustained Daily Compression Has Quietly Given Back To Me</h2>
+<h2 class="adv-section-heading" style="position: relative;">What Sustained Daily Compression Has Quietly Given Back To Me</h2>
 <div class="adv-testimonial-banner"><div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts="[&quot;Wide horizontal banner of compression gloves laid out on a wooden surface beside a stethoscope and notebook, photorealistic&quot;, &quot;Banner image of older couple's hands clasped together, both wearing thin compression gloves, soft daylight, photorealistic&quot;, &quot;Wide shot of a bright kitchen window with compression gloves resting on the sill, photorealistic&quot;]" data-selected="0" data-slot-key="media.banner" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.banner</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Wide horizontal banner of compression gloves laid out on a wooden surface beside"</div></div></div>
 <div class="adv-article">
-<p>I am not going to claim a cure. There is no cure for what is happening inside an osteoarthritic joint, and you should distrust anyone who says otherwise.</p>
+<p style="position: relative;">I am not going to claim a cure. There is no cure for what is happening inside an osteoarthritic joint, and you should distrust anyone who says otherwise.</p>
 </div>
 <div class="adv-feature-list">
-<p>Mornings that begin with coffee, not a forty-minute stiffness countdown.</p>
-<p>Grip steady enough to carry a cast iron pan solo.</p>
-<p>Buttons, zippers, and pill bottles that no longer need witnesses.</p>
-<p>Trigger finger episodes that dropped from weekly to roughly monthly.</p>
-<p>A fusion consult I have quietly taken off my calendar.</p>
+<p style="position: relative;">Mornings that begin with coffee, not a forty-minute stiffness countdown.</p>
+<p style="position: relative;">Grip steady enough to carry a cast iron pan solo.</p>
+<p style="position: relative;">Buttons, zippers, and pill bottles that no longer need witnesses.</p>
+<p style="position: relative;">Trigger finger episodes that dropped from weekly to roughly monthly.</p>
+<p style="position: relative;">A fusion consult I have quietly taken off my calendar.</p>
 </div>
 <div class="adv-article">
-<p>What I will claim is that sustained compression bought me <strong>time, function, and dignity</strong> that the prescription path was not buying me.</p>
+<p style="position: relative;">What I will claim is that sustained compression bought me <strong>time, function, and dignity</strong> that the prescription path was not buying me.</p>
 </div>
 <!-- ── S9 HOW CAN YOU GET ── -->
-<h2 class="adv-section-heading">Who I Honestly Think These Compression Gloves Are Really For</h2>
+<h2 class="adv-section-heading" style="position: relative;">Who I Honestly Think These Compression Gloves Are Really For</h2>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts='["Older woman writing at her kitchen table in compression gloves, calendar on wall, photorealistic", "Close-up of swollen morning hand next to a calmer afternoon hand wearing a compression glove, photorealistic", "Senior woman resting one hand on a coffee mug, the other on her knee, both relaxed, photorealistic"]' data-selected="0" data-slot-key="media.s9" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s9</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older woman writing at her kitchen table in compression gloves, calendar on wall"</div></div></div>
 <div class="adv-article">
-<p>If your hands ache when you wake up but loosen by lunchtime, you are exactly the person these were designed around.</p>
-<p>If you are post-surgical and your hand therapist has cleared you for compression, they layer well under most splints.</p>
-<p>If you have rheumatoid disease and are on a biologic, treat the gloves as adjunct comfort, not a replacement for your regimen.</p>
+<p style="position: relative;">If your hands ache when you wake up but loosen by lunchtime, you are exactly the person these were designed around.</p>
+<p style="position: relative;">If you are post-surgical and your hand therapist has cleared you for compression, they layer well under most splints.</p>
+<p style="position: relative;">If you have rheumatoid disease and are on a biologic, treat the gloves as adjunct comfort, not a replacement for your regimen.</p>
 </div>
 <!-- ── S10 SELL OUT ── -->
-<h2 class="adv-section-heading">Who I Honestly Do Not Think These Compression Gloves Are For</h2>
+<h2 class="adv-section-heading" style="position: relative;">Who I Honestly Do Not Think These Compression Gloves Are For</h2>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts='["Older woman folding laundry effortlessly in a sunlit Pennsylvania bedroom, photorealistic", "Senior woman holding a cast iron pan with steady hands at a stovetop, photorealistic", "Close-up of a hand smoothly opening a mason jar lid in a kitchen, photorealistic"]' data-selected="0" data-slot-key="media.s10" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s10</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older woman folding laundry effortlessly in a sunlit Pennsylvania bedroom, photo"</div></div></div>
 <div class="adv-article">
-<p>If you have active wounds, open eczema, or a known circulation disorder in your hands, please talk to your physician first.</p>
-<p>If you want a pill that erases the problem in three days, this is the wrong tool. Compression rewards consistency, not impatience.</p>
-<p>And if you are the person who buys things and never opens the package, save your money. They only work when you wear them.</p>
+<p style="position: relative;">If you have active wounds, open eczema, or a known circulation disorder in your hands, please talk to your physician first.</p>
+<p style="position: relative;">If you want a pill that erases the problem in three days, this is the wrong tool. Compression rewards consistency, not impatience.</p>
+<p style="position: relative;">And if you are the person who buys things and never opens the package, save your money. They only work when you wear them.</p>
 </div>
 <!-- ── S11 NOT AVAILABLE ELSEWHERE ── -->
-<h2 class="adv-section-heading">Why I Am Comfortable Recommending This Particular Pair Over Others</h2>
+<h2 class="adv-section-heading" style="position: relative;">Why I Am Comfortable Recommending This Particular Pair Over Others</h2>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts='["Compression glove laid flat on a clean white surface showing seamless knit detail, photorealistic", "Close-up texture of medical-grade compression fabric across a hand, photorealistic", "Pair of beige compression gloves beside a folded medical chart, soft daylight, photorealistic"]' data-selected="0" data-slot-key="media.s11" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s11</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Compression glove laid flat on a clean white surface showing seamless knit detai"</div></div></div>
 <div class="adv-article">
-<p>I tried two other compression gloves before this one, both from large pharmacy chains. Neither lasted past a few washes.</p>
-<p>Here is what is different about Premium Onecompress, in the language of someone who used to inspect supplies for a living.</p>
+<p style="position: relative;">I tried two other compression gloves before this one, both from large pharmacy chains. Neither lasted past a few washes.</p>
+<p style="position: relative;">Here is what is different about Premium Onecompress, in the language of someone who used to inspect supplies for a living.</p>
 </div>
 <ul class="adv-bullet-list">
-<li>The compression gradient is even across the hand, with no pinch at the wrist that cuts off return circulation overnight.</li>
-<li>The seamless knit means there is no inner ridge digging into the soft tissue between the thumb and index finger.</li>
-<li>The fingertips are open, so I can still type, button a blouse, and feel the temperature of a kettle handle.</li>
-<li>The fabric breathes well enough that I can wear them to bed without waking up with sweaty, macerated palms.</li>
+<li style="position: relative;">The compression gradient is even across the hand, with no pinch at the wrist that cuts off return circulation overnight.</li>
+<li style="position: relative;">The seamless knit means there is no inner ridge digging into the soft tissue between the thumb and index finger.</li>
+<li style="position: relative;">The fingertips are open, so I can still type, button a blouse, and feel the temperature of a kettle handle.</li>
+<li style="position: relative;">The fabric breathes well enough that I can wear them to bed without waking up with sweaty, macerated palms.</li>
 </ul>
 <div class="adv-article">
-<p>Those four small details are the difference between a glove you wear daily and a glove that ends up in a drawer.</p>
+<p style="position: relative;">Those four small details are the difference between a glove you wear daily and a glove that ends up in a drawer.</p>
 </div>
 <!-- ── S12 SPECIAL DISCOUNT + PRICING REVEAL ── -->
-<h2 class="adv-section-heading">How I Actually Wear Them Every Day, In Plain English</h2>
+<h2 class="adv-section-heading" style="position: relative;">How I Actually Wear Them Every Day, In Plain English</h2>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts='["Older woman placing compression gloves into a bedside drawer next to a reading lamp, photorealistic", "Senior woman putting on compression gloves before bed, calm bedroom lighting, photorealistic", "Hands in compression gloves resting on a quilted bedspread, photorealistic"]' data-selected="0" data-slot-key="media.s12" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s12</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older woman placing compression gloves into a bedside drawer next to a reading l"</div></div></div>
 <div class="adv-pricing-reveal">
-<p class="adv-pricing-reveal__headline">Available Directly From The Brand, Not Through A Pharmacy Markup</p>
-<p class="adv-pricing-reveal__note">They are sold through the company's own site, which is why they cost noticeably less than the equivalent compression products on a drugstore shelf.</p>
+<p class="adv-pricing-reveal__headline" style="position: relative;">Available Directly From The Brand, Not Through A Pharmacy Markup</p>
+<p class="adv-pricing-reveal__note" style="position: relative;">They are sold through the company's own site, which is why they cost noticeably less than the equivalent compression products on a drugstore shelf.</p>
 </div>
 <div class="adv-article">
-<p>I keep one pair on my nightstand and one pair on the kitchen counter. The bedside pair goes on before lights out.</p>
-<p>The kitchen pair goes on while the coffee brews and stays on through the morning paper. By lunch, my hands are mine again.</p>
+<p style="position: relative;">I keep one pair on my nightstand and one pair on the kitchen counter. The bedside pair goes on before lights out.</p>
+<p style="position: relative;">The kitchen pair goes on while the coffee brews and stays on through the morning paper. By lunch, my hands are mine again.</p>
 </div>
 <!-- ── CTA BLOCK #1 ── -->
 <a class="adv-cta-block" href="https://terica-store.com/click">
 <span>CHECK AVAILABILITY</span>
 </a>
 <!-- ── S13 60 DAYS RISK FREE + GUARANTEE ── -->
-<h2 class="adv-section-heading">A Note On The Guarantee, Because I Always Read These First</h2>
+<h2 class="adv-section-heading" style="position: relative;">A Note On The Guarantee, Because I Always Read These First</h2>
 <div class="adv-guarantee">
-<h3 class="adv-guarantee__title">30-Day Money-Back Guarantee</h3>
+<h3 class="adv-guarantee__title" style="position: relative;">30-Day Money-Back Guarantee</h3>
 <circle cx="200" cy="200" fill="none" r="180" stroke="%23e3dcc9" stroke-width="2"></circle>" alt="Guarantee badge"&gt;
   <div class="adv-guarantee__body">
-<p>The company gives you a full thirty days to try them. That is roughly twice the window I needed to feel a difference.</p>
-<p>If they do not help, you send them back and your money is returned. No restocking fee, no argument, no clipboard.</p>
-<p>I would not have agreed to write this if the return policy looked like the fine print I used to fight with as a charge nurse.</p>
+<p style="position: relative;">The company gives you a full thirty days to try them. That is roughly twice the window I needed to feel a difference.</p>
+<p style="position: relative;">If they do not help, you send them back and your money is returned. No restocking fee, no argument, no clipboard.</p>
+<p style="position: relative;">I would not have agreed to write this if the return policy looked like the fine print I used to fight with as a charge nurse.</p>
 </div>
 </div>
 <!-- ── S14 WHAT TO DO NEXT ── -->
-<h2 class="adv-section-heading">What To Expect In The First Mailer And First Week</h2>
+<h2 class="adv-section-heading" style="position: relative;">What To Expect In The First Mailer And First Week</h2>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts='["Older woman opening a small mailing package on her front porch in suburban Pennsylvania, photorealistic", "Compression gloves freshly unboxed on a wooden kitchen table, photorealistic", "Senior couple smiling as they examine a newly arrived pair of compression gloves, photorealistic"]' data-selected="0" data-slot-key="media.s14" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s14</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older woman opening a small mailing package on her front porch in suburban Penns"</div></div></div>
 <div class="adv-article">
-<p>The package is small. It looks underwhelming, frankly, which is part of why I almost left it on the porch table.</p>
-<p>Inside is a single pair, a sizing card, and a one-page sheet on wear time. That is it. No upsell, no pamphlet army.</p>
-<p>Plan to wear them at least eight hours a day for the first two weeks before you decide whether they are working.</p>
+<p style="position: relative;">The package is small. It looks underwhelming, frankly, which is part of why I almost left it on the porch table.</p>
+<p style="position: relative;">Inside is a single pair, a sizing card, and a one-page sheet on wear time. That is it. No upsell, no pamphlet army.</p>
+<p style="position: relative;">Plan to wear them at least eight hours a day for the first two weeks before you decide whether they are working.</p>
 </div>
 <!-- ── CTA BLOCK #2 ── -->
 <a class="adv-cta-block" href="https://terica-store.com/click">
 <span>CHECK AVAILABILITY</span>
 </a>
 <!-- ── S15 ZERO RISK + EMOTIONAL CALLOUT ── -->
-<h2 class="adv-section-heading">What I Wish Someone Had Told Me Two Years Earlier</h2>
+<h2 class="adv-section-heading" style="position: relative;">What I Wish Someone Had Told Me Two Years Earlier</h2>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts='["Older woman calmly writing a letter at her kitchen table, compression gloves on her hands, photorealistic", "Close-up of arthritic hands now relaxed, holding a warm mug, photorealistic", "Senior woman smiling softly at her own hands in morning light, photorealistic"]' data-selected="0" data-slot-key="media.s15a" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s15a</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older woman calmly writing a letter at her kitchen table, compression gloves on "</div></div></div>
 <div class="adv-article">
-<p>Arthritis does not announce itself. It sneaks in through the small jobs first, the cap, the button, the cast iron pan.</p>
-<p>By the time you are ready to admit it, you have usually trained yourself to hide it from the people who love you.</p>
-<p>There is nothing dignified about that, and there is nothing weak about reaching for a non-pharmaceutical option first.</p>
+<p style="position: relative;">Arthritis does not announce itself. It sneaks in through the small jobs first, the cap, the button, the cast iron pan.</p>
+<p style="position: relative;">By the time you are ready to admit it, you have usually trained yourself to hide it from the people who love you.</p>
+<p style="position: relative;">There is nothing dignified about that, and there is nothing weak about reaching for a non-pharmaceutical option first.</p>
 </div>
 <div class="adv-inline-image"><div class="v2-media-slot" data-job-id="93497d86-d3bb-4dad-9414-db08c97dacae" data-prompts="[&quot;Older woman gently holding her husband's hand across a breakfast table, photorealistic&quot;, &quot;Senior woman buttoning her cardigan with steady fingers, content expression, photorealistic&quot;, &quot;Close-up of two clasped older hands wearing thin compression gloves, photorealistic&quot;]" data-selected="0" data-slot-key="media.s15b" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media.s15b</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older woman gently holding her husband's hand across a breakfast table, photorea"</div></div></div>
 <!-- ── EMOTIONAL CALLOUT (3 bold lines) ── -->
 <div class="adv-callout">
-<p>Two years on prescriptions did less for my hands than two weeks of consistent, sustained compression did.</p>
-<p>That is not a slogan. That is a sentence I would have rolled my eyes at, eighteen months ago.</p>
-<p>Try them for the full thirty days. Then decide for yourself, the way I had to.</p>
+<p style="position: relative;">Two years on prescriptions did less for my hands than two weeks of consistent, sustained compression did.</p>
+<p style="position: relative;">That is not a slogan. That is a sentence I would have rolled my eyes at, eighteen months ago.</p>
+<p style="position: relative;">Try them for the full thirty days. Then decide for yourself, the way I had to.</p>
 </div>
 <div class="adv-article">
-<p>Compression is not a miracle. It is a tool. It happens to be the tool that gave me back my morning routine.</p>
+<p style="position: relative;">Compression is not a miracle. It is a tool. It happens to be the tool that gave me back my morning routine.</p>
 </div>
 <!-- ── CLOSING PREAMBLE ── -->
 <div class="adv-closing-preamble">
-<p>I am not a spokesperson. I am a retired charge nurse who can finally button her own blouse before her husband wakes up.</p>
-<p>If your hands have been quietly leaving you, please do not wait until you are sitting on a kitchen floor to act.</p>
+<p style="position: relative;">I am not a spokesperson. I am a retired charge nurse who can finally button her own blouse before her husband wakes up.</p>
+<p style="position: relative;">If your hands have been quietly leaving you, please do not wait until you are sitting on a kitchen floor to act.</p>
 </div>
 <!-- ── CTA BLOCK #3 (final) ── -->
 <a class="adv-cta-block" href="https://terica-store.com/click">
@@ -645,7 +900,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</body></html>
