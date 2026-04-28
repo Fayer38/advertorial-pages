@@ -1,7 +1,260 @@
-<!DOCTYPE html>
+<html lang="en"><div data-channel-name="in_page_channel_hYfIrN" id="in-page-channel-node-id"></div><script async="" src="https://scripts.clarity.ms/0.8.59/clarity.js"></script><script async="" src="https://www.clarity.ms/tag/wb35vpdfk1"></script><head><style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
 
-<html lang="en">
-<head>
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+</style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script async="" src="https://terica-store.com/tracker.js"></script>
+<link href="https://fonts.googleapis.com" id="adv-brand-style-fonts" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700;800;900&amp;family=Manrope:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+</head><body data-debug-mode="1" style="cursor: crosshair;"><div data-channel-name="in_page_channel_EnhCWU" id="in-page-channel-node-id"></div><!-- ext-script-stripped --><!-- ext-script-stripped -->
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>Why Drugstore Toenail Fungus Treatments Keep Failing American Seniors — And The Penetration Discovery Changing That</title>
@@ -668,6 +921,16 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -676,9 +939,278 @@ t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "wb35vpdfk1");
 </script>
-<script async="" src="https://terica-store.com/tracker.js"></script>
-</head>
-<body>
+<!-- ext-script-stripped -->
+<style>
+    [data-editable] { transition: outline .15s; cursor: pointer; position: relative; }
+    body:not([data-view-mode]) [data-editable]:hover { outline: 1px dashed rgba(242,103,34,0.4) !important; outline-offset: 2px; }
+    body[data-view-mode] [data-editable] { cursor: text !important; outline: none !important; }
+    body[data-view-mode] [data-editable]:hover { outline: none !important; }
+    body[data-view-mode] .block-controls { display: none !important; }
+    body[data-view-mode] .spacing-handle { display: none !important; }
+    body[data-view-mode] img[data-img-idx] { cursor: default !important; outline: none !important; }
+    body[data-view-mode] img[data-img-idx]:hover { outline: none !important; }
+    [data-editable][contenteditable="true"] { outline: 2px solid #f26722 !important; outline-offset: 3px; cursor: text; }
+    body[data-debug-mode] * { cursor: crosshair !important; }
+    body[data-debug-mode] [data-editable]:hover { outline: 1px dashed rgba(249,115,22,0.4) !important; }
+    body[data-debug-mode] . { outline: 2px solid #f97316 !important; outline-offset: 3px !important; }
+    [data-frozen] { outline: 2px dashed #3b82f6 !important; outline-offset: 2px !important; }
+    [data-frozen]::after { content: '🔒'; position: absolute; top: -6px; right: -6px; font-size: 10px; background: #3b82f6; color: white; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 1000; pointer-events: none; }
+    #debug-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100000; background: #f97316; color: white; text-align: center; padding: 4px; font-size: 11px; font-family: system-ui; }
+
+    /* Block controls (drag + duplicate) */
+    [data-editable], .img-set, .placeholder[data-media-idx], img[data-img-idx], .img-block-wrap { position: relative; }
+    [data-editable]::before, .img-set::before, .placeholder[data-media-idx]::before, img[data-img-idx]::before, .img-block-wrap::before {
+      content: ''; position: absolute; left: -42px; top: 0; width: 42px; height: 100%;
+      pointer-events: auto;
+    }
+    .block-controls {
+      position: absolute; left: -36px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 3px;
+      opacity: 0; transition: opacity .15s; z-index: 99980;
+      pointer-events: none;
+    }
+    /* Ensure block controls are never clipped by parent overflow */
+    [data-editable], .img-set, .placeholder[data-media-idx], .img-block-wrap,
+    .sidebar-card, .offer-box, .offer-card, .cta-section, .stat-row,
+    .card-body, .comparison-table, .step-card, .testimonial { overflow: visible !important; }
+    [data-editable]:hover > .block-controls,
+    .img-set:hover > .block-controls,
+    .placeholder:hover > .block-controls,
+    img[data-img-idx]:hover > .block-controls,
+    .img-block-wrap:hover > .block-controls,
+    .sidebar-card > div:hover > .block-controls,
+    .sidebar-card > a:hover > .block-controls { opacity: 1; pointer-events: auto; }
+    .block-controls button {
+      width: 26px; height: 26px; border-radius: 6px; border: 1px solid #ddd;
+      background: #fff; color: #666; font-size: 12px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12); transition: all .15s;
+      padding: 0; line-height: 1;
+    }
+    .block-controls button:hover { background: #f26722; color: #fff; border-color: #f26722; }
+    .block-ctrl-drag { cursor: grab !important; }
+    .block-ctrl-drag:active { cursor: grabbing !important; }
+    .block-ctrl-del:hover { background: #ef4444 !important; border-color: #ef4444 !important; }
+    .block-ctrl-vis { font-size: 10px !important; }
+
+    /* Spacing handle */
+    .spacing-handle {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1e;
+      color: #aaa;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 2px 7px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      cursor: ew-resize;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 99990;
+      opacity: 0;
+      transition: opacity .15s;
+      pointer-events: none;
+    }
+    /* Semi-transparent when the parent element is hovered so the handle */
+    /* stays reachable without covering the text being edited. Fully opaque */
+    /* only when the cursor is directly over the handle or during drag. */
+    [data-editable]:hover .spacing-handle,
+    .img-set:hover .spacing-handle,
+    .placeholder:hover .spacing-handle,
+    img[data-img-idx]:hover .spacing-handle,
+    .media-block:hover .spacing-handle { opacity: 0.25; pointer-events: auto; }
+    .spacing-handle:hover { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; }
+    .spacing-handle.dragging { background: #f26722; color: #fff; border-color: #f26722; opacity: 1 !important; pointer-events: auto; }
+
+    /* Device visibility classes */
+    .hide-desktop, .hide-tablet, .hide-mobile { position: relative; }
+    .hide-desktop::after, .hide-tablet::after, .hide-mobile::after {
+      position: absolute; top: 2px; right: 2px; font-size: 9px; padding: 1px 4px;
+      border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; z-index: 10; pointer-events: none;
+    }
+    .hide-desktop::after { content: '🖥 hidden'; }
+    .hide-tablet::after { content: '📱 hidden'; }
+    .hide-mobile::after { content: '📲 hidden'; }
+    @media (min-width: 1025px) { .hide-desktop { display: none !important; } }
+    @media (min-width: 376px) and (max-width: 1024px) { .hide-tablet { display: none !important; } }
+    @media (max-width: 375px) { .hide-mobile { display: none !important; } }
+
+    /* Visibility menu */
+    .vis-menu {
+      position: absolute; left: 0; top: 100%; margin-top: 4px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
+      padding: 4px 0; min-width: 140px; z-index: 99999;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .vis-menu button {
+      display: flex; align-items: center; gap: 6px; width: 100%;
+      padding: 6px 12px; background: none; border: none; color: #e0e0e0;
+      font-size: 12px; cursor: pointer; font-family: inherit; text-align: left;
+    }
+    .vis-menu button:hover { background: rgba(242,103,34,0.15); }
+    .vis-menu button .vis-check { width: 14px; text-align: center; }
+
+    /* Drag state */
+    .dragging { opacity: 0.4 !important; }
+    .drop-indicator {
+      height: 3px; background: #f26722; border-radius: 2px; margin: 2px 0;
+      box-shadow: 0 0 8px rgba(242,103,34,0.5);
+      pointer-events: none;
+    }
+    img[data-img-idx] { position: relative; }
+    .placeholder[data-media-idx] { position: relative; }
+    .placeholder[data-media-idx]:hover::after { content: '📷 Click to replace'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #f26722; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-style: normal; font-weight: 700; z-index: 9999; }
+
+    /* V2 Media Slot — clickable placeholder */
+    .v2-media-slot { cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .v2-media-slot:hover { border-color: #a855f7 !important; box-shadow: 0 0 0 3px rgba(168,85,247,0.25); }
+    .v2-media-slot:hover::after { content: '🖼️ Click to pick image'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, calc(-50% + 40px)); background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; z-index: 9999; pointer-events: none; }
+
+    /* Image click highlight */
+    img[data-img-idx] { cursor: pointer; transition: outline .15s; }
+    img[data-img-idx]:hover, .img-block-wrap:hover img[data-img-idx] { outline: 2px dashed rgba(242,103,34,0.4); outline-offset: 3px; }
+    img[data-img-idx].img-selected { outline: 2px solid #f26722 !important; outline-offset: 3px; }
+    .img-block-wrap { overflow: visible; }
+
+    /* Video defaults */
+    video { width: 100%; display: block; border-radius: 8px; max-width: 100%; }
+    .media-block { margin: 12px 0; }
+    .media-placeholder { background: #f0f0f0; border-radius: 8px; padding: 40px 20px; text-align: center; color: #aaa; font-style: italic; cursor: pointer; }
+
+    /* Side panel for image device settings */
+    #img-panel {
+      position: fixed; top: 0; right: -320px; width: 310px; height: 100vh;
+      background: #111114; border-left: 1px solid #2a2a30; z-index: 99990;
+      transition: right .25s ease; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: -8px 0 30px rgba(0,0,0,.5);
+    }
+    #img-panel.open { right: 0; }
+    #img-panel .panel-header {
+      padding: 16px 18px; border-bottom: 1px solid #1f1f23;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #img-panel .panel-title { font-size: 14px; font-weight: 700; color: #f0f0f0; }
+    #img-panel .panel-close {
+      background: none; border: none; color: #8b8b92; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px; line-height: 1;
+    }
+    #img-panel .panel-close:hover { background: #1f1f23; color: #f0f0f0; }
+    #img-panel .device-slot {
+      padding: 14px 18px; border-bottom: 1px solid #1f1f23;
+      cursor: pointer; transition: background .15s;
+    }
+    #img-panel .device-slot:hover { background: rgba(242,103,34,0.05); }
+    #img-panel .device-label {
+      font-size: 12px; font-weight: 700; color: #f0f0f0;
+      display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    }
+    #img-panel .device-label .badge {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+    }
+    #img-panel .badge-default { background: rgba(139,139,146,0.15); color: #8b8b92; }
+    #img-panel .badge-custom { background: rgba(34,197,94,0.15); color: #22c55e; }
+    #img-panel .device-thumb {
+      width: 100%; min-height: 60px; max-height: 140px; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1f1f23; display: flex; align-items: center; justify-content: center;
+      position: relative; background: #111114;
+    }
+    #img-panel .device-thumb img {
+      max-width: 100%; max-height: 140px; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    #img-panel .device-thumb .placeholder-msg {
+      color: #55555e; font-size: 11px; font-style: italic;
+    }
+    #img-panel .device-thumb .remove-btn {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(0,0,0,.7); color: #ef4444; border: 1px solid rgba(239,68,68,.3);
+      border-radius: 50%; width: 22px; height: 22px; font-size: 11px;
+      cursor: pointer; display: none; align-items: center; justify-content: center; line-height: 1;
+    }
+    #img-panel .device-slot:hover .remove-btn.visible { display: flex; }
+
+    /* Responsive image sets */
+    .img-set { position: relative; width: 100%; }
+    .img-set .for-desktop, .img-set .for-tablet, .img-set .for-mobile { width: 100%; border-radius: 8px; }
+    .img-set .for-tablet, .img-set .for-mobile { display: none; }
+    @media (min-width: 376px) and (max-width: 1024px) {
+      .img-set.has-tablet .for-desktop { display: none !important; }
+      .img-set.has-tablet .for-tablet { display: block !important; }
+    }
+    @media (max-width: 375px) {
+      .img-set.has-mobile .for-desktop { display: none !important; }
+      .img-set.has-mobile .for-mobile { display: block !important; }
+      .img-set.has-mobile.has-tablet .for-tablet { display: none !important; }
+    }
+
+    /* ── TOOLBAR ── */
+    #edit-toolbar {
+      position: fixed; display: none;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 4px 6px; gap: 2px; align-items: center;
+      z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      flex-wrap: wrap; max-width: min(95vw, 460px); touch-action: none;
+      user-select: none; -webkit-user-select: none;
+    }
+    #edit-toolbar.visible { display: flex; }
+    #edit-toolbar .tb-drag {
+      cursor: grab; padding: 2px 6px; color: #888; font-size: 16px; letter-spacing: 1px;
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    #edit-toolbar .tb-drag:active { cursor: grabbing; }
+    #edit-toolbar .tb-sep { width: 1px; height: 22px; background: #333; margin: 0 3px; flex-shrink: 0; }
+    #edit-toolbar button {
+      background: none; border: 1px solid transparent; color: #eee; cursor: pointer;
+      min-width: 28px; height: 28px; border-radius: 6px; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; transition: all .1s;
+      padding: 0 4px; font-family: inherit; flex-shrink: 0;
+    }
+    #edit-toolbar button:hover { background: #2a2a2a; color: #fff; border-color: #444; }
+    #edit-toolbar button.active { background: #f26722; color: #000; border-color: #f26722; }
+    #edit-toolbar select {
+      background: #111; color: #eee; border: 1px solid #333; border-radius: 6px;
+      padding: 3px 4px; font-size: 11px; cursor: pointer; height: 28px; outline: none;
+      max-width: 70px; flex-shrink: 0;
+    }
+    #edit-toolbar select:hover { border-color: #555; }
+    #edit-toolbar input[type="color"] {
+      width: 24px; height: 24px; border: 1px solid #333; border-radius: 6px;
+      background: #111; cursor: pointer; padding: 1px; flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      #edit-toolbar { max-width: 98vw; padding: 3px 4px; gap: 1px; border-radius: 8px; }
+      #edit-toolbar button { min-width: 26px; height: 26px; font-size: 12px; }
+      #edit-toolbar select { font-size: 10px; max-width: 58px; height: 26px; padding: 2px 3px; }
+      #edit-toolbar input[type="color"] { width: 22px; height: 22px; }
+      #edit-toolbar .tb-sep { height: 18px; margin: 0 2px; }
+    }
+  </style><style id="adv-brand-style-live">
+:root{
+  --ll-color-primary: #47763b;
+  --ll-color-primary-dark: #385e2f;
+  --ll-color-primary-rgb: 71, 118, 59;
+  --ll-color-secondary: #3d6332;
+  --ll-color-tertiary: #c2e84d;
+  --ll-color-cta: #3d6332;
+  --ll-color-cta-dark: #325129;
+  --ll-color-cta-rgb: 61, 99, 50;
+  --ll-color-background: #fffaf1;
+  --ll-color-sticky-bar: #ffffff;
+  --ll-color-text-primary: #433c38;
+  --ll-color-text-secondary: #433c38;
+  --lxs-rating-icon-color: #47763b;
+  --ll-font-heading: Lora, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --ll-font-body: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.cta-btn,.ll-btn-temp,.sticky-product-cta,.sticky-cta-btn,button.cta,a.cta,.adv-cta-inline,.adv-cta-block{background:#3d6332 !important;border-color:#3d6332 !important;color:#ffffff !important}
+.cta-btn:hover,.ll-btn-temp:hover,.sticky-product-cta:hover,.sticky-cta-btn:hover,button.cta:hover,a.cta:hover,.adv-cta-inline:hover,.adv-cta-block:hover{background:#325129 !important;border-color:#325129 !important}
+h1,h2,h3,h4,h5,h6{color:#111 !important}
+.sticky-cta,.sticky-bar,.sticky-product,.sticky-product-card{background:#ffffff !important;color:#111 !important}
+.sticky-cta .sticky-cta-text,.sticky-cta-text,.sticky-product-name,.sticky-product-tagline,.sticky-product-stars,.sticky-product-trust,.sticky-product-trust-item{color:#111 !important}
+</style><link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700;800;900&amp;family=Manrope:wght@400;500;600;700;800;900&amp;display=swap" id="adv-brand-style-live-fonts" rel="stylesheet"><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style>
 <div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif;">This is an advertorial</div>
 <div id="adv-header-logo" style="text-align:center;padding:14px 0 10px;background:#fff;border-bottom:1px solid #eee;">
 <img alt="Logo" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="display:block;height:52px;max-width:260px;object-fit:contain;margin:0 auto;"/>
@@ -692,8 +1224,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <main class="adv-main">
 <!-- ── HERO ── -->
 <div class="adv-hero">
-<h1 class="adv-hero__title">The Real Reason Drugstore Toenail Treatments Fail Most Seniors Over 55</h1>
-<p class="adv-hero__subtitle"><strong>A retired librarian in Ohio spent nine years trying everything before learning what was actually blocking every bottle she bought.</strong></p>
+<h1 class="adv-hero__title" style="position: relative;">The Real Reason Drugstore Toenail Treatments Fail Most Seniors Over 55</h1>
+<p class="adv-hero__subtitle" style="position: relative;"><strong>A retired librarian in Ohio spent nine years trying everything before learning what was actually blocking every bottle she bought.</strong></p>
 </div>
 <!-- ── BYLINE (avatar injected from local pool) ── -->
 <div class="adv-byline">
@@ -710,153 +1242,153 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <!-- ── LEAD IMAGE ── -->
 <div class="adv-lead-image">
-<img alt="" data-slot="media.lead" src="/pages/media/846e567f/23a9f6e47055.jpeg"/>
+<img alt="" data-slot="media.lead" src="https://dailybloginfo.com/pages/media/846e567f/23a9f6e47055.jpeg"/>
 </div>
 <!-- ── OPENING PULLQUOTE ── -->
-<blockquote class="adv-pullquote">EVERY BOTTLE STAYED ON TOP. NOTHING REACHED THE NAIL UNDERNEATH.</blockquote>
+<blockquote class="adv-pullquote" style="position: relative;">EVERY BOTTLE STAYED ON TOP. NOTHING REACHED THE NAIL UNDERNEATH.</blockquote>
 <!-- ── INTRO PARAGRAPHS ── -->
 <div class="adv-article">
-<p>If you've spent years dabbing tea tree oil, soaking in vinegar, or rubbing Vicks on a yellowed toenail with no real change, you already know the frustration. <strong>It isn't your fault</strong>, and it isn't because you didn't try hard enough.</p>
-<p>Most over-the-counter treatments work on the surface, where the polish goes. But toenail fungus lives <strong>underneath the nail plate</strong>, sealed off by a dense layer of keratin most products simply cannot push through.</p>
-<p>That single fact — the keratin barrier — explains why a kitchen drawer full of half-used bottles, lacquers, and online kits never moved the needle. The good news is that <u>a topical formula built to penetrate</u> changes the entire conversation.</p>
+<p style="position: relative;">If you've spent years dabbing tea tree oil, soaking in vinegar, or rubbing Vicks on a yellowed toenail with no real change, you already know the frustration. <strong>It isn't your fault</strong>, and it isn't because you didn't try hard enough.</p>
+<p style="position: relative;">Most over-the-counter treatments work on the surface, where the polish goes. But toenail fungus lives <strong>underneath the nail plate</strong>, sealed off by a dense layer of keratin most products simply cannot push through.</p>
+<p style="position: relative;">That single fact — the keratin barrier — explains why a kitchen drawer full of half-used bottles, lacquers, and online kits never moved the needle. The good news is that <u>a topical formula built to penetrate</u> changes the entire conversation.</p>
 </div>
 <!-- ── S1 "THE MOMENT EVERYTHING CHANGED" ── -->
-<h2 class="adv-section-heading">Meet Carol, And The Drawer She Calls A Graveyard</h2>
+<h2 class="adv-section-heading" style="position: relative;">Meet Carol, And The Drawer She Calls A Graveyard</h2>
 <div class="adv-inline-image">
-<img alt="" data-slot="media.s1" src="/pages/media/846e567f/df486dba68f8.jpeg"/>
+<img alt="" data-slot="media.s1" src="https://dailybloginfo.com/pages/media/846e567f/df486dba68f8.jpeg"/>
 </div>
 <div class="adv-article">
-<p>Carol is sixty-six, a retired elementary school librarian in Akron, Ohio. She started watching her right big toenail change color almost a decade ago, when a small yellow streak slowly turned into something thick, brown, and crumbling at the edges.</p>
-<p>Her husband Bill jokes that the second drawer in their kitchen is <strong>the fungus graveyard</strong> — half-used tea tree oil, a crusty jar of Vicks, three drugstore lacquers, and a kit her sister swore by that arrived in a brown box.</p>
-<p>Last Thanksgiving her granddaughter Emma climbed into her lap, peered through her sock, and asked, 'Grandma, what's wrong with your toe?' Carol slipped upstairs to the guest bathroom and quietly cried for ten minutes by herself.</p>
+<p style="position: relative;">Carol is sixty-six, a retired elementary school librarian in Akron, Ohio. She started watching her right big toenail change color almost a decade ago, when a small yellow streak slowly turned into something thick, brown, and crumbling at the edges.</p>
+<p style="position: relative;">Her husband Bill jokes that the second drawer in their kitchen is <strong>the fungus graveyard</strong> — half-used tea tree oil, a crusty jar of Vicks, three drugstore lacquers, and a kit her sister swore by that arrived in a brown box.</p>
+<p style="position: relative;">Last Thanksgiving her granddaughter Emma climbed into her lap, peered through her sock, and asked, 'Grandma, what's wrong with your toe?' Carol slipped upstairs to the guest bathroom and quietly cried for ten minutes by herself.</p>
 </div>
 <!-- ── ESTHETICIAN PULLQUOTE ── -->
-<blockquote class="adv-pullquote">THE PROBLEM ISN'T THE INGREDIENT. THE PROBLEM IS REACHING WHERE IT NEEDS TO GO.</blockquote>
+<blockquote class="adv-pullquote" style="position: relative;">THE PROBLEM ISN'T THE INGREDIENT. THE PROBLEM IS REACHING WHERE IT NEEDS TO GO.</blockquote>
 <div class="adv-article">
-<p>She had spent close to a decade and more energy than she cared to admit on bottles that promised everything and delivered <strong>nothing visible</strong>. By that winter, she wasn't looking for another miracle. She wanted somebody to finally explain why.</p>
-<p>She just wanted to understand the mechanism — what had been quietly going wrong all those nights she'd dabbed, soaked, and waited, and what would actually need to change for any new product to finally do something useful.</p>
+<p style="position: relative;">She had spent close to a decade and more energy than she cared to admit on bottles that promised everything and delivered <strong>nothing visible</strong>. By that winter, she wasn't looking for another miracle. She wanted somebody to finally explain why.</p>
+<p style="position: relative;">She just wanted to understand the mechanism — what had been quietly going wrong all those nights she'd dabbed, soaked, and waited, and what would actually need to change for any new product to finally do something useful.</p>
 </div>
 <!-- ── S2 "THE SHOCKING PRICE TAG" ── -->
-<h2 class="adv-section-heading">What The Keratin Barrier Actually Does</h2>
+<h2 class="adv-section-heading" style="position: relative;">What The Keratin Barrier Actually Does</h2>
 <div class="adv-inline-image">
-<img alt="" data-slot="media.s2" src="/pages/media/846e567f/92ef1825dbfe.jpeg"/>
+<img alt="" data-slot="media.s2" src="https://dailybloginfo.com/pages/media/846e567f/92ef1825dbfe.jpeg"/>
 </div>
 <div class="adv-article">
-<p>Your toenail is built from densely packed keratin, the same protein that makes up your hair and the outer layer of your skin. It's designed to be tough — to protect the delicate nail bed underneath from pressure, friction, and infection.</p>
-<p>When fungus settles in, it tucks itself <strong>between the nail plate and the nail bed</strong>, in a sealed pocket where moisture and warmth feed it. Anything you brush onto the top of the nail has to physically pass through that wall.</p>
-<p>Most home remedies and even many drugstore antifungals never do. They sit on the surface, evaporate, get washed off in the shower, and leave the colony underneath completely untouched. <strong>That's the gap</strong> almost no bottle on the shelf addresses honestly.</p>
+<p style="position: relative;">Your toenail is built from densely packed keratin, the same protein that makes up your hair and the outer layer of your skin. It's designed to be tough — to protect the delicate nail bed underneath from pressure, friction, and infection.</p>
+<p style="position: relative;">When fungus settles in, it tucks itself <strong>between the nail plate and the nail bed</strong>, in a sealed pocket where moisture and warmth feed it. Anything you brush onto the top of the nail has to physically pass through that wall.</p>
+<p style="position: relative;">Most home remedies and even many drugstore antifungals never do. They sit on the surface, evaporate, get washed off in the shower, and leave the colony underneath completely untouched. <strong>That's the gap</strong> almost no bottle on the shelf addresses honestly.</p>
 </div>
 <!-- ── S3 "THE DISCOVERY" + PRODUCT HIGHLIGHT ── -->
-<h2 class="adv-section-heading">A Different Approach: Penetrate First, Then Treat</h2>
+<h2 class="adv-section-heading" style="position: relative;">A Different Approach: Penetrate First, Then Treat</h2>
 <div class="adv-article">
-<p>ClearStep Toenail Fungus Oil was formulated around that single insight. Instead of layering another antifungal on top of the keratin, the formula is engineered to <strong>carry its active straight through the nail plate</strong> toward the bed where the trouble actually lives.</p>
-<p>It pairs <strong>10% undecylenic acid</strong> — a clinically recognized topical antifungal active — with a layered stack of essential oils chosen specifically for their carrier properties. The active does the work; the oils help it actually arrive where the work needs doing.</p>
+<p style="position: relative;">ClearStep Toenail Fungus Oil was formulated around that single insight. Instead of layering another antifungal on top of the keratin, the formula is engineered to <strong>carry its active straight through the nail plate</strong> toward the bed where the trouble actually lives.</p>
+<p style="position: relative;">It pairs <strong>10% undecylenic acid</strong> — a clinically recognized topical antifungal active — with a layered stack of essential oils chosen specifically for their carrier properties. The active does the work; the oils help it actually arrive where the work needs doing.</p>
 </div>
 <!-- ── BUYER QUOTES (2 back-to-back) ── -->
-<blockquote class="adv-buyer-quote">
+<blockquote class="adv-buyer-quote" style="position: relative;">
 <span>Honestly the brush applicator alone changed how I treated my nails. After three weeks the yellow at the tip was visibly lighter.</span>
 <span class="adv-buyer-quote__attr">— <strong>Diane M.</strong> <span>Verified ClearStep customer</span></span>
 </blockquote>
-<blockquote class="adv-buyer-quote">
+<blockquote class="adv-buyer-quote" style="position: relative;">
 <span>Stuck with it every night for two months. The new growth coming in at the base looks clear, which I had stopped believing was possible.</span>
 <span class="adv-buyer-quote__attr">— <strong>Robert K.</strong> <span>Verified two-month customer</span></span>
 </blockquote>
 <div class="adv-article">
-<p>Each bottle includes a precision brush applicator that lets you paint the formula along the cuticle line and under the leading edge of the nail. Used nightly, it builds up across <u>a 90-day visual protocol</u> matched to the three-bottle routine.</p>
+<p style="position: relative;">Each bottle includes a precision brush applicator that lets you paint the formula along the cuticle line and under the leading edge of the nail. Used nightly, it builds up across <u>a 90-day visual protocol</u> matched to the three-bottle routine.</p>
 </div>
 <!-- ── VIDEO #1 ── -->
-<div class="adv-inline-image"><img alt="" data-slot="media.video_1" src="/pages/media/846e567f/3c3b69b271a7.jpeg"/></div>
+<div class="adv-inline-image"><img alt="" data-slot="media.video_1" src="https://dailybloginfo.com/pages/media/846e567f/3c3b69b271a7.jpeg"/></div>
 <!-- ── S4 "MY FIRST EXPERIENCE" ── -->
-<h2 class="adv-section-heading">Why Nightly Application Matters</h2>
+<h2 class="adv-section-heading" style="position: relative;">Why Nightly Application Matters</h2>
 <div class="adv-article">
-<p>Nail tissue is slow tissue. A toenail grows roughly one-tenth of an inch per month, which means visible change is gradual by definition. Any product promising overnight transformation is selling you something the biology of your foot cannot actually deliver.</p>
-<p>That's why the protocol is built around <strong>consistent nightly use</strong>. After you wash and dry your feet, you brush a thin layer along the cuticle and under the front edge, let it absorb for a minute, then put on socks for bed.</p>
-<p>Done every evening for ninety days, the active stays in continuous contact with the keratin barrier instead of being washed away. Most users describe the first <strong>visible change at the base of the nail</strong>, where new growth comes in clearer.</p>
+<p style="position: relative;">Nail tissue is slow tissue. A toenail grows roughly one-tenth of an inch per month, which means visible change is gradual by definition. Any product promising overnight transformation is selling you something the biology of your foot cannot actually deliver.</p>
+<p style="position: relative;">That's why the protocol is built around <strong>consistent nightly use</strong>. After you wash and dry your feet, you brush a thin layer along the cuticle and under the front edge, let it absorb for a minute, then put on socks for bed.</p>
+<p style="position: relative;">Done every evening for ninety days, the active stays in continuous contact with the keratin barrier instead of being washed away. Most users describe the first <strong>visible change at the base of the nail</strong>, where new growth comes in clearer.</p>
 </div>
 <div class="adv-inline-image">
-<img alt="" data-slot="media.s4" src="/pages/media/846e567f/fd39aabdd622.jpeg"/>
+<img alt="" data-slot="media.s4" src="https://dailybloginfo.com/pages/media/846e567f/fd39aabdd622.jpeg"/>
 </div>
 <!-- ── S5 "THE TRANSFORMATION WAS IMMEDIATE" ── -->
-<h2 class="adv-section-heading">What Carol Did Differently This Time</h2>
+<h2 class="adv-section-heading" style="position: relative;">What Carol Did Differently This Time</h2>
 <div class="adv-article">
-<p>Carol read the bottle twice before she opened it. The brush applicator surprised her — she had been used to dropper bottles that pooled on top of her toe and rolled off into the carpet within seconds of touching the skin.</p>
-<p>She set a small reminder on her phone for nine o'clock each night. After her bath she'd dry her foot, paint a careful stroke along the cuticle and under the edge, then read in bed while it absorbed under a clean cotton sock.</p>
-<p>By week four, the streak at the base of her nail looked <strong>noticeably lighter in color</strong>. By week ten, Bill noticed first — pointed at her foot one morning and said, 'Honey, look at that.' Carol hadn't dared look head-on yet.</p>
+<p style="position: relative;">Carol read the bottle twice before she opened it. The brush applicator surprised her — she had been used to dropper bottles that pooled on top of her toe and rolled off into the carpet within seconds of touching the skin.</p>
+<p style="position: relative;">She set a small reminder on her phone for nine o'clock each night. After her bath she'd dry her foot, paint a careful stroke along the cuticle and under the edge, then read in bed while it absorbed under a clean cotton sock.</p>
+<p style="position: relative;">By week four, the streak at the base of her nail looked <strong>noticeably lighter in color</strong>. By week ten, Bill noticed first — pointed at her foot one morning and said, 'Honey, look at that.' Carol hadn't dared look head-on yet.</p>
 </div>
 <!-- ── VIDEO #2 ── -->
-<div class="adv-inline-image"><img alt="" data-slot="media.video_2" src="/pages/media/846e567f/84c18b35e394.jpeg"/></div>
+<div class="adv-inline-image"><img alt="" data-slot="media.video_2" src="https://dailybloginfo.com/pages/media/846e567f/84c18b35e394.jpeg"/></div>
 <!-- ── S6 "WHY THIS WORKS WHEN NOTHING ELSE DOES" ── -->
-<h2 class="adv-section-heading">What's Actually Inside Each Bottle</h2>
+<h2 class="adv-section-heading" style="position: relative;">What's Actually Inside Each Bottle</h2>
 <div class="adv-article">
-<p>The active ingredient is <strong>10% undecylenic acid</strong>, a topical antifungal compound that has been used by dermatologists and podiatrists in foot care for decades. It's recognized for its ability to disrupt fungal cell walls when delivered in close enough contact.</p>
-<p>Around it sits a <strong>layered essential-oil stack</strong> — including tea tree, lavender, and clove oils — chosen for their soothing, conditioning, and carrier qualities. They help thin the formula so the active travels deeper than a standalone solution can on its own.</p>
+<p style="position: relative;">The active ingredient is <strong>10% undecylenic acid</strong>, a topical antifungal compound that has been used by dermatologists and podiatrists in foot care for decades. It's recognized for its ability to disrupt fungal cell walls when delivered in close enough contact.</p>
+<p style="position: relative;">Around it sits a <strong>layered essential-oil stack</strong> — including tea tree, lavender, and clove oils — chosen for their soothing, conditioning, and carrier qualities. They help thin the formula so the active travels deeper than a standalone solution can on its own.</p>
 </div>
 <ul class="adv-compare-list">
-<li><strong>Drugstore lacquers</strong> <span>Sit on the surface of the nail and rarely reach the fungus underneath, which is why visible change almost never arrives.</span></li>
-<li><strong>Home remedies</strong> <span>Tea tree oil, vinegar soaks, and Vicks lack the concentration and the carrier system to push past the dense keratin barrier.</span></li>
-<li><strong>ClearStep oil</strong> <span>Pairs a clinically recognized antifungal active with a carrier-oil stack and a brush applicator built for nightly penetration over ninety days.</span></li>
+<li style="position: relative;"><strong>Drugstore lacquers</strong> <span>Sit on the surface of the nail and rarely reach the fungus underneath, which is why visible change almost never arrives.</span></li>
+<li style="position: relative;"><strong>Home remedies</strong> <span>Tea tree oil, vinegar soaks, and Vicks lack the concentration and the carrier system to push past the dense keratin barrier.</span></li>
+<li style="position: relative;"><strong>ClearStep oil</strong> <span>Pairs a clinically recognized antifungal active with a carrier-oil stack and a brush applicator built for nightly penetration over ninety days.</span></li>
 </ul>
 <div class="adv-article">
-<p>The brush applicator was a deliberate design choice rather than a marketing flourish. It allows the user to apply a controlled amount along the cuticle line and under the front edge — the two spots where penetration matters most for visible improvement.</p>
-<p>There's <strong>no prescription required</strong> and no oral medication involved. The whole protocol takes about a minute a night and lives on the bathroom shelf next to a toothbrush — exactly where a sustainable habit needs to live to actually keep happening.</p>
+<p style="position: relative;">The brush applicator was a deliberate design choice rather than a marketing flourish. It allows the user to apply a controlled amount along the cuticle line and under the front edge — the two spots where penetration matters most for visible improvement.</p>
+<p style="position: relative;">There's <strong>no prescription required</strong> and no oral medication involved. The whole protocol takes about a minute a night and lives on the bathroom shelf next to a toothbrush — exactly where a sustainable habit needs to live to actually keep happening.</p>
 </div>
 <!-- ── TESTIMONIAL SCREENSHOT ── -->
 <div class="adv-testimonial-screens adv-testimonial-screens--single">
-<img alt="" data-slot="media.screen_1" src="/pages/media/846e567f/59a465a7a32b.png"/>
+<img alt="" data-slot="media.screen_1" src="https://dailybloginfo.com/pages/media/846e567f/59a465a7a32b.png"/>
 </div>
 <!-- ── S7 FAQ ── -->
-<h2 class="adv-section-heading">Questions Readers Keep Asking Us</h2>
+<h2 class="adv-section-heading" style="position: relative;">Questions Readers Keep Asking Us</h2>
 <div class="adv-faq">
 <div class="adv-faq__item">
-<p class="adv-faq__q">How long before I actually see a difference in the way my toenail looks?</p>
-<p class="adv-faq__a">Most people notice their first visible change at the base of the nail somewhere between weeks four and eight of consistent nightly use.</p>
+<p class="adv-faq__q" style="position: relative;">How long before I actually see a difference in the way my toenail looks?</p>
+<p class="adv-faq__a" style="position: relative;">Most people notice their first visible change at the base of the nail somewhere between weeks four and eight of consistent nightly use.</p>
 </div>
 <div class="adv-faq__item">
-<p class="adv-faq__q">Do I need a prescription from my podiatrist or primary care doctor to use it?</p>
-<p class="adv-faq__a">No prescription is needed. The formula is a topical oil designed for nightly home use directly on the toenail and surrounding cuticle.</p>
+<p class="adv-faq__q" style="position: relative;">Do I need a prescription from my podiatrist or primary care doctor to use it?</p>
+<p class="adv-faq__a" style="position: relative;">No prescription is needed. The formula is a topical oil designed for nightly home use directly on the toenail and surrounding cuticle.</p>
 </div>
 <div class="adv-faq__item">
-<p class="adv-faq__q">Why is the protocol built around three bottles instead of just one?</p>
-<p class="adv-faq__a">One bottle covers about thirty days of nightly application. The 90-day visual protocol is matched to a three-bottle bundle so you finish the full routine.</p>
+<p class="adv-faq__q" style="position: relative;">Why is the protocol built around three bottles instead of just one?</p>
+<p class="adv-faq__a" style="position: relative;">One bottle covers about thirty days of nightly application. The 90-day visual protocol is matched to a three-bottle bundle so you finish the full routine.</p>
 </div>
 </div>
 <!-- ── S8 TESTIMONIALS TRIO ── -->
-<h2 class="adv-section-heading">Real Stories From The Routine</h2>
+<h2 class="adv-section-heading" style="position: relative;">Real Stories From The Routine</h2>
 <div class="adv-article">
-<p>These notes came in from readers who completed at least one full month of nightly application and shared what they observed afterward.</p>
+<p style="position: relative;">These notes came in from readers who completed at least one full month of nightly application and shared what they observed afterward.</p>
 </div>
 <div class="adv-testimonials">
 <div class="adv-testimonials__card">
 <div class="adv-testimonials__stars">★★★★★</div>
-<p class="adv-testimonials__text">Bought it after my dermatologist mentioned undecylenic acid. Two months in, the new growth coming up looks like a normal nail again.</p>
-<p class="adv-testimonials__author">— <strong>Patricia, 64</strong> <span>Retired teacher, Florida</span></p>
+<p class="adv-testimonials__text" style="position: relative;">Bought it after my dermatologist mentioned undecylenic acid. Two months in, the new growth coming up looks like a normal nail again.</p>
+<p class="adv-testimonials__author" style="position: relative;">— <strong>Patricia, 64</strong> <span>Retired teacher, Florida</span></p>
 </div>
 <div class="adv-testimonials__card">
 <div class="adv-testimonials__stars">★★★★★</div>
-<p class="adv-testimonials__text">Tried everything in the drugstore aisle for years with nothing to show. The brush applicator and nightly habit finally gave me something visible.</p>
-<p class="adv-testimonials__author">— <strong>Gerald, 71</strong> <span>Retired electrician, Texas</span></p>
+<p class="adv-testimonials__text" style="position: relative;">Tried everything in the drugstore aisle for years with nothing to show. The brush applicator and nightly habit finally gave me something visible.</p>
+<p class="adv-testimonials__author" style="position: relative;">— <strong>Gerald, 71</strong> <span>Retired electrician, Texas</span></p>
 </div>
 <div class="adv-testimonials__card">
 <div class="adv-testimonials__stars">★★★★★</div>
-<p class="adv-testimonials__text">Stayed consistent for the whole 90 days. My right big toenail looks lighter at the base and far less crumbly than in January.</p>
-<p class="adv-testimonials__author">— <strong>Linda, 68</strong> <span>Retired nurse, Michigan</span></p>
+<p class="adv-testimonials__text" style="position: relative;">Stayed consistent for the whole 90 days. My right big toenail looks lighter at the base and far less crumbly than in January.</p>
+<p class="adv-testimonials__author" style="position: relative;">— <strong>Linda, 68</strong> <span>Retired nurse, Michigan</span></p>
 </div>
 </div>
 <!-- ── OFFER IMAGE ── -->
 <div class="adv-offer-image">
-<img alt="" data-slot="media.offer" src="/pages/media/846e567f/b0e42df826ba.jpeg"/>
+<img alt="" class="" data-slot="media.offer" src="https://dailybloginfo.com/pages/media/846e567f/b0e42df826ba.jpeg" style="outline-offset: 3px;"/>
 </div>
 <!-- ── S9 "LIMITED TIME OFFER" + OFFER BOX ── -->
-<h2 class="adv-section-heading">Putting It All Together</h2>
+<h2 class="adv-section-heading" style="position: relative;">Putting It All Together</h2>
 <div class="adv-article">
-<p>If past bottles failed because they never reached the fungus, a formula built around penetration deserves a fair ninety-day chance.</p>
+<p style="position: relative;">If past bottles failed because they never reached the fungus, a formula built around penetration deserves a fair ninety-day chance.</p>
 </div><div class="adv-offer-box">
-<h3>The 90-Day ClearStep Routine: Three Bottles For One Nightly Habit</h3>
-<p>The full three-bottle bundle is matched to the visual protocol so the active stays in continuous contact across all ninety nights.</p>
+<h3 style="position: relative;">The 90-Day ClearStep Routine: Three Bottles For One Nightly Habit</h3>
+<p style="position: relative;">The full three-bottle bundle is matched to the visual protocol so the active stays in continuous contact across all ninety nights.</p>
 <ul class="adv-offer-box__list">
-<li>Three bottles matched to the full ninety-night visual protocol routine.</li>
-<li>Precision brush applicator built for nightly cuticle and edge use.</li>
-<li>Backed by a thirty-day satisfaction guarantee directly from the brand.</li>
+<li style="position: relative;">Three bottles matched to the full ninety-night visual protocol routine.</li>
+<li style="position: relative;">Precision brush applicator built for nightly cuticle and edge use.</li>
+<li style="position: relative;">Backed by a thirty-day satisfaction guarantee directly from the brand.</li>
 </ul>
 </div>
 <!-- ── BLOCK CTA #1 ── -->
@@ -865,13 +1397,13 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <small>Backed by a thirty-day guarantee.</small>
 </a>
 <!-- ── VIDEO #3 ── -->
-<div class="adv-inline-image"><img alt="" data-slot="media.video_3" src="/pages/media/846e567f/d313ea1d901d.jpeg"/></div>
+<div class="adv-inline-image"><img alt="" data-slot="media.video_3" src="/pages/media/846e567f/3548b9ccdd25.png"/></div>
 <!-- ── S10 "DON'T WAIT UNTIL IT'S TOO LATE" ── -->
-<h2 class="adv-section-heading">Why Consistency Wins Here</h2>
+<h2 class="adv-section-heading" style="position: relative;">Why Consistency Wins Here</h2>
 <div class="adv-article">
-<p>There's a reason the brand built its protocol around three bottles instead of one. Toenail growth is slow, fungal colonies are stubborn, and a single bottle simply does not span enough nights to outlast the cycle the body actually needs.</p>
-<p>If you stop at thirty days, the keratin you've worked through grows out and the fungus underneath has a chance to repopulate. The full ninety-night routine gives the active enough <strong>continuous contact time</strong> to make a real visible dent.</p>
-<p>That's the quiet promise behind the bundle. Not an overnight miracle, not a trick — just <u>a routine that respects how toenails actually grow</u> and a formula designed to ride along with that growth from base to tip.</p>
+<p style="position: relative;">There's a reason the brand built its protocol around three bottles instead of one. Toenail growth is slow, fungal colonies are stubborn, and a single bottle simply does not span enough nights to outlast the cycle the body actually needs.</p>
+<p style="position: relative;">If you stop at thirty days, the keratin you've worked through grows out and the fungus underneath has a chance to repopulate. The full ninety-night routine gives the active enough <strong>continuous contact time</strong> to make a real visible dent.</p>
+<p style="position: relative;">That's the quiet promise behind the bundle. Not an overnight miracle, not a trick — just <u>a routine that respects how toenails actually grow</u> and a formula designed to ride along with that growth from base to tip.</p>
 </div>
 <!-- ── GUARANTEE BLOCK ── -->
 <div class="adv-guarantee">
@@ -880,14 +1412,14 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-guarantee__badge-sub">Money Back Guarantee</div>
 </div>
 <div class="adv-guarantee__body">
-<h3>Try The Routine Risk-Free For Thirty Full Nights At Home</h3>
-<p>If after thirty nights you don't feel ClearStep is working for you, the brand will refund your purchase directly. There's no need to argue with a pharmacy counter or fight an insurance claim — the guarantee comes straight from the company.</p>
-<p>That's the kind of policy a brand only offers when it has watched its routine produce visible change in real users over and over. The risk sits with the company, not with the reader who's already tried five other bottles.</p>
+<h3 style="position: relative;">Try The Routine Risk-Free For Thirty Full Nights At Home</h3>
+<p style="position: relative;">If after thirty nights you don't feel ClearStep is working for you, the brand will refund your purchase directly. There's no need to argue with a pharmacy counter or fight an insurance claim — the guarantee comes straight from the company.</p>
+<p style="position: relative;">That's the kind of policy a brand only offers when it has watched its routine produce visible change in real users over and over. The risk sits with the company, not with the reader who's already tried five other bottles.</p>
 </div>
 </div>
 <!-- ── P.S. LINE ── -->
 <div class="adv-article">
-<p>P.S. Carol kept her last bottle on the kitchen counter where the fungus graveyard used to be — a quiet reminder of finally being heard.</p>
+<p style="position: relative;">P.S. Carol kept her last bottle on the kitchen counter where the fungus graveyard used to be — a quiet reminder of finally being heard.</p>
 </div>
 <!-- ── BLOCK CTA #3 ── -->
 <a class="adv-cta-block" href="https://terica-store.com/click">
@@ -906,10 +1438,10 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Diane Whitaker</span>
-<p class="adv-fb-comment__text">Three months in and the new nail at the base looks normal. Wish I had stopped wasting money on drugstore stuff sooner.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Three months in and the new nail at the base looks normal. Wish I had stopped wasting money on drugstore stuff sooner.</p>
 </div>
 <div class="adv-fb-comment__actions">
-<a href="#" data-cta-neutralized="1">Like</a><a href="#" data-cta-neutralized="1">Reply</a>
+<a data-cta-neutralized="1" href="#">Like</a><a data-cta-neutralized="1" href="#">Reply</a>
 <span class="adv-fb-comment__likes"><span>(247)</span></span>
 <span>· <span>2d</span></span>
 </div>
@@ -920,10 +1452,10 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Robert Caldwell</span>
-<p class="adv-fb-comment__text">Bought the three-bottle bundle for my husband. He sticks with it every single night and the change is finally showing.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Bought the three-bottle bundle for my husband. He sticks with it every single night and the change is finally showing.</p>
 </div>
 <div class="adv-fb-comment__actions">
-<a href="#" data-cta-neutralized="1">Like</a><a href="#" data-cta-neutralized="1">Reply</a>
+<a data-cta-neutralized="1" href="#">Like</a><a data-cta-neutralized="1" href="#">Reply</a>
 <span class="adv-fb-comment__likes"><span>(189)</span></span>
 <span>· <span>3d</span></span>
 </div>
@@ -934,10 +1466,10 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Margaret Foster</span>
-<p class="adv-fb-comment__text">Honestly skeptical at first because I had tried every aisle at Walmart. Two months later, my toenail is lighter and not crumbling.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Honestly skeptical at first because I had tried every aisle at Walmart. Two months later, my toenail is lighter and not crumbling.</p>
 </div>
 <div class="adv-fb-comment__actions">
-<a href="#" data-cta-neutralized="1">Like</a><a href="#" data-cta-neutralized="1">Reply</a>
+<a data-cta-neutralized="1" href="#">Like</a><a data-cta-neutralized="1" href="#">Reply</a>
 <span class="adv-fb-comment__likes"><span>(312)</span></span>
 <span>· <span>5d</span></span>
 </div>
@@ -948,10 +1480,10 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">James O'Neill</span>
-<p class="adv-fb-comment__text">The brush applicator is the part nobody talks about. Way easier than dropper bottles that just rolled off my toe every night.</p>
+<p class="adv-fb-comment__text" style="position: relative;">The brush applicator is the part nobody talks about. Way easier than dropper bottles that just rolled off my toe every night.</p>
 </div>
 <div class="adv-fb-comment__actions">
-<a href="#" data-cta-neutralized="1">Like</a><a href="#" data-cta-neutralized="1">Reply</a>
+<a data-cta-neutralized="1" href="#">Like</a><a data-cta-neutralized="1" href="#">Reply</a>
 <span class="adv-fb-comment__likes"><span>(156)</span></span>
 <span>· <span>1w</span></span>
 </div>
@@ -962,10 +1494,10 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Karen Bishop</span>
-<p class="adv-fb-comment__text">My dermatologist actually nodded when I told her about the undecylenic acid. That alone made me feel like I wasn't being scammed.</p>
+<p class="adv-fb-comment__text" style="position: relative;">My dermatologist actually nodded when I told her about the undecylenic acid. That alone made me feel like I wasn't being scammed.</p>
 </div>
 <div class="adv-fb-comment__actions">
-<a href="#" data-cta-neutralized="1">Like</a><a href="#" data-cta-neutralized="1">Reply</a>
+<a data-cta-neutralized="1" href="#">Like</a><a data-cta-neutralized="1" href="#">Reply</a>
 <span class="adv-fb-comment__likes"><span>(203)</span></span>
 <span>· <span>1w</span></span>
 </div>
@@ -976,10 +1508,10 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Thomas Reilly</span>
-<p class="adv-fb-comment__text">Sixty-eight years old and finally have something to show for ninety nights of consistency. The base of my nail is clear.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Sixty-eight years old and finally have something to show for ninety nights of consistency. The base of my nail is clear.</p>
 </div>
 <div class="adv-fb-comment__actions">
-<a href="#" data-cta-neutralized="1">Like</a><a href="#" data-cta-neutralized="1">Reply</a>
+<a data-cta-neutralized="1" href="#">Like</a><a data-cta-neutralized="1" href="#">Reply</a>
 <span class="adv-fb-comment__likes"><span>(174)</span></span>
 <span>· <span>1w</span></span>
 </div>
@@ -990,10 +1522,10 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Linda Parsons</span>
-<p class="adv-fb-comment__text">My friend at book club kept saying I should try this. Took me eight weeks to admit she was completely right about it.</p>
+<p class="adv-fb-comment__text" style="position: relative;">My friend at book club kept saying I should try this. Took me eight weeks to admit she was completely right about it.</p>
 </div>
 <div class="adv-fb-comment__actions">
-<a href="#" data-cta-neutralized="1">Like</a><a href="#" data-cta-neutralized="1">Reply</a>
+<a data-cta-neutralized="1" href="#">Like</a><a data-cta-neutralized="1" href="#">Reply</a>
 <span class="adv-fb-comment__likes"><span>(98)</span></span>
 <span>· <span>2w</span></span>
 </div>
@@ -1004,10 +1536,10 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Howard Pearson</span>
-<p class="adv-fb-comment__text">Took me ten years to find anything that visibly worked. The brush applicator and the nightly habit are what made the difference.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Took me ten years to find anything that visibly worked. The brush applicator and the nightly habit are what made the difference.</p>
 </div>
 <div class="adv-fb-comment__actions">
-<a href="#" data-cta-neutralized="1">Like</a><a href="#" data-cta-neutralized="1">Reply</a>
+<a data-cta-neutralized="1" href="#">Like</a><a data-cta-neutralized="1" href="#">Reply</a>
 <span class="adv-fb-comment__likes"><span>(221)</span></span>
 <span>· <span>2w</span></span>
 </div>
@@ -1018,10 +1550,10 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Sandra McAllister</span>
-<p class="adv-fb-comment__text">Loved that there's no prescription and no oral pills. My husband worried about that, and the topical-only routine eased his concerns.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Loved that there's no prescription and no oral pills. My husband worried about that, and the topical-only routine eased his concerns.</p>
 </div>
 <div class="adv-fb-comment__actions">
-<a href="#" data-cta-neutralized="1">Like</a><a href="#" data-cta-neutralized="1">Reply</a>
+<a data-cta-neutralized="1" href="#">Like</a><a data-cta-neutralized="1" href="#">Reply</a>
 <span class="adv-fb-comment__likes"><span>(143)</span></span>
 <span>· <span>3w</span></span>
 </div>
@@ -1032,10 +1564,10 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Donald Whitfield</span>
-<p class="adv-fb-comment__text">First product in years where I could honestly point to a clearer area near the cuticle. Sticking with the full ninety-day routine.</p>
+<p class="adv-fb-comment__text" style="position: relative;">First product in years where I could honestly point to a clearer area near the cuticle. Sticking with the full ninety-day routine.</p>
 </div>
 <div class="adv-fb-comment__actions">
-<a href="#" data-cta-neutralized="1">Like</a><a href="#" data-cta-neutralized="1">Reply</a>
+<a data-cta-neutralized="1" href="#">Like</a><a data-cta-neutralized="1" href="#">Reply</a>
 <span class="adv-fb-comment__likes"><span>(167)</span></span>
 <span>· <span>3w</span></span>
 </div>
@@ -1046,10 +1578,10 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-fb-comment__body">
 <div class="adv-fb-comment__bubble">
 <span class="fb-name">Carolyn Mitchell</span>
-<p class="adv-fb-comment__text">Recommended this to my sister down in Florida. She's two months in and texted me a photo of her base growing in clear.</p>
+<p class="adv-fb-comment__text" style="position: relative;">Recommended this to my sister down in Florida. She's two months in and texted me a photo of her base growing in clear.</p>
 </div>
 <div class="adv-fb-comment__actions">
-<a href="#" data-cta-neutralized="1">Like</a><a href="#" data-cta-neutralized="1">Reply</a>
+<a data-cta-neutralized="1" href="#">Like</a><a data-cta-neutralized="1" href="#">Reply</a>
 <span class="adv-fb-comment__likes"><span>(112)</span></span>
 <span>· <span>4w</span></span>
 </div>
@@ -1068,8 +1600,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span class="stars">★★★★★</span>
 <span class="score"><span>4.8</span>/5</span>
 </div>
-<img alt="" class="sticky-product-card__img" data-slot="media.sidebar_product" src="/pages/media/846e567f/a495ac6c7105.jpeg" style="aspect-ratio:1/1;width:100%;height:100%;object-fit:cover"/>
-<a class="adv-cta-inline" href="https://terica-store.com/click">
+<img alt="" class="sticky-product-card__img" data-slot="media.sidebar_product" src="https://dailybloginfo.com/pages/media/846e567f/a495ac6c7105.jpeg" style="aspect-ratio: 1 / 1; width: 100%; height: 100%; object-fit: cover; outline-offset: 3px; outline: rgb(249, 115, 22) solid 2px; padding: 0px; margin: 14px 17px 10px;"/>
+<a class="adv-cta-inline" href="https://terica-store.com/click" style="outline-offset: 3px;">
 <span>CHECK AVAILABILITY</span>
 </a>
 </div>
@@ -1115,7 +1647,30 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span style="margin:0 6px;color:#ccc;">·</span>
 <a href="https://terica-store.com/click" style="color:#999;text-decoration:none;" target="_blank">Return Policy</a>
 </div>
-<p style="font-size:10px;color:#bbb;line-height:1.4;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">© 2026 Daily Blog Info. All rights reserved.</p>
+<p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative;">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
-</body>
-</html>
+<style id="adv-brand-style">
+:root{
+  --ll-color-primary: #47763b;
+  --ll-color-primary-dark: #385e2f;
+  --ll-color-primary-rgb: 71, 118, 59;
+  --ll-color-secondary: #3d6332;
+  --ll-color-tertiary: #c2e84d;
+  --ll-color-cta: #3d6332;
+  --ll-color-cta-dark: #325129;
+  --ll-color-cta-rgb: 61, 99, 50;
+  --ll-color-background: #fffaf1;
+  --ll-color-sticky-bar: #ffffff;
+  --ll-color-text-primary: #433c38;
+  --ll-color-text-secondary: #433c38;
+  --lxs-rating-icon-color: #47763b;
+  --ll-font-heading: Lora, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --ll-font-body: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.cta-btn,.ll-btn-temp,.sticky-product-cta,.sticky-cta-btn,button.cta,a.cta,.adv-cta-inline,.adv-cta-block{background:#3d6332 !important;border-color:#3d6332 !important;color:#ffffff !important}
+.cta-btn:hover,.ll-btn-temp:hover,.sticky-product-cta:hover,.sticky-cta-btn:hover,button.cta:hover,a.cta:hover,.adv-cta-inline:hover,.adv-cta-block:hover{background:#325129 !important;border-color:#325129 !important}
+h1,h2,h3,h4,h5,h6{color:#111 !important}
+.sticky-cta,.sticky-bar,.sticky-product,.sticky-product-card{background:#ffffff !important;color:#111 !important}
+.sticky-cta .sticky-cta-text,.sticky-cta-text,.sticky-product-name,.sticky-product-tagline,.sticky-product-stars,.sticky-product-trust,.sticky-product-trust-item{color:#111 !important}
+</style>
+</link></body></html>
