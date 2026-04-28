@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inside Regen+: A Health Journalist's Honest Look at Nerve Renew's Newest Formula for Burning Feet and Tingling Hands</title>
+<meta content="Laura Whitfield, a Minneapolis health reporter, spent eight weeks investigating Regen+ for peripheral neuropathy. Here is what she actually found." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ll-color-primary: #2e51ff;
+  --ll-color-primary-rgb: 74, 124, 89;
+  --ll-color-primary-dark: #3a6246;
+  --ll-color-secondary: #e5eaff;
+  --ll-color-secondary-rgb: 255, 244, 211;
+  --ll-color-tertiary: #f2f4ff;
+  --ll-color-tertiary-rgb: 245, 197, 24;
+  --ll-color-background: #ffffff;
+  --ll-color-background-rgb: 255, 255, 255;
+  --ll-color-background-alt: #e5eaff;
+  --ll-color-background-page: #f6f6f6;
+  --ll-color-text-primary: #000000;
+  --ll-color-text-primary-rgb: 0, 0, 0;
+  --ll-color-text-secondary: #555555;
+  --ll-color-text-muted: #888888;
+  --ll-color-border: #dddddd;
+  --ll-color-accent: #f2f4ff;
+  --ll-color-success: #009004;
+  --ll-color-success-rgb: 0, 144, 4;
+  --ll-color-warning: #e74c3c;
+  --ll-color-dark: #071f2f;
+  --lxs-rating-icon-color: #f2f4ff;
+  --ll-font-heading: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --ll-font-body: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --ll-radius-sm: 4px;
+  --ll-radius-md: 8px;
+  --ll-radius-lg: 16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--ll-font-body);color:var(--ll-color-text-primary);background:var(--ll-color-background-page);-webkit-font-smoothing:antialiased;min-height:100vh;line-height:1.6;font-size:17px}
+img{max-width:100%;height:auto;display:block}
+#adv-header-logo img,#adv-footer img{margin:0 auto}
+
+/* 2-COLUMN GRID — Damascus layout */
+.adv-grid{display:grid;grid-template-columns:1fr 300px;gap:30px;max-width:1340px;margin:20px auto 40px;padding:0 20px;align-items:start}
+.adv-content{background:var(--ll-color-background);border-radius:var(--ll-radius-md);padding:18px 40px 30px;box-shadow:0 0 18px -4px rgba(0,0,0,0.15);order:1;min-width:0}
+.adv-sidebar{position:sticky;top:20px;align-self:start;order:2;display:flex;flex-direction:column;gap:20px}
+
+/* TYPOGRAPHY — narrative journalism style */
+h1{font-family:var(--ll-font-heading);font-size:44px;font-weight:900;line-height:1.2;color:var(--ll-color-text-primary);padding:0 0 4px;margin:0 0 10px;text-align:left}
+h2{font-family:var(--ll-font-heading);font-size:34px;font-weight:900;line-height:1.25;color:var(--ll-color-text-primary);padding:0 0 4px;margin:14px 0 14px;text-align:left}
+h3{font-family:var(--ll-font-heading);font-size:22px;font-weight:700;line-height:1.3;color:var(--ll-color-text-primary);margin:20px 0 10px}
+p{font-family:var(--ll-font-body);font-size:17px;line-height:1.7;color:var(--ll-color-text-primary);margin-bottom:16px}
+a{color:var(--ll-color-primary);text-decoration:underline;font-weight:600}
+a:hover{color:var(--ll-color-primary-dark)}
+strong{font-weight:700;color:var(--ll-color-text-primary)}
+em{font-style:italic;color:var(--ll-color-text-secondary)}
+
+/* SUBTITLE HIGHLIGHT — cream box under H1 */
+.subtitle-highlight{background:var(--ll-color-background-alt);padding:10px 16px !important;text-align:left;font-size:18px;font-family:var(--ll-font-body);font-weight:600;line-height:1.45;color:var(--ll-color-text-primary);border-radius:var(--ll-radius-sm);margin:10px 0 14px}
+
+/* AUTHOR LINE */
+.author-line{font-family:var(--ll-font-body);font-size:14px;color:var(--ll-color-text-secondary);font-style:italic;text-align:left;margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid var(--ll-color-border);letter-spacing:0.3px}
+
+/* CONTENT IMAGES */
+.content-image{width:100%;border-radius:var(--ll-radius-md);margin:14px 0 44px;aspect-ratio:16/9;object-fit:cover;background:#f0f0f0;box-shadow:0 2px 12px rgba(0,0,0,0.08)}
+.adv-content > .content-image:first-of-type,.adv-content > img.content-image:first-of-type{margin-top:6px}
+
+/* CTA BUTTON — Damascus style: full-width, green, uppercase, shadow */
+.cta-button{display:block;width:100%;max-width:520px;margin:30px auto;background:var(--ll-color-primary);color:#fff;padding:22px 26px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:22px;font-weight:900;text-decoration:none;box-shadow:0 4px 8px rgba(0,0,0,0.2);text-transform:uppercase;letter-spacing:0.4px;transition:filter 0.15s, transform 0.15s, box-shadow 0.15s;text-align:center;line-height:1.2}
+.cta-button:hover{filter:brightness(0.88);transform:translateY(-1px);box-shadow:0 6px 14px rgba(0,0,0,0.28);color:#fff;text-decoration:none}
+
+/* SIGNATURE — end of article */
+.signature{margin-top:40px;padding:24px;background:var(--ll-color-background-alt);border-left:3px solid var(--ll-color-primary);border-radius:var(--ll-radius-sm);font-style:italic;text-align:center}
+.signature-name{font-family:var(--ll-font-body);font-weight:600;font-size:14px;color:var(--ll-color-text-secondary);margin-bottom:2px;font-style:italic}
+.signature-role{font-size:12px;color:var(--ll-color-muted);font-style:italic}
+
+/* SIDEBAR PRODUCT CARD */
+.sidebar-product{background:var(--ll-color-background);padding:22px 20px;border-radius:var(--ll-radius-md);box-shadow:0 0 18px -4px rgba(0,0,0,0.15);text-align:center}
+.product-badge{display:block;font-family:var(--ll-font-heading);font-size:15px;font-weight:700;color:var(--ll-color-text-primary);margin-bottom:10px;line-height:1.3}
+.sidebar-product-img{width:100%;max-width:220px;margin:6px auto 12px;border-radius:var(--ll-radius-sm);aspect-ratio:1/1;object-fit:cover;background:#f0f0f0}
+.sidebar-tagline{font-family:var(--ll-font-body);font-size:13px;color:var(--ll-color-text-secondary);font-style:italic;line-height:1.4;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis}
+.sidebar-stars{display:flex;align-items:center;justify-content:center;gap:6px;margin:8px 0 4px;font-size:13px;color:var(--ll-color-text-secondary);font-weight:600}
+.sidebar-stars .stars{color:#f5b40a;font-size:16px;letter-spacing:1px;line-height:1}
+.sidebar-stars .rating-num{color:#111;font-weight:700}
+.sidebar-cta{display:block;background:var(--ll-color-primary);color:#fff;padding:11px 14px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:13px;font-weight:700;text-decoration:none;box-shadow:0 2px 6px rgba(0,0,0,0.18);text-align:center;margin-top:12px;transition:filter 0.15s}
+.sidebar-cta:hover{filter:brightness(0.88);color:#fff;text-decoration:none}
+.sidebar-trust{margin-top:14px;padding-top:14px;border-top:1px solid var(--ll-color-border);text-align:left}
+.sidebar-trust-item{display:flex;align-items:center;gap:8px;font-size:12px;color:#444;line-height:1.4;padding:3px 0}
+.sidebar-trust-item::before{content:"✓";color:#22c55e;font-weight:900;font-size:14px;flex-shrink:0}
+
+/* RESPONSIVE — collapse to single column under 900px */
+@media (max-width:900px){
+  .adv-grid{grid-template-columns:1fr;gap:24px;padding:0 14px;margin-bottom:24px}
+  .adv-content{padding:22px 20px}
+  .adv-sidebar{position:static;max-width:500px;margin:0 auto}
+  h1{font-size:30px}
+  h2{font-size:24px;margin:24px 0 10px}
+  h3{font-size:19px}
+  body{font-size:16px}
+  p{font-size:16px;line-height:1.65}
+  .subtitle-highlight{font-size:15px;padding:8px 14px !important}
+  .cta-button{font-size:18px;padding:18px 20px}
+  .signature{padding:20px 16px}
+}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+</style>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "wb35vpdfk1");
+</script>
+<script async="" src="https://terica-store.com/tracker.js"></script>
+</head>
+<body>
+<div id="adv-disclosure" style="text-align:center; padding:3px 0; background:#fafafa; border-bottom:1px solid #f0f0f0; font-size:9px; color:#c0c0c0; letter-spacing:0.03em; font-family:system-ui,sans-serif">This is an advertorial</div>
+<div id="adv-header-logo" style="text-align:center; padding:14px 0 10px; background:#fff; border-bottom:1px solid #eee">
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="display:block; height:52px; max-width:260px; object-fit:contain; margin:0 auto"/>
+</div>
+<div class="adv-grid">
+<!-- MAIN ARTICLE CONTENT (left column) -->
+<main class="adv-content">
+<!-- HEADLINE -->
+<h1>I Tried Regen+ for Eight Weeks. Here Is What Happened.</h1>
+<!-- SUBTITLE HIGHLIGHT (cream box) -->
+<p class="subtitle-highlight">A skeptical health journalist tests the nerve supplement everyone keeps quietly recommending.</p>
+<!-- AUTHOR LINE — investigation style -->
+<p class="author-line">By Laura Whitfield, health reporter, Minneapolis</p>
+<!-- IMAGE 1: hero (the protagonist in their setting) -->
+<div class="v2-media-slot" data-job-id="0e910aaa-43fa-4f21-80a4-c12a4a4e8afa" data-prompts="[&quot;Portrait of a 58-year-old female health journalist seated at a wooden home-office desk in Minneapolis, notebook and supplement bottle in front of her, soft morning window light, photorealistic&quot;, &quot;Overhead shot of a writer's desk with an open notebook, a coffee mug, reading glasses, and a single nerve-support supplement bottle, neutral muted tones, photorealistic&quot;, &quot;Close-up of an older woman's hands gently massaging her own fingers at a kitchen table, warm natural light through a window, contemplative mood, photorealistic&quot;]" data-selected="0" data-slot-key="media_1.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Portrait of a 58-year-old female health journalist seated at a wooden home-offic"</div></div>
+<!-- INTRO PARAGRAPHS (investigation setup) -->
+<p>It was a gray February morning in Minneapolis when I finally agreed to take the assignment. My editor wanted an honest, eight-week look at <strong>Regen+ by Nerve Renew</strong>, a supplement I had quietly heard about from three different readers in less than a month.</p>
+<p>Like many <strong>women in their late fifties</strong>, I had started waking up with strange tingling in my left foot. My mother lived with diabetic neuropathy for years, and the idea of inheriting that slow burn was, frankly, the reason I said yes.</p>
+<p>I am a reporter, not a believer. I have spent two decades writing about supplements that promised the moon and delivered, at best, a placebo. So I went in expecting another disappointment, and I told the company exactly that.</p>
+<p>What follows is not a sales pitch. It is what I documented: the science I checked, the patients I interviewed, the days I logged my own symptoms in a spreadsheet, and the <u>quiet shift</u> I did not expect to feel.</p>
+<!-- H2 #1 — backstory / origin -->
+<h2>Where This Formula Actually Comes From</h2>
+<div class="v2-media-slot" data-job-id="0e910aaa-43fa-4f21-80a4-c12a4a4e8afa" data-prompts='["Middle-aged biochemist in a white lab coat reviewing a printed certificate of analysis at a small independent supplement laboratory, neutral lighting, photorealistic", "Close-up of gloved hands placing a vial into a high-precision laboratory testing instrument, clean lab background, photorealistic", "Older father and adult son pharmacists smiling quietly behind a small-town pharmacy counter, warm afternoon light, photorealistic"]' data-selected="0" data-slot-key="media_2.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Middle-aged biochemist in a white lab coat reviewing a printed certificate of an"</div></div>
+<p>Before testing anything, I wanted to know who was behind the bottle. Regen+ is the latest formulation from Nerve Renew, a small Wyoming-based company that has been working on <strong>peripheral neuropathy support</strong> for more than a decade.</p>
+<p>Their lead formulator, a soft-spoken biochemist named Dr. Roberts, learned the field from his father, a pharmacist who spent forty years compounding nerve preparations for diabetic patients in rural clinics. The work, he told me, was not chosen so much as inherited.</p>
+<p>"My father used to say nerves do not heal by accident," Roberts said over the phone. "You give them the right raw materials, in the right ratios, for long enough, and the body remembers what to do. That is the whole philosophy here."</p>
+<p>Nerve Renew has quietly built a reputation among neuropathy support groups since 2011. Every batch of Regen+ is tested in-house and again by a third-party lab in Salt Lake City, with <strong>certificates of analysis</strong> available on request. I asked for three. They sent them.</p>
+<p>But in 2024, everything about the formula changed. A single letter from the family of a long-time customer landed on Roberts's desk that February, and within ninety days the entire philosophy behind Nerve Renew would be quietly torn apart and rebuilt.</p>
+<!-- H2 #2 — loss / turning point -->
+<h2>The Patient Who Changed Everything</h2>
+<div class="v2-media-slot" data-job-id="0e910aaa-43fa-4f21-80a4-c12a4a4e8afa" data-prompts="[&quot;Empty research lab at dawn with a single desk lamp lit, stacks of binders and printed studies on a wooden workbench, photorealistic&quot;, &quot;Close-up of a researcher's hands flipping through a thick binder of highlighted clinical study printouts, photorealistic&quot;, &quot;Silhouette of a lone scientist standing at a lab window watching sunrise over a small American town, contemplative mood, photorealistic&quot;]" data-selected="0" data-slot-key="media_3.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Empty research lab at dawn with a single desk lamp lit, stacks of binders and pr"</div></div>
+<p>In late 2023, Roberts lost a long-time customer named Margaret, a retired teacher from Bismarck who had been taking the original Nerve Renew formula for nine years. She died of unrelated heart failure, and her family wrote the company a letter.</p>
+<p>"She told us your supplement gave her back the ability to feel her grandchildren's hands," Roberts read aloud, voice catching. "That hit me harder than I expected. I had been treating this work like chemistry. She reminded me it was something else entirely."</p>
+<p>He withdrew from the lab for several weeks. His daughter flew in from Denver. The phones at the small office kept ringing with refill orders, but the formulator who answered them was, by his own admission, somewhere else entirely for a while.</p>
+<p>Then one Sunday before sunrise, Roberts drove back to the lab alone. He turned on the overhead lights, pulled every binder of clinical research from the shelf, and started reading from page one. He did not leave for two days.</p>
+<p>"It felt like making a promise," he told me later. "To Margaret, to my father, to every person who had trusted us. I owed them a formula built on what we actually knew now, not on what we knew in 2011."</p>
+<p>From that February forward, he reviewed roughly forty published nerve-regeneration studies a week, for sixteen straight months, before allowing the new <strong>Regen+ formulation</strong> to be filled into a single capsule.</p>
+<!-- H2 #3 — craft deep-dive -->
+<h2>What Is Actually Inside the Capsule</h2>
+<div class="v2-media-slot" data-job-id="0e910aaa-43fa-4f21-80a4-c12a4a4e8afa" data-prompts='["Macro photograph of a single supplement capsule split open showing fine cream-colored powder on a clean white surface, photorealistic", "Hands in nitrile gloves carefully filling brown glass supplement bottles in a small artisanal facility, photorealistic", "Close-up of an older woman comfortably walking barefoot on a wood floor at home, focus on her relaxed feet, warm light, photorealistic"]' data-selected="0" data-slot-key="media_4.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Macro photograph of a single supplement capsule split open showing fine cream-co"</div></div>
+<p>To understand why Regen+ behaves differently from the dozen nerve supplements I have reviewed before, you have to look at one specific detail: the form of B1 it uses, called <strong>benfotiamine</strong>, a fat-soluble version that crosses cell membranes far more efficiently than ordinary thiamine.</p>
+<p>A standard mass-market nerve supplement delivers around 50 milligrams of basic thiamine, much of which is excreted within hours. Regen+ delivers <strong>300 milligrams of stabilized benfotiamine</strong> per serving, alongside a clinically used dose of methylcobalamin, the active form of B12.</p>
+<p>"People do not buy this for how it tastes or how the bottle looks," Roberts said. "They buy it because in eight to twelve weeks they can feel the difference when they walk to the mailbox. That is the only metric we care about."</p>
+<p>Each batch is hand-blended in small runs of roughly four thousand bottles, third-party tested for heavy metals, and capped within seventy-two hours of mixing to protect the methylcobalamin, which degrades quickly when exposed to light or oxygen.</p>
+<p>Generic copycat brands cannot replicate this for one simple reason: stabilized benfotiamine at this dose costs roughly nine times what the cheap thiamine in drugstore formulas does, and most contract manufacturers refuse to slow their lines down for it.</p>
+<!-- H2 #4 — breaking point / medical -->
+<h2>Why You Have Probably Never Heard Of It</h2>
+<div class="v2-media-slot" data-job-id="0e910aaa-43fa-4f21-80a4-c12a4a4e8afa" data-prompts="[&quot;Empty pharmacy supplement aisle with brightly colored neuropathy support boxes lined on shelves, fluorescent overhead lighting, photorealistic&quot;, &quot;Tired middle-aged man sitting alone in a parked car in a drugstore parking lot at dusk, thoughtful expression, photorealistic&quot;, &quot;Close-up of an older customer's hand reaching for a supplement bottle on a pharmacy shelf, photorealistic&quot;]" data-selected="0" data-slot-key="media_5.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Empty pharmacy supplement aisle with brightly colored neuropathy support boxes l"</div></div>
+<p>The reason a formula this carefully made remains relatively unknown is, frankly, brutal. The neuropathy supplement aisle is dominated by two or three large brands with massive television budgets, slick packaging, and formulas that have not been meaningfully updated in fifteen years.</p>
+<p>When Nerve Renew tried selling through a major national pharmacy chain in 2019, the buyer offered them a fraction of what their bottles needed to retail for, then planned to mark it up several times over before it ever reached a shelf.</p>
+<p>"We were being squeezed from both ends," Roberts admitted. "The retailers wanted a wholesale price that did not even cover our raw ingredients, and our customers were being asked to pay nearly triple what the bottle was actually worth at the register."</p>
+<p>He realized one afternoon, sitting in his car in a Walgreens parking lot in Cheyenne, that the model itself was the problem. The formula was being designed around what survived the retail markup, not around what would actually help his customers' nerves.</p>
+<p>He started asking a question that, in the supplement industry, is almost considered heresy: what would happen if we skipped the middleman entirely and shipped every bottle straight from our warehouse to the person who needed it?</p>
+<p>That single question, asked aloud in a Cheyenne parking lot on an ordinary weekday afternoon, is what produced everything that followed: the reformulation, the direct-to-customer model, and the deliberate decision to walk away from every retail relationship the company had spent ten years building.</p>
+<!-- H2 #5 — the decision / price reveal -->
+<h2>The Decision That Made Regen+ Possible</h2>
+<div class="v2-media-slot" data-job-id="0e910aaa-43fa-4f21-80a4-c12a4a4e8afa" data-prompts='["Small American supplement warehouse with neatly stacked shipping boxes ready for direct-to-customer mailing, photorealistic", "Older couple holding hands across a kitchen table in soft morning light, focus on their joined hands, photorealistic", "Close-up of a handwritten thank-you card tucked inside a brown shipping box next to a supplement bottle, photorealistic"]' data-selected="0" data-slot-key="media_6.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Small American supplement warehouse with neatly stacked shipping boxes ready for"</div></div>
+<p>Within ninety days, Roberts had pulled Regen+ from every wholesale channel and every retail relationship the company had built over a decade. From that point forward, every bottle would ship from the small Wyoming warehouse directly to the customer's mailbox.</p>
+<p>The arithmetic was simple but radical. Without the wholesale discount, the retailer's markup, and the chain's slotting fees, the same carefully made bottle could be offered to customers <strong>at roughly a third</strong> of what a comparable retail formula would have cost them.</p>
+<p>Production is intentionally limited. The current run of Regen+ is capped at the inventory their small lab can hand-blend and verify each quarter, which means there are typically only a few thousand bottles available for new customers at any given time.</p>
+<p>"When this batch is gone, it is gone for the quarter," Roberts told me plainly. "We will not rush the next one. We will not cut a corner to refill the shelves faster. People who need this formula deserve the version we promised them."</p>
+<p>"I want this in the hands of the woman who can finally feel her husband's palm again," he said quietly. "Not on a pharmacy shelf gathering dust. That is the only audience I am building for now."</p>
+<!-- ★ CTA #1 -->
+<a class="cta-button" href="https://terica-store.com/click">See what's in Regen+</a>
+<!-- H2 #6 — community / testimonials -->
+<h2>What Long-Time Customers Told Me</h2>
+<div class="v2-media-slot" data-job-id="0e910aaa-43fa-4f21-80a4-c12a4a4e8afa" data-prompts="[&quot;Older woman in her late sixties writing in a personal symptom journal at a kitchen table, supplement bottle nearby, photorealistic&quot;, &quot;Smiling retired man recording himself on a smartphone in his living room for a personal health video, photorealistic&quot;, &quot;Close-up of an older couple's bare feet relaxed on a soft rug at home, focus on comfort, warm light, photorealistic&quot;]" data-selected="0" data-slot-key="media_7.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Older woman in her late sixties writing in a personal symptom journal at a kitch"</div></div>
+<p>Once word spread that Nerve Renew had reformulated and gone direct, the inbox at the company filled up. Customers who had been buying the original formula since 2014 wrote in to say they were switching, and many sent unsolicited <strong>before-and-after journals</strong>.</p>
+<p>I found posts in two private Facebook neuropathy support groups, an episode of a small Minnesota podcast about diabetic nerve health, and a handful of homemade YouTube videos from retirees in their seventies and eighties documenting their own twelve-week experiences with the new formula.</p>
+<p>"I do not need this in a magazine," Roberts told me at the end of our last call. "I need it on the bedside table of the person whose feet woke them up at three in the morning. That is where this work is supposed to land."</p>
+<!-- H2 #7 — features / what makes it different -->
+<h2>What Sets Regen+ Apart From Anything Else</h2>
+<div class="v2-media-slot" data-job-id="0e910aaa-43fa-4f21-80a4-c12a4a4e8afa" data-prompts='["Close-up of a Regen+ supplement bottle on a bedside table next to a glass of water and reading glasses, soft morning light, photorealistic", "Hands of a small-batch formulator inspecting and signing the underside of a supplement bottle in a small American lab, photorealistic", "Older woman smiling gently while feeling the texture of a knitted blanket with her fingertips, focus on hands, warm light, photorealistic"]' data-selected="0" data-slot-key="media_8.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_8.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Close-up of a Regen+ supplement bottle on a bedside table next to a glass of wat"</div></div>
+<p>After eight weeks of testing, calling formulators, and reading more than I ever wanted to about peripheral nerve regeneration, here is the short list of what genuinely separates Regen+ from the dozen drugstore alternatives I have personally reviewed over the last decade.</p>
+<p>300 mg of stabilized benfotiamine, a clinically researched daily dose.</p>
+<p>Methylcobalamin B12, hand-encapsulated within seventy-two hours of careful small-batch mixing.</p>
+<p>Noticeable warmth and reduced tingling felt within the first month.</p>
+<p>Long-time customers report consistent results across multi-year, daily, sustained use.</p>
+<p>Each bottle hand-inspected and personally signed by the lead formulator.</p>
+<!-- ★ CTA #2 -->
+<a class="cta-button" href="https://terica-store.com/click">Check current Regen+ availability</a>
+<!-- H2 #8 — final urgency / how to order -->
+<h2>How To Get One Of The Last Bottles</h2>
+<div class="v2-media-slot" data-job-id="0e910aaa-43fa-4f21-80a4-c12a4a4e8afa" data-prompts='["Hands carefully placing a Regen+ bottle into a small brown shipping box with packing paper, photorealistic", "USPS mail truck pulling up to a quiet American suburban mailbox in early morning light, photorealistic", "Older woman opening a small brown package at her kitchen table with a hopeful expression, warm natural light, photorealistic"]' data-selected="0" data-slot-key="media_9.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_9.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Hands carefully placing a Regen+ bottle into a small brown shipping box with pac"</div></div>
+<p>As of the week I am filing this story, the current quarterly run of Regen+ is down to a few thousand bottles, and the company has confirmed they will not be expanding production this cycle. What is hand-blended in the lab now is what is shipping until June.</p>
+<p>This is a deliberate choice, not a marketing tactic. Roberts has been explicit that he will not reopen wholesale channels or contract out production to scale up. The supply is what one small Wyoming team can verify by hand, and not one bottle more.</p>
+<p>Every order is packed in their facility, hand-inspected before sealing, and shipped through USPS with tracking. The company offers a straightforward <strong>thirty-day satisfaction guarantee</strong>: if you do not feel a difference after a full bottle, they refund the order, no questions asked.</p>
+<p>Early feedback from this newest run, which began shipping in late January, has been unusually consistent. Most customers I spoke to reported reduced nighttime tingling within roughly three to four weeks, and a quieter, warmer feeling in the feet by week eight.</p>
+<p>The available count drops every day on the company website, and once it reaches zero, the page closes for the quarter. There is no waitlist, no back-order, no way to reserve a bottle from the next batch ahead of anyone else.</p>
+<p>If you have read this far, you probably know someone, perhaps yourself, whose feet wake them up at night. For that person, in my honest opinion as a reporter, Regen+ is the most carefully made nerve formula I have personally reviewed in years.</p>
+<!-- ★ CTA #3 -->
+<a class="cta-button" href="https://terica-store.com/click">Claim a bottle before zero</a>
+<!-- SIGNATURE -->
+<div class="signature">
+<div class="signature-name">Laura Whitfield</div>
+<div class="signature-role">Health reporter, Minneapolis</div>
+</div>
+</main>
+<!-- STICKY PRODUCT SIDEBAR -->
+<aside class="adv-sidebar">
+<div class="sidebar-product">
+<span class="product-badge">Regen+ Unlock the Power of Healthy Nerves</span>
+<div class="v2-media-slot" data-job-id="0e910aaa-43fa-4f21-80a4-c12a4a4e8afa" data-prompts='["Clean product shot of a Regen+ supplement bottle on a neutral white background with soft shadow, photorealistic", "Lifestyle shot of a Regen+ bottle on a wooden bedside table next to a lamp and a folded book, photorealistic", "Older woman smiling softly while holding a Regen+ bottle in her hands at a sunlit kitchen table, photorealistic"]' data-selected="0" data-slot-key="media_10.url" style="aspect-ratio:1/1; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_10.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Clean product shot of a Regen+ supplement bottle on a neutral white background w"</div></div>
+<p class="sidebar-tagline">Hand-blended nerve support, shipped straight from the lab bench.</p>
+<div class="sidebar-stars">
+<span class="stars">★★★★★</span>
+<span class="rating-num">4.87</span>
+</div>
+<a class="sidebar-cta" href="https://terica-store.com/click">Reserve mine</a>
+<div class="sidebar-trust">
+<div class="sidebar-trust-item">Third-party lab tested</div>
+<div class="sidebar-trust-item">30-day satisfaction guarantee</div>
+<div class="sidebar-trust-item">Ships direct from Wyoming</div>
+</div>
+</div>
+</aside>
+</div><!-- /adv-grid -->
+<style id="adv-brand-secondary">
+:root{ --ll-color-secondary: #e5eaff; }
+</style>
+<style id="adv-brand-hover">
+.cta-btn:hover,.ll-btn-temp:hover{background:#2744d8 !important;box-shadow:0 6px 25px rgba(46,81,255,0.4) !important;}
+</style>
+<footer id="adv-footer" style="background:#f5f5f5; border-top:1px solid #e5e5e5; padding:30px 20px; text-align:center; margin-top:40px">
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="display:block; height:36px; max-width:180px; object-fit:contain; margin:0 auto 12px"/>
+<div style="font-size:11px; color:#999; margin:0 auto 10px; font-family:system-ui,-apple-system,sans-serif">
+<a href="/pages/terms" style="color:#999; text-decoration:none" target="_blank">Terms of Use</a>
+<span style="margin:0 6px; color:#ccc">·</span>
+<a href="/pages/privacy" style="color:#999; text-decoration:none" target="_blank">Privacy Policy</a>
+<span style="margin:0 6px; color:#ccc">·</span>
+<a href="/pages/privacy" style="color:#999; text-decoration:none" target="_blank">Return Policy</a>
+</div>
+<p style="font-size:10px; color:#bbb; line-height:1.4; margin:0 auto; font-family:system-ui,-apple-system,sans-serif">© 2026 Daily Blog Info. All rights reserved.</p>
+</footer>
+</body>
+</html>
