@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Retired Bavarian Optics Engineer Cuts Out Big-Box Retailers</title>
+<meta content="After 41 years inside Europe's premium binocular industry, Frank Holzmann is shipping his final 1,800 Clariva 12x42 units straight from his garage." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ll-color-primary: #00aa25;
+  --ll-color-primary-rgb: 0, 170, 37;
+  --ll-color-primary-dark: #008a1f;
+  --ll-color-secondary: #fefbd9;
+  --ll-color-secondary-rgb: 254, 251, 217;
+  --ll-color-tertiary: #ffd712;
+  --ll-color-tertiary-rgb: 255, 215, 18;
+  --ll-color-tertiary-dark: #c9a90e;
+  --ll-color-background: #ffffff;
+  --ll-color-background-rgb: 255, 255, 255;
+  --ll-color-background-alt: #ededed;
+  --ll-color-background-beige: #fef8b7;
+  --ll-color-text-primary: #222222;
+  --ll-color-text-primary-rgb: 34, 34, 34;
+  --ll-color-text-secondary: #666666;
+  --ll-color-text-secondary-rgb: 102, 102, 102;
+  --ll-color-border: #dddddd;
+  --ll-color-warning: #c0392b;
+  --ll-color-warning-rgb: 192, 57, 43;
+  --ll-color-success: #00aa25;
+  --ll-color-sticky-bar: #ffd712;
+  --ll-color-accent: #ffc107;
+  --ll-font-heading: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --ll-font-body: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --ll-radius-sm: 4px;
+  --ll-radius-md: 8px;
+  --ll-radius-pill: 999px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--ll-font-body);
+  color: var(--ll-color-text-primary);
+  background-color: var(--ll-color-background);
+  word-break: break-word;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  padding-bottom: 90px;
+}
+img { max-width: 100%; height: auto; display: block; }
+section { margin-bottom: 30px; }
+.bold { font-weight: bold; }
+
+#adv-header-logo, #adv-footer { width: 100%; }
+#adv-header-logo:empty { min-height: 0; }
+#adv-footer:empty { min-height: 0; }
+
+/* ===== Header ===== */
+.header {
+  background-color: rgba(0,0,0,0.03);
+  padding-inline: 20%;
+  text-align: center;
+}
+.header-adv {
+  padding: 12px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-adv .advertorial-text {
+  font-size: 12px;
+  font-weight: 600;
+  padding-right: 20px;
+}
+.header-adv .brand-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ===== Container ===== */
+.container-full { padding: 0; }
+@media (min-width: 576px) { .container-full { padding: 0 10px; } }
+.container-main { max-width: 1400px; margin: 0 auto; }
+.container-body {
+  padding-block: 40px;
+  gap: 15px;
+  display: flex;
+}
+.container-left {
+  padding: 15px;
+  flex: 1 1 0;
+  background-color: var(--ll-color-background);
+  margin-bottom: 40px;
+  min-width: 0;
+}
+.container-right {
+  flex: 0 0 280px;
+  position: relative;
+}
+
+/* ===== Page header / section titles ===== */
+.page-header .breadcrumbs { font-size: 14px; padding-bottom: 5px; color: var(--ll-color-text-primary); }
+.section-title {
+  font-family: var(--ll-font-heading);
+  font-size: 33px;
+  line-height: 43px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--ll-color-text-primary);
+}
+.page-header h1.section-title {
+  font-size: 38px;
+  margin-top: 0;
+  line-height: 1.3;
+  font-weight: 700;
+}
+.section-subtitle {
+  font-size: 17px;
+  color: var(--ll-color-text-primary);
+  margin-bottom: 20px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+.section-media { width: 100%; margin: 20px 0; }
+.section-media img,
+.section-media video { width: 100%; height: auto; display: block; border-radius: var(--ll-radius-md); }
+.header-meta {
+  font-size: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.header-meta .img-face {
+  width: 36px; height: 36px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
+}
+.header-meta .check-blue { color: #1877F2; font-size: 18px; font-weight: 700; }
+.header-meta .date-post { font-style: italic; color: var(--ll-color-text-secondary); margin-left: 6px; }
+.section-text {
+  font-size: 18px;
+  line-height: 28px;
+}
+.section-text + .section-text { margin-top: 14px; }
+.section-text strong { font-weight: 700; }
+
+.container-left a { color: #0d6efd; }
+
+/* ===== Stock alert ===== */
+.stock-alert {
+  margin-top: 14px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* ===== Testimonials ===== */
+.testimonials { margin: 40px 0; }
+.testimonial {
+  border-radius: var(--ll-radius-md);
+  border-left: 4px solid var(--ll-color-accent);
+  width: 100%;
+  background-color: var(--ll-color-background-alt);
+  display: flex;
+  padding: 12px 10px 5px;
+  margin: 20px 0 5px;
+}
+.testimonial-image { flex: 0 0 30%; padding: 12px 5px; }
+.testimonial-image img {
+  width: 230px; max-width: 100%; height: auto; border-radius: var(--ll-radius-sm);
+}
+.testimonial-content { flex: 1; }
+.testimonial-header {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  padding: 12px 10px 5px;
+  font-size: 18px;
+  flex-wrap: wrap;
+}
+.testimonial-name { font-weight: bold; }
+.testimonial-separator { color: #999; }
+.testimonial-rating { color: #444; font-weight: 500; }
+.testimonial-text {
+  font-style: italic;
+  line-height: 1.5;
+  font-size: 18px;
+  padding: 5px 5px 10px 10px;
+}
+.check-blue-lg { color: #1877F2; font-size: 26px; font-weight: 700; }
+
+/* ===== CTA ===== */
+.cta-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 12px 10px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+a.cta-button {
+  text-align: center;
+  text-decoration: none;
+  color: var(--ll-color-text-primary) !important;
+  cursor: pointer;
+  background-color: var(--ll-color-tertiary);
+  font-size: 23px;
+  font-weight: 700;
+  border-radius: var(--ll-radius-sm);
+  padding: 17px 110px;
+  line-height: 23px;
+  width: auto;
+  display: inline-block;
+  font-family: var(--ll-font-heading);
+}
+a.cta-button:hover { text-decoration: underline; }
+
+/* ===== Promo block ===== */
+.promo-container {
+  margin: 0 auto;
+  background-color: var(--ll-color-background);
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.blue-header { height: 20px; width: 100%; overflow: hidden; }
+.blue-header .stripes { position: relative; width: 100%; height: 100%; }
+.blue-header .stripes::before {
+  position: absolute; content: ""; top: 0; left: 0;
+  height: 100%; width: calc(100% + 30px);
+  background: repeating-linear-gradient(45deg, #4285f4 25%, #4285f4 50%, #2196f3 50%, #2196f3 75%);
+  background-size: 30px 30px;
+  animation: moveStripes 0.5s linear infinite;
+}
+@keyframes moveStripes { 0% { transform: translateX(-30px); } 100% { transform: translateX(0); } }
+.main-content { position: relative; display: flex; flex-direction: column; }
+.content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+  justify-content: space-between;
+  background-color: var(--ll-color-secondary);
+  padding: 20px 10px 12px;
+}
+.content-wrapper img { max-width: 151px; height: auto; }
+.text-content {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 15px 32px 1px 15px;
+  line-height: 23px;
+  text-align: left;
+}
+.update-text { margin-bottom: 8px; }
+.lock-text { margin-bottom: 15px; }
+.note-text { margin-bottom: 30px; }
+.trust-badges {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+  background-color: var(--ll-color-background-beige);
+  padding: 20px 60px;
+}
+.badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+  gap: 10px;
+}
+.badge-icon { width: 96px; height: 96px; }
+.badge-text {
+  padding: 1px;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 22px;
+}
+
+/* ===== Sidebar ===== */
+.sidebar-card {
+  background: var(--ll-color-background);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 300px;
+  width: 245px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto 0 0;
+  padding-bottom: 14px;
+  position: sticky;
+  top: 20px;
+}
+.sidebar-title {
+  font-family: var(--ll-font-heading);
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ll-color-text-primary);
+  line-height: 20px;
+  padding: 10px 5px 4px;
+}
+.product-image-container {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px 0 15px;
+}
+.product-image {
+  object-fit: contain;
+  width: auto;
+  height: 170px;
+  margin-top: 7px;
+  padding-top: 5px;
+}
+.sidebar-card .cta-wrapper {
+  width: 100%;
+  padding: 12px 10px;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+.sidebar-card a.cta-button {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  line-height: 15px;
+  font-weight: 600;
+  padding: 15px 20px;
+  border-radius: var(--ll-radius-sm);
+  text-transform: none;
+}
+.reviews-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--ll-color-text-primary);
+  text-align: center;
+  line-height: 1;
+  padding: 6px 5px;
+}
+.rating-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: space-between;
+  padding: 12px 15px 4px;
+}
+.rating-summary .stars {
+  color: var(--ll-color-accent);
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+.rating-text {
+  color: var(--ll-color-text-primary);
+  font-size: 14px;
+  font-weight: 700;
+  text-align: right;
+}
+.rating-count {
+  font-size: 13px;
+  font-weight: 300;
+  color: #909090;
+  text-align: center;
+  padding: 0 5px 6px;
+}
+.rating-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 8px 15px 5px;
+}
+.rating-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 40px;
+  gap: 10px;
+  align-items: center;
+}
+.star-label, .percentage {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ll-color-success);
+}
+.star-label { text-align: left; }
+.percentage { text-align: right; }
+.progress-bar {
+  background: #f1f1f1;
+  overflow: hidden;
+  min-width: 0;
+  height: 14px;
+  border: 1px solid var(--ll-color-border);
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--ll-color-tertiary), var(--ll-color-tertiary-dark));
+}
+.features-section { margin-top: 15px; }
+.features-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--ll-color-text-primary);
+  line-height: 1;
+  text-align: center;
+}
+.feature-ratings {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 15px 5px;
+}
+.feature-row {
+  display: grid;
+  grid-template-columns: 1fr auto 30px;
+  gap: 8px;
+  align-items: center;
+}
+.feature-name { font-size: 14px; color: var(--ll-color-text-primary); }
+.feature-row .stars { color: var(--ll-color-accent); font-size: 14px; letter-spacing: 1px; }
+.feature-rating { font-size: 14px; color: var(--ll-color-text-primary); text-align: right; }
+
+/* ===== Comments ===== */
+.comments { margin-top: 50px; padding-top: 30px; }
+.comments-title {
+  font-family: var(--ll-font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--ll-color-border);
+}
+.comment {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--ll-color-border);
+}
+.comment-face {
+  width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
+  background: #e4e6eb;
+}
+.comment-content { flex: 1; min-width: 0; }
+.comment-author {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ll-color-text-primary);
+  margin-bottom: 4px;
+  font-family: var(--ll-font-heading);
+}
+.comment-text {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ll-color-text-primary);
+  margin-bottom: 6px;
+}
+.comment-actions {
+  font-size: 12px;
+  color: var(--ll-color-text-secondary);
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.comment-actions a { color: var(--ll-color-text-secondary); text-decoration: none; font-weight: 600; }
+.comment-time { font-style: italic; }
+
+/* ===== Sticky bar ===== */
+#stickyBarCustom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--ll-color-sticky-bar);
+  padding: 12px 0;
+  z-index: 99;
+  box-shadow: 0 -2px 15px rgba(0,0,0,0.18);
+}
+#stickyBarCustom .cta-wrapper {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+#stickyBarCustom a.cta-button {
+  width: 100%;
+  max-width: 600px;
+  padding: 14px 20px;
+  font-size: 18px;
+  background-color: var(--ll-color-primary);
+  color: var(--ll-color-background) !important;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .container-body { flex-direction: column; }
+  .container-right { flex: 0 0 auto; }
+  .sidebar-card { max-width: 100%; width: 100%; margin: 20px auto; position: static; }
+  .page-header h1.section-title { font-size: 24px; line-height: 32px; }
+  .section-subtitle { font-size: 14px; line-height: 21px; }
+  .section-title { font-size: 23px; line-height: 28px; }
+  .section-text { font-size: 15px; line-height: 24px; }
+  .trust-badges { padding: 20px 20px; }
+  .badge-icon { width: 70px; height: 70px; }
+  .badge-text { display: none; }
+  a.cta-button { font-size: 14px; padding: 17px 20px; line-height: 20px; width: 100%; }
+}
+@media (max-width: 576px) {
+  .content-wrapper { flex-direction: column; text-align: center; gap: 20px; }
+  .testimonial { flex-direction: column; padding: 10px; }
+  .testimonial-image img { width: 100%; }
+}
+
+body{overflow-x:hidden;max-width:100vw}
+img{max-width:100%;height:auto}
+table{max-width:100%;display:block;overflow-x:auto}
+.stat-row{overflow-x:auto}
+</style>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "wb35vpdfk1");
+</script>
+<script async="" src="https://terica-store.com/tracker.js"></script>
+</head>
+<body>
+<!-- Pipeline injects brand logo here -->
+<div id="adv-disclosure" style="text-align:center; padding:3px 0; background:#fafafa; border-bottom:1px solid #f0f0f0; font-size:9px; color:#c0c0c0; letter-spacing:0.03em; font-family:system-ui,sans-serif">This is an advertorial</div>
+<div id="adv-header-logo"></div>
+<div class="container-full">
+<div class="container-main">
+<div class="container-body">
+<div class="container-left">
+<!-- ================= PAGE HEADER ================= -->
+<section class="page-header">
+<p class="breadcrumbs">Home / Outdoor / Optics</p>
+<h1 class="section-title"><strong>He Spent 41 Years Building $1,400 Binoculars. Now He's Selling Them Direct.</strong></h1>
+<p class="section-subtitle">A retired Bavarian lens engineer commissioned one final production run of pro-grade binoculars and refused to hand them to the big sporting-goods chains. The remaining units ship out of his Asheville garage until the pallets are empty.</p>
+<div class="section-media">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts="[&quot;Older man in his 60s with weathered hands carefully inspecting a pair of premium black binoculars on a wooden workbench, soft window light, photorealistic&quot;, &quot;Wide shot of a master optics craftsman in a small garage workshop in Asheville, surrounded by stacked Clariva binocular boxes, warm afternoon light, photorealistic&quot;, &quot;Close-up of seasoned hands holding 12x42 black metal binoculars, calm pride on the craftsman's face, shallow depth of field, photorealistic&quot;]" data-selected="0" data-slot-key="hero.hero_image" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — hero.hero_image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Older man in his 60s with weathered hands carefully inspecting a pair of premium"</div></div>
+</div>
+<div class="header-meta">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Circular headshot avatar of a 40-something American male journalist with glasses, neutral background, photorealistic", "Circular avatar of a male outdoor-gear journalist in a flannel shirt, soft studio light, photorealistic", "Circular friendly portrait of a middle-aged journalist smiling slightly, warm tones, photorealistic"]' data-selected="0" data-slot-key="hero.byline_image" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — hero.byline_image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Circular headshot avatar of a 40-something American male journalist with glasses"</div></div>
+<span class="bold">By Daniel Whitcomb</span>
+<span class="check-blue">✓</span>
+<span><i class="date-post">Updated April 28, 2026</i></span>
+</div>
+<p class="section-text">Frank Holzmann is sixty-five, lives in Asheville, North Carolina, and spends most mornings on his back porch watching the pileated woodpeckers work the oak line behind his property.</p>
+<p class="section-text">For two summers, he watched those birds through mid-priced binoculars he kept telling himself were good enough. They weren't. The image went soft at the edges, colors washed out at dawn. Every serious birder kept nudging him toward Austrian glass north of twelve hundred dollars. Frank kept putting it off. He'd spent his career inside that industry. He knew exactly what those binoculars actually cost to build.</p>
+<p class="section-text">So he did something most retired engineers never bother with. He went back into his shop and built the pair he had always wanted to own.</p>
+<p class="section-text"><strong>"The glass in a $1,400 pair costs the factory under a hundred. I know. I ground it."</strong></p>
+</section>
+<!-- ================= PROBLEM ================= -->
+<section>
+<h2 class="section-title">Forty-One Years Inside the Premium Optics Business</h2>
+<div class="section-media">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Older male optics engineer in a clean lab coat examining a prism under bright shop light at a Bavarian optical bench, photorealistic", "Master craftsman polishing a glass lens with white cotton gloves, vintage optical tooling visible in the background, photorealistic", "Quiet portrait of a retired engineer in his garage workshop, lens grinding equipment behind him, expression of focused dignity, photorealistic"]' data-selected="0" data-slot-key="problem_section.image" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — problem_section.image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Older male optics engineer in a clean lab coat examining a prism under bright sh"</div></div>
+</div>
+<p class="section-text">Frank trained as an optical technician outside Munich at twenty-two and stayed inside the trade for forty-one years, grinding lenses and tuning prisms for two of the most respected binocular houses in Bavaria.</p>
+<p class="section-text">He knows the bill of materials cold. A flagship 12x42 with fully multi-coated HD glass, hand-aligned BAK4 prisms, and a nitrogen-purged magnesium chassis runs the factory <strong>under one hundred dollars in parts and labor</strong>. The same instrument leaves the showroom floor at fourteen hundred. "That gap isn't engineering," Frank likes to say. "That's a marketing department, a distributor cut, and a hangtag."</p>
+<p class="section-text">The Austrian and German luxury houses had built an entire pricing tier on serious birders simply having no other option. Frank had watched it for four decades and knew a different path was technically possible.</p>
+<p class="section-text">He retired in 2024 and spent eight months iterating in his Asheville garage — same coatings, same prisms, same waterproof spec, no luxury hangtag. The contradiction: <u>nobody in the U.S. was actually selling that build at a sane price</u>, because nobody outside the factories knew it could be done.</p>
+</section>
+<!-- ================= DEMO ================= -->
+<section>
+<h2 class="section-title">The First Morning On The Back Porch</h2>
+<div class="section-media">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Older man on a wooden back porch at sunrise, raising premium 12x42 binoculars toward distant treeline, mist over the yard, photorealistic", "Close-up over-the-shoulder shot of a birder lifting black binoculars to his eyes, golden morning light, blurred forest background, photorealistic", "Joyful expression on a 60-something man lowering his binoculars after spotting a woodpecker, warm porch light, photorealistic"]' data-selected="0" data-slot-key="demo_section.image" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — demo_section.image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Older man on a wooden back porch at sunrise, raising premium 12x42 binoculars to"</div></div>
+</div>
+<p class="section-text">First real test: a thirty-minute window at sunrise, oak line ninety yards out, low-light scene where his old pair turned everything into gray soup. The Clariva pulled the red crest of a pileated woodpecker out of the shadow like a printed photograph.</p>
+<p class="section-text">His neighbor Hank wandered over with coffee and asked which luxury brand he had finally caved on. Frank handed them across the railing without saying a word and watched Hank's eyebrows climb.</p>
+</section>
+<!-- ================= HOW IT WORKS ================= -->
+<section>
+<h2 class="section-title">What Makes The Clariva 12x42 Different From A Big-Box Pair</h2>
+<div class="section-media">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Clean studio cutaway diagram of premium binoculars showing prism arrangement and lens coatings, photorealistic", "Top-down product shot of black 12x42 binoculars next to disassembled BAK4 prism on a slate surface, photorealistic", "Macro shot of multi-coated objective lenses catching green and purple light reflections, photorealistic"]' data-selected="0" data-slot-key="how_it_works_section.image" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — how_it_works_section.image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Clean studio cutaway diagram of premium binoculars showing prism arrangement and"</div></div>
+</div>
+<p class="section-text">The Clariva is not the kind of pair you find blister-packed at a sporting-goods chain. Those are ground-up budget builds — single-coated glass, BK7 prisms, plastic chassis — the optical equivalent of looking through a dirty kitchen window. They cost the factory almost nothing and they show it the moment the light gets tricky.</p>
+<p class="section-text">What Frank built instead is a fully multi-coated HD optical stack mated to <strong>hand-aligned BAK4 roof prisms</strong> in a nitrogen-purged magnesium-alloy housing. The 12x magnification with 42mm objectives is the configuration serious birders have been buying at the four-figure tier for thirty years — <u>same glass science, same waterproof spec</u>, no luxury markup attached to it.</p>
+<p class="section-text">No tripod required. No phone app. No subscription. You pull them out of the case, twist the diopter once for your eyes, and that's the entire setup.</p>
+</section>
+<!-- ================= WHY POPULAR ================= -->
+<section>
+<h2 class="section-title">Why Clariva Is Catching On So Fast</h2>
+<div class="section-media">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Side-by-side comparison view through cheap binoculars versus Clariva binoculars, dramatic clarity difference on a distant cardinal, photorealistic", "Hands holding Clariva 12x42 with sharp distant landscape visible in eyepiece reflection, photorealistic", "Older couple on a porch sharing the Clariva binoculars, smiling at something distant, golden hour, photorealistic"]' data-selected="0" data-slot-key="why_popular_section.media" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — why_popular_section.media</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Side-by-side comparison view through cheap binoculars versus Clariva binoculars,"</div></div>
+</div>
+<p class="section-text">Every birder over fifty has had the same moment. You lift a friend's premium pair and see what you've been missing for years — every feather barb, every ring around an iris, the tail bar on a hawk a quarter-mile out. Then you set them down because of the price tag, and go back to the washed-out image you've been tolerating.</p>
+<p class="section-text">The Clariva closes that gap in a single afternoon. Once you've seen what real glass does at sunrise, the cheap pair in the closet feels almost insulting to keep using.</p>
+<p class="section-text"><strong>"I owned a Swarovski for eight years. The Clariva is ninety percent of that pair, and I bought four for the price of one. My grandkids each got one for Christmas."</strong></p>
+</section>
+<!-- ================= IDEAL FOR ================= -->
+<section>
+<h2 class="section-title">Who The Clariva 12x42 Is Built For</h2>
+<p class="section-text">Serious outdoor observers who refuse the four-figure price tag.</p>
+<p class="section-text" style="margin-top:10px">
+<span>Backyard and trail birdwatching at dawn or dusk light</span><br/>
+<span>Whitetail and elk scouting before opening day</span><br/>
+<span>Long-distance hiking, ridge spotting, and national park trips</span><br/>
+<span>Anyone who has priced an Austrian flagship and walked away</span>
+</p>
+</section>
+<!-- ================= TRACTION ================= -->
+<section>
+<h2 class="section-title">How A Garage Operation Sold Out Its First Two Runs</h2>
+<div class="section-media">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Wooden pallets stacked with Clariva binocular boxes inside a clean residential garage in Asheville, photorealistic", "Map of the United States with shipment pins clustered in rural and suburban regions, photorealistic", "Older craftsman taping up a shipping box at a folding table in his garage, satisfied expression, photorealistic"]' data-selected="0" data-slot-key="traction_section.image" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — traction_section.image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Wooden pallets stacked with Clariva binocular boxes inside a clean residential g"</div></div>
+</div>
+<p class="section-text">Roughly twenty-three thousand pairs have shipped out of Frank's Asheville garage to households in all fifty states since the project went public last fall. They are <strong>not in any retail chain</strong>. Not on Amazon. Not on home-shopping television. The big sporting-goods buyers offered to carry them — Frank said no, because the moment they hit a shelf, the price triples.</p>
+<p class="section-text">Skipping the distributor margin, the retail markup, and the advertising war chest is the entire reason a serious 12x42 is leaving his garage at <u>a fraction of what the equivalent build costs in a showroom</u>.</p>
+<p class="section-text stock-alert"><strong>Approximately 1,800 pairs remain on the pallets in the garage. Frank has stated publicly that there will be no second run, no restock, and no follow-up product line — once the crates are empty, the Clariva name retires with him.</strong></p>
+</section>
+<!-- ================= TESTIMONIALS ================= -->
+<section class="testimonials">
+<h2 class="section-title">What Serious Birders Over Fifty Are Saying</h2>
+<!-- testimonial 0 -->
+<div class="testimonial">
+<div class="testimonial-image">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Headshot of a 60-something American man with silver hair, friendly expression, outdoor jacket, photorealistic", "Older male birder sitting on a porch with binoculars around his neck, photorealistic", "Senior man smiling while leaning against a wooden fence in a rural backyard, photorealistic"]' data-selected="0" data-slot-key="testimonials_section.testimonials[0].image" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — testimonials_section.testimonials[0].image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Headshot of a 60-something American man with silver hair, friendly expression, o"</div></div>
+</div>
+<div class="testimonial-content">
+<div class="testimonial-header">
+<span class="check-blue-lg">✓</span>
+<div class="testimonial-name">Roger T., Bend, OR</div>
+<div class="testimonial-separator">|</div>
+<div class="testimonial-rating">Rating: <span>★★★★★</span></div>
+</div>
+<p class="testimonial-text">I owned a Swarovski EL 10x42 for nine years and I'll be honest — at the very edge of low light, the Austrian still wins by a hair. But for ninety-eight percent of what I actually do at dawn on the Deschutes, the Clariva is right there with it. The convenience of just lifting these off the kitchen counter without worrying about banging up a four-figure pair is worth more than I expected.</p>
+</div>
+</div>
+<!-- testimonial 1 -->
+<div class="testimonial">
+<div class="testimonial-image">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Headshot of a woman in her late 50s with short gray hair, warm smile, outdoor setting, photorealistic", "Mature woman holding binoculars on a hiking trail, photorealistic", "Senior female birder near a backyard feeder, content expression, photorealistic"]' data-selected="0" data-slot-key="testimonials_section.testimonials[1].image" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — testimonials_section.testimonials[1].image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Headshot of a woman in her late 50s with short gray hair, warm smile, outdoor se"</div></div>
+</div>
+<div class="testimonial-content">
+<div class="testimonial-header">
+<span class="check-blue-lg">✓</span>
+<div class="testimonial-name">Linda M., Asheville, NC</div>
+<div class="testimonial-separator">|</div>
+<div class="testimonial-rating">Rating: <span>★★★★★</span></div>
+</div>
+<p class="testimonial-text">I had been promising myself a 'real' pair of binoculars for about six years and never pulled the trigger because of the price. Took me one Saturday morning watching the warbler migration through the Clariva to wonder why I waited so long. My neighbor came over for coffee, looked through them once, and ordered a pair on her phone before she finished her cup.</p>
+</div>
+</div>
+<!-- testimonial 2 -->
+<div class="testimonial">
+<div class="testimonial-image">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Headshot of a 70-something American man with reading glasses, gentle smile, photorealistic", "Senior man seated comfortably on a porch chair holding binoculars to his chest, photorealistic", "Older gentleman in a flannel shirt with binoculars resting on a wooden table, photorealistic"]' data-selected="0" data-slot-key="testimonials_section.testimonials[2].image" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — testimonials_section.testimonials[2].image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Headshot of a 70-something American man with reading glasses, gentle smile, phot"</div></div>
+</div>
+<div class="testimonial-content">
+<div class="testimonial-header">
+<span class="check-blue-lg">✓</span>
+<div class="testimonial-name">Walter D., Sarasota, FL</div>
+<div class="testimonial-separator">|</div>
+<div class="testimonial-rating">Rating: <span>★★★★★</span></div>
+</div>
+<p class="testimonial-text">Seventy-three years old with a stiff neck and arthritic thumbs, and I can still hold these on a kingfisher long enough to see the bill detail. The focus wheel turns with one finger. No fumbling, no double-handed grip, no bending over a tripod in the yard. My wife borrows them more than I do now, which I take as a compliment.</p>
+</div>
+</div>
+</section>
+<!-- ================= DISCOUNT ================= -->
+<section>
+<h2 class="section-title">Direct-From-Garage Pricing While The Pallets Last</h2>
+<p class="section-text">Frank is shipping the remaining run at the introductory direct-buyer rate — roughly half of what a comparable build would carry on a sporting-goods chain shelf, and a small fraction of the European flagship tier.</p>
+</section>
+<!-- ================= SCARCITY ================= -->
+<section>
+<h2 class="section-title">Hurry — Almost Sold Out</h2>
+<p class="section-text">When last year's batch ran out, the promotion ended four days early and the waitlist never received a second run. Roughly 1,800 pairs are left on the Asheville pallets. Once they're gone, the introductory pricing closes with them.</p>
+</section>
+<!-- ================= CTA 1 ================= -->
+<div class="cta-wrapper">
+<a class="cta-button" href="https://terica-store.com/click">Claim My Pair Before They're Gone</a>
+</div>
+<!-- ================= PROMO CALLOUT ================= -->
+<section class="promo-container">
+<div class="blue-header">
+<div class="stripes"></div>
+</div>
+<div class="main-content">
+<div class="content-wrapper">
+<div class="text-content">
+<div class="update-text"><strong>UPDATE:</strong> <span>UPDATE: Demand has spiked since the segment ran last week — pairs are leaving the garage faster than Frank can box them. Lock in the introductory rate while inventory holds.</span></div>
+<div class="lock-text">Lock in your order now at the direct-from-garage introductory rate.</div>
+<div class="note-text"><strong>NOTE:</strong> <span>NOTE: This deal is NOT available on Amazon, eBay, or Walmart.</span></div>
+</div>
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Black 12x42 Clariva binoculars beside their carrying case, neck strap, and lens caps on a clean white background, photorealistic", "Top-down product flat-lay of Clariva binoculars with all included accessories on slate, photorealistic", "Hero shot of Clariva 12x42 binoculars catching soft studio light, sense of premium craft, photorealistic"]' data-selected="0" data-slot-key="promo_callout.product_image" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — promo_callout.product_image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Black 12x42 Clariva binoculars beside their carrying case, neck strap, and lens "</div></div>
+</div>
+<div class="trust-badges">
+<div class="badge-item">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Clean icon of a shield with a checkmark representing money-back guarantee, photorealistic style", "Badge graphic showing 30-day guarantee seal, photorealistic", "Trust badge icon with refund symbolism, photorealistic"]' data-selected="0" data-slot-key="promo_callout.trust_badges[0].image" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — promo_callout.trust_badges[0].image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Clean icon of a shield with a checkmark representing money-back guarantee, photo"</div></div>
+<div class="badge-text">30-Day Money-Back Satisfaction Guarantee</div>
+</div>
+<div class="badge-item">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Clean icon of a padlock representing secure checkout, photorealistic style", "Badge graphic with a closed lock and shield, photorealistic", "Trust seal showing encrypted checkout symbol, photorealistic"]' data-selected="0" data-slot-key="promo_callout.trust_badges[1].image" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — promo_callout.trust_badges[1].image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Clean icon of a padlock representing secure checkout, photorealistic style"</div></div>
+<div class="badge-text">Secure SSL Encrypted Checkout</div>
+</div>
+<div class="badge-item">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Clean icon of a delivery truck representing free shipping, photorealistic style", "Badge graphic with a package and arrow indicating fast shipping, photorealistic", "Trust badge showing satisfaction guarantee with delivery imagery, photorealistic"]' data-selected="0" data-slot-key="promo_callout.trust_badges[2].image" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — promo_callout.trust_badges[2].image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Clean icon of a delivery truck representing free shipping, photorealistic style"</div></div>
+<div class="badge-text">Free Fast Shipping Across U.S.</div>
+</div>
+</div>
+<div class="cta-wrapper">
+<a class="cta-button" href="https://terica-store.com/click">Ship My Clariva 12x42 Today</a>
+</div>
+</div>
+</section>
+<!-- ================= COMMENTS ================= -->
+<section class="comments">
+<h4 class="comments-title">Comments</h4>
+<div class="comment">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Avatar of a 60-something American man with a beard, casual smile, photorealistic", "Profile photo of an older male hiker outdoors, photorealistic", "Friendly portrait of a senior man in a baseball cap, photorealistic"]' data-selected="0" data-slot-key="comments_section.comments[0].avatar" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — comments_section.comments[0].avatar</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Avatar of a 60-something American man with a beard, casual smile, photorealistic"</div></div>
+<div class="comment-content">
+<div class="comment-author">Tom R.</div>
+<div class="comment-text"><p data-gjs-type="text">Spotted a barred owl at about two hundred yards last Tuesday morning. With my old pair I would have called it a dark blob in a tree.</p><p data-gjs-type="text"><br/></p><p data-gjs-type="text">With these I could count the bars on the chest. Twelve years of squinting just ended.</p></div>
+<div class="comment-actions">
+<span><a data-cta-neutralized="1" href="#">like</a></span>·<span><a data-cta-neutralized="1" href="#">reply</a></span>·
+                <span class="comment-time">2 days ago</span>
+</div>
+</div>
+</div>
+<div class="comment">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Avatar of a woman in her late 50s with shoulder-length blonde hair, photorealistic", "Profile photo of a mature woman in a garden, photorealistic", "Friendly portrait of a senior woman in a knit sweater, photorealistic"]' data-selected="0" data-slot-key="comments_section.comments[1].avatar" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — comments_section.comments[1].avatar</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Avatar of a woman in her late 50s with shoulder-length blonde hair, photorealist"</div></div>
+<div class="comment-content">
+<div class="comment-author">Margaret S.</div>
+<div class="comment-text">Best money I've spent on a hobby in a decade. Period.</div>
+<div class="comment-actions">
+<span><a data-cta-neutralized="1" href="#">like</a></span>·<span><a data-cta-neutralized="1" href="#">reply</a></span>·
+                <span class="comment-time">3 days ago</span>
+</div>
+</div>
+</div>
+<div class="comment">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Avatar of a 70-something American man with white hair and reading glasses, photorealistic", "Profile photo of a gentle older man on a back porch, photorealistic", "Warm portrait of a senior man holding a coffee mug, photorealistic"]' data-selected="0" data-slot-key="comments_section.comments[2].avatar" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — comments_section.comments[2].avatar</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Avatar of a 70-something American man with white hair and reading glasses, photo"</div></div>
+<div class="comment-content">
+<div class="comment-author">Harold W.</div>
+<div class="comment-text"><p data-gjs-type="text">Bought a pair for my son-in-law last fall and one for myself. He uses them every single weekend scouting the property line for deer sign.</p><p data-gjs-type="text"><br/></p><p data-gjs-type="text">I use mine on the porch every morning. Two of the most-used gifts I've ever given.</p></div>
+<div class="comment-actions">
+<span><a data-cta-neutralized="1" href="#">like</a></span>·<span><a data-cta-neutralized="1" href="#">reply</a></span>·
+                <span class="comment-time">5 days ago</span>
+</div>
+</div>
+</div>
+<div class="comment">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Avatar of a 60-something man with short gray hair and skeptical expression, photorealistic", "Profile photo of an older retired engineer-type, photorealistic", "Portrait of a senior man with thoughtful expression, photorealistic"]' data-selected="0" data-slot-key="comments_section.comments[3].avatar" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — comments_section.comments[3].avatar</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Avatar of a 60-something man with short gray hair and skeptical expression, phot"</div></div>
+<div class="comment-content">
+<div class="comment-author">Dale F.</div>
+<div class="comment-text"><p data-gjs-type="text">Was sure these had to have a catch. Then I read up on multi-coated glass and BAK4 prisms — turns out the magic in expensive pairs really is just the coatings and prism material.</p><p data-gjs-type="text"><br/></p><p data-gjs-type="text">Same coatings, same prisms, no four-figure logo. Physics doesn't care what's printed on the side.</p></div>
+<div class="comment-actions">
+<span><a data-cta-neutralized="1" href="#">like</a></span>·<span><a data-cta-neutralized="1" href="#">reply</a></span>·
+                <span class="comment-time">1 week ago</span>
+</div>
+</div>
+</div>
+<div class="comment">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Avatar of a woman in her early 60s with curly silver hair, photorealistic", "Profile photo of a mature outdoor enthusiast woman, photorealistic", "Portrait of a senior woman wearing a fleece vest, photorealistic"]' data-selected="0" data-slot-key="comments_section.comments[4].avatar" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — comments_section.comments[4].avatar</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Avatar of a woman in her early 60s with curly silver hair, photorealistic"</div></div>
+<div class="comment-content">
+<div class="comment-author">Patricia K.</div>
+<div class="comment-text"><p data-gjs-type="text">Had mine for about fourteen weeks now. They've been in the rain twice, dropped on a rock once, packed in a saddle bag for a week of riding in Wyoming.</p><p data-gjs-type="text"><br/></p><p data-gjs-type="text">Image is exactly as sharp as the day they arrived. Nitrogen sealing is the real deal.</p></div>
+<div class="comment-actions">
+<span><a data-cta-neutralized="1" href="#">like</a></span>·<span><a data-cta-neutralized="1" href="#">reply</a></span>·
+                <span class="comment-time">1 week ago</span>
+</div>
+</div>
+</div>
+<div class="comment">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Avatar of a 60-something American man with weathered skin and a kind smile, photorealistic", "Profile photo of an older suburban homeowner, photorealistic", "Portrait of a senior man in a denim shirt, photorealistic"]' data-selected="0" data-slot-key="comments_section.comments[5].avatar" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — comments_section.comments[5].avatar</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Avatar of a 60-something American man with weathered skin and a kind smile, phot"</div></div>
+<div class="comment-content">
+<div class="comment-author">Greg P.</div>
+<div class="comment-text">Looked through my brother's pair at Thanksgiving. Drove home Sunday and ordered mine Monday morning. That's all the review I have.</div>
+<div class="comment-actions">
+<span><a data-cta-neutralized="1" href="#">like</a></span>·<span><a data-cta-neutralized="1" href="#">reply</a></span>·
+                <span class="comment-time">2 weeks ago</span>
+</div>
+</div>
+</div>
+<div class="comment">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Avatar of a woman in her late 60s with short gray hair and warm expression, photorealistic", "Profile photo of a grandmother on a back deck, photorealistic", "Portrait of a senior woman holding gardening gloves, photorealistic"]' data-selected="0" data-slot-key="comments_section.comments[6].avatar" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — comments_section.comments[6].avatar</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Avatar of a woman in her late 60s with short gray hair and warm expression, phot"</div></div>
+<div class="comment-content">
+<div class="comment-author">Eleanor B.</div>
+<div class="comment-text"><p data-gjs-type="text">Got them as a Father's Day gift for my husband. He has not put them down since June.</p><p data-gjs-type="text"><br/></p><p data-gjs-type="text">They live on the kitchen counter next to the bird feeder window and they go in the truck for every drive into the mountains. Best gift I've ever picked.</p></div>
+<div class="comment-actions">
+<span><a data-cta-neutralized="1" href="#">like</a></span>·<span><a data-cta-neutralized="1" href="#">reply</a></span>·
+                <span class="comment-time">2 weeks ago</span>
+</div>
+</div>
+</div>
+<div class="comment">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Avatar of a 50-something man in a hunting cap, photorealistic", "Profile photo of a hunting guide outdoors, photorealistic", "Portrait of a middle-aged outdoorsman with a calm expression, photorealistic"]' data-selected="0" data-slot-key="comments_section.comments[7].avatar" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — comments_section.comments[7].avatar</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Avatar of a 50-something man in a hunting cap, photorealistic"</div></div>
+<div class="comment-content">
+<div class="comment-author">Bill C.</div>
+<div class="comment-text"><p data-gjs-type="text">I guide elk hunts in southwest Colorado every fall. I've used every premium pair on the market on a client's neck.</p><p data-gjs-type="text"><br/></p><p data-gjs-type="text">The Clariva is what I now recommend to first-time clients who don't want to drop a thousand dollars before they know they like the sport. They hold up.</p></div>
+<div class="comment-actions">
+<span><a data-cta-neutralized="1" href="#">like</a></span>·<span><a data-cta-neutralized="1" href="#">reply</a></span>·
+                <span class="comment-time">3 weeks ago</span>
+</div>
+</div>
+</div>
+<div class="comment">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Avatar of a 60-something American woman with reading glasses and a soft smile, photorealistic", "Profile photo of a retiree in a sun hat, photorealistic", "Portrait of a senior woman in a knitted cardigan, photorealistic"]' data-selected="0" data-slot-key="comments_section.comments[8].avatar" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — comments_section.comments[8].avatar</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Avatar of a 60-something American woman with reading glasses and a soft smile, p"</div></div>
+<div class="comment-content">
+<div class="comment-author">Carol J.</div>
+<div class="comment-text">Honestly expected a letdown at this price. Got the opposite. Sharp, bright, comfortable on the eyes for a long sit.</div>
+<div class="comment-actions">
+<span><a data-cta-neutralized="1" href="#">like</a></span>·<span><a data-cta-neutralized="1" href="#">reply</a></span>·
+                <span class="comment-time">3 weeks ago</span>
+</div>
+</div>
+</div>
+<div class="comment">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Avatar of a 60-something American man in a baseball cap, photorealistic", "Profile photo of an older sailor or boater, photorealistic", "Portrait of a senior man on a dock with binoculars, photorealistic"]' data-selected="0" data-slot-key="comments_section.comments[9].avatar" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — comments_section.comments[9].avatar</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Avatar of a 60-something American man in a baseball cap, photorealistic"</div></div>
+<div class="comment-content">
+<div class="comment-author">Stan M.</div>
+<div class="comment-text"><p data-gjs-type="text">Bought them for spring birding. Now they go on the boat for spotting markers, in the truck for scouting, and in the stand for deer season.</p><p data-gjs-type="text"><br/></p><p data-gjs-type="text">I keep finding new reasons to grab them. One pair has replaced about three things in the gear closet.</p></div>
+<div class="comment-actions">
+<span><a data-cta-neutralized="1" href="#">like</a></span>·<span><a data-cta-neutralized="1" href="#">reply</a></span>·
+                <span class="comment-time">1 month ago</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- ================= SIDEBAR ================= -->
+<div class="container-right">
+<div class="sidebar-card">
+<h2 class="sidebar-title">Clariva 12x42</h2>
+<div class="product-image-container">
+<div class="v2-media-slot" data-job-id="5fce52f3-3772-4c09-93b2-b91e5031c91d" data-prompts='["Silhouetted product shot of black 12x42 Clariva binoculars on a clean white background, photorealistic", "Three-quarter angle product photo of premium black binoculars isolated on white, photorealistic", "Front-facing product render of Clariva binoculars with subtle shadow, photorealistic"]' data-selected="0" data-slot-key="sidebar.product_image" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — sidebar.product_image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Silhouetted product shot of black 12x42 Clariva binoculars on a clean white back"</div></div>
+</div>
+<div class="cta-wrapper">
+<a class="cta-button" href="https://terica-store.com/click">Get Mine Now</a>
+</div>
+<div class="reviews-section">
+<h3 class="reviews-title">Customer Reviews</h3>
+<div class="rating-summary">
+<span class="stars">★★★★★</span>
+<span class="rating-text">4.8 out of 5</span>
+</div>
+<p class="rating-count">Over 18,400 ratings</p>
+<div class="rating-breakdown">
+<div class="rating-row"><span class="star-label">5 Star</span><div class="progress-bar"><div class="progress-fill" style="width:90%"></div></div><span class="percentage">84%</span></div>
+<div class="rating-row"><span class="star-label">4 Star</span><div class="progress-bar"><div class="progress-fill" style="width:7%"></div></div><span class="percentage">11%</span></div>
+<div class="rating-row"><span class="star-label">3 Star</span><div class="progress-bar"><div class="progress-fill" style="width:2%"></div></div><span class="percentage">3%</span></div>
+<div class="rating-row"><span class="star-label">2 Star</span><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div><span class="percentage">1%</span></div>
+<div class="rating-row"><span class="star-label">1 Star</span><div class="progress-bar"><div class="progress-fill" style="width:1%"></div></div><span class="percentage">1%</span></div>
+</div>
+</div>
+<div class="features-section">
+<h3 class="features-title">By Feature</h3>
+<div class="feature-ratings">
+<div class="feature-row"><span class="feature-name">Optical Clarity</span><span class="stars">★★★★★</span><span class="feature-rating">4.9</span></div>
+<div class="feature-row"><span class="feature-name">Build Quality</span><span class="stars">★★★★★</span><span class="feature-rating">4.8</span></div>
+<div class="feature-row"><span class="feature-name">Low-Light Performance</span><span class="stars">★★★★★</span><span class="feature-rating">4.7</span></div>
+<div class="feature-row"><span class="feature-name">Value</span><span class="stars">★★★★★</span><span class="feature-rating">5.0</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= STICKY BAR ================= -->
+<div id="stickyBarCustom">
+<div class="cta-wrapper">
+<a class="cta-button" href="https://terica-store.com/click">Claim My Clariva 12x42 Now</a>
+</div>
+</div>
+<!-- Pipeline injects footer here -->
+<div id="adv-footer"></div>
+<footer id="adv-footer" style="background:#f5f5f5; border-top:1px solid #e5e5e5; padding:30px 20px; text-align:center; margin-top:40px">
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0600/8527/2619/files/Design_sans_titre_15.png?v=1774625309" style="display:block; height:36px; max-width:180px; object-fit:contain; margin:0 auto 12px"/>
+<div style="font-size:11px; color:#999; margin:0 auto 10px; font-family:system-ui,-apple-system,sans-serif">
+<a href="/pages/terms" style="color:#999; text-decoration:none" target="_blank">Terms of Use</a>
+<span style="margin:0 6px; color:#ccc">·</span>
+<a href="/pages/privacy" style="color:#999; text-decoration:none" target="_blank">Privacy Policy</a>
+<span style="margin:0 6px; color:#ccc">·</span>
+<a href="/pages/privacy" style="color:#999; text-decoration:none" target="_blank">Return Policy</a>
+</div>
+<p style="font-size:10px; color:#bbb; line-height:1.4; margin:0 auto; font-family:system-ui,-apple-system,sans-serif">© 2026 Daily Blog Info. All rights reserved.</p>
+</footer>
+</body>
+</html>
