@@ -34,10 +34,10 @@ img{max-width:100%;height:auto}
 a{color:var(--ll-color-primary);text-decoration:none}
 a:hover{text-decoration:underline}
 
-.article-wrap{max-width:960px;margin:0 auto;padding:26px 22px 60px}
+.article-wrap{max-width:980px;margin:0 auto;padding:26px 22px 60px}
 
 /* Headline */
-h1.article-headline{font-family:var(--ll-font-heading);font-weight:900;font-size:46px;line-height:1.1;margin:6px 0 4px;letter-spacing:-0.8px;color:var(--ll-color-text-primary)}
+h1.article-headline{font-family:var(--ll-font-heading);font-weight:900;font-size:38px;line-height:1.1;margin:0 0 4px;letter-spacing:-0.8px;color:var(--ll-color-text-primary)}
 h1.article-headline-sub{font-family:var(--ll-font-heading);font-weight:900;font-size:38px;line-height:1.15;margin:0 0 14px;letter-spacing:-0.6px;color:var(--ll-color-primary)}
 @media (max-width:640px){h1.article-headline{font-size:30px;margin:4px 0 2px}h1.article-headline-sub{font-size:24px;margin:0 0 10px}}
 .article-dek{font-family:var(--ll-font-heading);font-weight:700;font-size:20px;line-height:1.4;color:var(--ll-color-text-secondary);margin:10px 0 18px;font-style:italic}
@@ -49,17 +49,17 @@ h1.article-headline-sub{font-family:var(--ll-font-heading);font-weight:900;font-
 .article-byline .byline-role{font-style:italic}
 
 /* Hero + article media */
-.hero-media,.article-media{margin:10px 0 14px;border-radius:8px;overflow:hidden;background:var(--ll-color-background-alt)}
+.hero-media,.article-media{margin:0 0 14px;border-radius:8px;overflow:hidden;background:var(--ll-color-background-alt)}
 .hero-media img,.article-media img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
 
 .article-media.narrow{max-width:560px;margin-left:auto;margin-right:auto}
 
 
 /* Body prose */
-.article-body p{margin:0 0 18px;font-size:17px;line-height:1.78;color:var(--ll-color-text-primary)}
+.article-body p{margin:0 0 18px;font-size:18px;line-height:23px;color:var(--ll-color-text-primary)}
 .article-body p strong{font-weight:800}
 .article-body p em{font-style:italic}
-.article-body h2{font-family:var(--ll-font-heading);font-weight:900;font-size:30px;line-height:1.22;margin:46px 0 16px;color:var(--ll-color-text-primary);letter-spacing:-0.4px}
+.article-body h2{font-family:var(--ll-font-heading);font-weight:900;font-size:33px;line-height:43px;margin:15px 0;color:var(--ll-color-text-primary);letter-spacing:-0.4px}
 .article-body h2 em{font-style:normal;color:var(--ll-color-primary)}
 @media (max-width:640px){.article-body h2{font-size:24px;margin:24px 0 12px}}
 
@@ -96,8 +96,6 @@ h1.article-headline-sub{font-family:var(--ll-font-heading);font-weight:900;font-
 /* ── Inline text link ──────────────────────────────────────────── */
 .article-body a:not(.cta-btn):not(.inline-cta){color:var(--ll-color-primary);font-weight:700;text-decoration:underline;text-decoration-color:rgba(var(--ll-color-primary-rgb),0.5);text-decoration-thickness:2px;text-underline-offset:3px}
 .article-body a:not(.cta-btn):not(.inline-cta):hover{text-decoration-color:var(--ll-color-primary)}
-.inline-link-row{margin:16px 0;padding:14px 18px;background:var(--ll-color-background-alt);border-left:3px solid var(--ll-color-primary);border-radius:0 6px 6px 0;font-size:15px}
-.inline-link-row a{font-weight:800}
 
 /* ── Stat card row (3 big numbers) ─────────────────────────────── */
 .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
@@ -218,7 +216,26 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
-/* studio-bigquote-mobile v2 */@media (max-width:600px){.big-quote{margin-left:10px !important;margin-right:10px !important;padding:18px 8px !important;font-size:18px !important;}.big-quote::before{display:none !important;}}/* studio-bigquote-glyph v1 */.big-quote::before{position:static !important;left:auto !important;top:auto !important;font-size:1.4em !important;font-weight:700 !important;margin-right:6px !important;line-height:1 !important;vertical-align:baseline !important;}.big-quote{padding-left:24px !important;}</style>
+/* studio-bigquote-mobile v2 */@media (max-width:600px){.big-quote{margin-left:10px !important;margin-right:10px !important;padding:18px 8px !important;font-size:18px !important;}.big-quote::before{display:none !important;}}/* studio-bigquote-glyph v1 */.big-quote::before{position:static !important;left:auto !important;top:auto !important;font-size:1.4em !important;font-weight:700 !important;margin-right:6px !important;line-height:1 !important;vertical-align:baseline !important;}.big-quote{padding-left:24px !important;}
+/* Roman polish — guarantee-block flex + sticky bar (added 2026-04-29) */
+.guarantee-block{background:var(--ll-color-background-alt);border:none;border-radius:14px;padding:28px;margin:36px 0;display:flex;gap:28px;align-items:flex-start;text-align:left}
+.guarantee-badge{flex-shrink:0;width:88px;height:88px;border:3px solid var(--ll-color-primary);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ll-color-primary);background:transparent}
+.guarantee-badge-num{font-family:var(--ll-font-heading);font-size:28px;font-weight:900;line-height:1}
+.guarantee-badge-label{font-family:var(--ll-font-heading);font-size:11px;font-weight:700;letter-spacing:0.1em;margin-top:2px}
+.guarantee-content{flex:1;min-width:0}
+.guarantee-content h2{font-family:var(--ll-font-heading);font-size:24px;font-weight:800;color:var(--ll-color-text-primary);margin:0 0 12px;line-height:1.3;text-align:left}
+.guarantee-content p{font-size:16px;color:var(--ll-color-text-secondary);line-height:1.65;margin:0 0 12px;text-align:left}
+.guarantee-content p:last-child{margin-bottom:0}
+@media (max-width:600px){.guarantee-block{flex-direction:column;gap:20px;padding:24px}.guarantee-badge{align-self:center}}
+
+/* Bottom sticky CTA */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;border-top:1px solid #e5e5e5}
+.sticky-cta-btn{background:var(--ll-color-primary);color:#fff;padding:10px 22px;border-radius:6px;font-family:var(--ll-font-heading);font-weight:800;font-size:16px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
+.sticky-cta-btn:hover{filter:brightness(0.88);color:#fff;text-decoration:none}
+@media (max-width:640px){.sticky-cta-btn{width:90%;text-align:center}}
+
+body{padding-bottom:80px}
+</style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -237,7 +254,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <div class="article-wrap">
 <!-- HEADLINE -->
-<h1 class="article-headline" style="position: relative">More Than 14,000 Retirees Traded Their Gas Blowers Last Month Alone, Orthopedic Surgeons in Florida Say They Are Not Surprised</h1>
+<h1 class="article-headline" style="position: relative">More Than 14,000 Retirees Traded Their Gas Blowers Last Month Alone, Orthopedic Surgeons In Florida Say They Are Not Surprised</h1>
 <p class="article-dek" style="position: relative">From Del Webb to The Villages, retirees are swapping heavy gas blowers for something their shoulders can actually handle.</p>
 <!-- BYLINE -->
 <div class="article-byline">
@@ -293,7 +310,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">Her practice is not the only one doing this. Colleagues in Sarasota, Naples, and Jacksonville have quietly adopted similar language. An orthopedic group in Mesa, Arizona, added a version last October.</p>
 <figure class="article-media"><img alt="" data-copy="media.s2:attr:src" data-prompts='["Female orthopedic physician in white coat reviewing a discharge paper with a senior male patient in a Tampa clinic office, professional medical setting, photorealistic", "Close-up of a clinical discharge instruction sheet on a desk with a pen and stethoscope beside it, Florida medical office, photorealistic", "Senior patient shaking hands with an orthopedic surgeon after a post-op consultation, bright clinic hallway, photorealistic"]' data-slot-key="media.s2" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-d327e284.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio:16/9; border-radius: 8px; object-fit: cover; margin: 8px 0px"/></figure>
 <!-- SECTION 3 -->
-<h2 style="position: relative">What 14,000 Switches Look Like on the Ground</h2>
+<h2 style="position: relative">What 14,000 Switches Look Like On The Ground</h2>
 <p style="position: relative">The landscaping industry has noticed. In Scottsdale, one mid-sized crew that handles weekly maintenance for roughly two hundred homes reported canceling forty-one seasonal cleanup contracts between January and March of this year.</p>
 <p style="position: relative">That figure is not a company-wide decline. The firm's total client base actually grew over the same period. What shrank was the specific subset of contracts where the blower was the main line item.</p>
 <p style="position: relative">Homeowners were calling to say they wanted to keep paying for mowing, edging, and seasonal pruning, but the leaf and debris work they were now handling themselves. The crew was, in every case, polite about it.</p>
@@ -302,7 +319,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">The 14,000-switch figure comes from aggregated retailer data across roughly a dozen regional chains and direct-to-consumer brands. It counts only the previous thirty days. Earlier months showed lower but steadily rising numbers dating back to last autumn.</p>
 <figure class="article-media"><img alt="" data-copy="media.s3:attr:src" data-prompts='["Landscaping crew loading equipment into a pickup truck in a Scottsdale residential neighborhood at dawn, uniformed workers, photorealistic", "Aerial view of a planned suburban neighborhood in Florida with manicured lawns and palm trees, morning light, photorealistic", "Retired homeowner waving goodbye to a landscaping crew from his driveway, Arizona suburban setting, photorealistic"]' data-slot-key="media.s3" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-cce01e46.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio:16/9; border-radius: 8px; object-fit: cover; margin: 8px 0px"/></figure>
 <!-- SECTION 4 -->
-<h2 style="position: relative">The Widow in Venice, Florida</h2>
+<h2 style="position: relative">The Widow In Venice, Florida</h2>
 <p style="position: relative">Eleanor Prescott is seventy-one years old and lives alone in a two-bedroom ranch house in Venice, Florida, not far from the Gulf. She moved to the neighborhood with her husband, Martin, in the spring of 2009.</p>
 <p style="position: relative">Martin passed away in 2023 after a long decline. In the two years since, Eleanor has learned to do a great many things she had never done before, from changing the furnace filter to calling the county about a drainage easement.</p>
 <p style="position: relative">The yard, though, had remained mostly his territory. Martin had owned the same gas blower for close to twenty years. After he died, it sat in the garage where he had left it, untouched through one autumn and then a second.</p>
@@ -312,7 +329,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">It is the first yard tool she has ever owned by herself. She described the feeling, when pressed, as <strong>a small restoration of capability</strong> she had not expected to feel again in her lifetime.</p>
 <figure class="article-media"><img alt="" data-copy="media.s4:attr:src" data-prompts='["Seventy-one year old woman in casual clothing standing in the backyard of a Florida ranch house holding a lightweight cordless blower, warm afternoon light, photorealistic", "Senior widow in her Venice Florida driveway examining a compact cordless outdoor tool, peaceful coastal suburban setting, photorealistic", "Contemplative portrait of an older woman with gray hair looking out over her tidy backyard, quiet dignity, natural window light, photorealistic"]' data-slot-key="media.s4" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-6e2b4e4b.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio:16/9; border-radius: 8px; object-fit: cover; margin: 8px 0px"/></figure>
 <!-- SECTION 5 -->
-<h2 style="position: relative">What the Tool Actually Does, According to Those Using It</h2>
+<h2 style="position: relative">What The Tool Actually Does, According To Those Using It</h2>
 <p style="position: relative">The Seese Pro weighs 2.1 pounds. For context, that is lighter than a hardcover copy of most novels and substantially lighter than a full gallon of milk. It is also lighter than every gas-powered blower on the current market.</p>
 <p style="position: relative">Its weight is the feature most owners mention first. The second is noise. The third, almost universally, is the absence of fuel, oil, pull-cords, spark plugs, fumes, and the small rituals of maintenance that come with them.</p>
 <div class="callout callout-warning">
@@ -355,11 +372,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">In that sense, the story is less about the tool itself than about the network of people who have, without coordination, decided that this particular one is <strong>worth mentioning to the neighbors</strong>.</p>
 <figure class="article-media"><img alt="" data-copy="media.s6:attr:src" data-prompts='["Suburban Nextdoor style group of neighbors chatting over a fence in a planned community, relaxed conversation, photorealistic", "Three older neighbors walking together along a quiet Arizona retirement community street, morning light, photorealistic", "Senior woman handing a cordless blower across a low garden fence to a curious neighbor, warm friendly exchange, photorealistic"]' data-slot-key="media.s6" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-77ba7281.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio:16/9; border-radius: 8px; object-fit: cover; margin: 8px 0px"/></figure>
 <!-- CTA #1 -->
-<div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click" style="position: relative">See The Details</a>
-</div>
 <!-- SECTION 7 - CLINICAL RESULTS (4 studies) -->
-<h2 style="position: relative">Four Findings From the Field</h2>
+<h2 style="position: relative">Four Findings From The Field</h2>
 <p style="position: relative">Over the past three months, we spoke with community managers, orthopedic clinicians, landscape-maintenance crews, and owners in four different regions. A handful of patterns emerged consistently enough to be worth reporting.</p>
 <p style="position: relative">None of these are clinical studies. They are observational findings, drawn from roughly sixty conversations across Florida, Arizona, Maryland, and the upper Midwest. The sample is skewed toward active-adult communities for obvious reasons.</p>
 <p style="position: relative">What they suggest, taken together, is that the trend is neither a marketing phenomenon nor a passing fashion. It appears to be a durable shift in how a particular demographic handles a particular chore.</p>
@@ -419,7 +433,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">In the communities where this tool has taken hold, owners describe it less as a purchase and more as something they wish they had known about years earlier. The word most commonly used, across every conversation, is <strong>relief</strong>.</p>
 </div>
 <!-- SECTION 8 - PRODUCT INTRO -->
-<h2 style="position: relative">The Seese Pro in Daily Use</h2>
+<h2 style="position: relative">The Seese Pro In Daily Use</h2>
 <p style="position: relative">What follows is drawn from two weeks of observation across three communities, conversations with roughly forty owners, and our own time handling the tool in both suburban and active-adult contexts.</p>
 <p style="position: relative">The first impression, for nearly everyone, is the weight. Picking it up for the first time generates the same small, involuntary reaction. People often look at it, then look up, and ask a variation of the same question.</p>
 <figure class="article-media"><img alt="" data-copy="media.s8a:attr:src" data-prompts='["Senior woman using a lightweight cordless blower to clear leaves from a suburban driveway, autumn afternoon, photorealistic", "Older man in a polo shirt operating a compact cordless blower one-handed in his back patio, photorealistic", "Retired couple working together in their front yard, one using the cordless blower with ease, warm natural light, photorealistic"]' data-slot-key="media.s8a" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-a5f26caf.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio:16/9; border-radius: 8px; object-fit: cover; margin: 8px 0px"/></figure>
@@ -434,7 +448,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">None of this is revolutionary on its own. What makes the experience remarkable, owners say, is how many small inconveniences quietly disappear at once. The absence of so many small frictions adds up to something larger.</p>
 <figure class="article-media"><img alt="" data-copy="media.s8c:attr:src" data-prompts='["Cordless blower battery charging on a kitchen counter next to a wall outlet, clean domestic setting, photorealistic", "Lightweight cordless blower hanging on a single wall hook in an organized garage, photorealistic", "Older homeowner placing the battery pack into the charger on a utility room shelf, warm light, photorealistic"]' data-slot-key="media.s8c" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-b6f6aee1.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio:16/9; border-radius: 8px; object-fit: cover; margin: 8px 0px"/></figure>
 <!-- SECTION 9 - TIMELINE -->
-<h2 style="position: relative">How Owners Describe the First Few Weeks</h2>
+<h2 style="position: relative">How Owners Describe The First Few Weeks</h2>
 <p style="position: relative">The adjustment from a gas-powered tool to a cordless one tends to unfold in phases. The owners we spoke with described a surprisingly consistent arc across the first month of use.</p>
 <p style="position: relative">The phases below are drawn from conversations with roughly thirty owners across four states. The language varies, but the shape of the experience is remarkably similar from household to household.</p>
 <div class="phase">
@@ -503,7 +517,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 </div>
 <!-- SECTION 11 - COMPARISON TABLE -->
-<h2 style="position: relative">Side by Side, Plainly Laid Out</h2>
+<h2 style="position: relative">Side By Side, Plainly Laid Out</h2>
 <p style="position: relative">For readers trying to understand what the tool offers in practical terms, the most useful comparison is against the gas-powered blower most retirees have owned for years.</p>
 <p style="position: relative">The table below summarizes the differences most often cited by owners in our interviews. None of the points is marketing language. Each one appeared in at least a dozen separate conversations without prompting.</p>
 <div class="comparison">
@@ -526,18 +540,15 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">It also does not capture the secondary effects. The quieter Saturday morning. The cleaner garage. The spouse who stops asking when the fuel cans will finally leave the shelf. These things matter more than the data sheet suggests.</p>
 <p style="position: relative">What the table does capture is that on nearly every axis a retired homeowner actually cares about, the comparison tilts in one direction. That, more than anything, is what the owners we spoke with kept returning to.</p>
 <!-- CTA #2 -->
-<div class="cta-block">
-Learn More Here
-</div>
 <!-- SECTION 14 - GUARANTEE -->
 <div class="guarantee-block">
-<figure class="guarantee-img">
-<img alt="" data-copy="media.guarantee:attr:src" data-prompts='["Clean product shot of the cordless blower beside a simple domestic warehouse shipping box, photorealistic", "Close-up of a hand signing for a package delivery at a suburban front door, photorealistic", "Retired homeowner opening a shipping box on their kitchen counter with relaxed expectation, photorealistic"]' data-slot-key="media.guarantee" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-d17ecdf2.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio:16/9; border-radius: 8px; object-fit: cover; margin: 8px 0px"/>
-</figure>
-<h2 style="position: relative">The Company's Standing Offer to New Owners</h2>
-<p style="position: relative">The Seese Pro ships with a standard thirty-day trial window. Owners who decide the tool is not for them can return it within that period.</p>
-<p style="position: relative">If the unit does not meet the owner's expectations within the first month, the company accepts returns and issues a full refund without requiring justification.</p>
-<p style="position: relative">The offer is meant to remove hesitation from a category most retirees do not relish thinking about.</p>
+<div class="guarantee-badge"><div class="guarantee-badge-num">30</div><div class="guarantee-badge-label">DAYS</div></div>
+<div class="guarantee-content">
+<h2>The Company's Standing Offer To New Owners</h2>
+<p>The Seese Pro ships with a standard thirty-day trial window. Owners who decide the tool is not for them can return it within that period.</p>
+<p>If the unit does not meet the owner's expectations within the first month, the company accepts returns and issues a full refund without requiring justification.</p>
+<p>The offer is meant to remove hesitation from a category most retirees do not relish thinking about.</p>
+</div>
 </div>
 <!-- SECTION 15 - HOW TO GET STARTED -->
 <h2 style="position: relative">What Owners Said Mattered Most</h2>
@@ -553,16 +564,9 @@ Learn More Here
 <p style="position: relative">Several owners added a final point that did not fit neatly on a list. It was the feeling of handling their own yard again after years of having it handled for them.</p>
 <p style="position: relative">That point came up repeatedly. It came up in active-adult communities and in long-established suburbs. It came up from men and women, from recent widows and from couples who had shared the work for decades.</p>
 <p style="position: relative">Whether or not a prospective owner finds the tool right for their yard, the thing to know is that it has become, for many in this demographic, the first step back toward handling the routine themselves.</p>
-<div class="inline-link-row">
-<span>Read more about it directly</span>
-at the company's site
-</div>
 <!-- CTA #3 -->
-<div class="cta-block">
-See It Now
-</div>
 <!-- SECTION 16 - URGENCY -->
-<h2 style="position: relative">A Note on the Research Methodology</h2>
+<h2 style="position: relative">A Note On The Research Methodology</h2>
 <p style="position: relative">This article draws on roughly sixty conversations with owners, clinicians, community managers, landscaping crews, and retailers across four states, conducted between January and April of this year.</p>
 <p style="position: relative">No compensation was offered for any interview. Names used are real, with the exception of two community managers who requested anonymity because their HOAs discourage media commentary without board approval.</p>
 <p style="position: relative">The figures cited for monthly switches come from aggregated retailer data across a dozen regional chains and direct-to-consumer brands. That aggregation is maintained by an industry association and updated each quarter.</p>
@@ -589,9 +593,6 @@ See It Now
 <p style="position: relative">For most owners in this demographic, that one thing is precisely what they were looking for. The tools that tried to do more had often been the reason the yard work had become burdensome in the first place.</p>
 <p style="position: relative">Whether it is right for any particular household is a question only the household can answer. What the reporting suggests is that, for a very particular kind of yard and a very particular kind of owner, it is worth considering.</p>
 <!-- CTA #4 -->
-<div class="cta-block">
-Check Availability Here
-</div>
 <!-- SECTION 18 - FAQ -->
 <h2 style="position: relative">Questions Readers Have Been Asking</h2>
 <div class="faq-item">
@@ -619,13 +620,9 @@ Check Availability Here
 <p class="faq-a" style="position: relative">Owners coming from heavier cordless brands most often cite weight, startup reliability in cold weather, and the shorter learning curve. The tool is not the only cordless blower on the market. It is simply the one owners in this demographic keep naming without being asked.</p>
 </div>
 <!-- CTA #5 (final) -->
-<div class="cta-block">
-Visit The Site
-<span class="cta-sub">Ships from a domestic warehouse with a thirty-day trial window</span>
-</div>
 <!-- REFERENCES -->
 <div class="references">
-<h2 style="position: relative">Sources, Interviews, and Further Reading</h2>
+<h2 style="position: relative">Sources, Interviews, And Further Reading</h2>
 <div class="ref-item"><span class="ref-num">1.</span><span class="ref-text">Field interviews, Del Webb community, Phoenix, Arizona, February 2026</span></div>
 <div class="ref-item"><span class="ref-num">2.</span><span class="ref-text">Orthopedic practice interviews, Tampa Bay region, January through March 2026</span></div>
 <div class="ref-item"><span class="ref-num">3.</span><span class="ref-text">Landscape maintenance company interviews, Scottsdale and Sarasota, February 2026</span></div>
@@ -689,4 +686,5 @@ Visit The Site
   });
 })();
 </script>
+<div class="sticky-cta"><a class="sticky-cta-btn" href="https://terica-store.com/click"><span>Check availability</span></a></div>
 </body><div></div></html>

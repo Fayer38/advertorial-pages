@@ -37,10 +37,10 @@ img{max-width:100%;height:auto}
 a{color:var(--ll-color-primary);text-decoration:none}
 a:hover{text-decoration:underline}
 
-.article-wrap{max-width:960px;margin:0 auto;padding:26px 22px 60px}
+.article-wrap{max-width:980px;margin:0 auto;padding:26px 22px 60px}
 
 /* Headline */
-h1.article-headline{font-family:var(--ll-font-heading);font-weight:900;font-size:46px;line-height:1.1;margin:6px 0 4px;letter-spacing:-0.8px;color:var(--ll-color-text-primary)}
+h1.article-headline{font-family:var(--ll-font-heading);font-weight:900;font-size:38px;line-height:1.1;margin:0 0 4px;letter-spacing:-0.8px;color:var(--ll-color-text-primary)}
 h1.article-headline-sub{font-family:var(--ll-font-heading);font-weight:900;font-size:38px;line-height:1.15;margin:0 0 14px;letter-spacing:-0.6px;color:var(--ll-color-primary)}
 @media (max-width:640px){h1.article-headline{font-size:30px;margin:4px 0 2px}h1.article-headline-sub{font-size:24px;margin:0 0 10px}}
 .article-dek{font-family:var(--ll-font-heading);font-weight:700;font-size:20px;line-height:1.4;color:var(--ll-color-text-secondary);margin:10px 0 18px;font-style:italic}
@@ -52,17 +52,17 @@ h1.article-headline-sub{font-family:var(--ll-font-heading);font-weight:900;font-
 .article-byline .byline-role{font-style:italic}
 
 /* Hero + article media */
-.hero-media,.article-media{margin:10px 0 14px;border-radius:8px;overflow:hidden;background:var(--ll-color-background-alt)}
+.hero-media,.article-media{margin:0 0 14px;border-radius:8px;overflow:hidden;background:var(--ll-color-background-alt)}
 .hero-media img,.article-media img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
 
 .article-media.narrow{max-width:560px;margin-left:auto;margin-right:auto}
 
 
 /* Body prose */
-.article-body p{margin:0 0 18px;font-size:17px;line-height:1.78;color:var(--ll-color-text-primary)}
+.article-body p{margin:0 0 18px;font-size:18px;line-height:23px;color:var(--ll-color-text-primary)}
 .article-body p strong{font-weight:800}
 .article-body p em{font-style:italic}
-.article-body h2{font-family:var(--ll-font-heading);font-weight:900;font-size:30px;line-height:1.22;margin:46px 0 16px;color:var(--ll-color-text-primary);letter-spacing:-0.4px}
+.article-body h2{font-family:var(--ll-font-heading);font-weight:900;font-size:33px;line-height:43px;margin:15px 0;color:var(--ll-color-text-primary);letter-spacing:-0.4px}
 .article-body h2 em{font-style:normal;color:var(--ll-color-primary)}
 @media (max-width:640px){.article-body h2{font-size:24px;margin:24px 0 12px}}
 
@@ -99,8 +99,6 @@ h1.article-headline-sub{font-family:var(--ll-font-heading);font-weight:900;font-
 /* ── Inline text link ──────────────────────────────────────────── */
 .article-body a:not(.cta-btn):not(.inline-cta){color:var(--ll-color-primary);font-weight:700;text-decoration:underline;text-decoration-color:rgba(var(--ll-color-primary-rgb),0.5);text-decoration-thickness:2px;text-underline-offset:3px}
 .article-body a:not(.cta-btn):not(.inline-cta):hover{text-decoration-color:var(--ll-color-primary)}
-.inline-link-row{margin:16px 0;padding:14px 18px;background:var(--ll-color-background-alt);border-left:3px solid var(--ll-color-primary);border-radius:0 6px 6px 0;font-size:15px}
-.inline-link-row a{font-weight:800}
 
 /* ── Stat card row (3 big numbers) ─────────────────────────────── */
 .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
@@ -196,7 +194,26 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
-/* studio-bigquote-mobile v2 */@media (max-width:600px){.big-quote{margin-left:10px !important;margin-right:10px !important;padding:18px 8px !important;font-size:18px !important;}.big-quote::before{display:none !important;}}</style>
+/* studio-bigquote-mobile v2 */@media (max-width:600px){.big-quote{margin-left:10px !important;margin-right:10px !important;padding:18px 8px !important;font-size:18px !important;}.big-quote::before{display:none !important;}}
+/* Roman polish — guarantee-block flex + sticky bar (added 2026-04-29) */
+.guarantee-block{background:var(--ll-color-background-alt);border:none;border-radius:14px;padding:28px;margin:36px 0;display:flex;gap:28px;align-items:flex-start;text-align:left}
+.guarantee-badge{flex-shrink:0;width:88px;height:88px;border:3px solid var(--ll-color-primary);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ll-color-primary);background:transparent}
+.guarantee-badge-num{font-family:var(--ll-font-heading);font-size:28px;font-weight:900;line-height:1}
+.guarantee-badge-label{font-family:var(--ll-font-heading);font-size:11px;font-weight:700;letter-spacing:0.1em;margin-top:2px}
+.guarantee-content{flex:1;min-width:0}
+.guarantee-content h2{font-family:var(--ll-font-heading);font-size:24px;font-weight:800;color:var(--ll-color-text-primary);margin:0 0 12px;line-height:1.3;text-align:left}
+.guarantee-content p{font-size:16px;color:var(--ll-color-text-secondary);line-height:1.65;margin:0 0 12px;text-align:left}
+.guarantee-content p:last-child{margin-bottom:0}
+@media (max-width:600px){.guarantee-block{flex-direction:column;gap:20px;padding:24px}.guarantee-badge{align-self:center}}
+
+/* Bottom sticky CTA */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;border-top:1px solid #e5e5e5}
+.sticky-cta-btn{background:var(--ll-color-primary);color:#fff;padding:10px 22px;border-radius:6px;font-family:var(--ll-font-heading);font-weight:800;font-size:16px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
+.sticky-cta-btn:hover{filter:brightness(0.88);color:#fff;text-decoration:none}
+@media (max-width:640px){.sticky-cta-btn{width:90%;text-align:center}}
+
+body{padding-bottom:80px}
+</style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -269,7 +286,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>All of which raised the next obvious question for my reporting. If the science points this clearly, then which products on the market actually deliver these specific compounds in forms the body can absorb?</p>
 <figure class="article-media"><div class="v2-media-slot" data-job-id="60bd55ca-149d-4565-bfc9-916cfc256176" data-prompts='["Researcher in lab coat examining microscope slides showing nerve fibers, sterile laboratory environment, photorealistic", "Diagram-style overlay of healthy versus damaged peripheral nerves on a transparent background with hands holding the image, photorealistic", "Scientist reviewing nerve imaging on a computer screen, deep focus, university lab setting, photorealistic"]' data-selected="0" data-slot-key="media.s2" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media.s2</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Researcher in lab coat examining microscope slides showing nerve fibers, sterile"</div></div></figure>
 <!-- SECTION 3 -->
-<h2>Comparing the Contenders on the Shelf</h2>
+<h2>Comparing The Contenders On The Shelf</h2>
 <p>Walk into any pharmacy or scroll through any online retailer and you'll find dozens of supplements promising nerve support. Most of them are, frankly, lazy formulations. They contain the right names on the label but in forms or doses that the human body can barely use.</p>
 <p>To narrow the field, I set three criteria. First, the formula had to include the stabilized Alpha Lipoic Acid identified in the clinical trials. Second, it had to contain a fat-soluble B1 capable of crossing into nerve tissue. Third, it had to be made by a company willing to disclose sourcing.</p>
 <p>The first contender that met all three was a product called <strong>Nerve Renew</strong>, manufactured by the Neuropathy Treatment Group, a company that has been operating in this category for over a decade and publishes its formulation rationale openly.</p>
@@ -331,9 +348,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>Before going further, let's look at the body of clinical research that supports all of this, because the studies themselves are the strongest argument for taking any of it seriously.</p>
 <figure class="article-media"><div class="v2-media-slot" data-job-id="60bd55ca-149d-4565-bfc9-916cfc256176" data-prompts='["Detailed illustration of peripheral nervous system overlaid on human silhouette, scientific medical style, photorealistic rendering", "Doctor pointing to nerve diagram while explaining to a patient in clinic, photorealistic", "Older man feeling sensation return to his fingertips while touching warm coffee mug, gentle smile, photorealistic"]' data-selected="0" data-slot-key="media.s6" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media.s6</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Detailed illustration of peripheral nervous system overlaid on human silhouette,"</div></div></figure>
 <!-- CTA #1 -->
-<div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">See how it works</a>
-</div>
 <!-- SECTION 7 - CLINICAL RESULTS (4 studies) -->
 <h2>The Studies Behind The Approach</h2>
 <p>I selected studies that met three criteria. First, they had to be peer-reviewed. Second, they had to involve human participants, not just lab animals. Third, they had to measure outcomes objectively, not just self-reported pain.</p>
@@ -502,19 +516,16 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>The gap, in practical terms, is the difference between feeding your nerves a single half-usable molecule and feeding them the full set of substrates the published research identifies as necessary for measurable improvement.</p>
 <p>Which raises the last practical question before any reader makes a decision. What kind of safety net does the company offer in case it doesn't work for you the way it has worked for others?</p>
 <!-- CTA #2 -->
-<div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">Compare for yourself</a>
-</div>
 <!-- Sections s12 and s13 are reserved for future expansion. Sequence intentionally jumps from s11 to s14. -->
 <!-- SECTION 14 - GUARANTEE -->
 <div class="guarantee-block">
-<figure class="guarantee-img">
-<div class="v2-media-slot" data-job-id="60bd55ca-149d-4565-bfc9-916cfc256176" data-prompts='["Money-back guarantee badge graphic on warm wooden surface beside supplement bottle, photorealistic", "Hand signing satisfaction guarantee certificate on desk, photorealistic", "Trust seal stamp pressed onto guarantee document, close-up, photorealistic"]' data-selected="0" data-slot-key="media.guarantee" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media.guarantee</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Money-back guarantee badge graphic on warm wooden surface beside supplement bott"</div></div>
-</figure>
+<div class="guarantee-badge"><div class="guarantee-badge-num">30</div><div class="guarantee-badge-label">DAYS</div></div>
+<div class="guarantee-content">
 <h2>The Risk Reversal Worth Noting</h2>
 <p>The manufacturer offers a one-year money-back guarantee, which is unusual in the supplement industry where thirty days is the typical maximum offered.</p>
 <p>If you complete the recommended use and don't notice meaningful improvement, you can return the empty bottles and receive a full refund of the purchase amount.</p>
 <p>That structure shifts the risk away from the customer, which is the strongest signal a company can offer.</p>
+</div>
 </div>
 <!-- SECTION 15 - HOW TO GET STARTED -->
 <h2>Who Should And Shouldn't Try This</h2>
@@ -530,14 +541,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>On the other side of the line, this isn't the right fit for everyone. People hoping for instant relief, anyone unwilling to give the body several weeks to respond, and those expecting a single capsule to undo years of damage will likely be disappointed.</p>
 <p>If you are pregnant, nursing, taking blood thinners, or managing a serious medical condition, please talk with your doctor before adding any supplement, including this one. Nutritional support works best as part of a coordinated picture, not in isolation.</p>
 <p>With that established, the only remaining question is whether the practical mechanics, the ordering, the shipping, the actual experience of getting started, are simple enough to make the trial worth attempting.</p>
-<div class="inline-link-row">
-<span>If you want the manufacturer's full ingredient breakdown:</span>
-<a data-cta-neutralized="1" href="#">Read the full formula details</a>
-</div>
 <!-- CTA #3 -->
-<div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">Get started today</a>
-</div>
 <!-- SECTION 16 - URGENCY -->
 <h2>Questions Worth Answering Before You Order</h2>
 <p>Before I close out this investigation, there are four practical questions I think every reader deserves a straight answer to. These are the questions Frank asked me, and the ones I imagine you are asking yourself right now.</p>
@@ -566,9 +570,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>Whatever you decide, please don't accept a verdict of permanent damage from anyone who hasn't carefully considered the nutritional research. The science has moved further than most clinical practice has caught up with, and you deserve to know what's actually on the table.</p>
 <p>Your nerves are quieter than they look, and they are still listening, still capable of repair, still waiting for the right signals to begin healing themselves from within, no matter what you have been told before today.</p>
 <!-- CTA #4 -->
-<div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">Don't wait another year</a>
-</div>
 <!-- SECTION 18 - FAQ -->
 <h2>Final Questions, Honestly Answered For You</h2>
 <div class="faq-item">
@@ -596,10 +597,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p class="faq-a">The product ships directly from the manufacturer's American facility, typically arriving within a few business days of the order being placed. Customer support is reachable by phone and email for any questions about shipping, dosage, or returns within the guarantee window.</p>
 </div>
 <!-- CTA #5 (final) -->
-<div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">Claim yours now</a>
-<span class="cta-sub">Backed by a full one-year money-back guarantee</span>
-</div>
 <!-- REFERENCES -->
 <div class="references">
 <h2>References And Suggested Further Reading</h2>
@@ -639,5 +636,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <p style="font-size:10px; color:#bbb; line-height:1.4; margin:0 auto; font-family:system-ui,-apple-system,sans-serif">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
+<div class="sticky-cta"><a class="sticky-cta-btn" href="https://terica-store.com/click"><span>Check availability</span></a></div>
 </body>
 </html>

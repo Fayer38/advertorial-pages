@@ -37,10 +37,10 @@ img{max-width:100%;height:auto}
 a{color:var(--ll-color-primary);text-decoration:none}
 a:hover{text-decoration:underline}
 
-.article-wrap{max-width:960px;margin:0 auto;padding:26px 22px 60px}
+.article-wrap{max-width:980px;margin:0 auto;padding:26px 22px 60px}
 
 /* Headline */
-h1.article-headline{font-family:var(--ll-font-heading);font-weight:900;font-size:46px;line-height:1.1;margin:6px 0 4px;letter-spacing:-0.8px;color:var(--ll-color-text-primary)}
+h1.article-headline{font-family:var(--ll-font-heading);font-weight:900;font-size:38px;line-height:1.1;margin:0 0 4px;letter-spacing:-0.8px;color:var(--ll-color-text-primary)}
 h1.article-headline-sub{font-family:var(--ll-font-heading);font-weight:900;font-size:38px;line-height:1.15;margin:0 0 14px;letter-spacing:-0.6px;color:var(--ll-color-primary)}
 @media (max-width:640px){h1.article-headline{font-size:30px;margin:4px 0 2px}h1.article-headline-sub{font-size:24px;margin:0 0 10px}}
 .article-dek{font-family:var(--ll-font-heading);font-weight:700;font-size:20px;line-height:1.4;color:var(--ll-color-text-secondary);margin:10px 0 18px;font-style:italic}
@@ -52,17 +52,17 @@ h1.article-headline-sub{font-family:var(--ll-font-heading);font-weight:900;font-
 .article-byline .byline-role{font-style:italic}
 
 /* Hero + article media */
-.hero-media,.article-media{margin:10px 0 14px;border-radius:8px;overflow:hidden;background:var(--ll-color-background-alt)}
+.hero-media,.article-media{margin:0 0 14px;border-radius:8px;overflow:hidden;background:var(--ll-color-background-alt)}
 .hero-media img,.article-media img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
 
 .article-media.narrow{max-width:560px;margin-left:auto;margin-right:auto}
 
 
 /* Body prose */
-.article-body p{margin:0 0 18px;font-size:17px;line-height:1.78;color:var(--ll-color-text-primary)}
+.article-body p{margin:0 0 18px;font-size:18px;line-height:23px;color:var(--ll-color-text-primary)}
 .article-body p strong{font-weight:800}
 .article-body p em{font-style:italic}
-.article-body h2{font-family:var(--ll-font-heading);font-weight:900;font-size:30px;line-height:1.22;margin:46px 0 16px;color:var(--ll-color-text-primary);letter-spacing:-0.4px}
+.article-body h2{font-family:var(--ll-font-heading);font-weight:900;font-size:33px;line-height:43px;margin:15px 0;color:var(--ll-color-text-primary);letter-spacing:-0.4px}
 .article-body h2 em{font-style:normal;color:var(--ll-color-primary)}
 @media (max-width:640px){.article-body h2{font-size:24px;margin:24px 0 12px}}
 
@@ -99,8 +99,6 @@ h1.article-headline-sub{font-family:var(--ll-font-heading);font-weight:900;font-
 /* ── Inline text link ──────────────────────────────────────────── */
 .article-body a:not(.cta-btn):not(.inline-cta){color:var(--ll-color-primary);font-weight:700;text-decoration:underline;text-decoration-color:rgba(var(--ll-color-primary-rgb),0.5);text-decoration-thickness:2px;text-underline-offset:3px}
 .article-body a:not(.cta-btn):not(.inline-cta):hover{text-decoration-color:var(--ll-color-primary)}
-.inline-link-row{margin:16px 0;padding:14px 18px;background:var(--ll-color-background-alt);border-left:3px solid var(--ll-color-primary);border-radius:0 6px 6px 0;font-size:15px}
-.inline-link-row a{font-weight:800}
 
 /* ── Stat card row (3 big numbers) ─────────────────────────────── */
 .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
@@ -196,7 +194,26 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
-/* studio-bigquote-mobile v2 */@media (max-width:600px){.big-quote{margin-left:10px !important;margin-right:10px !important;padding:18px 8px !important;font-size:18px !important;}.big-quote::before{display:none !important;}}</style>
+/* studio-bigquote-mobile v2 */@media (max-width:600px){.big-quote{margin-left:10px !important;margin-right:10px !important;padding:18px 8px !important;font-size:18px !important;}.big-quote::before{display:none !important;}}
+/* Roman polish — guarantee-block flex + sticky bar (added 2026-04-29) */
+.guarantee-block{background:var(--ll-color-background-alt);border:none;border-radius:14px;padding:28px;margin:36px 0;display:flex;gap:28px;align-items:flex-start;text-align:left}
+.guarantee-badge{flex-shrink:0;width:88px;height:88px;border:3px solid var(--ll-color-primary);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ll-color-primary);background:transparent}
+.guarantee-badge-num{font-family:var(--ll-font-heading);font-size:28px;font-weight:900;line-height:1}
+.guarantee-badge-label{font-family:var(--ll-font-heading);font-size:11px;font-weight:700;letter-spacing:0.1em;margin-top:2px}
+.guarantee-content{flex:1;min-width:0}
+.guarantee-content h2{font-family:var(--ll-font-heading);font-size:24px;font-weight:800;color:var(--ll-color-text-primary);margin:0 0 12px;line-height:1.3;text-align:left}
+.guarantee-content p{font-size:16px;color:var(--ll-color-text-secondary);line-height:1.65;margin:0 0 12px;text-align:left}
+.guarantee-content p:last-child{margin-bottom:0}
+@media (max-width:600px){.guarantee-block{flex-direction:column;gap:20px;padding:24px}.guarantee-badge{align-self:center}}
+
+/* Bottom sticky CTA */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;border-top:1px solid #e5e5e5}
+.sticky-cta-btn{background:var(--ll-color-primary);color:#fff;padding:10px 22px;border-radius:6px;font-family:var(--ll-font-heading);font-weight:800;font-size:16px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
+.sticky-cta-btn:hover{filter:brightness(0.88);color:#fff;text-decoration:none}
+@media (max-width:640px){.sticky-cta-btn{width:90%;text-align:center}}
+
+body{padding-bottom:80px}
+</style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -213,7 +230,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <div class="article-wrap">
 <!-- HEADLINE -->
-<h1 class="article-headline">Why Older Homeowners Are Quietly Switching to This Featherweight Cordless Blower</h1>
+<h1 class="article-headline">Why Older Homeowners Are Quietly Switching To This Featherweight Cordless Blower</h1>
 <p class="article-dek">After three months of leaves, snow dust, and grass clippings, here is what I actually found.</p>
 <!-- BYLINE -->
 <div class="article-byline">
@@ -331,9 +348,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>Before I get into that timeline, let me share the studies I read while I was trying to make sense of all of this. They shaped my thinking and they will probably shape yours too.</p>
 <figure class="article-media"><div class="v2-media-slot" data-job-id="3efbc36f-3dc6-4cf5-adcc-66a58e5e209b" data-prompts='["Engineering blueprint-style schematic of a brushless motor and airflow design overlaid on a real blower, photorealistic with technical overlay", "Wind tunnel airflow visualization around a small blower nozzle, photorealistic with subtle motion blur", "Close-up of an air-channel turbine inside a transparent cutaway blower body, photorealistic studio lighting"]' data-selected="0" data-slot-key="media.s6" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media.s6</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Engineering blueprint-style schematic of a brushless motor and airflow design ov"</div></div></figure>
 <!-- CTA #1 -->
-<div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">See how it works</a>
-</div>
 <!-- SECTION 7 - CLINICAL RESULTS (4 studies) -->
 <h2>The Research That Shaped My Recommendation</h2>
 <p>I spent a few evenings reading through ergonomics studies and consumer testing reports to make sure my impressions matched the actual data. Here are the four that mattered most for understanding why a lighter blower is genuinely better for older homeowners, not just easier marketing.</p>
@@ -502,19 +516,16 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>The gap is not subtle. We are not talking about a slight preference. We are talking about a tool that weighs roughly a quarter as much, starts with a trigger pull instead of a pull cord, and runs quietly enough that you do not need ear protection in your own driveway.</p>
 <p>If you are convinced the comparison points the right way but still cautious about ordering something new, the next part is where most readers find the reassurance they need. The brand has structured the purchase in a way that removes most of the typical risk.</p>
 <!-- CTA #2 -->
-<div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">Compare for yourself</a>
-</div>
 <!-- Sections s12 and s13 are reserved for future expansion. Sequence intentionally jumps from s11 to s14. -->
 <!-- SECTION 14 - GUARANTEE -->
 <div class="guarantee-block">
-<figure class="guarantee-img">
-<div class="v2-media-slot" data-job-id="3efbc36f-3dc6-4cf5-adcc-66a58e5e209b" data-prompts='["A 30-day satisfaction guarantee badge graphic over a clean photo of the cordless blower, photorealistic", "Customer service representative on the phone helping a satisfied senior, photorealistic", "Trust seal and product packaging on a kitchen counter, photorealistic, warm light"]' data-selected="0" data-slot-key="media.guarantee" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media.guarantee</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"A 30-day satisfaction guarantee badge graphic over a clean photo of the cordless"</div></div>
-</figure>
+<div class="guarantee-badge"><div class="guarantee-badge-num">30</div><div class="guarantee-badge-label">DAYS</div></div>
+<div class="guarantee-content">
 <h2>The Guarantee Worth Knowing About Before Ordering</h2>
 <p>SEESE PRO comes with a thirty-day satisfaction guarantee. If the unit does not meet your expectations on your own yard, you return it for a full refund.</p>
 <p>If you decide it is not right for you within those thirty days, you contact the company directly and they walk you through the return without hassle or pressure tactics.</p>
 <p>That policy is the closest thing to a no-risk trial for a homeowner tool, which I appreciated when deciding to test it.</p>
+</div>
 </div>
 <!-- SECTION 15 - HOW TO GET STARTED -->
 <h2>Who This Blower Actually Makes Sense For</h2>
@@ -530,14 +541,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>Now the honest counterpart. If you are clearing wet, matted leaves across a wooded acre every fall, or running a small lawn care business, this is not the right tool for you. The lightweight design is optimized for routine homeowner tasks, not professional volume.</p>
 <p>If you have a specific medical condition that affects your hands, wrists, or shoulders, talk to your doctor about whether handheld outdoor tools are appropriate for you generally. A lighter tool helps, but it is not a substitute for medical guidance about your situation specifically.</p>
 <p>Assuming you are in the homeowner profile most of this article has been describing, the next question is the practical one: where to actually order, what to expect when it arrives, and what most readers ask before pulling the trigger on the purchase.</p>
-<div class="inline-link-row">
-<span>More details on fit are available here:</span>
-<a data-cta-neutralized="1" href="#">see the full specifications page</a>
-</div>
 <!-- CTA #3 -->
-<div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">Get yours today</a>
-</div>
 <!-- SECTION 16 - URGENCY -->
 <h2>What Most Readers Ask Before Ordering</h2>
 <p>Before you decide, here are the four questions that come up most often from readers of this article. I have answered them with the same honesty I used in the rest of the review, because there is no point pretending a product is something it is not.</p>
@@ -566,9 +570,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>If any of this article has rung true for you, your body is probably telling you the same thing mine told me last fall. The right tool exists now, the engineering finally caught up, and the only question left is whether you give yourself permission to switch.</p>
 <p>Your yard, your back, your weekends, and probably your spouse will quietly thank you for finally choosing a tool that fits the body you actually have today rather than the one you had twenty years ago when this kind of work felt easy.</p>
 <!-- CTA #4 -->
-<div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">Don't wait another season</a>
-</div>
 <!-- SECTION 18 - FAQ -->
 <h2>Final Questions Readers Send Me</h2>
 <div class="faq-item">
@@ -596,10 +597,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p class="faq-a">The brand ships directly from their warehouse and most homeowners receive their unit within a reasonable window after ordering. Tracking information is provided so you can plan around its arrival, and customer service is responsive if any shipping question comes up along the way.</p>
 </div>
 <!-- CTA #5 (final) -->
-<div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click">Order yours now</a>
-<span class="cta-sub">Backed by a thirty-day satisfaction guarantee and direct-from-brand support.</span>
-</div>
 <!-- REFERENCES -->
 <div class="references">
 <h2>Sources, References And Further Reading</h2>
@@ -633,5 +630,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <p style="font-size:10px; color:#bbb; line-height:1.4; margin:0 auto; font-family:system-ui,-apple-system,sans-serif">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
+<div class="sticky-cta"><a class="sticky-cta-btn" href="https://terica-store.com/click"><span>Check availability</span></a></div>
 </body>
 </html>

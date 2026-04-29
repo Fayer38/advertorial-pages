@@ -34,10 +34,10 @@ img{max-width:100%;height:auto}
 a{color:var(--ll-color-primary);text-decoration:none}
 a:hover{text-decoration:underline}
 
-.article-wrap{max-width:960px;margin:0 auto;padding:26px 22px 60px}
+.article-wrap{max-width:980px;margin:0 auto;padding:26px 22px 60px}
 
 /* Headline */
-h1.article-headline{font-family:var(--ll-font-heading);font-weight:900;font-size:46px;line-height:1.1;margin:6px 0 4px;letter-spacing:-0.8px;color:var(--ll-color-text-primary)}
+h1.article-headline{font-family:var(--ll-font-heading);font-weight:900;font-size:38px;line-height:1.1;margin:0 0 4px;letter-spacing:-0.8px;color:var(--ll-color-text-primary)}
 h1.article-headline-sub{font-family:var(--ll-font-heading);font-weight:900;font-size:38px;line-height:1.15;margin:0 0 14px;letter-spacing:-0.6px;color:var(--ll-color-primary)}
 @media (max-width:640px){h1.article-headline{font-size:30px;margin:4px 0 2px}h1.article-headline-sub{font-size:24px;margin:0 0 10px}}
 .article-dek{font-family:var(--ll-font-heading);font-weight:700;font-size:20px;line-height:1.4;color:var(--ll-color-text-secondary);margin:10px 0 18px;font-style:italic}
@@ -49,17 +49,17 @@ h1.article-headline-sub{font-family:var(--ll-font-heading);font-weight:900;font-
 .article-byline .byline-role{font-style:italic}
 
 /* Hero + article media */
-.hero-media,.article-media{margin:10px 0 14px;border-radius:8px;overflow:hidden;background:var(--ll-color-background-alt)}
+.hero-media,.article-media{margin:0 0 14px;border-radius:8px;overflow:hidden;background:var(--ll-color-background-alt)}
 .hero-media img,.article-media img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
 
 .article-media.narrow{max-width:560px;margin-left:auto;margin-right:auto}
 
 
 /* Body prose */
-.article-body p{margin:0 0 18px;font-size:17px;line-height:1.78;color:var(--ll-color-text-primary)}
+.article-body p{margin:0 0 18px;font-size:18px;line-height:23px;color:var(--ll-color-text-primary)}
 .article-body p strong{font-weight:800}
 .article-body p em{font-style:italic}
-.article-body h2{font-family:var(--ll-font-heading);font-weight:900;font-size:30px;line-height:1.22;margin:46px 0 16px;color:var(--ll-color-text-primary);letter-spacing:-0.4px}
+.article-body h2{font-family:var(--ll-font-heading);font-weight:900;font-size:33px;line-height:43px;margin:15px 0;color:var(--ll-color-text-primary);letter-spacing:-0.4px}
 .article-body h2 em{font-style:normal;color:var(--ll-color-primary)}
 @media (max-width:640px){.article-body h2{font-size:24px;margin:24px 0 12px}}
 
@@ -96,8 +96,6 @@ h1.article-headline-sub{font-family:var(--ll-font-heading);font-weight:900;font-
 /* ── Inline text link ──────────────────────────────────────────── */
 .article-body a:not(.cta-btn):not(.inline-cta){color:var(--ll-color-primary);font-weight:700;text-decoration:underline;text-decoration-color:rgba(var(--ll-color-primary-rgb),0.5);text-decoration-thickness:2px;text-underline-offset:3px}
 .article-body a:not(.cta-btn):not(.inline-cta):hover{text-decoration-color:var(--ll-color-primary)}
-.inline-link-row{margin:16px 0;padding:14px 18px;background:var(--ll-color-background-alt);border-left:3px solid var(--ll-color-primary);border-radius:0 6px 6px 0;font-size:15px}
-.inline-link-row a{font-weight:800}
 
 /* ── Stat card row (3 big numbers) ─────────────────────────────── */
 .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
@@ -218,7 +216,26 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
-/* studio-bigquote-mobile v2 */@media (max-width:600px){.big-quote{margin-left:10px !important;margin-right:10px !important;padding:18px 8px !important;font-size:18px !important;}.big-quote::before{display:none !important;}}/* studio-bigquote-glyph v1 */.big-quote::before{position:static !important;left:auto !important;top:auto !important;font-size:1.4em !important;font-weight:700 !important;margin-right:6px !important;line-height:1 !important;vertical-align:baseline !important;}.big-quote{padding-left:24px !important;}</style>
+/* studio-bigquote-mobile v2 */@media (max-width:600px){.big-quote{margin-left:10px !important;margin-right:10px !important;padding:18px 8px !important;font-size:18px !important;}.big-quote::before{display:none !important;}}/* studio-bigquote-glyph v1 */.big-quote::before{position:static !important;left:auto !important;top:auto !important;font-size:1.4em !important;font-weight:700 !important;margin-right:6px !important;line-height:1 !important;vertical-align:baseline !important;}.big-quote{padding-left:24px !important;}
+/* Roman polish — guarantee-block flex + sticky bar (added 2026-04-29) */
+.guarantee-block{background:var(--ll-color-background-alt);border:none;border-radius:14px;padding:28px;margin:36px 0;display:flex;gap:28px;align-items:flex-start;text-align:left}
+.guarantee-badge{flex-shrink:0;width:88px;height:88px;border:3px solid var(--ll-color-primary);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ll-color-primary);background:transparent}
+.guarantee-badge-num{font-family:var(--ll-font-heading);font-size:28px;font-weight:900;line-height:1}
+.guarantee-badge-label{font-family:var(--ll-font-heading);font-size:11px;font-weight:700;letter-spacing:0.1em;margin-top:2px}
+.guarantee-content{flex:1;min-width:0}
+.guarantee-content h2{font-family:var(--ll-font-heading);font-size:24px;font-weight:800;color:var(--ll-color-text-primary);margin:0 0 12px;line-height:1.3;text-align:left}
+.guarantee-content p{font-size:16px;color:var(--ll-color-text-secondary);line-height:1.65;margin:0 0 12px;text-align:left}
+.guarantee-content p:last-child{margin-bottom:0}
+@media (max-width:600px){.guarantee-block{flex-direction:column;gap:20px;padding:24px}.guarantee-badge{align-self:center}}
+
+/* Bottom sticky CTA */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;border-top:1px solid #e5e5e5}
+.sticky-cta-btn{background:var(--ll-color-primary);color:#fff;padding:10px 22px;border-radius:6px;font-family:var(--ll-font-heading);font-weight:800;font-size:16px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
+.sticky-cta-btn:hover{filter:brightness(0.88);color:#fff;text-decoration:none}
+@media (max-width:640px){.sticky-cta-btn{width:90%;text-align:center}}
+
+body{padding-bottom:80px}
+</style>
 <style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script type="text/javascript">
 (function(c,l,a,r,i,t,y){
 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -235,7 +252,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <div class="article-wrap">
 <!-- HEADLINE -->
-<h1 class="article-headline" style="position: relative">This Retired Ohio Teacher Spent Her Pension on Hearing Aids That Made the Ringing Louder </h1>
+<h1 class="article-headline" style="position: relative">This Retired Ohio Teacher Spent Her Pension On Hearing Aids That Made The Ringing Louder</h1>
 <p class="article-dek" style="position: relative"><span style="font-style: normal; font-weight: normal">At 64, Margaret Henson was told her cochlea was just aging. A pharmacist in the family pointed her to research from MIT and Mass Eye and Ear that reframed everything her ENT had said.</span></p>
 <!-- BYLINE -->
 <div class="article-byline">
@@ -259,7 +276,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">It was, the researchers explained, a runaway feedback loop in a small region of her brain. And a recently isolated form of magnesium had, for the first time, been shown to actually reach it. This article is the story of what came next.</p>
 <figure class="article-media"><img alt="" class="" data-slot="media.intro" src="/pages/media/ecaa57b5/0aebf4eb1541.png"/></figure>
 <!-- SECTION 1 -->
-<h2 style="position: relative">The Volume Knob in Your Brain Got Stuck</h2>
+<h2 style="position: relative">The Volume Knob In Your Brain Got Stuck</h2>
 <p style="position: relative">To understand why nearly every tinnitus treatment offered to Americans over fifty has quietly failed, you must first accept an uncomfortable fact: most ENTs in community practice are still treating a problem that lives somewhere it does not.</p>
 <p style="position: relative">When the tiny hair cells inside the cochlea begin to thin with age, the ear sends a weaker signal up the auditory nerve. The brain, hungry for input, does what brains always do when starved. It <strong>turns up the gain</strong>.</p>
 <p style="position: relative">Imagine the volume dial on an old transistor radio. When the station fades, you twist the knob higher to compensate. The brain does the same thing inside the auditory cortex, that thin strip of tissue tucked behind your temple.</p>
@@ -280,7 +297,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">Until very recently, the entire pharmaceutical industry treated this as an immovable obstacle. Then a small group of neuroscientists, working in two labs on opposite ends of the country, found a way around it.</p>
 <figure class="article-media"><img alt="" class="" data-slot="media.s1" src="/pages/media/ecaa57b5/33e89182e48d.png"/></figure>
 <!-- SECTION 2 -->
-<h2 style="position: relative">The Retired ENT Who Refused to Stay Quiet</h2>
+<h2 style="position: relative">The Retired ENT Who Refused To Stay Quiet</h2>
 <p style="position: relative">Dr. Allen Whitfield spent thirty-eight years as an ear, nose, and throat surgeon in suburban Cincinnati before he retired in 2022. For most of that career, he told tinnitus patients exactly what Margaret was told. He no longer believes a word of it.</p>
 <p style="position: relative">In a long telephone interview, Dr. Whitfield was direct. The standard ENT training, he explained, devotes perhaps two hours to tinnitus across four years of residency. The takeaway is simple: <strong>there is nothing you can do for these people</strong>.</p>
 <p style="position: relative">That dismissal, he now says, was the single greatest professional regret of his career. Sitting across from thousands of frightened patients over four decades, he repeated a sentence he had been taught to repeat. He never once questioned its accuracy.</p>
@@ -291,7 +308,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">He began writing letters. Then he agreed to be interviewed. He has no financial relationship with any supplement company. He is, he says, simply a retired physician who feels he owes his former patients an honest correction.</p>
 <figure class="article-media"><img alt="" class="" data-slot="media.s2" src="/pages/media/ecaa57b5/909aed027a9a.jpeg"/></figure>
 <!-- SECTION 3 -->
-<h2 style="position: relative">The Magnesium Form That Actually Reaches the Brain</h2>
+<h2 style="position: relative">The Magnesium Form That Actually Reaches The Brain</h2>
 <p style="position: relative">There is one mineral the brain depends on for the regulation of every neural circuit, including the ones that misfire in tinnitus. That mineral is magnesium. The trouble is that the magnesium in nearly every supplement on the shelf cannot get there.</p>
 <p style="position: relative">Magnesium oxide, citrate, glycinate, and the other common forms move readily through the gut and the bloodstream. They do good work in muscle tissue and the cardiovascular system. They do <strong>almost nothing for the auditory cortex</strong>.</p>
 <p style="position: relative">The blood-brain barrier filters them out. This is not a flaw in the supplements. It is a feature of human biology. The barrier exists to protect the brain from circulating compounds, and it does its job extremely well.</p>
@@ -300,7 +317,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">This is the active foundation behind QuietRelief. It is the only consumer formulation built around this specific brain-permeable magnesium, paired with circulatory botanicals chosen to support the vascular pathway feeding the auditory cortex itself.</p>
 <figure class="article-media"><img alt="" data-slot="media.s3" src="/pages/media/ecaa57b5/eb479ecbfa10.jpeg"/></figure>
 <!-- SECTION 4 -->
-<h2 style="position: relative">Why QuietRelief Was Designed Differently From the Start</h2>
+<h2 style="position: relative">Why QuietRelief Was Designed Differently From The Start</h2>
 <p style="position: relative">QuietRelief was not formulated by a marketing department. It was assembled by a small team of researchers and a retired clinical pharmacist who had grown frustrated watching their relatives go through the same dismissive ENT appointments.</p>
 <p style="position: relative">Their starting point was the MIT and Mass Eye and Ear literature on cortical magnesium uptake. Their second principle was that the auditory cortex does not exist in isolation. It is fed by a delicate vascular network that thins with age.</p>
 <p style="position: relative">If you only address the neural side, you treat half the problem. If you only address the vascular side, you treat the other half. QuietRelief was built to address <strong>both pathways at once</strong>, in a single daily capsule taken with breakfast.</p>
@@ -332,7 +349,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">Her experience, she would later say, was almost embarrassingly typical. The only unusual part of her story was that someone in her family happened to be a hospital pharmacist who knew where to look for the underlying research.</p>
 <figure class="article-media"><img alt="" data-slot="media.s5b" src="/pages/media/ecaa57b5/5f892b5f8a7d.jpeg"/></figure>
 <!-- SECTION 6 - BREAKTHROUGH -->
-<h2 style="position: relative">The Mechanism Explained in Plain English</h2>
+<h2 style="position: relative">The Mechanism Explained In Plain English</h2>
 <p style="position: relative">Dr. Whitfield asks his readers to picture an old AM radio sitting on a kitchen counter. The reception is weak. The station is fading. The natural impulse is to reach for the volume knob and turn it up until the signal is audible again.</p>
 <p style="position: relative">That, he says, is exactly what an aging brain does when the signal from the cochlea begins to weaken. The auditory cortex turns up its internal gain to compensate. For most people over fifty, this happens gradually and without conscious awareness.</p>
 <div class="callout callout-info">
@@ -353,11 +370,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">Dr. Whitfield is unequivocal on this point. He believes that within ten years, the standard ENT response to tinnitus will look as outdated as bloodletting. He hopes the change comes faster than that, for the sake of the patients still being dismissed today.</p>
 <figure class="article-media"><img alt="" data-slot="media.s6" src="/pages/media/ecaa57b5/03194c8bef73.jpeg"/></figure>
 <!-- CTA #1 -->
-<div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click" style="position: relative">Learn More Now</a>
-</div>
 <!-- SECTION 7 - CLINICAL RESULTS (4 studies) -->
-<h2 style="position: relative">What the Underlying Research Actually Shows</h2>
+<h2 style="position: relative">What The Underlying Research Actually Shows</h2>
 <p style="position: relative">What follows is a brief summary of the four most relevant peer-reviewed papers behind the QuietRelief formulation. We have stripped the technical language and summarized each in plain English, with the original journal citations available in the references section.</p>
 <p style="position: relative">This is not an exhaustive literature review. It is a careful walkthrough of the studies that, taken together, support the central claim of this article: that tinnitus is a brain circuit problem, and that a specific brain-permeable mineral can help quiet it.</p>
 <p style="position: relative">Read these summaries the way Dr. Whitfield reads them, slowly and with the reasonable skepticism of a retired clinician. The science is not flashy. It is steady, replicated, and almost entirely unknown to community ENT practices across the country.</p>
@@ -417,7 +431,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">For the first time, we have an oral compound shown to reach the specific brain region driving chronic tinnitus, paired with vascular botanicals that help it get there. This is not a cure. It is the first formulation honestly built around the actual mechanism.</p>
 </div>
 <!-- SECTION 8 - PRODUCT INTRO -->
-<h2 style="position: relative">What Began to Change in Margaret's Daily Life</h2>
+<h2 style="position: relative">What Began To Change In Margaret's Daily Life</h2>
 <p style="position: relative">Margaret began taking QuietRelief in early September of 2024, at her son-in-law's recommendation, after he had personally reviewed the formulation against the underlying research and pronounced it sound. She was, by her own admission, almost entirely without hope.</p>
 <p style="position: relative">The first two weeks brought no obvious change. The whine in her left ear continued at its familiar pitch and volume. She kept taking the capsule each morning with her oatmeal because, as she put it, she had nothing left to lose.</p>
 <figure class="article-media"><img alt="Product" data-slot="media.s8a" src="/pages/media/ecaa57b5/5561370c1294.jpeg"/></figure>
@@ -432,7 +446,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">She says, simply, that the truth was hiding in plain sight. The science had been there for years. The doctors had not read it. And the only person in her life who happened to know where to look was related to her by marriage.</p>
 <figure class="article-media"><img alt="" class="" data-slot="media.s8c" src="/pages/media/ecaa57b5/ed27032dfb9f.jpeg"/></figure>
 <!-- SECTION 9 - TIMELINE -->
-<h2 style="position: relative">What Most Users Notice in the First Three Months</h2>
+<h2 style="position: relative">What Most Users Notice In The First Three Months</h2>
 <p style="position: relative">The cortex needs time. This is the single most important sentence in any honest discussion of QuietRelief. Brain tissue does not recalibrate in three days. It recalibrates over weeks of consistent magnesium availability, and the timeline is reasonably predictable.</p>
 <p style="position: relative">What follows is a description of the typical pattern reported by long-term users, broken down by phase. Individual experiences vary. Some users notice changes earlier. Some take longer. The pattern below describes the middle of the distribution, not the extremes.</p>
 <div class="phase">
@@ -466,7 +480,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <figure class="article-media"><img alt="" data-slot="media.s9b" src="/pages/media/ecaa57b5/b8a21b6117cc.jpeg"/></figure>
 <!-- SECTION 10 - TESTIMONIALS FIRST BLOCK -->
-<h2 style="position: relative">What Other Users Have Said in Their Own Words</h2>
+<h2 style="position: relative">What Other Users Have Said In Their Own Words</h2>
 <p style="position: relative">What follows are four unedited testimonials from QuietRelief users, lightly trimmed for length but otherwise reproduced as written. These were submitted voluntarily and posted with permission. Their experiences are individual and should not be read as guarantees of outcome.</p>
 <div class="testimonial">
 <div class="tm-stars">★★★★★</div>
@@ -501,7 +515,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 </div>
 <!-- SECTION 11 - COMPARISON TABLE -->
-<h2 style="position: relative">How QuietRelief Compares to the Alternatives</h2>
+<h2 style="position: relative">How QuietRelief Compares To The Alternatives</h2>
 <p style="position: relative">There is no shortage of products marketed to Americans with chronic tinnitus. Most of them target the wrong tissue with the wrong compounds at the wrong doses. The table below summarizes how QuietRelief differs from the most common alternatives.</p>
 <p style="position: relative">We are not naming competitor brands here. The category is too crowded and the underlying flaw is the same across nearly all of them. What matters is the mechanism, the dosing, and the willingness to address both the neural and vascular pathways.</p>
 <div class="comparison">
@@ -524,17 +538,15 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">When you read the supplement labels of competitor products, you will notice they tend to rely on bioflavonoids, basic herbal blends, and conventional magnesium forms. None of those compounds are wrong, exactly. They simply do not reach the tissue where the problem lives.</p>
 <p style="position: relative">QuietRelief was built around the science as it exists today, not the science as it was understood in the 1990s. That is the honest core of the difference. It is the only consumer formulation we are aware of that takes the cortical mechanism seriously.</p>
 <!-- CTA #2 -->
-<div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click" style="position: relative">See It Now</a>
-</div>
 <!-- SECTION 14 - GUARANTEE -->
 <div class="guarantee-block">
-<figure class="guarantee-img">
-</figure>
-<h2 style="position: relative">A Simple, Straightforward 30-Day Satisfaction Promise</h2>
-<p style="position: relative">Every order of QuietRelief is backed by a full 30-day satisfaction guarantee, no questions asked, with no fine print and no restocking conditions.</p>
-<p style="position: relative">If you are not noticing a meaningful difference within thirty days, contact the brand directly and your purchase will be refunded promptly.</p>
-<p style="position: relative">The risk sits entirely with the company, not with you. That is how a serious formulation should be sold.</p>
+<div class="guarantee-badge"><div class="guarantee-badge-num">30</div><div class="guarantee-badge-label">DAYS</div></div>
+<div class="guarantee-content">
+<h2>A Simple, Straightforward 30-Day Satisfaction Promise</h2>
+<p>Every order of QuietRelief is backed by a full 30-day satisfaction guarantee, no questions asked, with no fine print and no restocking conditions.</p>
+<p>If you are not noticing a meaningful difference within thirty days, contact the brand directly and your purchase will be refunded promptly.</p>
+<p>The risk sits entirely with the company, not with you. That is how a serious formulation should be sold.</p>
+</div>
 </div>
 <!-- SECTION 15 - HOW TO GET STARTED -->
 <h2 style="position: relative">What You Get With Every Order</h2>
@@ -550,16 +562,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">First-time orders typically arrive within three to five business days for addresses in the continental United States. Tracking information is provided by email as soon as the order leaves the facility, so you always know exactly when to expect delivery.</p>
 <p style="position: relative">Multi-bottle orders include a meaningful discount, reflecting the fact that the cortical mechanism takes between eight and twelve weeks to fully recalibrate. Most repeat customers settle into a three-bottle quarterly routine after their first experience with the product.</p>
 <p style="position: relative">There is no automatic subscription, no hidden recurring charge, and no requirement to commit to any future order. Each purchase is a single, clear transaction. You decide whether and when to reorder based entirely on your own experience.</p>
-<div class="inline-link-row">
-<span>You can review the formulation</span>
-<a href="#" data-cta-neutralized="1">directly on the official site</a>
-</div>
 <!-- CTA #3 -->
-<div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click" style="position: relative">Get QuietRelief Now</a>
-</div>
 <!-- SECTION 16 - URGENCY -->
-<h2 style="position: relative">Why This Article Exists in the First Place</h2>
+<h2 style="position: relative">Why This Article Exists In The First Place</h2>
 <p style="position: relative">This article was commissioned because Dr. Whitfield, after spending three years writing letters to former colleagues that received no reply, eventually concluded that the only way to reach the patients still being dismissed was to go around the profession entirely.</p>
 <p style="position: relative">He approached the QuietRelief team in 2024 with a single proposal. He would lend his name and his clinical experience to a public-facing piece, on the condition that the writing remained measured, the science remained accurate, and no claims were exaggerated.</p>
 <p style="position: relative">What you are reading is the result of that collaboration. It was reviewed for accuracy by Dr. Whitfield himself, by an independent neurologist with no relationship to the brand, and by a science editor with prior work at major American health publications.</p>
@@ -586,11 +591,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">He signs off by encouraging readers to read the references at the bottom of the article, to bring them to their own doctors, and to make their own informed decisions. He does not believe in pressure. He believes in a well-informed reader.</p>
 <p style="position: relative">And then, in a final handwritten note added to the bottom of his statement, he adds one more line. He hopes the next generation of ENT residents will read the cortical literature in their first year of training, not their last. He hopes for that very much.</p>
 <!-- CTA #4 -->
-<div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click" style="position: relative">Order QuietRelief Today</a>
-</div>
 <!-- SECTION 18 - FAQ -->
-<h2 style="position: relative">Honest Answers to Common Questions</h2>
+<h2 style="position: relative">Honest Answers To Common Questions</h2>
 <div class="faq-item">
 <p class="faq-q" style="position: relative">How long before I might notice a difference?</p>
 <p class="faq-a" style="position: relative">Most users report no obvious change during the first two weeks, a softening of attention to the ringing between weeks three and six, and a noticeable reduction in perceived volume between weeks six and twelve. The cortex needs time to recalibrate, and consistency matters far more than dose.</p>
@@ -616,13 +618,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p class="faq-a" style="position: relative">This is the single most common question, and the honest answer is in the article above. Community ENT training devotes very little time to tinnitus and almost none to the cortical mechanism. The relevant research is published but has not yet filtered into routine clinical practice.</p>
 </div>
 <!-- CTA #5 (final) -->
-<div class="cta-block">
-<a class="cta-btn" href="https://terica-store.com/click" style="position: relative">Try QuietRelief Today</a>
-<span class="cta-sub">Backed by a 30-day satisfaction guarantee, shipped from the brand</span>
-</div>
 <!-- REFERENCES -->
 <div class="references">
-<h2 style="position: relative">References and Further Reading on the Science</h2>
+<h2 style="position: relative">References And Further Reading On The Science</h2>
 <div class="ref-item"><span class="ref-num">1.</span><span class="ref-text">MIT auditory neuroscience group, cortical hyperactivity in chronic tinnitus, peer-reviewed imaging study, 2019</span></div>
 <div class="ref-item"><span class="ref-num">2.</span><span class="ref-text">Mass Eye and Ear, brain-permeable magnesium and auditory cortex modulation, peer-reviewed clinical study, 2022</span></div>
 <div class="ref-item"><span class="ref-num">3.</span><span class="ref-text">European review of Ginkgo biloba and cerebral microcirculation, peer-reviewed, 2018</span></div>
@@ -686,4 +684,5 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   });
 })();
 </script>
+<div class="sticky-cta"><a class="sticky-cta-btn" href="https://terica-store.com/click"><span>Check availability</span></a></div>
 </body></html>
