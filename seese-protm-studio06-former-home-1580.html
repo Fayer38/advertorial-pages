@@ -156,50 +156,6 @@ img{max-width:100%;display:block}
 }
 
 /* ── Product showcase ──────────────────────────────────────── */
-.adv-product-showcase{
-  max-width:936px;margin:24px auto;padding:24px 24px;
-  background:var(--ll-color-background);
-  border:1px solid var(--ll-color-border);
-  text-align:center;
-  font-family:var(--ll-font-body);
-}
-.adv-product-showcase__eyebrow{
-  font-family:var(--ll-font-heading);
-  font-size:22px;font-weight:700;
-  color:#111;
-  margin:0 0 12px;
-}
-.adv-product-showcase__rating{
-  display:flex;justify-content:center;align-items:center;gap:8px;
-  margin-bottom:14px;
-  font-size:14px;color:#444;font-weight:600;
-}
-.adv-product-showcase__rating-stars{
-  color:#f5b40a;
-  letter-spacing:1px;font-size:18px;
-}
-.adv-product-showcase__rating-score{
-  font-size:15px;font-weight:700;color:#111;
-}
-.adv-product-showcase__rating-sep{color:#bbb}
-.adv-product-showcase__title{
-  font-family:var(--ll-font-heading);
-  font-size:18px;font-weight:700;
-  color:var(--ll-color-text-primary);
-  margin:0 0 6px;
-}
-.adv-product-showcase__tagline{
-  font-size:14px;color:var(--ll-color-text-secondary);
-  font-style:italic;margin:0 0 18px;line-height:1.4;
-}
-.adv-product-showcase__image{
-  width:100%;max-width:220px;margin:0 auto 14px;
-  aspect-ratio:1/1;object-fit:cover;
-  background:var(--ll-color-background-alt);
-  border-radius:8px;
-}
-.adv-product-showcase > a{display:flex;justify-content:center;align-items:center;margin:0 auto 14px;max-width:220px}
-.adv-product-showcase .v2-media-slot{max-width:220px;width:100%;margin:0!important;aspect-ratio:1/1;display:flex!important}
 
 
 /* ── CTAs ──────────────────────────────────────────────────── */
@@ -281,11 +237,11 @@ img{max-width:100%;display:block}
   font-size:24px;font-weight:700;
   color:#111;
   margin:0 0 16px;line-height:1.3;
-}
+text-align:left}
 .adv-pricing-reveal__note{
   font-size:18px;color:var(--ll-color-text-primary);
   margin:0;line-height:1.7;
-}
+text-align:left}
 .adv-pricing-reveal__note strong{color:#111;font-weight:700}
 
 /* ── Guarantee ─────────────────────────────────────────────── */
@@ -394,6 +350,22 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+/* Roman polish — guarantee badge + sticky bar */
+.adv-guarantee{display:flex !important;gap:28px !important;align-items:flex-start !important;text-align:left !important;border:none !important}
+.guarantee-badge{flex-shrink:0;width:88px;height:88px;border:3px solid var(--ll-color-primary,#6b21a8);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ll-color-primary,#6b21a8);background:transparent}
+.guarantee-badge-num{font-family:var(--ll-font-heading);font-size:28px;font-weight:900;line-height:1}
+.guarantee-badge-label{font-family:var(--ll-font-heading);font-size:11px;font-weight:700;letter-spacing:0.1em;margin-top:2px}
+.guarantee-content{flex:1;min-width:0}
+.guarantee-content > .adv-guarantee__title{margin:0 0 12px !important;text-align:left !important}
+.guarantee-content > .adv-guarantee__body{max-width:none !important;margin:0 !important;text-align:left !important}
+@media (max-width:600px){.adv-guarantee{flex-direction:column !important;gap:20px !important}.guarantee-badge{align-self:center}}
+
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;border-top:1px solid #e5e5e5}
+.sticky-cta-btn{background:var(--ll-color-cta,var(--ll-color-primary));color:#fff;padding:6px 22px;border-radius:6px;font-family:var(--ll-font-body);font-weight:700;font-size:16px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
+.sticky-cta-btn:hover{filter:brightness(0.88);color:#fff;text-decoration:none}
+@media (max-width:640px){.sticky-cta-btn{width:90%;text-align:center}}
+body{padding-bottom:80px}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -509,18 +481,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">The word <strong>commercial</strong> in those weekend circulars is a pricing trick, not a spec. It lives on the shelf to anchor the premium.</p>
 </div>
 <!-- ── PRODUCT SHOWCASE ── -->
-<div class="adv-product-showcase">
-<h3 class="adv-product-showcase__title" style="position: relative">Seese Pro™ Ultra-Light, Ultra-Powerful Blower</h3>
-<p class="adv-product-showcase__tagline" style="position: relative">Lightweight cordless power without the dealer-network markup.</p>
-<a href="#" data-cta-neutralized="1"><img alt="" data-copy="media.product:attr:src" data-prompts='["Seese Pro Ultra-Light cordless blower on a clean white background, highlighting compact shape and weight, product photography, photorealistic", "Seese Pro V9 cordless blower held effortlessly in one hand by an older man, natural daylight, photorealistic", "Seese Pro cordless blower sitting on a porch next to a coffee mug and fallen leaves, warm morning light, photorealistic"]' data-slot-key="media.product" data-v2-replaced="1" src="/pages/media/seese-pro-v9/editor-upload-manual-18a78c08.png" style="width: 100%; display: block; cursor: pointer; aspect-ratio:1/1; border-radius: 8px; object-fit: cover; margin: 8px 0px"/></a>
-<div class="adv-product-showcase__rating">
-<span class="adv-product-showcase__rating-stars">★★★★★</span>
-<span class="adv-product-showcase__rating-score">4.8</span>
-<span class="adv-product-showcase__rating-sep">·</span>
-<span>3,100+ reviews</span>
-</div>
-<a class="adv-cta-inline" href="https://terica-store.com/click"><span data-copy="cta_check.text">See the real price</span></a>
-</div>
 <!-- ── S7 INTRODUCING ── -->
 <h2 class="adv-section-heading" style="position: relative">Reason 7: DTC Brands Broke The Circuit And The Industry Noticed</h2>
 <div class="adv-inline-image"><img alt="" data-copy="media.s7a:attr:src" data-prompts='["Suburban man easily clearing leaves from his driveway with a lightweight cordless blower, autumn afternoon, photorealistic", "Older woman using a cordless blower to clean her front porch, effortless posture, photorealistic", "Grandfather showing his grandson how to use a compact cordless blower in the backyard, photorealistic"]' data-slot-key="media.s7a" data-v2-replaced="1" src="/pages/media/seese-pro-v9/manual_upload-manual-59bbee5f.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio:16/9; border-radius: 8px; object-fit: cover; margin: 8px 0px"/></div>
@@ -615,11 +575,14 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <!-- ── S13 60 DAYS RISK FREE + GUARANTEE ── -->
 <h2 class="adv-section-heading" style="position: relative">What Actually Happens After You Click, In Plain Honest English</h2>
 <div class="adv-guarantee">
+<div class="guarantee-badge"><div class="guarantee-badge-num">30</div><div class="guarantee-badge-label">DAYS</div></div>
+<div class="guarantee-content">
 <h3 class="adv-guarantee__title" style="position: relative">30-Day Risk-Free Home Trial</h3>
 <div class="adv-guarantee__body">
 <p style="position: relative">You get a full thirty days to use the blower on your own driveway, your own leaves, and your own snow.</p>
 <p style="position: relative">If it doesn't feel dramatically lighter, quieter, and more capable than the gas or corded unit it replaces, send it back.</p>
 <p style="position: relative">No dealer middleman. No warranty reseller. <strong>The brand stands behind the tool</strong>, and the receipt proves it.</p>
+</div>
 </div>
 </div>
 <!-- ── S14 WHAT TO DO NEXT ── -->
@@ -668,4 +631,5 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
+<div class="sticky-cta"><a class="sticky-cta-btn" href="https://terica-store.com/click"><span>Check Availability</span></a></div>
 </body><div></div><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

@@ -156,48 +156,6 @@ img{max-width:100%;display:block}
 }
 
 /* ── Product showcase ──────────────────────────────────────── */
-.adv-product-showcase{
-  max-width:720px;margin:24px auto;padding:24px 24px;
-  background:var(--ll-color-background);
-  border:1px solid var(--ll-color-border);
-  text-align:center;
-  font-family:var(--ll-font-body);
-}
-.adv-product-showcase__eyebrow{
-  font-family:var(--ll-font-heading);
-  font-size:22px;font-weight:700;
-  color:#111;
-  margin:0 0 12px;
-}
-.adv-product-showcase__rating{
-  display:flex;justify-content:center;align-items:center;gap:8px;
-  margin-bottom:14px;
-  font-size:14px;color:#444;font-weight:600;
-}
-.adv-product-showcase__rating-stars{
-  color:#f5b40a;
-  letter-spacing:1px;font-size:18px;
-}
-.adv-product-showcase__rating-score{
-  font-size:15px;font-weight:700;color:#111;
-}
-.adv-product-showcase__rating-sep{color:#bbb}
-.adv-product-showcase__title{
-  font-family:var(--ll-font-heading);
-  font-size:18px;font-weight:700;
-  color:var(--ll-color-text-primary);
-  margin:0 0 6px;
-}
-.adv-product-showcase__tagline{
-  font-size:14px;color:var(--ll-color-text-secondary);
-  font-style:italic;margin:0 0 18px;line-height:1.4;
-}
-.adv-product-showcase__image{
-  width:100%;max-width:220px;margin:0 auto 14px;
-  aspect-ratio:1/1;object-fit:cover;
-  background:var(--ll-color-background-alt);
-  border-radius:8px;
-}
 
 /* ── CTAs ──────────────────────────────────────────────────── */
 .adv-cta-inline{
@@ -276,11 +234,11 @@ img{max-width:100%;display:block}
   font-size:24px;font-weight:700;
   color:#111;
   margin:0 0 16px;line-height:1.3;
-}
+text-align:left}
 .adv-pricing-reveal__note{
   font-size:16px;color:var(--ll-color-text-primary);
   margin:0;line-height:1.5;
-}
+text-align:left}
 .adv-pricing-reveal__note strong{color:#111;font-weight:700}
 
 /* ── Guarantee ─────────────────────────────────────────────── */
@@ -379,6 +337,22 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+
+/* Roman polish — guarantee badge + sticky bar */
+.adv-guarantee{display:flex !important;gap:28px !important;align-items:flex-start !important;text-align:left !important;border:none !important}
+.guarantee-badge{flex-shrink:0;width:88px;height:88px;border:3px solid var(--ll-color-primary,#6b21a8);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ll-color-primary,#6b21a8);background:transparent}
+.guarantee-badge-num{font-family:var(--ll-font-heading);font-size:28px;font-weight:900;line-height:1}
+.guarantee-badge-label{font-family:var(--ll-font-heading);font-size:11px;font-weight:700;letter-spacing:0.1em;margin-top:2px}
+.guarantee-content{flex:1;min-width:0}
+.guarantee-content > .adv-guarantee__title{margin:0 0 12px !important;text-align:left !important}
+.guarantee-content > .adv-guarantee__body{max-width:none !important;margin:0 !important;text-align:left !important}
+@media (max-width:600px){.adv-guarantee{flex-direction:column !important;gap:20px !important}.guarantee-badge{align-self:center}}
+
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;border-top:1px solid #e5e5e5}
+.sticky-cta-btn{background:var(--ll-color-cta,var(--ll-color-primary));color:#fff;padding:6px 22px;border-radius:6px;font-family:var(--ll-font-body);font-weight:700;font-size:16px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
+.sticky-cta-btn:hover{filter:brightness(0.88);color:#fff;text-decoration:none}
+@media (max-width:640px){.sticky-cta-btn{width:90%;text-align:center}}
+body{padding-bottom:80px}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -494,18 +468,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">That single decision removes the distributor, the regional representative, and the dealer margin — the three tiers that quietly inflated the flagship price.</p>
 </div>
 <!-- ── PRODUCT SHOWCASE ── -->
-<div class="adv-product-showcase">
-<h3 class="adv-product-showcase__title" style="position: relative">Hollis Premium HD 12x42</h3>
-<p class="adv-product-showcase__tagline" style="position: relative">Flagship-grade optics without the four-tier retail markup</p>
-<a href="#" data-cta-neutralized="1"><img alt="" data-copy="media.product:attr:src" data-prompts='["Premium 12x42 compact binocular in matte black metal with textured grip, centered on a clean neutral background, studio product photography, photorealistic", "Three-quarter angle studio shot of a 12x42 binocular next to its soft case and neck strap, minimalist backdrop, photorealistic", "Close-up of the objective lenses of a 12x42 binocular showing green-tinted multi-coatings, macro studio lighting, photorealistic"]' data-slot-key="media.product" data-v2-replaced="1" src="/pages/media/ea8e0d13/editor-upload-manual-cd83e5ea.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer"/></a>
-<div class="adv-product-showcase__rating">
-<span class="adv-product-showcase__rating-stars">★★★★★</span>
-<span class="adv-product-showcase__rating-score">4.8</span>
-<span class="adv-product-showcase__rating-sep">·</span>
-<span>Verified owner reviews</span>
-</div>
-<a class="adv-cta-inline" href="https://terica-store.com/click"><span data-copy="cta_check.text">Check current availability</span></a>
-</div>
 <!-- ── S7 INTRODUCING ── -->
 <h2 class="adv-section-heading" style="position: relative">Why The Specs On This Pair Actually Matter In The Field</h2>
 <div class="adv-inline-image"><img alt="" data-copy="media.s7a:attr:src" data-prompts='["American birder in his sixties raising a 12x42 binocular toward a tree line at dawn, field clothing, misty light, photorealistic", "Hunter in camo at dawn scanning a distant ridge with compact binoculars, golden hour light, photorealistic", "Over-the-shoulder view of a birder watching a songbird through binoculars, autumn forest backdrop, photorealistic"]' data-slot-key="media.s7a" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-52768705.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer"/></div>
@@ -597,16 +559,18 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">He said he started the company after twenty-two years inside the optics industry — he had watched the same glass leave the factory at a fair price and reappear on a retail counter marked up four and five times over.</p>
 </div>
 <!-- ── CTA BLOCK #1 ── -->
-<a class="adv-cta-block" href="https://terica-store.com/click"><span data-copy="cta_1.text">See availability</span></a>
+<a class="adv-cta-block" href="https://terica-store.com/click"><span data-copy="cta_1.text">See Availability</span></a>
 <!-- ── S13 60 DAYS RISK FREE + GUARANTEE ── -->
 <h2 class="adv-section-heading" style="position: relative">What The Outfit Puts Behind The Binocular Once You Buy</h2>
 <div class="adv-guarantee">
+<div class="guarantee-badge"><div class="guarantee-badge-num">30</div><div class="guarantee-badge-label">DAYS</div></div>
+<div class="guarantee-content">
 <h3 class="adv-guarantee__title" style="position: relative">30-Day Money-Back Guarantee</h3>
-<img alt="" data-copy="media.guarantee_badge:attr:src" data-prompts='["Clean 30-day money-back guarantee seal-style badge in navy and gold on a white background, photorealistic product badge", "Simple circular guarantee badge with ribbon elements reading thirty-day guarantee, studio photography, photorealistic", "Paper certificate-style guarantee document resting next to a binocular on a wooden desk, photorealistic"]' data-slot-key="media.guarantee_badge" data-v2-replaced="1" src="/pages/media/ea8e0d13/editor-upload-manual-7a213489.png" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer"/>
 <div class="adv-guarantee__body">
 <p style="position: relative">Buy the pair. Take it out in the field for thirty days. Glass it at dawn, at dusk, in rain, in thin fog.</p>
 <p style="position: relative">If the image does not hold up against whatever flagship pair you are currently carrying, send it back for a complete refund. No questions asked.</p>
 <p style="position: relative">That guarantee exists because the founder knows exactly what he shipped you, and he knows what the flagship pair costs to make, too.</p>
+</div>
 </div>
 </div>
 <!-- ── S14 WHAT TO DO NEXT ── -->
@@ -618,7 +582,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">Which is to say: the dealer shelves and the regional reps will be here tomorrow, but they do not have to be part of your next purchase.</p>
 </div>
 <!-- ── CTA BLOCK #2 ── -->
-<a class="adv-cta-block" href="https://terica-store.com/click"><span data-copy="cta_2.text">Order direct today</span></a>
+<a class="adv-cta-block" href="https://terica-store.com/click"><span data-copy="cta_2.text">Order Direct Today</span></a>
 <!-- ── S15 ZERO RISK + EMOTIONAL CALLOUT ── -->
 <h2 class="adv-section-heading" style="position: relative">What I Would Tell My Own Father At This Point</h2>
 <div class="adv-inline-image"><img alt="" data-copy="media.s15a:attr:src" data-prompts='["Seventy-year-old American duck hunter in waders at dawn with a compact binocular scanning a flooded marsh, photorealistic", "Older hunter inside a duck blind at sunrise raising binoculars toward the sky, photorealistic", "Portrait of a seasoned duck hunter holding binoculars, weathered face, warm sunrise light, photorealistic"]' data-slot-key="media.s15a" data-v2-replaced="1" src="/pages/media/ea8e0d13/manual_upload-manual-26a5c862.png" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer"/></div>
@@ -643,7 +607,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">The optics industry has been selling you the logo for decades. The Portland outfit is selling you the binocular. Those are not the same product.</p>
 </div>
 <!-- ── CTA BLOCK #3 (final) ── -->
-<a class="adv-cta-block" href="https://terica-store.com/click"><span data-copy="cta_3.text">Buy direct now</span></a>
+<a class="adv-cta-block" href="https://terica-store.com/click"><span data-copy="cta_3.text">Buy Direct Now</span></a>
 <footer id="adv-footer" style="background:#f5f5f5; border-top:1px solid #e5e5e5; padding:30px 20px; text-align:center; margin-top:40px">
 <img alt="Logo" src="https://cdn.shopify.com/s/files/1/0928/5956/4332/files/Design_sans_titre_15_-_Modifie.png?v=1777485168" style="display:block; height:36px; max-width:180px; object-fit:contain; margin:0 auto 12px"/>
 <div style="font-size:11px; color:#999; margin:0 auto 10px; font-family:system-ui,-apple-system,sans-serif">
@@ -655,4 +619,5 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
+<div class="sticky-cta"><a class="sticky-cta-btn" href="https://terica-store.com/click"><span>Check Availability</span></a></div>
 </body></html>
