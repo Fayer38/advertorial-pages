@@ -111,13 +111,13 @@ img{max-width:100%;display:block}
 
 /* ── Pullquote (uppercase section hook) ─────────────────────── */
 .adv-pullquote{
-  max-width:720px;margin:32px auto;padding:0 24px;
+  max-width:720px;margin:16px auto;padding:0 24px;
   font-family:var(--ll-font-heading);
-  font-size:24px;line-height:1.4;font-weight:700;
+  font-size:18px;line-height:1.4;font-weight:700;
   color:#111;
   letter-spacing:.3px;
 }
-@media (min-width:768px){.adv-pullquote{font-size:30px}}
+@media (min-width:768px){.adv-pullquote{font-size:22px}}
 
 /* ── Article body ───────────────────────────────────────────── */
 .adv-article{
@@ -163,44 +163,8 @@ img{max-width:100%;display:block}
 }
 
 /* ── Inline product highlight ───────────────────────────────── */
-.adv-product-highlight{
-  max-width:720px;margin:32px auto;padding:24px;
-  background:var(--ll-color-background-soft);
-  border-radius:14px;
-  display:flex;gap:20px;align-items:center;flex-wrap:wrap;
-  border:1px solid var(--ll-color-border);
-}
-.adv-product-highlight__img{
-  width:160px;height:160px;flex-shrink:0;
-  background:var(--ll-color-background);
-  border:1px solid var(--ll-color-border);
-  border-radius:8px;overflow:hidden;
-}
-.adv-product-highlight__img img{width:100%;height:100%;object-fit:contain}
-.adv-product-highlight__body{flex:1;min-width:220px}
-.adv-product-highlight__body h3{
-  font-family:var(--ll-font-heading);
-  font-size:22px;font-weight:700;
-  color:#111;
-  margin:0 0 8px;
-}
-.adv-product-highlight__body p{
-  font-family:var(--ll-font-body);
-  font-size:14px;color:var(--ll-color-muted);
-  margin:0 0 12px;
-}
 
 /* ── CTAs ───────────────────────────────────────────────────── */
-.adv-cta-inline{text-transform:uppercase;letter-spacing:0.5px;
-  display:inline-block;
-  background:var(--ll-color-cta);
-  color:#fff !important;text-decoration:none !important;
-  font-family:var(--ll-font-body);
-  font-weight:700;font-size:18px;
-  padding:14px 26px;border-radius:999px;
-  text-align:center;transition:background .15s;
-}
-.adv-cta-inline:hover{background:var(--ll-color-cta-dark)}
 
 .adv-cta-block{text-transform:uppercase;letter-spacing:0.5px;
   display:block;max-width:720px;margin:32px auto;
@@ -558,18 +522,7 @@ img{max-width:100%;display:block}
 .adv-main .adv-section-heading,
 .adv-main .adv-inline-image,
 .adv-main .adv-inline-video,
-.adv-main .adv-product-highlight,
-.adv-main .cta-center,
-.adv-main .adv-buyer-quote,
-.adv-main .adv-compare-list,
-.adv-main .adv-testimonial-screens,
-.adv-main .adv-faq,
-.adv-main .adv-testimonials,
-.adv-main .adv-offer-image,
-.adv-main .adv-offer-box,
-.adv-main .adv-guarantee,
-.adv-main .adv-fb-comments{max-width:100%;margin-left:0;margin-right:0;padding-left:4px;padding-right:4px}
-.adv-main .adv-cta-block{text-transform:uppercase;letter-spacing:0.5px;max-width:100%;margin-left:0;margin-right:0;padding-left:0;padding-right:0}
+.adv-main .adv-main .adv-cta-block{text-transform:uppercase;letter-spacing:0.5px;max-width:100%;margin-left:0;margin-right:0;padding-left:0;padding-right:0}
 
 /* Buyer quote needs left padding for the border-left bar */
 .adv-main .adv-buyer-quote{padding-left:38px !important}
@@ -615,8 +568,7 @@ img{max-width:100%;display:block}
 }
 .sticky-product-card__rating .stars{color:var(--lxs-rating-icon-color);font-size:15px;letter-spacing:1.5px}
 .sticky-product-card__rating .score{font-weight:800;color:var(--ll-color-text-primary);font-size:14px}
-.sticky-product-card .adv-cta-inline{text-transform:uppercase;letter-spacing:0.5px;display:block;width:100%;margin:0}
-
+.sticky-product-card 
 /* ── Sidebar compact reviews (under product card) ───────────── */
 .sidebar-reviews{
   margin-top:22px;padding:20px 22px;
@@ -1083,8 +1035,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span class="score"><span>4.8</span>/5</span>
 </div>
 <img alt="" data-copy="media.sidebar_product:attr:src" data-prompts="[&quot;Clean studio shot of the Lynae Lymphatic Drainer bottle on a white background, photorealistic&quot;, &quot;Lynae bottle on a soft pastel surface with one green herb leaf beside it, minimal composition, photorealistic&quot;, &quot;Woman's hand holding up the Lynae bottle against a softly blurred kitchen background, photorealistic&quot;]" data-slot-key="media.sidebar_product" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/71edb5a6/batch_f1357e0d92b7_0_2_ef8f77.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio:1/1; border-radius: 8px; object-fit: cover; margin: 8px 0px"/>
-<a class="adv-cta-inline" href="https://terica-store.com/click"><span>CHECK AVAILABILITY</span>
-</a>
 </div>
 <!-- ── SIDEBAR COMPACT REVIEWS ── -->
 <div class="sidebar-reviews">

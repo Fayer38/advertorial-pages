@@ -34,7 +34,7 @@ a{color:var(--ll-color-primary);text-decoration:none}
 a:hover{text-decoration:underline}
 
 /* ── Article layout: 2 columns on desktop, stacked on mobile ───── */
-.article-wrap{max-width:1320px;margin:0 auto;padding:26px 24px 60px;display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:46px;align-items:flex-start}
+.article-wrap{max-width:1320px;margin:0 auto;padding:6px 24px 60px;display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:46px;align-items:flex-start}
 .article-col{min-width:0}
 .sidebar-col{min-width:0}
 .sticky-product{position:sticky;top:24px}
@@ -51,10 +51,10 @@ h1.article-headline{font-family:var(--ll-font-heading);font-weight:900;font-size
 .article-dek{font-family:var(--ll-font-heading);font-weight:400;font-size:20px;line-height:1.4;color:var(--ll-color-text-secondary);margin:0 0 14px}
 @media (max-width:640px){.article-dek{font-size:18px}}
 
-.hero-media{margin:18px 0 14px;border-radius:8px;overflow:hidden;background:var(--ll-color-background-alt)}
+.hero-media{margin:4px 0 4px;border-radius:8px;overflow:hidden;background:var(--ll-color-background-alt)}
 .hero-media img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
 
-.article-byline{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:14px 0;border-top:1px solid var(--ll-color-border);border-bottom:1px solid var(--ll-color-border);margin:12px 0 24px;font-size:13px;color:var(--ll-color-muted)}
+.article-byline{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:14px 0;border-top:1px solid var(--ll-color-border);border-bottom:1px solid var(--ll-color-border);margin:12px 0 8px;font-size:13px;color:var(--ll-color-muted)}
 .article-byline .byline-date{font-weight:500}
 .article-byline .byline-author{font-weight:700;color:var(--ll-color-text-primary)}
 .article-byline .byline-sponsor{margin-left:auto;padding:4px 10px;border:1px solid var(--ll-color-border);border-radius:4px;font-size:11px;letter-spacing:0.8px;text-transform:uppercase;color:var(--ll-color-muted);font-weight:700}
@@ -106,7 +106,7 @@ h1.article-headline{font-family:var(--ll-font-heading);font-weight:900;font-size
 .article-signature strong{font-style:normal;color:var(--ll-color-text-primary);font-weight:700}
 
 /* ── Sticky sidebar product card ──────────────────────────────── */
-.sticky-product{background:#fff;border:2px solid var(--ll-color-primary);border-radius:14px;padding:22px 20px;box-shadow:0 6px 24px rgba(0,0,0,0.08);text-align:center}
+.sticky-product{background:#fff;border-radius:14px;padding:22px 20px;box-shadow:0 0 18px -4px rgba(0,0,0,0.15);text-align:center}
 .sticky-product-media{margin:0 0 10px;border-radius:10px;overflow:hidden;background:var(--ll-color-background-alt);aspect-ratio:1/1}
 .sticky-product-media img{display:block;width:100%;height:100%;object-fit:cover}
 .sticky-product-name{font-family:var(--ll-font-heading);font-weight:900;font-size:22px;line-height:1.2;margin:4px 0 6px;color:var(--ll-color-text-primary)}

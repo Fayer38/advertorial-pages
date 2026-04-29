@@ -97,27 +97,6 @@ img{max-width:100%;display:block}
   font-size:18px;line-height:1.5;
   margin:0 0 16px;color:var(--ll-color-text-primary);
 }
-.adv-product-highlight{
-  max-width:600px;margin:32px auto;padding:24px;
-  background:var(--ll-color-background-alt,#faf7f2);
-  border:1px solid var(--ll-color-border,#e5e5e5);
-  border-radius:12px;text-align:center;
-}
-.adv-product-highlight__img{
-  width:100%;max-width:320px;height:auto;
-  aspect-ratio:1/1;object-fit:cover;
-  border-radius:10px;margin:0 auto 16px;display:block;
-}
-.adv-product-highlight__name{
-  font-family:var(--ll-font-heading);
-  font-weight:900;font-size:24px;line-height:1.2;
-  margin:0 0 6px;color:var(--ll-color-text-primary);
-}
-.adv-product-highlight__tagline{
-  font-family:var(--ll-font-body);font-style:italic;
-  font-size:15px;line-height:1.4;
-  color:var(--ll-color-muted);margin:0;
-}
 @media (min-width:768px){.adv-hero__title{font-size:44px}}
 
 /* ── Byline (with avatar pool hook) ─────────────────────────── */
@@ -151,13 +130,13 @@ img{max-width:100%;display:block}
 
 /* ── Pullquote (uppercase section hook) ─────────────────────── */
 .adv-pullquote{
-  max-width:720px;margin:32px auto;padding:0 24px;
+  max-width:720px;margin:16px auto;padding:0 24px;
   font-family:var(--ll-font-heading);
-  font-size:24px;line-height:1.4;font-weight:700;
+  font-size:18px;line-height:1.4;font-weight:700;
   color:#111;
   letter-spacing:.3px;
 }
-@media (min-width:768px){.adv-pullquote{font-size:30px}}
+@media (min-width:768px){.adv-pullquote{font-size:22px}}
 
 /* ── Article body ───────────────────────────────────────────── */
 .adv-article{
@@ -203,44 +182,8 @@ img{max-width:100%;display:block}
 }
 
 /* ── Inline product highlight ───────────────────────────────── */
-.adv-product-highlight{
-  max-width:720px;margin:32px auto;padding:24px;
-  background:var(--ll-color-background-soft);
-  border-radius:14px;
-  display:flex;gap:20px;align-items:center;flex-wrap:wrap;
-  border:1px solid var(--ll-color-border);
-}
-.adv-product-highlight__img{
-  width:160px;height:160px;flex-shrink:0;
-  background:var(--ll-color-background);
-  border:1px solid var(--ll-color-border);
-  border-radius:8px;overflow:hidden;
-}
-.adv-product-highlight__img img{width:100%;height:100%;object-fit:contain}
-.adv-product-highlight__body{flex:1;min-width:220px}
-.adv-product-highlight__body h3{
-  font-family:var(--ll-font-heading);
-  font-size:22px;font-weight:700;
-  color:#111;
-  margin:0 0 8px;
-}
-.adv-product-highlight__body p{
-  font-family:var(--ll-font-body);
-  font-size:14px;color:var(--ll-color-muted);
-  margin:0 0 12px;
-}
 
 /* ── CTAs ───────────────────────────────────────────────────── */
-.adv-cta-inline{text-transform:uppercase;letter-spacing:0.5px;
-  display:inline-block;
-  background:var(--ll-color-cta);
-  color:#fff !important;text-decoration:none !important;
-  font-family:var(--ll-font-body);
-  font-weight:700;font-size:18px;
-  padding:14px 26px;border-radius:999px;
-  text-align:center;transition:background .15s;
-}
-.adv-cta-inline:hover{background:var(--ll-color-cta-dark)}
 
 .adv-cta-block{text-transform:uppercase;letter-spacing:0.5px;
   display:block;max-width:720px;margin:32px auto;
@@ -598,18 +541,7 @@ img{max-width:100%;display:block}
 .adv-main .adv-section-heading,
 .adv-main .adv-inline-image,
 .adv-main .adv-inline-video,
-.adv-main .adv-product-highlight,
-.adv-main .cta-center,
-.adv-main .adv-buyer-quote,
-.adv-main .adv-compare-list,
-.adv-main .adv-testimonial-screens,
-.adv-main .adv-faq,
-.adv-main .adv-testimonials,
-.adv-main .adv-offer-image,
-.adv-main .adv-offer-box,
-.adv-main .adv-guarantee,
-.adv-main .adv-fb-comments{max-width:100%;margin-left:0;margin-right:0;padding-left:4px;padding-right:4px}
-.adv-main .adv-cta-block{text-transform:uppercase;letter-spacing:0.5px;max-width:100%;margin-left:0;margin-right:0;padding-left:0;padding-right:0}
+.adv-main .adv-main .adv-cta-block{text-transform:uppercase;letter-spacing:0.5px;max-width:100%;margin-left:0;margin-right:0;padding-left:0;padding-right:0}
 
 /* Buyer quote needs left padding for the border-left bar */
 .adv-main .adv-buyer-quote{padding-left:38px !important}
@@ -655,8 +587,7 @@ img{max-width:100%;display:block}
 }
 .sticky-product-card__rating .stars{color:var(--lxs-rating-icon-color);font-size:15px;letter-spacing:1.5px}
 .sticky-product-card__rating .score{font-weight:800;color:var(--ll-color-text-primary);font-size:14px}
-.sticky-product-card .adv-cta-inline{text-transform:uppercase;letter-spacing:0.5px;display:block;width:100%;margin:0}
-
+.sticky-product-card 
 /* ── Sidebar compact reviews (under product card) ───────────── */
 .sidebar-reviews{
   margin-top:22px;padding:20px 22px;
@@ -815,11 +746,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="v2-media-slot" data-job-id="2c0b6500-dfd0-4c0b-956c-37f21738d231" data-prompts='["American homeowner in his 70s testing a cordless blower for the first time on his front lawn, leaves flying, photorealistic", "Close-up of a hand pressing the trigger of a lightweight cordless blower with leaves blowing in the foreground, photorealistic", "Joyful older man finishing yard work in record time, holding the small blower victoriously, suburban backyard, photorealistic"]' data-selected="0" data-slot-key="media.s4" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media.s4</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"American homeowner in his 70s testing a cordless blower for the first time on hi"</div></div>
 </div>
 <!-- ── PRODUCT HIGHLIGHT CARD (post-s4 specs reveal) ── -->
-<div class="adv-product-highlight">
-<div class="v2-media-slot" data-job-id="2c0b6500-dfd0-4c0b-956c-37f21738d231" data-prompts='["Hero product shot of a sleek black ultra-light cordless handheld blower on a clean white background with subtle shadows, photorealistic", "Three-quarter angle product photograph of a compact cordless blower with battery attached, studio lighting, photorealistic", "Senior woman holding the lightweight blower with a relaxed smile, showing how easy it is to lift, soft natural light, photorealistic"]' data-selected="0" data-slot-key="media.product" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media.product</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Hero product shot of a sleek black ultra-light cordless handheld blower on a cle"</div></div>
-<div class="adv-product-highlight__name">Seese Pro™ Ultra-Light, Ultra-Powerful Blower</div>
-<p class="adv-product-highlight__tagline">Two pounds in your hand, two hundred miles per hour out the nozzle.</p>
-</div>
 <!-- ── S5 "THE TRANSFORMATION WAS IMMEDIATE" ── -->
 <h2 class="adv-section-heading">What Happens Over The Next Few Months</h2>
 <div class="adv-article">
@@ -869,8 +795,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 </div>
 <!-- ── INLINE CTA #2 (post-FAQ, evaluation time) ── -->
-<a class="adv-cta-inline" href="https://terica-store.com/click"><span>Try It Risk-Free</span>
-</a>
 <!-- ── S8 TESTIMONIALS TRIO ── -->
 <h2 class="adv-section-heading">What Owners Are Actually Saying</h2>
 <div class="adv-article">
@@ -1117,8 +1041,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span class="score"><span>4.8</span>/5</span>
 </div>
 <div class="v2-media-slot" data-job-id="2c0b6500-dfd0-4c0b-956c-37f21738d231" data-prompts='["Compact studio shot of an ultra-light cordless handheld blower on a soft gradient background, vertical orientation, photorealistic", "Detailed angled product image of a black cordless blower showing the trigger and air outlet, white background, photorealistic", "Lifestyle close-up of the small blower resting on a wooden bench beside garden gloves, warm tones, photorealistic"]' data-selected="0" data-slot-key="media.sidebar_product" style="aspect-ratio:1/1; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media.sidebar_product</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Compact studio shot of an ultra-light cordless handheld blower on a soft gradien"</div></div>
-<a class="adv-cta-inline" href="https://terica-store.com/click"><span>Order Mine Now</span>
-</a>
 </div>
 <!-- ── SIDEBAR COMPACT REVIEWS ── -->
 <div class="sidebar-reviews">
