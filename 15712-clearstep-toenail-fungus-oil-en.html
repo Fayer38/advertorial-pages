@@ -46,7 +46,7 @@ img{max-width:100%;height:auto;display:block}
 #adv-header-logo img,#adv-footer img{margin:0 auto}
 
 /* 2-COLUMN LAYOUT */
-.article-wrap{max-width:1260px;margin:0 auto;padding:20px 24px;display:grid;grid-template-columns:minmax(0, 1fr) 300px;gap:40px;align-items:flex-start}
+.article-wrap{max-width:1260px;margin:0 auto;padding:6px 24px;display:grid;grid-template-columns:minmax(0, 1fr) 300px;gap:20px;align-items:flex-start}
 .article-col{min-width:0}
 .sidebar-col{width:300px}
 .sticky-product{position:sticky;top:70px}
@@ -71,7 +71,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .site-header{background:#fff;border-bottom:1px solid var(--ll-color-border);padding:15px 0;text-align:center}
 .site-header img{height:38px;max-width:220px;margin:0 auto}
 
-.breadcrumb{font-size:12px;color:var(--ll-color-text-secondary);margin:8px 0 8px;text-transform:uppercase;letter-spacing:0.5px}
+.breadcrumb{font-size:12px;color:var(--ll-color-text-secondary);margin:0 0 8px;text-transform:uppercase;letter-spacing:0.5px}
 .breadcrumb a{color:var(--ll-color-text-secondary);text-decoration:none;font-weight:400}
 .breadcrumb-sep{margin:0 8px;opacity:0.5}
 
@@ -80,7 +80,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .headline-stars-row{display:flex;align-items:center;gap:8px;margin:12px 0 14px;flex-wrap:wrap}
 .headline-stars-row .stars{font-size:20px}
 .headline-stars-row .ratings-count{font-size:14px;color:var(--ll-color-text-secondary);font-weight:600}
-.article-byline{display:flex;gap:12px;align-items:center;padding:14px 0;font-size:13px;border-top:1px solid var(--ll-color-border);border-bottom:1px solid var(--ll-color-border);margin:10px 0 24px}
+.article-byline{display:flex;gap:12px;align-items:center;padding:14px 0;font-size:13px;border-top:1px solid var(--ll-color-border);border-bottom:1px solid var(--ll-color-border);margin:10px 0 8px}
 .article-byline-photo{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#ddd}
 .article-byline-info{display:flex;flex-direction:column;gap:2px}
 .article-byline-name{font-weight:700;color:var(--ll-color-text-primary);font-family:var(--ll-font-heading);font-size:14px}
@@ -115,7 +115,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .stars{color:#f5b40a !important;font-size:20px;letter-spacing:2px;line-height:1;font-weight:700;display:inline-block}
 
 /* STICKY PRODUCT CARD */
-.sticky-product{background:#fff;border:3px solid var(--ll-color-primary);border-radius:var(--ll-radius-md);padding:22px 18px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,0.08)}
+.sticky-product{background:#fff;border:3px solid var(--ll-color-primary);border-radius:var(--ll-radius-md);padding:22px 10px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,0.08)}
 .sticky-product-badge{display:inline-block;background:var(--ll-color-warning);color:#fff;padding:5px 12px;border-radius:var(--ll-radius-pill);font-size:11px;font-weight:800;letter-spacing:0.2px;margin-bottom:12px;font-family:var(--ll-font-heading)}
 .sticky-product-name{font-family:var(--ll-font-heading);font-size:19px;font-weight:800;color:var(--ll-color-text-primary);line-height:1.2;margin-bottom:4px}
 .sticky-product-tagline{font-size:12px;color:var(--ll-color-text-secondary);margin-bottom:12px;line-height:1.4}
@@ -126,20 +126,21 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .sticky-product-price-original{font-size:15px;text-decoration:line-through;color:#888;font-family:var(--ll-font-heading);font-weight:600}
 .sticky-product-price-sale{font-family:var(--ll-font-heading);font-size:30px;font-weight:900;color:var(--ll-color-primary);line-height:1}
 .sticky-product-discount{background:var(--ll-color-warning);color:#fff;padding:3px 8px;border-radius:var(--ll-radius-sm);font-size:10px;font-weight:800;font-family:var(--ll-font-heading);display:inline-block;margin-bottom:10px}
-.sticky-product-cta{display:block;background:var(--ll-color-primary);color:#fff;padding:14px 12px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 3px 6px 1px rgba(0,0,0,0.18);letter-spacing:0.2px;text-align:center;line-height:1.2;margin:12px 0 10px;transition:filter 0.15s}
+.sticky-product-cta{display:block;background:var(--ll-color-primary);color:#fff;padding:14px 12px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 3px 6px 1px rgba(0,0,0,0.18);letter-spacing:0.2px;text-align:center;line-height:1.2;margin:12px 0 10px;transition:filter 0.15s;text-transform:uppercase;letter-spacing:0.5px}
 .sticky-product-cta:hover{filter:brightness(0.88);color:#fff;text-decoration:none}
 .sticky-product-trust{display:flex;flex-direction:column;gap:6px;margin-top:12px;padding-top:12px;border-top:1px dashed rgba(var(--ll-color-primary-rgb), 0.3);font-size:11px;color:var(--ll-color-text-secondary);text-align:left}
 .sticky-product-trust-item{display:flex;align-items:center;gap:6px;font-weight:600}
 .sticky-product-trust-item::before{content:"✓";color:var(--ll-color-primary);font-weight:800;font-size:13px}
 
 /* TRUSTPILOT REVIEWS */
-.trustpilot-intro{text-align:center;margin:24px 0 18px}
-.trustpilot-intro h3{color:var(--ll-color-success);font-size:22px;margin-bottom:5px}
+.trustpilot-intro{text-align:left;margin:24px 0 18px}
+.trustpilot-intro h3{font-size:22px;margin-bottom:5px}
 .trustpilot-intro p{color:var(--ll-color-text-secondary);font-size:14px;margin:0}
 .featured-review{background:#fff;border:1px solid var(--ll-color-border);border-radius:var(--ll-radius-md);padding:22px;margin-bottom:15px;box-shadow:0 2px 10px rgba(0,0,0,0.04)}
 .featured-review-title{font-family:var(--ll-font-heading);font-size:17px;font-weight:800;color:var(--ll-color-text-primary);margin:8px 0 5px}
 .featured-review-meta{font-size:12px;color:var(--ll-color-text-secondary);margin-bottom:10px}
-.featured-review-meta strong{color:var(--ll-color-success);font-weight:700}
+.featured-review-meta strong{color:var(--ll-color-text-secondary);font-weight:700}
+.featured-review-meta strong:last-of-type{color:var(--ll-color-success)}
 .featured-review-body{font-size:14px;color:var(--ll-color-text-secondary);line-height:1.65;margin-bottom:12px}
 .featured-review-helpful{font-size:11px;color:#888;padding-top:10px;border-top:1px solid var(--ll-color-border);font-weight:600}
 
@@ -148,8 +149,16 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 /* TRUST BADGES */
 
 /* GUARANTEE BOX */
-.guarantee-box{background:var(--ll-color-background-alt);border:3px dashed var(--ll-color-tertiary);border-radius:var(--ll-radius-md);padding:24px;margin:24px 0;text-align:center}
-.guarantee-box h3{color:var(--ll-color-primary);font-size:22px;margin:4px 0 12px}
+.guarantee-box{background:var(--ll-color-background-alt);border-radius:var(--ll-radius-md);padding:32px;margin:24px 0;display:flex;gap:28px;align-items:flex-start;text-align:left}
+.guarantee-badge{flex-shrink:0;width:88px;height:88px;border:3px solid var(--ll-color-success);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ll-color-success);background:transparent}
+.guarantee-badge-num{font-family:var(--ll-font-heading);font-size:28px;font-weight:900;line-height:1}
+.guarantee-badge-label{font-family:var(--ll-font-heading);font-size:11px;font-weight:700;letter-spacing:0.1em;margin-top:2px}
+.guarantee-content{flex:1;min-width:0}
+.guarantee-content h3{font-family:var(--ll-font-heading);font-size:22px;font-weight:800;color:var(--ll-color-text-primary);margin:0 0 16px;line-height:1.35}
+.guarantee-content p{font-size:15px;color:var(--ll-color-text-secondary);line-height:1.65;margin:0 0 14px}
+.guarantee-content p:last-child{margin-bottom:0}
+@media (max-width:600px){.guarantee-box{flex-direction:column;gap:20px;padding:24px}.guarantee-badge{align-self:center}}
+.guarantee-box h3{font-size:22px;margin:4px 0 12px}
 .guarantee-box .days{display:inline-block;background:var(--ll-color-primary);color:#fff;padding:6px 18px;border-radius:var(--ll-radius-pill);font-family:var(--ll-font-heading);font-weight:800;font-size:13px;margin-bottom:4px}
 .guarantee-box p{font-size:15px;color:var(--ll-color-text-secondary);margin-bottom:8px;line-height:1.6}
 .guarantee-contact{margin-top:16px;padding-top:14px;border-top:1px solid rgba(var(--ll-color-primary-rgb), 0.3);font-size:13px}
@@ -200,9 +209,9 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .site-footer a:hover{color:#fff}
 .site-footer-copy{margin-bottom:10px;color:#ccc}
 
-.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:var(--ll-color-primary);color:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap}
-.sticky-cta-text{font-family:var(--ll-font-heading);font-weight:700;font-size:18px;color:#fff}
-.sticky-cta-btn{background:#fff;color:var(--ll-color-primary);padding:10px 22px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-weight:800;font-size:13px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;border-top:1px solid #e5e5e5}
+.sticky-cta-text{font-family:var(--ll-font-heading);font-weight:700;font-size:18px;color:#111;text-transform:capitalize}
+.sticky-cta-btn{background:var(--ll-color-primary);color:#fff;padding:8px 18px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-weight:800;font-size:16px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
 
 @media (max-width:900px){
   .article-wrap{grid-template-columns:1fr;padding:18px 16px;gap:0}
@@ -219,7 +228,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
   .amazon-features{grid-template-columns:1fr}
   .featured-review{padding:18px}
   .sticky-cta-text{display:none}
-  .sticky-cta-btn{width:90%;padding:12px 16px;font-size:14px;text-align:center}
+  .sticky-cta-btn{width:90%;padding:12px 16px;font-size:16px;text-align:center}
   .bullet-list li{font-size:16px;padding:8px 0 8px 34px}
   .bullet-list li::before{width:22px;height:22px;top:10px}
 }
@@ -239,9 +248,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
-<div id="adv-header-logo" style="background:#fff;border-bottom:1px solid #eee;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:system-ui,-apple-system,sans-serif;">
-<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0928/5956/4332/files/Design_sans_titre_15_-_Modifie.png?v=1777485168" style="display:block;height:32px;max-width:200px;object-fit:contain;margin:0">
-<span style="color:#999;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;font-weight:500">Advertorial</span>
+<div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif">This is an advertorial</div>
+<div id="adv-header-logo" style="text-align:center;padding:6px 0 4px;background:#fff;border-bottom:1px solid #eee">
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0928/5956/4332/files/Design_sans_titre_15_-_Modifie.png?v=1777485168" style="display:block;height:32px;max-width:200px;object-fit:contain;margin:0 auto">
 </div>
 <!-- UPDATE BANNER -->
 <div class="article-wrap">
@@ -260,7 +269,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 </div>
 <!-- MEDIA 1: hero video (or image) after headline -->
-<div class="v2-media-slot" data-job-id="f8b91643-c2f4-46e7-b7f7-fe14dfbc288e" data-prompts="[&quot;A 71-year-old American man sitting at a kitchen table in a North Carolina home, looking at an unfilled prescription paper and pill bottles, soft morning light through window, photorealistic&quot;, &quot;Older man's hands holding a folded FDA medication guide with yellow highlighter marks, prescription slip on wooden table, warm natural light, photorealistic&quot;, &quot;Pensive senior man looking down at his bare foot on a wooden floor, kitchen interior, contemplative mood, soft daylight, photorealistic&quot;]" data-selected="0" data-slot-key="media_1.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"A 71-year-old American man sitting at a kitchen table in a North Carolina home, "</div></div>
+<div class="v2-media-slot" data-job-id="f8b91643-c2f4-46e7-b7f7-fe14dfbc288e" data-prompts="[&quot;A 71-year-old American man sitting at a kitchen table in a North Carolina home, looking at an unfilled prescription paper and pill bottles, soft morning light through window, photorealistic&quot;, &quot;Older man's hands holding a folded FDA medication guide with yellow highlighter marks, prescription slip on wooden table, warm natural light, photorealistic&quot;, &quot;Pensive senior man looking down at his bare foot on a wooden floor, kitchen interior, contemplative mood, soft daylight, photorealistic&quot;]" data-selected="0" data-slot-key="media_1.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"A 71-year-old American man sitting at a kitchen table in a North Carolina home, "</div></div>
 <!-- STORY INTRO -->
 <p>On a Tuesday morning in Asheville, Robert Hayes, 71, stares at a prescription he cannot bring himself to fill.</p>
 <p>His dermatologist handed it to him with a shrug and one casual sentence about checking liver enzymes every six weeks.</p>
@@ -275,7 +284,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <b class="rhetorical">For a man already on three prescriptions filtered through his liver, that warning is not abstract — it is personal arithmetic.</b>
 <p>And yet his dermatologist treated the handoff like refilling allergy drops, never mentioning the polypharmacy reality of his cohort.</p>
 <!-- MEDIA 2: story / breakthrough image -->
-<div class="v2-media-slot" data-job-id="f8b91643-c2f4-46e7-b7f7-fe14dfbc288e" data-prompts="[&quot;Close-up of an FDA medication guide page with hepatotoxicity warning highlighted in yellow marker, on a kitchen table beside reading glasses, photorealistic&quot;, &quot;Senior man's hand holding a printed prescription drug warning leaflet, focus on bold black warning text, photorealistic&quot;, &quot;An open pill organizer with multiple medications next to a folded prescription, on a wooden table, warm light, photorealistic&quot;]" data-selected="0" data-slot-key="media_2.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Close-up of an FDA medication guide page with hepatotoxicity warning highlighted"</div></div>
+<div class="v2-media-slot" data-job-id="f8b91643-c2f4-46e7-b7f7-fe14dfbc288e" data-prompts="[&quot;Close-up of an FDA medication guide page with hepatotoxicity warning highlighted in yellow marker, on a kitchen table beside reading glasses, photorealistic&quot;, &quot;Senior man's hand holding a printed prescription drug warning leaflet, focus on bold black warning text, photorealistic&quot;, &quot;An open pill organizer with multiple medications next to a folded prescription, on a wooden table, warm light, photorealistic&quot;]" data-selected="0" data-slot-key="media_2.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Close-up of an FDA medication guide page with hepatotoxicity warning highlighted"</div></div>
 <p>Robert is not alone — millions of medicated American seniors are quietly being offered the same pill, with the same shrug.</p>
 <!-- ROOT CAUSE -->
 <b class="rhetorical">The Real Issue</b>
@@ -283,14 +292,14 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>The infection burrows beneath the keratin plate — the hard, dense, layered armor that makes a toenail a toenail.</p>
 <p>That keratin barrier is exactly why most drugstore creams, polishes, and home remedies <strong>never reach the actual infection underneath</strong>.</p>
 <!-- MEDIA 3: mechanism / diagram -->
-<div class="v2-media-slot" data-job-id="f8b91643-c2f4-46e7-b7f7-fe14dfbc288e" data-prompts="[&quot;Cross-section medical illustration of a toenail showing keratin layers and fungal infection beneath the nail bed, clean clinical style, photorealistic&quot;, &quot;Macro photograph of a thickened, yellowed toenail on a senior's foot, clinical lighting, neutral background, photorealistic&quot;, &quot;Diagram-style image showing topical product penetration through nail keratin layers, scientific illustration, photorealistic&quot;]" data-selected="0" data-slot-key="media_3.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Cross-section medical illustration of a toenail showing keratin layers and funga"</div></div>
+<div class="v2-media-slot" data-job-id="f8b91643-c2f4-46e7-b7f7-fe14dfbc288e" data-prompts="[&quot;Cross-section medical illustration of a toenail showing keratin layers and fungal infection beneath the nail bed, clean clinical style, photorealistic&quot;, &quot;Macro photograph of a thickened, yellowed toenail on a senior's foot, clinical lighting, neutral background, photorealistic&quot;, &quot;Diagram-style image showing topical product penetration through nail keratin layers, scientific illustration, photorealistic&quot;]" data-selected="0" data-slot-key="media_3.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Cross-section medical illustration of a toenail showing keratin layers and funga"</div></div>
 <p class="media-caption">/v2/media-slot/f8b91643-c2f4-46e7-b7f7-fe14dfbc288e/media_3__caption</p>
 <p>Pills work because they travel through the bloodstream and the liver, attacking the fungus from the inside out.</p>
 <b class="rhetorical">That Is Also Precisely Why The Pills Carry Such A Steep Hepatic Cost</b>
 <p>The FDA's own labeling instructs prescribers to <strong>monitor liver enzymes every six weeks</strong> — an open admission of risk.</p>
 <p>For seniors already taking statins, blood thinners, or diabetes medications, stacking another liver-burdening drug becomes a real gamble.</p>
 <!-- MEDIA 4: bad-news visual / worsening -->
-<div class="v2-media-slot" data-job-id="f8b91643-c2f4-46e7-b7f7-fe14dfbc288e" data-prompts="[&quot;Older couple sitting on a porch in Asheville North Carolina, wife looking concerned at husband's bare feet, gentle natural light, photorealistic&quot;, &quot;Senior man and wife at a lakeside dock, husband self-conscious about his feet, late summer afternoon, photorealistic&quot;, &quot;Quiet domestic scene of a retired couple at home, husband examining his toes while wife pretends not to notice, warm interior, photorealistic&quot;]" data-selected="0" data-slot-key="media_4.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Older couple sitting on a porch in Asheville North Carolina, wife looking concer"</div></div>
+<div class="v2-media-slot" data-job-id="f8b91643-c2f4-46e7-b7f7-fe14dfbc288e" data-prompts="[&quot;Older couple sitting on a porch in Asheville North Carolina, wife looking concerned at husband's bare feet, gentle natural light, photorealistic&quot;, &quot;Senior man and wife at a lakeside dock, husband self-conscious about his feet, late summer afternoon, photorealistic&quot;, &quot;Quiet domestic scene of a retired couple at home, husband examining his toes while wife pretends not to notice, warm interior, photorealistic&quot;]" data-selected="0" data-slot-key="media_4.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Older couple sitting on a porch in Asheville North Carolina, wife looking concer"</div></div>
 <b class="rhetorical">So What Does A Doctor Do When His Own Wife Develops The Same Stubborn Toenail Problem</b>
 <p>That question landed in front of Dr. Edward Kessler, a retired podiatrist from Charlotte who spent decades writing those prescriptions.</p>
 <p>After watching too many medicated patients fail liver panels, he stopped writing oral antifungal scripts altogether — for anyone over sixty.</p>
@@ -299,7 +308,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>Dr. Kessler needed something <strong>thin enough to seep through keratin</strong>, yet potent enough to actually reach the nail bed.</p>
 <b class="rhetorical">He Found The Answer Hiding In An Older Generation Of Antifungal Chemistry The Industry Largely Forgot About</b>
 <!-- MEDIA 5: solution reveal image/video -->
-<div class="v2-media-slot" data-job-id="f8b91643-c2f4-46e7-b7f7-fe14dfbc288e" data-prompts="[&quot;Hands of a senior woman applying a clear oil to her toenails with a small brush applicator, bathroom counter setting, soft light, photorealistic&quot;, &quot;Close-up of a brush-on antifungal oil bottle being applied to a thickened toenail, clinical clean aesthetic, photorealistic&quot;, &quot;Before and after comparison of a senior's toenails over a 90-day period, side-by-side, natural lighting, photorealistic&quot;]" data-selected="0" data-slot-key="media_5.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Hands of a senior woman applying a clear oil to her toenails with a small brush "</div></div>
+<div class="v2-media-slot" data-job-id="f8b91643-c2f4-46e7-b7f7-fe14dfbc288e" data-prompts="[&quot;Hands of a senior woman applying a clear oil to her toenails with a small brush applicator, bathroom counter setting, soft light, photorealistic&quot;, &quot;Close-up of a brush-on antifungal oil bottle being applied to a thickened toenail, clinical clean aesthetic, photorealistic&quot;, &quot;Before and after comparison of a senior's toenails over a 90-day period, side-by-side, natural lighting, photorealistic&quot;]" data-selected="0" data-slot-key="media_5.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Hands of a senior woman applying a clear oil to her toenails with a small brush "</div></div>
 <h2>A Topical Built Around The One Compound That Actually Pushes Through Keratin</h2>
 <p>That compound is <strong>undecylenic acid</strong>, a fatty-acid antifungal long recognized by dermatologists for its safety profile.</p>
 <p>At a clinical-strength concentration of ten percent, it is small enough to slip past keratin and reach the nail plate.</p>
@@ -307,15 +316,15 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>No prescription. No bloodstream. No six-week liver panel. Just a brush-on routine applied morning and night to affected nails.</p>
 <p>Dr. Kessler started brushing it onto his own wife's nails — and watched their <u>appearance steadily restore</u> over ninety days.</p>
 <!-- PRODUCT REVEAL -->
-<h2 style="margin-top:40px">The product Dr. Kessler eventually pointed his patients toward — and the one Robert finally ordered that Tuesday night — is this.</h2>
-<h2 style="color:var(--ll-color-primary); margin-top:0; font-size:34px">ClearStep Toenail Fungus Oil</h2>
+<h2 style="margin-top:40px">The product Dr. Kessler eventually pointed his patients toward — and the one Robert finally ordered that Tuesday night — is this</h2>
+<h2 style="margin-top:0; font-size:34px">ClearStep Toenail Fungus Oil</h2>
 <!-- MEDIA 6: product hero image -->
-<div class="v2-media-slot" data-job-id="f8b91643-c2f4-46e7-b7f7-fe14dfbc288e" data-prompts="[&quot;ClearStep Toenail Fungus Oil bottle with brush applicator on a clean white surface, professional product photography, photorealistic&quot;, &quot;Senior man's hand holding a small dropper-style antifungal oil bottle, kitchen counter setting, photorealistic&quot;, &quot;ClearStep oil bottle next to a glass of water and reading glasses, morning routine setting, photorealistic&quot;]" data-selected="0" data-slot-key="media_6.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"ClearStep Toenail Fungus Oil bottle with brush applicator on a clean white surfa"</div></div>
+<div class="v2-media-slot" data-job-id="f8b91643-c2f4-46e7-b7f7-fe14dfbc288e" data-prompts="[&quot;ClearStep Toenail Fungus Oil bottle with brush applicator on a clean white surface, professional product photography, photorealistic&quot;, &quot;Senior man's hand holding a small dropper-style antifungal oil bottle, kitchen counter setting, photorealistic&quot;, &quot;ClearStep oil bottle next to a glass of water and reading glasses, morning routine setting, photorealistic&quot;]" data-selected="0" data-slot-key="media_6.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"ClearStep Toenail Fungus Oil bottle with brush applicator on a clean white surfa"</div></div>
 <p><strong>ClearStep Toenail Fungus Oil</strong> is built around clinical-strength ten-percent undecylenic acid, the same compound Dr. Kessler trusted on his wife.</p>
 <p>It is delivered in a precision brush-on applicator that targets each affected nail without contaminating the bottle or wasting product.</p>
 <p>The carrier blend of tea tree, lavender, and clove essential oils <strong>helps the active compound penetrate keratin</strong> and soothes surrounding skin.</p>
 <!-- MEDIA 7: product in use video/image -->
-<div class="v2-media-slot" data-job-id="f8b91643-c2f4-46e7-b7f7-fe14dfbc288e" data-prompts="[&quot;Senior woman smiling while reading a book with bare feet showing healthier-looking toenails, living room setting, photorealistic&quot;, &quot;Older couple walking on a beach barefoot, content expressions, late afternoon light, photorealistic&quot;, &quot;Close-up of clearer, healthier toenails on a senior's foot, soft natural lighting, photorealistic&quot;]" data-selected="0" data-slot-key="media_7.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Senior woman smiling while reading a book with bare feet showing healthier-looki"</div></div>
+<div class="v2-media-slot" data-job-id="f8b91643-c2f4-46e7-b7f7-fe14dfbc288e" data-prompts="[&quot;Senior woman smiling while reading a book with bare feet showing healthier-looking toenails, living room setting, photorealistic&quot;, &quot;Older couple walking on a beach barefoot, content expressions, late afternoon light, photorealistic&quot;, &quot;Close-up of clearer, healthier toenails on a senior's foot, soft natural lighting, photorealistic&quot;]" data-selected="0" data-slot-key="media_7.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Senior woman smiling while reading a book with bare feet showing healthier-looki"</div></div>
 <p>There is no prescription, no oral pill, and <u>no liver-enzyme monitoring</u> required to use it morning and night.</p>
 <p>Most users following the routine consistently report visible improvement in nail appearance somewhere between thirty and ninety days.</p>
 <!-- ★ CTA #1 — first CTA in the page, AFTER 7 medias + gradual product reveal -->
@@ -374,11 +383,12 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <a class="cta-btn" href="https://terica-store.com/click"><span>Order From Brand</span><small>Direct shipment, full guarantee included</small></a>
 <!-- GUARANTEE -->
 <div class="guarantee-box">
-<span class="days">30 Days</span>
+<div class="guarantee-badge"><div class="guarantee-badge-num">30</div><div class="guarantee-badge-label">DAYS</div></div>
+<div class="guarantee-content">
 <h3>A Straightforward 30-Day Guarantee — Because A Real Routine Deserves An Honest Trial</h3>
 <p>You have thirty full days from delivery to put the brush-on routine to work on your nails morning and night.</p>
-<p>If during that window you decide it is not the right fit, the brand will <strong>refund your purchase</strong> without interrogation.</p>
 <p>You do not need a perfect bottle, an unopened seal, or a long explanation — just a quick email to support.</p>
+</div>
 </div>
 <!-- HERE'S WHAT TO DO NEXT -->
 <h2>What Robert Finally Did That Tuesday Night After Fourteen Months Of Hesitation</h2>
@@ -463,12 +473,12 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="sticky-product">
 <span class="sticky-product-badge">Editor's Pick</span>
 <div class="sticky-product-name">ClearStep Toenail Fungus Oil</div>
-<div class="v2-media-slot" data-job-id="f8b91643-c2f4-46e7-b7f7-fe14dfbc288e" data-prompts='["ClearStep Toenail Fungus Oil bottle with brush applicator on a clean white background, e-commerce product photography, photorealistic", "Amber glass bottle with brush cap labeled ClearStep on a soft neutral surface, studio lighting, photorealistic", "ClearStep bottle alongside a folded soft towel, spa-style aesthetic, warm lighting, photorealistic"]' data-selected="0" data-slot-key="sidebar.image" style="aspect-ratio:1/1; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — sidebar.image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"ClearStep Toenail Fungus Oil bottle with brush applicator on a clean white backg"</div></div>
+<div class="v2-media-slot" data-job-id="f8b91643-c2f4-46e7-b7f7-fe14dfbc288e" data-prompts='["ClearStep Toenail Fungus Oil bottle with brush applicator on a clean white background, e-commerce product photography, photorealistic", "Amber glass bottle with brush cap labeled ClearStep on a soft neutral surface, studio lighting, photorealistic", "ClearStep bottle alongside a folded soft towel, spa-style aesthetic, warm lighting, photorealistic"]' data-selected="0" data-slot-key="sidebar.image" style="aspect-ratio:1/1; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — sidebar.image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"ClearStep Toenail Fungus Oil bottle with brush applicator on a clean white backg"</div></div>
 <div class="sticky-product-stars">
 <span class="stars">★★★★★</span>
 <span>Rated 4.8 out of 5</span>
 </div>
-<a class="sticky-product-cta" href="https://terica-store.com/click"><span>See Availability</span></a>
+<a class="sticky-product-cta" href="https://terica-store.com/click"><span>CHECK AVAILABILITY</span></a>
 <div class="sticky-product-trust">
 <span class="sticky-product-trust-item">Direct from brand</span>
 <span class="sticky-product-trust-item">30-day guarantee</span>
@@ -479,7 +489,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div><!-- /article-wrap -->
 <div class="sticky-cta">
 <span class="sticky-cta-text">A safer route for medicated seniors</span>
-<a class="sticky-cta-btn" href="https://terica-store.com/click"><span>Check Availability</span></a>
+<a class="sticky-cta-btn" href="https://terica-store.com/click"><span>Check availability</span></a>
 </div>
 <footer id="adv-footer" style="background:#f5f5f5; border-top:1px solid #e5e5e5; padding:30px 20px; text-align:center; margin-top:40px">
 <img alt="Logo" src="https://cdn.shopify.com/s/files/1/0928/5956/4332/files/Design_sans_titre_15_-_Modifie.png?v=1777485168" style="display:block; height:36px; max-width:180px; object-fit:contain; margin:0 auto 12px"/>

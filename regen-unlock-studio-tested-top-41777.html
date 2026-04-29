@@ -46,7 +46,7 @@ img{max-width:100%;height:auto;display:block}
 #adv-header-logo img,#adv-footer img{margin:0 auto}
 
 /* 2-COLUMN LAYOUT */
-.article-wrap{max-width:1260px;margin:0 auto;padding:20px 24px;display:grid;grid-template-columns:minmax(0, 1fr) 300px;gap:40px;align-items:flex-start}
+.article-wrap{max-width:1260px;margin:0 auto;padding:6px 24px;display:grid;grid-template-columns:minmax(0, 1fr) 300px;gap:20px;align-items:flex-start}
 .article-col{min-width:0}
 .sidebar-col{width:300px}
 .sticky-product{position:sticky;top:70px}
@@ -71,7 +71,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .site-header{background:#fff;border-bottom:1px solid var(--ll-color-border);padding:15px 0;text-align:center}
 .site-header img{height:38px;max-width:220px;margin:0 auto}
 
-.breadcrumb{font-size:12px;color:var(--ll-color-text-secondary);margin:8px 0 8px;text-transform:uppercase;letter-spacing:0.5px}
+.breadcrumb{font-size:12px;color:var(--ll-color-text-secondary);margin:0 0 8px;text-transform:uppercase;letter-spacing:0.5px}
 .breadcrumb a{color:var(--ll-color-text-secondary);text-decoration:none;font-weight:400}
 .breadcrumb-sep{margin:0 8px;opacity:0.5}
 
@@ -80,7 +80,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .headline-stars-row{display:flex;align-items:center;gap:8px;margin:12px 0 14px;flex-wrap:wrap}
 .headline-stars-row .stars{font-size:20px}
 .headline-stars-row .ratings-count{font-size:14px;color:var(--ll-color-text-secondary);font-weight:600}
-.article-byline{display:flex;gap:12px;align-items:center;padding:14px 0;font-size:13px;border-top:1px solid var(--ll-color-border);border-bottom:1px solid var(--ll-color-border);margin:10px 0 24px}
+.article-byline{display:flex;gap:12px;align-items:center;padding:14px 0;font-size:13px;border-top:1px solid var(--ll-color-border);border-bottom:1px solid var(--ll-color-border);margin:10px 0 8px}
 .article-byline-photo{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#ddd}
 .article-byline-info{display:flex;flex-direction:column;gap:2px}
 .article-byline-name{font-weight:700;color:var(--ll-color-text-primary);font-family:var(--ll-font-heading);font-size:14px}
@@ -115,7 +115,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .stars{color:#f5b40a !important;font-size:20px;letter-spacing:2px;line-height:1;font-weight:700;display:inline-block}
 
 /* STICKY PRODUCT CARD */
-.sticky-product{background:#fff;border:3px solid var(--ll-color-primary);border-radius:var(--ll-radius-md);padding:22px 18px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,0.08)}
+.sticky-product{background:#fff;border:3px solid var(--ll-color-primary);border-radius:var(--ll-radius-md);padding:22px 10px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,0.08)}
 .sticky-product-badge{display:inline-block;background:var(--ll-color-warning);color:#fff;padding:5px 12px;border-radius:var(--ll-radius-pill);font-size:11px;font-weight:800;letter-spacing:0.2px;margin-bottom:12px;font-family:var(--ll-font-heading)}
 .sticky-product-name{font-family:var(--ll-font-heading);font-size:19px;font-weight:800;color:var(--ll-color-text-primary);line-height:1.2;margin-bottom:4px}
 .sticky-product-tagline{font-size:12px;color:var(--ll-color-text-secondary);margin-bottom:12px;line-height:1.4}
@@ -126,20 +126,21 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .sticky-product-price-original{font-size:15px;text-decoration:line-through;color:#888;font-family:var(--ll-font-heading);font-weight:600}
 .sticky-product-price-sale{font-family:var(--ll-font-heading);font-size:30px;font-weight:900;color:var(--ll-color-primary);line-height:1}
 .sticky-product-discount{background:var(--ll-color-warning);color:#fff;padding:3px 8px;border-radius:var(--ll-radius-sm);font-size:10px;font-weight:800;font-family:var(--ll-font-heading);display:inline-block;margin-bottom:10px}
-.sticky-product-cta{display:block;background:var(--ll-color-primary);color:#fff;padding:14px 12px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 3px 6px 1px rgba(0,0,0,0.18);letter-spacing:0.2px;text-align:center;line-height:1.2;margin:12px 0 10px;transition:filter 0.15s}
+.sticky-product-cta{display:block;background:var(--ll-color-primary);color:#fff;padding:14px 12px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 3px 6px 1px rgba(0,0,0,0.18);letter-spacing:0.2px;text-align:center;line-height:1.2;margin:12px 0 10px;transition:filter 0.15s;text-transform:uppercase;letter-spacing:0.5px}
 .sticky-product-cta:hover{filter:brightness(0.88);color:#fff;text-decoration:none}
 .sticky-product-trust{display:flex;flex-direction:column;gap:6px;margin-top:12px;padding-top:12px;border-top:1px dashed rgba(var(--ll-color-primary-rgb), 0.3);font-size:11px;color:var(--ll-color-text-secondary);text-align:left}
 .sticky-product-trust-item{display:flex;align-items:center;gap:6px;font-weight:600}
 .sticky-product-trust-item::before{content:"✓";color:var(--ll-color-primary);font-weight:800;font-size:13px}
 
 /* TRUSTPILOT REVIEWS */
-.trustpilot-intro{text-align:center;margin:24px 0 18px}
-.trustpilot-intro h3{color:var(--ll-color-success);font-size:22px;margin-bottom:5px}
+.trustpilot-intro{text-align:left;margin:24px 0 18px}
+.trustpilot-intro h3{font-size:22px;margin-bottom:5px}
 .trustpilot-intro p{color:var(--ll-color-text-secondary);font-size:14px;margin:0}
 .featured-review{background:#fff;border:1px solid var(--ll-color-border);border-radius:var(--ll-radius-md);padding:22px;margin-bottom:15px;box-shadow:0 2px 10px rgba(0,0,0,0.04)}
 .featured-review-title{font-family:var(--ll-font-heading);font-size:17px;font-weight:800;color:var(--ll-color-text-primary);margin:8px 0 5px}
 .featured-review-meta{font-size:12px;color:var(--ll-color-text-secondary);margin-bottom:10px}
-.featured-review-meta strong{color:var(--ll-color-success);font-weight:700}
+.featured-review-meta strong{color:var(--ll-color-text-secondary);font-weight:700}
+.featured-review-meta strong:last-of-type{color:var(--ll-color-success)}
 .featured-review-body{font-size:14px;color:var(--ll-color-text-secondary);line-height:1.65;margin-bottom:12px}
 .featured-review-helpful{font-size:11px;color:#888;padding-top:10px;border-top:1px solid var(--ll-color-border);font-weight:600}
 
@@ -148,8 +149,16 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 /* TRUST BADGES */
 
 /* GUARANTEE BOX */
-.guarantee-box{background:var(--ll-color-background-alt);border:3px dashed var(--ll-color-tertiary);border-radius:var(--ll-radius-md);padding:24px;margin:24px 0;text-align:center}
-.guarantee-box h3{color:var(--ll-color-primary);font-size:22px;margin:4px 0 12px}
+.guarantee-box{background:var(--ll-color-background-alt);border-radius:var(--ll-radius-md);padding:32px;margin:24px 0;display:flex;gap:28px;align-items:flex-start;text-align:left}
+.guarantee-badge{flex-shrink:0;width:88px;height:88px;border:3px solid var(--ll-color-success);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ll-color-success);background:transparent}
+.guarantee-badge-num{font-family:var(--ll-font-heading);font-size:28px;font-weight:900;line-height:1}
+.guarantee-badge-label{font-family:var(--ll-font-heading);font-size:11px;font-weight:700;letter-spacing:0.1em;margin-top:2px}
+.guarantee-content{flex:1;min-width:0}
+.guarantee-content h3{font-family:var(--ll-font-heading);font-size:22px;font-weight:800;color:var(--ll-color-text-primary);margin:0 0 16px;line-height:1.35}
+.guarantee-content p{font-size:15px;color:var(--ll-color-text-secondary);line-height:1.65;margin:0 0 14px}
+.guarantee-content p:last-child{margin-bottom:0}
+@media (max-width:600px){.guarantee-box{flex-direction:column;gap:20px;padding:24px}.guarantee-badge{align-self:center}}
+.guarantee-box h3{font-size:22px;margin:4px 0 12px}
 .guarantee-box .days{display:inline-block;background:var(--ll-color-primary);color:#fff;padding:6px 18px;border-radius:var(--ll-radius-pill);font-family:var(--ll-font-heading);font-weight:800;font-size:13px;margin-bottom:4px}
 .guarantee-box p{font-size:15px;color:var(--ll-color-text-secondary);margin-bottom:8px;line-height:1.6}
 .guarantee-contact{margin-top:16px;padding-top:14px;border-top:1px solid rgba(var(--ll-color-primary-rgb), 0.3);font-size:13px}
@@ -200,9 +209,9 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .site-footer a:hover{color:#fff}
 .site-footer-copy{margin-bottom:10px;color:#ccc}
 
-.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:var(--ll-color-primary);color:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap}
-.sticky-cta-text{font-family:var(--ll-font-heading);font-weight:700;font-size:18px;color:#fff}
-.sticky-cta-btn{background:#fff;color:var(--ll-color-primary);padding:10px 22px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-weight:800;font-size:13px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;border-top:1px solid #e5e5e5}
+.sticky-cta-text{font-family:var(--ll-font-heading);font-weight:700;font-size:18px;color:#111;text-transform:capitalize}
+.sticky-cta-btn{background:var(--ll-color-primary);color:#fff;padding:8px 18px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-weight:800;font-size:16px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
 
 @media (max-width:900px){
   .article-wrap{grid-template-columns:1fr;padding:18px 16px;gap:0}
@@ -219,7 +228,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
   .verified-features{grid-template-columns:1fr}
   .featured-review{padding:18px}
   .sticky-cta-text{display:none}
-  .sticky-cta-btn{width:90%;padding:12px 16px;font-size:14px;text-align:center}
+  .sticky-cta-btn{width:90%;padding:12px 16px;font-size:16px;text-align:center}
   .bullet-list li{font-size:16px;padding:8px 0 8px 34px}
   .bullet-list li::before{width:22px;height:22px;top:10px}
 }
@@ -246,9 +255,9 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <noscript><link href="https://methickpalued.com/d/.js?noscript=true&amp;lpurl=" rel="stylesheet"/></noscript>
 </head>
 <body>
-<div id="adv-header-logo" style="background:#fff;border-bottom:1px solid #eee;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:system-ui,-apple-system,sans-serif;">
-<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0928/5956/4332/files/Design_sans_titre_15_-_Modifie.png?v=1777485168" style="display:block;height:32px;max-width:200px;object-fit:contain;margin:0">
-<span style="color:#999;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;font-weight:500">Advertorial</span>
+<div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif">This is an advertorial</div>
+<div id="adv-header-logo" style="text-align:center;padding:6px 0 4px;background:#fff;border-bottom:1px solid #eee">
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0928/5956/4332/files/Design_sans_titre_15_-_Modifie.png?v=1777485168" style="display:block;height:32px;max-width:200px;object-fit:contain;margin:0 auto">
 </div>
 <!-- UPDATE BANNER -->
 <div class="article-wrap">
@@ -257,7 +266,7 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <a href="#"><span>Home</span></a><span class="breadcrumb-sep">›</span><a href="#"><span>Health</span></a><span class="breadcrumb-sep">›</span><a href="#"><span>Reviews</span></a>
 </nav>
 <!-- HEADLINE AREA -->
-<h1>I Compared Five Top-Rated Nerve Supplements on My 82-Year-Old Father. One Stood Apart.</h1>
+<h1>I Compared Five Top-Rated Nerve Supplements on My 82-Year-Old Father. One Stood Apart</h1>
 <p class="article-subtitle">Eight weeks, daily symptom diaries, and an independent lab verification.</p>
 <div class="article-byline">
 <img alt="Author" class="article-byline-photo" src="/pages/avatars/author/neutral_male.jpg"/>
@@ -267,7 +276,7 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </div>
 </div>
 <!-- MEDIA 1: hero video (or image) after headline -->
-<div class="v2-media-slot" data-job-id="d534cd57-0932-41e5-89cc-cd6b002de510" data-prompts="[&quot;Five different nerve supplement bottles arranged on a wooden kitchen table next to a handwritten symptom diary, natural window light, photorealistic&quot;, &quot;Overhead flat-lay of five supplement bottles with a notebook, pen, and reading glasses on a kitchen table, soft daylight, photorealistic&quot;, &quot;Older man's hands holding a single supplement bottle while a daughter watches across the table, warm natural light, quiet domestic mood, photorealistic&quot;]" data-selected="0" data-slot-key="media_1.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Five different nerve supplement bottles arranged on a wooden kitchen table next "</div></div>
+<div class="v2-media-slot" data-job-id="d534cd57-0932-41e5-89cc-cd6b002de510" data-prompts="[&quot;Five different nerve supplement bottles arranged on a wooden kitchen table next to a handwritten symptom diary, natural window light, photorealistic&quot;, &quot;Overhead flat-lay of five supplement bottles with a notebook, pen, and reading glasses on a kitchen table, soft daylight, photorealistic&quot;, &quot;Older man's hands holding a single supplement bottle while a daughter watches across the table, warm natural light, quiet domestic mood, photorealistic&quot;]" data-selected="0" data-slot-key="media_1.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Five different nerve supplement bottles arranged on a wooden kitchen table next "</div></div>
 <!-- STORY INTRO -->
 <p>I'm Laura Whitfield, a health journalist based in Minneapolis. For eighteen years I've reported on aging, chronic pain, and consumer supplements for AARP and other outlets.</p>
 <p>Through that work, I've corresponded with thousands of older Americans who, like my father, carry the slow, grinding burden of nerve damage in their hands and feet.</p>
@@ -282,7 +291,7 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <b class="rhetorical">One reader described feeling a hot iron pressed against her arches, every night, for eleven straight years.</b>
 <p>Recently, after a personal investigation I was reluctant to begin, I think I finally understand what actually moves the needle for nerve discomfort.</p>
 <!-- MEDIA 2: story / breakthrough image -->
-<div class="v2-media-slot" data-job-id="d534cd57-0932-41e5-89cc-cd6b002de510" data-prompts="[&quot;An 82-year-old man sitting at a kitchen table in Duluth, gently rubbing his foot with a slightly pained expression, prescription bottle nearby, natural light, photorealistic&quot;, &quot;Close-up of an unopened prescription bottle on a worn wooden kitchen counter, an older man's hand reaching toward it, photorealistic&quot;, &quot;Older father and middle-aged daughter talking quietly at a kitchen table, concerned but loving expressions, warm afternoon light, photorealistic&quot;]" data-selected="0" data-slot-key="media_2.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"An 82-year-old man sitting at a kitchen table in Duluth, gently rubbing his foot"</div></div>
+<div class="v2-media-slot" data-job-id="d534cd57-0932-41e5-89cc-cd6b002de510" data-prompts="[&quot;An 82-year-old man sitting at a kitchen table in Duluth, gently rubbing his foot with a slightly pained expression, prescription bottle nearby, natural light, photorealistic&quot;, &quot;Close-up of an unopened prescription bottle on a worn wooden kitchen counter, an older man's hand reaching toward it, photorealistic&quot;, &quot;Older father and middle-aged daughter talking quietly at a kitchen table, concerned but loving expressions, warm afternoon light, photorealistic&quot;]" data-selected="0" data-slot-key="media_2.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"An 82-year-old man sitting at a kitchen table in Duluth, gently rubbing his foot"</div></div>
 <p>It started, as these things often do, in my father's kitchen in Duluth, with a fresh prescription for gabapentin sitting unopened on the counter.</p>
 <!-- ROOT CAUSE -->
 <b class="rhetorical">The Real Root Cause</b>
@@ -290,14 +299,14 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <p>Peripheral nerves are wrapped in a fatty insulating sheath called myelin, and when that sheath thins or degrades, signals misfire as burning, tingling, or numbness.</p>
 <p>Researchers I interviewed simply call it <strong>myelin erosion</strong>, the slow stripping of the protective coating that keeps nerve signals clean.</p>
 <!-- MEDIA 3: mechanism / diagram -->
-<div class="v2-media-slot" data-job-id="d534cd57-0932-41e5-89cc-cd6b002de510" data-prompts="[&quot;Scientific illustration-style photo of peripheral nerve fibers with myelin sheath, microscopic detail, soft blue lighting, photorealistic&quot;, &quot;Doctor's hand pointing at a printed nerve diagram on a clipboard, neutral office setting, photorealistic&quot;, &quot;Older woman gently holding her wrist with a thoughtful expression, warm domestic light, soft focus on hand, photorealistic&quot;]" data-selected="0" data-slot-key="media_3.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Scientific illustration-style photo of peripheral nerve fibers with myelin sheat"</div></div>
+<div class="v2-media-slot" data-job-id="d534cd57-0932-41e5-89cc-cd6b002de510" data-prompts="[&quot;Scientific illustration-style photo of peripheral nerve fibers with myelin sheath, microscopic detail, soft blue lighting, photorealistic&quot;, &quot;Doctor's hand pointing at a printed nerve diagram on a clipboard, neutral office setting, photorealistic&quot;, &quot;Older woman gently holding her wrist with a thoughtful expression, warm domestic light, soft focus on hand, photorealistic&quot;]" data-selected="0" data-slot-key="media_3.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Scientific illustration-style photo of peripheral nerve fibers with myelin sheat"</div></div>
 <p class="media-caption">Myelin erosion: the quiet driver behind most nerve discomfort.</p>
 <p>Once you understand it that way, a lot of small mysteries click into place: why symptoms flare at night, why they migrate, why creams barely scratch the surface.</p>
 <b class="rhetorical">And unfortunately, the news only gets worse the longer this condition is quietly left untreated.</b>
 <p>Myelin erosion compounds quietly, year over year, accelerated by elevated blood sugar, certain medications, B-vitamin shortfalls, and the sheer mileage of a long life.</p>
 <p>Left alone, what begins as evening tingling tends to become daytime numbness, then unsteady balance, then the very real fear of a fall on the basement stairs.</p>
 <!-- MEDIA 4: bad-news visual / worsening -->
-<div class="v2-media-slot" data-job-id="d534cd57-0932-41e5-89cc-cd6b002de510" data-prompts='["Five different supplement bottles lined up on a laboratory bench with a clipboard listing ingredient panels, neutral white lighting, photorealistic", "Lab technician in white coat holding a small sample vial next to a row of supplement bottles, scientific setting, photorealistic", "Hands of a journalist annotating a printed comparison table on a kitchen table, supplement bottles in background, warm light, photorealistic"]' data-selected="0" data-slot-key="media_4.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Five different supplement bottles lined up on a laboratory bench with a clipboar"</div></div>
+<div class="v2-media-slot" data-job-id="d534cd57-0932-41e5-89cc-cd6b002de510" data-prompts='["Five different supplement bottles lined up on a laboratory bench with a clipboard listing ingredient panels, neutral white lighting, photorealistic", "Lab technician in white coat holding a small sample vial next to a row of supplement bottles, scientific setting, photorealistic", "Hands of a journalist annotating a printed comparison table on a kitchen table, supplement bottles in background, warm light, photorealistic"]' data-selected="0" data-slot-key="media_4.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Five different supplement bottles lined up on a laboratory bench with a clipboar"</div></div>
 <b class="rhetorical">So if myelin is the issue, what actually rebuilds it?</b>
 <p>The aim isn't to mask the burning or tingling, but to give the nervous system the raw materials it needs to <strong>rebuild and reinsulate</strong> damaged fibers.</p>
 <p>When the sheath thickens and signals travel cleanly again, the burning, tingling, and numbness most people fear simply have less to feed on.</p>
@@ -306,7 +315,7 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <p>Patients I follow on online forums often cycle through prescriptions for years, never improving, slowly accepting that this is just how the rest of life will feel.</p>
 <b class="rhetorical">Then, almost by accident, I came across something genuinely different from everything else I had tested.</b>
 <!-- MEDIA 5: solution reveal image/video -->
-<div class="v2-media-slot" data-job-id="d534cd57-0932-41e5-89cc-cd6b002de510" data-prompts='["A bottle of nerve support supplement on a kitchen counter beside a glass of water and reading glasses, warm morning light, photorealistic", "Close-up of a capsule held between fingers above an open supplement bottle, soft daylight, photorealistic", "An older man smiling gently as he takes a single capsule with breakfast at a kitchen table, peaceful mood, photorealistic"]' data-selected="0" data-slot-key="media_5.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A bottle of nerve support supplement on a kitchen counter beside a glass of wate"</div></div>
+<div class="v2-media-slot" data-job-id="d534cd57-0932-41e5-89cc-cd6b002de510" data-prompts='["A bottle of nerve support supplement on a kitchen counter beside a glass of water and reading glasses, warm morning light, photorealistic", "Close-up of a capsule held between fingers above an open supplement bottle, soft daylight, photorealistic", "An older man smiling gently as he takes a single capsule with breakfast at a kitchen table, peaceful mood, photorealistic"]' data-selected="0" data-slot-key="media_5.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A bottle of nerve support supplement on a kitchen counter beside a glass of wate"</div></div>
 <h2>A Supplement That Targets Nerve Repair, Not Just Nerve Pain</h2>
 <p>One of the formulas I tested was built around a specific bioactive form of vitamin B1 called <strong>benfotiamine</strong>, paired with stabilized R-alpha lipoic acid.</p>
 <p>Benfotiamine is fat-soluble, which lets it cross into nerve tissue far more efficiently than standard B1 from a pharmacy multivitamin.</p>
@@ -315,21 +324,21 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <p>Together, they translated a clinical-grade protocol into a simple daily capsule, and that is how I first encountered the product I'm about to name.</p>
 <!-- PRODUCT REVEAL -->
 <h2 style="margin-top:40px">The single supplement that quietly won my eight-week scoring rubric, by a clear margin:</h2>
-<h2 style="color:var(--ll-color-primary);margin-top:0;font-size:34px">Regen+ Unlock the Power of Healthy Nerves</h2>
+<h2 style="margin-top:0;font-size:34px">Regen+ Unlock the Power of Healthy Nerves</h2>
 <!-- MEDIA 6: product hero image -->
-<div class="v2-media-slot" data-job-id="d534cd57-0932-41e5-89cc-cd6b002de510" data-prompts='["A 60-year-old woman walking comfortably barefoot on a hardwood floor in her living room, relaxed and smiling, natural light, photorealistic", "Older man tying his shoes on the porch steps with no visible discomfort, sunny morning, photorealistic", "Hands of an elderly couple intertwined on a kitchen table, warm light, peaceful mood, photorealistic"]' data-selected="0" data-slot-key="media_6.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A 60-year-old woman walking comfortably barefoot on a hardwood floor in her livi"</div></div>
+<div class="v2-media-slot" data-job-id="d534cd57-0932-41e5-89cc-cd6b002de510" data-prompts='["A 60-year-old woman walking comfortably barefoot on a hardwood floor in her living room, relaxed and smiling, natural light, photorealistic", "Older man tying his shoes on the porch steps with no visible discomfort, sunny morning, photorealistic", "Hands of an elderly couple intertwined on a kitchen table, warm light, peaceful mood, photorealistic"]' data-selected="0" data-slot-key="media_6.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"A 60-year-old woman walking comfortably barefoot on a hardwood floor in her livi"</div></div>
 <p>Regen+ is a daily oral capsule built around <strong>benfotiamine and stabilized R-ALA</strong>, the two ingredients most consistently tied to nerve repair in the literature.</p>
 <p>You take it with breakfast, and the fat-soluble B1 begins quietly reaching nerve tissue your body has been struggling to nourish for years.</p>
 <p>Over the following weeks, the tingling tends to soften first, then the night burning, and finally the dead, numb patches begin to <u>regain sensation</u>.</p>
 <!-- MEDIA 7: product in use video/image -->
-<div class="v2-media-slot" data-job-id="d534cd57-0932-41e5-89cc-cd6b002de510" data-prompts="[&quot;Older man and middle-aged daughter walking together along a Lake Superior shoreline path in Duluth, autumn light, photorealistic&quot;, &quot;Father and daughter laughing on a wooden bench overlooking water, casual fall clothing, photorealistic&quot;, &quot;Close-up of an older man's feet stepping confidently down a wooden porch staircase, soft daylight, photorealistic&quot;]" data-selected="0" data-slot-key="media_7.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older man and middle-aged daughter walking together along a Lake Superior shorel"</div></div>
+<div class="v2-media-slot" data-job-id="d534cd57-0932-41e5-89cc-cd6b002de510" data-prompts="[&quot;Older man and middle-aged daughter walking together along a Lake Superior shoreline path in Duluth, autumn light, photorealistic&quot;, &quot;Father and daughter laughing on a wooden bench overlooking water, casual fall clothing, photorealistic&quot;, &quot;Close-up of an older man's feet stepping confidently down a wooden porch staircase, soft daylight, photorealistic&quot;]" data-selected="0" data-slot-key="media_7.url" style="width:100%;aspect-ratio:16/9;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Older man and middle-aged daughter walking together along a Lake Superior shorel"</div></div>
 <p>What surprised me most was the dignity of it: no patches, no creams, no waiting rooms, just one small step folded into the morning routine.</p>
 <p>But you don't have to take my word for it. Here's what the readers I shared early findings with had to say.</p>
 <!-- ★ CTA #1 — first CTA in the page, AFTER 7 medias + gradual product reveal -->
 <a class="cta-btn" href="#"><span>See How It Works</span><small>Direct from the official site</small></a>
 <!-- TRUSTPILOT REVIEWS (2 featured) -->
 <div class="trustpilot-intro">
-<h3>What other readers and patients reported in my follow-up survey of early Regen+ users.</h3>
+<h3>What other readers and patients reported in my follow-up survey of early Regen+ users</h3>
 <p>Verified buyer reviews collected independently through the official manufacturer support channel.</p>
 </div>
 <div class="featured-review">
@@ -372,7 +381,7 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <p>If the current batch goes, the next production run is several weeks away, and back-orders typically extend even further into the calendar.</p>
 <p>If your nerves have been quietly stealing your sleep for years, I'd encourage you not to close this tab and forget the name.</p>
 <!-- EXCLUSIVITY -->
-<h2>You will not find Regen+ on Amazon or in pharmacies.</h2>
+<h2>You will not find Regen+ on Amazon or in pharmacies</h2>
 <p>It isn't stocked in CVS, Walgreens, GNC, or on any major marketplace, and any listing claiming otherwise is almost certainly a counterfeit relabel.</p>
 <p>The only legitimate way to get the genuine, properly dosed formula is through the manufacturer's own website, with a verified order confirmation.</p>
 <p>The brand has chosen direct-only distribution to protect the formulation, control freshness, and keep the customer relationship out of a retailer's algorithm.</p>
@@ -381,11 +390,13 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <a class="cta-btn" href="#"><span>Reserve My Bottle</span><small>Limited stock from this batch</small></a>
 <!-- GUARANTEE -->
 <div class="guarantee-box">
-<span class="days">30 DAYS</span>
+<div class="guarantee-badge"><div class="guarantee-badge-num">30</div><div class="guarantee-badge-label">DAYS</div></div>
+<div class="guarantee-content">
 <h3>A Full 30-Day, No-Questions-Asked, Completely Risk-Free Money-Back Guarantee On Every Single Bottle</h3>
 <p>If Regen+ works for you, you keep using it and quietly get your evenings back; if it doesn't, you simply return it for a full refund.</p>
 <p>Any reason at all is a valid reason: the texture, the size, a change of heart, or simply a partner who doesn't want another bottle on the counter.</p>
 <p>The refund is honored whether you contact support 89 minutes after your bottle arrives or 29 days into your trial.</p>
+</div>
 </div>
 <!-- HERE'S WHAT TO DO NEXT -->
 <h2>Here's Exactly What To Do Next, Step By Simple Step</h2>
@@ -394,7 +405,6 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <p>Enter your name, your shipping address, your preferred payment method, and pick standard or expedited shipping at checkout.</p>
 <p>Most readers I surveyed ordered two or three bottles, one for themselves and one for a parent or spouse with similar symptoms.</p>
 <!-- ★ CTA #4 -->
-<a class="cta-btn" href="#"><span>Start My Order</span><small>Checkout takes under 60 seconds</small></a>
 <!-- REMEMBER / ZERO RISK -->
 <h2>Remember, You Are Carrying Absolutely Zero Real Risk On This Decision</h2>
 <p>The only real risk on this page is the quiet regret of doing nothing and feeling exactly the same in three months from now.</p>
@@ -470,12 +480,12 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 <div class="sticky-product">
 <span class="sticky-product-badge">Top Pick</span>
 <div class="sticky-product-name">Regen+ Unlock the Power of Healthy Nerves</div>
-<div class="v2-media-slot" data-job-id="d534cd57-0932-41e5-89cc-cd6b002de510" data-prompts='["Single bottle of Regen+ Advanced Nerve Support standing upright on a clean white background, soft studio lighting, photorealistic", "Bottle of Regen+ next to a small pile of capsules on a neutral marble surface, photorealistic", "Hands of an older person gently holding a Regen+ bottle with a peaceful expression, warm light, photorealistic"]' data-selected="0" data-slot-key="sidebar.image" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:8px 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — sidebar.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Single bottle of Regen+ Advanced Nerve Support standing upright on a clean white"</div></div>
+<div class="v2-media-slot" data-job-id="d534cd57-0932-41e5-89cc-cd6b002de510" data-prompts='["Single bottle of Regen+ Advanced Nerve Support standing upright on a clean white background, soft studio lighting, photorealistic", "Bottle of Regen+ next to a small pile of capsules on a neutral marble surface, photorealistic", "Hands of an older person gently holding a Regen+ bottle with a peaceful expression, warm light, photorealistic"]' data-selected="0" data-slot-key="sidebar.image" style="aspect-ratio:1/1;background:#1a1a1a;border:2px dashed #6b21a8;border-radius:8px;padding:20px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 0;box-sizing:border-box;"><div style="font-size:32px">🖼️</div><div style="color:#a855f7;font-size:13px;margin-top:8px">Emplacement média — sidebar.image</div><div style="color:#666;font-size:11px;margin-top:4px;max-width:300px">"Single bottle of Regen+ Advanced Nerve Support standing upright on a clean white"</div></div>
 <div class="sticky-product-stars">
 <span class="stars">★★★★★</span>
 <span>Rated 4.8 out of 5</span>
 </div>
-<a class="sticky-product-cta" href="#"><span>Check Availability</span></a>
+<a class="sticky-product-cta" href="#"><span>CHECK AVAILABILITY</span></a>
 <div class="sticky-product-trust">
 <span class="sticky-product-trust-item">Made in USA</span>
 <span class="sticky-product-trust-item">30-Day Guarantee</span>
@@ -486,7 +496,7 @@ q.parentNode.insertBefore(c,q);h&&E("vl-"+h,"1",z)},0),setTimeout(A,7E3))})(wind
 </div><!-- /article-wrap -->
 <div class="sticky-cta">
 <span class="sticky-cta-text">Bottles selling fast this week</span>
-<a class="sticky-cta-btn" href="#"><span>Check Stock Now</span></a>
+<a class="sticky-cta-btn" href="#"><span>Check availability</span></a>
 </div>
 <style id="adv-brand-secondary">
 :root{ --ll-color-secondary: #e5eaff; }

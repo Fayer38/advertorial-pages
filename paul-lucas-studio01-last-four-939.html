@@ -44,7 +44,7 @@ img{max-width:100%;height:auto;display:block}
 #adv-header-logo img,#adv-footer img{margin:0 auto}
 
 /* 2-COLUMN LAYOUT */
-.article-wrap{max-width:1260px;margin:0 auto;padding:20px 24px;display:grid;grid-template-columns:minmax(0, 1fr) 300px;gap:40px;align-items:flex-start}
+.article-wrap{max-width:1260px;margin:0 auto;padding:6px 24px;display:grid;grid-template-columns:minmax(0, 1fr) 300px;gap:20px;align-items:flex-start}
 .article-col{min-width:0}
 .sidebar-col{width:300px}
 .sticky-product{position:sticky;top:70px}
@@ -69,7 +69,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .site-header{background:#fff;border-bottom:1px solid var(--ll-color-border);padding:15px 0;text-align:center}
 .site-header img{height:38px;max-width:220px;margin:0 auto}
 
-.breadcrumb{font-size:12px;color:var(--ll-color-text-secondary);margin:8px 0 8px;text-transform:uppercase;letter-spacing:0.5px}
+.breadcrumb{font-size:12px;color:var(--ll-color-text-secondary);margin:0 0 8px;text-transform:uppercase;letter-spacing:0.5px}
 .breadcrumb a{color:var(--ll-color-text-secondary);text-decoration:none;font-weight:400}
 .breadcrumb-sep{margin:0 8px;opacity:0.5}
 
@@ -78,7 +78,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .headline-stars-row{display:flex;align-items:center;gap:8px;margin:12px 0 14px;flex-wrap:wrap}
 .headline-stars-row .stars{font-size:20px}
 .headline-stars-row .ratings-count{font-size:14px;color:var(--ll-color-text-secondary);font-weight:600}
-.article-byline{display:flex;gap:12px;align-items:center;padding:14px 0;font-size:13px;border-top:1px solid var(--ll-color-border);border-bottom:1px solid var(--ll-color-border);margin:10px 0 24px}
+.article-byline{display:flex;gap:12px;align-items:center;padding:14px 0;font-size:13px;border-top:1px solid var(--ll-color-border);border-bottom:1px solid var(--ll-color-border);margin:10px 0 8px}
 .article-byline-photo{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#ddd}
 .article-byline-info{display:flex;flex-direction:column;gap:2px}
 .article-byline-name{font-weight:700;color:var(--ll-color-text-primary);font-family:var(--ll-font-heading);font-size:14px}
@@ -113,7 +113,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .stars{color:#f5b40a !important;font-size:20px;letter-spacing:2px;line-height:1;font-weight:700;display:inline-block}
 
 /* STICKY PRODUCT CARD */
-.sticky-product{background:#fff;border:3px solid var(--ll-color-primary);border-radius:var(--ll-radius-md);padding:22px 18px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,0.08)}
+.sticky-product{background:#fff;border:3px solid var(--ll-color-primary);border-radius:var(--ll-radius-md);padding:22px 10px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,0.08)}
 .sticky-product-badge{display:inline-block;background:var(--ll-color-warning);color:#fff;padding:5px 12px;border-radius:var(--ll-radius-pill);font-size:11px;font-weight:800;letter-spacing:0.2px;margin-bottom:12px;font-family:var(--ll-font-heading)}
 .sticky-product-name{font-family:var(--ll-font-heading);font-size:19px;font-weight:800;color:var(--ll-color-text-primary);line-height:1.2;margin-bottom:4px}
 .sticky-product-tagline{font-size:12px;color:var(--ll-color-text-secondary);margin-bottom:12px;line-height:1.4}
@@ -124,20 +124,21 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .sticky-product-price-original{font-size:15px;text-decoration:line-through;color:#888;font-family:var(--ll-font-heading);font-weight:600}
 .sticky-product-price-sale{font-family:var(--ll-font-heading);font-size:30px;font-weight:900;color:var(--ll-color-primary);line-height:1}
 .sticky-product-discount{background:var(--ll-color-warning);color:#fff;padding:3px 8px;border-radius:var(--ll-radius-sm);font-size:10px;font-weight:800;font-family:var(--ll-font-heading);display:inline-block;margin-bottom:10px}
-.sticky-product-cta{display:block;background:var(--ll-color-primary);color:#fff;padding:14px 12px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 3px 6px 1px rgba(0,0,0,0.18);letter-spacing:0.2px;text-align:center;line-height:1.2;margin:12px 0 10px;transition:filter 0.15s}
+.sticky-product-cta{display:block;background:var(--ll-color-primary);color:#fff;padding:14px 12px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 3px 6px 1px rgba(0,0,0,0.18);letter-spacing:0.2px;text-align:center;line-height:1.2;margin:12px 0 10px;transition:filter 0.15s;text-transform:uppercase;letter-spacing:0.5px}
 .sticky-product-cta:hover{filter:brightness(0.88);color:#fff;text-decoration:none}
 .sticky-product-trust{display:flex;flex-direction:column;gap:6px;margin-top:12px;padding-top:12px;border-top:1px dashed rgba(var(--ll-color-primary-rgb), 0.3);font-size:11px;color:var(--ll-color-text-secondary);text-align:left}
 .sticky-product-trust-item{display:flex;align-items:center;gap:6px;font-weight:600}
 .sticky-product-trust-item::before{content:"✓";color:var(--ll-color-primary);font-weight:800;font-size:13px}
 
 /* TRUSTPILOT REVIEWS */
-.trustpilot-intro{text-align:center;margin:24px 0 18px}
-.trustpilot-intro h3{color:var(--ll-color-success);font-size:22px;margin-bottom:5px}
+.trustpilot-intro{text-align:left;margin:24px 0 18px}
+.trustpilot-intro h3{font-size:22px;margin-bottom:5px}
 .trustpilot-intro p{color:var(--ll-color-text-secondary);font-size:14px;margin:0}
 .featured-review{background:#fff;border:1px solid var(--ll-color-border);border-radius:var(--ll-radius-md);padding:22px;margin-bottom:15px;box-shadow:0 2px 10px rgba(0,0,0,0.04)}
 .featured-review-title{font-family:var(--ll-font-heading);font-size:17px;font-weight:800;color:var(--ll-color-text-primary);margin:8px 0 5px}
 .featured-review-meta{font-size:12px;color:var(--ll-color-text-secondary);margin-bottom:10px}
-.featured-review-meta strong{color:var(--ll-color-success);font-weight:700}
+.featured-review-meta strong{color:var(--ll-color-text-secondary);font-weight:700}
+.featured-review-meta strong:last-of-type{color:var(--ll-color-success)}
 .featured-review-body{font-size:14px;color:var(--ll-color-text-secondary);line-height:1.65;margin-bottom:12px}
 .featured-review-helpful{font-size:11px;color:#888;padding-top:10px;border-top:1px solid var(--ll-color-border);font-weight:600}
 
@@ -146,8 +147,16 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 /* TRUST BADGES */
 
 /* GUARANTEE BOX */
-.guarantee-box{background:var(--ll-color-background-alt);border:3px dashed var(--ll-color-tertiary);border-radius:var(--ll-radius-md);padding:24px;margin:24px 0;text-align:center}
-.guarantee-box h3{color:var(--ll-color-primary);font-size:22px;margin:4px 0 12px}
+.guarantee-box{background:var(--ll-color-background-alt);border-radius:var(--ll-radius-md);padding:32px;margin:24px 0;display:flex;gap:28px;align-items:flex-start;text-align:left}
+.guarantee-badge{flex-shrink:0;width:88px;height:88px;border:3px solid var(--ll-color-success);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ll-color-success);background:transparent}
+.guarantee-badge-num{font-family:var(--ll-font-heading);font-size:28px;font-weight:900;line-height:1}
+.guarantee-badge-label{font-family:var(--ll-font-heading);font-size:11px;font-weight:700;letter-spacing:0.1em;margin-top:2px}
+.guarantee-content{flex:1;min-width:0}
+.guarantee-content h3{font-family:var(--ll-font-heading);font-size:22px;font-weight:800;color:var(--ll-color-text-primary);margin:0 0 16px;line-height:1.35}
+.guarantee-content p{font-size:15px;color:var(--ll-color-text-secondary);line-height:1.65;margin:0 0 14px}
+.guarantee-content p:last-child{margin-bottom:0}
+@media (max-width:600px){.guarantee-box{flex-direction:column;gap:20px;padding:24px}.guarantee-badge{align-self:center}}
+.guarantee-box h3{font-size:22px;margin:4px 0 12px}
 .guarantee-box .days{display:inline-block;background:var(--ll-color-primary);color:#fff;padding:6px 18px;border-radius:var(--ll-radius-pill);font-family:var(--ll-font-heading);font-weight:800;font-size:13px;margin-bottom:4px}
 .guarantee-box p{font-size:15px;color:var(--ll-color-text-secondary);margin-bottom:8px;line-height:1.6}
 .guarantee-contact{margin-top:16px;padding-top:14px;border-top:1px solid rgba(var(--ll-color-primary-rgb), 0.3);font-size:13px}
@@ -198,9 +207,9 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .site-footer a:hover{color:#fff}
 .site-footer-copy{margin-bottom:10px;color:#ccc}
 
-.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:var(--ll-color-primary);color:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap}
-.sticky-cta-text{font-family:var(--ll-font-heading);font-weight:700;font-size:18px;color:#fff}
-.sticky-cta-btn{background:#fff;color:var(--ll-color-primary);padding:10px 22px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-weight:800;font-size:13px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;border-top:1px solid #e5e5e5}
+.sticky-cta-text{font-family:var(--ll-font-heading);font-weight:700;font-size:18px;color:#111;text-transform:capitalize}
+.sticky-cta-btn{background:var(--ll-color-primary);color:#fff;padding:8px 18px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-weight:800;font-size:16px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
 
 @media (max-width:900px){
   .article-wrap{grid-template-columns:1fr;padding:18px 16px;gap:0}
@@ -217,7 +226,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
   .amazon-features{grid-template-columns:1fr}
   .featured-review{padding:18px}
   .sticky-cta-text{display:none}
-  .sticky-cta-btn{width:90%;padding:12px 16px;font-size:14px;text-align:center}
+  .sticky-cta-btn{width:90%;padding:12px 16px;font-size:16px;text-align:center}
   .bullet-list li{font-size:16px;padding:8px 0 8px 34px}
   .bullet-list li::before{width:22px;height:22px;top:10px}
 }
@@ -248,9 +257,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 
 
 <style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style>
-<div id="adv-header-logo" style="background:#fff;border-bottom:1px solid #eee;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:system-ui,-apple-system,sans-serif;">
-<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0928/5956/4332/files/Design_sans_titre_15_-_Modifie.png?v=1777485168" style="display:block;height:32px;max-width:200px;object-fit:contain;margin:0">
-<span style="color:#999;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;font-weight:500">Advertorial</span>
+<div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif">This is an advertorial</div>
+<div id="adv-header-logo" style="text-align:center;padding:6px 0 4px;background:#fff;border-bottom:1px solid #eee">
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0928/5956/4332/files/Design_sans_titre_15_-_Modifie.png?v=1777485168" style="display:block;height:32px;max-width:200px;object-fit:contain;margin:0 auto">
 </div>
 <!-- UPDATE BANNER -->
 <div class="article-wrap">
@@ -308,15 +317,15 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <b class="rhetorical">Paul does not intend to wear his last year thin, or to mail that final wallet from a hospital bed.</b>
 <!-- MEDIA 5: solution reveal image/video -->
 <img alt="" data-copy="media_5.url:attr:src" data-prompts='["Overhead shot of six leather color swatches and nine thread spools laid out on a workshop bench, photorealistic", "Close-up of a hand-saddle-stitched bifold wallet interior showing waxed thread and beveled edges, photorealistic", "Craftsman edge-burnishing a leather wallet with beeswax on a wooden slicker, warm focused light, photorealistic"]' data-slot-key="media_5.url" data-v2-replaced="1" src="/pages/media/b85f7938/manual_upload-manual-96e4fe61.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer"/>
-<h2 style="position: relative">Four hundred wallets, cut and stitched by one aging pair of hands.</h2>
+<h2 style="position: relative">Four hundred wallets, cut and stitched by one aging pair of hands</h2>
 <p style="position: relative">Each is made from full-grain American cowhide tanned at Hermann Oak in Missouri — the same hides saddle makers have trusted for generations.</p>
 <p style="position: relative">Six leather colors. Nine thread colors. <strong>Fifty-four combinations</strong>, each chosen by the man who will actually carry it.</p>
 <p style="position: relative">Paul saddle-stitches every one by hand with waxed Ritza thread — the stitch he <u>guarantees for life</u>, his signature inside the fold.</p>
 <p style="position: relative">It takes him most of a morning to finish one now. Before the arthritis, he could do three before lunch.</p>
 <p style="position: relative">That is why the number is four hundred, and not a thousand, and not two thousand, and not ever again.</p>
 <!-- PRODUCT REVEAL -->
-<h2 style="margin-top: 40px; position: relative">The wallet Paul is spending his final year of craft on is called, simply, the Paul Lucas Wallet.</h2>
-<h2 style="color: var(--ll-color-primary); margin-top: 0px; font-size: 34px; position: relative">Paul Lucas Wallet</h2>
+<h2 style="margin-top: 40px; position: relative">The wallet Paul is spending his final year of craft on is called, simply, the Paul Lucas Wallet</h2>
+<h2 style="margin-top: 0px; font-size: 34px; position: relative">Paul Lucas Wallet</h2>
 <!-- MEDIA 6: product hero image -->
 <img alt="" data-copy="media_6.url:attr:src" data-prompts="[&quot;Finished brown bifold leather wallet resting on a wooden workshop bench beside hand tools, warm natural light, photorealistic&quot;, &quot;Interior of a handmade leather wallet showing visible saddle stitching, brass-stamped initials, and a signature in ink, photorealistic&quot;, &quot;A man's weathered hand placing the finished leather wallet into the back pocket of worn denim jeans, photorealistic&quot;]" data-slot-key="media_6.url" data-v2-replaced="1" src="/pages/media/b85f7938/editor-upload-manual-d02a32b6.jpeg" style="width: 100%; border-radius: 8px; display: block; margin: 8px 0px; cursor: pointer"/>
 <p style="position: relative">Bifold. Six card slots. A full-length bill compartment. A hidden stash pocket for the folded bill you forget is there.</p>
@@ -330,7 +339,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <a class="cta-btn" href="https://terica-store.com/click" style="position: relative"><span>Reserve yours</span><small>Direct from Paul's workshop</small></a>
 <!-- TRUSTPILOT REVIEWS (2 featured) -->
 <div class="trustpilot-intro">
-<h3 style="position: relative">Letters from customers who have carried one for twenty or thirty years, now finding out the bench is closing.</h3>
+<h3 style="position: relative">Letters from customers who have carried one for twenty or thirty years, now finding out the bench is closing</h3>
 <p style="position: relative">A small sample from the file drawer where Paul keeps the handwritten notes his wallets have brought back to Weatherford.</p>
 </div>
 <div class="featured-review">
@@ -348,7 +357,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="featured-review-helpful">217 of 221 people found this helpful</div>
 </div>
 <!-- BENEFITS — Just imagine -->
-<h2 style="position: relative">What you get when the man himself puts his name inside.</h2>
+<h2 style="position: relative">What you get when the man himself puts his name inside</h2>
 <p style="position: relative"><strong>Paul's father taught him a rule: never put your stitch on anything you would not carry yourself until it falls apart.</strong></p>
 <!-- BULLET LIST 2: emotional scenarios -->
 <ul class="bullet-list">
@@ -361,7 +370,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">Not because the wallet broke. Because a son turned eighteen, and the father wanted to know where the next one came from.</p>
 <!-- SCARCITY / AVAILABILITY BUILD-UP (no prices) -->
 <p style="position: relative">Paul keeps the count on a chalkboard behind the bench. It started at four hundred. It is not there now.</p>
-<h2 style="position: relative">Where the final four hundred are going, and why you will not find one anywhere else.</h2>
+<h2 style="position: relative">Where the final four hundred are going, and why you will not find one anywhere else</h2>
 <p style="position: relative">Paul is not stocking this wallet in any store, marketplace, catalog, or pop-up. Not one unit. Not in any city.</p>
 <p style="position: relative">Every wallet ships from the Weatherford workshop in a plain brown box, addressed in Linda's handwriting, postmarked Parker County, Texas.</p>
 <b class="rhetorical">Word has moved quietly on forums and group chats. The chalkboard number falls a little faster every week now.</b>
@@ -373,7 +382,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">The wallet goes out at a <strong>direct price</strong> — the number Paul would have sold it for, minus the retail markup.</p>
 <p style="position: relative">It is not cheap. It is fair. It is what a handmade American wallet actually costs when no one sits between.</p>
 <!-- EXCLUSIVITY -->
-<h2 style="position: relative">You will not find this wallet on a shelf, a marketplace, or any hangtag in any city anywhere.</h2>
+<h2 style="position: relative">You will not find this wallet on a shelf, a marketplace, or any hangtag in any city anywhere</h2>
 <p style="position: relative">Paul built this release one way on purpose: direct from his bench to your mailbox, with nothing in between them.</p>
 <p style="position: relative">No buyer, no broker, no retail mark, no hangtag written by a copywriter who has never held a stitching pony.</p>
 <p style="position: relative">If you see a Paul Lucas Wallet for sale anywhere but the Weatherford workshop's own site, it did not come from Paul.</p>
@@ -382,14 +391,16 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <a class="cta-btn" href="https://terica-store.com/click" style="position: relative"><span>Claim yours</span><small>Before the chalkboard hits zero</small></a>
 <!-- GUARANTEE -->
 <div class="guarantee-box">
-<span class="days">Lifetime</span>
-<h3 style="position: relative">Paul stakes his name on every stitch, for as long as the wallet exists.</h3>
-<p style="position: relative">If a stitch ever lets go, send the wallet back to the workshop and Paul will re-stitch it himself while he can.</p>
-<p style="position: relative">After Paul, Linda has a list of three younger Texas leatherworkers who have agreed to honor the lifetime stitch promise.</p>
-<p style="position: relative">On top of that: thirty days to hold it, carry it, and send it back if it does not live up.</p>
+<div class="guarantee-badge"><div class="guarantee-badge-num">30</div><div class="guarantee-badge-label">DAYS</div></div>
+<div class="guarantee-content">
+<h3>Paul stakes his name on every stitch, for as long as the wallet exists</h3>
+<p>If a stitch ever lets go, send the wallet back to the workshop and Paul will re-stitch it himself while he can.</p>
+<p>After Paul, Linda has a list of three younger Texas leatherworkers who have agreed to honor the lifetime stitch promise.</p>
+<p>On top of that: thirty days to hold it, carry it, and send it back if it does not live up.</p>
+</div>
 </div>
 <!-- HERE'S WHAT TO DO NEXT -->
-<h2 style="position: relative">How to reserve one of the final four hundred wallets.</h2>
+<h2 style="position: relative">How to reserve one of the final four hundred wallets</h2>
 <p style="position: relative">Pick your leather color, your thread, and whether you want your initials stamped on the interior fold.</p>
 <p style="position: relative">Paul sees your order on the ledger the next morning. If your initials are stamped, he does that piece himself.</p>
 <p style="position: relative">Cutting, stitching, edge-finishing, signing. Two to three weeks, give or take a bad-hand morning now and then.</p>
@@ -397,7 +408,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <!-- ★ CTA #4 -->
 <a class="cta-btn" href="https://terica-store.com/click" style="position: relative"><span>Reserve one</span><small>Chalkboard count is falling weekly</small></a>
 <!-- REMEMBER / ZERO RISK -->
-<h2 style="position: relative">Carry it a month. Decide then. Paul stakes his name on it.</h2>
+<h2 style="position: relative">Carry it a month. Decide then. Paul stakes his name on it</h2>
 <p style="position: relative">Hold it, pocket it, break it in, drop it on a gravel driveway. Let the leather take the shape of your life.</p>
 <p style="position: relative">If thirty days in it is not what you hoped for, send it back. Linda handles it. Paul refunds in full.</p>
 <p style="position: relative">After thirty-nine years at the bench, they have had eleven wallets come back total. Paul kept one on the shelf.</p>
@@ -412,7 +423,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="text-align: center; font-size: 13px; color: var(--ll-color-text-secondary); margin-top: 4px; position: relative">Thirty-day return, lifetime stitch</p>
 <!-- AMAZON REVIEWS -->
 <div class="amazon-reviews">
-<h3 style="position: relative">What the men who have carried one for decades have written back.</h3>
+<h3 style="position: relative">What the men who have carried one for decades have written back</h3>
 <div class="amazon-avg">
 <div class="amazon-avg-number">4.9</div>
 <span class="stars">★★★★★</span>
@@ -476,7 +487,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span class="stars">★★★★★</span>
 <span>Rated 4.8 out of 5</span>
 </div>
-<a class="sticky-product-cta" href="https://terica-store.com/click"><span>Reserve yours</span></a>
+<a class="sticky-product-cta" href="https://terica-store.com/click"><span>CHECK AVAILABILITY</span></a>
 <div class="sticky-product-trust">
 <span class="sticky-product-trust-item">Handcrafted in Texas</span>
 <span class="sticky-product-trust-item">Lifetime stitch guarantee</span>
@@ -487,7 +498,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div><!-- /article-wrap -->
 <div class="sticky-cta">
 <span class="sticky-cta-text">Chalkboard count still falling</span>
-<a class="sticky-cta-btn" href="https://terica-store.com/click"><span>Reserve one</span></a>
+<a class="sticky-cta-btn" href="https://terica-store.com/click"><span>Check availability</span></a>
 </div>
 <footer id="adv-footer" style="background:#f5f5f5; border-top:1px solid #e5e5e5; padding:30px 20px; text-align:center; margin-top:40px">
 <img alt="Logo" src="https://cdn.shopify.com/s/files/1/0928/5956/4332/files/Design_sans_titre_15_-_Modifie.png?v=1777485168" style="display:block; height:36px; max-width:180px; object-fit:contain; margin:0 auto 12px"/>

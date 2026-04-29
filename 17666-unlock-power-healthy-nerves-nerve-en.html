@@ -46,7 +46,7 @@ img{max-width:100%;height:auto;display:block}
 #adv-header-logo img,#adv-footer img{margin:0 auto}
 
 /* 2-COLUMN LAYOUT */
-.article-wrap{max-width:1260px;margin:0 auto;padding:20px 24px;display:grid;grid-template-columns:minmax(0, 1fr) 300px;gap:40px;align-items:flex-start}
+.article-wrap{max-width:1260px;margin:0 auto;padding:6px 24px;display:grid;grid-template-columns:minmax(0, 1fr) 300px;gap:20px;align-items:flex-start}
 .article-col{min-width:0}
 .sidebar-col{width:300px}
 .sticky-product{position:sticky;top:70px}
@@ -71,7 +71,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .site-header{background:#fff;border-bottom:1px solid var(--ll-color-border);padding:15px 0;text-align:center}
 .site-header img{height:38px;max-width:220px;margin:0 auto}
 
-.breadcrumb{font-size:12px;color:var(--ll-color-text-secondary);margin:8px 0 8px;text-transform:uppercase;letter-spacing:0.5px}
+.breadcrumb{font-size:12px;color:var(--ll-color-text-secondary);margin:0 0 8px;text-transform:uppercase;letter-spacing:0.5px}
 .breadcrumb a{color:var(--ll-color-text-secondary);text-decoration:none;font-weight:400}
 .breadcrumb-sep{margin:0 8px;opacity:0.5}
 
@@ -80,7 +80,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .headline-stars-row{display:flex;align-items:center;gap:8px;margin:12px 0 14px;flex-wrap:wrap}
 .headline-stars-row .stars{font-size:20px}
 .headline-stars-row .ratings-count{font-size:14px;color:var(--ll-color-text-secondary);font-weight:600}
-.article-byline{display:flex;gap:12px;align-items:center;padding:14px 0;font-size:13px;border-top:1px solid var(--ll-color-border);border-bottom:1px solid var(--ll-color-border);margin:10px 0 24px}
+.article-byline{display:flex;gap:12px;align-items:center;padding:14px 0;font-size:13px;border-top:1px solid var(--ll-color-border);border-bottom:1px solid var(--ll-color-border);margin:10px 0 8px}
 .article-byline-photo{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#ddd}
 .article-byline-info{display:flex;flex-direction:column;gap:2px}
 .article-byline-name{font-weight:700;color:var(--ll-color-text-primary);font-family:var(--ll-font-heading);font-size:14px}
@@ -115,7 +115,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .stars{color:#f5b40a !important;font-size:20px;letter-spacing:2px;line-height:1;font-weight:700;display:inline-block}
 
 /* STICKY PRODUCT CARD */
-.sticky-product{background:#fff;border:3px solid var(--ll-color-primary);border-radius:var(--ll-radius-md);padding:22px 18px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,0.08)}
+.sticky-product{background:#fff;border:3px solid var(--ll-color-primary);border-radius:var(--ll-radius-md);padding:22px 10px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,0.08)}
 .sticky-product-badge{display:inline-block;background:var(--ll-color-warning);color:#fff;padding:5px 12px;border-radius:var(--ll-radius-pill);font-size:11px;font-weight:800;letter-spacing:0.2px;margin-bottom:12px;font-family:var(--ll-font-heading)}
 .sticky-product-name{font-family:var(--ll-font-heading);font-size:19px;font-weight:800;color:var(--ll-color-text-primary);line-height:1.2;margin-bottom:4px}
 .sticky-product-tagline{font-size:12px;color:var(--ll-color-text-secondary);margin-bottom:12px;line-height:1.4}
@@ -126,20 +126,21 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .sticky-product-price-original{font-size:15px;text-decoration:line-through;color:#888;font-family:var(--ll-font-heading);font-weight:600}
 .sticky-product-price-sale{font-family:var(--ll-font-heading);font-size:30px;font-weight:900;color:var(--ll-color-primary);line-height:1}
 .sticky-product-discount{background:var(--ll-color-warning);color:#fff;padding:3px 8px;border-radius:var(--ll-radius-sm);font-size:10px;font-weight:800;font-family:var(--ll-font-heading);display:inline-block;margin-bottom:10px}
-.sticky-product-cta{display:block;background:var(--ll-color-primary);color:#fff;padding:14px 12px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 3px 6px 1px rgba(0,0,0,0.18);letter-spacing:0.2px;text-align:center;line-height:1.2;margin:12px 0 10px;transition:filter 0.15s}
+.sticky-product-cta{display:block;background:var(--ll-color-primary);color:#fff;padding:14px 12px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 3px 6px 1px rgba(0,0,0,0.18);letter-spacing:0.2px;text-align:center;line-height:1.2;margin:12px 0 10px;transition:filter 0.15s;text-transform:uppercase;letter-spacing:0.5px}
 .sticky-product-cta:hover{filter:brightness(0.88);color:#fff;text-decoration:none}
 .sticky-product-trust{display:flex;flex-direction:column;gap:6px;margin-top:12px;padding-top:12px;border-top:1px dashed rgba(var(--ll-color-primary-rgb), 0.3);font-size:11px;color:var(--ll-color-text-secondary);text-align:left}
 .sticky-product-trust-item{display:flex;align-items:center;gap:6px;font-weight:600}
 .sticky-product-trust-item::before{content:"✓";color:var(--ll-color-primary);font-weight:800;font-size:13px}
 
 /* TRUSTPILOT REVIEWS */
-.trustpilot-intro{text-align:center;margin:24px 0 18px}
-.trustpilot-intro h3{color:var(--ll-color-success);font-size:22px;margin-bottom:5px}
+.trustpilot-intro{text-align:left;margin:24px 0 18px}
+.trustpilot-intro h3{font-size:22px;margin-bottom:5px}
 .trustpilot-intro p{color:var(--ll-color-text-secondary);font-size:14px;margin:0}
 .featured-review{background:#fff;border:1px solid var(--ll-color-border);border-radius:var(--ll-radius-md);padding:22px;margin-bottom:15px;box-shadow:0 2px 10px rgba(0,0,0,0.04)}
 .featured-review-title{font-family:var(--ll-font-heading);font-size:17px;font-weight:800;color:var(--ll-color-text-primary);margin:8px 0 5px}
 .featured-review-meta{font-size:12px;color:var(--ll-color-text-secondary);margin-bottom:10px}
-.featured-review-meta strong{color:var(--ll-color-success);font-weight:700}
+.featured-review-meta strong{color:var(--ll-color-text-secondary);font-weight:700}
+.featured-review-meta strong:last-of-type{color:var(--ll-color-success)}
 .featured-review-body{font-size:14px;color:var(--ll-color-text-secondary);line-height:1.65;margin-bottom:12px}
 .featured-review-helpful{font-size:11px;color:#888;padding-top:10px;border-top:1px solid var(--ll-color-border);font-weight:600}
 
@@ -148,8 +149,16 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 /* TRUST BADGES */
 
 /* GUARANTEE BOX */
-.guarantee-box{background:var(--ll-color-background-alt);border:3px dashed var(--ll-color-tertiary);border-radius:var(--ll-radius-md);padding:24px;margin:24px 0;text-align:center}
-.guarantee-box h3{color:var(--ll-color-primary);font-size:22px;margin:4px 0 12px}
+.guarantee-box{background:var(--ll-color-background-alt);border-radius:var(--ll-radius-md);padding:32px;margin:24px 0;display:flex;gap:28px;align-items:flex-start;text-align:left}
+.guarantee-badge{flex-shrink:0;width:88px;height:88px;border:3px solid var(--ll-color-success);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ll-color-success);background:transparent}
+.guarantee-badge-num{font-family:var(--ll-font-heading);font-size:28px;font-weight:900;line-height:1}
+.guarantee-badge-label{font-family:var(--ll-font-heading);font-size:11px;font-weight:700;letter-spacing:0.1em;margin-top:2px}
+.guarantee-content{flex:1;min-width:0}
+.guarantee-content h3{font-family:var(--ll-font-heading);font-size:22px;font-weight:800;color:var(--ll-color-text-primary);margin:0 0 16px;line-height:1.35}
+.guarantee-content p{font-size:15px;color:var(--ll-color-text-secondary);line-height:1.65;margin:0 0 14px}
+.guarantee-content p:last-child{margin-bottom:0}
+@media (max-width:600px){.guarantee-box{flex-direction:column;gap:20px;padding:24px}.guarantee-badge{align-self:center}}
+.guarantee-box h3{font-size:22px;margin:4px 0 12px}
 .guarantee-box .days{display:inline-block;background:var(--ll-color-primary);color:#fff;padding:6px 18px;border-radius:var(--ll-radius-pill);font-family:var(--ll-font-heading);font-weight:800;font-size:13px;margin-bottom:4px}
 .guarantee-box p{font-size:15px;color:var(--ll-color-text-secondary);margin-bottom:8px;line-height:1.6}
 .guarantee-contact{margin-top:16px;padding-top:14px;border-top:1px solid rgba(var(--ll-color-primary-rgb), 0.3);font-size:13px}
@@ -200,9 +209,9 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .site-footer a:hover{color:#fff}
 .site-footer-copy{margin-bottom:10px;color:#ccc}
 
-.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:var(--ll-color-primary);color:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap}
-.sticky-cta-text{font-family:var(--ll-font-heading);font-weight:700;font-size:18px;color:#fff}
-.sticky-cta-btn{background:#fff;color:var(--ll-color-primary);padding:10px 22px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-weight:800;font-size:13px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;border-top:1px solid #e5e5e5}
+.sticky-cta-text{font-family:var(--ll-font-heading);font-weight:700;font-size:18px;color:#111;text-transform:capitalize}
+.sticky-cta-btn{background:var(--ll-color-primary);color:#fff;padding:8px 18px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-weight:800;font-size:16px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
 
 @media (max-width:900px){
   .article-wrap{grid-template-columns:1fr;padding:18px 16px;gap:0}
@@ -219,7 +228,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
   .amazon-features{grid-template-columns:1fr}
   .featured-review{padding:18px}
   .sticky-cta-text{display:none}
-  .sticky-cta-btn{width:90%;padding:12px 16px;font-size:14px;text-align:center}
+  .sticky-cta-btn{width:90%;padding:12px 16px;font-size:16px;text-align:center}
   .bullet-list li{font-size:16px;padding:8px 0 8px 34px}
   .bullet-list li::before{width:22px;height:22px;top:10px}
 }
@@ -239,9 +248,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
-<div id="adv-header-logo" style="background:#fff;border-bottom:1px solid #eee;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:system-ui,-apple-system,sans-serif;">
-<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0928/5956/4332/files/Design_sans_titre_15_-_Modifie.png?v=1777485168" style="display:block;height:32px;max-width:200px;object-fit:contain;margin:0">
-<span style="color:#999;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;font-weight:500">Advertorial</span>
+<div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif">This is an advertorial</div>
+<div id="adv-header-logo" style="text-align:center;padding:6px 0 4px;background:#fff;border-bottom:1px solid #eee">
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0928/5956/4332/files/Design_sans_titre_15_-_Modifie.png?v=1777485168" style="display:block;height:32px;max-width:200px;object-fit:contain;margin:0 auto">
 </div>
 <!-- UPDATE BANNER -->
 <div class="article-wrap">
@@ -260,7 +269,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 </div>
 <!-- MEDIA 1: hero video (or image) after headline -->
-<div class="v2-media-slot" data-job-id="d19d1b4a-b491-4a7f-8608-9b8fcf1d36fa" data-prompts='["Female health journalist in her late fifties at a wooden home-office desk in Minneapolis, surrounded by five different nerve supplement bottles, a notebook with handwritten symptom logs, soft daylight from a window, photorealistic", "Overhead flat-lay of five nerve supplement bottles lined up on a kitchen table next to a notebook, a magnifying glass and a coffee cup, natural morning light, photorealistic", "Older father and adult daughter sitting at a kitchen table in a Midwestern home, looking together at a supplement bottle, warm afternoon light through a window, photorealistic"]' data-selected="0" data-slot-key="media_1.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Female health journalist in her late fifties at a wooden home-office desk in Min"</div></div>
+<div class="v2-media-slot" data-job-id="d19d1b4a-b491-4a7f-8608-9b8fcf1d36fa" data-prompts='["Female health journalist in her late fifties at a wooden home-office desk in Minneapolis, surrounded by five different nerve supplement bottles, a notebook with handwritten symptom logs, soft daylight from a window, photorealistic", "Overhead flat-lay of five nerve supplement bottles lined up on a kitchen table next to a notebook, a magnifying glass and a coffee cup, natural morning light, photorealistic", "Older father and adult daughter sitting at a kitchen table in a Midwestern home, looking together at a supplement bottle, warm afternoon light through a window, photorealistic"]' data-selected="0" data-slot-key="media_1.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Female health journalist in her late fifties at a wooden home-office desk in Min"</div></div>
 <!-- STORY INTRO -->
 <p>I'm Laura Whitfield, a health journalist based in Minneapolis with twenty-two years covering supplements for AARP and Health Magazine.</p>
 <p>Over my career I've interviewed hundreds of neuropathy patients, neurologists, and pharmacists across the Upper Midwest.</p>
@@ -275,7 +284,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <b class="rhetorical">My own father — a retired electrician in Duluth — was one prescription pad away from gabapentin and a list of side effects he didn't want.</b>
 <p>What I found over the past eight weeks may finally explain why so many readers get <strong>real, lasting relief</strong> without prescription drugs.</p>
 <!-- MEDIA 2: story / breakthrough image -->
-<div class="v2-media-slot" data-job-id="d19d1b4a-b491-4a7f-8608-9b8fcf1d36fa" data-prompts='["Open notebook with handwritten daily symptom diary entries, a pen, and a row of supplement bottles in soft focus behind it, photorealistic", "Independent laboratory technician examining a capsule sample under a microscope, white coat, neutral lab background, photorealistic", "Older man in a flannel shirt sitting on the edge of a bed checking his bare feet in soft morning light, expression of cautious relief, photorealistic"]' data-selected="0" data-slot-key="media_2.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Open notebook with handwritten daily symptom diary entries, a pen, and a row of "</div></div>
+<div class="v2-media-slot" data-job-id="d19d1b4a-b491-4a7f-8608-9b8fcf1d36fa" data-prompts='["Open notebook with handwritten daily symptom diary entries, a pen, and a row of supplement bottles in soft focus behind it, photorealistic", "Independent laboratory technician examining a capsule sample under a microscope, white coat, neutral lab background, photorealistic", "Older man in a flannel shirt sitting on the edge of a bed checking his bare feet in soft morning light, expression of cautious relief, photorealistic"]' data-selected="0" data-slot-key="media_2.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Open notebook with handwritten daily symptom diary entries, a pen, and a row of "</div></div>
 <p>It started with a stack of supplement bottles on my desk and a question my father kept asking me at breakfast.</p>
 <!-- ROOT CAUSE -->
 <b class="rhetorical">Surprising Root Cause</b>
@@ -283,14 +292,14 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>But the latest research points to a thinning of the <strong>protective myelin sheath</strong> that wraps every peripheral nerve fiber.</p>
 <p>Researchers at the University of Minnesota call it the <u>myelin gap</u> — and it explains the burning, tingling, and numbness.</p>
 <!-- MEDIA 3: mechanism / diagram -->
-<div class="v2-media-slot" data-job-id="d19d1b4a-b491-4a7f-8608-9b8fcf1d36fa" data-prompts='["Five different nerve support supplement bottles lined up on a clean white surface for side-by-side comparison, soft studio lighting, photorealistic", "Hand holding two supplement bottles up to compare their ingredient labels in a kitchen, focused expression, photorealistic", "Close-up of an open notebook page with a hand-drawn scoring rubric and check marks beside supplement names, photorealistic"]' data-selected="0" data-slot-key="media_3.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Five different nerve support supplement bottles lined up on a clean white surfac"</div></div>
+<div class="v2-media-slot" data-job-id="d19d1b4a-b491-4a7f-8608-9b8fcf1d36fa" data-prompts='["Five different nerve support supplement bottles lined up on a clean white surface for side-by-side comparison, soft studio lighting, photorealistic", "Hand holding two supplement bottles up to compare their ingredient labels in a kitchen, focused expression, photorealistic", "Close-up of an open notebook page with a hand-drawn scoring rubric and check marks beside supplement names, photorealistic"]' data-selected="0" data-slot-key="media_3.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Five different nerve support supplement bottles lined up on a clean white surfac"</div></div>
 <p class="media-caption">Comparing five top-selling nerve supplements</p>
 <p>When that insulating layer wears thin, signals misfire. That is why your toes burn at night and your fingers feel asleep at noon.</p>
 <b class="rhetorical">And here is the part most doctors do not tell their patients up front.</b>
 <p>The thinner that sheath becomes, the louder the symptoms grow — and <strong>age, blood sugar, and stress</strong> only accelerate the process.</p>
 <p>Left alone, what begins as a nuisance often graduates into balance problems, falls, and a quiet retreat from the activities you love.</p>
 <!-- MEDIA 4: bad-news visual / worsening -->
-<div class="v2-media-slot" data-job-id="d19d1b4a-b491-4a7f-8608-9b8fcf1d36fa" data-prompts="[&quot;Detailed scientific illustration of a peripheral nerve fiber with intact myelin sheath versus a damaged thinning sheath, clean white background, photorealistic&quot;, &quot;Close-up of a senior man's hand holding a magnifying glass over a printed nerve diagram on a kitchen table, photorealistic&quot;, &quot;Older woman gently rubbing her tingling hand at a kitchen counter, expression of mild discomfort, soft natural light, photorealistic&quot;]" data-selected="0" data-slot-key="media_4.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Detailed scientific illustration of a peripheral nerve fiber with intact myelin "</div></div>
+<div class="v2-media-slot" data-job-id="d19d1b4a-b491-4a7f-8608-9b8fcf1d36fa" data-prompts="[&quot;Detailed scientific illustration of a peripheral nerve fiber with intact myelin sheath versus a damaged thinning sheath, clean white background, photorealistic&quot;, &quot;Close-up of a senior man's hand holding a magnifying glass over a printed nerve diagram on a kitchen table, photorealistic&quot;, &quot;Older woman gently rubbing her tingling hand at a kitchen counter, expression of mild discomfort, soft natural light, photorealistic&quot;]" data-selected="0" data-slot-key="media_4.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Detailed scientific illustration of a peripheral nerve fiber with intact myelin "</div></div>
 <b class="rhetorical">So what actually works to rebuild that protective layer around the nerves?</b>
 <p>The goal is to give the body the precise nutrients it needs to <strong>thicken the myelin sheath</strong> and restore clear nerve signaling.</p>
 <p>Once that insulation rebuilds, the burning, tingling, and numbness in your hands and feet begin to fade on their own.</p>
@@ -299,7 +308,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>That is why so many readers tell me they tried five different brands from the drugstore aisle and felt nothing change.</p>
 <b class="rhetorical">Luckily, one of the formulas I tested takes a completely different approach.</b>
 <!-- MEDIA 5: solution reveal image/video -->
-<div class="v2-media-slot" data-job-id="d19d1b4a-b491-4a7f-8608-9b8fcf1d36fa" data-prompts='["Single Nerve Renew supplement bottle on a clean white background, professional product photography, soft shadow, photorealistic", "Nerve Renew supplement bottle on a wooden kitchen counter beside a glass of water and a breakfast plate, morning light, photorealistic", "Older couple smiling while one hands a supplement bottle to the other across a sunlit dining table, photorealistic"]' data-selected="0" data-slot-key="media_5.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Single Nerve Renew supplement bottle on a clean white background, professional p"</div></div>
+<div class="v2-media-slot" data-job-id="d19d1b4a-b491-4a7f-8608-9b8fcf1d36fa" data-prompts='["Single Nerve Renew supplement bottle on a clean white background, professional product photography, soft shadow, photorealistic", "Nerve Renew supplement bottle on a wooden kitchen counter beside a glass of water and a breakfast plate, morning light, photorealistic", "Older couple smiling while one hands a supplement bottle to the other across a sunlit dining table, photorealistic"]' data-selected="0" data-slot-key="media_5.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Single Nerve Renew supplement bottle on a clean white background, professional p"</div></div>
 <h2>Real Relief from Burning, Tingling, and Numbness in Roughly Two Weeks</h2>
 <p>The standout formula is built around a patented compound the researchers call <strong>Stabilized R-ALA</strong>, the active form of alpha-lipoic acid.</p>
 <p>Unlike the cheaper racemic versions, this stabilized molecule remains intact long enough to <u>reach damaged nerve cells</u> and feed the rebuilding process.</p>
@@ -307,22 +316,22 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>A specialty laboratory in Wisconsin — with thirty-one years of pharmaceutical-grade manufacturing — figured out how to produce it at consumer scale.</p>
 <p>Together with a small American supplement company, they brought it to market under a name many readers will already recognize.</p>
 <!-- PRODUCT REVEAL -->
-<h2 style="margin-top:40px">Allow me to formally introduce the product that earned first place in my comparison.</h2>
-<h2 style="color:var(--ll-color-primary); margin-top:0; font-size:34px">Unlock the Power of Healthy Nerves With Nerve Renew®</h2>
+<h2 style="margin-top:40px">Allow me to formally introduce the product that earned first place in my comparison</h2>
+<h2 style="margin-top:0; font-size:34px">Unlock the Power of Healthy Nerves With Nerve Renew®</h2>
 <!-- MEDIA 6: product hero image -->
-<div class="v2-media-slot" data-job-id="d19d1b4a-b491-4a7f-8608-9b8fcf1d36fa" data-prompts='["Smiling woman in her sixties walking a golden retriever down a quiet suburban Minnesota street in autumn, photorealistic", "Older man buttoning a flannel shirt in front of a bedroom mirror, calm expression, soft morning light, photorealistic", "Senior couple walking hand in hand through a small Midwestern town park at golden hour, photorealistic"]' data-selected="0" data-slot-key="media_6.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Smiling woman in her sixties walking a golden retriever down a quiet suburban Mi"</div></div>
+<div class="v2-media-slot" data-job-id="d19d1b4a-b491-4a7f-8608-9b8fcf1d36fa" data-prompts='["Smiling woman in her sixties walking a golden retriever down a quiet suburban Minnesota street in autumn, photorealistic", "Older man buttoning a flannel shirt in front of a bedroom mirror, calm expression, soft morning light, photorealistic", "Senior couple walking hand in hand through a small Midwestern town park at golden hour, photorealistic"]' data-selected="0" data-slot-key="media_6.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Smiling woman in her sixties walking a golden retriever down a quiet suburban Mi"</div></div>
 <p>Nerve Renew is a daily capsule built around <strong>Stabilized R-ALA</strong>, methylcobalamin B12, benfotiamine, and a clinically dosed B-vitamin matrix.</p>
 <p>When you take it with breakfast, the active forms absorb directly into the bloodstream and travel to the nerve fibers that need them most.</p>
 <p>Within a couple of weeks, most readers tell me the burning quiets first, the tingling fades next, and the numbness slowly retreats.</p>
 <!-- MEDIA 7: product in use video/image -->
-<div class="v2-media-slot" data-job-id="d19d1b4a-b491-4a7f-8608-9b8fcf1d36fa" data-prompts="[&quot;Older woman holding her grandchild's hand at a neighborhood park bench, gentle smile, photorealistic&quot;, &quot;Retired carpenter in his late seventies tying his own shoelaces with steady fingers, photorealistic&quot;, &quot;Senior man sleeping peacefully under a quilt in a softly lit bedroom, calm expression, photorealistic&quot;]" data-selected="0" data-slot-key="media_7.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Older woman holding her grandchild's hand at a neighborhood park bench, gentle s"</div></div>
+<div class="v2-media-slot" data-job-id="d19d1b4a-b491-4a7f-8608-9b8fcf1d36fa" data-prompts="[&quot;Older woman holding her grandchild's hand at a neighborhood park bench, gentle smile, photorealistic&quot;, &quot;Retired carpenter in his late seventies tying his own shoelaces with steady fingers, photorealistic&quot;, &quot;Senior man sleeping peacefully under a quilt in a softly lit bedroom, calm expression, photorealistic&quot;]" data-selected="0" data-slot-key="media_7.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Older woman holding her grandchild's hand at a neighborhood park bench, gentle s"</div></div>
 <p>It is two capsules a day — no diet changes, no specialist visits, no medication interactions to manage with your family doctor.</p>
 <p>But you do not have to take my word for any of this — read what other readers have written below.</p>
 <!-- ★ CTA #1 — first CTA in the page, AFTER 7 medias + gradual product reveal -->
 <a class="cta-btn" href="https://terica-store.com/click"><span>See How It Works</span><small>Free shipping on every order</small></a>
 <!-- TRUSTPILOT REVIEWS (2 featured) -->
 <div class="trustpilot-intro">
-<h3>Verified reviews from readers who completed at least sixty days on the formula.</h3>
+<h3>Verified reviews from readers who completed at least sixty days on the formula</h3>
 <p>Each reviewer was contacted directly to confirm their experience and the dates of use.</p>
 </div>
 <div class="featured-review">
@@ -374,11 +383,13 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <a class="cta-btn" href="https://terica-store.com/click"><span>Claim Mine Now</span><small>Limited stock — ships within 24 hours</small></a>
 <!-- GUARANTEE -->
 <div class="guarantee-box">
-<span class="days">30 DAYS</span>
+<div class="guarantee-badge"><div class="guarantee-badge-num">30</div><div class="guarantee-badge-label">DAYS</div></div>
+<div class="guarantee-content">
 <h3>Try Nerve Renew Risk-Free for a Full 30 Days With My Personal Promise</h3>
 <p>If it works the way I believe it will, you keep using it and the bottles ship to your door each month.</p>
 <p>If it does not, you contact customer service, return the bottles, and the full purchase amount returns to your card the same day.</p>
 <p>It does not matter whether eighty-nine minutes have passed or eighty-nine days — that promise stays the same.</p>
+</div>
 </div>
 <!-- HERE'S WHAT TO DO NEXT -->
 <h2>Here Is Exactly What To Do Over the Next Sixty Seconds</h2>
@@ -387,7 +398,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>Enter your shipping address, your name, and your preferred payment method — the entire process takes under a minute.</p>
 <p>Most readers I spoke with ordered two or three bottles, one for themselves and one for a parent or spouse.</p>
 <!-- ★ CTA #4 -->
-<a class="cta-btn" href="https://terica-store.com/click"><span>Start My Order</span><small>Takes less than sixty seconds</small></a>
 <!-- REMEMBER / ZERO RISK -->
 <h2>Remember, There Is Truly Zero Risk in Trying It Today</h2>
 <p>The real risk is the regret of waking up next month with the same burning feet and wishing you had acted.</p>
@@ -463,12 +473,12 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="sticky-product">
 <span class="sticky-product-badge">Bestseller</span>
 <div class="sticky-product-name">Unlock the Power of Healthy Nerves With Nerve Renew®</div>
-<div class="v2-media-slot" data-job-id="d19d1b4a-b491-4a7f-8608-9b8fcf1d36fa" data-prompts="[&quot;Single Nerve Renew supplement bottle centered on a pure white background, professional product photography, soft shadow, photorealistic&quot;, &quot;Nerve Renew bottle slightly angled on a white surface with capsules spilling out beside it, photorealistic&quot;, &quot;Older man's hand reaching for a Nerve Renew bottle on a sunlit kitchen counter, photorealistic&quot;]" data-selected="0" data-slot-key="sidebar.image" style="aspect-ratio:1/1; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — sidebar.image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Single Nerve Renew supplement bottle centered on a pure white background, profes"</div></div>
+<div class="v2-media-slot" data-job-id="d19d1b4a-b491-4a7f-8608-9b8fcf1d36fa" data-prompts="[&quot;Single Nerve Renew supplement bottle centered on a pure white background, professional product photography, soft shadow, photorealistic&quot;, &quot;Nerve Renew bottle slightly angled on a white surface with capsules spilling out beside it, photorealistic&quot;, &quot;Older man's hand reaching for a Nerve Renew bottle on a sunlit kitchen counter, photorealistic&quot;]" data-selected="0" data-slot-key="sidebar.image" style="aspect-ratio:1/1; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — sidebar.image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Single Nerve Renew supplement bottle centered on a pure white background, profes"</div></div>
 <div class="sticky-product-stars">
 <span class="stars">★★★★★</span>
 <span>Rated 4.8 out of 5</span>
 </div>
-<a class="sticky-product-cta" href="https://terica-store.com/click"><span>Order Now</span></a>
+<a class="sticky-product-cta" href="https://terica-store.com/click"><span>CHECK AVAILABILITY</span></a>
 <div class="sticky-product-trust">
 <span class="sticky-product-trust-item">30-Day Money-Back Guarantee</span>
 <span class="sticky-product-trust-item">Free US Shipping</span>
@@ -479,7 +489,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div><!-- /article-wrap -->
 <div class="sticky-cta">
 <span class="sticky-cta-text">Limited stock — order today</span>
-<a class="sticky-cta-btn" href="https://terica-store.com/click"><span>Order Now</span></a>
+<a class="sticky-cta-btn" href="https://terica-store.com/click"><span>Check availability</span></a>
 </div>
 <style id="adv-brand-secondary">
 :root{ --ll-color-secondary: #e5eaff; }

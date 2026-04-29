@@ -43,7 +43,7 @@ img{max-width:100%;height:auto;display:block}
 #adv-header-logo img,#adv-footer img{margin:0 auto}
 
 /* 2-COLUMN LAYOUT */
-.article-wrap{max-width:1260px;margin:0 auto;padding:20px 24px;display:grid;grid-template-columns:minmax(0, 1fr) 300px;gap:40px;align-items:flex-start}
+.article-wrap{max-width:1260px;margin:0 auto;padding:6px 24px;display:grid;grid-template-columns:minmax(0, 1fr) 300px;gap:20px;align-items:flex-start}
 .article-col{min-width:0}
 .sidebar-col{width:300px}
 .sticky-product{position:sticky;top:70px}
@@ -68,7 +68,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .site-header{background:#fff;border-bottom:1px solid var(--ll-color-border);padding:15px 0;text-align:center}
 .site-header img{height:38px;max-width:220px;margin:0 auto}
 
-.breadcrumb{font-size:12px;color:var(--ll-color-text-secondary);margin:8px 0 8px;text-transform:uppercase;letter-spacing:0.5px}
+.breadcrumb{font-size:12px;color:var(--ll-color-text-secondary);margin:0 0 8px;text-transform:uppercase;letter-spacing:0.5px}
 .breadcrumb a{color:var(--ll-color-text-secondary);text-decoration:none;font-weight:400}
 .breadcrumb-sep{margin:0 8px;opacity:0.5}
 
@@ -77,7 +77,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .headline-stars-row{display:flex;align-items:center;gap:8px;margin:12px 0 14px;flex-wrap:wrap}
 .headline-stars-row .stars{font-size:20px}
 .headline-stars-row .ratings-count{font-size:14px;color:var(--ll-color-text-secondary);font-weight:600}
-.article-byline{display:flex;gap:12px;align-items:center;padding:14px 0;font-size:13px;border-top:1px solid var(--ll-color-border);border-bottom:1px solid var(--ll-color-border);margin:10px 0 24px}
+.article-byline{display:flex;gap:12px;align-items:center;padding:14px 0;font-size:13px;border-top:1px solid var(--ll-color-border);border-bottom:1px solid var(--ll-color-border);margin:10px 0 8px}
 .article-byline-photo{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#ddd}
 .article-byline-info{display:flex;flex-direction:column;gap:2px}
 .article-byline-name{font-weight:700;color:var(--ll-color-text-primary);font-family:var(--ll-font-heading);font-size:14px}
@@ -112,7 +112,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .stars{color:#f5b40a !important;font-size:20px;letter-spacing:2px;line-height:1;font-weight:700;display:inline-block}
 
 /* STICKY PRODUCT CARD */
-.sticky-product{background:#fff;border:3px solid var(--ll-color-primary);border-radius:var(--ll-radius-md);padding:22px 18px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,0.08)}
+.sticky-product{background:#fff;border:3px solid var(--ll-color-primary);border-radius:var(--ll-radius-md);padding:22px 10px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,0.08)}
 .sticky-product-badge{display:inline-block;background:var(--ll-color-warning);color:#fff;padding:5px 12px;border-radius:var(--ll-radius-pill);font-size:11px;font-weight:800;letter-spacing:0.2px;margin-bottom:12px;font-family:var(--ll-font-heading)}
 .sticky-product-name{font-family:var(--ll-font-heading);font-size:19px;font-weight:800;color:var(--ll-color-text-primary);line-height:1.2;margin-bottom:4px}
 .sticky-product-tagline{font-size:12px;color:var(--ll-color-text-secondary);margin-bottom:12px;line-height:1.4}
@@ -123,20 +123,21 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .sticky-product-price-original{font-size:15px;text-decoration:line-through;color:#888;font-family:var(--ll-font-heading);font-weight:600}
 .sticky-product-price-sale{font-family:var(--ll-font-heading);font-size:30px;font-weight:900;color:var(--ll-color-primary);line-height:1}
 .sticky-product-discount{background:var(--ll-color-warning);color:#fff;padding:3px 8px;border-radius:var(--ll-radius-sm);font-size:10px;font-weight:800;font-family:var(--ll-font-heading);display:inline-block;margin-bottom:10px}
-.sticky-product-cta{display:block;background:var(--ll-color-primary);color:#fff;padding:14px 12px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 3px 6px 1px rgba(0,0,0,0.18);letter-spacing:0.2px;text-align:center;line-height:1.2;margin:12px 0 10px;transition:filter 0.15s}
+.sticky-product-cta{display:block;background:var(--ll-color-primary);color:#fff;padding:14px 12px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 3px 6px 1px rgba(0,0,0,0.18);letter-spacing:0.2px;text-align:center;line-height:1.2;margin:12px 0 10px;transition:filter 0.15s;text-transform:uppercase;letter-spacing:0.5px}
 .sticky-product-cta:hover{filter:brightness(0.88);color:#fff;text-decoration:none}
 .sticky-product-trust{display:flex;flex-direction:column;gap:6px;margin-top:12px;padding-top:12px;border-top:1px dashed rgba(var(--ll-color-primary-rgb), 0.3);font-size:11px;color:var(--ll-color-text-secondary);text-align:left}
 .sticky-product-trust-item{display:flex;align-items:center;gap:6px;font-weight:600}
 .sticky-product-trust-item::before{content:"✓";color:var(--ll-color-primary);font-weight:800;font-size:13px}
 
 /* TRUSTPILOT REVIEWS */
-.trustpilot-intro{text-align:center;margin:24px 0 18px}
-.trustpilot-intro h3{color:var(--ll-color-success);font-size:22px;margin-bottom:5px}
+.trustpilot-intro{text-align:left;margin:24px 0 18px}
+.trustpilot-intro h3{font-size:22px;margin-bottom:5px}
 .trustpilot-intro p{color:var(--ll-color-text-secondary);font-size:14px;margin:0}
 .featured-review{background:#fff;border:1px solid var(--ll-color-border);border-radius:var(--ll-radius-md);padding:22px;margin-bottom:15px;box-shadow:0 2px 10px rgba(0,0,0,0.04)}
 .featured-review-title{font-family:var(--ll-font-heading);font-size:17px;font-weight:800;color:var(--ll-color-text-primary);margin:8px 0 5px}
 .featured-review-meta{font-size:12px;color:var(--ll-color-text-secondary);margin-bottom:10px}
-.featured-review-meta strong{color:var(--ll-color-success);font-weight:700}
+.featured-review-meta strong{color:var(--ll-color-text-secondary);font-weight:700}
+.featured-review-meta strong:last-of-type{color:var(--ll-color-success)}
 .featured-review-body{font-size:14px;color:var(--ll-color-text-secondary);line-height:1.65;margin-bottom:12px}
 .featured-review-helpful{font-size:11px;color:#888;padding-top:10px;border-top:1px solid var(--ll-color-border);font-weight:600}
 
@@ -145,8 +146,16 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 /* TRUST BADGES */
 
 /* GUARANTEE BOX */
-.guarantee-box{background:var(--ll-color-background-alt);border:3px dashed var(--ll-color-tertiary);border-radius:var(--ll-radius-md);padding:24px;margin:24px 0;text-align:center}
-.guarantee-box h3{color:var(--ll-color-primary);font-size:22px;margin:4px 0 12px}
+.guarantee-box{background:var(--ll-color-background-alt);border-radius:var(--ll-radius-md);padding:32px;margin:24px 0;display:flex;gap:28px;align-items:flex-start;text-align:left}
+.guarantee-badge{flex-shrink:0;width:88px;height:88px;border:3px solid var(--ll-color-success);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ll-color-success);background:transparent}
+.guarantee-badge-num{font-family:var(--ll-font-heading);font-size:28px;font-weight:900;line-height:1}
+.guarantee-badge-label{font-family:var(--ll-font-heading);font-size:11px;font-weight:700;letter-spacing:0.1em;margin-top:2px}
+.guarantee-content{flex:1;min-width:0}
+.guarantee-content h3{font-family:var(--ll-font-heading);font-size:22px;font-weight:800;color:var(--ll-color-text-primary);margin:0 0 16px;line-height:1.35}
+.guarantee-content p{font-size:15px;color:var(--ll-color-text-secondary);line-height:1.65;margin:0 0 14px}
+.guarantee-content p:last-child{margin-bottom:0}
+@media (max-width:600px){.guarantee-box{flex-direction:column;gap:20px;padding:24px}.guarantee-badge{align-self:center}}
+.guarantee-box h3{font-size:22px;margin:4px 0 12px}
 .guarantee-box .days{display:inline-block;background:var(--ll-color-primary);color:#fff;padding:6px 18px;border-radius:var(--ll-radius-pill);font-family:var(--ll-font-heading);font-weight:800;font-size:13px;margin-bottom:4px}
 .guarantee-box p{font-size:15px;color:var(--ll-color-text-secondary);margin-bottom:8px;line-height:1.6}
 .guarantee-contact{margin-top:16px;padding-top:14px;border-top:1px solid rgba(var(--ll-color-primary-rgb), 0.3);font-size:13px}
@@ -197,9 +206,9 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .site-footer a:hover{color:#fff}
 .site-footer-copy{margin-bottom:10px;color:#ccc}
 
-.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:var(--ll-color-primary);color:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap}
-.sticky-cta-text{font-family:var(--ll-font-heading);font-weight:700;font-size:18px;color:#fff}
-.sticky-cta-btn{background:#fff;color:var(--ll-color-primary);padding:10px 22px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-weight:800;font-size:13px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;border-top:1px solid #e5e5e5}
+.sticky-cta-text{font-family:var(--ll-font-heading);font-weight:700;font-size:18px;color:#111;text-transform:capitalize}
+.sticky-cta-btn{background:var(--ll-color-primary);color:#fff;padding:8px 18px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-weight:800;font-size:16px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
 
 @media (max-width:900px){
   .article-wrap{grid-template-columns:1fr;padding:18px 16px;gap:0}
@@ -216,7 +225,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
   .amazon-features{grid-template-columns:1fr}
   .featured-review{padding:18px}
   .sticky-cta-text{display:none}
-  .sticky-cta-btn{width:90%;padding:12px 16px;font-size:14px;text-align:center}
+  .sticky-cta-btn{width:90%;padding:12px 16px;font-size:16px;text-align:center}
   .bullet-list li{font-size:16px;padding:8px 0 8px 34px}
   .bullet-list li::before{width:22px;height:22px;top:10px}
 }
@@ -247,9 +256,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <style>@media(min-width:1025px){.hide-desktop{display:none!important}}@media(min-width:376px)and(max-width:1024px){.hide-tablet{display:none!important}}@media(max-width:375px){.hide-mobile{display:none!important}}</style><script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
-<div id="adv-header-logo" style="background:#fff;border-bottom:1px solid #eee;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:system-ui,-apple-system,sans-serif;">
-<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0928/5956/4332/files/Design_sans_titre_15_-_Modifie.png?v=1777485168" style="display:block;height:32px;max-width:200px;object-fit:contain;margin:0">
-<span style="color:#999;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;font-weight:500">Advertorial</span>
+<div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif">This is an advertorial</div>
+<div id="adv-header-logo" style="text-align:center;padding:6px 0 4px;background:#fff;border-bottom:1px solid #eee">
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0928/5956/4332/files/Design_sans_titre_15_-_Modifie.png?v=1777485168" style="display:block;height:32px;max-width:200px;object-fit:contain;margin:0 auto">
 </div>
 <!-- UPDATE BANNER -->
 <div class="article-wrap">
@@ -308,15 +317,15 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <b class="rhetorical">That gap between clinic-grade reactivation and the home patient has finally been closed.</b>
 <!-- MEDIA 5: solution reveal image/video -->
 <img alt="" data-copy="media_5.url:attr:src" data-prompts='["Sleek wearable lower back medical device shown on a clean white surface beside its charging cradle, photorealistic studio lighting", "Older man comfortably wearing a discreet back therapy device while gardening in his backyard, photorealistic", "Close-up of a hand pressing the activation button on a slim medical back device worn at the waistline, photorealistic"]' data-slot-key="media_5.url" data-v2-replaced="1" src="https://pub-a852565c9bca4dcca1a2e78eed5740a7.r2.dev/60482721/batch_42d182bf2029_4_0_f37d10.jpg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px"/>
-<h2 style="position: relative">A pocket-sized device now delivers the same multifidus reactivation signal at home.</h2>
+<h2 style="position: relative">A pocket-sized device now delivers the same multifidus reactivation signal at home</h2>
 <p style="position: relative">A small American medical company spent years miniaturizing the clinical reactivation protocol into a wearable, FDA-cleared device.</p>
 <p style="position: relative">It does not stretch the back. It does not strengthen what you can already feel firing.</p>
 <p style="position: relative">It targets the <strong>deep, silent multifidus</strong> directly through the skin and reawakens the neurological signal.</p>
 <p style="position: relative">Within a few weeks, the muscle that has been offline for years begins firing automatically again, on its own.</p>
 <p style="position: relative">And the back pain you were told was structural starts behaving, for the first time, like something that can heal.</p>
 <!-- PRODUCT REVEAL -->
-<h2 style="margin-top: 40px; position: relative">Meet the device that finally reaches what voluntary exercise physiologically cannot reach in a damaged lower back.</h2>
-<h2 style="color: var(--ll-color-primary); margin-top: 0px; font-size: 34px; position: relative">AMD Life Corrective Therapy Device® for Back Pain</h2>
+<h2 style="margin-top: 40px; position: relative">Meet the device that finally reaches what voluntary exercise physiologically cannot reach in a damaged lower back</h2>
+<h2 style="margin-top: 0px; font-size: 34px; position: relative">AMD Life Corrective Therapy Device® for Back Pain</h2>
 <!-- MEDIA 6: product hero image -->
 <img alt="" data-copy="media_6.url:attr:src" data-prompts='["Top-down view of the AMD Life back therapy device with electrode pads, charging cable, and instruction card neatly arranged, photorealistic", "Older couple sitting together on a couch, the man wearing a slim back therapy device under his shirt, relaxed and smiling, photorealistic", "Close-up of an older woman placing an electrode pad on her lower back at home, soft natural lighting, photorealistic"]' data-slot-key="media_6.url" data-v2-replaced="1" src="/pages/media/60482721/manual_upload-manual-0b484959.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px"/>
 <p style="position: relative">The AMD Life Corrective Therapy Device is the first FDA-cleared at-home unit engineered specifically for multifidus reactivation in chronic lower back patients.</p>
@@ -330,7 +339,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <a class="cta-btn" href="https://terica-store.com/click" style="position: relative"><span>Reactivate My Multifidus</span><small>Available directly through the brand</small></a>
 <!-- TRUSTPILOT REVIEWS (2 featured) -->
 <div class="trustpilot-intro">
-<h3 style="position: relative">Real Trustpilot reviews from people who never managed to stick with a single home exercise program.</h3>
+<h3 style="position: relative">Real Trustpilot reviews from people who never managed to stick with a single home exercise program</h3>
 <p style="position: relative">Notice the pattern: none of them succeeded by finally being more disciplined with the sheets.</p>
 </div>
 <div class="featured-review">
@@ -348,7 +357,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="featured-review-helpful">357 readers found helpful</div>
 </div>
 <!-- BENEFITS — Just imagine -->
-<h2 style="position: relative">What changes when the silenced muscle finally comes back online again.</h2>
+<h2 style="position: relative">What changes when the silenced muscle finally comes back online again</h2>
 <p style="position: relative"><strong>Once the multifidus is firing automatically again, your spine stops being the unstable structure your other muscles have been overcompensating for.</strong></p>
 <!-- BULLET LIST 2: emotional scenarios -->
 <ul class="bullet-list">
@@ -361,7 +370,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">And the most important thing is that none of it required you to finally become more disciplined than you already were.</p>
 <!-- SCARCITY / AVAILABILITY BUILD-UP (no prices) -->
 <p style="position: relative">Demand for the device has been climbing every month since the multifidus research entered mainstream spinal medicine.</p>
-<h2 style="position: relative">Why you will not find this device at your local pharmacy or big-box retailer.</h2>
+<h2 style="position: relative">Why you will not find this device at your local pharmacy or big-box retailer</h2>
 <p style="position: relative">The brand made an early decision to keep the device out of third-party retail and away from drop-shippers.</p>
 <p style="position: relative">That choice protects the clinical integrity of the protocol but it also caps how fast inventory can move.</p>
 <b class="rhetorical">What that means for you, practically, is that restocks have been running behind orders since late winter.</b>
@@ -373,7 +382,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="position: relative">There is no benefit to waiting another back-pain morning to do something the science has finally caught up to.</p>
 <p style="position: relative">And there is a significant cost, in time and in mornings, to assuming the next batch will appear quickly.</p>
 <!-- EXCLUSIVITY -->
-<h2 style="position: relative">You will not find the AMD Life device on Amazon, Walmart, or any major drugstore shelf.</h2>
+<h2 style="position: relative">You will not find the AMD Life device on Amazon, Walmart, or any major drugstore shelf</h2>
 <p style="position: relative">The company sells exclusively through its own site to keep the clinical signal calibration verifiable on every unit shipped.</p>
 <p style="position: relative">Listings that appear elsewhere under similar names are not the same device and do not carry the FDA clearance.</p>
 <p style="position: relative">If you want the actual reactivation protocol the spinal researchers tested, the brand's own page is the only path.</p>
@@ -382,14 +391,16 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <a class="cta-btn" href="https://terica-store.com/click" style="position: relative"><span>Check Availability Now</span><small>Direct from the brand only</small></a>
 <!-- GUARANTEE -->
 <div class="guarantee-box">
-<span class="days">30 Days</span>
-<h3 style="position: relative">Try the device at home for thirty full days with absolutely no risk to you.</h3>
-<p style="position: relative">The brand backs every unit with a thirty-day at-home trial because they know what the first weeks tend to feel like.</p>
-<p style="position: relative">If your mornings are not measurably easier within that window, you return the device for a complete refund.</p>
-<p style="position: relative">No clinic visit. No doctor's note. No restocking maze. Just the same direct customer service line that took your order.</p>
+<div class="guarantee-badge"><div class="guarantee-badge-num">30</div><div class="guarantee-badge-label">DAYS</div></div>
+<div class="guarantee-content">
+<h3>Try the device at home for thirty full days with absolutely no risk to you</h3>
+<p>The brand backs every unit with a thirty-day at-home trial because they know what the first weeks tend to feel like.</p>
+<p>If your mornings are not measurably easier within that window, you return the device for a complete refund.</p>
+<p>No clinic visit. No doctor's note. No restocking maze. Just the same direct customer service line that took your order.</p>
+</div>
 </div>
 <!-- HERE'S WHAT TO DO NEXT -->
-<h2 style="position: relative">What happens after you place your order from the brand's site.</h2>
+<h2 style="position: relative">What happens after you place your order from the brand's site</h2>
 <p style="position: relative">Your device ships from the company's domestic facility, typically within two business days of the order being placed.</p>
 <p style="position: relative">Inside the box you will find the calibrated unit, the medical-grade pads, the charging cable, and a single-page protocol card.</p>
 <p style="position: relative">There are no apps to install, no subscriptions to manage, and no exercise sheets waiting to make you feel guilty.</p>
@@ -397,7 +408,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <!-- ★ CTA #4 -->
 <a class="cta-btn" href="https://terica-store.com/click" style="position: relative"><span>Order The Device</span><small>Ships from the United States</small></a>
 <!-- REMEMBER / ZERO RISK -->
-<h2 style="position: relative">There is genuinely no scenario in which trying this costs you anything.</h2>
+<h2 style="position: relative">There is genuinely no scenario in which trying this costs you anything</h2>
 <p style="position: relative">If the device works, you get back the mornings, the sleep, and the movements you had quietly given up on.</p>
 <p style="position: relative">If it does not work for your specific spine, the brand refunds you in full inside the trial window.</p>
 <p style="position: relative">The only thing the decision actually costs you is the next month of waking up the way you have been waking up.</p>
@@ -412,7 +423,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p style="text-align: center; font-size: 13px; color: var(--ll-color-text-secondary); margin-top: 4px; position: relative">Backed by a full thirty-day guarantee</p>
 <!-- AMAZON REVIEWS -->
 <div class="amazon-reviews">
-<h3 style="position: relative">What verified buyers are reporting after their first month of use.</h3>
+<h3 style="position: relative">What verified buyers are reporting after their first month of use</h3>
 <div class="amazon-avg">
 <div class="amazon-avg-number">4.8</div>
 <span class="stars">★★★★★</span>
@@ -476,7 +487,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <span class="stars">★★★★★</span>
 <span>Rated 4.8 out of 5</span>
 </div>
-<a class="sticky-product-cta" href="https://terica-store.com/click"><span>See Availability</span></a>
+<a class="sticky-product-cta" href="https://terica-store.com/click"><span>CHECK AVAILABILITY</span></a>
 <div class="sticky-product-trust">
 <span class="sticky-product-trust-item">FDA-Cleared Device</span>
 <span class="sticky-product-trust-item">FSA &amp; HSA Eligible</span>
@@ -487,7 +498,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div><!-- /article-wrap -->
 <div class="sticky-cta">
 <span class="sticky-cta-text">Inventory is moving quickly today</span>
-<a class="sticky-cta-btn" href="https://terica-store.com/click"><span>Check Availability</span></a>
+<a class="sticky-cta-btn" href="https://terica-store.com/click"><span>Check availability</span></a>
 </div>
 <style id="adv-brand-secondary">
 :root{ --ll-color-secondary: #e5f1ff; }

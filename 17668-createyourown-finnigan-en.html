@@ -46,7 +46,7 @@ img{max-width:100%;height:auto;display:block}
 #adv-header-logo img,#adv-footer img{margin:0 auto}
 
 /* 2-COLUMN LAYOUT */
-.article-wrap{max-width:1260px;margin:0 auto;padding:20px 24px;display:grid;grid-template-columns:minmax(0, 1fr) 300px;gap:40px;align-items:flex-start}
+.article-wrap{max-width:1260px;margin:0 auto;padding:6px 24px;display:grid;grid-template-columns:minmax(0, 1fr) 300px;gap:20px;align-items:flex-start}
 .article-col{min-width:0}
 .sidebar-col{width:300px}
 .sticky-product{position:sticky;top:70px}
@@ -71,7 +71,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .site-header{background:#fff;border-bottom:1px solid var(--ll-color-border);padding:15px 0;text-align:center}
 .site-header img{height:38px;max-width:220px;margin:0 auto}
 
-.breadcrumb{font-size:12px;color:var(--ll-color-text-secondary);margin:8px 0 8px;text-transform:uppercase;letter-spacing:0.5px}
+.breadcrumb{font-size:12px;color:var(--ll-color-text-secondary);margin:0 0 8px;text-transform:uppercase;letter-spacing:0.5px}
 .breadcrumb a{color:var(--ll-color-text-secondary);text-decoration:none;font-weight:400}
 .breadcrumb-sep{margin:0 8px;opacity:0.5}
 
@@ -80,7 +80,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .headline-stars-row{display:flex;align-items:center;gap:8px;margin:12px 0 14px;flex-wrap:wrap}
 .headline-stars-row .stars{font-size:20px}
 .headline-stars-row .ratings-count{font-size:14px;color:var(--ll-color-text-secondary);font-weight:600}
-.article-byline{display:flex;gap:12px;align-items:center;padding:14px 0;font-size:13px;border-top:1px solid var(--ll-color-border);border-bottom:1px solid var(--ll-color-border);margin:10px 0 24px}
+.article-byline{display:flex;gap:12px;align-items:center;padding:14px 0;font-size:13px;border-top:1px solid var(--ll-color-border);border-bottom:1px solid var(--ll-color-border);margin:10px 0 8px}
 .article-byline-photo{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#ddd}
 .article-byline-info{display:flex;flex-direction:column;gap:2px}
 .article-byline-name{font-weight:700;color:var(--ll-color-text-primary);font-family:var(--ll-font-heading);font-size:14px}
@@ -115,7 +115,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .stars{color:#f5b40a !important;font-size:20px;letter-spacing:2px;line-height:1;font-weight:700;display:inline-block}
 
 /* STICKY PRODUCT CARD */
-.sticky-product{background:#fff;border:3px solid var(--ll-color-primary);border-radius:var(--ll-radius-md);padding:22px 18px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,0.08)}
+.sticky-product{background:#fff;border:3px solid var(--ll-color-primary);border-radius:var(--ll-radius-md);padding:22px 10px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,0.08)}
 .sticky-product-badge{display:inline-block;background:var(--ll-color-warning);color:#fff;padding:5px 12px;border-radius:var(--ll-radius-pill);font-size:11px;font-weight:800;letter-spacing:0.2px;margin-bottom:12px;font-family:var(--ll-font-heading)}
 .sticky-product-name{font-family:var(--ll-font-heading);font-size:19px;font-weight:800;color:var(--ll-color-text-primary);line-height:1.2;margin-bottom:4px}
 .sticky-product-tagline{font-size:12px;color:var(--ll-color-text-secondary);margin-bottom:12px;line-height:1.4}
@@ -126,20 +126,21 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .sticky-product-price-original{font-size:15px;text-decoration:line-through;color:#888;font-family:var(--ll-font-heading);font-weight:600}
 .sticky-product-price-sale{font-family:var(--ll-font-heading);font-size:30px;font-weight:900;color:var(--ll-color-primary);line-height:1}
 .sticky-product-discount{background:var(--ll-color-warning);color:#fff;padding:3px 8px;border-radius:var(--ll-radius-sm);font-size:10px;font-weight:800;font-family:var(--ll-font-heading);display:inline-block;margin-bottom:10px}
-.sticky-product-cta{display:block;background:var(--ll-color-primary);color:#fff;padding:14px 12px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 3px 6px 1px rgba(0,0,0,0.18);letter-spacing:0.2px;text-align:center;line-height:1.2;margin:12px 0 10px;transition:filter 0.15s}
+.sticky-product-cta{display:block;background:var(--ll-color-primary);color:#fff;padding:14px 12px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 3px 6px 1px rgba(0,0,0,0.18);letter-spacing:0.2px;text-align:center;line-height:1.2;margin:12px 0 10px;transition:filter 0.15s;text-transform:uppercase;letter-spacing:0.5px}
 .sticky-product-cta:hover{filter:brightness(0.88);color:#fff;text-decoration:none}
 .sticky-product-trust{display:flex;flex-direction:column;gap:6px;margin-top:12px;padding-top:12px;border-top:1px dashed rgba(var(--ll-color-primary-rgb), 0.3);font-size:11px;color:var(--ll-color-text-secondary);text-align:left}
 .sticky-product-trust-item{display:flex;align-items:center;gap:6px;font-weight:600}
 .sticky-product-trust-item::before{content:"✓";color:var(--ll-color-primary);font-weight:800;font-size:13px}
 
 /* TRUSTPILOT REVIEWS */
-.trustpilot-intro{text-align:center;margin:24px 0 18px}
-.trustpilot-intro h3{color:var(--ll-color-success);font-size:22px;margin-bottom:5px}
+.trustpilot-intro{text-align:left;margin:24px 0 18px}
+.trustpilot-intro h3{font-size:22px;margin-bottom:5px}
 .trustpilot-intro p{color:var(--ll-color-text-secondary);font-size:14px;margin:0}
 .featured-review{background:#fff;border:1px solid var(--ll-color-border);border-radius:var(--ll-radius-md);padding:22px;margin-bottom:15px;box-shadow:0 2px 10px rgba(0,0,0,0.04)}
 .featured-review-title{font-family:var(--ll-font-heading);font-size:17px;font-weight:800;color:var(--ll-color-text-primary);margin:8px 0 5px}
 .featured-review-meta{font-size:12px;color:var(--ll-color-text-secondary);margin-bottom:10px}
-.featured-review-meta strong{color:var(--ll-color-success);font-weight:700}
+.featured-review-meta strong{color:var(--ll-color-text-secondary);font-weight:700}
+.featured-review-meta strong:last-of-type{color:var(--ll-color-success)}
 .featured-review-body{font-size:14px;color:var(--ll-color-text-secondary);line-height:1.65;margin-bottom:12px}
 .featured-review-helpful{font-size:11px;color:#888;padding-top:10px;border-top:1px solid var(--ll-color-border);font-weight:600}
 
@@ -148,8 +149,16 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 /* TRUST BADGES */
 
 /* GUARANTEE BOX */
-.guarantee-box{background:var(--ll-color-background-alt);border:3px dashed var(--ll-color-tertiary);border-radius:var(--ll-radius-md);padding:24px;margin:24px 0;text-align:center}
-.guarantee-box h3{color:var(--ll-color-primary);font-size:22px;margin:4px 0 12px}
+.guarantee-box{background:var(--ll-color-background-alt);border-radius:var(--ll-radius-md);padding:32px;margin:24px 0;display:flex;gap:28px;align-items:flex-start;text-align:left}
+.guarantee-badge{flex-shrink:0;width:88px;height:88px;border:3px solid var(--ll-color-success);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ll-color-success);background:transparent}
+.guarantee-badge-num{font-family:var(--ll-font-heading);font-size:28px;font-weight:900;line-height:1}
+.guarantee-badge-label{font-family:var(--ll-font-heading);font-size:11px;font-weight:700;letter-spacing:0.1em;margin-top:2px}
+.guarantee-content{flex:1;min-width:0}
+.guarantee-content h3{font-family:var(--ll-font-heading);font-size:22px;font-weight:800;color:var(--ll-color-text-primary);margin:0 0 16px;line-height:1.35}
+.guarantee-content p{font-size:15px;color:var(--ll-color-text-secondary);line-height:1.65;margin:0 0 14px}
+.guarantee-content p:last-child{margin-bottom:0}
+@media (max-width:600px){.guarantee-box{flex-direction:column;gap:20px;padding:24px}.guarantee-badge{align-self:center}}
+.guarantee-box h3{font-size:22px;margin:4px 0 12px}
 .guarantee-box .days{display:inline-block;background:var(--ll-color-primary);color:#fff;padding:6px 18px;border-radius:var(--ll-radius-pill);font-family:var(--ll-font-heading);font-weight:800;font-size:13px;margin-bottom:4px}
 .guarantee-box p{font-size:15px;color:var(--ll-color-text-secondary);margin-bottom:8px;line-height:1.6}
 .guarantee-contact{margin-top:16px;padding-top:14px;border-top:1px solid rgba(var(--ll-color-primary-rgb), 0.3);font-size:13px}
@@ -200,9 +209,9 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
 .site-footer a:hover{color:#fff}
 .site-footer-copy{margin-bottom:10px;color:#ccc}
 
-.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:var(--ll-color-primary);color:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap}
-.sticky-cta-text{font-family:var(--ll-font-heading);font-weight:700;font-size:18px;color:#fff}
-.sticky-cta-btn{background:#fff;color:var(--ll-color-primary);padding:10px 22px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-weight:800;font-size:13px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;border-top:1px solid #e5e5e5}
+.sticky-cta-text{font-family:var(--ll-font-heading);font-weight:700;font-size:18px;color:#111;text-transform:capitalize}
+.sticky-cta-btn{background:var(--ll-color-primary);color:#fff;padding:8px 18px;border-radius:var(--ll-radius-sm);font-family:var(--ll-font-heading);font-weight:800;font-size:16px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
 
 @media (max-width:900px){
   .article-wrap{grid-template-columns:1fr;padding:18px 16px;gap:0}
@@ -219,7 +228,7 @@ mark,.highlight{background:var(--ll-color-tertiary);color:var(--ll-color-text-pr
   .amazon-features{grid-template-columns:1fr}
   .featured-review{padding:18px}
   .sticky-cta-text{display:none}
-  .sticky-cta-btn{width:90%;padding:12px 16px;font-size:14px;text-align:center}
+  .sticky-cta-btn{width:90%;padding:12px 16px;font-size:16px;text-align:center}
   .bullet-list li{font-size:16px;padding:8px 0 8px 34px}
   .bullet-list li::before{width:22px;height:22px;top:10px}
 }
@@ -239,9 +248,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <script async="" src="https://terica-store.com/tracker.js"></script>
 </head>
 <body>
-<div id="adv-header-logo" style="background:#fff;border-bottom:1px solid #eee;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:system-ui,-apple-system,sans-serif;">
-<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0928/5956/4332/files/Design_sans_titre_15_-_Modifie.png?v=1777485168" style="display:block;height:32px;max-width:200px;object-fit:contain;margin:0">
-<span style="color:#999;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;font-weight:500">Advertorial</span>
+<div id="adv-disclosure" style="text-align:center;padding:3px 0;background:#fafafa;border-bottom:1px solid #f0f0f0;font-size:9px;color:#c0c0c0;letter-spacing:0.03em;font-family:system-ui,sans-serif">This is an advertorial</div>
+<div id="adv-header-logo" style="text-align:center;padding:6px 0 4px;background:#fff;border-bottom:1px solid #eee">
+<img alt="Logo" src="https://cdn.shopify.com/s/files/1/0928/5956/4332/files/Design_sans_titre_15_-_Modifie.png?v=1777485168" style="display:block;height:32px;max-width:200px;object-fit:contain;margin:0 auto">
 </div>
 <!-- UPDATE BANNER -->
 <div class="article-wrap">
@@ -260,7 +269,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 </div>
 <!-- MEDIA 1: hero video (or image) after headline -->
-<div class="v2-media-slot" data-job-id="12f7ab12-358e-46e2-b541-2e0f4c6b2319" data-prompts='["Close-up of a slim handcrafted full-grain leather bifold wallet resting on a worn workshop bench, soft natural light, photorealistic", "Top-down view of a customized leather bifold with contrast stitching on weathered wood planks, studio lighting, photorealistic", "Weathered hands of an American artisan holding a finished leather wallet with monogrammed initials, warm afternoon light, photorealistic"]' data-selected="0" data-slot-key="media_1.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Close-up of a slim handcrafted full-grain leather bifold wallet resting on a wor"</div></div>
+<div class="v2-media-slot" data-job-id="12f7ab12-358e-46e2-b541-2e0f4c6b2319" data-prompts='["Close-up of a slim handcrafted full-grain leather bifold wallet resting on a worn workshop bench, soft natural light, photorealistic", "Top-down view of a customized leather bifold with contrast stitching on weathered wood planks, studio lighting, photorealistic", "Weathered hands of an American artisan holding a finished leather wallet with monogrammed initials, warm afternoon light, photorealistic"]' data-selected="0" data-slot-key="media_1.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_1.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Close-up of a slim handcrafted full-grain leather bifold wallet resting on a wor"</div></div>
 <!-- STORY INTRO -->
 <p>I'm Mark Halloran, a gear writer covering EDC and small American workshops for the past fourteen years.</p>
 <p>I've reviewed wallets from hundreds of makers and met thousands of guys who've quietly overpaid for the privilege.</p>
@@ -275,7 +284,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <b class="rhetorical">One reader I interviewed had spent thousands over a decade on wallets the artisan cleared barely thirty bucks each on.</b>
 <p>Then I met Paul Lucas in a small workshop in the American Southwest, and he had finally done the math.</p>
 <!-- MEDIA 2: story / breakthrough image -->
-<div class="v2-media-slot" data-job-id="12f7ab12-358e-46e2-b541-2e0f4c6b2319" data-prompts='["Middle-aged American leather artisan in a Southwest workshop hand-stitching a wallet at a wooden bench, photorealistic warm light", "Wide shot of a small leather workshop with hides hanging on the wall and tools laid out on a workbench, photorealistic", "Close-up of weathered hands pulling waxed thread through full-grain leather, intense focus, photorealistic shallow depth of field"]' data-selected="0" data-slot-key="media_2.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Middle-aged American leather artisan in a Southwest workshop hand-stitching a wa"</div></div>
+<div class="v2-media-slot" data-job-id="12f7ab12-358e-46e2-b541-2e0f4c6b2319" data-prompts='["Middle-aged American leather artisan in a Southwest workshop hand-stitching a wallet at a wooden bench, photorealistic warm light", "Wide shot of a small leather workshop with hides hanging on the wall and tools laid out on a workbench, photorealistic", "Close-up of weathered hands pulling waxed thread through full-grain leather, intense focus, photorealistic shallow depth of field"]' data-selected="0" data-slot-key="media_2.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_2.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Middle-aged American leather artisan in a Southwest workshop hand-stitching a wa"</div></div>
 <p>Late one quarter he ran the P&amp;L, saw the truth in black and white, and <strong>changed everything overnight</strong>.</p>
 <!-- ROOT CAUSE -->
 <b class="rhetorical">The Markup Chain</b>
@@ -283,14 +292,14 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>It's the wholesale-to-retail jump where the storefront keeps roughly <strong>three of every four dollars</strong> you hand over.</p>
 <p>Veterans of the trade call it <strong>the boutique tax</strong> — the silent multiplier between the bench and the shelf.</p>
 <!-- MEDIA 3: mechanism / diagram -->
-<div class="v2-media-slot" data-job-id="12f7ab12-358e-46e2-b541-2e0f4c6b2319" data-prompts='["Luxury leather wallet displayed in a SoHo boutique storefront window beside a high price tag, photorealistic urban evening setting", "Hands holding a boutique-tier leather wallet next to a wholesale invoice document on a wooden desk, photorealistic top-down", "Empty upscale boutique storefront at dusk with a leather goods display lit from inside, photorealistic city street view"]' data-selected="0" data-slot-key="media_3.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Luxury leather wallet displayed in a SoHo boutique storefront window beside a hi"</div></div>
+<div class="v2-media-slot" data-job-id="12f7ab12-358e-46e2-b541-2e0f4c6b2319" data-prompts='["Luxury leather wallet displayed in a SoHo boutique storefront window beside a high price tag, photorealistic urban evening setting", "Hands holding a boutique-tier leather wallet next to a wholesale invoice document on a wooden desk, photorealistic top-down", "Empty upscale boutique storefront at dusk with a leather goods display lit from inside, photorealistic city street view"]' data-selected="0" data-slot-key="media_3.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_3.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Luxury leather wallet displayed in a SoHo boutique storefront window beside a hi"</div></div>
 <p class="media-caption">The same wallet, two very different tags.</p>
 <p>Once you see it, every glass case in every airport terminal looks different — and you can't unsee the spread.</p>
 <b class="rhetorical">And here's the part nobody at the boutique counter wants to admit out loud to a paying customer.</b>
 <p>The longer you keep buying through that chain, the more of your money funds rent in someone else's neighborhood.</p>
 <p>You'll spend years replacing pieces, never realizing the maker cleared barely the cost of a sit-down dinner per wallet.</p>
 <!-- MEDIA 4: bad-news visual / worsening -->
-<div class="v2-media-slot" data-job-id="12f7ab12-358e-46e2-b541-2e0f4c6b2319" data-prompts='["American leather artisan reviewing a P&amp;L spreadsheet at his workshop bench under a warm desk lamp, photorealistic candid moment", "Determined craftsman typing an email at his workbench surrounded by leather goods and tools, photorealistic warm lighting", "Hands sliding a stack of wholesale invoices across a wooden bench beside a half-finished wallet, photorealistic"]' data-selected="0" data-slot-key="media_4.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"American leather artisan reviewing a P&amp;L spreadsheet at his workshop bench under"</div></div>
+<div class="v2-media-slot" data-job-id="12f7ab12-358e-46e2-b541-2e0f4c6b2319" data-prompts='["American leather artisan reviewing a P&amp;L spreadsheet at his workshop bench under a warm desk lamp, photorealistic candid moment", "Determined craftsman typing an email at his workbench surrounded by leather goods and tools, photorealistic warm lighting", "Hands sliding a stack of wholesale invoices across a wooden bench beside a half-finished wallet, photorealistic"]' data-selected="0" data-slot-key="media_4.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_4.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"American leather artisan reviewing a P&amp;L spreadsheet at his workshop bench under"</div></div>
 <b class="rhetorical">So what does an artisan actually do when he finally sees the spread on his own work?</b>
 <p>He cuts the chain — severs the wholesale accounts and ships the wallet straight from his bench to your door.</p>
 <p>That's how the markup disappears and the price you pay starts looking like what the leather actually deserves.</p>
@@ -299,7 +308,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>So most artisans stay quiet, keep stitching, and keep clearing pocket change while their work earns somebody else's mortgage.</p>
 <b class="rhetorical">Luckily, Paul did the one thing nobody in his trade had ever attempted in a single afternoon email.</b>
 <!-- MEDIA 5: solution reveal image/video -->
-<div class="v2-media-slot" data-job-id="12f7ab12-358e-46e2-b541-2e0f4c6b2319" data-prompts='["Six different leather color swatches arranged neatly with nine spools of colored thread on a wooden surface, photorealistic", "Array of customized handcrafted leather wallets in different colors lined up across a wooden workbench, photorealistic top-down", "Open leather wallet revealing personalized initials stamped inside the billfold, soft natural light, photorealistic close-up"]' data-selected="0" data-slot-key="media_5.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Six different leather color swatches arranged neatly with nine spools of colored"</div></div>
+<div class="v2-media-slot" data-job-id="12f7ab12-358e-46e2-b541-2e0f4c6b2319" data-prompts='["Six different leather color swatches arranged neatly with nine spools of colored thread on a wooden surface, photorealistic", "Array of customized handcrafted leather wallets in different colors lined up across a wooden workbench, photorealistic top-down", "Open leather wallet revealing personalized initials stamped inside the billfold, soft natural light, photorealistic close-up"]' data-selected="0" data-slot-key="media_5.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_5.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Six different leather color swatches arranged neatly with nine spools of colored"</div></div>
 <h2>Same Wallet, Same Hands, A Fraction of the Boutique Tag</h2>
 <p>He calls it <strong>direct-bench pricing</strong> — the wholesale invoice becomes the retail invoice, with the storefront step removed.</p>
 <p>The wallets are stitched on the same bench, with the same full-grain American cowhide, and the same lifetime guarantee.</p>
@@ -308,21 +317,21 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>Together they pulled the inventory back from the boutiques and posted the original wholesale invoices online for anyone to read.</p>
 <!-- PRODUCT REVEAL -->
 <h2 style="margin-top:40px">Introducing the wallet that was three weeks from a SoHo shelf at a department-store luxury price tag</h2>
-<h2 style="color:var(--ll-color-primary); margin-top:0; font-size:34px">Create-your-own Finnigan</h2>
+<h2 style="margin-top:0; font-size:34px">Create-your-own Finnigan</h2>
 <!-- MEDIA 6: product hero image -->
-<div class="v2-media-slot" data-job-id="12f7ab12-358e-46e2-b541-2e0f4c6b2319" data-prompts='["Hands opening a slim full-grain leather bifold revealing card slots and tight saddle stitching detail, photorealistic close-up", "Side profile of a slim handcrafted leather wallet showing clean burnished edges and contrast thread, photorealistic", "Man sliding a customized leather wallet into the back pocket of his jeans, photorealistic everyday carry shot"]' data-selected="0" data-slot-key="media_6.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Hands opening a slim full-grain leather bifold revealing card slots and tight sa"</div></div>
+<div class="v2-media-slot" data-job-id="12f7ab12-358e-46e2-b541-2e0f4c6b2319" data-prompts='["Hands opening a slim full-grain leather bifold revealing card slots and tight saddle stitching detail, photorealistic close-up", "Side profile of a slim handcrafted leather wallet showing clean burnished edges and contrast thread, photorealistic", "Man sliding a customized leather wallet into the back pocket of his jeans, photorealistic everyday carry shot"]' data-selected="0" data-slot-key="media_6.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_6.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"Hands opening a slim full-grain leather bifold revealing card slots and tight sa"</div></div>
 <p>It's a slim bifold cut from full-grain American cowhide and stitched on the same bench it always was.</p>
 <p>You pick the leather color and thread color, and the wallet is built to your exact spec before shipping.</p>
 <p>Six leather options, nine thread options, fifty-four combinations — all stitched in the Southwest the same week you order.</p>
 <!-- MEDIA 7: product in use video/image -->
-<div class="v2-media-slot" data-job-id="12f7ab12-358e-46e2-b541-2e0f4c6b2319" data-prompts='["American man in casual attire pulling a customized leather wallet from his pocket at a coffee shop counter, photorealistic", "Rugged hands passing a leather wallet across a wooden table to another set of hands, photorealistic warm intimate lighting", "Two customized leather wallets in different color combinations side by side on a desk with a handwritten note, photorealistic"]' data-selected="0" data-slot-key="media_7.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"American man in casual attire pulling a customized leather wallet from his pocke"</div></div>
+<div class="v2-media-slot" data-job-id="12f7ab12-358e-46e2-b541-2e0f4c6b2319" data-prompts='["American man in casual attire pulling a customized leather wallet from his pocket at a coffee shop counter, photorealistic", "Rugged hands passing a leather wallet across a wooden table to another set of hands, photorealistic warm intimate lighting", "Two customized leather wallets in different color combinations side by side on a desk with a handwritten note, photorealistic"]' data-selected="0" data-slot-key="media_7.url" style="width:100%; aspect-ratio:16/9; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — media_7.url</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"American man in casual attire pulling a customized leather wallet from his pocke"</div></div>
 <p>What you receive is the exact piece a boutique would have tagged at a luxury price, hangtag stripped, <u>no middleman</u>.</p>
 <p>But don't take my word for it — read what the early direct buyers wrote when their wallets actually arrived.</p>
 <!-- ★ CTA #1 — first CTA in the page, AFTER 7 medias + gradual product reveal -->
 <a class="cta-btn" href="https://terica-store.com/click"><span>See the Wallet</span><small>Free shipping on direct orders</small></a>
 <!-- TRUSTPILOT REVIEWS (2 featured) -->
 <div class="trustpilot-intro">
-<h3>What the first wave of direct buyers had to say after their wallets actually showed up.</h3>
+<h3>What the first wave of direct buyers had to say after their wallets actually showed up</h3>
 <p>Verified purchases from the first batch of repatriated wholesale stock — same wallet, no boutique markup involved.</p>
 </div>
 <div class="featured-review">
@@ -365,7 +374,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>When the repatriated stock is gone, the next batch from the bench takes between three and six weeks.</p>
 <p>If you're serious about catching this wallet at the price the maker actually charges, do not leave this page.</p>
 <!-- EXCLUSIVITY -->
-<h2>You won't find this wallet anywhere else, and that's by design after last quarter.</h2>
+<h2>You won't find this wallet anywhere else, and that's by design after last quarter</h2>
 <p>Not in any boutique, not on Amazon, not on eBay — and any listing that claims otherwise is a knockoff.</p>
 <p>The only place to get the genuine bench-stitched piece is directly through the workshop's own website at checkout.</p>
 <p>Paul cut every wholesale account to keep the experience direct — from the leather order to the package on your porch.</p>
@@ -374,11 +383,12 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <a class="cta-btn" href="https://terica-store.com/click"><span>Build Mine Now</span><small>Limited stock, ships from the workshop</small></a>
 <!-- GUARANTEE -->
 <div class="guarantee-box">
-<span class="days">30 DAYS</span>
+<div class="guarantee-badge"><div class="guarantee-badge-num">30</div><div class="guarantee-badge-label">DAYS</div></div>
+<div class="guarantee-content">
 <h3>Thirty-Day No-Questions Money-Back Promise Backed by a Lifetime Stitching Guarantee</h3>
 <p>If the wallet works for you, keep it forever — the stitching is covered for life by the workshop itself.</p>
-<p>If for any reason it doesn't work for you, send it back and the workshop refunds the <strong>full amount that same day</strong>.</p>
 <p>That's true whether you change your mind eighty-nine minutes after delivery or eighty-nine days into carrying it daily.</p>
+</div>
 </div>
 <!-- HERE'S WHAT TO DO NEXT -->
 <h2>Here Is Exactly What Happens When You Place Your Order Today</h2>
@@ -387,7 +397,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <p>Enter your name, your shipping address, your payment information, and pick the shipping speed that gets it there fastest.</p>
 <p>Most buyers order two — one for themselves and one for the man in their life who'd appreciate this story.</p>
 <!-- ★ CTA #4 -->
-<a class="cta-btn" href="https://terica-store.com/click"><span>Start My Order</span><small>Takes less than sixty seconds</small></a>
 <!-- REMEMBER / ZERO RISK -->
 <h2>Remember, There Is Truly Zero Risk in Trying This Wallet</h2>
 <p>The only real risk on this page is the regret that hits the next time you walk past a boutique counter.</p>
@@ -463,12 +472,12 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="sticky-product">
 <span class="sticky-product-badge">BENCH DIRECT</span>
 <div class="sticky-product-name">Create-your-own Finnigan</div>
-<div class="v2-media-slot" data-job-id="12f7ab12-358e-46e2-b541-2e0f4c6b2319" data-prompts='["", "", ""]' data-selected="0" data-slot-key="sidebar.image" style="aspect-ratio:1/1; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:8px 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — sidebar.image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"No prompt"</div></div>
+<div class="v2-media-slot" data-job-id="12f7ab12-358e-46e2-b541-2e0f4c6b2319" data-prompts='["", "", ""]' data-selected="0" data-slot-key="sidebar.image" style="aspect-ratio:1/1; background:#1a1a1a; border:2px dashed #6b21a8; border-radius:8px; padding:20px; text-align:center; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 0; box-sizing:border-box"><div style="font-size:32px">🖼️</div><div style="color:#a855f7; font-size:13px; margin-top:8px">Emplacement média — sidebar.image</div><div style="color:#666; font-size:11px; margin-top:4px; max-width:300px">"No prompt"</div></div>
 <div class="sticky-product-stars">
 <span class="stars">★★★★★</span>
 <span>Rated 4.8 out of 5</span>
 </div>
-<a class="sticky-product-cta" href="https://terica-store.com/click"><span>Build Mine Now</span></a>
+<a class="sticky-product-cta" href="https://terica-store.com/click"><span>CHECK AVAILABILITY</span></a>
 <div class="sticky-product-trust">
 <span class="sticky-product-trust-item">Lifetime Stitching Guarantee</span>
 <span class="sticky-product-trust-item">Made in the USA</span>
@@ -479,7 +488,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div><!-- /article-wrap -->
 <div class="sticky-cta">
 <span class="sticky-cta-text">Same wallet, fraction of the price</span>
-<a class="sticky-cta-btn" href="https://terica-store.com/click"><span>Build Mine Now</span></a>
+<a class="sticky-cta-btn" href="https://terica-store.com/click"><span>Check availability</span></a>
 </div>
 <style id="adv-brand-secondary">
 :root{ --ll-color-secondary: #fdece4; }
