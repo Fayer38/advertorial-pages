@@ -528,6 +528,9 @@ img{max-width:100%;display:block}
 .adv-main .adv-section-heading,
 .adv-main .adv-inline-image,
 .adv-main .adv-inline-video,
+.adv-main .adv-faq,
+.adv-main .adv-offer-image,
+.adv-main .adv-testimonial-screens,
 .adv-main .adv-main .adv-cta-block{max-width:100%;margin-left:0;margin-right:0;padding-left:0;padding-right:0}
 
 /* Buyer quote needs left padding for the border-left bar */
@@ -576,6 +579,8 @@ img{max-width:100%;display:block}
 .sticky-product-card__rating .score{font-weight:800;color:var(--ll-color-text-primary);font-size:14px}
 .sticky-product-card 
 /* ── Sidebar compact reviews (under product card) ───────────── */
+.sticky-product-cta{display:block;margin:14px auto 0;background:var(--ll-color-primary);color:#fff;padding:12px 16px;border-radius:8px;font-family:var(--ll-font-heading);font-weight:700;font-size:14px;text-decoration:none;text-align:center;letter-spacing:0.4px;text-transform:uppercase}
+.sticky-product-cta:hover{filter:brightness(0.92);color:#fff;text-decoration:none}
 .sidebar-reviews{
   margin-top:22px;padding:20px 22px;
   background:var(--ll-color-background);
@@ -597,7 +602,7 @@ img{max-width:100%;display:block}
 }
 .sidebar-reviews__top .score{
   font-family:var(--ll-font-heading);font-weight:900;font-size:30px;
-  color:var(--ll-color-primary);line-height:1;
+  color:#111;line-height:1;
 }
 .sidebar-reviews__top .out-of{font-size:11px;color:var(--ll-color-muted);font-weight:600}
 .sidebar-reviews__count{font-size:11px;color:var(--ll-color-muted);text-align:center;margin:0 0 14px}
@@ -615,7 +620,7 @@ img{max-width:100%;display:block}
   display:flex;align-items:center;
 }
 .sidebar-reviews__feature-score{
-  font-weight:800;font-size:14px;color:var(--ll-color-primary);line-height:1;
+  font-weight:800;font-size:14px;color:#111;line-height:1;
   text-align:right;min-width:24px;
 }
 
@@ -1042,13 +1047,14 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-sidebar-inner">
 <!-- ── STICKY PRODUCT CARD ── -->
 <div class="sticky-product-card">
-<div class="sticky-product-card__label">Featured Routine</div>
 <div class="sticky-product-card__name">ClearStep Toenail Fungus Oil</div>
 <div class="sticky-product-card__rating">
 <span class="stars">★★★★★</span>
 <span class="score"><span>4.8</span>/5</span>
 </div>
 <img alt="" class="sticky-product-card__img" data-slot="media.sidebar_product" src="https://dailybloginfo.com/pages/media/846e567f/a495ac6c7105.jpeg" style="aspect-ratio: 1 / 1; object-fit: cover; padding: 0px; margin: 14px 17px 10px"/>
+
+<a class="sticky-product-cta" href="#" data-copy="sidebar.cta">Check Availability</a>
 </div>
 <!-- ── SIDEBAR COMPACT REVIEWS ── -->
 <div class="sidebar-reviews">
