@@ -334,6 +334,21 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+/* Roman polish — guarantee badge + sticky bar */
+.adv-guarantee{display:flex !important;gap:28px !important;align-items:flex-start !important;text-align:left !important;border:none !important}
+.guarantee-badge{flex-shrink:0;width:88px;height:88px;border:3px solid var(--ll-color-primary,#6b21a8);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ll-color-primary,#6b21a8);background:transparent}
+.guarantee-badge-num{font-family:var(--ll-font-heading);font-size:28px;font-weight:900;line-height:1}
+.guarantee-badge-label{font-family:var(--ll-font-heading);font-size:11px;font-weight:700;letter-spacing:0.1em;margin-top:2px}
+.guarantee-content{flex:1;min-width:0}
+.guarantee-content > .adv-guarantee__title{margin:0 0 12px !important;text-align:left !important}
+.guarantee-content > .adv-guarantee__body{max-width:none !important;margin:0 !important;text-align:left !important}
+@media (max-width:600px){.adv-guarantee{flex-direction:column !important;gap:20px !important}.guarantee-badge{align-self:center}}
+
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;border-top:1px solid #e5e5e5}
+.sticky-cta-btn{background:var(--ll-color-cta,var(--ll-color-primary));color:#fff;padding:6px 22px;border-radius:6px;font-family:var(--ll-font-body);font-weight:700;font-size:16px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
+.sticky-cta-btn:hover{filter:brightness(0.88);color:#fff;text-decoration:none}
+@media (max-width:640px){.sticky-cta-btn{width:90%;text-align:center}}
+body{padding-bottom:80px}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){

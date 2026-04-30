@@ -157,53 +157,6 @@ img{max-width:100%;display:block}
   font-weight:700;
 }
 
-/* ── Product showcase ──────────────────────────────────────── */
-.adv-product-showcase{
-  max-width:980px;margin:24px auto;padding:24px 24px;
-  background:var(--ll-color-background);
-  border:1px solid var(--ll-color-border);
-  text-align:center;
-  font-family:var(--ll-font-body);
-}
-.adv-product-showcase__eyebrow{
-  font-family:var(--ll-font-heading);
-  font-size:22px;font-weight:700;
-  color:#111;
-  margin:0 0 12px;
-}
-.adv-product-showcase__rating{
-  display:flex;justify-content:center;align-items:center;gap:8px;
-  margin-bottom:14px;
-  font-size:14px;color:#444;font-weight:600;
-}
-.adv-product-showcase__rating-stars{
-  color:#f5b40a;
-  letter-spacing:1px;font-size:18px;
-}
-.adv-product-showcase__rating-score{
-  font-size:15px;font-weight:700;color:#111;
-}
-.adv-product-showcase__rating-sep{color:#bbb}
-.adv-product-showcase__title{
-  font-family:var(--ll-font-heading);
-  font-size:18px;font-weight:700;
-  color:var(--ll-color-text-primary);
-  margin:0 0 6px;
-}
-.adv-product-showcase__tagline{
-  font-size:14px;color:var(--ll-color-text-secondary);
-  font-style:italic;margin:0 0 18px;line-height:1.4;
-}
-.adv-product-showcase__image{
-  width:100%;max-width:220px;margin:0 auto 14px;
-  aspect-ratio:1/1;object-fit:cover;
-  background:var(--ll-color-background-alt);
-  border-radius:8px;
-}
-.adv-product-showcase > a{display:flex;justify-content:center;align-items:center;margin:0 auto 14px;max-width:220px}
-.adv-product-showcase .v2-media-slot{max-width:220px;width:100%;margin:0!important;aspect-ratio:1/1;display:flex!important}
-
-
 /* ── CTAs ──────────────────────────────────────────────────── */
 .adv-cta-inline{
   display:inline-block;
@@ -381,6 +334,21 @@ body{overflow-x:hidden;max-width:100vw}
 img{max-width:100%;height:auto}
 table{max-width:100%;display:block;overflow-x:auto}
 .stat-row{overflow-x:auto}
+/* Roman polish — guarantee badge + sticky bar */
+.adv-guarantee{display:flex !important;gap:28px !important;align-items:flex-start !important;text-align:left !important;border:none !important}
+.guarantee-badge{flex-shrink:0;width:88px;height:88px;border:3px solid var(--ll-color-primary,#6b21a8);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ll-color-primary,#6b21a8);background:transparent}
+.guarantee-badge-num{font-family:var(--ll-font-heading);font-size:28px;font-weight:900;line-height:1}
+.guarantee-badge-label{font-family:var(--ll-font-heading);font-size:11px;font-weight:700;letter-spacing:0.1em;margin-top:2px}
+.guarantee-content{flex:1;min-width:0}
+.guarantee-content > .adv-guarantee__title{margin:0 0 12px !important;text-align:left !important}
+.guarantee-content > .adv-guarantee__body{max-width:none !important;margin:0 !important;text-align:left !important}
+@media (max-width:600px){.adv-guarantee{flex-direction:column !important;gap:20px !important}.guarantee-badge{align-self:center}}
+
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:14px 15px;z-index:99;box-shadow:0 -2px 15px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;border-top:1px solid #e5e5e5}
+.sticky-cta-btn{background:var(--ll-color-cta,var(--ll-color-primary));color:#fff;padding:6px 22px;border-radius:6px;font-family:var(--ll-font-body);font-weight:700;font-size:16px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px}
+.sticky-cta-btn:hover{filter:brightness(0.88);color:#fff;text-decoration:none}
+@media (max-width:640px){.sticky-cta-btn{width:90%;text-align:center}}
+body{padding-bottom:80px}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -494,19 +462,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="adv-article">
 <p style="position: relative">Tyler narrowed his search to one product after three weekends of comparing labels — the only one that listed Ceylon cinnamon and 500 mg berberine clearly.</p>
 <p style="position: relative">It's called <strong>GlucoSync</strong> — a daily capsule made in a Utah cGMP facility, designed for adults whose blood sugar sits in the gray zone.</p>
-</div>
-<!-- ── PRODUCT SHOWCASE ── -->
-<div class="adv-product-showcase">
-<h3 class="adv-product-showcase__title" style="position: relative">GlucoSync</h3>
-<p class="adv-product-showcase__tagline" style="position: relative">Daily glucose support formulated for adults over fifty-five.</p>
-<a data-cta-neutralized="1" href="#"><img alt="" data-copy="media.product:attr:src" data-prompts='["Premium GlucoSync supplement bottle on a clean white background with Ceylon cinnamon sticks and berberine plant elements, studio lighting, photorealistic", "GlucoSync bottle on a kitchen counter beside a glucose monitor showing steady reading, morning light, photorealistic", "Hands of an older American woman holding a GlucoSync bottle with relieved expression, soft natural light, photorealistic"]' data-slot-key="media.product" data-v2-replaced="1" src="/pages/media/bd4ec72c/manual_upload-manual-58a5bc6e.jpeg" style="width: 100%; display: block; cursor: pointer; aspect-ratio: 16 / 9; border-radius: 8px; object-fit: cover; margin: 8px 0px"/></a>
-<div class="adv-product-showcase__rating">
-<span class="adv-product-showcase__rating-stars">★★★★★</span>
-<span class="adv-product-showcase__rating-score">4.8</span>
-<span class="adv-product-showcase__rating-sep">·</span>
-<span>3,200+ verified reviews</span>
-</div>
-<a class="adv-cta-inline" href="https://terica-store.com/click"><span data-copy="cta_check.text">Check Availability</span></a>
 </div>
 <!-- ── S7 INTRODUCING ── -->
 <h2 class="adv-section-heading" style="position: relative">What Sets GlucoSync Apart From the Crowded Vitamin Aisle Pretenders</h2>
@@ -664,4 +619,5 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 <p style="font-size: 10px; color: rgb(187, 187, 187); line-height: 1.4; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; position: relative">© 2026 Daily Blog Info. All rights reserved.</p>
 </footer>
+<div class="sticky-cta"><a class="sticky-cta-btn" href="https://terica-store.com/click"><span>Check availability</span></a></div>
 </body></html>
